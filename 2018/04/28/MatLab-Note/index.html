@@ -323,6 +323,20 @@
 
       
         <h1 id="MATLAB-Note"><a href="#MATLAB-Note" class="headerlink" title="MATLAB Note"></a>MATLAB Note</h1><hr>
+<ul>
+<li><a href="#matlab-note">MATLAB Note</a><ul>
+<li><a href="#">输出无白边图片</a></li>
+<li><a href="#">平移、旋转、缩放、镜像</a><ul>
+<li><a href="#">平移</a></li>
+<li><a href="#">旋转</a></li>
+<li><a href="#">缩放</a></li>
+<li><a href="#">镜像（水平）</a></li>
+<li><a href="#graythreshim2bw">Graythresh与im2bw函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="输出无白边图片"><a href="#输出无白边图片" class="headerlink" title="输出无白边图片"></a>输出无白边图片</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">imshow(I,<span class="string">'border'</span>,<span class="string">'tight'</span>,<span class="string">'initialmagnification'</span>,<span class="string">'fit'</span>);</span><br><span class="line"><span class="comment">% 'border','tight'的组合功能意思是去掉图像周边空白</span></span><br><span class="line"><span class="comment">% 'InitialMagnification','fit'组合的意思是图像填充整个figure窗口</span></span><br></pre></td></tr></table></figure>
 <h2 id="平移、旋转、缩放、镜像"><a href="#平移、旋转、缩放、镜像" class="headerlink" title="平移、旋转、缩放、镜像"></a>平移、旋转、缩放、镜像</h2><a id="more"></a>
 <h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">init = imread(<span class="string">'Fig3.tif'</span>); <span class="comment">% 读取图像</span></span><br><span class="line">[R, C] = <span class="built_in">size</span>(init); <span class="comment">% 获取图像大小</span></span><br><span class="line">res = <span class="built_in">zeros</span>(R, C); <span class="comment">% 构造结果矩阵。每个像素点默认初始化为0（黑色）</span></span><br><span class="line">delX = <span class="number">50</span>; <span class="comment">% 平移量X</span></span><br><span class="line">delY = <span class="number">50</span>; <span class="comment">% 平移量Y</span></span><br><span class="line">tras = [<span class="number">1</span> <span class="number">0</span> delX; <span class="number">0</span> <span class="number">1</span> delY; <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>]; <span class="comment">% 平移的变换矩阵 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : R</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span> : C</span><br><span class="line">        temp = [i; j; <span class="number">1</span>];</span><br><span class="line">        temp = tras * temp; <span class="comment">% 矩阵乘法</span></span><br><span class="line">        x = temp(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        y = temp(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="comment">% 变换后的位置判断是否越界</span></span><br><span class="line">        <span class="keyword">if</span> (x &lt;= R) &amp; (y &lt;= C) &amp; (x &gt;= <span class="number">1</span>) &amp; (y &gt;= <span class="number">1</span>)</span><br><span class="line">            res(x, y) = init(<span class="built_in">i</span>, <span class="built_in">j</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line">imshow(uint8(res)); <span class="comment">% 显示图像</span></span><br></pre></td></tr></table></figure>
@@ -453,7 +467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -466,7 +480,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
