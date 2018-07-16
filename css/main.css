@@ -452,11 +452,6 @@ body {
     width: 1160px;
   }
 }
-@media (min-width: 1200px) {
-  .container .header-inner {
-    width: 800px;
-  }
-}
 @media (min-width: 1600px) {
   .container .header-inner {
     width: 73%;
@@ -472,11 +467,6 @@ body {
 @media (min-width: 1200px) {
   .container .main-inner {
     width: 1160px;
-  }
-}
-@media (min-width: 1200px) {
-  .container .main-inner {
-    width: 800px;
   }
 }
 @media (min-width: 1600px) {
@@ -499,11 +489,6 @@ body {
 @media (min-width: 1200px) {
   .container .footer-inner {
     width: 1160px;
-  }
-}
-@media (min-width: 1200px) {
-  .container .footer-inner {
-    width: 800px;
   }
 }
 @media (min-width: 1600px) {
@@ -1772,11 +1757,7 @@ pre .javascript .function {
   padding: 2px;
   max-width: 120px;
   height: auto;
-<<<<<<< HEAD
   border: 1px solid #eee;
-=======
-  border: 2px solid #333;
->>>>>>> origin/master
   opacity: 1;
 }
 img:hover {
@@ -1871,11 +1852,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-<<<<<<< HEAD
-  background: #8546ff;
-=======
-  background: #823273;
->>>>>>> origin/master
+  background: #791214;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2056,10 +2033,6 @@ img:hover {
     -o-transform: scale(1.1);
     transform: scale(1.1);
   }
-<<<<<<< HEAD
-}
-@-webkit-keyframes iconAnimate {
-=======
 }
 @-webkit-keyframes iconAnimate {
   0%, 100% {
@@ -2092,7 +2065,6 @@ img:hover {
   }
 }
 @-o-keyframes iconAnimate {
->>>>>>> origin/master
   0%, 100% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -2122,39 +2094,6 @@ img:hover {
     transform: scale(1.1);
   }
 }
-<<<<<<< HEAD
-@-o-keyframes iconAnimate {
-  0%, 100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-  10%, 30% {
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  50%, 70% {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-}
-=======
->>>>>>> origin/master
 @keyframes iconAnimate {
   0%, 100% {
     -webkit-transform: scale(1);
@@ -2583,7 +2522,6 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li+li:last-child {
   font-weight: bold;
 }
-<<<<<<< HEAD
 .header {
   position: relative;
   margin: 0 auto;
@@ -2604,8 +2542,6 @@ ul.breadcrumb li+li:last-child {
     width: auto;
   }
 }
-=======
->>>>>>> origin/master
 @media (max-width: 767px) {
   .header {
     width: auto;
@@ -2654,7 +2590,6 @@ ul.breadcrumb li+li:last-child {
   }
 }
 @media (max-width: 767px) {
-<<<<<<< HEAD
   .main {
     padding-bottom: 100px;
   }
@@ -2662,18 +2597,6 @@ ul.breadcrumb li+li:last-child {
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
     width: auto;
-=======
-  .site-nav {
-    position: absolute;
-    left: 0;
-    top: 52px;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    z-index: 1030;
->>>>>>> origin/master
   }
 }
 @media (max-width: 767px) {
@@ -2719,22 +2642,6 @@ ul.breadcrumb li+li:last-child {
     display: none;
   }
 }
-.menu .menu-item .badge {
-  display: inline-block;
-  padding: 1px 4px;
-  margin-left: 5px;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #eee;
-}
-@media (max-width: 767px) {
-  .menu .menu-item .badge {
-    float: right;
-    margin: 0.35em 0 0 0;
-  }
-}
 @media (max-width: 767px) {
   .sidebar {
     display: none;
@@ -2754,16 +2661,10 @@ ul.breadcrumb li+li:last-child {
   }
 }
 @media (max-width: 767px) {
-<<<<<<< HEAD
   .footer-inner {
     width: auto;
     padding-left: 0 !important;
     padding-right: 0 !important;
-=======
-  .menu .menu-item a {
-    padding: 5px 10px;
-    border-bottom-color: #fff !important;
->>>>>>> origin/master
   }
 }
 .sidebar-position-right .header-inner {
@@ -2807,15 +2708,6 @@ ul.breadcrumb li+li:last-child {
 .site-subtitle {
   margin: 10px 10px 0;
   font-weight: initial;
-}
-.menu-item-active a {
-  border-bottom-color: #222 !important;
-  color: #222;
-}
-@media (max-width: 767px) {
-  .menu-item-active a {
-    border-bottom-color: #fff !important;
-  }
 }
 .site-search form {
   display: none;
