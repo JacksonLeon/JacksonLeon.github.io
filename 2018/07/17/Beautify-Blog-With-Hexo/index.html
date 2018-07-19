@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="Author: JacksonLeon  默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些功能，我们只需要把他们启用就OK，再稍稍配置一下就OK啦。">
-<meta name="keywords" content="Blog,Hexo">
+<meta name="keywords" content="Hexo,Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客NexT主题美化">
 <meta property="og:url" content="https://JacksonLeon.coding.me/2018/07/17/Beautify-Blog-With-Hexo/index.html">
@@ -429,6 +429,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/17/Beautify-Blog-With-Hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/17/Beautify-Blog-With-Hexo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -559,9 +569,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
-          
             <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          
+            <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
           
         </div>
       
@@ -610,9 +620,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODE1Mi8xNDY4Mg=="></div>
     </div>
-
   
 
 
@@ -1004,23 +1012,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
-
-
-
-
-
-
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz',
+        appKey: '1bF6m0SPiN3sk9TaGxPELdjY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 

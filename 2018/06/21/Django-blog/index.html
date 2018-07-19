@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="1pip install -r requirement.txt  requirement.txt  12345678910111213141516171819bootstrap-admin   dj-database-url   dj-static         Django            django-markdown   django-toolbelt   Markdown">
-<meta name="keywords" content="Blog,Python,Django">
+<meta name="keywords" content="Blog,Django,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-blog">
 <meta property="og:url" content="https://JacksonLeon.coding.me/2018/06/21/Django-blog/index.html">
@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/21/Django-blog/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/06/21/Django-blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -497,9 +507,9 @@
           
             <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
             <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -552,9 +562,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODE1Mi8xNDY4Mg=="></div>
     </div>
-
   
 
 
@@ -921,23 +929,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
-
-
-
-
-
-
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz',
+        appKey: '1bF6m0SPiN3sk9TaGxPELdjY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 

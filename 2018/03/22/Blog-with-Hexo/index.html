@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="Blog with HexoGithub pages环境搭建要使用Hexo， 需要系统支持Node.js以及Git  Node.js   官网下载相应程序安装，最好是最新版下载  Git  也是官网下载安装下载">
-<meta name="keywords" content="Note,Blog,Hexo">
+<meta name="keywords" content="Hexo,Blog,Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog with Hexo">
 <meta property="og:url" content="https://JacksonLeon.coding.me/2018/03/22/Blog-with-Hexo/index.html">
@@ -429,6 +429,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/22/Blog-with-Hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/Blog-with-Hexo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -583,11 +593,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
             <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
           
         </div>
       
@@ -640,9 +650,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODE1Mi8xNDY4Mg=="></div>
     </div>
-
   
 
 
@@ -1034,23 +1042,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
-
-
-
-
-
-
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz',
+        appKey: '1bF6m0SPiN3sk9TaGxPELdjY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
