@@ -8,8 +8,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
         <tag>Hexo</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -43,8 +43,8 @@
     <content type="text"><![CDATA[1pip install -r requirement.txt requirement.txt 12345678910111213141516171819bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel 12345678910$ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = ( ... 'article', #这里填写的是app的名称)ALLOWED_HOSTS = ['*']$ python manage.py runserver 0.0.0.0:2210]]></content>
       <tags>
         <tag>Blog</tag>
-        <tag>Django</tag>
         <tag>Python</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -222,9 +222,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Note</tag>
-        <tag>Blog</tag>
         <tag>Hexo</tag>
+        <tag>Blog</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
