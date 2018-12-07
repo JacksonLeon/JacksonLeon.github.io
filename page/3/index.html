@@ -202,7 +202,7 @@
     </div>
     
       
-        <p class="site-subtitle">步子大了容易扯着蛋\一步一步来哦</p>
+        <p class="site-subtitle">步子大了容易扯着蛋</p>
       
     
   </div>
@@ -324,6 +324,377 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/27/BUGs-when-Delete-the-ubuntu-on-windows/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/27/BUGs-when-Delete-the-ubuntu-on-windows/" itemprop="url">
+                  双系统删除Ubuntu后出现grub rescure>解决办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-27 15:06:07" itemprop="dateCreated datePublished" datetime="2018-03-27T15:06:07+08:00">2018-03-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-06 21:37:55" itemprop="dateModified" datetime="2018-12-06T21:37:55+08:00">2018-12-06</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/27/BUGs-when-Delete-the-ubuntu-on-windows/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/27/BUGs-when-Delete-the-ubuntu-on-windows/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在笔记本电脑上安装了两个Linux系统，有一个几乎不用，所以决定把它给删除了，在网上看到<a href="http://www.linuxidc.com/Linux/2014-06/103871.htm" target="_blank" rel="noopener">OS-Uninstaller（操作系统卸载）——轻松删除电脑中多余的操作系统</a>一文可以操作成功，就决定试试了。本着学习的态度，边操作边作笔记，把它记录在了<a href="http://txgcwm.github.io/blog/2014/06/30/cao-zuo-xi-tong-xie-zai-ruan-jian-%3Aos-uninstaller/" target="_blank" rel="noopener">这里</a>。可天公并不眷恋我这个爱折腾的孩子，操作并没有成功，开机显示如下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRUB loading</span><br><span class="line">error:unknow filesystem</span><br><span class="line">grub rescue&gt;</span><br></pre></td></tr></table></figure>
+<p>下面几种操作会导致这种问题：</p>
+<ul>
+<li>想删除Ubuntu，于是直接在Windows下删除/格式化了Ubuntu所在的分区。</li>
+<li>调整磁盘，利用工具合并/分割/调整/删除分区，使磁盘分区数目发生了变化。</li>
+<li>重新安装系统，把Linux安装到了新分区，原有分区已经格式化，但是没有重新安装grub2。</li>
+<li>用Ubuntu备份工具/衍生版制造工具等，把主分区恢复成了8.X的老版本，结果老版本的grub是grub1,于是把grub2破坏掉了。</li>
+</ul>
+<p>总归是由于操作者不知道grub2分为两部分，一部分（一般情况下）写在了mbr上，另一部分写在了某个分区的<code>/boot/grub</code>目录（如果<code>/boot</code>单独分区，则直接写在对应分区的<code>/grub</code>目录）里面。由于上述操作，致使grub2的mbr里面的那一部分找不到<code>/grub</code>目录里面的那一部分了（或者另一部分已经删除了）。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/27/BUGs-when-Delete-the-ubuntu-on-windows/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/26/386-Lexicographical-Numbers/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/386-Lexicographical-Numbers/" itemprop="url">
+                  386. Lexicographical Numbers
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-26 15:04:22" itemprop="dateCreated datePublished" datetime="2018-03-26T15:04:22+08:00">2018-03-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-06 21:37:55" itemprop="dateModified" datetime="2018-12-06T21:37:55+08:00">2018-12-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/26/386-Lexicographical-Numbers/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/26/386-Lexicographical-Numbers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance<br>Author: JacksonLeon</p>
+<hr>
+<h2 id="386-Lexicographical-Numbers"><a href="#386-Lexicographical-Numbers" class="headerlink" title="386. Lexicographical Numbers"></a>386. Lexicographical Numbers</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Given an integer <code>n</code>, return <code>1-n</code> in lexicographical order. For example, given 13, return: <code>[1,10,11,12,13,2,3,4,5,6,7,8,9]</code>. Please optimize your algorithm to use less time and space. The input size may be as large as <code>5,000,000</code>.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/26/386-Lexicographical-Numbers/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1870,385 +2241,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/22/Markdown语法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/22/Markdown语法/" itemprop="url">
-                  MarkDown 语法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-22 15:01:45" itemprop="dateCreated datePublished" datetime="2018-03-22T15:01:45+08:00">2018-03-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-06 21:37:55" itemprop="dateModified" datetime="2018-12-06T21:37:55+08:00">2018-12-06</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/22/Markdown语法/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/Markdown语法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>NOTE:</strong> This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="noopener">Markdown: Syntax</a>.</p>
-<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/" target="_blank" rel="noopener">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" target="_blank" rel="noopener">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md" target="_blank" rel="noopener">查看这里</a> 。」–By @<a href="http://twitter.com/riku" target="_blank" rel="noopener">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN" target="_blank" rel="noopener">GitCafe</a></p>
-<p><strong>注：</strong> 本项目同时也托管于 <a href="https://github.com/riku/Markdown-Syntax-CN" target="_blank" rel="noopener">Github</a> 上，请通过 fork＋pull request 方式来帮忙改进本项目。</p>
-<h1 id="Markdown-语法说明-简体中文版"><a href="#Markdown-语法说明-简体中文版" class="headerlink" title="Markdown 语法说明 (简体中文版)"></a>Markdown 语法说明 (简体中文版)</h1><ul>
-<li><a href="#markdown">Markdown 语法说明 (简体中文版)</a><ul>
-<li><a href="#">概述</a><ul>
-<li><a href="#">宗旨</a></li>
-<li><a href="#html">兼容 HTML</a></li>
-<li><a href="#">特殊字符自动转换</a></li>
-</ul>
-</li>
-<li><a href="#">区块元素</a><ul>
-<li><a href="#">段落和换行</a></li>
-<li><a href="#">标题</a></li>
-<li><a href="#blockquotes">区块引用 Blockquotes</a></li>
-<li><a href="#">列表</a></li>
-<li><a href="#">代码区块</a></li>
-<li><a href="#">分隔线</a></li>
-</ul>
-</li>
-<li><a href="#">区段元素</a><ul>
-<li><a href="#">链接</a></li>
-<li><a href="#">强调</a></li>
-<li><a href="#">代码</a></li>
-<li><a href="#">图片</a></li>
-</ul>
-</li>
-<li><a href="#">其它</a><ul>
-<li><a href="#">自动链接</a></li>
-<li><a href="#">反斜杠</a></li>
-</ul>
-</li>
-<li><a href="#">感谢</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/22/Markdown语法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/21/Vi-Note/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/Vi-Note/" itemprop="url">
-                  Vi Tutorial
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-21 13:42:00" itemprop="dateCreated datePublished" datetime="2018-03-21T13:42:00+08:00">2018-03-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-07 09:32:35" itemprop="dateModified" datetime="2018-12-07T09:32:35+08:00">2018-12-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/21/Vi-Note/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/Vi-Note/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Vi批量删除内容"><a href="#Vi批量删除内容" class="headerlink" title="Vi批量删除内容"></a>Vi批量删除内容</h1><ul>
-<li><p>全部删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 进入文章末尾</span></span><br><span class="line">G   <span class="comment">##注意大写</span></span><br><span class="line">:1,:d  <span class="comment">## 删除全部内容</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除部分内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 定位到要删除的文档末尾</span></span><br><span class="line">200G</span><br><span class="line">:9,:d   <span class="comment">##删除9-200之间的内容</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2298,7 +2290,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2317,7 +2309,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2400,7 +2396,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">35</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2514,7 +2514,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.4k字</span>
+  <span class="post-count">博客全站共20.9k字</span>
 </div>
         
 
