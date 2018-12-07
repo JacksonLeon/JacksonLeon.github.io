@@ -38,7 +38,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[blog-update-processes]]></title>
+    <title><![CDATA[Hexo Blog Update Process]]></title>
     <url>%2F2018%2F08%2F03%2Fblog-update-processes%2F</url>
     <content type="text"><![CDATA[Hexo Blog Update ProcessAuthor: JacksonLeon Description This post is talking about the processes of updating the content of Blog. Steps Write posts anywhere use the Typora to edit the markdown files save files on the devices Upload it to remote repo through Git 123456# 添加文件$ git add --all# commit messages$ git commit -m "commit messages"# 推送更新到远程分支$ git push origin [branch] Sync the content from the remote repo on my Personal Computer 1$ git pull origin master Update the content on the blog 12345$ hexo clean$ hexo g# 本地测试$ hexo s$ ./deploy.sh]]></content>
       <categories>
