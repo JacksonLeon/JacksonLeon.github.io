@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Lau&#39;s Note">
 <meta property="og:description" content="MySQL NoteAuthor: JacksonLeon  Description 此文用来记录平时使用MySQL遇到的问题与心得. 本文长期更新.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T02:32:21.005Z">
+<meta property="og:updated_time" content="2018-12-07T03:40:40.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL Note">
 <meta name="twitter:description" content="MySQL NoteAuthor: JacksonLeon  Description 此文用来记录平时使用MySQL遇到的问题与心得. 本文长期更新.">
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2018-12-07 09:52:54 / 修改时间：10:32:21" itemprop="dateCreated datePublished" datetime="2018-12-07T09:52:54+08:00">2018-12-07</time>
+              <time title="创建时间：2018-12-07 09:52:54 / 修改时间：11:40:40" itemprop="dateCreated datePublished" datetime="2018-12-07T09:52:54+08:00">2018-12-07</time>
             
 
             
@@ -473,6 +473,7 @@
 </blockquote>
 <h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><h3 id="limit、between等语句"><a href="#limit、between等语句" class="headerlink" title="limit、between等语句"></a>limit、between等语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># sql-1</span><br><span class="line">select * FROM table_name limit index1,index2-index1;</span><br><span class="line"># sql-2</span><br><span class="line">select * FROM table_name</span><br><span class="line">WHERE id BETWEEN index1 AND index2 limit 100;</span><br></pre></td></tr></table></figure>
 <p>数据量比较大的话,<code>sql-2</code>的查询效率会比<code>sql-1</code>高很多,在数据量比较大的情况下一般使用between语句.</p>
+<h2 id="查询表头信息"><a href="#查询表头信息" class="headerlink" title="查询表头信息"></a>查询表头信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW COLUMNS FROM snatch.`jcy_prop`;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -495,7 +496,7 @@
   <p><span>本文标题:</span><a href="/2018/12/07/MySQL-Note/">MySQL Note</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
   <p><span>发布时间:</span>2018年12月07日 - 09:12</p>
-  <p><span>最后更新:</span>2018年12月07日 - 10:12</p>
+  <p><span>最后更新:</span>2018年12月07日 - 11:12</p>
   <p><span>原始链接:</span><a href="/2018/12/07/MySQL-Note/" title="MySQL Note">https://JacksonLeon.coding.me/2018/12/07/MySQL-Note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://JacksonLeon.coding.me/2018/12/07/MySQL-Note/" aria-label="复制成功！"></i></span>
   </p>
@@ -634,7 +635,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -657,7 +658,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -744,7 +749,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">37</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -794,7 +805,11 @@
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://jacksonleon.coding.me/2018/03/22/Markdown%E8%AF%AD%E6%B3%95/" title="MarkDown语法" target="_blank">MarkDown语法</a>
+                    <a href="https://jacksonleon.coding.me/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" title="Hackintosh Tutorial" target="_blank">Hackintosh Tutorial</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.coding.me/2018/03/22/Markdown%E8%AF%AD%E6%B3%95/" title="MarkDown Note" target="_blank">MarkDown Note</a>
                   </li>
                 
               </ul>
@@ -819,7 +834,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-Note"><span class="nav-number">1.</span> <span class="nav-text">MySQL Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB引擎自增id中断问题"><span class="nav-number">1.2.</span> <span class="nav-text">InnoDB引擎自增id中断问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询优化"><span class="nav-number">1.3.</span> <span class="nav-text">查询优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#limit、between等语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">limit、between等语句</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-Note"><span class="nav-number">1.</span> <span class="nav-text">MySQL Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB引擎自增id中断问题"><span class="nav-number">1.2.</span> <span class="nav-text">InnoDB引擎自增id中断问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询优化"><span class="nav-number">1.3.</span> <span class="nav-text">查询优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#limit、between等语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">limit、between等语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询表头信息"><span class="nav-number">1.4.</span> <span class="nav-text">查询表头信息</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -874,7 +889,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.9k字</span>
+  <span class="post-count">博客全站共22.0k字</span>
 </div>
         
 
