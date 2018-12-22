@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode  12345# 遇到的问题[root@me file]# git diff .gitignorediff --git a/.gitignore b/.gitignoreold mode 100644new mod">
+  <meta name="description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode   123456&amp;gt; # 遇到的问题&amp;gt; [root@me file]# git diff .gitignore&amp;gt; diff --git a/.gitignore b/.gitignore&amp;gt;">
 <meta name="keywords" content="Note,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git note">
 <meta property="og:url" content="https://JacksonLeon.coding.me/2018/03/20/Git-note/index.html">
 <meta property="og:site_name" content="Lau&#39;s Note">
-<meta property="og:description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode  12345# 遇到的问题[root@me file]# git diff .gitignorediff --git a/.gitignore b/.gitignoreold mode 100644new mod">
+<meta property="og:description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode   123456&amp;gt; # 遇到的问题&amp;gt; [root@me file]# git diff .gitignore&amp;gt; diff --git a/.gitignore b/.gitignore&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-17T11:19:35.932Z">
+<meta property="og:updated_time" content="2018-12-22T00:59:09.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git note">
-<meta name="twitter:description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode  12345# 遇到的问题[root@me file]# git diff .gitignorediff --git a/.gitignore b/.gitignoreold mode 100644new mod">
+<meta name="twitter:description" content="Git NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.  遇到的报错与解决办法 File Mode   123456&amp;gt; # 遇到的问题&amp;gt; [root@me file]# git diff .gitignore&amp;gt; diff --git a/.gitignore b/.gitignore&amp;gt;">
 
 
 
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-17 19:19:35" itemprop="dateModified" datetime="2018-12-17T19:19:35+08:00">2018-12-17</time>
+                <time title="修改时间：2018-12-22 08:59:09" itemprop="dateModified" datetime="2018-12-22T08:59:09+08:00">2018-12-22</time>
               
             
           </span>
@@ -452,11 +452,32 @@
 <h2 id="遇到的报错与解决办法"><a href="#遇到的报错与解决办法" class="headerlink" title="遇到的报错与解决办法"></a>遇到的报错与解决办法</h2><ul>
 <li><strong>File Mode</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 遇到的问题</span><br><span class="line">[root@me file]# git diff .gitignore</span><br><span class="line">diff --git a/.gitignore b/.gitignore</span><br><span class="line">old mode 100644</span><br><span class="line">new mode 100755</span><br></pre></td></tr></table></figure>
+<blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment"># 遇到的问题</span></span><br><span class="line">&gt; [root@me file]<span class="comment"># git diff .gitignore</span></span><br><span class="line">&gt; diff --git a/.gitignore b/.gitignore</span><br><span class="line">&gt; old mode 100644</span><br><span class="line">&gt; new mode 100755</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <blockquote>
 <p>解决办法</p>
 <p>filemode的变化，文件chmod后其文件某些位是改变了的，如果严格的比较原文件和chmod后的文件，两者是有区别的，但是源代码通常只关心文本内容，因此chmod产生的变化应该忽略，所以设置一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; git config --add core.filemode false</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p><code>git config --add core.filemode false</code></p>
+</blockquote>
+<ul>
+<li><strong>在.gitignore文件中添加忽略规则无效</strong></li>
+</ul>
+<blockquote>
+<p>项目开始的时候 没有将一些无关文件配置进 .gitignore里面。导致文件已经进行跟踪了，但是目前想把这些文件add 到 .gitignore文件中，但是发现没有效果。 修改文件之后，git 依然检测到了，文件改动。</p>
+<p>解决办法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 原来git有一条规则，“如果一个文件一开始没有添加到.gitignore里面，中途添加进去。git将不会忽略这个文件。”在这种情况下，必须使用 git rm --cached &lt; file name &gt; 这个命令 来 移除对这个文件的跟踪，然后将 这个不想被跟踪的文件 添加到 .gitignore文件里面 就可以了。</span><br><span class="line">&gt; 做完这些工作之后 你还必须 再 commit 一次，这次commit之后 ，文件就可以被忽略了。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h2 id="fatal-refusing-to-merge-unrelated-histories"><a href="#fatal-refusing-to-merge-unrelated-histories" class="headerlink" title="fatal: refusing to merge unrelated histories"></a><code>fatal: refusing to merge unrelated histories</code></h2></li>
+</ul>
+<blockquote>
+<p>在使用Git创建项目的时候，在两个分支合并的时候，出现了下面的这个错误。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;  ~/Documents/MarkDown/Hexo_blog/.deploy/JacksonLeon.github.iomaster git merge origin/master</span><br><span class="line">&gt; fatal: refusing to merge unrelated histories</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>解决办法</p>
+<p>在你操作命令后面加<code>--allow-unrelated-histories</code> ,例如<code>git merge master --allow-unrelated-histories</code></p>
 </blockquote>
 <h2 id="Git-Workspace"><a href="#Git-Workspace" class="headerlink" title="Git Workspace"></a>Git Workspace</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Workspace：工作区</span><br><span class="line">Index/Stage：暂存区</span><br><span class="line">Repository：仓库区（或本地仓库）</span><br><span class="line">Remote：远程仓库</span><br></pre></td></tr></table></figure>
 <h2 id="Git-Push-免密码登陆"><a href="#Git-Push-免密码登陆" class="headerlink" title="Git Push 免密码登陆"></a>Git Push 免密码登陆</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##设置git config --global</span></span><br><span class="line"><span class="comment">##credential.helper设置为store</span></span><br><span class="line">$ git config --global credential.helper store</span><br></pre></td></tr></table></figure>
@@ -493,7 +514,7 @@
   <p><span>本文标题:</span><a href="/2018/03/20/Git-note/">Git note</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
   <p><span>发布时间:</span>2018年03月20日 - 21:03</p>
-  <p><span>最后更新:</span>2018年12月17日 - 19:12</p>
+  <p><span>最后更新:</span>2018年12月22日 - 08:12</p>
   <p><span>原始链接:</span><a href="/2018/03/20/Git-note/" title="Git note">https://JacksonLeon.coding.me/2018/03/20/Git-note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://JacksonLeon.coding.me/2018/03/20/Git-note/" aria-label="复制成功！"></i></span>
   </p>
@@ -632,7 +653,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -659,7 +680,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -752,7 +775,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -831,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Note"><span class="nav-number">1.</span> <span class="nav-text">Git Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的报错与解决办法"><span class="nav-number">1.2.</span> <span class="nav-text">遇到的报错与解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Workspace"><span class="nav-number">1.3.</span> <span class="nav-text">Git Workspace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Push-免密码登陆"><span class="nav-number">1.4.</span> <span class="nav-text">Git Push 免密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看设置是否完成"><span class="nav-number">1.5.</span> <span class="nav-text">查看设置是否完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Push-操作"><span class="nav-number">1.6.</span> <span class="nav-text">Git Push 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Repo"><span class="nav-number">1.7.</span> <span class="nav-text">新建Repo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.8.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加删除文件"><span class="nav-number">1.9.</span> <span class="nav-text">增加删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码提交"><span class="nav-number">1.10.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.11.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签操作"><span class="nav-number">1.12.</span> <span class="nav-text">标签操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看信息"><span class="nav-number">1.13.</span> <span class="nav-text">查看信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程同步"><span class="nav-number">1.14.</span> <span class="nav-text">远程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">1.15.</span> <span class="nav-text">撤销操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Note"><span class="nav-number">1.</span> <span class="nav-text">Git Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的报错与解决办法"><span class="nav-number">1.2.</span> <span class="nav-text">遇到的报错与解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fatal-refusing-to-merge-unrelated-histories"><span class="nav-number">1.3.</span> <span class="nav-text">fatal: refusing to merge unrelated histories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Workspace"><span class="nav-number">1.4.</span> <span class="nav-text">Git Workspace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Push-免密码登陆"><span class="nav-number">1.5.</span> <span class="nav-text">Git Push 免密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看设置是否完成"><span class="nav-number">1.6.</span> <span class="nav-text">查看设置是否完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Push-操作"><span class="nav-number">1.7.</span> <span class="nav-text">Git Push 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Repo"><span class="nav-number">1.8.</span> <span class="nav-text">新建Repo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.9.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加删除文件"><span class="nav-number">1.10.</span> <span class="nav-text">增加删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码提交"><span class="nav-number">1.11.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.12.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签操作"><span class="nav-number">1.13.</span> <span class="nav-text">标签操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看信息"><span class="nav-number">1.14.</span> <span class="nav-text">查看信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程同步"><span class="nav-number">1.15.</span> <span class="nav-text">远程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">1.16.</span> <span class="nav-text">撤销操作</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -886,7 +915,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共23.1k字</span>
+  <span class="post-count">博客全站共23.9k字</span>
 </div>
         
 
