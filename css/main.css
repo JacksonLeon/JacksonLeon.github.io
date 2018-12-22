@@ -1896,7 +1896,11 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
+<<<<<<< HEAD
   background: #0e3c90;
+=======
+  background: #36e50f;
+>>>>>>> origin/master
 }
 .links-of-blogroll {
   font-size: 13px;
