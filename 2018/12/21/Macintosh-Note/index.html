@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="Macintosh NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Mac遇到的问题与心得. 本文长期更新.">
-<meta name="keywords" content="Note,Macintosh">
+<meta name="keywords" content="Macintosh,Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Macintosh Note">
 <meta property="og:url" content="https://JacksonLeon.coding.me/2018/12/21/Macintosh-Note/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyego5tc13j30e90fuq56.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fyegoil35vj30e80g2q5e.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fyegvhwe3ij30fd0dudhd.jpg">
-<meta property="og:updated_time" content="2018-12-22T06:31:56.668Z">
+<meta property="og:updated_time" content="2018-12-24T01:25:30.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Macintosh Note">
 <meta name="twitter:description" content="Macintosh NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Mac遇到的问题与心得. 本文长期更新.">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 14:31:56" itemprop="dateModified" datetime="2018-12-22T14:31:56+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-24 09:25:30" itemprop="dateModified" datetime="2018-12-24T09:25:30+08:00">2018-12-24</time>
               
             
           </span>
@@ -498,7 +498,13 @@
 </ol>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyefe5aim3j31hc0u0x2k.jpg" alt="image-20181221160224918"></p>
 <h2 id="iTerm-2"><a href="#iTerm-2" class="headerlink" title="iTerm 2"></a>iTerm 2</h2><h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><ol>
-<li>首先下载 <a href="https://link.jianshu.com/?t=http%3A%2F%2Fwww.iterm2.com%2F" target="_blank" rel="noopener">iTerm 2</a></li>
+<li><p>安装Homebrew</p>
+<blockquote>
+<p><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</code></p>
+</blockquote>
+</li>
+<li><p>首先下载 <a href="https://link.jianshu.com/?t=http%3A%2F%2Fwww.iterm2.com%2F" target="_blank" rel="noopener">iTerm 2</a></p>
+</li>
 <li><p>安装<a href="https://link.jianshu.com/?t=https%3A%2F%2Fgithub.com%2Frobbyrussell%2Foh-my-zsh" target="_blank" rel="noopener">oh-my-zsh</a></p>
 <p><code>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</code></p>
 </li>
@@ -537,17 +543,47 @@
 </li>
 </ol>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
-<li>默认使用zsh: <code>chsh -s /bin/zsh</code></li>
-<li>取消显示计算机名</li>
-</ol>
+<li><p>默认使用zsh: <code>chsh -s /bin/zsh</code></p>
+</li>
+<li><p>取消显示计算机名</p>
 <blockquote>
 <p>在~/.oh-my-zsh/themes路径下找到agnoster.zsh-theme文件，将里面的build_prompt下的prompt_context字段在注释掉即可。</p>
 </blockquote>
-<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p><strong>偏好设置截图</strong></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyegnspbpbj30e70bgta3.jpg" alt="image-20181221164616930"></p>
+</li>
+<li><p>跳板机互传文件</p>
+<blockquote>
+<p>由于使用跳板机，所以这里需要使用lrzsz</p>
+</blockquote>
+<ul>
+<li><p>安装lrzsz</p>
+<p><code>brew install lrzsz</code></p>
+</li>
+<li><p>配置lrzsz</p>
+<p>在/usr/local/bin 目录下创建两个文件<code>iterm2-recv-zmodem.sh</code>， <code>iterm2-send-zmodem.sh</code></p>
+<ul>
+<li><p>iterm2-recv-zmodem.sh</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author: Matt Mastracci (matthew@mastracci.com)</span></span><br><span class="line"><span class="comment"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span></span><br><span class="line"><span class="comment"># licensed under cc-wiki with attribution required </span></span><br><span class="line"><span class="comment"># Remainder of script public domain</span></span><br><span class="line"></span><br><span class="line">osascript -e <span class="string">'tell application "iTerm2" to version'</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$NAME</span> = <span class="string">"iTerm"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    FILE=`osascript -e <span class="string">'tell application "iTerm" to activate'</span> -e <span class="string">'tell application "iTerm" to set thefile to choose folder with prompt "Choose a folder to place received files in"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    FILE=`osascript -e <span class="string">'tell application "iTerm2" to activate'</span> -e <span class="string">'tell application "iTerm2" to set thefile to choose folder with prompt "Choose a folder to place received files in"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> Cancelled.</span><br><span class="line">    <span class="comment"># Send ZModem cancel</span></span><br><span class="line">    <span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">    sleep 1</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line">    /usr/<span class="built_in">local</span>/bin/rz -E -e -b</span><br><span class="line">    sleep 1</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Sent \-\&gt; $FILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>iterm2-send-zmodem.sh</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author: Matt Mastracci (matthew@mastracci.com)</span></span><br><span class="line"><span class="comment"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span></span><br><span class="line"><span class="comment"># licensed under cc-wiki with attribution required </span></span><br><span class="line"><span class="comment"># Remainder of script public domain</span></span><br><span class="line"></span><br><span class="line">osascript -e <span class="string">'tell application "iTerm2" to version'</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$NAME</span> = <span class="string">"iTerm"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    FILE=`osascript -e <span class="string">'tell application "iTerm" to activate'</span> -e <span class="string">'tell application "iTerm" to set thefile to choose file with prompt "Choose a file to send"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    FILE=`osascript -e <span class="string">'tell application "iTerm2" to activate'</span> -e <span class="string">'tell application "iTerm2" to set thefile to choose file with prompt "Choose a file to send"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> Cancelled.</span><br><span class="line">    <span class="comment"># Send ZModem cancel</span></span><br><span class="line">    <span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">    sleep 1</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    /usr/<span class="built_in">local</span>/bin/sz <span class="string">"<span class="variable">$FILE</span>"</span> -e -b</span><br><span class="line">    sleep 1</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Received $FILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将文件写好后保存好，使用如下命令添加权限</p>
+<p><code>chmod a+x iterm2-*</code></p>
+</li>
+</ul>
+</li>
+<li><p>配置iTerm2</p>
+<p>点击 iTerm2 的设置界面 Perference-&gt; Profiles -&gt; Default -&gt; Advanced -&gt; Triggers 的 Edit 按钮</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Regular expression: rz waiting to receive.\*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><h3 id="偏好设置截图"><a href="#偏好设置截图" class="headerlink" title="偏好设置截图"></a><strong>偏好设置截图</strong></h3><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyegnspbpbj30e70bgta3.jpg" alt="image-20181221164616930"></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyego5tc13j30e90fuq56.jpg" alt="image-20181221164638191"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyegoil35vj30e80g2q5e.jpg" alt="image-20181221164658153"></p>
 <p>「注」iPic需要在App Store中提前下载好.</p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">标题：#</span><br><span class="line">最大标题：command + 1 或者：#</span><br><span class="line">大标题：command + 2 或者：##</span><br><span class="line">标准标题：command + 3 或者：###</span><br><span class="line">中标题：command + 4 或者：####</span><br><span class="line">小标题：command + 5 或者：#####</span><br><span class="line">插入表格：command + T</span><br><span class="line">插入代码：command + Alt +c </span><br><span class="line">行间公式 command + Alt + b</span><br><span class="line">段落：command + 0</span><br><span class="line">竖线: command + Alt +q</span><br><span class="line">有序列表（1.  2.）: 输入数字+“.”之后输入空格 或者：command + Alt + o   </span><br><span class="line">黑点标记: command + Alt + u  </span><br><span class="line">隔离线: shift + command +  -</span><br><span class="line">超链接：command + Alt + l</span><br><span class="line">插入链接：command +k</span><br><span class="line">下划线：command +u </span><br><span class="line">加粗：command +b</span><br><span class="line">搜索：command +f</span><br></pre></td></tr></table></figure>
 <h2 id="V2RayX"><a href="#V2RayX" class="headerlink" title="V2RayX"></a>V2RayX</h2><ul>
 <li><a href="https://github.com/Cenmrev/V2RayX/releases" target="_blank" rel="noopener">GitHub</a>下载</li>
 <li><p>通过Homebrew-Cask直接安装</p>
@@ -581,7 +617,7 @@
   <p><span>本文标题:</span><a href="/2018/12/21/Macintosh-Note/">Macintosh Note</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
   <p><span>发布时间:</span>2018年12月21日 - 15:12</p>
-  <p><span>最后更新:</span>2018年12月22日 - 14:12</p>
+  <p><span>最后更新:</span>2018年12月24日 - 09:12</p>
   <p><span>原始链接:</span><a href="/2018/12/21/Macintosh-Note/" title="Macintosh Note">https://JacksonLeon.coding.me/2018/12/21/Macintosh-Note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://JacksonLeon.coding.me/2018/12/21/Macintosh-Note/" aria-label="复制成功！"></i></span>
   </p>
@@ -614,9 +650,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
-          
             <a href="/tags/Macintosh/" rel="tag"><i class="fa fa-tag"></i> Macintosh</a>
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
           
         </div>
       
@@ -638,6 +674,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/22/Docker-Tutorial/" rel="prev" title="Docker Tutorial">
+                Docker Tutorial <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -716,7 +756,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -745,7 +785,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -844,7 +886,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -923,7 +967,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Macintosh-Note"><span class="nav-number">1.</span> <span class="nav-text">Macintosh Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必备软件"><span class="nav-number">1.2.</span> <span class="nav-text">必备软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iTerm-2"><span class="nav-number">1.3.</span> <span class="nav-text">iTerm 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.2.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typora"><span class="nav-number">1.4.</span> <span class="nav-text">Typora</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V2RayX"><span class="nav-number">1.5.</span> <span class="nav-text">V2RayX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code"><span class="nav-number">1.6.</span> <span class="nav-text">VS Code</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Macintosh-Note"><span class="nav-number">1.</span> <span class="nav-text">Macintosh Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必备软件"><span class="nav-number">1.2.</span> <span class="nav-text">必备软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iTerm-2"><span class="nav-number">1.3.</span> <span class="nav-text">iTerm 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.2.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typora"><span class="nav-number">1.4.</span> <span class="nav-text">Typora</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#偏好设置截图"><span class="nav-number">1.4.1.</span> <span class="nav-text">偏好设置截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">1.4.2.</span> <span class="nav-text">快捷键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V2RayX"><span class="nav-number">1.5.</span> <span class="nav-text">V2RayX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code"><span class="nav-number">1.6.</span> <span class="nav-text">VS Code</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -978,7 +1022,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.4k字</span>
+  <span class="post-count">博客全站共26.0k字</span>
 </div>
         
 <div class="busuanzi-count">
