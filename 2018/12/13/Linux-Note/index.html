@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Lau&#39;s Note">
 <meta property="og:description" content="Linux NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Linux遇到的问题与心得. 本文长期更新.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-21T02:47:40.677Z">
+<meta property="og:updated_time" content="2018-12-26T07:48:12.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Note">
 <meta name="twitter:description" content="Linux NoteAuthor: JacksonLeon  Description 此文用来记录平时使用Linux遇到的问题与心得. 本文长期更新.">
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-21 10:47:40" itemprop="dateModified" datetime="2018-12-21T10:47:40+08:00">2018-12-21</time>
+                <time title="修改时间：2018-12-26 15:48:12" itemprop="dateModified" datetime="2018-12-26T15:48:12+08:00">2018-12-26</time>
               
             
           </span>
@@ -476,9 +476,16 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2><ul>
-<li>sudo</li>
-</ul>
+<li><p>sudo</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为某条命令指定用户</span></span><br><span class="line">sudo -Hu user-name commond</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Linux-配置"><a href="#Linux-配置" class="headerlink" title="Linux 配置"></a>Linux 配置</h2><ul>
+<li><p>Java</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看JDK路径</span></span><br><span class="line">whereis java</span><br><span class="line"><span class="built_in">which</span> java （java执行路径）</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置JDK环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.91.x86_64</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
 <h2 id="Linux-发行版"><a href="#Linux-发行版" class="headerlink" title="Linux 发行版"></a>Linux 发行版</h2><ul>
 <li>Ubuntu</li>
 <li>Mint</li>
@@ -492,14 +499,12 @@
 <p>原因</p>
 <p>Windows和Ubuntu在默认情况下看待硬件时间（主板上的BOIS显示的时间）的方式不一样</p>
 <ul>
-<li><p>Windows把系统硬件时间当作本地时间（Local time），即操作系统中显示的时间跟BIOS中显示的时间是一样的.</p>
-</li>
-<li><p>Linux/Unix/Mac把硬件时间当作UTC（Universal Time Coordinated,协调世界时），操作系统中显示的时间是硬件时间经过换算得来.</p>
-</li>
+<li>Windows把系统硬件时间当作本地时间（Local time），即操作系统中显示的时间跟BIOS中显示的时间是一样的.</li>
+<li>Linux/Unix/Mac把硬件时间当作UTC（Universal Time Coordinated,协调世界时），操作系统中显示的时间是硬件时间经过换算得来.</li>
 </ul>
 </blockquote>
 <p>解决方案</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 更改Windows</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果要让Windows把硬件时间当作UTC</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在CMD窗口（快捷键Win+R，输入cmd，回车）中输入如下命令，可以快速编辑注册表</span></span><br><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者直接编辑注册表，打开注册表编辑器（快捷键Win+R，输入regedit，回车），并找到一下目录位置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1，重启后时间即回复正常</span></span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 更改Windows</span><br><span class="line"># 如果要让Windows把硬件时间当作UTC</span><br><span class="line"># 在CMD窗口（快捷键Win+R，输入cmd，回车）中输入如下命令，可以快速编辑注册表</span><br><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br><span class="line"># 或者直接编辑注册表，打开注册表编辑器（快捷键Win+R，输入regedit，回车），并找到一下目录位置</span><br><span class="line"># 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1，重启后时间即回复正常</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -522,7 +527,7 @@
   <p><span>本文标题:</span><a href="/2018/12/13/Linux-Note/">Linux Note</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
   <p><span>发布时间:</span>2018年12月13日 - 15:12</p>
-  <p><span>最后更新:</span>2018年12月21日 - 10:12</p>
+  <p><span>最后更新:</span>2018年12月26日 - 15:12</p>
   <p><span>原始链接:</span><a href="/2018/12/13/Linux-Note/" title="Linux Note">https://JacksonLeon.coding.me/2018/12/13/Linux-Note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://JacksonLeon.coding.me/2018/12/13/Linux-Note/" aria-label="复制成功！"></i></span>
   </p>
@@ -876,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Note"><span class="nav-number">1.</span> <span class="nav-text">Linux Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-命令"><span class="nav-number">1.2.</span> <span class="nav-text">Linux 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-发行版"><span class="nav-number">1.3.</span> <span class="nav-text">Linux 发行版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.4.1.</span> <span class="nav-text">问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Note"><span class="nav-number">1.</span> <span class="nav-text">Linux Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-命令"><span class="nav-number">1.2.</span> <span class="nav-text">Linux 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-配置"><span class="nav-number">1.3.</span> <span class="nav-text">Linux 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-发行版"><span class="nav-number">1.4.</span> <span class="nav-text">Linux 发行版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.5.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.5.1.</span> <span class="nav-text">问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -931,7 +936,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.6k字</span>
+  <span class="post-count">博客全站共27.7k字</span>
 </div>
         
 <div class="busuanzi-count">
