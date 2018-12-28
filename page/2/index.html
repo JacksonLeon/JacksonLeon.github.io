@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/05/20/Opencv-Note/">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/07/30/627-Swap-Salary/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JacksonLeon">
@@ -359,8 +359,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/20/Opencv-Note/" itemprop="url">
-                  Opencv Tutorial
+                <a class="post-title-link" href="/2018/07/30/627-Swap-Salary/" itemprop="url">
+                  627. Swap Salary
                 </a>
               
             
@@ -386,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2018-05-20 23:06:44" itemprop="dateCreated datePublished" datetime="2018-05-20T23:06:44+08:00">2018-05-20</time>
+              <time title="创建时间：2018-07-30 19:58:46" itemprop="dateCreated datePublished" datetime="2018-07-30T19:58:46+08:00">2018-07-30</time>
             
 
             
@@ -403,11 +403,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 14:40:14" itemprop="dateModified" datetime="2018-12-22T14:40:14+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -417,8 +435,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/20/Opencv-Note/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/05/20/Opencv-Note/" itemprop="commentCount"></span>
+                <a href="/2018/07/30/627-Swap-Salary/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/30/627-Swap-Salary/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,15 +465,17 @@
 
       
         
-          <h1 id="Opencv-Note"><a href="#Opencv-Note" class="headerlink" title="Opencv Note"></a>Opencv Note</h1><p>Author: JacksonLeon</p>
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
 <hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>此文用来记录平时使用OpenCV遇到的问题与心得.</p>
-<p>本文长期更新.</p>
-</blockquote>
+<h2 id="627-Swap-Salary"><a href="#627-Swap-Salary" class="headerlink" title="627. Swap Salary"></a>627. Swap Salary</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given a table <code>salary</code>, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | m   | 2500   |</span><br><span class="line">| 2  | B    | f   | 1500   |</span><br><span class="line">| 3  | C    | m   | 5500   |</span><br><span class="line">| 4  | D    | f   | 500    |</span><br></pre></td></tr></table></figure>
+<p>After running your query, the above salary table should have the following rows: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | f   | 2500   |</span><br><span class="line">| 2  | B    | m   | 1500   |</span><br><span class="line">| 3  | C    | f   | 5500   |</span><br><span class="line">| 4  | D    | m   | 500    |</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/20/Opencv-Note/#more" rel="contents">
+            <a class="btn" href="/2018/07/30/627-Swap-Salary/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -515,7 +535,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/04/12/Novel-python/">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/24/654-Maximum-Binary-Tree/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JacksonLeon">
@@ -534,8 +554,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/12/Novel-python/" itemprop="url">
-                  小说爬虫
+                <a class="post-title-link" href="/2018/03/24/654-Maximum-Binary-Tree/" itemprop="url">
+                  654. Maximum Binary Tree
                 </a>
               
             
@@ -561,7 +581,7 @@
                 
               
 
-              <time title="创建时间：2018-04-12 10:57:34" itemprop="dateCreated datePublished" datetime="2018-04-12T10:57:34+08:00">2018-04-12</time>
+              <time title="创建时间：2018-03-24 23:35:37" itemprop="dateCreated datePublished" datetime="2018-03-24T23:35:37+08:00">2018-03-24</time>
             
 
             
@@ -578,11 +598,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 14:38:21" itemprop="dateModified" datetime="2018-12-22T14:38:21+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -592,8 +630,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/12/Novel-python/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/Novel-python/" itemprop="commentCount"></span>
+                <a href="/2018/03/24/654-Maximum-Binary-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/654-Maximum-Binary-Tree/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -622,18 +660,992 @@
 
       
         
-          <h1 id="使用Python爬虫爬取网络小说"><a href="#使用Python爬虫爬取网络小说" class="headerlink" title="使用Python爬虫爬取网络小说"></a>使用Python爬虫爬取网络小说</h1><ul>
-<li><p>小说网址</p>
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="654-Maximum-Binary-Tree"><a href="#654-Maximum-Binary-Tree" class="headerlink" title="654. Maximum Binary Tree"></a>654. Maximum Binary Tree</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/24/654-Maximum-Binary-Tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/04/09/657-Judge-Route-Circle/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/09/657-Judge-Route-Circle/" itemprop="url">
+                  657. Judge Route Circle
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-09 16:19:57" itemprop="dateCreated datePublished" datetime="2018-04-09T16:19:57+08:00">2018-04-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/09/657-Judge-Route-Circle/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/04/09/657-Judge-Route-Circle/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="657-Judge-Route-Circle"><a href="#657-Judge-Route-Circle" class="headerlink" title="657. Judge Route Circle"></a>657. Judge Route Circle</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.<br>The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are <code>R</code> (Right), <code>L</code> (Left), <code>U</code> (Up) and <code>D</code> (down). The output should be true or false representing whether the robot makes a circle.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/09/657-Judge-Route-Circle/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/25/804-Unique-Morse-Code-Words/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/804-Unique-Morse-Code-Words/" itemprop="url">
+                  804. Unique Morse Code Words
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-25 14:04:15" itemprop="dateCreated datePublished" datetime="2018-03-25T14:04:15+08:00">2018-03-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/25/804-Unique-Morse-Code-Words/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/804-Unique-Morse-Code-Words/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="804-Unique-Morse-Code-Words"><a href="#804-Unique-Morse-Code-Words" class="headerlink" title="804. Unique Morse Code Words"></a>804. Unique Morse Code Words</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: <code>&quot;a&quot;</code> maps to <code>&quot;.-&quot;</code>, <code>&quot;b&quot;</code> maps to <code>&quot;-...&quot;</code>, <code>&quot;c&quot;</code> maps to <code>&quot;-.-.&quot;</code>, and so on. </p>
+</blockquote>
 <blockquote>
-<p><a href="https://www.uxiaoshuo.com/" target="_blank" rel="noopener">https://www.uxiaoshuo.com/</a></p>
+<p>For convenience, the full table for the 26 letters of the English alphabet is given below:</p>
 </blockquote>
-</li>
-<li><p>使用<a href="https://www.uxiaoshuo.com/124/124629/" target="_blank" rel="noopener">绝色妖娆：鬼医至尊</a>为例（主要是女朋友想看<code>^_^</code>）</p>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter. For example, “cab” can be written as “-.-.-….-“, (which is the concatenation “-.-.” + “-…” + “.-“). We’ll call such a concatenation, the transformation of a word. Return the number of different transformations among all words we have.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/25/804-Unique-Morse-Code-Words/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/25/807-Max-Increase-to-Keep-City-Skyline/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/807-Max-Increase-to-Keep-City-Skyline/" itemprop="url">
+                  807. Max Increase to Keep City Skyline
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-25 19:12:34" itemprop="dateCreated datePublished" datetime="2018-03-25T19:12:34+08:00">2018-03-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/25/807-Max-Increase-to-Keep-City-Skyline/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/807-Max-Increase-to-Keep-City-Skyline/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="807-Max-Increase-to-Keep-City-Skyline"><a href="#807-Max-Increase-to-Keep-City-Skyline" class="headerlink" title="807. Max Increase to Keep City Skyline"></a>807. Max Increase to Keep City Skyline</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>In a 2 dimensional array grid, each value <code>grid[i][j]</code> represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. At the end, the “skyline” when viewed from all four directions of the grid, i.e. <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>, must be the same as the skyline of the original grid. A city’s skyline is the outer contour of the rectangles formed by all the buildings when viewed from a distance. See the following example.What is the <code>maximum total sum</code> that the height of the buildings can be increased?</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/25/807-Max-Increase-to-Keep-City-Skyline/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/07/15/832-Flipping-an-Image/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/15/832-Flipping-an-Image/" itemprop="url">
+                  832. Flipping an Image
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-15 18:53:14" itemprop="dateCreated datePublished" datetime="2018-07-15T18:53:14+08:00">2018-07-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/15/832-Flipping-an-Image/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/15/832-Flipping-an-Image/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="832-Flipping-an-Image"><a href="#832-Flipping-an-Image" class="headerlink" title="832. Flipping an Image"></a>832. Flipping an Image</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.<br>To flip an image horizontally means that each row of the image is reversed.  For example, flipping <code>[1, 1, 0]</code> horizontally results in <code>[0, 1, 1]</code>.<br>To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting <code>[0, 1, 1]</code> results in <code>[1, 0, 0]</code>.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/15/832-Flipping-an-Image/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/07/30/852-Peak-Index-in-a-Mountain-Array/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/30/852-Peak-Index-in-a-Mountain-Array/" itemprop="url">
+                  852. Peak Index in a Mountain Array
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-30 18:31:11" itemprop="dateCreated datePublished" datetime="2018-07-30T18:31:11+08:00">2018-07-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/30/852-Peak-Index-in-a-Mountain-Array/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/30/852-Peak-Index-in-a-Mountain-Array/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="852-Peak-Index-in-a-Mountain-Array"><a href="#852-Peak-Index-in-a-Mountain-Array" class="headerlink" title="852. Peak Index in a Mountain Array"></a>852. Peak Index in a Mountain Array</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Let’s call an array <code>A</code> a <em>mountain</em> if the following properties hold:</p>
+<ul>
+<li><code>A.length &gt;= 3</code></li>
+<li>There exists some <code>0 &lt; i &lt; A.length - 1</code> such that <code>A[0] &lt; A[1] &lt; ... A[i-1] &lt; A[i] &gt; A[i+1] &gt; ... &gt; A[A.length - 1]</code></li>
 </ul>
+<p>Given an array that is definitely a mountain, return any <code>i</code> such that <code>A[0] &lt; A[1] &lt; ... A[i-1] &lt; A[i] &gt; A[i+1] &gt; ... &gt; A[A.length - 1]</code>.</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/12/Novel-python/#more" rel="contents">
+            <a class="btn" href="/2018/07/30/852-Peak-Index-in-a-Mountain-Array/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +1705,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/04/24/NLP-in-my-mind/">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/07/30/876-Middle-of-the-Linked-List/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JacksonLeon">
@@ -712,8 +1724,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/24/NLP-in-my-mind/" itemprop="url">
-                  我脑海中的NLP
+                <a class="post-title-link" href="/2018/07/30/876-Middle-of-the-Linked-List/" itemprop="url">
+                  876. Middle of the Linked List
                 </a>
               
             
@@ -739,7 +1751,7 @@
                 
               
 
-              <time title="创建时间：2018-04-24 21:56:28" itemprop="dateCreated datePublished" datetime="2018-04-24T21:56:28+08:00">2018-04-24</time>
+              <time title="创建时间：2018-07-30 18:59:07" itemprop="dateCreated datePublished" datetime="2018-07-30T18:59:07+08:00">2018-07-30</time>
             
 
             
@@ -756,11 +1768,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 14:37:30" itemprop="dateModified" datetime="2018-12-22T14:37:30+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-28 15:47:38" itemprop="dateModified" datetime="2018-12-28T15:47:38+08:00">2018-12-28</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -770,8 +1800,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/24/NLP-in-my-mind/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/04/24/NLP-in-my-mind/" itemprop="commentCount"></span>
+                <a href="/2018/07/30/876-Middle-of-the-Linked-List/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/30/876-Middle-of-the-Linked-List/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -800,13 +1830,20 @@
 
       
         
-          
-            <p>中华文化博大精深，汉语更是其中的代表，近年来的NLP更是有了非常多的“用武之地”。例如，语义智能分析，当女朋友问你“爱不爱我”，有的时候是“我要包包”，有的时候是“我要口红”，有的时候就是单纯的想要你的肯定的回答，这个时候NLP就可以起到救命的作用^_^。</p>
-<p>“沟通，是人最紧迫又最困难的事。除了生存，人解决孤独、恐惧等所有精神层面的问题，都要靠沟通。”这些年机器翻译、机器写新闻甚至是机器写诗都陆续出现，机器表现出的强大的能力背后是自然语言处理对于机器与人类之间沟通的作用。</p>
-<p>想象一下，人类与机器沟通，甚至通过机器与自然界沟通，这是一个多么宏大的愿景啊！以前看过一部电影叫做《Her》，当初看这部电影主要是因为女神斯嘉丽·约翰逊给她配的音，但是看过之后反而被这部电影所描绘的世界给吸引住了。在《Her》的世界里，人类需要做什么直接告诉“Her”就行，孤单的时候“Her”可以是一个真正懂你的“完美情人”，而不仅仅是近年来只能订闹钟、打电话、查天气的Siri、Cortana、Google Assistant、小爱同学之流。</p>
-<p>我认为未来的人工智能，必须是能够听懂及能够一定程度上满足人类需求的“工具”，那么这个“听懂”的前提很大一部分上依赖于现在的自然语言处理，也是未来人工智能的入口。</p>
-
-          
+          <h1 id="LeetCode-Note"><a href="#LeetCode-Note" class="headerlink" title="LeetCode Note"></a>LeetCode Note</h1><p>Sorted by Acceptance</p>
+<p>Author: JacksonLeon</p>
+<hr>
+<h2 id="876-Middle-of-the-Linked-List"><a href="#876-Middle-of-the-Linked-List" class="headerlink" title="876. Middle of the Linked List"></a>876. Middle of the Linked List</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Given a non-empty, singly linked list with head node <code>head</code>, return a middle node of linked list.</p>
+<p>If there are two middle nodes, return the second middle node.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/30/876-Middle-of-the-Linked-List/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -862,7 +1899,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/04/28/MatLab-Note/">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/08/03/blog-update-processes/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JacksonLeon">
@@ -881,8 +1918,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/MatLab-Note/" itemprop="url">
-                  MATLAB Note
+                <a class="post-title-link" href="/2018/08/03/blog-update-processes/" itemprop="url">
+                  Hexo Blog Update Process
                 </a>
               
             
@@ -908,7 +1945,7 @@
                 
               
 
-              <time title="创建时间：2018-04-28 16:48:06" itemprop="dateCreated datePublished" datetime="2018-04-28T16:48:06+08:00">2018-04-28</time>
+              <time title="创建时间：2018-08-03 16:24:52" itemprop="dateCreated datePublished" datetime="2018-08-03T16:24:52+08:00">2018-08-03</time>
             
 
             
@@ -925,11 +1962,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 14:36:49" itemprop="dateModified" datetime="2018-12-22T14:36:49+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-28 15:02:51" itemprop="dateModified" datetime="2018-12-28T15:02:51+08:00">2018-12-28</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -939,8 +1994,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/28/MatLab-Note/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/04/28/MatLab-Note/" itemprop="commentCount"></span>
+                <a href="/2018/08/03/blog-update-processes/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/03/blog-update-processes/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -969,1148 +2024,190 @@
 
       
         
-          <h1 id="MATLAB-Note"><a href="#MATLAB-Note" class="headerlink" title="MATLAB Note"></a>MATLAB Note</h1><p>Author: JacksonLeon</p>
+          <h1 id="Hexo-Blog-Update-Process"><a href="#Hexo-Blog-Update-Process" class="headerlink" title="Hexo Blog Update Process"></a>Hexo Blog Update Process</h1><p>Author: JacksonLeon</p>
 <hr>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>此文用来记录平时使用MatLab遇到的问题与心得.</p>
+<p>This post is talking about the processes of updating the content of <a href="https://jacksonleon.coding.me/">Blog</a>.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/03/blog-update-processes/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/12/16/VSCode/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/16/VSCode/" itemprop="url">
+                  VSCode Note
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-16 00:01:39" itemprop="dateCreated datePublished" datetime="2018-12-16T00:01:39+08:00">2018-12-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-27 14:40:06" itemprop="dateModified" datetime="2018-12-27T14:40:06+08:00">2018-12-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/16/VSCode/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/VSCode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="VSCode-Note"><a href="#VSCode-Note" class="headerlink" title="VSCode Note"></a>VSCode Note</h1><p>Author: JacksonLeon</p>
+<hr>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>VSCode.</p>
+<p>此文用来记录VSCode 使用技巧.</p>
 <p>本文长期更新.</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/28/MatLab-Note/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/22/Markdown语法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/22/Markdown语法/" itemprop="url">
-                  MarkDown 语法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-22 15:01:45" itemprop="dateCreated datePublished" datetime="2018-03-22T15:01:45+08:00">2018-03-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:33:44" itemprop="dateModified" datetime="2018-12-22T14:33:44+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/22/Markdown语法/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/Markdown语法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>NOTE:</strong> This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="noopener">Markdown: Syntax</a>.</p>
-<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/" target="_blank" rel="noopener">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" target="_blank" rel="noopener">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md" target="_blank" rel="noopener">查看这里</a> 。」–By @<a href="http://twitter.com/riku" target="_blank" rel="noopener">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN" target="_blank" rel="noopener">GitCafe</a></p>
-<p><strong>注：</strong> 本项目同时也托管于 <a href="https://github.com/riku/Markdown-Syntax-CN" target="_blank" rel="noopener">Github</a> 上，请通过 fork＋pull request 方式来帮忙改进本项目。</p>
-<h1 id="Markdown-语法说明-简体中文版"><a href="#Markdown-语法说明-简体中文版" class="headerlink" title="Markdown 语法说明 (简体中文版)"></a>Markdown 语法说明 (简体中文版)</h1><hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/22/Markdown语法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/12/07/Java-Note/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/07/Java-Note/" itemprop="url">
-                  Java Note
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-07 10:19:46" itemprop="dateCreated datePublished" datetime="2018-12-07T10:19:46+08:00">2018-12-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:31:16" itemprop="dateModified" datetime="2018-12-22T14:31:16+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/07/Java-Note/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/07/Java-Note/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Java-Note"><a href="#Java-Note" class="headerlink" title="Java Note"></a>Java Note</h1><p>Author: JacksonLeon</p>
-<hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>此文用来记录平时使用Java遇到的问题与心得.</p>
-<p>本文长期更新.</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/07/Java-Note/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/25/Hexo-Bug/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/Hexo-Bug/" itemprop="url">
-                  Hexo的小BUG
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-25 13:10:22" itemprop="dateCreated datePublished" datetime="2018-03-25T13:10:22+08:00">2018-03-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:30:56" itemprop="dateModified" datetime="2018-12-22T14:30:56+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/25/Hexo-Bug/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/Hexo-Bug/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Hexo的小BUG"><a href="#Hexo的小BUG" class="headerlink" title="Hexo的小BUG"></a>Hexo的小BUG</h1><p>Author: JacksonLeon</p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>使用Hexo generate时会出现Template render error的错误，一般情况下是因为Hexo Render MarkDown文件时有一部分出现在代码块外，Hexo就出现了Bug。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/Hexo-Bug/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" itemprop="url">
-                  Hackintosh for Lenovo Ideapad 700 15isk
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-06 21:50:01" itemprop="dateCreated datePublished" datetime="2018-12-06T21:50:01+08:00">2018-12-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:30:13" itemprop="dateModified" datetime="2018-12-22T14:30:13+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Hacintash-for-Lenovo-Ideapad-700-15isk"><a href="#Hacintash-for-Lenovo-Ideapad-700-15isk" class="headerlink" title="Hacintash for Lenovo Ideapad 700 15isk"></a>Hacintash for Lenovo Ideapad 700 15isk</h1><p>Author: JacksonLeon</p>
-<hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>引言<br>最近更换了固态硬盘，所以就有一个闲置了出来，然后就在京东上面买了一个M.2接口NGFF协议的固态硬盘盒，用来装Hackintosh.</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/03/22/Blog-with-Hexo/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/22/Blog-with-Hexo/" itemprop="url">
-                  Blog with Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-22 19:05:00" itemprop="dateCreated datePublished" datetime="2018-03-22T19:05:00+08:00">2018-03-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:29:45" itemprop="dateModified" datetime="2018-12-22T14:29:45+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/22/Blog-with-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/Blog-with-Hexo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Blog-with-Hexo"><a href="#Blog-with-Hexo" class="headerlink" title="Blog with Hexo"></a>Blog with Hexo</h1><p>Author: JacksonLeon</p>
-<hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>Tutorial for build your blog with Hexo.</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/22/Blog-with-Hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://JacksonLeon.coding.me/2018/07/17/Beautify-Blog-With-Hexo/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JacksonLeon">
-      <meta itemprop="description" content="Love what you do, do what you love.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lau's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/17/Beautify-Blog-With-Hexo/" itemprop="url">
-                  Hexo-NexT博客主题美化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-17 08:36:16" itemprop="dateCreated datePublished" datetime="2018-07-17T08:36:16+08:00">2018-07-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 14:27:53" itemprop="dateModified" datetime="2018-12-22T14:27:53+08:00">2018-12-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/17/Beautify-Blog-With-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/17/Beautify-Blog-With-Hexo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Hexo-NexT博客主题美化"><a href="#Hexo-NexT博客主题美化" class="headerlink" title="Hexo-NexT博客主题美化"></a>Hexo-NexT博客主题美化</h1><p>Author: JacksonLeon</p>
-<hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/17/Beautify-Blog-With-Hexo/#more" rel="contents">
+            <a class="btn" href="/2018/12/16/VSCode/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2458,7 +2555,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.7k字</span>
+  <span class="post-count">博客全站共28.1k字</span>
 </div>
         
 <div class="busuanzi-count">

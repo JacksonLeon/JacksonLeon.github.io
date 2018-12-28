@@ -504,7 +504,7 @@
 </ul>
 </blockquote>
 <p>解决方案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 更改Windows</span><br><span class="line"># 如果要让Windows把硬件时间当作UTC</span><br><span class="line"># 在CMD窗口（快捷键Win+R，输入cmd，回车）中输入如下命令，可以快速编辑注册表</span><br><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br><span class="line"># 或者直接编辑注册表，打开注册表编辑器（快捷键Win+R，输入regedit，回车），并找到一下目录位置</span><br><span class="line"># 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1，重启后时间即回复正常</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更改Windows</span></span><br><span class="line"><span class="comment"># 如果要让Windows把硬件时间当作UTC</span></span><br><span class="line"><span class="comment"># 在CMD窗口（快捷键Win+R，输入cmd，回车）中输入如下命令，可以快速编辑注册表</span></span><br><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br><span class="line"><span class="comment"># 或者直接编辑注册表，打开注册表编辑器（快捷键Win+R，输入regedit，回车），并找到一下目录位置</span></span><br><span class="line"><span class="comment"># 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1，重启后时间即回复正常</span></span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -936,7 +936,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.7k字</span>
+  <span class="post-count">博客全站共28.1k字</span>
 </div>
         
 <div class="busuanzi-count">
