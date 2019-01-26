@@ -117,7 +117,7 @@
 <meta property="og:description" content="PythonAuthor: JacksonLeon  Description Python个人笔记 持续更新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fzj58sy7olj308s02174a.jpg">
-<meta property="og:updated_time" content="2019-01-26T11:56:01.000Z">
+<meta property="og:updated_time" content="2019-01-26T12:23:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Note">
 <meta name="twitter:description" content="PythonAuthor: JacksonLeon  Description Python个人笔记 持续更新">
@@ -274,6 +274,14 @@
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+    <a href="/notes/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br>札记</a>
+  </li>
 
       
       
@@ -411,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-26 19:56:01" itemprop="dateModified" datetime="2019-01-26T19:56:01+08:00">2019-01-26</time>
+                <time title="修改时间：2019-01-26 20:23:42" itemprop="dateModified" datetime="2019-01-26T20:23:42+08:00">2019-01-26</time>
               
             
           </span>
@@ -590,21 +598,21 @@
 </ul>
 </li>
 <li><code>&amp;</code> （按位与）<ul>
-<li>对数字进行按位与操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_1" target="_blank" rel="noopener">1</a></li>
+<li>对数字进行按位与操作。</li>
 <li><code>5 &amp; 3</code> 输出 <code>1</code>。</li>
 </ul>
 </li>
 <li><code>|</code> （按位或）<ul>
-<li>对数字进行按位或操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_2" target="_blank" rel="noopener">2</a></li>
+<li>对数字进行按位或操作。</li>
 <li><code>5 | 3</code> 输出 <code>7</code>。</li>
 </ul>
 </li>
 <li><code>^</code>（按位异或）<ul>
-<li>对数字进行按位异或操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_3" target="_blank" rel="noopener">3</a></li>
+<li>对数字进行按位异或操作。</li>
 <li><code>5 ^ 3</code> 输出 <code>6</code>。</li>
 </ul>
 </li>
-<li><code>~</code> （按位取反）<a href="https://bop.mol.uno/08.op_exp.html#fn_4" target="_blank" rel="noopener">4</a><ul>
+<li><code>~</code> （按位取反）<ul>
 <li>x 的按位取反结果为 -(x+1)。</li>
 <li><code>~5</code> 输出 <code>-6</code>。有关本例的更多细节可以参阅：<a href="http://stackoverflow.com/a/11810203" target="_blank" rel="noopener">http://stackoverflow.com/a/11810203</a> 。</li>
 </ul>
@@ -642,17 +650,17 @@
 <li><code>x = 2; y = 3; x != y</code> 返回 <code>True</code>。</li>
 </ul>
 </li>
-<li><code>not</code> （布尔“非”）<a href="https://bop.mol.uno/08.op_exp.html#fn_5" target="_blank" rel="noopener">5</a><ul>
+<li><code>not</code> （布尔“非”）<ul>
 <li>如果 x 是 <code>True</code>，则返回 <code>False</code>。如果 x 是 <code>False</code>，则返回 <code>True</code>。</li>
 <li><code>x = True; not x</code> 返回 <code>False</code>。</li>
 </ul>
 </li>
-<li><code>and</code> （布尔“与”）<a href="https://bop.mol.uno/08.op_exp.html#fn_6" target="_blank" rel="noopener">6</a><ul>
+<li><code>and</code> （布尔“与”）<ul>
 <li>如果 x 是 <code>False</code>，则 <code>x and y</code> 返回 <code>False</code>，否则返回 y 的计算值。</li>
 <li>当 x 是 <code>False</code> 时，<code>x = False; y = True; x and y</code> 将返回 <code>False</code>。在这一情境中，Python 将不会计算 y，因为它已经了解 and 表达式的左侧是 <code>False</code>，这意味着整个表达式都将是 <code>False</code> 而不会是别的值。这种情况被称作短路计算（Short-circuit Evaluation）。</li>
 </ul>
 </li>
-<li><code>or</code>（布尔“或”）<a href="https://bop.mol.uno/08.op_exp.html#fn_7" target="_blank" rel="noopener">7</a><ul>
+<li><code>or</code>（布尔“或”）<ul>
 <li>如果 x 是 <code>True</code>，则返回 <code>True</code>，否则它将返回 y 的计算值。</li>
 <li><code>x = Ture; y = False; x or y</code> 将返回 <code>Ture</code>。在这里短路计算同样适用。</li>
 </ul>
@@ -778,7 +786,7 @@
 <p>Python 中的 <code>self</code> 相当于 C++ 中的 <code>this</code> 指针以及 Java 与 C# 中的 <code>this</code> 引用。</p>
 </blockquote>
 </li>
-<li><p><code>init__</code></p>
+<li><p><code>__init__</code></p>
 <p><code>__init__</code> 方法会在类的对象被实例化（Instantiated）时<strong>立即运行</strong>。这一方法可以对任何你想进行操作的目标对象进行<em>初始化（Initialization）</em>操作。这里你要注意在 init 前后加上的双下划线。</p>
 </li>
 <li><p>类变量与对象变量</p>
@@ -833,7 +841,7 @@
   <p><span>本文标题:</span><a href="/2019/01/25/Python-Note/">Python Note</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
   <p><span>发布时间:</span>2019年01月25日 - 21:01</p>
-  <p><span>最后更新:</span>2019年01月26日 - 19:01</p>
+  <p><span>最后更新:</span>2019年01月26日 - 20:01</p>
   <p><span>原始链接:</span><a href="/2019/01/25/Python-Note/" title="Python Note">https://jacksonleon.gitee.io/2019/01/25/Python-Note/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/2019/01/25/Python-Note/" aria-label="复制成功！"></i></span>
   </p>
@@ -1005,7 +1013,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1106,9 +1118,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
