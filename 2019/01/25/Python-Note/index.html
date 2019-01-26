@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="PythonAuthor: JacksonLeon  Description Python个人笔记 持续更新">
+<meta name="keywords" content="Python,Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Note">
+<meta property="og:url" content="https://jacksonleon.gitee.io/2019/01/25/Python-Note/index.html">
+<meta property="og:site_name" content="Lau&#39;s Note">
+<meta property="og:description" content="PythonAuthor: JacksonLeon  Description Python个人笔记 持续更新">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fzj58sy7olj308s02174a.jpg">
+<meta property="og:updated_time" content="2019-01-26T11:56:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Note">
+<meta name="twitter:description" content="PythonAuthor: JacksonLeon  Description Python个人笔记 持续更新">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fzj58sy7olj308s02174a.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lau's Note" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://jacksonleon.gitee.io/2019/01/25/Python-Note/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python Note | Lau's Note</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133178853-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133178853-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/JacksonLeon" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lau's Note</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">步子大了容易扯着蛋</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jacksonleon.gitee.io/2019/01/25/Python-Note/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JacksonLeon">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lau's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python Note
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-25 21:14:50" itemprop="dateCreated datePublished" datetime="2019-01-25T21:14:50+08:00">2019-01-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-26 19:56:01" itemprop="dateModified" datetime="2019-01-26T19:56:01+08:00">2019-01-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/25/Python-Note/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/Python-Note/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><p>Author: JacksonLeon</p>
+<hr>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>Python个人笔记</p>
+<p>持续更新</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>之所以，我们把Python，蟒蛇，作为此计算机语言的名字，是有其历史典故的：</p>
+<p>Python语言的创始人，吉多·范罗苏姆（Guido van Rossum）在1989年圣诞节期间，在阿姆斯特丹，为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，而在给自己新创造的计算机语言起名字的时候，由于其是，自于七十年代风靡全球的英国六人喜剧团体，巨蟒剧团（Monty Python）的忠实粉丝，所以，就把此计算机语言的名字叫做：Python。</p>
+</blockquote>
+<p>Python是一种脚本语言、解释性语言「无需编译源码，可直接运行」、交互性语言、面向对象的语言。</p>
+<p><em>代码缩进决定了Python代码的逻辑关系，而不仅仅是为了好看</em></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac下安装非常简单，一条命令：<code>brew install python3</code>，只不过有时候需要更新Homebrew，比较耗费时间。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzj58sy7olj308s02174a.jpg" alt="image-20190125211920126"></p>
+<p>如果你没有Homebrew，使用<code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code>安装完成后，再安装Python。</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="字符串与基本规则"><a href="#字符串与基本规则" class="headerlink" title="字符串与基本规则"></a>字符串与基本规则</h3><ol>
+<li><p>字符串</p>
+<p>单引号与双引号作用相同、三引号<code>‘’&#39;</code>/<code>“&quot;”</code>用来指定多行字符串。</p>
+<p>更多用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是一个字符串对象</span></span><br><span class="line">name = <span class="string">'Swaroop'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> name.startswith(<span class="string">'Swa'</span>):</span><br><span class="line">    print(<span class="string">'Yes, the string starts with "Swa"'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> name:</span><br><span class="line">    print(<span class="string">'Yes, it contains the string "a"'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> name.find(<span class="string">'war'</span>) != <span class="number">-1</span>:</span><br><span class="line">    print(<span class="string">'Yes, it contains the string "war"'</span>)</span><br><span class="line"></span><br><span class="line">delimiter = <span class="string">'_*_'</span></span><br><span class="line">mylist = [<span class="string">'Brazil'</span>, <span class="string">'Russia'</span>, <span class="string">'India'</span>, <span class="string">'China'</span>]</span><br><span class="line">print(delimiter.join(mylist))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_str_methods.py</span><br><span class="line">Yes, the string starts with &quot;Swa&quot;</span><br><span class="line">Yes, it contains the string &quot;a&quot;</span><br><span class="line">Yes, it contains the string &quot;war&quot;</span><br><span class="line">Brazil_*_Russia_*_India_*_China</span><br></pre></td></tr></table></figure>
+<p>格式化：<code>format()</code></p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">20</span></span><br><span class="line">name = <span class="string">'Swaroop'</span></span><br><span class="line">print(<span class="string">'&#123;0&#125; was &#123;1&#125; years old when he wrote this book'</span>.format(name, age))</span><br><span class="line">print(<span class="string">'Why is &#123;0&#125; playing with that python?'</span>.format(name))</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line">Swaroop was <span class="number">20</span> years old when he wrote this book</span><br><span class="line">Why is Swaroop playing with that python?</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于浮点数 '0.333' 保留小数点(.)后三位</span></span><br><span class="line">print(<span class="string">'&#123;0:.3f&#125;'</span>.format(<span class="number">1.0</span>/<span class="number">3</span>))</span><br><span class="line"><span class="comment"># 使用下划线填充文本，并保持文字处于中间位置</span></span><br><span class="line"><span class="comment"># 使用 (^) 定义 '___hello___'字符串长度为 11</span></span><br><span class="line">print(<span class="string">'&#123;0:_^11&#125;'</span>.format(<span class="string">'hello'</span>))</span><br><span class="line"><span class="comment"># 基于关键词输出 'Swaroop wrote A Byte of Python'  </span></span><br><span class="line">print(<span class="string">'&#123;name&#125; wrote &#123;book&#125;'</span>.format(name=<span class="string">'Swaroop'</span>, book=<span class="string">'A Byte of Python'</span>))</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="number">0.333</span></span><br><span class="line">___hello___</span><br><span class="line">Swaroop wrote A Byte of Python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>print()</code></p>
+<p>由于我们正在讨论格式问题，就要注意 <code>print</code> 总是会以一个不可见的“新一行”字符（<code>\n</code>）结尾，因此重复调用 <code>print</code>将会在相互独立的一行中分别打印。为防止打印过程中出现这一换行符，你可以通过 <code>end</code>指定其应以空白结尾：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'a'</span>, end=<span class="string">''</span>)</span><br><span class="line">print(<span class="string">'b'</span>, end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab</span><br></pre></td></tr></table></figure>
+<p>或者你通过 <code>end</code> 指定以空格结尾：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'a'</span>, end=<span class="string">' '</span>)</span><br><span class="line">print(<span class="string">'b'</span>, end=<span class="string">' '</span>)</span><br><span class="line">print(<span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转义字符：<code>\</code></p>
+<blockquote>
+<p>以及：在一个字符串中，一个放置在末尾的反斜杠表示字符串将在下一行继续，但不会添加新的一行。</p>
+<p>如果你需要指定一些未经过特殊处理的字符串，比如转义序列，那么你需要在字符串前增加 <code>r</code> 或 <code>R</code> 来指定一个<em>原始（Raw）</em>字符串。</p>
+<p>在处理正则表达式时应全程使用原始字符串。否则，将会有大量 Backwhacking 需要处理。举例说明的话，反向引用可以通过 <code>&#39;\\1&#39;</code> 或 <code>r&#39;\1&#39;</code> 来实现。</p>
+</blockquote>
+</li>
+<li><p>命名规则</p>
+<p>变量是标识符的一个例子。<em>标识符（Identifiers）</em> 是为 <em>某些东西</em> 提供的给定名称。在你命名标识符时，你需要遵守以下规则：</p>
+<ul>
+<li>第一个字符必须是字母表中的字母（大写 ASCII 字符或小写 ASCII 字符或 Unicode 字符）或下划线（<code>_</code>）。</li>
+<li>标识符的其它部分可以由字符（大写 ASCII 字符或小写 ASCII 字符或 Unicode 字符）、下划线（<code>_</code>）、数字（0~9）组成。</li>
+<li>标识符名称区分大小写。例如，<code>myname</code> 和 <code>myName</code> 并<em>不</em>等同。要注意到前者是小写字母 <code>n</code> 而后者是大写字母 <code>N</code>。</li>
+<li><em>有效</em> 的标识符名称可以是 <code>i</code> 或 <code>name_2_3</code> ，<em>无效</em> 的标识符名称可能是 <code>2things</code>，<code>this is spaced out</code>，<code>my-name</code> 和 <code>&gt;a1b2_c3</code>。</li>
+</ul>
+</li>
+<li><p>缩进</p>
+<blockquote>
+<p>使用四个空格来缩进。这是来自 Python 语言官方的建议。好的编辑器会自动为你完成这一工作。请确保你在缩进中使用数量一致的空格，否则你的程序将不会运行，或引发不期望的行为。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="运算符与表达式"><a href="#运算符与表达式" class="headerlink" title="运算符与表达式"></a>运算符与表达式</h3><ol>
+<li><p><strong>运算符</strong></p>
+<ul>
+<li><code>+</code>（加）<ul>
+<li>两个对象相加。</li>
+<li><code>3+5</code> 则输出 <code>8</code>。<code>&#39;a&#39; + &#39;b&#39;</code> 则输出 <code>&#39;ab&#39;</code>。</li>
+</ul>
+</li>
+<li><code>-</code>（减）<ul>
+<li>从一个数中减去另一个数，如果第一个操作数不存在，则假定为零。</li>
+<li><code>-5.2</code> 将输出一个负数，<code>50 - 24</code> 输出 <code>26</code>。</li>
+</ul>
+</li>
+<li><code>*</code>（乘）<ul>
+<li>给出两个数的乘积，或返回字符串重复指定次数后的结果。</li>
+<li><code>2 * 3</code> 输出 <code>6</code>。<code>&#39;la&#39; * 3</code> 输出 <code>&#39;lalala&#39;</code>。</li>
+</ul>
+</li>
+<li><code>**</code> （乘方）<ul>
+<li>返回 x 的 y 次方。</li>
+<li><code>3 ** 4</code> 输出 <code>81</code> （即 <code>3 * 3 * 3 * 3</code>）。</li>
+</ul>
+</li>
+<li><code>/</code> （除）<ul>
+<li>x 除以 y</li>
+<li><code>13 / 3</code> 输出 <code>4.333333333333333</code>。</li>
+</ul>
+</li>
+<li><code>//</code> （整除）<ul>
+<li>x 除以 y 并对结果<em>向下</em>取整至最接近的整数。</li>
+<li><code>13 // 3</code> 输出 <code>4</code>。</li>
+<li><code>-13 // 3</code> 输出 <code>-5</code>。</li>
+</ul>
+</li>
+<li><code>%</code> （取模）<ul>
+<li>返回除法运算后的余数。</li>
+<li><code>13 % 3</code> 输出 <code>1</code>。<code>-25.5 % 2.25</code> 输出 <code>1.5</code>。</li>
+</ul>
+</li>
+<li><code>&lt;&lt;</code> （左移）<ul>
+<li>将数字的位向左移动指定的位数。（每个数字在内存中以二进制数表示，即 0 和1）</li>
+<li><code>2 &lt;&lt; 2</code> 输出 <code>8</code>。 <code>2</code> 用二进制数表示为 <code>10</code>。</li>
+<li>向左移 2 位会得到 <code>1000</code> 这一结果，表示十进制中的 <code>8</code>。</li>
+</ul>
+</li>
+<li><code>&gt;&gt;</code> （右移）<ul>
+<li>将数字的位向右移动指定的位数。</li>
+<li><code>11 &gt;&gt; 1</code> 输出 <code>5</code>。</li>
+<li><code>11</code> 在二进制中表示为 <code>1011</code>，右移一位后输出 <code>101</code> 这一结果，表示十进制中的 <code>5</code>。</li>
+</ul>
+</li>
+<li><code>&amp;</code> （按位与）<ul>
+<li>对数字进行按位与操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_1" target="_blank" rel="noopener">1</a></li>
+<li><code>5 &amp; 3</code> 输出 <code>1</code>。</li>
+</ul>
+</li>
+<li><code>|</code> （按位或）<ul>
+<li>对数字进行按位或操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_2" target="_blank" rel="noopener">2</a></li>
+<li><code>5 | 3</code> 输出 <code>7</code>。</li>
+</ul>
+</li>
+<li><code>^</code>（按位异或）<ul>
+<li>对数字进行按位异或操作。<a href="https://bop.mol.uno/08.op_exp.html#fn_3" target="_blank" rel="noopener">3</a></li>
+<li><code>5 ^ 3</code> 输出 <code>6</code>。</li>
+</ul>
+</li>
+<li><code>~</code> （按位取反）<a href="https://bop.mol.uno/08.op_exp.html#fn_4" target="_blank" rel="noopener">4</a><ul>
+<li>x 的按位取反结果为 -(x+1)。</li>
+<li><code>~5</code> 输出 <code>-6</code>。有关本例的更多细节可以参阅：<a href="http://stackoverflow.com/a/11810203" target="_blank" rel="noopener">http://stackoverflow.com/a/11810203</a> 。</li>
+</ul>
+</li>
+<li><code>&lt;</code> （小于）<ul>
+<li>返回 x 是否小于 y。所有的比较运算符返回的结果均为 <code>True</code> 或 <code>False</code>。请注意这些名称之中的大写字母。</li>
+<li><code>5 &lt; 3</code> 输出 <code>False</code>，<code>3 &lt; 6</code> 输出 <code>True</code>。</li>
+<li>比较可以任意组成组成链接：<code>3 &lt; 5 &lt; 7</code> 返回 <code>True</code>。</li>
+</ul>
+</li>
+<li><code>&gt;</code> （大于）<ul>
+<li>返回 x 是否大于 y。</li>
+<li><code>5 &gt; 3</code> 返回 <code>True</code>。如果两个操作数均为数字，它们首先将会被转换至一种共同的类型。否则，它将总是返回 <code>False</code>。</li>
+</ul>
+</li>
+<li><code>&lt;=</code> （小于等于）<ul>
+<li>返回 x 是否小于或等于 y。</li>
+<li><code>x = 3; y = 6; x&lt;=y</code> 返回 <code>True</code>。</li>
+</ul>
+</li>
+<li><code>&gt;=</code> （大于等于）<ul>
+<li>返回 x 是否大于或等于 y。</li>
+<li><code>x = 4; y = 3; x&gt;=3</code> 返回 <code>True</code>。</li>
+</ul>
+</li>
+<li><code>==</code> （等于）<ul>
+<li>比较两个对象是否相等。</li>
+<li><code>x = 2; y = 2; x == y</code> 返回 <code>True</code>。</li>
+<li><code>x = &#39;str&#39;; y = &#39;stR&#39;; x == y</code> 返回 <code>False</code>。</li>
+<li><code>x = &#39;str&#39;; y = &#39;str&#39;; x == y</code> 返回 <code>True</code>。</li>
+</ul>
+</li>
+<li><code>!=</code> （不等于）<ul>
+<li>比较两个对象是否不相等。</li>
+<li><code>x = 2; y = 3; x != y</code> 返回 <code>True</code>。</li>
+</ul>
+</li>
+<li><code>not</code> （布尔“非”）<a href="https://bop.mol.uno/08.op_exp.html#fn_5" target="_blank" rel="noopener">5</a><ul>
+<li>如果 x 是 <code>True</code>，则返回 <code>False</code>。如果 x 是 <code>False</code>，则返回 <code>True</code>。</li>
+<li><code>x = True; not x</code> 返回 <code>False</code>。</li>
+</ul>
+</li>
+<li><code>and</code> （布尔“与”）<a href="https://bop.mol.uno/08.op_exp.html#fn_6" target="_blank" rel="noopener">6</a><ul>
+<li>如果 x 是 <code>False</code>，则 <code>x and y</code> 返回 <code>False</code>，否则返回 y 的计算值。</li>
+<li>当 x 是 <code>False</code> 时，<code>x = False; y = True; x and y</code> 将返回 <code>False</code>。在这一情境中，Python 将不会计算 y，因为它已经了解 and 表达式的左侧是 <code>False</code>，这意味着整个表达式都将是 <code>False</code> 而不会是别的值。这种情况被称作短路计算（Short-circuit Evaluation）。</li>
+</ul>
+</li>
+<li><code>or</code>（布尔“或”）<a href="https://bop.mol.uno/08.op_exp.html#fn_7" target="_blank" rel="noopener">7</a><ul>
+<li>如果 x 是 <code>True</code>，则返回 <code>True</code>，否则它将返回 y 的计算值。</li>
+<li><code>x = Ture; y = False; x or y</code> 将返回 <code>Ture</code>。在这里短路计算同样适用。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>运算顺序</p>
+<p>下面是从 <a href="http://docs.python.org/3/reference/expressions.html#operator-precedence" target="_blank" rel="noopener">Python 参考手册</a> 中引用而来。<strong>你最好使用圆括号操作符来对运算符与操作数进行分组，以更加明确地指定优先级。这也能使得程序更加可读</strong>。你可以阅读<a href="https://bop.mol.uno/08.op_exp.html#changing-order-of-evaluation" target="_blank" rel="noopener">改变运算顺序</a>来了解更多的细节。</p>
+<ul>
+<li><code>lambda</code>：Lambda 表达式</li>
+<li><code>if - else</code> ：条件表达式</li>
+<li><code>or</code>：布尔“或”</li>
+<li><code>and</code>：布尔“与”</li>
+<li><code>not x</code>：布尔“非”</li>
+<li><code>in, not in, is, is not, &lt;, &lt;=, &gt;, &gt;=, !=, ==</code>：比较，包括成员资格测试（Membership Tests）和身份测试（Identity Tests）。</li>
+<li><code>|</code>：按位或</li>
+<li><code>^</code>：按位异或</li>
+<li><code>&amp;</code>：按位与</li>
+<li><code>&lt;&lt;, &gt;&gt;</code>：移动</li>
+<li><code>+, -</code>：加与减</li>
+<li><code>*, /, //, %</code>：乘、除、整除、取余</li>
+<li><code>+x, -x, ~x</code>：正、负、按位取反</li>
+<li><code>**</code>：求幂</li>
+<li><code>x[index], x[index:index], x(arguments...), x.attribute</code>：下标、切片、调用、属性引用</li>
+<li><code>(expressions...), [expressions...], {key: value...}, {expressions...}</code>：表示绑定或元组、表示列表、表示字典、表示集合</li>
+</ul>
+</li>
+</ol>
+<h3 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h3><ol>
+<li><p><code>if</code>语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">number = <span class="number">23</span></span><br><span class="line">guess = int(input(<span class="string">'Enter an integer : '</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> guess == number:</span><br><span class="line">    <span class="comment"># 新块从这里开始</span></span><br><span class="line">    print(<span class="string">'Congratulations, you guessed it.'</span>)</span><br><span class="line">    print(<span class="string">'(but you do not win any prizes!)'</span>)</span><br><span class="line">    <span class="comment"># 新块在这里结束</span></span><br><span class="line"><span class="keyword">elif</span> guess &lt; number:</span><br><span class="line">    <span class="comment"># 另一代码块</span></span><br><span class="line">    print(<span class="string">'No, it is a little higher than that'</span>)</span><br><span class="line">    <span class="comment"># 你可以在此做任何你希望在该代码块内进行的事情</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'No, it is a little lower than that'</span>)</span><br><span class="line">    <span class="comment"># 你必须通过猜测一个大于（&gt;）设置数的数字来到达这里。</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'Done'</span>)</span><br><span class="line"><span class="comment"># 这最后一句语句将在</span></span><br><span class="line"><span class="comment"># if 语句执行完毕后执行。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>for</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    print(i)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'The for loop is over'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>while</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">number = <span class="number">23</span></span><br><span class="line">running = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> running:</span><br><span class="line">    guess = int(input(<span class="string">'Enter an integer : '</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> guess == number:</span><br><span class="line">        print(<span class="string">'Congratulations, you guessed it.'</span>)</span><br><span class="line">        <span class="comment"># 这将导致 while 循环中止</span></span><br><span class="line">        running = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">elif</span> guess &lt; number:</span><br><span class="line">        print(<span class="string">'No, it is a little higher than that.'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'No, it is a little lower than that.'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'The while loop is over.'</span>)</span><br><span class="line">    <span class="comment"># 在这里你可以做你想做的任何事</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'Done'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">Enter an integer : <span class="number">50</span></span><br><span class="line">No, it <span class="keyword">is</span> a little lower than that.</span><br><span class="line">Enter an integer : <span class="number">22</span></span><br><span class="line">No, it <span class="keyword">is</span> a little higher than that.</span><br><span class="line">Enter an integer : <span class="number">23</span></span><br><span class="line">Congratulations, you guessed it.</span><br><span class="line">The <span class="keyword">while</span> loop <span class="keyword">is</span> over.</span><br><span class="line">Done</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>break</code></p>
+<p><code>break</code> 语句用以<em>中断</em>（Break）循环语句，也就是中止循环语句的执行，即使循环条件没有变更为 <code>False</code>，或队列中的项目尚未完全迭代依旧如此。</p>
+<p>有一点需要尤其注意，如果你 <em>中断</em> 了一个 <code>for</code> 或 <code>while</code> 循环，任何相应循环中的 <code>else</code> 块都将<em>不会</em>被执行。</p>
+</li>
+<li><p><code>continue</code></p>
+<p><code>continue</code> 语句用以告诉 Python 跳过当前循环块中的剩余语句，并<em>继续</em>该循环的下一次迭代，同样能用于 <code>for</code> 循环。</p>
+</li>
+</ol>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 该块属于这一函数</span></span><br><span class="line">    print(<span class="string">'hello world'</span>)</span><br><span class="line"><span class="comment"># 函数结束</span></span><br><span class="line"></span><br><span class="line">say_hello()  <span class="comment"># 调用函数</span></span><br><span class="line">say_hello()  <span class="comment"># 再次调用函数</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>参数</p>
+<blockquote>
+<p>在定义函数时给定的名称称作<em>“形参”（Parameters）</em>，在调用函数时你所提供给函数的值称作<em>“实参”（Arguments）</em>。</p>
+</blockquote>
+</li>
+<li><p>局部变量</p>
+<blockquote>
+<p>当你在一个函数的定义中声明变量时，它们不会以任何方式与身处函数之外但具有相同名称的变量产生关系，也就是说，这些变量名只存在于函数这一<em>局部（Local）</em>。这被称为变量的<em>作用域（Scope）</em>。所有变量的作用域是它们被定义的块，从定义它们的名字的定义点开始。</p>
+</blockquote>
+</li>
+<li><p>全局声明</p>
+<p><code>global</code> 语句用以声明 <code>x</code> 是一个全局变量——因此，当我们在函数中为 <code>x</code> 进行赋值时，这一改动将影响到我们在主代码块中使用的 <code>x</code> 的值。</p>
+<p>你可以在同一句 <code>global</code> 语句中指定不止一个的全局变量，例如 <code>global x, y, z</code>。</p>
+</li>
+</ol>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ol>
+<li><p>模块的 <code>__name__</code></p>
+<p>每个模块都有一个名称，而模块中的语句可以找到它们所处的模块的名称。这对于确定模块是独立运行的还是被导入进来运行的这一特定目的来说大为有用。正如先前所提到的，当模块第一次被导入时，它所包含的代码将被执行。我们可以通过这一特性来使模块以不同的方式运行，这取决于它是为自己所用还是从其它从的模块中导入而来。这可以通过使用模块的 <code>__name__</code> 属性来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">'This program is being run by itself'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'I am being imported from another module'</span>)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ python module_using_name.py</span><br><span class="line">This program is being run by itself</span><br><span class="line"></span><br><span class="line">$ python</span><br><span class="line">&gt;&gt;&gt; import module_using_name</span><br><span class="line">I am being imported from another module</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Python之蝉</strong></p>
+<blockquote>
+<p>Python 的一大指导原则是“明了胜过晦涩”。你可以通过在 Python 中运行 <code>import this</code> 来了解更多内容。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import this</span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren&apos;t special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you&apos;re Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it&apos;s a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let&apos;s do more of those!</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ol>
+<li><p><code>list</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is my shopping list</span></span><br><span class="line">shoplist = [<span class="string">'apple'</span>, <span class="string">'mango'</span>, <span class="string">'carrot'</span>, <span class="string">'banana'</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'I have'</span>, len(shoplist), <span class="string">'items to purchase.'</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'These items are:'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoplist:</span><br><span class="line">    print(item, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nI also have to buy rice.'</span>)</span><br><span class="line">shoplist.append(<span class="string">'rice'</span>)</span><br><span class="line">print(<span class="string">'My shopping list is now'</span>, shoplist)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'I will sort my list now'</span>)</span><br><span class="line">shoplist.sort()</span><br><span class="line">print(<span class="string">'Sorted shopping list is'</span>, shoplist)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'The first item I will buy is'</span>, shoplist[<span class="number">0</span>])</span><br><span class="line">olditem = shoplist[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">del</span> shoplist[<span class="number">0</span>]</span><br><span class="line">print(<span class="string">'I bought the'</span>, olditem)</span><br><span class="line">print(<span class="string">'My shopping list is now'</span>, shoplist)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_list.py</span><br><span class="line">I have 4 items to purchase.</span><br><span class="line">These items are: apple mango carrot banana</span><br><span class="line">I also have to buy rice.</span><br><span class="line">My shopping list is now [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;rice&apos;]</span><br><span class="line">I will sort my list now</span><br><span class="line">Sorted shopping list is [&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;mango&apos;, &apos;rice&apos;]</span><br><span class="line">The first item I will buy is apple</span><br><span class="line">I bought the apple</span><br><span class="line">My shopping list is now [&apos;banana&apos;, &apos;carrot&apos;, &apos;mango&apos;, &apos;rice&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元组</p>
+<p>元组（Tuple）用于将多个对象保存到一起。你可以将它们近似地看作列表，但是元组不能提供列表类能够提供给你的广泛的功能。<strong>元组的一大特征类似于字符串，它们是不可变的，也就是说，你不能编辑或更改元组</strong>。</p>
+<p>元组通常用于保证某一语句或某一用户定义的函数可以安全地采用一组数值，意即元组内的数值不会改变。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 我会推荐你总是使用括号</span></span><br><span class="line"><span class="comment"># 来指明元组的开始与结束</span></span><br><span class="line"><span class="comment"># 尽管括号是一个可选选项。</span></span><br><span class="line"><span class="comment"># 明了胜过晦涩，显式优于隐式。</span></span><br><span class="line">zoo = (<span class="string">'python'</span>, <span class="string">'elephant'</span>, <span class="string">'penguin'</span>)</span><br><span class="line">print(<span class="string">'Number of animals in the zoo is'</span>, len(zoo))</span><br><span class="line"></span><br><span class="line">new_zoo = <span class="string">'monkey'</span>, <span class="string">'camel'</span>, zoo</span><br><span class="line">print(<span class="string">'Number of cages in the new zoo is'</span>, len(new_zoo))</span><br><span class="line">print(<span class="string">'All animals in new zoo are'</span>, new_zoo)</span><br><span class="line">print(<span class="string">'Animals brought from old zoo are'</span>, new_zoo[<span class="number">2</span>])</span><br><span class="line">print(<span class="string">'Last animal brought from old zoo is'</span>, new_zoo[<span class="number">2</span>][<span class="number">2</span>])</span><br><span class="line">print(<span class="string">'Number of animals in the new zoo is'</span>,</span><br><span class="line">      len(new_zoo)<span class="number">-1</span>+len(new_zoo[<span class="number">2</span>]))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_tuple.py</span><br><span class="line">Number of animals in the zoo is 3</span><br><span class="line">Number of cages in the new zoo is 3</span><br><span class="line">All animals in new zoo are (&apos;monkey&apos;, &apos;camel&apos;, (&apos;python&apos;, &apos;elephant&apos;, &apos;penguin&apos;))</span><br><span class="line">Animals brought from old zoo are (&apos;python&apos;, &apos;elephant&apos;, &apos;penguin&apos;)</span><br><span class="line">Last animal brought from old zoo is penguin</span><br><span class="line">Number of animals in the new zoo is 5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字典</p>
+<p><strong>键值必须是唯一</strong>，你只能使用不可变的对象（如字符串）作为字典的键值，但是你可以使用可变或不可变的对象作为字典中的值。基本上这段话也可以翻译为你只能使用<strong>简单对象作为键值</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># “ab”是地址（Address）簿（Book）的缩写</span></span><br><span class="line"></span><br><span class="line">ab = &#123;</span><br><span class="line">    <span class="string">'Swaroop'</span>: <span class="string">'swaroop@swaroopch.com'</span>,</span><br><span class="line">    <span class="string">'Larry'</span>: <span class="string">'larry@wall.org'</span>,</span><br><span class="line">    <span class="string">'Matsumoto'</span>: <span class="string">'matz@ruby-lang.org'</span>,</span><br><span class="line">    <span class="string">'Spammer'</span>: <span class="string">'spammer@hotmail.com'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Swaroop's address is"</span>, ab[<span class="string">'Swaroop'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除一对键值—值配对</span></span><br><span class="line"><span class="keyword">del</span> ab[<span class="string">'Spammer'</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nThere are &#123;&#125; contacts in the address-book\n'</span>.format(len(ab)))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, address <span class="keyword">in</span> ab.items():</span><br><span class="line">    print(<span class="string">'Contact &#123;&#125; at &#123;&#125;'</span>.format(name, address))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一对键值—值配对</span></span><br><span class="line">ab[<span class="string">'Guido'</span>] = <span class="string">'guido@python.org'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">'Guido'</span> <span class="keyword">in</span> ab:</span><br><span class="line">    print(<span class="string">"\nGuido's address is"</span>, ab[<span class="string">'Guido'</span>])</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_dict.py</span><br><span class="line">Swaroop&apos;s address is swaroop@swaroopch.com</span><br><span class="line"></span><br><span class="line">There are 3 contacts in the address-book</span><br><span class="line"></span><br><span class="line">Contact Swaroop at swaroop@swaroopch.com</span><br><span class="line">Contact Matsumoto at matz@ruby-lang.org</span><br><span class="line">Contact Larry at larry@wall.org</span><br><span class="line"></span><br><span class="line">Guido&apos;s address is guido@python.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>序列操作</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">shoplist = [<span class="string">'apple'</span>, <span class="string">'mango'</span>, <span class="string">'carrot'</span>, <span class="string">'banana'</span>]</span><br><span class="line">name = <span class="string">'swaroop'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Indexing or 'Subscription' operation #</span></span><br><span class="line"><span class="comment"># 索引或“下标（Subscription）”操作符 #</span></span><br><span class="line">print(<span class="string">'Item 0 is'</span>, shoplist[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Item 1 is'</span>, shoplist[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'Item 2 is'</span>, shoplist[<span class="number">2</span>])</span><br><span class="line">print(<span class="string">'Item 3 is'</span>, shoplist[<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'Item -1 is'</span>, shoplist[<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'Item -2 is'</span>, shoplist[<span class="number">-2</span>])</span><br><span class="line">print(<span class="string">'Character 0 is'</span>, name[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Slicing on a list #</span></span><br><span class="line">print(<span class="string">'Item 1 to 3 is'</span>, shoplist[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'Item 2 to end is'</span>, shoplist[<span class="number">2</span>:])</span><br><span class="line">print(<span class="string">'Item 1 to -1 is'</span>, shoplist[<span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'Item start to end is'</span>, shoplist[:])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从某一字符串中切片 #</span></span><br><span class="line">print(<span class="string">'characters 1 to 3 is'</span>, name[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'characters 2 to end is'</span>, name[<span class="number">2</span>:])</span><br><span class="line">print(<span class="string">'characters 1 to -1 is'</span>, name[<span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'characters start to end is'</span>, name[:])</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Item 0 is apple</span><br><span class="line">Item 1 is mango</span><br><span class="line">Item 2 is carrot</span><br><span class="line">Item 3 is banana</span><br><span class="line">Item -1 is banana</span><br><span class="line">Item -2 is carrot</span><br><span class="line">Character 0 is s</span><br><span class="line">Item 1 to 3 is [&apos;mango&apos;, &apos;carrot&apos;]</span><br><span class="line">Item 2 to end is [&apos;carrot&apos;, &apos;banana&apos;]</span><br><span class="line">Item 1 to -1 is [&apos;mango&apos;, &apos;carrot&apos;]</span><br><span class="line">Item start to end is [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</span><br><span class="line">characters 1 to 3 is wa</span><br><span class="line">characters 2 to end is aroop</span><br><span class="line">characters 1 to -1 is waroo</span><br><span class="line">characters start to end is swaroop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>集合</p>
+<p>集合（Set）是简单对象的<strong><em>无序</em></strong>集合（Collection）。当集合中的项目存在与否比起次序或其出现次数更加重要时，我们就会使用集合。<strong>说明集合里的元素是不重复的。</strong></p>
+<p>通过使用集合，你可以测试某些对象的资格或情况，检查它们是否是其它集合的子集，找到两个集合的交集，等等。</p>
+</li>
+<li><p><strong>引用</strong>——涉及到深拷贝浅拷贝的问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Simple Assignment'</span>)</span><br><span class="line">shoplist = [<span class="string">'apple'</span>, <span class="string">'mango'</span>, <span class="string">'carrot'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="comment"># mylist 只是指向同一对象的另一种名称</span></span><br><span class="line">mylist = shoplist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我购买了第一项项目，所以我将其从列表中删除</span></span><br><span class="line"><span class="keyword">del</span> shoplist[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'shoplist is'</span>, shoplist)</span><br><span class="line">print(<span class="string">'mylist is'</span>, mylist)</span><br><span class="line"><span class="comment"># 注意到 shoplist 和 mylist 二者都</span></span><br><span class="line"><span class="comment"># 打印出了其中都没有 apple 的同样的列表，以此我们确认</span></span><br><span class="line"><span class="comment"># 它们指向的是同一个对象</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'Copy by making a full slice'</span>)</span><br><span class="line"><span class="comment"># 通过生成一份完整的切片制作一份列表的副本</span></span><br><span class="line">mylist = shoplist[:]</span><br><span class="line"><span class="comment"># 删除第一个项目</span></span><br><span class="line"><span class="keyword">del</span> mylist[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'shoplist is'</span>, shoplist)</span><br><span class="line">print(<span class="string">'mylist is'</span>, mylist)</span><br><span class="line"><span class="comment"># 注意到现在两份列表已出现不同</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_reference.py</span><br><span class="line">Simple Assignment</span><br><span class="line">shoplist is [&apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</span><br><span class="line">mylist is [&apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</span><br><span class="line">Copy by making a full slice</span><br><span class="line">shoplist is [&apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</span><br><span class="line">mylist is [&apos;carrot&apos;, &apos;banana&apos;]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>要记住列表的赋值语句<strong>不会</strong>创建一份副本。你必须使用切片操作来生成一份序列的副本。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3><p>类与对象是面向对象编程的两个主要方面。一个<strong>类（Class）</strong>能够创建一种新的<em>类型（Type）</em>，其中<strong>对象（Object）</strong>就是类的<strong>实例（Instance）</strong>。可以这样来类比：你可以拥有类型 <code>int</code> 的变量，也就是说存储整数的变量是 <code>int</code> 类的实例（对象）。</p>
+<p>对象可以使用<em>属于</em>它的普通变量来存储数据。这种从属于对象或类的变量叫作<strong>字段（Field）</strong>。对象还可以使用<em>属于</em>类的函数来实现某些功能，这种函数叫作类的<strong>方法（Method）</strong>。这两个术语很重要，它有助于我们区分函数与变量，哪些是独立的，哪些又是属于类或对象的。总之，字段与方法通称类的<strong>属性（Attribute）</strong>。</p>
+<p>字段有两种类型——它们属于某一类的各个实例或对象，或是从属于某一类本身。它们被分别称作<strong>实例变量（Instance Variables）</strong>与<strong>类变量（Class Variables）</strong>。</p>
+<p>通过 <code>class</code> 关键字可以创建一个类。这个类的字段与方法可以在缩进代码块中予以列出。</p>
+<ol>
+<li><p><code>self</code></p>
+<p><strong>类方法与普通函数只有一种特定的区别</strong>——前者必须多加一个参数在参数列表开头，这个名字必须添加到参数列表的开头，但是你<em>不用</em>在你调用这个功能时为这个参数赋值，Python 会为它提供。这种特定的变量引用的是对象<em>本身</em>，按照惯例，它被赋予 <code>self</code> 这一名称。</p>
+<blockquote>
+<p>Python 中的 <code>self</code> 相当于 C++ 中的 <code>this</code> 指针以及 Java 与 C# 中的 <code>this</code> 引用。</p>
+</blockquote>
+</li>
+<li><p><code>init__</code></p>
+<p><code>__init__</code> 方法会在类的对象被实例化（Instantiated）时<strong>立即运行</strong>。这一方法可以对任何你想进行操作的目标对象进行<em>初始化（Initialization）</em>操作。这里你要注意在 init 前后加上的双下划线。</p>
+</li>
+<li><p>类变量与对象变量</p>
+<p>每个对象都通过 <code>self.__class__</code> 属性来引用它的类。</p>
+<p>类方法与对象方法与变量是对应的，通过对应的变量引用。我们使用<a href="https://bop.mol.uno/18.more.html#decorator" target="_blank" rel="noopener">装饰器（Decorator）</a>将 <code>how_many</code> 方法标记为类方法。</p>
+<blockquote>
+<p>所有类成员（包括数据成员）都是<em>公开的</em>，并且 Python 中所有的方法都是<em>虚拟的（Virtual）</em>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=UTF-8</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Robot</span>:</span></span><br><span class="line">    <span class="string">"""表示有一个带有名字的机器人。"""</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个类变量，用来计数机器人的数量</span></span><br><span class="line">    population = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="string">"""初始化数据"""</span></span><br><span class="line">        self.name = name</span><br><span class="line">        print(<span class="string">"(Initializing &#123;&#125;)"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当有人被创建时，机器人</span></span><br><span class="line">        <span class="comment"># 将会增加人口数量</span></span><br><span class="line">        Robot.population += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">die</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""我挂了。"""</span></span><br><span class="line">        print(<span class="string">"&#123;&#125; is being destroyed!"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line">        Robot.population -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> Robot.population == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"&#123;&#125; was the last one."</span>.format(self.name))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"There are still &#123;:d&#125; robots working."</span>.format(</span><br><span class="line">                Robot.population))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""来自机器人的诚挚问候</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        没问题，你做得到。"""</span></span><br><span class="line">        print(<span class="string">"Greetings, my masters call me &#123;&#125;."</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">how_many</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="string">"""打印出当前的人口数量"""</span></span><br><span class="line">        print(<span class="string">"We have &#123;:d&#125; robots."</span>.format(cls.population))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">droid1 = Robot(<span class="string">"R2-D2"</span>)</span><br><span class="line">droid1.say_hi()</span><br><span class="line">Robot.how_many()</span><br><span class="line"></span><br><span class="line">droid2 = Robot(<span class="string">"C-3PO"</span>)</span><br><span class="line">droid2.say_hi()</span><br><span class="line">Robot.how_many()</span><br><span class="line"></span><br><span class="line">print(<span class="string">"\nRobots can do some work here.\n"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Robots have finished their work. So let's destroy them."</span>)</span><br><span class="line">droid1.die()</span><br><span class="line">droid2.die()</span><br><span class="line"></span><br><span class="line">Robot.how_many()</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ python oop_objvar.py</span><br><span class="line">(Initializing R2-D2)</span><br><span class="line">Greetings, my masters call me R2-D2.</span><br><span class="line">We have 1 robots.</span><br><span class="line">(Initializing C-3PO)</span><br><span class="line">Greetings, my masters call me C-3PO.</span><br><span class="line">We have 2 robots.</span><br><span class="line"></span><br><span class="line">Robots can do some work here.</span><br><span class="line"></span><br><span class="line">Robots have finished their work. So let&apos;s destroy them.</span><br><span class="line">R2-D2 is being destroyed!</span><br><span class="line">There are still 1 robots working.</span><br><span class="line">C-3PO is being destroyed!</span><br><span class="line">C-3PO was the last one.</span><br><span class="line">We have 0 robots.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承</p>
+<p>面向对象编程的一大优点是对代码的<strong>重用（Reuse）</strong>，重用的一种实现方法就是通过<strong>继承（Inheritance）</strong>机制。继承最好是想象成在类之间实现<strong>类型与子类型（Type and Subtype）</strong>关系的工具。</p>
+<p><code>SchoolMember</code> 类会被称作<strong>基类（Base Class）</strong>或是<strong>超类（Superclass）</strong>。<code>Teacher</code> 和 <code>Student</code> 类会被称作<strong>派生类（Derived Classes）</strong>或是<strong>子类（Subclass）</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=UTF-8</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SchoolMember</span>:</span></span><br><span class="line">    <span class="string">'''代表任何学校里的成员。'''</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        print(<span class="string">'(Initialized SchoolMember: &#123;&#125;)'</span>.format(self.name))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''告诉我有关我的细节。'''</span></span><br><span class="line">        print(<span class="string">'Name:"&#123;&#125;" Age:"&#123;&#125;"'</span>.format(self.name, self.age), end=<span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span><span class="params">(SchoolMember)</span>:</span></span><br><span class="line">    <span class="string">'''代表一位老师。'''</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, salary)</span>:</span></span><br><span class="line">        SchoolMember.__init__(self, name, age)</span><br><span class="line">        self.salary = salary</span><br><span class="line">        print(<span class="string">'(Initialized Teacher: &#123;&#125;)'</span>.format(self.name))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        SchoolMember.tell(self)</span><br><span class="line">        print(<span class="string">'Salary: "&#123;:d&#125;"'</span>.format(self.salary))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(SchoolMember)</span>:</span></span><br><span class="line">    <span class="string">'''代表一位学生。'''</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, marks)</span>:</span></span><br><span class="line">        SchoolMember.__init__(self, name, age)</span><br><span class="line">        self.marks = marks</span><br><span class="line">        print(<span class="string">'(Initialized Student: &#123;&#125;)'</span>.format(self.name))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        SchoolMember.tell(self)</span><br><span class="line">        print(<span class="string">'Marks: "&#123;:d&#125;"'</span>.format(self.marks))</span><br><span class="line"></span><br><span class="line">t = Teacher(<span class="string">'Mrs. Shrividya'</span>, <span class="number">40</span>, <span class="number">30000</span>)</span><br><span class="line">s = Student(<span class="string">'Swaroop'</span>, <span class="number">25</span>, <span class="number">75</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印一行空白行</span></span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line">members = [t, s]</span><br><span class="line"><span class="keyword">for</span> member <span class="keyword">in</span> members:</span><br><span class="line">    <span class="comment"># 对全体师生工作</span></span><br><span class="line">    member.tell()</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ python oop_subclass.py</span><br><span class="line">(Initialized SchoolMember: Mrs. Shrividya)</span><br><span class="line">(Initialized Teacher: Mrs. Shrividya)</span><br><span class="line">(Initialized SchoolMember: Swaroop)</span><br><span class="line">(Initialized Student: Swaroop)</span><br><span class="line"></span><br><span class="line">Name:&quot;Mrs. Shrividya&quot; Age:&quot;40&quot; Salary: &quot;30000&quot;</span><br><span class="line">Name:&quot;Swaroop&quot; Age:&quot;25&quot; Marks: &quot;75&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
+<li><p><a href="https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3" target="_blank" rel="noopener">Purpose of #!/usr/bin/python3</a></p>
+<blockquote>
+<p>Answer:</p>
+<p><code>#!/usr/bin/python3</code> is a <strong>shebang line</strong>.</p>
+<p>A shebang line defines where the interpreter is located. In this case, the <code>python3</code> interpreter is located in <code>/usr/bin/python3</code>. A shebang line could also be a <code>bash</code>, <code>ruby</code>, <code>perl</code> or any other scripting languages’ interpreter, for example: <code>#!/bin/bash</code>.</p>
+<p>Without the shebang line, the operating system does not know it’s a python script, even if you set the execution flag on the script and run it like <code>./script.py</code>. To make the script run by default in python3, either invoke it as <code>python3 script.py</code> or set the shebang line.</p>
+<p>You can use <code>#!/usr/bin/env python3</code> for portability across different systems in case they have the language interpreter installed in different locations.</p>
+</blockquote>
+</li>
+<li></li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/01/25/Python-Note/">Python Note</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 JacksonLeon 的个人博客">JacksonLeon</a></p>
+  <p><span>发布时间:</span>2019年01月25日 - 21:01</p>
+  <p><span>最后更新:</span>2019年01月26日 - 19:01</p>
+  <p><span>原始链接:</span><a href="/2019/01/25/Python-Note/" title="Python Note">https://jacksonleon.gitee.io/2019/01/25/Python-Note/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/2019/01/25/Python-Note/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/24/Settings-of-iTerm2-on-Mac/" rel="next" title="Settings of iTerm2 on Mac">
+                <i class="fa fa-chevron-left"></i> Settings of iTerm2 on Mac
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="JacksonLeon">
+            
+              <p class="site-author-name" itemprop="name">JacksonLeon</p>
+              <p class="site-description motion-element" itemprop="description">Love what you do, do what you love.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">47</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JacksonLeon" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:pumbjackson@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.coding.me/2018/03/22/Blog-with-Hexo/" title="Blog With Hexo" target="_blank">Blog With Hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.coding.me/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" title="Hackintosh Tutorial" target="_blank">Hackintosh Tutorial</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.coding.me/2018/03/22/Markdown%E8%AF%AD%E6%B3%95/" title="MarkDown Note" target="_blank">MarkDown Note</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.4.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与基本规则"><span class="nav-number">1.4.1.</span> <span class="nav-text">字符串与基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符与表达式"><span class="nav-number">1.4.2.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">1.4.3.</span> <span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.4.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.4.5.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.4.6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.4.7.</span> <span class="nav-text">面向对象编程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.5.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JacksonLeon</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共36.3k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz',
+        appKey: '1bF6m0SPiN3sk9TaGxPELdjY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
