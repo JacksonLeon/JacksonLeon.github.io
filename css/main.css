@@ -1935,7 +1935,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8a9c03;
+  background: #d447c7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3056,7 +3056,7 @@ ul.breadcrumb li+li:last-child {
   margin-top: 0px;
 }
 .post {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   padding: 45px 36px 36px 36px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
@@ -3167,6 +3167,17 @@ h2.love {
   font-size: 26px;
   line-height: 50px;
   letter-spacing: 1px;
+}
+.page-archive .archive-page-counter {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+.page-archive .posts-collapse .archive-move-on {
+  top: 15px;
+  opacity: 1;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
