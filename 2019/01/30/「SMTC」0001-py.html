@@ -134,18 +134,18 @@
 
 
 
-  <meta name="description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description Show me the code 第0001题 Python版">
+  <meta name="description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description 完整题目在这里 Show me the code 第0001题 Python版">
 <meta name="keywords" content="Python,SMTC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「SMTC」0001.py">
 <meta property="og:url" content="https://jacksonleon.gitee.io/2019/01/30/「SMTC」0001-py.html">
 <meta property="og:site_name" content="Joseph&#39;s note">
-<meta property="og:description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description Show me the code 第0001题 Python版">
+<meta property="og:description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description 完整题目在这里 Show me the code 第0001题 Python版">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-30T04:16:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「SMTC」0001.py">
-<meta name="twitter:description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description Show me the code 第0001题 Python版">
+<meta name="twitter:description" content="「SMTC」0001.pyAuthor: JacksonLeon  Description 完整题目在这里 Show me the code 第0001题 Python版">
 
 
 
@@ -567,6 +567,7 @@
         <h1 id="「SMTC」0001-py"><a href="#「SMTC」0001-py" class="headerlink" title="「SMTC」0001.py"></a>「SMTC」0001.py</h1><p>Author: JacksonLeon</p>
 <hr>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<a href="/2019/01/29/show-me-the-code.html" title="完整题目在这里">完整题目在这里</a>
 <p>Show me the code 第0001题 Python版</p>
 </blockquote>
 <a id="more"></a>
@@ -574,6 +575,8 @@
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用Random库中的<code>sample</code>或者<code>chioce</code>来生成随机码</p>
 <p>从<code>string.ascii_letters + string.digits</code>中随机选择</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_code</span><span class="params">(count, len)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    str = string.ascii_letters + string.digits</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(count):</span><br><span class="line">        r = <span class="string">''</span>.join(random.sample(str, k=len))</span><br><span class="line">        result.append(r)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    result = gen_code(<span class="number">200</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>激活码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;DHuMjiv4QL&apos;, &apos;8kMSVUdWom&apos;, &apos;oI0EkUX1Vr&apos;, &apos;7104rpY9wL&apos;, &apos;nbQhSro2Bk&apos;, &apos;kgUiG1IrLu&apos;, &apos;yAxeGNnHQa&apos;, &apos;9uRsqHDdZ1&apos;, &apos;L3Rre4tGcC&apos;, &apos;BWoahMCjeX&apos;, &apos;bTxoJGUKQr&apos;, &apos;v3ViIwURWC&apos;, &apos;E3UeoLcyAg&apos;, &apos;DxK89QhYar&apos;, &apos;yPTBZm2GtY&apos;, &apos;O72LjGMiJA&apos;, &apos;cPZrH6nowi&apos;, &apos;DyboV2zjxX&apos;, &apos;pMiySqkfwD&apos;, &apos;1xVjP2znqk&apos;, &apos;ClJAQ7DZqv&apos;, &apos;eX2pgf9Enx&apos;, &apos;Kfq7CY5P2d&apos;, &apos;7hAZxQg3e6&apos;, &apos;SuchrgGQIX&apos;, &apos;KDCxXvVMq9&apos;, &apos;G6O2RVZQJY&apos;, &apos;VZ5X92G4qk&apos;, &apos;QBiVNnsZgk&apos;, &apos;ZzrO6jWc89&apos;, &apos;MS0NElycqB&apos;, &apos;o4sc7z2WaJ&apos;, &apos;irtx7Ay683&apos;, &apos;u2OHXGJpoT&apos;, &apos;W38bS72yC5&apos;, &apos;xB3f8jXMuo&apos;, &apos;CK3G9x5L4F&apos;, &apos;xmp1ofPev0&apos;, &apos;nCxfVhOBp5&apos;, &apos;vitY4HS1qu&apos;, &apos;8Oy5W1hwzG&apos;, &apos;jVrAv7OUaN&apos;, &apos;730wYhUdRL&apos;, &apos;tz3SJBCO1g&apos;, &apos;g1xvDnSIKp&apos;, &apos;mFz5gJNna7&apos;, &apos;ZTdYuqzgCM&apos;, &apos;Yka8Bv4KDm&apos;, &apos;Bp6wfUuKxQ&apos;, &apos;0rVnQCF4zb&apos;, &apos;YySmioFrlq&apos;, &apos;MbZmXiIBGr&apos;, &apos;Wr5QVjn19I&apos;, &apos;MNHsPoeaWQ&apos;, &apos;6KE0UGHbFg&apos;, &apos;bEN0ecMgsv&apos;, &apos;zhMn0Vj4t6&apos;, &apos;8AEiH1WOyn&apos;, &apos;0ZV24yjtOe&apos;, &apos;cAFf8EM45B&apos;, &apos;41tgWau5Yl&apos;, &apos;0YGAQhyiPx&apos;, &apos;mZH5DfaN7S&apos;, &apos;ibVqSO2Hu0&apos;, &apos;ihE3KsGI8V&apos;, &apos;RID4s2khwN&apos;, &apos;PNTeOxZiSI&apos;, &apos;EH9y5ILAgf&apos;, &apos;HgAndribIt&apos;, &apos;JVHPah6tsc&apos;, &apos;EZiJXfQ0HT&apos;, &apos;wM3TVGHe41&apos;, &apos;5UZjJRp6cS&apos;, &apos;P4ZFx9O7hg&apos;, &apos;M2Cma86et1&apos;, &apos;WmNpXrfJOU&apos;, &apos;ZzolGCHnLf&apos;, &apos;Wm1wJ3DV26&apos;, &apos;xeITOLWQaN&apos;, &apos;GA5UDVEFf3&apos;, &apos;ZoVLrQmsxN&apos;, &apos;mobv0cOEd2&apos;, &apos;Y7QztExljZ&apos;, &apos;QTGw5nEokh&apos;, &apos;UqwgFmQn1i&apos;, &apos;Y3dAOnjwog&apos;, &apos;ZDsIhPwmvl&apos;, &apos;UicuGFbqJo&apos;, &apos;BzlnuP0MZE&apos;, &apos;ZeURlnFX0g&apos;, &apos;HILR0ZGDjo&apos;, &apos;ma9hbcPqoH&apos;, &apos;LSUpX7fJwo&apos;, &apos;FtIoiL80AT&apos;, &apos;GxmXIlQP7j&apos;, &apos;QYjB5qi1Fr&apos;, &apos;wJucMbyOkL&apos;, &apos;iUN2VqBvwt&apos;, &apos;AK64Fxr5uZ&apos;, &apos;Ln4k9NVrTp&apos;, &apos;2oR05yvO7M&apos;, &apos;VaueIrLkNO&apos;, &apos;rhuvjCPz0F&apos;, &apos;gQrxGhLfsI&apos;, &apos;zQ3q19kJEp&apos;, &apos;Bhnpiy9WXj&apos;, &apos;ktonFbEvCs&apos;, &apos;TpHCZ6l7Jq&apos;, &apos;Heby9S3V2t&apos;, &apos;KlmRbekMLP&apos;, &apos;JIytQvW0ix&apos;, &apos;zm7HpJXsrx&apos;, &apos;nO9hSsuQgW&apos;, &apos;Q6USJXnD5v&apos;, &apos;nQksyrmb9K&apos;, &apos;hJtTzjVHF5&apos;, &apos;Nkn07jxMit&apos;, &apos;C5td0p8ObA&apos;, &apos;pLZF861eUv&apos;, &apos;VGrQJLXj0I&apos;, &apos;P7sKwBGeRL&apos;, &apos;CnSbUk9TqR&apos;, &apos;LjvpRirJSN&apos;, &apos;NVvJz89FO0&apos;, &apos;ogJaElf9Le&apos;, &apos;EasDpABHe6&apos;, &apos;tK3dmnaeJ1&apos;, &apos;gk24c0HAnO&apos;, &apos;mJvh1a0QeD&apos;, &apos;D6BZEuK4YF&apos;, &apos;yDQWtBj9SI&apos;, &apos;ztsojweJ0D&apos;, &apos;6jqRdlOwsv&apos;, &apos;Y6sUtM3yDZ&apos;, &apos;4Q0onitS5v&apos;, &apos;wjcH6pgAmB&apos;, &apos;yO90ciLH5a&apos;, &apos;lFWfLQVrim&apos;, &apos;OY3bnseVJz&apos;, &apos;y9RLf4KOHM&apos;, &apos;rjkWJTXzty&apos;, &apos;pERYnL17QO&apos;, &apos;tU3ksVxHub&apos;, &apos;bQohSjm0p8&apos;, &apos;oFwhT6dpAJ&apos;, &apos;3yHkb4o5Gr&apos;, &apos;QPR3qBcbf1&apos;, &apos;D56uIMconT&apos;, &apos;MFAXJg8h6S&apos;, &apos;PwoLkvOSJ7&apos;, &apos;qmevT7jPKb&apos;, &apos;Q0sx4HITDz&apos;, &apos;6ydP3tMY07&apos;, &apos;jAQLtBoJZp&apos;, &apos;5ekxqGv3En&apos;, &apos;vxCRGJbIe1&apos;, &apos;r4bFwSyAzi&apos;, &apos;VGQ06rmMwg&apos;, &apos;IVFZM7A3eU&apos;, &apos;BK8utDv9oV&apos;, &apos;QhJpLwZDdx&apos;, &apos;gJHITvtVih&apos;, &apos;jShOoIfKW9&apos;, &apos;7aLpFSCG18&apos;, &apos;WzHGO2MdRT&apos;, &apos;Y21sLBv6fJ&apos;, &apos;hUrnvBLfzJ&apos;, &apos;nJAu02MOIQ&apos;, &apos;NcbphnFwVq&apos;, &apos;0EcganGIPY&apos;, &apos;JTznSf5B0d&apos;, &apos;tnCgZhqEum&apos;, &apos;v1IHxjA4Yn&apos;, &apos;oUKm3Qkw41&apos;, &apos;WOHxYE6ZDI&apos;, &apos;MTAzUmfLYv&apos;, &apos;aDgtXmjkyN&apos;, &apos;9xlW7eE8CO&apos;, &apos;RF8sqgWjIl&apos;, &apos;WJbUXLtFe1&apos;, &apos;tqxVAFoZdM&apos;, &apos;wE2YIDsrXS&apos;, &apos;Ztipfa3N1E&apos;, &apos;nV3krxKGq8&apos;, &apos;T4m2XR3hpH&apos;, &apos;RSTFUBis1h&apos;, &apos;8u1P4B2gFq&apos;, &apos;n0UB2ilNEQ&apos;, &apos;d3TqN6GVMZ&apos;, &apos;TEsc4dfwN1&apos;, &apos;MOrsb1hTDq&apos;, &apos;HMykhO0B61&apos;, &apos;g6pu7VXeR9&apos;, &apos;AXbJaGiR5T&apos;, &apos;sjOcoaUwT6&apos;, &apos;NpCAFJVrbt&apos;, &apos;Oswmi027lb&apos;, &apos;pRJnf6soAX&apos;, &apos;WONrpK7mMi&apos;, &apos;nVWdaywPqZ&apos;]</span><br></pre></td></tr></table></figure>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li><p>自己设定<code>str=&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</code>，随机码中出现<code>\x08</code>也就是backspace</p>
 <p>需要设置为<code>str = string.ascii_letters + string.digits</code></p>
@@ -937,15 +940,15 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://jacksonleon.github.io/2018/03/22/Blog-with-Hexo/" title="https://jacksonleon.github.io/2018/03/22/Blog-with-Hexo/" rel="noopener" target="_blank">Blog With Hexo</a>
+                    <a href="/2018/03/22/Blog-with-Hexo.html" title="/2018/03/22/Blog-with-Hexo.html">用Hexo+GitHub Page搭建个人博客</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://jacksonleon.github.io/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" title="https://jacksonleon.github.io/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk/" rel="noopener" target="_blank">Hackintosh Tutorial</a>
+                    <a href="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk.html" title="/2018/12/06/Hackintosh-for-Lenovo-Ideapad-700-15isk.html">Lenovo-Ideapad-700黑苹果教程</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://jacksonleon.github.io/2018/03/22/Markdown%E8%AF%AD%E6%B3%95/" title="https://jacksonleon.github.io/2018/03/22/Markdown%E8%AF%AD%E6%B3%95/" rel="noopener" target="_blank">MarkDown Note</a>
+                    <a href="/2018/03/22/Markdown%E8%AF%AD%E6%B3%95.html" title="/2018/03/22/Markdown%E8%AF%AD%E6%B3%95.html">MarkDown语法</a>
                   </li>
                 
               </ul>

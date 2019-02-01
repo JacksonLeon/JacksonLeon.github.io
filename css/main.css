@@ -1850,6 +1850,9 @@ pre .javascript .function {
   border: 1px solid #eee;
   opacity: 1;
 }
+.site-author-image {
+  border-radius: 100%;
+}
 .site-author-name {
   margin: 0;
   text-align: center;
@@ -1932,7 +1935,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4437;
+  background: #8a9c03;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3136,6 +3139,9 @@ h2.love {
   border-left: none;
   color: #ff71a8;
   -webkit-text-fill-color: unset;
+}
+.menu .menu-item a {
+  font-size: 14px;
 }
 .menu .menu-item {
   margin: 5px 15px;
