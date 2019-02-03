@@ -571,7 +571,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.5k</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -650,13 +650,13 @@
 <div class="note danger">
             <p>note danger, note danger, note danger<br>note danger, note danger, note danger<br>note danger, note danger, note danger</p>
           </div>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">// 或者这样</span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
 <div class="note danger no-icon"><p>danger no-icon</p></div>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>首先可以在主题配置文件中需要配置下，贴上我的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">文件位置：~/blog/themes/next/_config.yml# Note tag (bs-callout).</span><br><span class="line">note:</span><br><span class="line">  # 风格</span><br><span class="line">  style: flat</span><br><span class="line">  # 要不要图标</span><br><span class="line">  icons: true</span><br><span class="line">  # 圆角矩形</span><br><span class="line">  border_radius: 3</span><br><span class="line">  light_bg_offset:</span><br></pre></td></tr></table></figure>
-<p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697" target="_blank" rel="noopener">这个页面</a>，更多的介绍也在这个页面，请自行查看。</p>
+<p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697" target="_blank" rel="noopener">这个页面</a>，更多的介绍也在这个页面。</p>
 <h3 id="主题自带样式-label-标签"><a href="#主题自带样式-label-标签" class="headerlink" title="主题自带样式 label 标签"></a>主题自带样式 label 标签</h3><p>首先可以在主题配置文件中有配置，需要配置下，贴上我的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件位置：~/blog/themes/next/_config.yml# Label tag.</span><br><span class="line">label: true</span><br></pre></td></tr></table></figure>
 <p>然后效果如下（@ 前面的是<code>label</code>的名字，后面的是要显示的文字）：</p>
@@ -672,7 +672,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label warning@warning %&#125;</span><br></pre></td></tr></table></figure>
 <span class="label danger">danger</span>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label danger@danger %&#125;</span><br></pre></td></tr></table></figure>
-<span class="label warning">目前博主发现个 bug，如果把它加在一段文字的段首，则会有点问题，[issue](https://github.com/iissnan/hexo-theme-next/issues/2022) 页面。</span>
+<div class="note warning">
+            <p>目前博主发现个 bug，如果把它加在一段文字的段首，则会有点问题，见<a href="https://github.com/iissnan/hexo-theme-next/issues/2022" target="_blank" rel="noopener">issue</a> 。</p>
+          </div>
 <h2 id="BUGs"><a href="#BUGs" class="headerlink" title="BUGs"></a>BUGs</h2><ol>
 <li><p>Hexo解析问题</p>
 <blockquote>
