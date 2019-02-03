@@ -1996,7 +1996,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ddbedb;
+  background: #6af95e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3099,6 +3099,11 @@ ul.breadcrumb li+li:last-child {
     text-align: justify;
   }
 }
+.site-title {
+  font-size: 26px;
+  line-height: 50px;
+  letter-spacing: 1px;
+}
 .headband {
   height: 2px;
   background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
@@ -3106,27 +3111,15 @@ ul.breadcrumb li+li:last-child {
 .header-inner {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-.posts-expand {
-  padding-top: 80px;
-}
-.posts-expand .post-meta {
-  margin: 5px 0px 0px 0px;
-}
-.post-button {
-  margin-top: 0px;
-}
-.post {
-  margin-bottom: 25px;
-  padding: 45px 36px 36px 36px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  background-color: #fff;
+  border-radius: 15px 15px 15px 15px;
 }
 .posts-expand .post-eof {
   margin: 0px;
   background-color: rgba(255,255,255,0);
 }
 .pagination .page-number.current {
+  background: #34495e;
+  width: 15px;
   border-radius: 100%;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: rgba(0,0,0,0.5);
@@ -3140,6 +3133,50 @@ ul.breadcrumb li+li:last-child {
 .pagination {
   border: none;
   margin: 0px;
+}
+.page-archive .archive-page-counter {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+.page-archive .posts-collapse .archive-move-on {
+  top: 15px;
+  opacity: 1;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+.content-wrap {
+  float: right;
+  box-sizing: border-box;
+  padding: 40px;
+  width: calc(100% - 252px);
+  background: #eee;
+  min-height: 700px;
+  box-shadow: initial;
+  border-radius: 30px 30px 30px 30px;
+}
+body {
+  color: #000;
+  background: #eee;
+}
+.posts-expand {
+  padding-top: 10px;
+}
+.posts-expand .post-meta {
+  margin: 5px 0px 0px 0px;
+}
+.post-button {
+  margin-top: 0px;
+}
+.back-to-top {
+  background: #eee;
+}
+.post {
+  margin-bottom: 25px;
+  padding: 45px 36px 36px 36px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  border-radius: 15px 15px 15px 15px;
 }
 code {
   margin: 0px 4px;
@@ -3156,6 +3193,9 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+.posts-expand .post-title-link {
+  color: #000;
 }
 .post-nav-item a {
   font-weight: bold;
@@ -3179,6 +3219,39 @@ h6 {
 .post-gallery .post-gallery-img img {
   padding: 3px;
 }
+.post-button .btn {
+  color: #555 !important;
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
+  transition-property: unset;
+  padding: 3px 15px;
+  border-radius: 16px;
+}
+.post-button .btn:hover {
+  color: #fff !important;
+  border-radius: 3px;
+  font-size: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 16px;
+}
+.sidebar {
+  background: #eee;
+}
+.sidebar-inner {
+  box-sizing: border-box;
+  width: 240px;
+  color: #555;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
+  border-radius: 15px;
+  opacity: 0;
+}
+.sidebar-inner .affix-top {
+  border-radius: 15px;
+}
 .site-author-name {
   display: none;
 }
@@ -3201,45 +3274,6 @@ img:hover {
   -o-transform: initial;
   transform: initial;
 }
-#heart {
-  animation: heartAnimate 1.33s ease-in-out infinite;
-}
-.with-love {
-  color: #ff71a8;
-}
-h2.love {
-  border-left: none;
-  color: #ff71a8;
-  -webkit-text-fill-color: unset;
-}
-.menu .menu-item a {
-  font-size: 14px;
-}
-.menu .menu-item {
-  margin: 5px 15px;
-}
-.post-button .btn {
-  color: #555 !important;
-  background-color: #fff;
-  border-radius: 3px;
-  font-size: 15px;
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
-  border: none !important;
-  transition-property: unset;
-  padding: 0px 15px;
-}
-.post-button .btn:hover {
-  color: #fff !important;
-  border-radius: 3px;
-  font-size: 15px;
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
-  background-color: rgba(0,0,0,0.75);
-}
-.site-title {
-  font-size: 26px;
-  line-height: 50px;
-  letter-spacing: 1px;
-}
 .page-archive .archive-page-counter {
   font-size: 18px;
   color: #000;
@@ -3250,6 +3284,36 @@ h2.love {
   opacity: 1;
   background-color: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+.menu .menu-item a {
+  font-size: 14px;
+  border-radius: 20px;
+}
+.menu .menu-item {
+  margin: 5px 15px;
+}
+.menu-item-active a,
+.menu .menu-item a:hover,
+.menu .menu-item span.exturl:hover {
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+}
+.menu-item-active a:after,
+.menu .menu-item a:hover:after,
+.menu .menu-item span.exturl:hover:after {
+  background-color: #fff;
+}
+#heart {
+  animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+  color: #ff71a8;
+}
+h2.love {
+  border-left: none;
+  color: #ff71a8;
+  -webkit-text-fill-color: unset;
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
