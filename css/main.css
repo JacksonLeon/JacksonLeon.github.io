@@ -1996,7 +1996,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b0b829;
+  background: #5cffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2632,7 +2632,7 @@ ul.breadcrumb li+li:last-child {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 1160px;
+  width: calc(100% - 20px);
 }
 @media (min-width: 1200px) {
   .header {
@@ -2714,14 +2714,14 @@ ul.breadcrumb li+li:last-child {
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
+    padding: 8px;
     border-radius: initial;
   }
 }
 @media (max-width: 767px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
+    padding: 8px;
     min-height: auto;
     border-radius: initial;
   }
@@ -3153,6 +3153,21 @@ ul.breadcrumb li+li:last-child {
   min-height: 700px;
   box-shadow: initial;
   border-radius: 30px 30px 30px 30px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-wrap {
+    width: 100%;
+    padding: 8px;
+    border-radius: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100%;
+    padding: 8px;
+    min-height: auto;
+    border-radius: 30px;
+  }
 }
 body {
   color: #000;
