@@ -588,7 +588,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.1k</span>
+                <span title="本文字数">9.5k</span>
               
 
               
@@ -602,7 +602,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">9 分钟</span>
               
             </div>
           
@@ -685,18 +685,31 @@
 <li><p>效果展示</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g02kz3zr68j31hc0r04la.jpg" alt="image-20190211164921861"><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g02kyeox86j30xe0mq1kx.jpg" alt="image-20190211164828843"></p>
 </li>
+<li><p><em>参考</em></p>
+<p><a href="https://blog.csdn.net/IllegalName/article/details/77366508" target="_blank" rel="noopener">【Python爬虫系列】使用requests爬取图片</a></p>
+<p><a href="https://jacksonleon.gitee.io/posts/247701255.html">小说爬虫</a></p>
+</li>
 </ul>
 <p><strong>第 0014 题：</strong> 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;1&quot;:[&quot;张三&quot;,150,120,100],</span><br><span class="line">	&quot;2&quot;:[&quot;李四&quot;,90,99,95],</span><br><span class="line">	&quot;3&quot;:[&quot;王五&quot;,60,66,68]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>请将上述内容写到 student.xls 文件中，如下图所示：</p>
 <p><img src="https://camo.githubusercontent.com/18dea9401449e4ca894d40d55134d9c28083280d/687474703a2f2f692e696d6775722e636f6d2f6e50446c706d652e6a7067" alt="student.xls"></p>
 <ul>
-<li><a href="http://www.cnblogs.com/skynet/archive/2013/05/06/3063245.html" target="_blank" rel="noopener">阅读资料</a> 腾讯游戏开发 XML 和 Excel 内容相互转换</li>
+<li><p><a href="http://www.cnblogs.com/skynet/archive/2013/05/06/3063245.html" target="_blank" rel="noopener">阅读资料</a> 腾讯游戏开发 XML 和 Excel 内容相互转换</p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示</span></span><br><span class="line"><span class="keyword">from</span> xlwt <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xml2exl</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'student.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> dic:</span><br><span class="line">        content = json.load(dic)</span><br><span class="line">        workbook = Workbook()</span><br><span class="line">        sheet = workbook.add_sheet(<span class="string">'student'</span>, cell_overwrite_ok=<span class="keyword">True</span>)</span><br><span class="line">        <span class="comment"># 输出元素序号</span></span><br><span class="line">        <span class="keyword">for</span> index, (key, values) <span class="keyword">in</span> enumerate(content.items()):</span><br><span class="line">            <span class="comment"># sheet.write(row, col, *args)</span></span><br><span class="line">            <span class="comment"># 输入第一列数据</span></span><br><span class="line">            sheet.write(index, <span class="number">0</span>, key)</span><br><span class="line">            <span class="keyword">for</span> i, value <span class="keyword">in</span> enumerate(values):</span><br><span class="line">                <span class="comment"># 输入每一行第二列开始的数据</span></span><br><span class="line">                sheet.write(index, i+<span class="number">1</span>, value)</span><br><span class="line">        workbook.save(filePath+<span class="string">'student.xls'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xml2exl(<span class="string">'./SMTC/source/0014/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><strong>第 0015 题：</strong> 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</p>
+<p><strong>第 0015 题：</strong>  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;1&quot; : &quot;上海&quot;,</span><br><span class="line">    &quot;2&quot; : &quot;北京&quot;,</span><br><span class="line">    &quot;3&quot; : &quot;成都&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>请将上述内容写到 city.xls 文件中，如下图所示：</p>
 <p><img src="https://camo.githubusercontent.com/61120377319bfe5520c9d73f51776f923d6bd3b7/687474703a2f2f692e696d6775722e636f6d2f724f4862557a672e706e67" alt="city.xls"></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</span></span><br><span class="line"><span class="keyword">from</span> xlwt <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xml2exl</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'city.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        content = json.load(f)</span><br><span class="line">        workBook = Workbook()</span><br><span class="line">        sheet = workBook.add_sheet(<span class="string">'city'</span>, cell_overwrite_ok=<span class="keyword">True</span>)</span><br><span class="line">        <span class="comment"># enumerate可以分开词语</span></span><br><span class="line">        <span class="keyword">for</span> index, (key, value) <span class="keyword">in</span> enumerate(content.items()):</span><br><span class="line">            sheet.write(index, <span class="number">0</span>, key)</span><br><span class="line">            <span class="comment"># 与上一题不同的是</span></span><br><span class="line">            <span class="comment"># 这题中的value只有一列值</span></span><br><span class="line">            <span class="comment"># 不需要使用enumerate</span></span><br><span class="line">            sheet.write(index, <span class="number">1</span>, value)</span><br><span class="line">        workBook.save(filePath+<span class="string">'city.xls'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xml2exl(<span class="string">'./SMTC/source/0015/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0016 题：</strong> 纯文本文件 numbers.txt, 里面的内容（包括方括号）如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	[1, 82, 65535], </span><br><span class="line">	[20, 90, 13],</span><br><span class="line">	[26, 809, 1024]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>请将上述内容写到 numbers.xls 文件中，如下图所示：</p>
@@ -1285,7 +1298,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">192k</span>
   
 
   
@@ -1296,7 +1309,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:54</span>
   
 </div>
 

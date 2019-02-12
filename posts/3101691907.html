@@ -142,10 +142,12 @@
 <meta property="og:site_name" content="Joseph&#39;s note">
 <meta property="og:description" content="Python LibraryAuthor: JosephLau  Description 汇总使用过的Python库 简单记一下模块功能以及函数原型">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xlsxwriter.readthedocs.io/_images/worksheet01.png">
 <meta property="og:updated_time" content="2019-02-04T08:07:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Library">
 <meta name="twitter:description" content="Python LibraryAuthor: JosephLau  Description 汇总使用过的Python库 简单记一下模块功能以及函数原型">
+<meta name="twitter:image" content="https://xlsxwriter.readthedocs.io/_images/worksheet01.png">
 
 
 
@@ -595,7 +597,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.2k</span>
+                <span title="本文字数">10k</span>
               
 
               
@@ -609,7 +611,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">9 分钟</span>
               
             </div>
           
@@ -764,6 +766,37 @@
 </tr>
 </tbody>
 </table>
+<h2 id="The-Worksheet-Class"><a href="#The-Worksheet-Class" class="headerlink" title="The Worksheet Class"></a>The Worksheet Class</h2><blockquote>
+<p>The worksheet class represents an Excel worksheet. It handles operations such as writing data to cells or formatting worksheet layout.</p>
+<p>A worksheet object isn’t instantiated directly. Instead a new worksheet is created by calling the <a href="https://xlsxwriter.readthedocs.io/workbook.html#add_worksheet" target="_blank" rel="noopener"><code>add_worksheet()</code></a> method from a <a href="https://xlsxwriter.readthedocs.io/workbook.html#Workbook" target="_blank" rel="noopener"><code>Workbook()</code></a> object:</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">workbook   = xlsxwriter.Workbook(<span class="string">'filename.xlsx'</span>)</span><br><span class="line"></span><br><span class="line">worksheet1 = workbook.add_worksheet()</span><br><span class="line">worksheet2 = workbook.add_worksheet()</span><br><span class="line"></span><br><span class="line">worksheet1.write(<span class="string">'A1'</span>, <span class="number">123</span>)</span><br><span class="line"></span><br><span class="line">workbook.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>worksheet.write()</strong></p>
+<p><code>write</code>(<em>row</em>, <em>col</em>, *<em>args</em>)</p>
+<p>Write generic data to a worksheet cell.</p>
+<p>| Parameters: | <strong>row</strong> – The cell row (zero indexed).<strong>col</strong> – The cell column (zero indexed).<strong>*args</strong> – The additional args that are passed to the sub methods such as number, string and cell_format. |<br>| ———– | ———————————————————— |<br>| Returns:    | 0: Success.                                                  |<br>| Returns:    | -1: Row or column is out of worksheet bounds.                |<br>| Returns:    | Other values from the called write methods.                  |</p>
+<p>Here are some examples:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">'Hello'</span>)          <span class="comment"># write_string()</span></span><br><span class="line">worksheet.write(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'World'</span>)          <span class="comment"># write_string()</span></span><br><span class="line">worksheet.write(<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>)                <span class="comment"># write_number()</span></span><br><span class="line">worksheet.write(<span class="number">3</span>, <span class="number">0</span>, <span class="number">3.00001</span>)          <span class="comment"># write_number()</span></span><br><span class="line">worksheet.write(<span class="number">4</span>, <span class="number">0</span>, <span class="string">'=SIN(PI()/4)'</span>)   <span class="comment"># write_formula()</span></span><br><span class="line">worksheet.write(<span class="number">5</span>, <span class="number">0</span>, <span class="string">''</span>)               <span class="comment"># write_blank()</span></span><br><span class="line">worksheet.write(<span class="number">6</span>, <span class="number">0</span>, <span class="keyword">None</span>)             <span class="comment"># write_blank()</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://xlsxwriter.readthedocs.io/_images/worksheet01.png" alt="_images/worksheet01.png"></p>
+<p>Excel makes a distinction between data types such as strings, numbers, blanks, formulas and hyperlinks. To simplify the process of writing data to an XlsxWriter file the <code>write()</code> method acts as a general alias for several more specific methods:</p>
+<ul>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_string" target="_blank" rel="noopener"><code>write_string()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_number" target="_blank" rel="noopener"><code>write_number()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_blank" target="_blank" rel="noopener"><code>write_blank()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_formula" target="_blank" rel="noopener"><code>write_formula()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_datetime" target="_blank" rel="noopener"><code>write_datetime()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_boolean" target="_blank" rel="noopener"><code>write_boolean()</code></a></li>
+<li><a href="https://xlsxwriter.readthedocs.io/worksheet.html#write_url" target="_blank" rel="noopener"><code>write_url()</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Enumerate"><a href="#Enumerate" class="headerlink" title="Enumerate"></a>Enumerate</h2><p>Enumerate is a built-in function of Python. Its usefulness can not be summarized in a single line. Yet most of the newcomers and even some advanced programmers are unaware of it. It allows us to loop over something and have an automatic counter. Here is an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for counter, value in enumerate(some_list):</span><br><span class="line">    print(counter, value)</span><br></pre></td></tr></table></figure>
+<p>And there is more! <code>enumerate</code> also accepts an optional argument which makes it even more useful.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">my_list = [&apos;apple&apos;, &apos;banana&apos;, &apos;grapes&apos;, &apos;pear&apos;]</span><br><span class="line">for c, value in enumerate(my_list, 1):</span><br><span class="line">    print(c, value)</span><br><span class="line"></span><br><span class="line"># Output:</span><br><span class="line"># 1 apple</span><br><span class="line"># 2 banana</span><br><span class="line"># 3 grapes</span><br><span class="line"># 4 pear</span><br></pre></td></tr></table></figure>
+<p>The optional argument allows us to tell <code>enumerate</code> from where to start the index. You can also create tuples containing the index and list item using a list. Here is an example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_list = [<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'grapes'</span>, <span class="string">'pear'</span>]</span><br><span class="line">counter_list = list(enumerate(my_list, <span class="number">1</span>))</span><br><span class="line">print(counter_list)</span><br><span class="line"><span class="comment"># Output: [(1, 'apple'), (2, 'banana'), (3, 'grapes'), (4, 'pear')]</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1276,7 +1309,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Library"><span class="nav-number">1.</span> <span class="nav-text">Python Library</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pillow"><span class="nav-number">1.2.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re"><span class="nav-number">1.3.</span> <span class="nav-text">re</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bs4"><span class="nav-number">1.4.</span> <span class="nav-text">bs4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.4.1.</span> <span class="nav-text">BeautifulSoup</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Library"><span class="nav-number">1.</span> <span class="nav-text">Python Library</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pillow"><span class="nav-number">1.2.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re"><span class="nav-number">1.3.</span> <span class="nav-text">re</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bs4"><span class="nav-number">1.4.</span> <span class="nav-text">bs4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.4.1.</span> <span class="nav-text">BeautifulSoup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Worksheet-Class"><span class="nav-number">1.5.</span> <span class="nav-text">The Worksheet Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enumerate"><span class="nav-number">1.6.</span> <span class="nav-text">Enumerate</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1317,7 +1350,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">192k</span>
   
 
   
@@ -1328,7 +1361,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:54</span>
   
 </div>
 
