@@ -429,18 +429,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode Analysis]]></title>
-    <url>%2Fposts%2F1393014657.html</url>
-    <content type="text"><![CDATA[LeetCode Analysis LeetCode ID Name Status Difficulty Language 191 Number of 1 Bits Solved E C/C++ 386 Lexicographical Numbers Solved M C/C++ 387 First Unique Character in a String Solved E C/C++ 461 Hamming Distance Solved E C/C++ 535 Encode and Decode TinyURL Solved M C/C++ 595 Big Countries Solved E C/C++ 617 Merge Two Binary Trees Solved E C/C++ 627 Swap Salary Solved E MySQL 654 Maximum Binary Tree Solved M C/C++ 657 Judge Route Circle Solved E C/C++ 709 To Lower Case Solved E C/C++ 771 Jewels and Stones Solved E C/C++ 804 Unique Morse Code Words Solved E C/C++ 807 Max Increase to Keep City Skyline Solved M C/C++ 832 Flipping an Image Solved E C/C++ 852 Peak Index in a Mountain Array Solved E C/C++ 876 Middle of the Linked List Solved E C/C++]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Analysis</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[「Leetcode」617. Merge Two Binary Trees]]></title>
     <url>%2Fposts%2F1733828030.html</url>
     <content type="text"><![CDATA[LeetCode NoteSorted by Acceptance Author: JosephLau 617. Merge Two Binary TreesDescription Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree. Example1234567891011121314Input: Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7 Output: Merged tree: 3 / \ 4 5 / \ \ 5 4 7 Note: The merging process must start from the root nodes of both trees. Solution C++ 12345678910111213141516171819202122/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) &#123; if(t1==NULL &amp;&amp; t2==NULL)return NULL; int tempValue=(t1==NULL?0:t1-&gt;val)+(t2==NULL?0:t2-&gt;val); TreeNode* res=new TreeNode(tempValue); res-&gt;left=mergeTrees((t1==NULL?NULL:t1-&gt;left),(t2==NULL?NULL:t2-&gt;left)); res-&gt;right=mergeTrees((t1==NULL?NULL:t1-&gt;right),(t2==NULL?NULL:t2-&gt;right)); return res; &#125;&#125;; Thinking使用递归遍历两个树，注意从头节点开始获取val]]></content>
@@ -451,6 +439,18 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode Analysis]]></title>
+    <url>%2Fposts%2F1393014657.html</url>
+    <content type="text"><![CDATA[LeetCode Analysis LeetCode ID Name Status Difficulty Language 191 Number of 1 Bits Solved E C/C++ 386 Lexicographical Numbers Solved M C/C++ 387 First Unique Character in a String Solved E C/C++ 461 Hamming Distance Solved E C/C++ 535 Encode and Decode TinyURL Solved M C/C++ 595 Big Countries Solved E C/C++ 617 Merge Two Binary Trees Solved E C/C++ 627 Swap Salary Solved E MySQL 654 Maximum Binary Tree Solved M C/C++ 657 Judge Route Circle Solved E C/C++ 709 To Lower Case Solved E C/C++ 771 Jewels and Stones Solved E C/C++ 804 Unique Morse Code Words Solved E C/C++ 807 Max Increase to Keep City Skyline Solved M C/C++ 832 Flipping an Image Solved E C/C++ 852 Peak Index in a Mountain Array Solved E C/C++ 876 Middle of the Linked List Solved E C/C++]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Analysis</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
