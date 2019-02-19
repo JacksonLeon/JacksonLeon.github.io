@@ -592,7 +592,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">27k</span>
+                <span title="本文字数">28k</span>
               
 
               
@@ -606,7 +606,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">25 分钟</span>
+                <span title="阅读时长">26 分钟</span>
               
             </div>
           
@@ -1053,7 +1053,25 @@
 <p>You can use <code>#!/usr/bin/env python3</code> for portability across different systems in case they have the language interpreter installed in different locations.</p>
 </blockquote>
 </li>
-<li></li>
+<li><p><a href="https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python" target="_blank" rel="noopener">What is the use of “assert” in Python?</a></p>
+<p>The <code>assert</code> statement exists in almost every programming language. It helps detect problems early in your program, where the cause is clear, rather than later as a side-effect of some other operation.</p>
+<p>When you do…</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> condition</span><br></pre></td></tr></table></figure>
+<p>you’re telling the program to test that condition, and immediately trigger an error if the condition is false.</p>
+<p>In Python, it’s roughly equivalent to this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> condition:</span><br><span class="line">    <span class="keyword">raise</span> AssertionError()</span><br></pre></td></tr></table></figure>
+<p>Try it in the Python shell:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="keyword">True</span> <span class="comment"># nothing happens</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="keyword">False</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AssertionError</span><br></pre></td></tr></table></figure>
+<p>Assertions can include an optional message, and you can disable them when running the interpreter.</p>
+<p>To print a message if the assertion fails:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="keyword">False</span>, <span class="string">"Oh no! This assertion failed!"</span></span><br></pre></td></tr></table></figure>
+<p>Do <strong>not</strong> use parenthesis to call <code>assert</code> like a function. It is a statement. If you do <code>assert(condition, message)</code> you’ll be running the <code>assert</code> with a <code>(condition, message)</code> tuple as first parameter.</p>
+<p>As for disabling them, when running <code>python</code> in optimized mode, where <code>__debug__</code> is <code>False</code>, assert statements will be ignored. Just pass the <code>-O</code> flag:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -O script.py</span><br></pre></td></tr></table></figure>
+<p>See <a href="http://docs.python.org/reference/simple_stmts.html#assert" target="_blank" rel="noopener">here</a> for the relevant documentation.</p>
+</li>
+<li><p>You use <code>==</code> when comparing values and <code>is</code> when comparing identities.</p>
+</li>
 </ol>
 
       
@@ -1610,7 +1628,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">195k</span>
+    <span title="站点总字数">198k</span>
   
 
   
@@ -1621,7 +1639,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">3:01</span>
   
 </div>
 

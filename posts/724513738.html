@@ -588,7 +588,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">13k</span>
+                <span title="本文字数">15k</span>
               
 
               
@@ -602,7 +602,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">12 分钟</span>
+                <span title="阅读时长">13 分钟</span>
               
             </div>
           
@@ -743,11 +743,22 @@
 </li>
 </ul>
 <p><strong>第 0020 题：</strong> <a href="http://iservice.10010.com/index_.html" target="_blank" rel="noopener">登陆中国联通网上营业厅</a> 后选择「自助服务」 –&gt; 「详单查询」，然后选择你要查询的时间段，点击「查询」按钮，查询结果页面的最下方，点击「导出」，就会生成类似于 2014年10月01日～2014年10月31日通话详单.xls 文件。写代码，对每月通话时间做个统计。</p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str2sec</span><span class="params">(str)</span>:</span></span><br><span class="line">    sec = <span class="number">0</span></span><br><span class="line">    time_re = re.compile(<span class="string">r'(\d+)(\D+)'</span>)</span><br><span class="line">    time_list = time_re.findall(str)</span><br><span class="line">    <span class="keyword">for</span> time_item <span class="keyword">in</span> time_list:</span><br><span class="line">        <span class="keyword">if</span> time_item[<span class="number">1</span>] == <span class="string">'秒'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">elif</span> time_item[<span class="number">1</span>] == <span class="string">'分'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>]) * <span class="number">60</span></span><br><span class="line">        <span class="keyword">elif</span> time_item[<span class="number">1</span>] == <span class="string">'小时'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>]) * <span class="number">3600</span></span><br><span class="line">    <span class="keyword">return</span> sec</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sec2str</span><span class="params">(sec)</span>:</span></span><br><span class="line">    h = sec // <span class="number">3600</span></span><br><span class="line">    m = sec % <span class="number">3600</span> // <span class="number">60</span></span><br><span class="line">    s = sec % <span class="number">60</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'%s小时%s分%s秒'</span> % (h, m, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minidata</span><span class="params">()</span>:</span></span><br><span class="line">    all_time = <span class="number">0</span>  <span class="comment"># 使用总时间（秒）</span></span><br><span class="line">    start_time = time.mktime(time.strptime(<span class="string">'2018-09-01'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line">    end_time = time.mktime(time.strptime(<span class="string">'2018-10-01'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line">    data = xlrd.open_workbook(<span class="string">'./SMTC/source/0020/2018年09月语音通信.xls'</span>)</span><br><span class="line">    table = data.sheet_by_index(<span class="number">0</span>)</span><br><span class="line">    nrows = table.nrows</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        this_time = time.mktime(time.strptime(</span><br><span class="line">            table.row_values(i)[<span class="number">2</span>], <span class="string">'%Y-%m-%d %H:%M:%S'</span>))</span><br><span class="line">        <span class="keyword">if</span> this_time &gt;= start_time <span class="keyword">and</span> this_time &lt; end_time:</span><br><span class="line">            all_time += str2sec(table.row_values(i)[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'总时间:'</span>+sec2str(all_time))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    minidata()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0021 题：</strong> 通常，登陆某个网站或者 APP，需要使用用户名和密码。密码是如何加密后存储起来的呢？请使用 Python 对密码加密。</p>
 <ul>
-<li>阅读资料 <a href="http://zhuoqiang.me/password-storage-and-python-example.html" target="_blank" rel="noopener">用户密码的存储与 Python 示例</a></li>
-<li>阅读资料 <a href="http://www.pythoncentral.io/hashing-strings-with-python/" target="_blank" rel="noopener">Hashing Strings with Python</a></li>
-<li>阅读资料 <a href="http://stackoverflow.com/questions/2572099/pythons-safest-method-to-store-and-retrieve-passwords-from-a-database" target="_blank" rel="noopener">Python’s safest method to store and retrieve passwords from a database</a></li>
+<li><p>阅读资料 <a href="http://zhuoqiang.me/password-storage-and-python-example.html" target="_blank" rel="noopener">用户密码的存储与 Python 示例</a></p>
+</li>
+<li><p>阅读资料 <a href="http://www.pythoncentral.io/hashing-strings-with-python/" target="_blank" rel="noopener">Hashing Strings with Python</a></p>
+</li>
+<li><p>阅读资料 <a href="http://stackoverflow.com/questions/2572099/pythons-safest-method-to-store-and-retrieve-passwords-from-a-database" target="_blank" rel="noopener">Python’s safest method to store and retrieve passwords from a database</a></p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha256</span><br><span class="line"><span class="keyword">from</span> hmac <span class="keyword">import</span> HMAC</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt_passwd</span><span class="params">(password, salt=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> salt <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        salt = os.urandom(<span class="number">8</span>)</span><br><span class="line">    <span class="keyword">assert</span> <span class="number">8</span> == len(salt)</span><br><span class="line">    <span class="keyword">assert</span> isinstance(salt, bytes)</span><br><span class="line">    <span class="keyword">assert</span> isinstance(password, str)</span><br><span class="line">    <span class="keyword">if</span> isinstance(password, str):</span><br><span class="line">        password = password.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">assert</span> isinstance(password, bytes)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        password = HMAC(password, salt, sha256).digest()</span><br><span class="line">    <span class="comment"># print('password:', password)</span></span><br><span class="line">    <span class="keyword">return</span> salt+password</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_passwd</span><span class="params">(hashed, input)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> hashed == encrypt_passwd(input, hashed[:<span class="number">8</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    hashed = encrypt_passwd(<span class="string">'123456'</span>)</span><br><span class="line">    print(validate_passwd(hashed, <span class="string">'123456'</span>))</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong>第 0022 题：</strong> iPhone 6、iPhone 6 Plus 早已上市开卖。请查看你写得 第 0005 题的代码是否可以复用。</p>
 <p><strong>第 0023 题：</strong> 使用 Python 的 Web 框架，做一个 Web 版本 留言簿 应用。</p>
@@ -1318,7 +1329,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">195k</span>
+    <span title="站点总字数">198k</span>
   
 
   
@@ -1329,7 +1340,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">3:01</span>
   
 </div>
 
