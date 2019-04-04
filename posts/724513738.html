@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="https://fonts.css.network//css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Show Me The CodeAuthor: JosephLau  Description Python 练习册，每天一个小程序 Fromshow me the code">
+<meta name="keywords" content="Problems">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Show Me The Code">
+<meta property="og:url" content="https://jacksonleon.gitee.io/posts/724513738.html">
+<meta property="og:site_name" content="Joseph の blog">
+<meta property="og:description" content="Show Me The CodeAuthor: JosephLau  Description Python 练习册，每天一个小程序 Fromshow me the code">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://camo.githubusercontent.com/d518d3929e4054ce2f9183b23e52908da7e5632d/687474703a2f2f692e696d6775722e636f6d2f736732646b75592e706e673f31">
+<meta property="og:image" content="https://camo.githubusercontent.com/f80e7aa0d43b3685657b4d329f2809a28c82e12a/687474703a2f2f692e696d6775722e636f6d2f615668626567562e6a7067">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g02kz3zr68j31hc0r04la.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g02kyeox86j30xe0mq1kx.jpg">
+<meta property="og:image" content="https://camo.githubusercontent.com/18dea9401449e4ca894d40d55134d9c28083280d/687474703a2f2f692e696d6775722e636f6d2f6e50446c706d652e6a7067">
+<meta property="og:image" content="https://camo.githubusercontent.com/61120377319bfe5520c9d73f51776f923d6bd3b7/687474703a2f2f692e696d6775722e636f6d2f724f4862557a672e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/60da4d596289212b517547ddcc2408bfc9f39087/687474703a2f2f692e696d6775722e636f6d2f69757a305062762e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/cf9e3cc773f4b57747953428556db4c49b3d36c2/687474703a2f2f692e696d6775722e636f6d2f564979435a30692e6a7067">
+<meta property="og:image" content="https://camo.githubusercontent.com/d6aaa1fd3e238860cb9ce736cc8bdae628117508/687474703a2f2f692e696d6775722e636f6d2f4e4566377a48702e6a7067">
+<meta property="og:updated_time" content="2019-01-29T14:58:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Show Me The Code">
+<meta name="twitter:description" content="Show Me The CodeAuthor: JosephLau  Description Python 练习册，每天一个小程序 Fromshow me the code">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/d518d3929e4054ce2f9183b23e52908da7e5632d/687474703a2f2f692e696d6775722e636f6d2f736732646b75592e706e673f31">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Joseph の blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://jacksonleon.gitee.io/posts/724513738.html">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Show Me The Code | Joseph の blog</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-133178853-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-133178853-1');
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/JacksonLeon" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Joseph の blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">步子大了容易扯着蛋</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/notes/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>札记</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-friends">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-book"></i> <br>友人帐</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jacksonleon.gitee.io/posts/724513738.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joseph">
+      <meta itemprop="description" content="Love what you do, do what you love.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseph の blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Show Me The Code
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-29 20:37:25 / 修改时间：22:58:44" itemprop="dateCreated datePublished" datetime="2019-01-29T20:37:25+08:00">2019-01-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Problems/" itemprop="url" rel="index"><span itemprop="name">Problems</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Problems/Program/" itemprop="url" rel="index"><span itemprop="name">Program</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/posts/724513738.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/724513738.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">15k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Show-Me-The-Code"><a href="#Show-Me-The-Code" class="headerlink" title="Show Me The Code"></a>Show Me The Code</h1><p>Author: JosephLau</p>
+<hr>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>Python 练习册，每天一个小程序</p>
+<p>From<a href="https://github.com/Yixiaohan/show-me-the-code" target="_blank" rel="noopener"><strong>show me the code</strong></a></p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>Talk is cheap. Show me the code.    –Linus Torvalds</p>
+</blockquote>
+<p><strong>第 0000 题：</strong> 将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果</p>
+<p><img src="https://camo.githubusercontent.com/d518d3929e4054ce2f9183b23e52908da7e5632d/687474703a2f2f692e696d6775722e636f6d2f736732646b75592e706e673f31" alt="头像"></p>
+<p><a href="/posts/1847041040.html">解答</a></p>
+<p><strong>第 0001 题：</strong> 做为 Apple Store App 独立开发者，你要搞限时促销，为你的应用<strong>生成激活码</strong>（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？</p>
+<p><a href="/posts/3601595253.html">解答</a></p>
+<p><strong>第 0002 题:</strong> 将 0001 题生成的 200 个激活码（或者优惠券）保存到 <strong>MySQL</strong> 关系型数据库中。</p>
+<p><a href="/posts/3290322075.html">解答</a></p>
+<p><strong>第 0003 题：</strong> 将 0001 题生成的 200 个激活码（或者优惠券）保存到 <strong>Redis</strong> 非关系型数据库中。</p>
+<p><a href="/posts/2091004926.html">解答</a></p>
+<p><strong>第 0004 题：</strong> 任一个英文的纯文本文件，统计其中的单词出现的个数。</p>
+<p><a href="/posts/3782544199.html">解答</a></p>
+<p><strong>第 0005 题：</strong> 你有一个目录，装了很多照片，把它们的尺寸变成都不大于 iPhone5 分辨率的大小。</p>
+<p><a href="/posts/1506372642.html">解答</a></p>
+<p><strong>第 0006 题：</strong> 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。</p>
+<p><a href="/posts/1266467788.html">解答</a></p>
+<p><strong>第 0007 题：</strong> 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。</p>
+<p><a href="/posts/4089488553.html">解答</a></p>
+<p><strong>第 0008 题：</strong> 一个HTML文件，找出里面的<strong>正文</strong>。</p>
+<p><a href="/posts/2879632639.html">解答</a></p>
+<p><strong>第 0009 题：</strong> 一个HTML文件，找出里面的<strong>链接</strong>。</p>
+<p><a href="/posts/320852890.html">解答</a></p>
+<p><strong>第 0010 题：</strong> 使用 Python 生成类似于下图中的<strong>字母验证码图片</strong></p>
+<p><img src="https://camo.githubusercontent.com/f80e7aa0d43b3685657b4d329f2809a28c82e12a/687474703a2f2f692e696d6775722e636f6d2f615668626567562e6a7067" alt="字母验证码"></p>
+<ul>
+<li><p><a href="http://stackoverflow.com/questions/2823316/generate-a-random-letter-in-python" target="_blank" rel="noopener">阅读资料</a></p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont, ImageFilter</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randomLetter</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 大写字母65-90</span></span><br><span class="line">    <span class="comment"># 数字转字符</span></span><br><span class="line">    <span class="keyword">return</span> chr(random.randint(<span class="number">65</span>, <span class="number">90</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randomColor</span><span class="params">(argc)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> argc == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> (random.randint(<span class="number">64</span>, <span class="number">255</span>), random.randint(<span class="number">64</span>, <span class="number">255</span>), random.randint(<span class="number">64</span>, <span class="number">255</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (random.randint(<span class="number">0</span>, <span class="number">100</span>), random.randint(<span class="number">0</span>, <span class="number">100</span>), random.randint(<span class="number">0</span>, <span class="number">100</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_codepic</span><span class="params">(savePath)</span>:</span></span><br><span class="line">    width = <span class="number">60</span>*<span class="number">4</span></span><br><span class="line">    height = <span class="number">60</span></span><br><span class="line">    img = Image.new(<span class="string">'RGB'</span>, (width, height), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">    <span class="comment"># 字体</span></span><br><span class="line">    font = ImageFont.truetype(</span><br><span class="line">        <span class="string">'/Library/Fonts/Songti.ttc'</span>, <span class="number">36</span>)</span><br><span class="line">    imgDraw = ImageDraw.Draw(img)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(width):</span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(height):</span><br><span class="line">            imgDraw.point((x, y), fill=randomColor(<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        imgDraw.text((<span class="number">60</span>*index+<span class="number">20</span>, <span class="number">5</span>), randomLetter(),</span><br><span class="line">                     font=font, fill=randomColor(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">    img = img.filter(ImageFilter.BLUR)</span><br><span class="line">    img.save(savePath+<span class="string">'codepic.jpg'</span>, <span class="string">'JPEG'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    gen_codepic(<span class="string">'./SMTC/source/0010/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0011 题：</strong> 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">北京</span><br><span class="line">程序员</span><br><span class="line">公务员</span><br><span class="line">领导</span><br><span class="line">牛比</span><br><span class="line">牛逼</span><br><span class="line">你娘</span><br><span class="line">你妈</span><br><span class="line">love</span><br><span class="line">sex</span><br><span class="line">jiangge</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Freedom</span><span class="params">(filesPath)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(filesPath):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    fileList=os.listdir(filesPath)</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> fileList:</span><br><span class="line">        filePath=os.path.join(filesPath,file)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(filePath) <span class="keyword">and</span> os.path.split(filePath)[<span class="number">1</span>]==<span class="string">'filtered_words.txt'</span>:</span><br><span class="line">            <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> text:</span><br><span class="line">                text=text.read().split(<span class="string">'\n'</span>)</span><br><span class="line">                getInput=input(<span class="string">'input:'</span>)</span><br><span class="line">                <span class="keyword">if</span> getInput <span class="keyword">in</span> text:</span><br><span class="line">                    print(<span class="string">'Freedom'</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    print(<span class="string">'Human Rights'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    Freedom(<span class="string">'./SMTC/source/0011'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0012 题：</strong> 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Freedom</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    word_filter = set()</span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'filtered_words.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> f.readlines():</span><br><span class="line">            word_filter.add(word.strip())</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        s = input(<span class="string">'input:'</span>)</span><br><span class="line">        <span class="keyword">if</span> s == <span class="string">'exit'</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word_filter:</span><br><span class="line">            <span class="keyword">if</span> w <span class="keyword">in</span> s:</span><br><span class="line">                s = s.replace(w, <span class="string">'*'</span>*len(w))</span><br><span class="line">        print(s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    Freedom(<span class="string">'./SMTC/source/0011/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0013 题：</strong> 用 Python 写一个爬图片的程序，爬 <a href="http://tieba.baidu.com/p/2166231880" target="_blank" rel="noopener">这个链接里的日本妹子图片 :-)</a></p>
+<ul>
+<li><p><a href="http://www.v2ex.com/t/61686" target="_blank" rel="noopener">参考代码</a></p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 用 Python 写一个爬图片的程序，爬这个链接里的日本妹子图片(http://tieba.baidu.com/p/2166231880) :-)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spy_pic</span><span class="params">(url, savePath, header)</span>:</span></span><br><span class="line">    response = requests.get(url, headers=header)</span><br><span class="line">    content = BeautifulSoup(response.content, <span class="string">'lxml'</span>)</span><br><span class="line">    img_tag = content.find_all(<span class="string">'img'</span>)</span><br><span class="line">    img_link = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> img_tag:</span><br><span class="line">        <span class="keyword">if</span> i.get(<span class="string">'pic_type'</span>) == <span class="string">'0'</span>:</span><br><span class="line">            img_link.append(i.get(<span class="string">'src'</span>))</span><br><span class="line">    index = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(savePath):</span><br><span class="line">        os.mkdir(savePath)</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> img_link:</span><br><span class="line">        pic_html = requests.get(link)</span><br><span class="line">        picPath = savePath+str(index+<span class="number">1</span>)+<span class="string">'.'</span>+link.split(<span class="string">'.'</span>)[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">with</span> open(picPath, <span class="string">'wb'</span>) <span class="keyword">as</span> pic:</span><br><span class="line">            pic.write(pic_html.content)</span><br><span class="line">            pic.flush</span><br><span class="line">        pic.close()</span><br><span class="line">        print(<span class="string">'第&#123;0&#125;张图片抓取完成'</span>.format(index+<span class="number">1</span>))</span><br><span class="line">        index += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'抓取完成！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    reqHeader = &#123;</span><br><span class="line">        <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'</span>,</span><br><span class="line">        <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate'</span>,</span><br><span class="line">        <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'</span>,</span><br><span class="line">        <span class="string">'Cookie'</span>: <span class="string">'TIEBA_USERTYPE=7b00a4223cb9934b1b9270ad; wise_device=0; bdshare_firstime=1549795215089; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1549795215; Hm_lvt_287705c8d9e2073d13275b18dbd746dc=1549795216; Hm_lpvt_98b9d8c2fd6608d564bf2ac2ae642948=1549847500; Hm_lpvt_287705c8d9e2073d13275b18dbd746dc=1549847500; BAIDUID=48130036CAF55267908C2180103698DC:FG=1; cflag=13%3A3; BDUSS=HN6WUx-aGVQMGlNR0NlcEhCd0pjUkJVQXpBbWFxY3hYTjZNfmozdjV6RFlkb2hjQVFBQUFBJCQAAAAAAAAAAAEAAAAZhpwmbmljZWxpdXppAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANjpYFzY6WBcO; TIEBAUID=35f770fc8e0ac33633210842; STOKEN=42c9d0d4dc2e420802cf269968ec38e4101a2a5d7f095a603f36b0261f413597'</span>,</span><br><span class="line">        <span class="string">'Host'</span>: <span class="string">'tieba.baidu.com'</span>,</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'</span></span><br><span class="line">    &#125;</span><br><span class="line">    spy_pic(<span class="string">'http://tieba.baidu.com/p/2166231880'</span>, <span class="string">'./SMTC/source/0013/'</span>, reqHeader</span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效果展示</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g02kz3zr68j31hc0r04la.jpg" alt="image-20190211164921861"><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g02kyeox86j30xe0mq1kx.jpg" alt="image-20190211164828843"></p>
+</li>
+<li><p><em>参考</em></p>
+<p><a href="https://blog.csdn.net/IllegalName/article/details/77366508" target="_blank" rel="noopener">【Python爬虫系列】使用requests爬取图片</a></p>
+<p><a href="https://jacksonleon.gitee.io/posts/247701255.html">小说爬虫</a></p>
+</li>
+</ul>
+<p><strong>第 0014 题：</strong> 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;1&quot;:[&quot;张三&quot;,150,120,100],</span><br><span class="line">	&quot;2&quot;:[&quot;李四&quot;,90,99,95],</span><br><span class="line">	&quot;3&quot;:[&quot;王五&quot;,60,66,68]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请将上述内容写到 student.xls 文件中，如下图所示：</p>
+<p><img src="https://camo.githubusercontent.com/18dea9401449e4ca894d40d55134d9c28083280d/687474703a2f2f692e696d6775722e636f6d2f6e50446c706d652e6a7067" alt="student.xls"></p>
+<ul>
+<li><p><a href="http://www.cnblogs.com/skynet/archive/2013/05/06/3063245.html" target="_blank" rel="noopener">阅读资料</a> 腾讯游戏开发 XML 和 Excel 内容相互转换</p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示</span></span><br><span class="line"><span class="keyword">from</span> xlwt <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xml2exl</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'student.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> dic:</span><br><span class="line">        content = json.load(dic)</span><br><span class="line">        workbook = Workbook()</span><br><span class="line">        sheet = workbook.add_sheet(<span class="string">'student'</span>, cell_overwrite_ok=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># 输出元素序号</span></span><br><span class="line">        <span class="keyword">for</span> index, (key, values) <span class="keyword">in</span> enumerate(content.items()):</span><br><span class="line">            <span class="comment"># sheet.write(row, col, *args)</span></span><br><span class="line">            <span class="comment"># 输入第一列数据</span></span><br><span class="line">            sheet.write(index, <span class="number">0</span>, key)</span><br><span class="line">            <span class="keyword">for</span> i, value <span class="keyword">in</span> enumerate(values):</span><br><span class="line">                <span class="comment"># 输入每一行第二列开始的数据</span></span><br><span class="line">                sheet.write(index, i+<span class="number">1</span>, value)</span><br><span class="line">        workbook.save(filePath+<span class="string">'student.xls'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xml2exl(<span class="string">'./SMTC/source/0014/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0015 题：</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;1&quot; : &quot;上海&quot;,</span><br><span class="line">    &quot;2&quot; : &quot;北京&quot;,</span><br><span class="line">    &quot;3&quot; : &quot;成都&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请将上述内容写到 city.xls 文件中，如下图所示：</p>
+<p><img src="https://camo.githubusercontent.com/61120377319bfe5520c9d73f51776f923d6bd3b7/687474703a2f2f692e696d6775722e636f6d2f724f4862557a672e706e67" alt="city.xls"></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</span></span><br><span class="line"><span class="keyword">from</span> xlwt <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xml2exl</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'city.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        content = json.load(f)</span><br><span class="line">        workBook = Workbook()</span><br><span class="line">        sheet = workBook.add_sheet(<span class="string">'city'</span>, cell_overwrite_ok=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># enumerate可以分开词语</span></span><br><span class="line">        <span class="keyword">for</span> index, (key, value) <span class="keyword">in</span> enumerate(content.items()):</span><br><span class="line">            sheet.write(index, <span class="number">0</span>, key)</span><br><span class="line">            <span class="comment"># 与上一题不同的是</span></span><br><span class="line">            <span class="comment"># 这题中的value只有一列值</span></span><br><span class="line">            <span class="comment"># 不需要使用enumerate</span></span><br><span class="line">            sheet.write(index, <span class="number">1</span>, value)</span><br><span class="line">        workBook.save(filePath+<span class="string">'city.xls'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xml2exl(<span class="string">'./SMTC/source/0015/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0016 题：</strong> 纯文本文件 numbers.txt, 里面的内容（包括方括号）如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	[1, 82, 65535], </span><br><span class="line">	[20, 90, 13],</span><br><span class="line">	[26, 809, 1024]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>请将上述内容写到 numbers.xls 文件中，如下图所示：</p>
+<p><img src="https://camo.githubusercontent.com/60da4d596289212b517547ddcc2408bfc9f39087/687474703a2f2f692e696d6775722e636f6d2f69757a305062762e706e67" alt="numbers.xls"></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 纯文本文件 numbers.txt, 里面的内容（包括方括号）</span></span><br><span class="line"><span class="keyword">from</span> xlwt <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">json2xls</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'numbers.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        content = json.load(f)</span><br><span class="line">        workbook = Workbook()</span><br><span class="line">        sheet = workbook.add_sheet(<span class="string">'numbers'</span>, cell_overwrite_ok=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">for</span> row, list <span class="keyword">in</span> enumerate(content):</span><br><span class="line">            <span class="keyword">for</span> col, value <span class="keyword">in</span> enumerate(list):</span><br><span class="line">                sheet.write(row, col, value)</span><br><span class="line">        workbook.save(filePath+<span class="string">'numbers.xls'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    json2xls(<span class="string">'./SMTC/source/0016/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0017 题：</strong> 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中，如</p>
+<p>下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;root&gt;</span><br><span class="line">&lt;students&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">	学生信息表</span><br><span class="line">	&quot;id&quot; : [名字, 数学, 语文, 英文]</span><br><span class="line">--&gt;</span><br><span class="line">&#123;</span><br><span class="line">	&quot;1&quot; : [&quot;张三&quot;, 150, 120, 100],</span><br><span class="line">	&quot;2&quot; : [&quot;李四&quot;, 90, 99, 95],</span><br><span class="line">	&quot;3&quot; : [&quot;王五&quot;, 60, 66, 68]</span><br><span class="line">&#125;</span><br><span class="line">&lt;/students&gt;</span><br><span class="line">&lt;/root&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中</span></span><br><span class="line"><span class="keyword">from</span> xml.dom.minidom <span class="keyword">import</span> Document</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xls2xml</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    doc = Document()</span><br><span class="line">    root = doc.createElement(<span class="string">'root'</span>)</span><br><span class="line">    doc.appendChild(root)</span><br><span class="line">    students = doc.createElement(<span class="string">'students'</span>)</span><br><span class="line">    root.appendChild(students)</span><br><span class="line">    comment = doc.createComment(<span class="string">'学生信息表\n\t\t"id" : [名字, 数学, 语文, 英文]\n\t\t'</span>)</span><br><span class="line">    students.appendChild(comment)</span><br><span class="line"></span><br><span class="line">    content = xlrd.open_workbook(filePath+<span class="string">'student.xls'</span>)</span><br><span class="line">    sheet = content.sheet_by_index(<span class="number">0</span>)</span><br><span class="line">    nrows = sheet.nrows</span><br><span class="line">    sheet_content = dict()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</span><br><span class="line">        sheet_content[str(sheet.cell(i, <span class="number">0</span>).value)] = sheet.row_values(i)[<span class="number">1</span>:]</span><br><span class="line">    students.appendChild(doc.createTextNode(str(sheet_content)))</span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'student.xml'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> student_xml:</span><br><span class="line">        student_xml.write(doc.toprettyxml())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xls2xml(<span class="string">'./SMTC/source/0014/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0018 题：</strong> 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中，如下 所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xmlversion=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;root&gt;</span><br><span class="line">&lt;cities&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">	城市信息</span><br><span class="line">--&gt;</span><br><span class="line">&#123;</span><br><span class="line">	&quot;1&quot; : &quot;上海&quot;,</span><br><span class="line">	&quot;2&quot; : &quot;北京&quot;,</span><br><span class="line">	&quot;3&quot; : &quot;成都&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/cities&gt;</span><br><span class="line">&lt;/root&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中</span></span><br><span class="line"><span class="keyword">from</span> xml.dom.minidom <span class="keyword">import</span> Document</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xls2xml</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    doc = Document()</span><br><span class="line">    root = doc.createElement(<span class="string">'root'</span>)</span><br><span class="line">    doc.appendChild(root)</span><br><span class="line">    cities = doc.createElement(<span class="string">'cities'</span>)</span><br><span class="line">    root.appendChild(cities)</span><br><span class="line">    comment = doc.createComment(<span class="string">'\n\t\t城市信息\n\t\t'</span>)</span><br><span class="line">    cities.appendChild(comment)</span><br><span class="line"></span><br><span class="line">    content = xlrd.open_workbook(filePath+<span class="string">'city.xls'</span>, <span class="string">'r'</span>)</span><br><span class="line">    sheet = content.sheet_by_index(<span class="number">0</span>)</span><br><span class="line">    nrows = sheet.nrows</span><br><span class="line">    sheet_content = dict()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</span><br><span class="line">        sheet_content[sheet.cell(i, <span class="number">0</span>).value] = sheet.row_values(i)[<span class="number">1</span>:]</span><br><span class="line">    cities.appendChild(doc.createTextNode(str(sheet_content)))</span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'city.xml'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(doc.toprettyxml())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xls2xml(<span class="string">'./SMTC/source/0015/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0019 题：</strong> 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中，如下</p>
+<p>所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;root&gt;</span><br><span class="line">&lt;numbers&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">	数字信息</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">	[1, 82, 65535],</span><br><span class="line">	[20, 90, 13],</span><br><span class="line">	[26, 809, 1024]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">&lt;/numbers&gt;</span><br><span class="line">&lt;/root&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中</span></span><br><span class="line"><span class="keyword">from</span> xml.dom.minidom <span class="keyword">import</span> Document</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xls2xml</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    doc = Document()</span><br><span class="line">    root = doc.createElement(<span class="string">'root'</span>)</span><br><span class="line">    doc.appendChild(root)</span><br><span class="line">    numbers = doc.createElement(<span class="string">'numbers'</span>)</span><br><span class="line">    root.appendChild(numbers)</span><br><span class="line">    numbers.appendChild(doc.createComment(<span class="string">'\n\t\t数字信息\n\t\t'</span>))</span><br><span class="line"></span><br><span class="line">    content = xlrd.open_workbook(filePath+<span class="string">'numbers.xls'</span>)</span><br><span class="line">    sheet = content.sheet_by_index(<span class="number">0</span>)</span><br><span class="line">    nrows = sheet.nrows</span><br><span class="line">    sheet_list = list()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</span><br><span class="line">        sheet_list.append(sheet.row_values(i))</span><br><span class="line">    numbers.appendChild(doc.createTextNode(str(sheet_list)))</span><br><span class="line">    <span class="keyword">with</span> open(filePath+<span class="string">'numbers.xml'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(doc.toprettyxml())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    xls2xml(<span class="string">'./SMTC/source/0016/'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0020 题：</strong> <a href="http://iservice.10010.com/index_.html" target="_blank" rel="noopener">登陆中国联通网上营业厅</a> 后选择「自助服务」 –&gt; 「详单查询」，然后选择你要查询的时间段，点击「查询」按钮，查询结果页面的最下方，点击「导出」，就会生成类似于 2014年10月01日～2014年10月31日通话详单.xls 文件。写代码，对每月通话时间做个统计。</p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str2sec</span><span class="params">(str)</span>:</span></span><br><span class="line">    sec = <span class="number">0</span></span><br><span class="line">    time_re = re.compile(<span class="string">r'(\d+)(\D+)'</span>)</span><br><span class="line">    time_list = time_re.findall(str)</span><br><span class="line">    <span class="keyword">for</span> time_item <span class="keyword">in</span> time_list:</span><br><span class="line">        <span class="keyword">if</span> time_item[<span class="number">1</span>] == <span class="string">'秒'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">elif</span> time_item[<span class="number">1</span>] == <span class="string">'分'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>]) * <span class="number">60</span></span><br><span class="line">        <span class="keyword">elif</span> time_item[<span class="number">1</span>] == <span class="string">'小时'</span>:</span><br><span class="line">            sec += int(time_item[<span class="number">0</span>]) * <span class="number">3600</span></span><br><span class="line">    <span class="keyword">return</span> sec</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sec2str</span><span class="params">(sec)</span>:</span></span><br><span class="line">    h = sec // <span class="number">3600</span></span><br><span class="line">    m = sec % <span class="number">3600</span> // <span class="number">60</span></span><br><span class="line">    s = sec % <span class="number">60</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'%s小时%s分%s秒'</span> % (h, m, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minidata</span><span class="params">()</span>:</span></span><br><span class="line">    all_time = <span class="number">0</span>  <span class="comment"># 使用总时间（秒）</span></span><br><span class="line">    start_time = time.mktime(time.strptime(<span class="string">'2018-09-01'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line">    end_time = time.mktime(time.strptime(<span class="string">'2018-10-01'</span>, <span class="string">'%Y-%m-%d'</span>))</span><br><span class="line">    data = xlrd.open_workbook(<span class="string">'./SMTC/source/0020/2018年09月语音通信.xls'</span>)</span><br><span class="line">    table = data.sheet_by_index(<span class="number">0</span>)</span><br><span class="line">    nrows = table.nrows</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(nrows):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        this_time = time.mktime(time.strptime(</span><br><span class="line">            table.row_values(i)[<span class="number">2</span>], <span class="string">'%Y-%m-%d %H:%M:%S'</span>))</span><br><span class="line">        <span class="keyword">if</span> this_time &gt;= start_time <span class="keyword">and</span> this_time &lt; end_time:</span><br><span class="line">            all_time += str2sec(table.row_values(i)[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'总时间:'</span>+sec2str(all_time))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    minidata()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0021 题：</strong> 通常，登陆某个网站或者 APP，需要使用用户名和密码。密码是如何加密后存储起来的呢？请使用 Python 对密码加密。</p>
+<ul>
+<li><p>阅读资料 <a href="http://zhuoqiang.me/password-storage-and-python-example.html" target="_blank" rel="noopener">用户密码的存储与 Python 示例</a></p>
+</li>
+<li><p>阅读资料 <a href="http://www.pythoncentral.io/hashing-strings-with-python/" target="_blank" rel="noopener">Hashing Strings with Python</a></p>
+</li>
+<li><p>阅读资料 <a href="http://stackoverflow.com/questions/2572099/pythons-safest-method-to-store-and-retrieve-passwords-from-a-database" target="_blank" rel="noopener">Python’s safest method to store and retrieve passwords from a database</a></p>
+</li>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha256</span><br><span class="line"><span class="keyword">from</span> hmac <span class="keyword">import</span> HMAC</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt_passwd</span><span class="params">(password, salt=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> salt <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        salt = os.urandom(<span class="number">8</span>)</span><br><span class="line">    <span class="keyword">assert</span> <span class="number">8</span> == len(salt)</span><br><span class="line">    <span class="keyword">assert</span> isinstance(salt, bytes)</span><br><span class="line">    <span class="keyword">assert</span> isinstance(password, str)</span><br><span class="line">    <span class="keyword">if</span> isinstance(password, str):</span><br><span class="line">        password = password.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">assert</span> isinstance(password, bytes)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        password = HMAC(password, salt, sha256).digest()</span><br><span class="line">    <span class="comment"># print('password:', password)</span></span><br><span class="line">    <span class="keyword">return</span> salt+password</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_passwd</span><span class="params">(hashed, input)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> hashed == encrypt_passwd(input, hashed[:<span class="number">8</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    hashed = encrypt_passwd(<span class="string">'123456'</span>)</span><br><span class="line">    print(validate_passwd(hashed, <span class="string">'123456'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第 0022 题：</strong> iPhone 6、iPhone 6 Plus 早已上市开卖。请查看你写得 第 0005 题的代码是否可以复用。</p>
+<p><strong>第 0023 题：</strong> 使用 Python 的 Web 框架，做一个 Web 版本 留言簿 应用。</p>
+<p><a href="http://v2ex.com/t/151643#reply53" target="_blank" rel="noopener">阅读资料：Python 有哪些 Web 框架</a></p>
+<ul>
+<li><img src="https://camo.githubusercontent.com/cf9e3cc773f4b57747953428556db4c49b3d36c2/687474703a2f2f692e696d6775722e636f6d2f564979435a30692e6a7067" alt="留言簿参考"></li>
+</ul>
+<p><strong>第 0024 题：</strong> 使用 Python 的 Web 框架，做一个 Web 版本 TodoList 应用。</p>
+<ul>
+<li><img src="https://camo.githubusercontent.com/d6aaa1fd3e238860cb9ce736cc8bdae628117508/687474703a2f2f692e696d6775722e636f6d2f4e4566377a48702e6a7067" alt="SpringSide 版TodoList"></li>
+</ul>
+<p><strong>第 0025 题：</strong> 使用 Python 实现：对着电脑吼一声,自动打开浏览器中的默认网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如，对着笔记本电脑吼一声“百度”，浏览器自动打开百度首页。</span><br><span class="line"></span><br><span class="line">关键字：Speech to Text</span><br></pre></td></tr></table></figure>
+<p>参考思路：<br>1：获取电脑录音–&gt;WAV文件 python record wav</p>
+<p>2：录音文件–&gt;文本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STT: Speech to Text</span><br><span class="line"></span><br><span class="line">STT API Google API</span><br></pre></td></tr></table></figure>
+<p>3:文本–&gt;电脑命令</p>
+
+      
+    </div>
+
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/posts/724513738.html">Show Me The Code</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Joseph 的个人博客">Joseph</a></p>
+  <p><span>发布时间:</span>2019年01月29日 - 20:01</p>
+  <p><span>最后更新:</span>2019年01月29日 - 22:01</p>
+  <p><span>原始链接:</span><a href="/posts/724513738.html" title="Show Me The Code">https://jacksonleon.gitee.io/posts/724513738.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/posts/724513738.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Problems/" rel="tag"><i class="fa fa-tag"></i> Problems</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1847041040.html" rel="prev" title="「SMTC」0000.py">
+                <i class="fa fa-chevron-left"></i> 「SMTC」0000.py
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/1999510617.html" rel="next" title="Python Note">
+                Python Note <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Joseph">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">Joseph</p>
+              <p class="site-description motion-element" itemprop="description">Love what you do, do what you love.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/JacksonLeon" title="GitHub &rarr; https://github.com/JacksonLeon" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:pumbjackson@gmail.com" title="E-Mail &rarr; mailto:pumbjackson@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.feiniua.com/" title="https://www.feiniua.com/" rel="noopener" target="_blank">肥牛</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://fszhuangb.github.io/fsZhungB.github.io/" title="https://fszhuangb.github.io/fsZhungB.github.io/" rel="noopener" target="_blank">fsZhuangB</a>
+                  </li>
+                
+              </ul>
+            <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("01/01/2018 00:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+            </div>
+          
+
+          
+            
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Show-Me-The-Code"><span class="nav-number">1.</span> <span class="nav-text">Show Me The Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joseph</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">201k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">3:03</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz',
+    appKey: '1bF6m0SPiN3sk9TaGxPELdjY',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
