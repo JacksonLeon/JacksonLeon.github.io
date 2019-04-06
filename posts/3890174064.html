@@ -135,7 +135,7 @@
 
 
   <meta name="description" content="Git NoteAuthor: JosephLau  Description 此文用来记录平时使用Git遇到的问题与心得. 本文长期更新.">
-<meta name="keywords" content="Note,Git">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git note">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/3890174064.html">
@@ -539,13 +539,6 @@
 
                 
                 
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Git/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a></span>
-
-                
-                
               
             </span>
           
@@ -590,7 +583,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.4k</span>
+                <span title="本文字数">6.6k</span>
               
 
               
@@ -649,8 +642,6 @@
 </li>
 <li><p><code>fatal: refusing to merge unrelated histories</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在使用Git创建项目的时候，在两个分支合并的时候，出现了下面的这个错误。</span></span><br><span class="line">git merge origin/master</span><br><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 <blockquote>
 <p><strong>解决办法:</strong></p>
 <p>在你操作命令后面加</p>
@@ -658,7 +649,7 @@
 <p>例如</p>
 <p><code>git merge master --allow-unrelated-histories</code></p>
 </blockquote>
-<ul>
+</li>
 <li><p><strong><code>commit</code>之后想撤销</strong></p>
 <blockquote>
 <p>commit之后想要撤销commit某个文件</p>
@@ -682,6 +673,18 @@
 </li>
 <li><p><strong>拉取远程强制覆盖本地</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取remote最新代码</span></span><br><span class="line">git fetch --all</span><br><span class="line"><span class="comment"># 覆盖本地</span></span><br><span class="line">git reset --hard origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>push失败</strong></p>
+<p>push时提示</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git push github deploy</span><br><span class="line">error: src refspec deploy does not match any.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我的情况是当前仓库没有分支，需要创建分支</p>
+</blockquote>
+<p><code>git checkout -b deploy</code></p>
+<blockquote>
+<p>或者</p>
+</blockquote>
+<p><code>git push github HEAD:deploy</code></p>
 </li>
 <li><p><strong>生成密钥</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your email address"</span></span><br><span class="line"><span class="comment"># Windows存储在/c/user/username/.ssh中</span></span><br><span class="line"><span class="comment"># Mac存储在~/.ssh中</span></span><br></pre></td></tr></table></figure>
@@ -756,8 +759,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
           
             <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           
@@ -862,7 +863,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -955,61 +956,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1100,19 +1047,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1164,16 +1099,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                友情链接
+                推荐阅读
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.feiniua.com/" title="https://www.feiniua.com/" rel="noopener" target="_blank">肥牛</a>
+                    <a href="https://jacksonleon.github.io/posts/3890174064.html" title="https://jacksonleon.github.io/posts/3890174064.html" rel="noopener" target="_blank">Git Note</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://fszhuangb.github.io/fsZhungB.github.io/" title="https://fszhuangb.github.io/fsZhungB.github.io/" rel="noopener" target="_blank">fsZhuangB</a>
+                    <a href="https://jacksonleon.github.io/posts/1999510617.html" title="https://jacksonleon.github.io/posts/1999510617.html" rel="noopener" target="_blank">Python Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.github.io/posts/3307335557.html" title="https://jacksonleon.github.io/posts/3307335557.html" rel="noopener" target="_blank">Blog With Hexo</a>
                   </li>
                 
               </ul>
@@ -1264,7 +1203,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">201k</span>
+    <span title="站点总字数">195k</span>
   
 
   
@@ -1275,7 +1214,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">2:58</span>
   
 </div>
 

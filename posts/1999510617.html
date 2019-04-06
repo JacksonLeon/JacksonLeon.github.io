@@ -135,7 +135,7 @@
 
 
   <meta name="description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记 持续更新">
-<meta name="keywords" content="Python,Note">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Note">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/1999510617.html">
@@ -541,13 +541,6 @@
 
                 
                 
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a></span>
-
-                
-                
               
             </span>
           
@@ -592,7 +585,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">28k</span>
+                <span title="本文字数">31k</span>
               
 
               
@@ -606,7 +599,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">26 分钟</span>
+                <span title="阅读时长">28 分钟</span>
               
             </div>
           
@@ -642,6 +635,21 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac下安装非常简单，一条命令：<code>brew install python3</code>，只不过有时候需要更新Homebrew，比较耗费时间。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzj58sy7olj308s02174a.jpg" alt="image-20190125211920126"></p>
 <p>如果你没有Homebrew，使用<code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code>安装完成后，再安装Python。</p>
+<h2 id="遇到的问题与解决方案"><a href="#遇到的问题与解决方案" class="headerlink" title="遇到的问题与解决方案"></a>遇到的问题与解决方案</h2><ul>
+<li><p><code>pip3 install</code>和<code>pip3 list</code> 出现问题</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Exception:</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2584, <span class="keyword">in</span> version</span><br><span class="line">    <span class="built_in">return</span> self._version</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2691, <span class="keyword">in</span> __getattr__</span><br><span class="line">    raise AttributeError(attr)</span><br><span class="line">AttributeError: _version</span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/cli/base_command.py"</span>, line 179, <span class="keyword">in</span> main</span><br><span class="line">    status = self.run(options, args)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 148, <span class="keyword">in</span> run</span><br><span class="line">    self.output_package_listing(packages, options)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 205, <span class="keyword">in</span> output_package_listing</span><br><span class="line">    data, header = format_for_columns(packages, options)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 271, <span class="keyword">in</span> format_for_columns</span><br><span class="line">    row = [proj.project_name, proj.version]</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2589, <span class="keyword">in</span> version</span><br><span class="line">    raise ValueError(tmpl % self.PKG_INFO, self)</span><br><span class="line">ValueError: (<span class="string">"Missing 'Version:' header and/or METADATA file"</span>, Unknown [unknown version] (/usr/<span class="built_in">local</span>/lib/python3.7/site-packages))</span><br></pre></td></tr></table></figure>
+<p>解决方法：</p>
+<blockquote>
+<p>目前还不知道是因为什么原因引起的</p>
+<p>不过找到了解决办法</p>
+<p><a href="https://stackoverflow.com/questions/54410773/pip3-list-failed-completely-and-returing-error" target="_blank" rel="noopener">https://stackoverflow.com/questions/54410773/pip3-list-failed-completely-and-returing-error</a></p>
+</blockquote>
+<blockquote>
+<p>This was pretty difficult to solve, but I thing the gest of it is that if there are any folders in <code>site-packages</code> which have a <code>-</code> at the beginning, they are causing it. </p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lib/python3.7/site-packages</span><br><span class="line">rm -rf ./-ip-19.0.1.dist-info</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="提高效率"><a href="#提高效率" class="headerlink" title="提高效率"></a>提高效率</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="字符串与基本规则"><a href="#字符串与基本规则" class="headerlink" title="字符串与基本规则"></a>字符串与基本规则</h3><ol>
 <li><p>字符串</p>
 <p>单引号与双引号作用相同、三引号<code>‘’&#39;</code>/<code>“&quot;”</code>用来指定多行字符串。</p>
@@ -883,6 +891,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is my shopping list</span></span><br><span class="line">shoplist = [<span class="string">'apple'</span>, <span class="string">'mango'</span>, <span class="string">'carrot'</span>, <span class="string">'banana'</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'I have'</span>, len(shoplist), <span class="string">'items to purchase.'</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'These items are:'</span>, end=<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoplist:</span><br><span class="line">    print(item, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nI also have to buy rice.'</span>)</span><br><span class="line">shoplist.append(<span class="string">'rice'</span>)</span><br><span class="line">print(<span class="string">'My shopping list is now'</span>, shoplist)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'I will sort my list now'</span>)</span><br><span class="line">shoplist.sort()</span><br><span class="line">print(<span class="string">'Sorted shopping list is'</span>, shoplist)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'The first item I will buy is'</span>, shoplist[<span class="number">0</span>])</span><br><span class="line">olditem = shoplist[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">del</span> shoplist[<span class="number">0</span>]</span><br><span class="line">print(<span class="string">'I bought the'</span>, olditem)</span><br><span class="line">print(<span class="string">'My shopping list is now'</span>, shoplist)</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_list.py</span><br><span class="line">I have 4 items to purchase.</span><br><span class="line">These items are: apple mango carrot banana</span><br><span class="line">I also have to buy rice.</span><br><span class="line">My shopping list is now [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;rice&apos;]</span><br><span class="line">I will sort my list now</span><br><span class="line">Sorted shopping list is [&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;mango&apos;, &apos;rice&apos;]</span><br><span class="line">The first item I will buy is apple</span><br><span class="line">I bought the apple</span><br><span class="line">My shopping list is now [&apos;banana&apos;, &apos;carrot&apos;, &apos;mango&apos;, &apos;rice&apos;]</span><br></pre></td></tr></table></figure>
+<p>If you want access to the index of each element within the body of a loop, use the built-in <code>enumerate</code> function:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animals = [<span class="string">'cat'</span>, <span class="string">'dog'</span>, <span class="string">'monkey'</span>]</span><br><span class="line"><span class="keyword">for</span> idx, animal <span class="keyword">in</span> enumerate(animals):</span><br><span class="line">    print(<span class="string">'#%d: %s'</span> % (idx + <span class="number">1</span>, animal))</span><br><span class="line"><span class="comment"># Prints "#1: cat", "#2: dog", "#3: monkey", each on its own line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>元组</p>
 <p>元组（Tuple）用于将多个对象保存到一起。你可以将它们近似地看作列表，但是元组不能提供列表类能够提供给你的广泛的功能。<strong>元组的一大特征类似于字符串，它们是不可变的，也就是说，你不能编辑或更改元组</strong>。</p>
@@ -895,7 +905,9 @@
 <p><strong>键值必须是唯一</strong>，你只能使用不可变的对象（如字符串）作为字典的键值，但是你可以使用可变或不可变的对象作为字典中的值。基本上这段话也可以翻译为你只能使用<strong>简单对象作为键值</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># “ab”是地址（Address）簿（Book）的缩写</span></span><br><span class="line"></span><br><span class="line">ab = &#123;</span><br><span class="line">    <span class="string">'Swaroop'</span>: <span class="string">'swaroop@swaroopch.com'</span>,</span><br><span class="line">    <span class="string">'Larry'</span>: <span class="string">'larry@wall.org'</span>,</span><br><span class="line">    <span class="string">'Matsumoto'</span>: <span class="string">'matz@ruby-lang.org'</span>,</span><br><span class="line">    <span class="string">'Spammer'</span>: <span class="string">'spammer@hotmail.com'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Swaroop's address is"</span>, ab[<span class="string">'Swaroop'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除一对键值—值配对</span></span><br><span class="line"><span class="keyword">del</span> ab[<span class="string">'Spammer'</span>]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nThere are &#123;&#125; contacts in the address-book\n'</span>.format(len(ab)))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, address <span class="keyword">in</span> ab.items():</span><br><span class="line">    print(<span class="string">'Contact &#123;&#125; at &#123;&#125;'</span>.format(name, address))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一对键值—值配对</span></span><br><span class="line">ab[<span class="string">'Guido'</span>] = <span class="string">'guido@python.org'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">'Guido'</span> <span class="keyword">in</span> ab:</span><br><span class="line">    print(<span class="string">"\nGuido's address is"</span>, ab[<span class="string">'Guido'</span>])</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_dict.py</span><br><span class="line">Swaroop&apos;s address is swaroop@swaroopch.com</span><br><span class="line"></span><br><span class="line">There are 3 contacts in the address-book</span><br><span class="line"></span><br><span class="line">Contact Swaroop at swaroop@swaroopch.com</span><br><span class="line">Contact Matsumoto at matz@ruby-lang.org</span><br><span class="line">Contact Larry at larry@wall.org</span><br><span class="line"></span><br><span class="line">Guido&apos;s address is guido@python.org</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ python ds_using_dict.py</span><br><span class="line">Swaroop<span class="string">'s address is swaroop@swaroopch.com</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">There are 3 contacts in the address-book</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Contact Swaroop at swaroop@swaroopch.com</span></span><br><span class="line"><span class="string">Contact Matsumoto at matz@ruby-lang.org</span></span><br><span class="line"><span class="string">Contact Larry at larry@wall.org</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Guido'</span>s address <span class="keyword">is</span> guido@python.org</span><br></pre></td></tr></table></figure>
+<p>A dictionary stores (key, value) pairs, similar to a <code>Map</code> in Java or an object in Javascript. You can use it like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">'cat'</span>: <span class="string">'cute'</span>, <span class="string">'dog'</span>: <span class="string">'furry'</span>&#125;  <span class="comment"># Create a new dictionary with some data</span></span><br><span class="line">print(d[<span class="string">'cat'</span>])       <span class="comment"># Get an entry from a dictionary; prints "cute"</span></span><br><span class="line">print(<span class="string">'cat'</span> <span class="keyword">in</span> d)     <span class="comment"># Check if a dictionary has a given key; prints "True"</span></span><br><span class="line">d[<span class="string">'fish'</span>] = <span class="string">'wet'</span>     <span class="comment"># Set an entry in a dictionary</span></span><br><span class="line">print(d[<span class="string">'fish'</span>])      <span class="comment"># Prints "wet"</span></span><br><span class="line"><span class="comment"># print(d['monkey'])  # KeyError: 'monkey' not a key of d</span></span><br><span class="line">print(d.get(<span class="string">'monkey'</span>, <span class="string">'N/A'</span>))  <span class="comment"># Get an element with a default; prints "N/A"</span></span><br><span class="line">print(d.get(<span class="string">'fish'</span>, <span class="string">'N/A'</span>))    <span class="comment"># Get an element with a default; prints "wet"</span></span><br><span class="line"><span class="keyword">del</span> d[<span class="string">'fish'</span>]         <span class="comment"># Remove an element from a dictionary</span></span><br><span class="line">print(d.get(<span class="string">'fish'</span>, <span class="string">'N/A'</span>)) <span class="comment"># "fish" is no longer a key; prints "N/A"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>序列操作</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">shoplist = [<span class="string">'apple'</span>, <span class="string">'mango'</span>, <span class="string">'carrot'</span>, <span class="string">'banana'</span>]</span><br><span class="line">name = <span class="string">'swaroop'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Indexing or 'Subscription' operation #</span></span><br><span class="line"><span class="comment"># 索引或“下标（Subscription）”操作符 #</span></span><br><span class="line">print(<span class="string">'Item 0 is'</span>, shoplist[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Item 1 is'</span>, shoplist[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'Item 2 is'</span>, shoplist[<span class="number">2</span>])</span><br><span class="line">print(<span class="string">'Item 3 is'</span>, shoplist[<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'Item -1 is'</span>, shoplist[<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'Item -2 is'</span>, shoplist[<span class="number">-2</span>])</span><br><span class="line">print(<span class="string">'Character 0 is'</span>, name[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Slicing on a list #</span></span><br><span class="line">print(<span class="string">'Item 1 to 3 is'</span>, shoplist[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'Item 2 to end is'</span>, shoplist[<span class="number">2</span>:])</span><br><span class="line">print(<span class="string">'Item 1 to -1 is'</span>, shoplist[<span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'Item start to end is'</span>, shoplist[:])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从某一字符串中切片 #</span></span><br><span class="line">print(<span class="string">'characters 1 to 3 is'</span>, name[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line">print(<span class="string">'characters 2 to end is'</span>, name[<span class="number">2</span>:])</span><br><span class="line">print(<span class="string">'characters 1 to -1 is'</span>, name[<span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line">print(<span class="string">'characters start to end is'</span>, name[:])</span><br></pre></td></tr></table></figure>
@@ -1131,8 +1143,6 @@
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
-          
         </div>
       
 
@@ -1234,7 +1244,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1327,61 +1337,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1472,19 +1428,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1536,16 +1480,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                友情链接
+                推荐阅读
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.feiniua.com/" title="https://www.feiniua.com/" rel="noopener" target="_blank">肥牛</a>
+                    <a href="https://jacksonleon.github.io/posts/3890174064.html" title="https://jacksonleon.github.io/posts/3890174064.html" rel="noopener" target="_blank">Git Note</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://fszhuangb.github.io/fsZhungB.github.io/" title="https://fszhuangb.github.io/fsZhungB.github.io/" rel="noopener" target="_blank">fsZhuangB</a>
+                    <a href="https://jacksonleon.github.io/posts/1999510617.html" title="https://jacksonleon.github.io/posts/1999510617.html" rel="noopener" target="_blank">Python Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.github.io/posts/3307335557.html" title="https://jacksonleon.github.io/posts/3307335557.html" rel="noopener" target="_blank">Blog With Hexo</a>
                   </li>
                 
               </ul>
@@ -1595,7 +1543,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高效率"><span class="nav-number">1.4.</span> <span class="nav-text">提高效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.4.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">1.4.2.</span> <span class="nav-text">lambda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.5.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与基本规则"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串与基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符与表达式"><span class="nav-number">1.5.2.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">1.5.3.</span> <span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.5.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.5.5.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.5.6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.5.7.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入与输出"><span class="nav-number">1.5.8.</span> <span class="nav-text">输入与输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.5.9.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准库"><span class="nav-number">1.5.10.</span> <span class="nav-text">标准库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.5.11.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.6.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题与解决方案"><span class="nav-number">1.4.</span> <span class="nav-text">遇到的问题与解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高效率"><span class="nav-number">1.5.</span> <span class="nav-text">提高效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.5.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">1.5.2.</span> <span class="nav-text">lambda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.6.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与基本规则"><span class="nav-number">1.6.1.</span> <span class="nav-text">字符串与基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符与表达式"><span class="nav-number">1.6.2.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">1.6.3.</span> <span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.6.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.6.5.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.6.6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.6.7.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入与输出"><span class="nav-number">1.6.8.</span> <span class="nav-text">输入与输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.6.9.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准库"><span class="nav-number">1.6.10.</span> <span class="nav-text">标准库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.6.11.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.7.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1636,7 +1584,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">201k</span>
+    <span title="站点总字数">195k</span>
   
 
   
@@ -1647,7 +1595,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">2:58</span>
   
 </div>
 

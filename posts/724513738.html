@@ -135,7 +135,6 @@
 
 
   <meta name="description" content="Show Me The CodeAuthor: JosephLau  Description Python 练习册，每天一个小程序 Fromshow me the code">
-<meta name="keywords" content="Problems">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Show Me The Code">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/724513738.html">
@@ -533,14 +532,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Problems/" itemprop="url" rel="index"><span itemprop="name">Problems</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Problems/Program/" itemprop="url" rel="index"><span itemprop="name">Program</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Uncategoried/" itemprop="url" rel="index"><span itemprop="name">Uncategoried</span></a></span>
 
                 
                 
@@ -588,7 +580,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">15k</span>
+                <span title="本文字数">20k</span>
               
 
               
@@ -602,7 +594,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">13 分钟</span>
+                <span title="阅读时长">19 分钟</span>
               
             </div>
           
@@ -636,23 +628,51 @@
 <p><img src="https://camo.githubusercontent.com/d518d3929e4054ce2f9183b23e52908da7e5632d/687474703a2f2f692e696d6775722e636f6d2f736732646b75592e706e673f31" alt="头像"></p>
 <p><a href="/posts/1847041040.html">解答</a></p>
 <p><strong>第 0001 题：</strong> 做为 Apple Store App 独立开发者，你要搞限时促销，为你的应用<strong>生成激活码</strong>（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？</p>
-<p><a href="/posts/3601595253.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line">forSelect = string.ascii_letters + string.digits</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_code</span><span class="params">(count, length)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(count):</span><br><span class="line">        Re = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(length):</span><br><span class="line">            Re += random.choice(forSelect)</span><br><span class="line">        <span class="keyword">yield</span> Re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_code</span><span class="params">()</span>:</span></span><br><span class="line">    conn = mysql.connector.connect(user=<span class="string">'root'</span>, password=<span class="string">'l'</span>, database=<span class="string">'test'</span>)</span><br><span class="line">    cursor = conn.cursor()</span><br><span class="line">    codes = gen_code(<span class="number">200</span>, <span class="number">20</span>)</span><br><span class="line">    <span class="keyword">for</span> code <span class="keyword">in</span> codes:</span><br><span class="line">        cursor.execute(<span class="string">"INSERT INTO `code`(`code`) VALUES(%s)"</span>, params=[code])</span><br><span class="line">    conn.commit()</span><br><span class="line">    cursor.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    save_code()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0002 题:</strong> 将 0001 题生成的 200 个激活码（或者优惠券）保存到 <strong>MySQL</strong> 关系型数据库中。</p>
-<p><a href="/posts/3290322075.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line">forSelect = string.ascii_letters + string.digits</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_code</span><span class="params">(count, length)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(count):</span><br><span class="line">        Re = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(length):</span><br><span class="line">            Re += random.choice(forSelect)</span><br><span class="line">        <span class="keyword">yield</span> Re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_code</span><span class="params">()</span>:</span></span><br><span class="line">    conn = mysql.connector.connect(user=<span class="string">'root'</span>, password=<span class="string">'l'</span>, database=<span class="string">'test'</span>)</span><br><span class="line">    cursor = conn.cursor()</span><br><span class="line">    codes = gen_code(<span class="number">200</span>, <span class="number">20</span>)</span><br><span class="line">    <span class="keyword">for</span> code <span class="keyword">in</span> codes:</span><br><span class="line">        cursor.execute(<span class="string">"INSERT INTO `code`(`code`) VALUES(%s)"</span>, params=[code])</span><br><span class="line">    conn.commit()</span><br><span class="line">    cursor.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    save_code()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0003 题：</strong> 将 0001 题生成的 200 个激活码（或者优惠券）保存到 <strong>Redis</strong> 非关系型数据库中。</p>
-<p><a href="/posts/2091004926.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line">forSelect = string.ascii_letters + string.digits</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen_code</span><span class="params">(count, length)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(count):</span><br><span class="line">        Re = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(length):</span><br><span class="line">            Re += random.choice(forSelect)</span><br><span class="line">        <span class="keyword">yield</span> Re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_code</span><span class="params">()</span>:</span></span><br><span class="line">    r = redis.Redis(host=<span class="string">'127.0.0.1'</span>, port=<span class="string">'6379'</span>, password=<span class="string">'linyii'</span>)</span><br><span class="line">    codes = gen_code(<span class="number">200</span>, <span class="number">20</span>)</span><br><span class="line">    p = r.pipeline()</span><br><span class="line">    <span class="keyword">for</span> code <span class="keyword">in</span> codes:</span><br><span class="line">        p.sadd(<span class="string">'code'</span>, code)</span><br><span class="line">    p.execute()</span><br><span class="line">    <span class="keyword">return</span> r.scard(<span class="string">'code'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    save_code()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0004 题：</strong> 任一个英文的纯文本文件，统计其中的单词出现的个数。</p>
-<p><a href="/posts/3782544199.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">Text = <span class="string">"""</span></span><br><span class="line"><span class="string">bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.  We hold these truths to be</span></span><br><span class="line"><span class="string">self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. """</span></span><br><span class="line"><span class="comment"># clean</span></span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> <span class="string">'-.,\n'</span>:</span><br><span class="line">    Text = Text.replace(char, <span class="string">' '</span>)</span><br><span class="line">Text = Text.lower()</span><br><span class="line">word_list = Text.split()</span><br><span class="line"></span><br><span class="line"><span class="comment"># solution 1</span></span><br><span class="line">res = Counter(word_list).most_common()</span><br><span class="line"></span><br><span class="line"><span class="comment"># solution 2</span></span><br><span class="line"><span class="comment"># 使用字典，key-value，单词与个数一一对应</span></span><br><span class="line">d = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> word_list:</span><br><span class="line">    <span class="comment"># 找到个数然后+1，没有就默认0然后+1</span></span><br><span class="line">    <span class="comment"># dict.get(key, default = None)</span></span><br><span class="line">    <span class="comment"># key − This is the Key to be searched in the dictionary.</span></span><br><span class="line">    <span class="comment"># default − This is the Value to be returned in case key does not exist.</span></span><br><span class="line">    <span class="comment"># This method return a value for the given key. If key is not available, then returns default value None.</span></span><br><span class="line">    d[word] = d.get(word, <span class="number">0</span>)+<span class="number">1</span></span><br><span class="line"><span class="comment"># 使用列表为了排序</span></span><br><span class="line">word_freq = []</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">    word_freq.append((value, key))</span><br><span class="line">word_freq.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># solution 3</span></span><br><span class="line"><span class="comment"># 不使用get()方法</span></span><br><span class="line">d = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> word_list:</span><br><span class="line">    <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> d:</span><br><span class="line">        d[word] = <span class="number">0</span></span><br><span class="line">    d[word] += <span class="number">1</span></span><br><span class="line">word_freq = []</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">    word_freq.append((value, key))</span><br><span class="line">word_freq.sort(reverse=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0005 题：</strong> 你有一个目录，装了很多照片，把它们的尺寸变成都不大于 iPhone5 分辨率的大小。</p>
-<p><a href="/posts/1506372642.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">path=<span class="string">'/Users/lau/Pictures'</span></span><br><span class="line">resPath=<span class="string">'/Users/lau/Desktop'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(resPath):</span><br><span class="line">    os.mkdir(resPath)</span><br><span class="line"><span class="keyword">for</span> fileName <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">    <span class="comment"># mac系统会出现.DS_Store文件，会报错，所以简单的办法就是</span></span><br><span class="line">    <span class="comment"># 去这个文件夹删除隐藏文件</span></span><br><span class="line">    picPath=os.path.join(path,fileName)</span><br><span class="line">    print(picPath)</span><br><span class="line">    <span class="keyword">with</span> Image.open(picPath) <span class="keyword">as</span> im:</span><br><span class="line">        im.thumbnail((<span class="number">1366</span>,<span class="number">640</span>))</span><br><span class="line">        im.save(resPath+<span class="string">'/f_'</span>+fileName,<span class="string">'jpeg'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0006 题：</strong> 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。</p>
 <p><a href="/posts/1266467788.html">解答</a></p>
 <p><strong>第 0007 题：</strong> 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。</p>
 <p><a href="/posts/4089488553.html">解答</a></p>
 <p><strong>第 0008 题：</strong> 一个HTML文件，找出里面的<strong>正文</strong>。</p>
-<p><a href="/posts/2879632639.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">html_body</span><span class="params">(filesPath)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(filesPath):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    filesList = os.listdir(filesPath)</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> filesList:</span><br><span class="line">        filePath = os.path.join(filesPath, file)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(filePath) <span class="keyword">and</span> os.path.splitext(filePath)[<span class="number">1</span>] == <span class="string">'.html'</span>:</span><br><span class="line">            <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> fileHtml:</span><br><span class="line">                text = BeautifulSoup(fileHtml, <span class="string">'lxml'</span>)</span><br><span class="line">                content = text.getText().strip(<span class="string">'\n'</span>)</span><br><span class="line">                print(content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    html_body(<span class="string">'./SMTC/source/0008'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0009 题：</strong> 一个HTML文件，找出里面的<strong>链接</strong>。</p>
-<p><a href="/posts/320852890.html">解答</a></p>
+<ul>
+<li><p>解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">html_link</span><span class="params">(filesPath)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(filesPath):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    filesList = os.listdir(filesPath)</span><br><span class="line">    links = []</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> filesList:</span><br><span class="line">        filePath = os.path.join(filesPath, file)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(filePath) <span class="keyword">and</span> os.path.splitext(filePath)[<span class="number">1</span>] == <span class="string">'.html'</span>:</span><br><span class="line">            <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> fileHtml:</span><br><span class="line">                text = BeautifulSoup(fileHtml, <span class="string">'lxml'</span>)</span><br><span class="line">                <span class="comment"># 找到a标签</span></span><br><span class="line">                <span class="keyword">for</span> link <span class="keyword">in</span> text.find_all(<span class="string">'a'</span>):</span><br><span class="line">                    <span class="comment"># 获取链接</span></span><br><span class="line">                    links.append(link.get(<span class="string">'href'</span>))</span><br><span class="line">    print(links)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    html_link(<span class="string">'./SMTC/source/0008'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p><strong>第 0010 题：</strong> 使用 Python 生成类似于下图中的<strong>字母验证码图片</strong></p>
 <p><img src="https://camo.githubusercontent.com/f80e7aa0d43b3685657b4d329f2809a28c82e12a/687474703a2f2f692e696d6775722e636f6d2f615668626567562e6a7067" alt="字母验证码"></p>
 <ul>
@@ -830,12 +850,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Problems/" rel="tag"><i class="fa fa-tag"></i> Problems</a>
-          
-        </div>
-      
 
       
       
@@ -935,7 +949,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1028,61 +1042,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1173,19 +1133,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1237,16 +1185,20 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                友情链接
+                推荐阅读
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://www.feiniua.com/" title="https://www.feiniua.com/" rel="noopener" target="_blank">肥牛</a>
+                    <a href="https://jacksonleon.github.io/posts/3890174064.html" title="https://jacksonleon.github.io/posts/3890174064.html" rel="noopener" target="_blank">Git Note</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://fszhuangb.github.io/fsZhungB.github.io/" title="https://fszhuangb.github.io/fsZhungB.github.io/" rel="noopener" target="_blank">fsZhuangB</a>
+                    <a href="https://jacksonleon.github.io/posts/1999510617.html" title="https://jacksonleon.github.io/posts/1999510617.html" rel="noopener" target="_blank">Python Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jacksonleon.github.io/posts/3307335557.html" title="https://jacksonleon.github.io/posts/3307335557.html" rel="noopener" target="_blank">Blog With Hexo</a>
                   </li>
                 
               </ul>
@@ -1337,7 +1289,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">201k</span>
+    <span title="站点总字数">195k</span>
   
 
   
@@ -1348,7 +1300,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">2:58</span>
   
 </div>
 

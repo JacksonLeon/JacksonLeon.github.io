@@ -1996,7 +1996,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f98b74;
+  background: #40ed42;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3194,7 +3194,7 @@ body {
 }
 code {
   margin: 0px 4px;
-  background: rgba(0,0,0,0.75);
+  background: #060606;
   color: #fff;
 }
 .highlight,
@@ -3207,6 +3207,9 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+.posts-expand .post-title {
+  font-weight: bold;
 }
 .posts-expand .post-title-link {
   color: #000;
@@ -3222,9 +3225,20 @@ h3,
 h4,
 h5,
 h6 {
-  border-left: 4px solid #a166ab;
+  border-left: 4px solid #000;
   margin-left: -36px;
   padding-left: 32px;
+}
+blockquote {
+  color: #000;
+  border-left: 4px solid #bbb;
+}
+.posts-expand .post-body h2,
+.posts-expand .post-body h3,
+.posts-expand .post-body h4,
+.posts-expand .post-body h5,
+.posts-expand .post-body h6 {
+  padding-bottom: 10px;
 }
 .posts-expand .post-body img {
   border: none;
@@ -3234,7 +3248,7 @@ h6 {
   padding: 3px;
 }
 .post-button .btn {
-  color: #555 !important;
+  color: #000;
   background-color: #fff;
   border-radius: 3px;
   font-size: 15px;
