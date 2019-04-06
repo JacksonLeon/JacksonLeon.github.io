@@ -640,7 +640,7 @@
 <p><code>PIL.Image.open(fp, mode=&#39;r’)</code><a href="https://pillow.readthedocs.io/en/stable/_modules/PIL/Image.html#open" target="_blank" rel="noopener">[source]</a></p>
 <p>Opens and identifies the given image file.</p>
 <p>This is a lazy operation; this function identifies the file, but the file remains open and the actual image data is not read from the file until you try to process the data (or call the <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.load" target="_blank" rel="noopener"><code>load()</code></a>method). See <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.new" target="_blank" rel="noopener"><code>new()</code></a>. See <a href="https://pillow.readthedocs.io/en/stable/reference/open_files.html#file-handling" target="_blank" rel="noopener">File Handling in Pillow</a>.</p>
-<p>| Parameters: | <strong>fp</strong> – A filename (string), pathlib.Path object or a file object. The file object must implement <code>read()</code>, <code>seek()</code>, and <code>tell()</code> methods, and be opened in binary mode.<strong>mode</strong> – The mode. If given, this argument must be “r”. |<br>| ———– | ———————————————————— |<br>| Returns:    | An <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image" target="_blank" rel="noopener"><code>Image</code></a> object. |<br>| Raises:     | <strong>IOError</strong> – If the file cannot be found, or the image cannot be opened and identified. |</p>
+<p>| Parameters: | <strong>fp</strong> – A filename (string), pathlib.Path object or a file object. The file object must implement <code>read()</code>, <code>seek()</code>, and <code>tell()</code> methods, and be opened in binary mode.<strong>mode</strong> – The mode. If given, this argument must be “r”. |<br>| —————- | —————————————————————————————— |<br>| Returns:    | An <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image" target="_blank" rel="noopener"><code>Image</code></a> object. |<br>| Raises:     | <strong>IOError</strong> – If the file cannot be found, or the image cannot be opened and identified. |</p>
 </li>
 <li><p><code>ImageDraw</code>Module</p>
 <blockquote>
@@ -695,8 +695,7 @@
 <li><strong>encoding</strong> – Which font encoding to use (default is Unicode). Common encodings are “unic” (Unicode), “symb” (Microsoft Symbol), “ADOB” (Adobe Standard), “ADBE” (Adobe Expert), and “armn” (Apple Roman). See the FreeType documentation for more information.</li>
 <li><strong>layout_engine</strong> – Which layout engine to use, if available:ImageFont.LAYOUT_BASIC or ImageFont.LAYOUT_RAQM.</li>
 </ul>
-<p>##<a href="https://docs.python.org/2/library/collections.html#module-collections" target="_blank" rel="noopener"><code>collections</code></a></p>
-</li>
+<h2 id="collections"><a href="#collections" class="headerlink" title="collections"></a><a href="https://docs.python.org/2/library/collections.html#module-collections" target="_blank" rel="noopener"><code>collections</code></a></h2></li>
 <li><p><a href="https://docs.python.org/2/library/collections.html#collections.Counter" target="_blank" rel="noopener"><code>Counter</code></a></p>
 <blockquote>
 <p>A counter tool is provided to support convenient and rapid tallies. For example:</p>
@@ -723,6 +722,7 @@
 <p>另一个可供选择的解析器是纯Python实现的 <a href="http://code.google.com/p/html5lib/" target="_blank" rel="noopener">html5lib</a> , html5lib的解析方式与浏览器相同,可以选择下列方法来安装html5lib:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install Python-html5lib</span><br><span class="line">$ easy_install html5lib</span><br><span class="line">$ pip install html5lib</span><br></pre></td></tr></table></figure>
 <p>下表列出了主要的解析器,以及它们的优缺点:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -759,6 +759,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="The-Worksheet-Class"><a href="#The-Worksheet-Class" class="headerlink" title="The Worksheet Class"></a>The Worksheet Class</h2><blockquote>
 <p>The worksheet class represents an Excel worksheet. It handles operations such as writing data to cells or formatting worksheet layout.</p>
 <p>A worksheet object isn’t instantiated directly. Instead a new worksheet is created by calling the <a href="https://xlsxwriter.readthedocs.io/workbook.html#add_worksheet" target="_blank" rel="noopener"><code>add_worksheet()</code></a> method from a <a href="https://xlsxwriter.readthedocs.io/workbook.html#Workbook" target="_blank" rel="noopener"><code>Workbook()</code></a> object:</p>
@@ -766,9 +767,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">workbook   = xlsxwriter.Workbook(<span class="string">'filename.xlsx'</span>)</span><br><span class="line"></span><br><span class="line">worksheet1 = workbook.add_worksheet()</span><br><span class="line">worksheet2 = workbook.add_worksheet()</span><br><span class="line"></span><br><span class="line">worksheet1.write(<span class="string">'A1'</span>, <span class="number">123</span>)</span><br><span class="line"></span><br><span class="line">workbook.close()</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>worksheet.write()</strong></p>
-<p><code>write</code>(<em>row</em>, <em>col</em>, *<em>args</em>)</p>
+<p><code>write</code>(<em>row</em>, <em>col</em>, <em>*args</em>)</p>
 <p>Write generic data to a worksheet cell.</p>
-<p>| Parameters: | <strong>row</strong> – The cell row (zero indexed).<strong>col</strong> – The cell column (zero indexed).<strong>*args</strong> – The additional args that are passed to the sub methods such as number, string and cell_format. |<br>| ———– | ———————————————————— |<br>| Returns:    | 0: Success.                                                  |<br>| Returns:    | -1: Row or column is out of worksheet bounds.                |<br>| Returns:    | Other values from the called write methods.                  |</p>
+<p>| Parameters: | <strong>row</strong> – The cell row (zero indexed).<strong>col</strong> – The cell column (zero indexed).<strong>*args</strong> – The additional args that are passed to the sub methods such as number, string and cell_format. |<br>| —————- | —————————————————————————————— |<br>| Returns:    | 0: Success.                                                  |<br>| Returns:    | -1: Row or column is out of worksheet bounds.                |<br>| Returns:    | Other values from the called write methods.                  |</p>
 <p>Here are some examples:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">'Hello'</span>)          <span class="comment"># write_string()</span></span><br><span class="line">worksheet.write(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'World'</span>)          <span class="comment"># write_string()</span></span><br><span class="line">worksheet.write(<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>)                <span class="comment"># write_number()</span></span><br><span class="line">worksheet.write(<span class="number">3</span>, <span class="number">0</span>, <span class="number">3.00001</span>)          <span class="comment"># write_number()</span></span><br><span class="line">worksheet.write(<span class="number">4</span>, <span class="number">0</span>, <span class="string">'=SIN(PI()/4)'</span>)   <span class="comment"># write_formula()</span></span><br><span class="line">worksheet.write(<span class="number">5</span>, <span class="number">0</span>, <span class="string">''</span>)               <span class="comment"># write_blank()</span></span><br><span class="line">worksheet.write(<span class="number">6</span>, <span class="number">0</span>, <span class="keyword">None</span>)             <span class="comment"># write_blank()</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://xlsxwriter.readthedocs.io/_images/worksheet01.png" alt="_images/worksheet01.png"></p>
@@ -1248,7 +1249,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Library"><span class="nav-number">1.</span> <span class="nav-text">Python Library</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pillow"><span class="nav-number">1.2.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re"><span class="nav-number">1.3.</span> <span class="nav-text">re</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bs4"><span class="nav-number">1.4.</span> <span class="nav-text">bs4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.4.1.</span> <span class="nav-text">BeautifulSoup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Worksheet-Class"><span class="nav-number">1.5.</span> <span class="nav-text">The Worksheet Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enumerate"><span class="nav-number">1.6.</span> <span class="nav-text">Enumerate</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Library"><span class="nav-number">1.</span> <span class="nav-text">Python Library</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pillow"><span class="nav-number">1.2.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collections"><span class="nav-number">1.3.</span> <span class="nav-text">collections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re"><span class="nav-number">1.4.</span> <span class="nav-text">re</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bs4"><span class="nav-number">1.5.</span> <span class="nav-text">bs4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.5.1.</span> <span class="nav-text">BeautifulSoup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Worksheet-Class"><span class="nav-number">1.6.</span> <span class="nav-text">The Worksheet Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enumerate"><span class="nav-number">1.7.</span> <span class="nav-text">Enumerate</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1289,7 +1290,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">198k</span>
+    <span title="站点总字数">200k</span>
   
 
   
@@ -1300,7 +1301,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">3:02</span>
   
 </div>
 
@@ -1811,6 +1812,13 @@ show_date_time();
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
