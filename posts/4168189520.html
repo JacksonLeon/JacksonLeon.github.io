@@ -134,13 +134,13 @@
 
 
 
-  <meta name="description" content="「吴恩达机器学习」（一）什么是机器学习？ 机器学习应该在什么情况下使用？">
+  <meta name="description" content="「吴恩达机器学习」（一） [x] 什么是机器学习？ [x] 什么是监督学习算法？ [x] 什么是非监督学习算法？ [x] 什么是线性回归？">
 <meta name="keywords" content="Machine Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「吴恩达机器学习」（一）">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/4168189520.html">
 <meta property="og:site_name" content="Joseph の blog">
-<meta property="og:description" content="「吴恩达机器学习」（一）什么是机器学习？ 机器学习应该在什么情况下使用？">
+<meta property="og:description" content="「吴恩达机器学习」（一） [x] 什么是机器学习？ [x] 什么是监督学习算法？ [x] 什么是非监督学习算法？ [x] 什么是线性回归？">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g1t0y2aaa8j30qk0ein2b.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g1t11hbjylj30qm08177o.jpg">
@@ -158,10 +158,19 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g1t8b6akxbj30w80i5q6t.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g1t8v735fyj30w90i9438.jpg">
 <meta property="og:image" content="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/27ee0db04705fb20fab4574bb03064ab.png">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xm2d8zopj31370k5gnc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmhzb7mqj30x60i3di5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmmemwukj30x10hyjx7.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmpj9ryaj30wv0htq77.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnaliiaej30wx0htac7.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnb1d74yj30wx0hudo3.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnbcnb17j30wv0hvn5g.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xne13wj2j30hs046gm3.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnpq02hoj30li05c76l.jpg">
 <meta property="og:updated_time" content="2019-04-05T09:03:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「吴恩达机器学习」（一）">
-<meta name="twitter:description" content="「吴恩达机器学习」（一）什么是机器学习？ 机器学习应该在什么情况下使用？">
+<meta name="twitter:description" content="「吴恩达机器学习」（一） [x] 什么是机器学习？ [x] 什么是监督学习算法？ [x] 什么是非监督学习算法？ [x] 什么是线性回归？">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g1t0y2aaa8j30qk0ein2b.jpg">
 
 
@@ -591,7 +600,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.8k</span>
+                <span title="本文字数">5.3k</span>
               
 
               
@@ -605,7 +614,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -625,8 +634,12 @@
       
 
       
-        <h1 id="「吴恩达机器学习」（一）"><a href="#「吴恩达机器学习」（一）" class="headerlink" title="「吴恩达机器学习」（一）"></a>「吴恩达机器学习」（一）</h1><p>什么是机器学习？</p>
-<p>机器学习应该在什么情况下使用？</p>
+        <h1 id="「吴恩达机器学习」（一）"><a href="#「吴恩达机器学习」（一）" class="headerlink" title="「吴恩达机器学习」（一）"></a>「吴恩达机器学习」（一）</h1><ul>
+<li>[x] 什么是机器学习？</li>
+<li>[x] 什么是监督学习算法？</li>
+<li>[x] 什么是非监督学习算法？</li>
+<li>[x] 什么是线性回归？</li>
+</ul>
 <a id="more"></a>
 <h2 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h2><ul>
 <li><p>Arthur Samuel(1959)</p>
@@ -732,11 +745,45 @@
 <p>在线性回归中我们有一个像这样的训练集，$m$代表了训练样本的数量，比如 $m = 47$。而我们的假设函数，也就是用来进行预测的函数，是这样的线性函数形式：$h_\theta \left( x \right)=\theta_{0}+\theta_{1}x$。</p>
 <p>接下来我们会引入一些术语我们现在要做的便是为我们的模型选择合适的<strong>参数</strong>（<strong>parameters</strong>）$\theta_{0}​$ 和 $\theta_{1}​$，在房价问题这个例子中便是直线的斜率和在$y​$ 轴上的截距。</p>
 <p>我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距（下图中蓝线所指）就是<strong>建模误差</strong>（<strong>modeling error</strong>）。</p>
-<p>我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。 即使得代价函数 $J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{\theta}(x^{(i)})-y^{(i)} \right)^{2}$最小。(平方误差函数)</p>
+<p>我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。 即使得代价函数 </p>
+<script type="math/tex; mode=display">
+J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{\theta}(x^{(i)})-y^{(i)} \right)^{2}</script><p>最小。(平方误差函数)</p>
 <p>还有其他代价函数，不过平方误差函数对于线性回归是比较合理的。</p>
-<p>我们绘制一个等高线图，三个坐标分别为$\theta_{0}$和$\theta_{1}$ 和$J(\theta_{0}, \theta_{1})​$：</p>
+<p>我们绘制一个等高线图，三个坐标分别为$\theta_{0}​$和$\theta_{1}​$ 和$J(\theta_{0}, \theta_{1})​$：</p>
 <p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/27ee0db04705fb20fab4574bb03064ab.png" alt="img"></p>
-<h3 id="代价函数的直观理解（一）"><a href="#代价函数的直观理解（一）" class="headerlink" title="代价函数的直观理解（一）"></a>代价函数的直观理解（一）</h3>
+<h3 id="代价函数的直观理解（一）"><a href="#代价函数的直观理解（一）" class="headerlink" title="代价函数的直观理解（一）"></a>代价函数的直观理解（一）</h3><p>在上一个视频中，我们给了代价函数一个数学上的定义。在这个视频里，让我们通过一些例子来获取一些直观的感受，看看代价函数到底是在干什么。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xm2d8zopj31370k5gnc.jpg" alt=""></p>
+<p>简化函数，先假设截距为0，计算简单的情况。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmhzb7mqj30x60i3di5.jpg" alt=""></p>
+<p>当$\theta_1$改变时（$\theta_1=0,0.5,1,1.5,2,2.5…$），计算$J(\theta_1)$的函数图像。对于每一个$\theta_1$都有一个对应的$J(\theta_1)$，那么我们就可以画出来$J(\theta_1)$的函数图像，也就是代价函数的函数图像。为了找到一个最拟合数据的函数，需要改变$\theta_1$的值，从而使代价函数最小，也就是当$\theta_1=1$时可以拟合得到出((1,1),(2,2),(3,3))的函数。</p>
+<h3 id="代价函数的直观理解（二）"><a href="#代价函数的直观理解（二）" class="headerlink" title="代价函数的直观理解（二）"></a>代价函数的直观理解（二）</h3><p>前提：熟悉等高线图的绘制</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmmemwukj30x10hyjx7.jpg" alt=""></p>
+<p>代价函数的样子，<strong>等高线图可以更好的体现出函数图像上的点之间的关系</strong>，则可以看出在三维空间中存在一个使得$J(\theta_{0}, \theta_{1})​$最小的点（<em>碗底</em>）。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmpj9ryaj30wv0htq77.jpg" alt=""></p>
+<p>通过这些图形，我希望你能更好地理解这些代价函数$ J$所表达的值是什么样的，它们对应的假设是什么样的，以及什么样的假设对应的点，更接近于代价函数$J$的最小值。</p>
+<p>当然，我们真正需要的是一种有效的算法，能够自动地找出这些使代价函数$J$取最小值的参数$\theta_{0}$和$\theta_{1}$来。</p>
+<p>我们也不希望编个程序把这些点画出来，然后人工的方法来读出这些点的数值，这很明显不是一个好办法。我们会遇到更复杂、更高维度、更多参数的情况，而这些情况是很难画出图的，因此更无法将其可视化，因此我们真正需要的是编写程序来找出这些最小化代价函数的$\theta_{0}$和$\theta_{1}$的值。</p>
+<h3 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h3><p>梯度下降背后的思想是：开始时我们随机选择一个参数的组合$\left( {\theta_{0}},{\theta_{1}},……,{\theta_{n}} \right)$，计算代价函数，然后我们寻找下一个能让代价函数值下降最多的参数组合。我们持续这么做直到找到一个局部最小值（<strong>local minimum</strong>），因为我们并没有尝试完所有的参数组合，所以不能确定我们得到的局部最小值是否便是全局最小值（<strong>global minimum</strong>），选择不同的初始参数组合，可能会找到不同的局部最小值。</p>
+<p>梯度下降是一个用来求函数最小值的算法，我们将使用梯度下降算法来求出代价函数$J(\theta_{0}, \theta_{1})​$ 的最小值。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnaliiaej30wx0htac7.jpg" alt=""></p>
+<p>对$\theta_0$,$\theta_1$进行一些初步猜想，他们是多少并不重要，将他们全部设为0，我们不停的一点点改变$\theta_0$,$\theta_1$试图使$J(\theta_{0}, \theta_{1})$最小或者使局部最小值。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnb1d74yj30wx0hudo3.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnbcnb17j30wv0hvn5g.jpg" alt=""></p>
+<p>想象一下你正站立在山的这一点上，站立在你想象的公园这座红色山上，在梯度下降算法中，我们要做的就是旋转360度，看看我们的周围，并问自己要在某个方向上，用小碎步尽快下山。这些小碎步需要朝什么方向？如果我们站在山坡上的这一点，你看一下周围，你会发现最佳的下山方向，你再看看周围，然后再一次想想，我应该从什么方向迈着小碎步下山？然后你按照自己的判断又迈出一步，重复上面的步骤，从这个新的点，你环顾四周，并决定从什么方向将会最快下山，然后又迈进了一小步，并依此类推，直到你接近局部最低点的位置。</p>
+<p><strong>不同的起点，最终获得的局部最低点可能是不同的</strong>。</p>
+<p>批量梯度下降（<strong>batch gradient descent</strong>）算法的公式为：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xne13wj2j30hs046gm3.jpg" alt=""></p>
+<p>我们使用$:=$表示赋值，$=$表示判断为真的声明。</p>
+<p>其中$\alpha$是学习率（<strong>learning rate</strong>），它决定了我们沿着能让代价函数下降程度最大的方向向下迈出的步子有多大，在批量梯度下降中，我们每一次都<strong>同时</strong>让<strong>所有的参数减去学习速率乘以代价函数的导数</strong>，同时更新$\theta_0$,$\theta_1​$。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnpq02hoj30li05c76l.jpg" alt=""></p>
+<p>在梯度下降算法中，还有一个更微妙的问题，梯度下降中，我们要更新${\theta_{0}}$和${\theta_{1}}$ ，当 $j=0$ 和$j=1$时，会产生更新，所以你将更新$J\left( {\theta_{0}} \right)$和$J\left( {\theta_{1}} \right)$。实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要<strong>同时更新${\theta_{0}}$和${\theta_{1}}$</strong>，我的意思是在这个等式中，我们要这样更新：</p>
+<p>${\theta_{0}}​$:= ${\theta_{0}}​$ ，并更新${\theta_{1}}​$:= ${\theta_{1}}​$。</p>
+<p>实现方法是：你应该计算公式右边的部分，通过那一部分计算出${\theta_{0}}$和${\theta_{1}}$的值，然后同时更新${\theta_{0}}$和${\theta_{1}}$。在梯度下降算法中，这是正确实现同时更新的方法。我不打算解释为什么你需要同时更新，同时更新是梯度下降中的一种常用方法。我们之后会讲到，同步更新是更自然的实现方法。当人们谈到梯度下降时，他们的意思就是同步更新。</p>
+<p>在接下来的视频中，我们要进入这个微分项的细节之中。我已经写了出来但没有真正定义，如果你已经修过微积分课程，如果你熟悉偏导数和导数，这其实就是这个微分项：</p>
+<script type="math/tex; mode=display">
+\alpha \frac{\partial }{\partial {\theta_0}}J(\theta_0,\theta_1)</script><script type="math/tex; mode=display">
+\alpha \frac{\partial }{\partial {\theta_1}}J(\theta_0,\theta_1)</script><p>如果你不熟悉微积分，不用担心，即使你之前没有看过微积分，或者没有接触过偏导数，在接下来的视频中，你会得到一切你需要知道，如何计算这个微分项的知识。</p>
+<h3 id="梯度下降的直观理解"><a href="#梯度下降的直观理解" class="headerlink" title="梯度下降的直观理解"></a>梯度下降的直观理解</h3>
       
     </div>
 
@@ -1190,7 +1237,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#「吴恩达机器学习」（一）"><span class="nav-number">1.</span> <span class="nav-text">「吴恩达机器学习」（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是机器学习？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是机器学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">1.2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.2.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测验"><span class="nav-number">1.2.2.</span> <span class="nav-text">测验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督学习"><span class="nav-number">1.3.</span> <span class="nav-text">无监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单变量线性回归"><span class="nav-number">1.4.</span> <span class="nav-text">单变量线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型表示"><span class="nav-number">1.4.1.</span> <span class="nav-text">模型表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数的直观理解（一）"><span class="nav-number">1.4.3.</span> <span class="nav-text">代价函数的直观理解（一）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#「吴恩达机器学习」（一）"><span class="nav-number">1.</span> <span class="nav-text">「吴恩达机器学习」（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是机器学习？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是机器学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">1.2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.2.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测验"><span class="nav-number">1.2.2.</span> <span class="nav-text">测验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督学习"><span class="nav-number">1.3.</span> <span class="nav-text">无监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单变量线性回归"><span class="nav-number">1.4.</span> <span class="nav-text">单变量线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型表示"><span class="nav-number">1.4.1.</span> <span class="nav-text">模型表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数的直观理解（一）"><span class="nav-number">1.4.3.</span> <span class="nav-text">代价函数的直观理解（一）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数的直观理解（二）"><span class="nav-number">1.4.4.</span> <span class="nav-text">代价函数的直观理解（二）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.4.5.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降的直观理解"><span class="nav-number">1.4.6.</span> <span class="nav-text">梯度下降的直观理解</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1231,7 +1278,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">200k</span>
+    <span title="站点总字数">203k</span>
   
 
   
@@ -1242,7 +1289,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:02</span>
+    <span title="站点阅读时长">3:04</span>
   
 </div>
 
