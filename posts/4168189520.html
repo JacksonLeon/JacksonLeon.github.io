@@ -479,12 +479,10 @@
   
   
   
-    
-  
 
   
 
-  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -750,13 +748,13 @@
 <h3 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h3><p>我们将定义代价函数的概念，这有助于我们弄清楚如何把最有可能的直线与我们的数据相拟合。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g1t8v735fyj30w90i9438.jpg" alt="image-20190406214055225"></p>
 <p>在线性回归中我们有一个像这样的训练集，$m$代表了训练样本的数量，比如 $m = 47$。而我们的假设函数，也就是用来进行预测的函数，是这样的线性函数形式：$h_\theta \left( x \right)=\theta_{0}+\theta_{1}x$。</p>
-<p>接下来我们会引入一些术语我们现在要做的便是为我们的模型选择合适的<strong>参数</strong>（<strong>parameters</strong>）$\theta_{0}​$ 和 $\theta_{1}​$，在房价问题这个例子中便是直线的斜率和在$y​$ 轴上的截距。</p>
+<p>接下来我们会引入一些术语我们现在要做的便是为我们的模型选择合适的<strong>参数</strong>（<strong>parameters</strong>）$\theta_{0}$ 和 $\theta_{1}$，在房价问题这个例子中便是直线的斜率和在$y$ 轴上的截距。</p>
 <p>我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距（下图中蓝线所指）就是<strong>建模误差</strong>（<strong>modeling error</strong>）。</p>
 <p>我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。 即使得代价函数 </p>
 <script type="math/tex; mode=display">
 J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{\theta}(x^{(i)})-y^{(i)} \right)^{2}</script><p>最小。(平方误差函数)</p>
 <p>还有其他代价函数，不过平方误差函数对于线性回归是比较合理的。</p>
-<p>我们绘制一个等高线图，三个坐标分别为$\theta_{0}​$和$\theta_{1}​$ 和$J(\theta_{0}, \theta_{1})​$：</p>
+<p>我们绘制一个等高线图，三个坐标分别为$\theta_{0}$和$\theta_{1}$ 和$J(\theta_{0}, \theta_{1})$：</p>
 <p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/27ee0db04705fb20fab4574bb03064ab.png" alt="img"></p>
 <h3 id="代价函数的直观理解（一）"><a href="#代价函数的直观理解（一）" class="headerlink" title="代价函数的直观理解（一）"></a>代价函数的直观理解（一）</h3><p>在上一个视频中，我们给了代价函数一个数学上的定义。在这个视频里，让我们通过一些例子来获取一些直观的感受，看看代价函数到底是在干什么。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xm2d8zopj31370k5gnc.jpg" alt></p>
@@ -765,7 +763,7 @@ J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{
 <p>当$\theta_1$改变时（$\theta_1=0,0.5,1,1.5,2,2.5…$），计算$J(\theta_1)$的函数图像。对于每一个$\theta_1$都有一个对应的$J(\theta_1)$，那么我们就可以画出来$J(\theta_1)$的函数图像，也就是代价函数的函数图像。为了找到一个最拟合数据的函数，需要改变$\theta_1$的值，从而使代价函数最小，也就是当$\theta_1=1$时可以拟合得到出((1,1),(2,2),(3,3))的函数。</p>
 <h3 id="代价函数的直观理解（二）"><a href="#代价函数的直观理解（二）" class="headerlink" title="代价函数的直观理解（二）"></a>代价函数的直观理解（二）</h3><p>前提：熟悉等高线图的绘制</p>
 <p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmmemwukj30x10hyjx7.jpg" alt></p>
-<p>代价函数的样子，<strong>等高线图可以更好的体现出函数图像上的点之间的关系</strong>，则可以看出在三维空间中存在一个使得$J(\theta_{0}, \theta_{1})​$最小的点（<em>碗底</em>）。</p>
+<p>代价函数的样子，<strong>等高线图可以更好的体现出函数图像上的点之间的关系</strong>，则可以看出在三维空间中存在一个使得$J(\theta_{0}, \theta_{1})$最小的点（<em>碗底</em>）。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xmpj9ryaj30wv0htq77.jpg" alt></p>
 <p>通过这些图形，我希望你能更好地理解这些代价函数$ J$所表达的值是什么样的，它们对应的假设是什么样的，以及什么样的假设对应的点，更接近于代价函数$J$的最小值。</p>
 <p>当然，我们真正需要的是一种有效的算法，能够自动地找出这些使代价函数$J$取最小值的参数$\theta_{0}$和$\theta_{1}$来。</p>
@@ -781,10 +779,10 @@ J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{
 <p>批量梯度下降（<strong>batch gradient descent</strong>）算法的公式为：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xne13wj2j30hs046gm3.jpg" alt></p>
 <p>我们使用$:=$表示赋值，$=$表示判断为真的声明。</p>
-<p>其中$\alpha$是学习率（<strong>learning rate</strong>），它决定了我们沿着能让代价函数下降程度最大的方向向下迈出的步子有多大，在批量梯度下降中，我们每一次都<strong>同时</strong>让<strong>所有的参数减去学习速率乘以代价函数的导数</strong>，同时更新$\theta_0$,$\theta_1​$。</p>
+<p>其中$\alpha$是学习率（<strong>learning rate</strong>），它决定了我们沿着能让代价函数下降程度最大的方向向下迈出的步子有多大，在批量梯度下降中，我们每一次都<strong>同时</strong>让<strong>所有的参数减去学习速率乘以代价函数的导数</strong>，同时更新$\theta_0$,$\theta_1$。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006gHug0ly1g1xnpq02hoj30li05c76l.jpg" alt></p>
 <p>在梯度下降算法中，还有一个更微妙的问题，梯度下降中，我们要更新$\theta_0$和$\theta_1$ ，当 $j=0$ 和$j=1$时，会产生更新，所以你将更新$J\left( \theta_0 \right)$和$J\left( \theta_1 \right)$。实现梯度下降算法的微妙之处是，在这个表达式中，如果你要更新这个等式，你需要<strong>同时更新$\theta_0$和$\theta_1$</strong>，我的意思是在这个等式中，我们要这样更新：</p>
-<p>$\theta_0​$:= $\theta_0​$ ，并更新$\theta_1​$:= $\theta_1​$。</p>
+<p>$\theta_0$:= $\theta_0$ ，并更新$\theta_1$:= $\theta_1$。</p>
 <p>实现方法是：你应该计算公式右边的部分，通过那一部分计算出$\theta_0$和$\theta_1$的值，然后同时更新$\theta_0$和$\theta_1$。在梯度下降算法中，这是正确实现同时更新的方法。我不打算解释为什么你需要同时更新，同时更新是梯度下降中的一种常用方法。我们之后会讲到，同步更新是更自然的实现方法。当人们谈到梯度下降时，他们的意思就是同步更新。</p>
 <p>在接下来的视频中，我们要进入这个微分项的细节之中。我已经写了出来但没有真正定义，如果你已经修过微积分课程，如果你熟悉偏导数和导数，这其实就是这个微分项：</p>
 <script type="math/tex; mode=display">
@@ -796,7 +794,7 @@ J \left( \theta_0, \theta_1 \right) = \frac{1}{2m}\sum\limits_{i=1}^m \left( h_{
 <p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g1ysft2jt1j30wa0i6jv8.jpg" alt="image-20190411164605244"></p>
 <p>随着我接近最低点，我的导数越来越接近零，所以，梯度下降一步后，新的导数的改变会变小一点点。所以<strong>我们即使用固定的学习率$\alpha$，我们也可以最终收敛到局部最小值。</strong></p>
 <p>在梯度下降法中，当我们接近局部最低点时，梯度下降法会自动采取更小的幅度，这是因为当我们接近局部最低点时，很显然在局部最低时导数等于零，所以当我们接近局部最低时，导数值会自动变得越来越小，所以梯度下降将自动采取较小的幅度，这就是梯度下降的做法。所以实际上没有必要再另外减小$\alpha$。</p>
-<p>这就是梯度下降算法，你可以用它来最小化任何代价函数$J$，不只是线性回归中的代价函数$J​$。</p>
+<p>这就是梯度下降算法，你可以用它来最小化任何代价函数$J$，不只是线性回归中的代价函数$J$。</p>
 <h3 id="梯度下降的线性回归"><a href="#梯度下降的线性回归" class="headerlink" title="梯度下降的线性回归"></a>梯度下降的线性回归</h3><p>在以前的视频中我们谈到关于梯度下降算法，梯度下降是很常用的算法。在这段视频中，我们要将梯度下降和代价函数结合。我们将用到此算法，并将其应用于具体的拟合直线的线性回归算法里。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g1ysybros4j30w20hegnq.jpg" alt="image-20190411170353256"></p>
 <script type="math/tex; mode=display">
@@ -814,7 +812,7 @@ j=1:\frac{\partial}{\partial \theta_1}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limit
 <p>矩阵的维数即行数×列数</p>
 <p>矩阵元素（矩阵项）：</p>
 <script type="math/tex; mode=display">
-A=\left[\begin{matrix}1402 & 191 \\ 1371 & 821 \\ 949 & 1437 \\ 147 & 1448\end{matrix}\right]</script><p>$A_{ij}​$指第$i​$行，第$j​$列的元素。</p>
+A=\left[\begin{matrix}1402 & 191 \\ 1371 & 821 \\ 949 & 1437 \\ 147 & 1448\end{matrix}\right]</script><p>$A_{ij}$指第$i$行，第$j$列的元素。</p>
 <p>向量是一种特殊的矩阵，只有一列，讲义中的向量一般都是列向量，如： </p>
 <script type="math/tex; mode=display">
 y=\left[ \begin{matrix} 460 \\ 232 \\ 315 \\ 178 \end{matrix} \right]</script><p>为<strong>四维</strong>列向量（4×1）。</p>
@@ -836,10 +834,10 @@ y=\left[ \begin{matrix} 460 \\ 232 \\ 315 \\ 178 \end{matrix} \right]</script><p
 <h3 id="矩阵乘法的性质"><a href="#矩阵乘法的性质" class="headerlink" title="矩阵乘法的性质"></a>矩阵乘法的性质</h3><p>矩阵的乘法不满足交换律：$A×B≠B×A$</p>
 <p>矩阵的乘法满足结合律。即：$A×(B×C)=(A×B)×C$</p>
 <p>单位矩阵：在矩阵的乘法中，有一种矩阵起着特殊的作用，如同数的乘法中的1,我们称这种矩阵为单位矩阵．它是个方阵，一般用 $I$ 或者 $E$ 表示，本讲义都用 $I$ 代表单位矩阵，从左上角到右下角的对角线（称为主对角线）上的元素均为1以外全都为0。如：</p>
-<p>$AA^{-1}=A^{-1} A=I​$</p>
-<p>对于单位矩阵，有$A\cdot I=I\cdot A=A​$</p>
+<p>$AA^{-1}=A^{-1} A=I$</p>
+<p>对于单位矩阵，有$A\cdot I=I\cdot A=A$</p>
 <h3 id="矩阵逆、转置"><a href="#矩阵逆、转置" class="headerlink" title="矩阵逆、转置"></a>矩阵逆、转置</h3><p>矩阵的逆：如矩阵$A$是一个$m×m$矩阵（方阵），如果有逆矩阵，则：$AA^{-1}=A^{-1}A=I$</p>
-<p>矩阵的转置：设$A​$为$m×n​$阶矩阵（即$m​$行$n​$列），第$i ​$行$j ​$列的元素是$a(i,j)​$，即：$A=a(i,j)​$</p>
+<p>矩阵的转置：设$A$为$m×n$阶矩阵（即$m$行$n$列），第$i $行$j $列的元素是$a(i,j)$，即：$A=a(i,j)$</p>
 <p>定义$A$的转置为这样一个$n×m$阶矩阵$B$，满足$B=a(j,i)$，即 $b (i,j)=a(j,i)$（$B$的第$i$行第$j$列元素是$A$的第$j$行第$i$列元素），记$A^T=B$。(有些书记为A’=B）</p>
 <p>直观来看，将$A$的所有元素绕着一条从第1行第1列元素出发的右下方45度的射线作镜面反转，即得到$A$的转置。</p>
 <p>例：</p>
@@ -1006,7 +1004,7 @@ y=\left[ \begin{matrix} 460 \\ 232 \\ 315 \\ 178 \end{matrix} \right]</script><p
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1346,7 +1344,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">213k</span>
+    <span title="站点总字数">214k</span>
   
 
   
@@ -1357,7 +1355,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:14</span>
+    <span title="站点阅读时长">3:15</span>
   
 </div>
 
