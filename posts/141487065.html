@@ -142,14 +142,14 @@
 <meta property="og:site_name" content="GeekJoe">
 <meta property="og:description" content="Mac终端iTerm 2配置Author: 以乐之名 「from 简书」  Description 完成配置后的iTerm 2具备功能：  语法高亮 命令Tab补全 自动提示 Git相关功能">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fzhmom4o50j30pt0iidkn.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fzhrhsghevj30sl0mzwj2.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/30/5cc8339b3decb.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/30/5cc833a14eb48.jpg">
 <meta property="og:image" content="https://image-static.segmentfault.com/326/093/326093881-5b0511fccffcd_articlex">
 <meta property="og:updated_time" content="2019-01-24T09:28:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Settings of iTerm2 on Mac">
 <meta name="twitter:description" content="Mac终端iTerm 2配置Author: 以乐之名 「from 简书」  Description 完成配置后的iTerm 2具备功能：  语法高亮 命令Tab补全 自动提示 Git相关功能">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fzhmom4o50j30pt0iidkn.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/30/5cc8339b3decb.jpg">
 
 
 
@@ -646,7 +646,7 @@
 <li><p><strong>配色方案</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/altercation/solarized</span><br><span class="line"><span class="built_in">cd</span> solarized/iterm2-colors-solarized/</span><br><span class="line">open .</span><br></pre></td></tr></table></figure>
 <p>在打开的finder窗口中，双击Solarized Dark.itermcolors和Solarized Light.itermcolors即可安装明暗两种配色，再次进入iTerm2 -&gt; Preferences -&gt; Profiles -&gt; Colors -&gt; Color Presets中根据个人喜好选择这两种配色中的一种即可：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzhmom4o50j30pt0iidkn.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/04/30/5cc8339b3decb.jpg" alt></p>
 </li>
 <li><p><strong>oh-my-zsh</strong></p>
 <p>github：<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Frobbyrussell%2Foh-my-zsh" target="_blank" rel="noopener">https://github.com/robbyrussell/oh-my-zsh</a></p>
@@ -676,7 +676,7 @@
 <p>安装字体库需要首先将项目git clone至本地，然后执行源码中的install.sh。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git clone</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts.git --depth=1</span><br><span class="line"><span class="comment"># cd to folder</span></span><br><span class="line"><span class="built_in">cd</span> fonts</span><br><span class="line"><span class="comment"># run install shell</span></span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
 <p>安装好字体库之后，我们来设置iTerm2的字体，具体的操作是iTerm2 -&gt; Preferences -&gt; Profiles -&gt; Text，在Font区域选中Change Font，然后找到Meslo LG字体。有L、M、S可选，看个人喜好：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzhrhsghevj30sl0mzwj2.jpg" alt="image-20190124163806040"></p>
+<p><img src="https://i.loli.net/2019/04/30/5cc833a14eb48.jpg" alt="image-20190124163806040"></p>
 </li>
 <li><p><strong>自动提示与命令补全</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/custom/plugins</span><br><span class="line">git <span class="built_in">clone</span> git://github.com/zsh-users/zsh-autosuggestions</span><br><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment"># 加上plugins=(zsh-autosuggestions)</span></span><br></pre></td></tr></table></figure>
