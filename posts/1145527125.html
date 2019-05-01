@@ -135,6 +135,7 @@
 
 
   <meta name="description" content="Markdown 图床更改及博客推送 由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。">
+<meta name="keywords" content="Blog,Picture Bed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown 图床更改及博客推送">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/1145527125.html">
@@ -522,7 +523,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Uncategoried/" itemprop="url" rel="index"><span itemprop="name">Uncategoried</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
 
                 
                 
@@ -618,7 +619,7 @@
 <li>SM.MS，V2EX网友提供维护，不限制流量，不限制公网域名，只有上传文件频率限制，只是比较担心什么时候会停止维护，毕竟没有收入来源，要是大佬钱多那就当我没说</li>
 </ul>
 <p>我这里选择的是SM.MS图床，虽然有点担心后续维护，但是对于目前来说，这个算是最优解了。</p>
-<p>SM.MS提供了API，一小时内可以上传100张图片，这个频率一般人达不到吧，除非你是想把这个当成云盘存你的照片，不过傻子才会把私人照片上床到图床啊，艳照门是怎么来的啊！小伙子/小姑娘们！</p>
+<p>SM.MS提供了API，一小时内可以上传100张图片，这个频率一般人达不到吧，除非你是想把这个当成云盘存你的照片，不过傻子才会把私人照片上传到图床啊，艳照门是怎么来的啊！小伙子/小姑娘们！</p>
 <h2 id="图床工具"><a href="#图床工具" class="headerlink" title="图床工具"></a>图床工具</h2><p>目前来说mac端的图床工具做的比较好的就是ipic了，但是这货免费版只支持新浪，新浪呢又开启了防盗链，付费版呢也不支持SM.MS</p>
 <p>然后我就想通过Alfred workflow来作为图床工具，自动获取剪切板的图片，然后利用API转换成链接，放到剪切板里，我就又找了半天，又是ruby，又是PHP，又是python，不知道哪里出了问题怎么都不成功，气！</p>
 <p>索性我就自己写了一个轮子，把原先markdown文件里的新浪图床链接下载成图片，再用API转成SMMS链接</p>
@@ -684,6 +685,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
+          
+            <a href="/tags/Picture-Bed/" rel="tag"><i class="fa fa-tag"></i> Picture Bed</a>
+          
+        </div>
       
 
       
@@ -780,7 +789,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">60</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -875,7 +884,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -966,7 +979,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">39</span>
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
