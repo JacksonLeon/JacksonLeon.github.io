@@ -135,7 +135,7 @@
 
 
   <meta name="description" content="NOTE: This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to Markdown: Syntax. 声明： 这份文档派生(fork)于繁体中文版，在此基础上进行了繁体转简体工作，并进行了适当">
-<meta name="keywords" content="MarkDown,Reproduce">
+<meta name="keywords" content="Reproduce,MarkDown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MarkDown 语法">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/4269544267.html">
@@ -817,7 +817,7 @@ equivalent of <code>&amp;mdash;</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 `&lt;img&gt;` 标签。</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">## 其它</span><br><span class="line"></span><br><span class="line">### 自动链接</span><br><span class="line"></span><br><span class="line">Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</span><br></pre></td></tr></table></figure>
 <p><a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转为：</span><br></pre></td></tr></table></figure></p>
 <p><a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</span><br></pre></td></tr></table></figure></p>
-<p><a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#x61;&#100;&#100;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#x61;&#100;&#100;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转成：</span><br></pre></td></tr></table></figure></p>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#x61;&#x64;&#x64;&#114;&#101;&#x73;&#115;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#x6d;">&#x61;&#x64;&#x64;&#114;&#101;&#x73;&#115;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转成：</span><br></pre></td></tr></table></figure></p>
 <p><a href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
 &#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;
 &#109;">&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#120;&#x61;<br>&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;&#109;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在浏览器里面，这段字串（其实是 `&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;`）会变成一个可以点击的「address@example.com」链接。</span><br><span class="line"></span><br><span class="line">（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</span><br><span class="line"></span><br><span class="line">### 反斜杠</span><br><span class="line"></span><br><span class="line">Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 `&lt;em&gt;` 标签），你可以在星号的前面加上反斜杠：</span><br></pre></td></tr></table></figure></p>
@@ -861,9 +861,9 @@ equivalent of <code>&amp;mdash;</code>.</p>
       
         <div class="post-tags">
           
-            <a href="/tags/MarkDown/" rel="tag"><i class="fa fa-tag"></i> MarkDown</a>
-          
             <a href="/tags/Reproduce/" rel="tag"><i class="fa fa-tag"></i> Reproduce</a>
+          
+            <a href="/tags/MarkDown/" rel="tag"><i class="fa fa-tag"></i> MarkDown</a>
           
         </div>
       
@@ -966,7 +966,7 @@ equivalent of <code>&amp;mdash;</code>.</p>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1059,7 +1059,9 @@ equivalent of <code>&amp;mdash;</code>.</p>
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1306,7 +1308,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">307k</span>
   
 
   
@@ -1317,7 +1319,7 @@ show_date_time();
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:15</span>
+    <span title="站点阅读时长">4:39</span>
   
 </div>
 
