@@ -134,19 +134,19 @@
 
 
 
-  <meta name="description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记 持续更新">
+  <meta name="description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Note">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/1999510617.html">
 <meta property="og:site_name" content="GeekJoe">
-<meta property="og:description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记 持续更新">
+<meta property="og:description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/04/30/5cc8336c83eab.jpg">
 <meta property="og:updated_time" content="2019-02-04T08:07:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Note">
-<meta name="twitter:description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记 持续更新">
+<meta name="twitter:description" content="Python 「Python简明教程」&amp;amp;&amp;amp; JosephLau  Description Python个人笔记">
 <meta name="twitter:image" content="https://i.loli.net/2019/04/30/5cc8336c83eab.jpg">
 
 
@@ -623,7 +623,6 @@
 <hr>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
 <p>Python个人笔记</p>
-<p>持续更新</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
@@ -635,7 +634,7 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Mac下安装非常简单，一条命令：<code>brew install python3</code>，只不过有时候需要更新Homebrew，比较耗费时间。</p>
 <p><img src="https://i.loli.net/2019/04/30/5cc8336c83eab.jpg" alt="image-20190125211920126"></p>
 <p>如果你没有Homebrew，使用<code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code>安装完成后，再安装Python。</p>
-<h2 id="遇到的问题与解决方案"><a href="#遇到的问题与解决方案" class="headerlink" title="遇到的问题与解决方案"></a>遇到的问题与解决方案</h2><ul>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
 <li><p><code>pip3 install</code>和<code>pip3 list</code> 出现问题</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Exception:</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2584, <span class="keyword">in</span> version</span><br><span class="line">    <span class="built_in">return</span> self._version</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2691, <span class="keyword">in</span> __getattr__</span><br><span class="line">    raise AttributeError(attr)</span><br><span class="line">AttributeError: _version</span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/cli/base_command.py"</span>, line 179, <span class="keyword">in</span> main</span><br><span class="line">    status = self.run(options, args)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 148, <span class="keyword">in</span> run</span><br><span class="line">    self.output_package_listing(packages, options)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 205, <span class="keyword">in</span> output_package_listing</span><br><span class="line">    data, header = format_for_columns(packages, options)</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_internal/commands/list.py"</span>, line 271, <span class="keyword">in</span> format_for_columns</span><br><span class="line">    row = [proj.project_name, proj.version]</span><br><span class="line">  File <span class="string">"/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py"</span>, line 2589, <span class="keyword">in</span> version</span><br><span class="line">    raise ValueError(tmpl % self.PKG_INFO, self)</span><br><span class="line">ValueError: (<span class="string">"Missing 'Version:' header and/or METADATA file"</span>, Unknown [unknown version] (/usr/<span class="built_in">local</span>/lib/python3.7/site-packages))</span><br></pre></td></tr></table></figure>
 <p>解决方法：</p>
@@ -647,7 +646,38 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lib/python3.7/site-packages</span><br><span class="line">rm -rf ./-ip-19.0.1.dist-info</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+</ol>
+<ol>
+<li><p><a href="https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3" target="_blank" rel="noopener">Purpose of #!/usr/bin/python3</a></p>
+<blockquote>
+<p>Answer:</p>
+<p><code>#!/usr/bin/python3</code> is a <strong>shebang line</strong>.</p>
+<p>A shebang line defines where the interpreter is located. In this case, the <code>python3</code> interpreter is located in <code>/usr/bin/python3</code>. A shebang line could also be a <code>bash</code>, <code>ruby</code>, <code>perl</code> or any other scripting languages’ interpreter, for example: <code>#!/bin/bash</code>.</p>
+<p>Without the shebang line, the operating system does not know it’s a python script, even if you set the execution flag on the script and run it like <code>./script.py</code>. To make the script run by default in python3, either invoke it as <code>python3 script.py</code> or set the shebang line.</p>
+<p>You can use <code>#!/usr/bin/env python3</code> for portability across different systems in case they have the language interpreter installed in different locations.</p>
+</blockquote>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python" target="_blank" rel="noopener">What is the use of “assert” in Python?</a></p>
+<p>The <code>assert</code> statement exists in almost every programming language. It helps detect problems early in your program, where the cause is clear, rather than later as a side-effect of some other operation.</p>
+<p>When you do…</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> condition</span><br></pre></td></tr></table></figure>
+<p>you’re telling the program to test that condition, and immediately trigger an error if the condition is false.</p>
+<p>In Python, it’s roughly equivalent to this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> condition:</span><br><span class="line">    <span class="keyword">raise</span> AssertionError()</span><br></pre></td></tr></table></figure>
+<p>Try it in the Python shell:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="literal">True</span> <span class="comment"># nothing happens</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="literal">False</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AssertionError</span><br></pre></td></tr></table></figure>
+<p>Assertions can include an optional message, and you can disable them when running the interpreter.</p>
+<p>To print a message if the assertion fails:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="literal">False</span>, <span class="string">"Oh no! This assertion failed!"</span></span><br></pre></td></tr></table></figure>
+<p>Do <strong>not</strong> use parenthesis to call <code>assert</code> like a function. It is a statement. If you do <code>assert(condition, message)</code> you’ll be running the <code>assert</code> with a <code>(condition, message)</code> tuple as first parameter.</p>
+<p>As for disabling them, when running <code>python</code> in optimized mode, where <code>__debug__</code> is <code>False</code>, assert statements will be ignored. Just pass the <code>-O</code> flag:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -O script.py</span><br></pre></td></tr></table></figure>
+<p>See <a href="http://docs.python.org/reference/simple_stmts.html#assert" target="_blank" rel="noopener">here</a> for the relevant documentation.</p>
+</li>
+<li><p>You use <code>==</code> when comparing values and <code>is</code> when comparing identities.</p>
+</li>
+<li></li>
+</ol>
 <h2 id="提高效率"><a href="#提高效率" class="headerlink" title="提高效率"></a>提高效率</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="字符串与基本规则"><a href="#字符串与基本规则" class="headerlink" title="字符串与基本规则"></a>字符串与基本规则</h3><ol>
 <li><p>字符串</p>
 <p>单引号与双引号作用相同、三引号<code>‘’&#39;</code>/<code>“&quot;”</code>用来指定多行字符串。</p>
@@ -1051,36 +1081,6 @@
 <li><a href="https://docs.djangoproject.com/en/dev/topics/python3/" target="_blank" rel="noopener">Official Django Guide to Porting to Python 3</a></li>
 <li><a href="http://www.reddit.com/r/Python/comments/22ovb3/what_are_the_advantages_to_python_3x/" target="_blank" rel="noopener">Discussion on What are the advantages to python 3.x?</a></li>
 </ul>
-</li>
-</ol>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><ol>
-<li><p><a href="https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3" target="_blank" rel="noopener">Purpose of #!/usr/bin/python3</a></p>
-<blockquote>
-<p>Answer:</p>
-<p><code>#!/usr/bin/python3</code> is a <strong>shebang line</strong>.</p>
-<p>A shebang line defines where the interpreter is located. In this case, the <code>python3</code> interpreter is located in <code>/usr/bin/python3</code>. A shebang line could also be a <code>bash</code>, <code>ruby</code>, <code>perl</code> or any other scripting languages’ interpreter, for example: <code>#!/bin/bash</code>.</p>
-<p>Without the shebang line, the operating system does not know it’s a python script, even if you set the execution flag on the script and run it like <code>./script.py</code>. To make the script run by default in python3, either invoke it as <code>python3 script.py</code> or set the shebang line.</p>
-<p>You can use <code>#!/usr/bin/env python3</code> for portability across different systems in case they have the language interpreter installed in different locations.</p>
-</blockquote>
-</li>
-<li><p><a href="https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python" target="_blank" rel="noopener">What is the use of “assert” in Python?</a></p>
-<p>The <code>assert</code> statement exists in almost every programming language. It helps detect problems early in your program, where the cause is clear, rather than later as a side-effect of some other operation.</p>
-<p>When you do…</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> condition</span><br></pre></td></tr></table></figure>
-<p>you’re telling the program to test that condition, and immediately trigger an error if the condition is false.</p>
-<p>In Python, it’s roughly equivalent to this:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> condition:</span><br><span class="line">    <span class="keyword">raise</span> AssertionError()</span><br></pre></td></tr></table></figure>
-<p>Try it in the Python shell:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="literal">True</span> <span class="comment"># nothing happens</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">assert</span> <span class="literal">False</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AssertionError</span><br></pre></td></tr></table></figure>
-<p>Assertions can include an optional message, and you can disable them when running the interpreter.</p>
-<p>To print a message if the assertion fails:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assert</span> <span class="literal">False</span>, <span class="string">"Oh no! This assertion failed!"</span></span><br></pre></td></tr></table></figure>
-<p>Do <strong>not</strong> use parenthesis to call <code>assert</code> like a function. It is a statement. If you do <code>assert(condition, message)</code> you’ll be running the <code>assert</code> with a <code>(condition, message)</code> tuple as first parameter.</p>
-<p>As for disabling them, when running <code>python</code> in optimized mode, where <code>__debug__</code> is <code>False</code>, assert statements will be ignored. Just pass the <code>-O</code> flag:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -O script.py</span><br></pre></td></tr></table></figure>
-<p>See <a href="http://docs.python.org/reference/simple_stmts.html#assert" target="_blank" rel="noopener">here</a> for the relevant documentation.</p>
-</li>
-<li><p>You use <code>==</code> when comparing values and <code>is</code> when comparing identities.</p>
 </li>
 </ol>
 
@@ -1549,7 +1549,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题与解决方案"><span class="nav-number">1.4.</span> <span class="nav-text">遇到的问题与解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高效率"><span class="nav-number">1.5.</span> <span class="nav-text">提高效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.5.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">1.5.2.</span> <span class="nav-text">lambda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.6.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与基本规则"><span class="nav-number">1.6.1.</span> <span class="nav-text">字符串与基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符与表达式"><span class="nav-number">1.6.2.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">1.6.3.</span> <span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.6.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.6.5.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.6.6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.6.7.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入与输出"><span class="nav-number">1.6.8.</span> <span class="nav-text">输入与输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.6.9.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准库"><span class="nav-number">1.6.10.</span> <span class="nav-text">标准库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.6.11.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.7.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.4.</span> <span class="nav-text">Q&amp;A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提高效率"><span class="nav-number">1.5.</span> <span class="nav-text">提高效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.5.1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">1.5.2.</span> <span class="nav-text">lambda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.6.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与基本规则"><span class="nav-number">1.6.1.</span> <span class="nav-text">字符串与基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符与表达式"><span class="nav-number">1.6.2.</span> <span class="nav-text">运算符与表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">1.6.3.</span> <span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.6.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.6.5.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.6.6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.6.7.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入与输出"><span class="nav-number">1.6.8.</span> <span class="nav-text">输入与输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.6.9.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准库"><span class="nav-number">1.6.10.</span> <span class="nav-text">标准库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.6.11.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
