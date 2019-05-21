@@ -1996,7 +1996,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8c1386;
+  background: #ff3896;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2629,6 +2629,12 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li+li:last-child {
   font-weight: bold;
 }
+header {
+  width: 80% !important;
+}
+header.post-header {
+  width: auto !important;
+}
 .header {
   position: relative;
   margin: 0 auto;
@@ -2646,12 +2652,12 @@ ul.breadcrumb li+li:last-child {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
-    width: 100%;
+    width: auto !important;
   }
 }
 @media (max-width: 767px) {
   .header {
-    width: 100%;
+    width: auto !important;
   }
 }
 .header-inner {
@@ -2691,21 +2697,24 @@ ul.breadcrumb li+li:last-child {
 .main:after {
   clear: both;
 }
+.container .main-inner {
+  width: 80%;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
-    width: auto;
+    width: auto !important;
   }
 }
 @media (max-width: 767px) {
   .container .main-inner {
-    width: auto;
+    width: auto !important;
   }
 }
 .content-wrap {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 252px);
+  width: calc(100% - 260px);
   background: #fff;
   min-height: 700px;
   box-shadow: initial;
@@ -2713,17 +2722,12 @@ ul.breadcrumb li+li:last-child {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
-    width: 100%;
-    padding: 8px;
-    border-radius: initial;
+    width: 100% !important;
   }
 }
 @media (max-width: 767px) {
   .content-wrap {
-    width: 100%;
-    padding: 8px;
-    min-height: auto;
-    border-radius: initial;
+    width: 100% !important;
   }
 }
 .sidebar {
