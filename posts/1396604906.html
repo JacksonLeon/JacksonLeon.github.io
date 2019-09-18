@@ -143,10 +143,10 @@
 <meta property="og:description" content="Manjaro备忘录优点：   显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：  需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/09/18/5BGNWUpszb2RSPm.png">
-<meta property="og:image" content="https://jacksonleon.gitee.io/run/media/lau/Data/05_Media/02_Pictures/Blog/globalmenu_20190918221342.png">
-<meta property="og:image" content="https://jacksonleon.gitee.io/run/media/lau/Data/05_Media/02_Pictures/Blog/desktop_20190918221848.png">
-<meta property="og:image" content="https://jacksonleon.gitee.io/run/media/lau/Data/05_Media/02_Pictures/Blog/apprence_20190918222139.png">
-<meta property="og:image" content="https://jacksonleon.gitee.io/run/media/lau/Data/05_Media/02_Pictures/Blog/apprence_20190918222139.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/qiLNC4csk5dHzGr.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/hxivZdApwrt1kTY.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/RH4TNgBhfEGpQxw.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/18/GmAY8Tq7cCZ3DSk.png">
 <meta property="og:updated_time" content="2019-09-14T13:48:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Manjaro备忘录">
@@ -640,14 +640,14 @@
 <h3 id="类Unity全局菜单"><a href="#类Unity全局菜单" class="headerlink" title="类Unity全局菜单"></a>类Unity全局菜单</h3><p>添加部件中选择全局菜单，并放置到合适的位置。</p>
 <p><img src="https://i.loli.net/2019/09/18/5BGNWUpszb2RSPm.png" alt="深度截图_20190917232323"></p>
 <p>改进后：</p>
-<p><img src="/run/media/lau/Data/05_Media/02_Pictures/Blog/globalmenu_20190918221342.png" alt></p>
+<p><img src="https://i.loli.net/2019/09/18/qiLNC4csk5dHzGr.png" alt="globalmenu_2019091822134.png"></p>
 <p>安装<code>plasma5-applets-active-window-control</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S plasma5-applets-active-window-control</span><br></pre></td></tr></table></figure>
 <p>配置配件：</p>
 <p>添加部件到全局菜单左边：</p>
-<p><img src="/run/media/lau/Data/05_Media/02_Pictures/Blog/desktop_20190918221848.png" style="zoom: 67%;"></p>
+<p><img src="https://i.loli.net/2019/09/18/hxivZdApwrt1kTY.png" style="zoom: 67%;"></p>
 <p>配置软件：</p>
-<p><img src="/run/media/lau/Data/05_Media/02_Pictures/Blog/apprence_20190918222139.png" style="zoom:80%;"><img src="/run/media/lau/Data/05_Media/02_Pictures/Blog/apprence_20190918222139.png" style="zoom:80%;"></p>
+<p><img src="https://i.loli.net/2019/09/18/RH4TNgBhfEGpQxw.png" style="zoom:80%;"><img src="https://i.loli.net/2019/09/18/GmAY8Tq7cCZ3DSk.png" style="zoom:80%;"></p>
 <h3 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S chromium</span><br><span class="line">sudo pacman -S vlc</span><br><span class="line">sudo pacman -S visual-studio-code-bin</span><br><span class="line">sudo pacman -S typora</span><br><span class="line">sudo pacman -S vim</span><br><span class="line">sudo pacman -S netease-cloud-music</span><br><span class="line"># 分辨率以及多显示器</span><br><span class="line">sudo pacman -S kscreen</span><br></pre></td></tr></table></figure>
 <h3 id="NVIDIA驱动"><a href="#NVIDIA驱动" class="headerlink" title="NVIDIA驱动"></a><del>NVIDIA驱动</del></h3><p><del>首先上 <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">NVIDIA</a> 官网下载自己的显卡驱动，操作系统选择 <code>Linux 64-bit</code>。下载下来的文件应该是一个扩展名为 <code>.run</code> 的文件，将它存放至 <code>~/</code> 或者其他目录。</del></p>
 <p><del>我们还需要安装开发工具以及内核头文件来编译驱动，首先是内核头文件，先检查自己的内核版本。</del></p>
