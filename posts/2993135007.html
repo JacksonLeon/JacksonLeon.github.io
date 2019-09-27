@@ -588,7 +588,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">4.7k</span>
+                <span title="Symbols count in article">4.6k</span>
               
 
               
@@ -625,7 +625,7 @@
         <h1 id="Hexo-Note"><a href="#Hexo-Note" class="headerlink" title="Hexo Note"></a>Hexo Note</h1><p>Author: JosephLau</p>
 <hr>
 <a id="more"></a>
-<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="Hexo博客实现页内跳转"><a href="#Hexo博客实现页内跳转" class="headerlink" title="Hexo博客实现页内跳转"></a>Hexo博客实现页内跳转</h3><blockquote>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="文章加密"><a href="#文章加密" class="headerlink" title="文章加密"></a>文章加密</h3><h3 id="Hexo博客实现页内跳转"><a href="#Hexo博客实现页内跳转" class="headerlink" title="Hexo博客实现页内跳转"></a>Hexo博客实现页内跳转</h3><blockquote>
 <p>如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面</p>
 </blockquote>
 <p><del><a href="/posts/1565465933.html" title="传送门在此">传送门在此</a>，代码如下：</del></p>
@@ -636,7 +636,7 @@
 <p>因为类 Latex 格式书写的数学公式下划线<code>_</code>表示下标，有特殊的含义，如果被强制转换为<code>&lt;em&gt;</code>标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。</p>
 <p>类似的语义冲突的符号还包括<code>*</code>, <code>{</code>, <code>}</code>, <code>\\</code>等。</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall hexo-renderer-marked --save</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-renderer-kramed --save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm uninstall hexo-renderer-marked --save</span><br><span class="line"><span class="meta">$</span> npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
 <p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br>然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到<code>node_modules\kramed\lib\rules\inline.js</code>，把第11行的 escape 变量的值做相应的修改：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
 <p>这一步是在原基础上取消了对\,{,}的转义(escape)。<br>同时把第20行的em变量也要做相应的修改。</p>
@@ -663,30 +663,16 @@
 </li>
 </ul>
 <h3 id="主题自带样式-note-标签"><a href="#主题自带样式-note-标签" class="headerlink" title="主题自带样式 note 标签"></a>主题自带样式 note 标签</h3><p>在主题配置文件<code>_config.yml</code>里有一个关于这个的配置，但官方文档没有提供 HTML 的使用方式，个人认为这种方式更简单，也不会产生一些奇怪的显示 bugs……</p>
-<div class="note default"><p>default</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="note primary"><p>primary</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="note success"><p>success</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>info</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>warning</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="note danger"><p>danger</p></div>
-
-<div class="note danger">
+<p><div class="note default"><p>default</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><div class="note primary"><p>primary</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><div class="note success"><p>success</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><div class="note info"><p>info</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><div class="note warning"><p>warning</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><div class="note danger"><p>danger</p></div><br><div class="note danger">
             <p>note danger, note danger, note danger<br>note danger, note danger, note danger<br>note danger, note danger, note danger</p>
-          </div>
+          </div></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">// 或者这样</span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">note danger, note danger, note danger</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<div class="note danger no-icon"><p>danger no-icon</p></div>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><div class="note danger no-icon"><p>danger no-icon</p></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>首先可以在主题配置文件中需要配置下，贴上我的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">文件位置：~/blog/themes/next/_config.yml# Note tag (bs-callout).</span><br><span class="line">note:</span><br><span class="line">  # 风格</span><br><span class="line">  style: flat</span><br><span class="line">  # 要不要图标</span><br><span class="line">  icons: true</span><br><span class="line">  # 圆角矩形</span><br><span class="line">  border_radius: 3</span><br><span class="line">  light_bg_offset:</span><br></pre></td></tr></table></figure>
 <p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697" target="_blank" rel="noopener">这个页面</a>，更多的介绍也在这个页面。</p>
@@ -1200,7 +1186,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Note"><span class="nav-number">1.</span> <span class="nav-text">Hexo Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧"><span class="nav-number">1.1.</span> <span class="nav-text">小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo博客实现页内跳转"><span class="nav-number">1.1.1.</span> <span class="nav-text">Hexo博客实现页内跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-主题中渲染-LaTeX数学公式"><span class="nav-number">1.1.2.</span> <span class="nav-text">Next 主题中渲染 LaTeX数学公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原因"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-Next-主题中开启-MathJax-开关"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">在 Next 主题中开启 MathJax 开关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown写作注意事项"><span class="nav-number">1.1.3.</span> <span class="nav-text">Markdown写作注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题自带样式-note-标签"><span class="nav-number">1.1.4.</span> <span class="nav-text">主题自带样式 note 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题自带样式-label-标签"><span class="nav-number">1.1.5.</span> <span class="nav-text">主题自带样式 label 标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BUGs"><span class="nav-number">1.2.</span> <span class="nav-text">BUGs</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Note"><span class="nav-number">1.</span> <span class="nav-text">Hexo Note</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧"><span class="nav-number">1.1.</span> <span class="nav-text">小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章加密"><span class="nav-number">1.1.1.</span> <span class="nav-text">文章加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo博客实现页内跳转"><span class="nav-number">1.1.2.</span> <span class="nav-text">Hexo博客实现页内跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-主题中渲染-LaTeX数学公式"><span class="nav-number">1.1.3.</span> <span class="nav-text">Next 主题中渲染 LaTeX数学公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原因"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-Next-主题中开启-MathJax-开关"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">在 Next 主题中开启 MathJax 开关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown写作注意事项"><span class="nav-number">1.1.4.</span> <span class="nav-text">Markdown写作注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题自带样式-note-标签"><span class="nav-number">1.1.5.</span> <span class="nav-text">主题自带样式 note 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题自带样式-label-标签"><span class="nav-number">1.1.6.</span> <span class="nav-text">主题自带样式 label 标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BUGs"><span class="nav-number">1.2.</span> <span class="nav-text">BUGs</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1241,7 +1227,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">424k</span>
+    <span title="Symbols count total">474k</span>
   
 
   
@@ -1252,7 +1238,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Reading time total &asymp;</span>
     
-    <span title="Reading time total">6:25</span>
+    <span title="Reading time total">7:11</span>
   
 </div>
 
