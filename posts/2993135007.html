@@ -646,7 +646,7 @@
 <p>因为类 Latex 格式书写的数学公式下划线<code>_</code>表示下标，有特殊的含义，如果被强制转换为<code>&lt;em&gt;</code>标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。</p>
 <p>类似的语义冲突的符号还包括<code>*</code>, <code>{</code>, <code>}</code>, <code>\\</code>等。</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm uninstall hexo-renderer-marked --save</span><br><span class="line"><span class="meta">$</span> npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall hexo-renderer-marked --save</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-renderer-kramed --save</span></span><br></pre></td></tr></table></figure>
 <p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br>然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到<code>node_modules\kramed\lib\rules\inline.js</code>，把第11行的 escape 变量的值做相应的修改：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
 <p>这一步是在原基础上取消了对\,{,}的转义(escape)。<br>同时把第20行的em变量也要做相应的修改。</p>
@@ -1237,7 +1237,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">474k</span>
+    <span title="Symbols count total">475k</span>
   
 
   
@@ -1248,7 +1248,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Reading time total &asymp;</span>
     
-    <span title="Reading time total">7:11</span>
+    <span title="Reading time total">7:12</span>
   
 </div>
 
