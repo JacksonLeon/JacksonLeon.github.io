@@ -1996,7 +1996,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8cffff;
+  background: #44bed6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3206,6 +3206,10 @@ pre {
   margin: 5px 0;
   padding: 5px;
   border-radius: 3px;
+}
+pre,
+code {
+  font-family: monospace;
 }
 .highlight,
 code,
