@@ -134,18 +134,18 @@
 
 
 
-  <meta name="description" content="Docker 备忘录">
+  <meta name="description" content="人生苦短，我用Docker 使用服务器Docker服务搭建Deepo-jupyter深度学习框架">
 <meta name="keywords" content="Docker,备忘录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker 备忘录">
+<meta property="og:title" content="人生苦短，我用Docker">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/2180828103.html">
 <meta property="og:site_name" content="GeekJoe">
-<meta property="og:description" content="Docker 备忘录">
+<meta property="og:description" content="人生苦短，我用Docker 使用服务器Docker服务搭建Deepo-jupyter深度学习框架">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-10-10T02:11:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker 备忘录">
-<meta name="twitter:description" content="Docker 备忘录">
+<meta name="twitter:title" content="人生苦短，我用Docker">
+<meta name="twitter:description" content="人生苦短，我用Docker 使用服务器Docker服务搭建Deepo-jupyter深度学习框架">
 
 
 
@@ -164,7 +164,7 @@
   };
 </script>
 
-  <title>Docker 备忘录 | GeekJoe</title>
+  <title>人生苦短，我用Docker | GeekJoe</title>
   
 
 
@@ -472,7 +472,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker 备忘录
+          <h1 class="post-title" itemprop="name headline">人生苦短，我用Docker
 
               
             
@@ -565,7 +565,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.2k</span>
+                <span title="Symbols count in article">1.3k</span>
               
 
               
@@ -599,8 +599,11 @@
       
 
       
-        <h1 id="Docker-备忘录"><a href="#Docker-备忘录" class="headerlink" title="Docker 备忘录"></a>Docker 备忘录</h1><a id="more"></a>
-<h2 id="使用服务器Docker服务搭建Deepo-jupyter深度学习框架"><a href="#使用服务器Docker服务搭建Deepo-jupyter深度学习框架" class="headerlink" title="使用服务器Docker服务搭建Deepo-jupyter深度学习框架"></a>使用服务器Docker服务搭建Deepo-jupyter深度学习框架</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要保证服务器已经安装docker以及nvidia-docker</span></span><br><span class="line"><span class="comment"># 首先服务器拉取deepo镜像</span></span><br><span class="line"><span class="comment"># 注意换源，不然会非常慢的</span></span><br><span class="line">docker pull ufoym/deepo:all-py36-jupyter</span><br><span class="line"><span class="comment"># 开启deepo</span></span><br><span class="line"><span class="comment"># -it 保持输入与交互</span></span><br><span class="line"><span class="comment"># -p 端口映射，服务器的7777映射到docker的8888</span></span><br><span class="line"><span class="comment"># -v 文件保存</span></span><br><span class="line"><span class="comment"># --name 设置容器名字</span></span><br><span class="line">nvidia-docker run -it -p 7777:8888 --ipc=host -v /home/username/data/:/data --name deepo-jupyter ufoym/deepo:all-py36-jupyter</span><br><span class="line"><span class="comment"># 注意下次启动直接使用容器，不需要重新创建</span></span><br><span class="line">docker container start deepo-jupyter</span><br><span class="line">docker container attach deepo-jupyter</span><br><span class="line"><span class="comment"># 启动jupyter-notebook</span></span><br><span class="line">jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=<span class="string">'/data'</span></span><br><span class="line"><span class="comment"># 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射</span></span><br><span class="line"><span class="comment"># 本地1234映射到host的127.0.0.1:7777</span></span><br><span class="line">ssh username@host-ip -L 1234:127.0.0.1:7777</span><br><span class="line"><span class="comment"># 设置alias</span></span><br><span class="line"><span class="comment"># 本地</span></span><br><span class="line"><span class="built_in">alias</span> ssh-jupyter=<span class="string">"ssh -p 22 name@ip -L 1234:127.0.0.1:7777"</span></span><br><span class="line"><span class="comment"># host</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter-create=<span class="string">'nvidia-docker run -it -p 7777:8888 --ipc=host -v /home/username/data/:/data --name deepo-jupyter ufoym/deepo:all-py36-jupyter'</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter=<span class="string">'docker container start deepo-jupyter &amp;&amp; docker container attach deepo-jupyter'</span></span><br><span class="line"><span class="comment"># docker-jupyter</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter=<span class="string">'jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='</span>\<span class="string">''</span>/data<span class="string">'\'</span><span class="string">''</span></span><br><span class="line"><span class="comment"># enjoy it!</span></span><br><span class="line">127.0.0.1:1234</span><br></pre></td></tr></table></figure>
+        <h1 id="人生苦短，我用Docker"><a href="#人生苦短，我用Docker" class="headerlink" title="人生苦短，我用Docker"></a>人生苦短，我用Docker</h1><ol>
+<li>使用服务器Docker服务搭建Deepo-jupyter深度学习框架</li>
+</ol>
+<a id="more"></a>
+<h2 id="使用服务器Docker服务搭建Deepo-jupyter深度学习框架"><a href="#使用服务器Docker服务搭建Deepo-jupyter深度学习框架" class="headerlink" title="使用服务器Docker服务搭建Deepo-jupyter深度学习框架"></a>使用服务器Docker服务搭建Deepo-jupyter深度学习框架</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要保证服务器已经安装docker以及nvidia-docker</span></span><br><span class="line"><span class="comment"># 首先服务器拉取deepo镜像</span></span><br><span class="line"><span class="comment"># 注意换源，不然会非常慢的</span></span><br><span class="line">docker pull ufoym/deepo:all-py36-jupyter</span><br><span class="line"><span class="comment"># 开启deepo</span></span><br><span class="line"><span class="comment"># -it 保持输入与交互</span></span><br><span class="line"><span class="comment"># -p 端口映射，服务器的7777映射到docker的8888</span></span><br><span class="line"><span class="comment"># -v 文件保存</span></span><br><span class="line"><span class="comment"># --name 设置容器名字</span></span><br><span class="line">nvidia-docker run -it -p 7777:8888 --ipc=host -v /home/username/data/:/data --name deepo-jupyter ufoym/deepo:all-py36-jupyter</span><br><span class="line"><span class="comment"># 注意下次启动直接使用容器，不需要重新创建</span></span><br><span class="line">docker container start deepo-jupyter</span><br><span class="line">docker container attach deepo-jupyter</span><br><span class="line"><span class="comment"># 启动jupyter-notebook</span></span><br><span class="line">jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=<span class="string">'/data'</span></span><br><span class="line"><span class="comment"># 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射</span></span><br><span class="line"><span class="comment"># 本地1234映射到host的127.0.0.1:7777</span></span><br><span class="line">ssh username@host-ip -L 1234:127.0.0.1:7777</span><br><span class="line"><span class="comment"># 设置alias</span></span><br><span class="line"><span class="comment"># 本地</span></span><br><span class="line"><span class="built_in">alias</span> ssh-jupyter=<span class="string">"ssh -p 22 name@ip -L 1234:127.0.0.1:7777"</span></span><br><span class="line"><span class="comment"># host</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter-create=<span class="string">'nvidia-docker run -it -p 7777:8888 --ipc=host -v /home/username/data/:/data --name deepo-jupyter ufoym/deepo:all-py36-jupyter'</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter=<span class="string">'docker container start deepo-jupyter &amp;&amp; docker container attach deepo-jupyter'</span></span><br><span class="line"><span class="comment"># docker-jupyter</span></span><br><span class="line"><span class="built_in">alias</span> deepo-jupyter=<span class="string">'nohup jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir="/data" &amp;'</span></span><br><span class="line"><span class="comment"># enjoy it!</span></span><br><span class="line">127.0.0.1:1234</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -615,11 +618,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/posts/2180828103.html">Docker 备忘录</a></p>
+  <p><span>本文标题:</span><a href="/posts/2180828103.html">人生苦短，我用Docker</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Joseph 的个人博客">Joseph</a></p>
   <p><span>发布时间:</span>2019年10月10日 - 10:10</p>
   <p><span>最后更新:</span>2019年10月10日 - 10:10</p>
-  <p><span>原始链接:</span><a href="/posts/2180828103.html" title="Docker 备忘录">https://jacksonleon.gitee.io/posts/2180828103.html</a>
+  <p><span>原始链接:</span><a href="/posts/2180828103.html" title="人生苦短，我用Docker">https://jacksonleon.gitee.io/posts/2180828103.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/posts/2180828103.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -1071,7 +1074,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-备忘录"><span class="nav-number">1.</span> <span class="nav-text">Docker 备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用服务器Docker服务搭建Deepo-jupyter深度学习框架"><span class="nav-number">1.1.</span> <span class="nav-text">使用服务器Docker服务搭建Deepo-jupyter深度学习框架</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#人生苦短，我用Docker"><span class="nav-number">1.</span> <span class="nav-text">人生苦短，我用Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用服务器Docker服务搭建Deepo-jupyter深度学习框架"><span class="nav-number">1.1.</span> <span class="nav-text">使用服务器Docker服务搭建Deepo-jupyter深度学习框架</span></a></li></ol></li></ol></div>
             
 
           </div>
