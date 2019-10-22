@@ -134,13 +134,13 @@
 
 
 
-  <meta name="description" content="Manjaro备忘录 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
+  <meta name="description" content="人生苦短，我用Manjaro 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
 <meta name="keywords" content="备忘录,Manjaro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manjaro备忘录">
+<meta property="og:title" content="人生苦短，我用Manjaro">
 <meta property="og:url" content="https://jacksonleon.gitee.io/posts/1396604906.html">
 <meta property="og:site_name" content="GeekJoe">
-<meta property="og:description" content="Manjaro备忘录 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
+<meta property="og:description" content="人生苦短，我用Manjaro 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/09/18/5BGNWUpszb2RSPm.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/18/qiLNC4csk5dHzGr.png">
@@ -149,8 +149,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/18/GmAY8Tq7cCZ3DSk.png">
 <meta property="og:updated_time" content="2019-09-14T13:48:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manjaro备忘录">
-<meta name="twitter:description" content="Manjaro备忘录 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
+<meta name="twitter:title" content="人生苦短，我用Manjaro">
+<meta name="twitter:description" content="人生苦短，我用Manjaro 安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件">
 <meta name="twitter:image" content="https://i.loli.net/2019/09/18/5BGNWUpszb2RSPm.png">
 
 
@@ -170,7 +170,7 @@
   };
 </script>
 
-  <title>Manjaro备忘录 | GeekJoe</title>
+  <title>人生苦短，我用Manjaro | GeekJoe</title>
   
 
 
@@ -478,7 +478,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Manjaro备忘录
+          <h1 class="post-title" itemprop="name headline">人生苦短，我用Manjaro
 
               
             
@@ -605,7 +605,7 @@
       
 
       
-        <h1 id="Manjaro备忘录"><a href="#Manjaro备忘录" class="headerlink" title="Manjaro备忘录"></a>Manjaro备忘录</h1><ol>
+        <h1 id="人生苦短，我用Manjaro"><a href="#人生苦短，我用Manjaro" class="headerlink" title="人生苦短，我用Manjaro"></a>人生苦短，我用Manjaro</h1><ol>
 <li>安装、pacman镜像源、更新</li>
 <li>zsh配置</li>
 <li>输入法及中文</li>
@@ -667,9 +667,10 @@
 <h3 id="NVIDIA驱动（non-free-Bumblebee）"><a href="#NVIDIA驱动（non-free-Bumblebee）" class="headerlink" title="NVIDIA驱动（non-free,Bumblebee）"></a>NVIDIA驱动（non-free,Bumblebee）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bumblebee bbswitch		<span class="comment"># 安装bumblebee</span></span><br><span class="line">sudo gpasswd -a username bumblebee		<span class="comment"># 将当前用户添加到bumblebee组中</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> bumblebeed.service<span class="comment"># 启用服务</span></span><br><span class="line"><span class="comment"># 转自ArchLinux Wiki</span></span><br><span class="line"><span class="comment"># 在64位的操作系统上，假如您想32位的程序发挥好nvidia-utils的优势，还必须启用multilib源来安装lib32的包(例如lib32-nvidia-utils, lib32-nvidia-340xx-utils AUR 或者 lib32-nvidia-304xx-utils)。</span></span><br><span class="line"><span class="comment"># 启用multilib源</span></span><br><span class="line"><span class="comment"># 对于multilib这个源，我们只需要简单的将/etc/pacman.conf中的multilib的注释取消了就行</span></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">sudo pacman -S bumblebee nvidia opencl-nvidia lib32-nvidia-utils lib32-opencl-nvidia mesa lib32-mesa-libgl xf86-video-intel</span><br><span class="line"><span class="comment"># 配置bumblebee：</span></span><br><span class="line"><span class="comment"># 编辑/etc/bumblebee/bumblebee.conf</span></span><br><span class="line">Driver=nvidia</span><br><span class="line">-----------------</span><br><span class="line">[driver-nvidia]</span><br><span class="line">PMMethod=bbswitch</span><br><span class="line"><span class="comment"># 重启电脑</span></span><br><span class="line">reboot</span><br><span class="line"><span class="comment"># 开启NVIDIA显卡</span></span><br><span class="line">sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; ON			<span class="comment">#关闭则是off</span></span><br><span class="line"><span class="comment"># 查看显卡状态</span></span><br><span class="line">nvidia-smi</span><br><span class="line"><span class="comment"># 启动nvidia-settings</span></span><br><span class="line">optirun -b none nvidia-settings -c :8		<span class="comment">#正常使用nvidia-settings是启动不了的，需要用optirun调用</span></span><br><span class="line"><span class="comment"># 测试一下</span></span><br><span class="line">sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; ON			<span class="comment"># 需要开启NVIDIA显卡</span></span><br><span class="line">nvidia-smi</span><br><span class="line">Mon Sep 23 21:38:32 2019</span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 430.40       Driver Version: 430.40       CUDA Version: 10.1     |</span><br><span class="line">|-------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|===============================+======================+======================|</span><br><span class="line">|   0  GeForce GTX 950M    Off  | 00000000:01:00.0 Off |                  N/A |</span><br><span class="line">| N/A   37C    P0    N/A /  N/A |      0MiB /  2004MiB |      1%      Default |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                       GPU Memory |</span><br><span class="line">|  GPU       PID   Type   Process name                             Usage      |</span><br><span class="line">|=============================================================================|</span><br><span class="line">|  No running processes found                                                 |</span><br><span class="line">+-----------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="单击打开文件"><a href="#单击打开文件" class="headerlink" title="单击打开文件"></a>单击打开文件</h4><p>KDE 默认是单击打开文件，但是用习惯 Windows 的我们肯定是不习惯的：</p>
 <p><code>System Settings &gt; Desktop Behavior &gt; Workspace &gt; Click Behavior &gt; Double-Click to open files and folders(single click to select)</code> </p>
-<h4 id="Realtek-RTL8111-8168-8411偶尔崩溃"><a href="#Realtek-RTL8111-8168-8411偶尔崩溃" class="headerlink" title="Realtek RTL8111/8168/8411偶尔崩溃"></a>Realtek RTL8111/8168/8411偶尔崩溃</h4><p>以前的内核是比较适合使用r8168这个驱动的，用r8169会崩溃，所以一般会有一个黑名单文件直接将r8169禁用了。但是现在情况反了过来，r8169驱动对于新的内核支持的比较好，所以可以将黑名单修改一下，并卸载r8168驱动，重启就可以了。</p>
-<p>在<code>/etc/modprobe.d</code>文件夹下，将<code>r8169_blacklist.conf</code>这个文件名里面的内容修改为<code>blacklist r8168</code>。</p>
-<p>重启就好了。</p>
+<h4 id="Realtek-RTL8111-8168-8411偶尔崩溃"><a href="#Realtek-RTL8111-8168-8411偶尔崩溃" class="headerlink" title="Realtek RTL8111/8168/8411偶尔崩溃"></a>Realtek RTL8111/8168/8411偶尔崩溃</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S linux-lts-r8168</span><br><span class="line"><span class="comment"># 需要注意的是r8168和r8169冲突，两个只能使用一个</span></span><br><span class="line"><span class="comment"># 如果使用r8168驱动，需要将r8169加入黑名单</span></span><br><span class="line"><span class="comment"># 在/etc/modprobe.d文件夹下添加r8169_blacklist.conf文件，内容为blacklist r8169</span></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p><del>以前的内核是比较适合使用r8168这个驱动的，用r8169会崩溃，所以一般会有一个黑名单文件直接将r8169禁用了。但是现在情况反了过来，r8169驱动对于新的内核支持的比较好，所以可以将黑名单修改一下，并卸载r8168驱动，重启就可以了。</del></p>
+<p><del>在<code>/etc/modprobe.d</code>文件夹下，将<code>r8169_blacklist.conf</code>这个文件名里面的内容修改为<code>blacklist r8168</code>。</del></p>
+<p><del>重启就好了。</del></p>
 <h3 id="NVIDIA驱动"><a href="#NVIDIA驱动" class="headerlink" title="NVIDIA驱动"></a><del>NVIDIA驱动</del></h3><p><del>首先上 <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">NVIDIA</a> 官网下载自己的显卡驱动，操作系统选择 <code>Linux 64-bit</code>。下载下来的文件应该是一个扩展名为 <code>.run</code> 的文件，将它存放至 <code>~/</code> 或者其他目录。</del></p>
 <p><del>我们还需要安装开发工具以及内核头文件来编译驱动，首先是内核头文件，先检查自己的内核版本。</del></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r</span><br><span class="line">4.19.69-1-MANJARO</span><br></pre></td></tr></table></figure>
@@ -704,11 +705,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/posts/1396604906.html">Manjaro备忘录</a></p>
+  <p><span>本文标题:</span><a href="/posts/1396604906.html">人生苦短，我用Manjaro</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Joseph 的个人博客">Joseph</a></p>
   <p><span>发布时间:</span>2019年09月14日 - 21:09</p>
   <p><span>最后更新:</span>2019年09月14日 - 21:09</p>
-  <p><span>原始链接:</span><a href="/posts/1396604906.html" title="Manjaro备忘录">https://jacksonleon.gitee.io/posts/1396604906.html</a>
+  <p><span>原始链接:</span><a href="/posts/1396604906.html" title="人生苦短，我用Manjaro">https://jacksonleon.gitee.io/posts/1396604906.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/posts/1396604906.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -851,7 +852,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1164,7 +1165,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Manjaro备忘录"><span class="nav-number">1.</span> <span class="nav-text">Manjaro备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">系统安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改pacman镜像"><span class="nav-number">1.0.2.</span> <span class="nav-text">更改pacman镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步更新"><span class="nav-number">1.0.3.</span> <span class="nav-text">同步更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加Arch-Linux-中文社区仓库"><span class="nav-number">1.0.4.</span> <span class="nav-text">添加Arch Linux 中文社区仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZSH"><span class="nav-number">1.0.5.</span> <span class="nav-text">ZSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除Octopi换Pamac"><span class="nav-number">1.0.6.</span> <span class="nav-text">移除Octopi换Pamac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装yay"><span class="nav-number">1.0.7.</span> <span class="nav-text">安装yay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文输入法"><span class="nav-number">1.0.8.</span> <span class="nav-text">中文输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clash-for-Manajro"><span class="nav-number">1.0.9.</span> <span class="nav-text">Clash for Manajro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局截图"><span class="nav-number">1.0.10.</span> <span class="nav-text">全局截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类Unity全局菜单"><span class="nav-number">1.0.11.</span> <span class="nav-text">类Unity全局菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终端走代理"><span class="nav-number">1.0.12.</span> <span class="nav-text">终端走代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.0.12.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.0.12.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alias"><span class="nav-number">1.0.13.</span> <span class="nav-text">Alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用软件"><span class="nav-number">1.0.14.</span> <span class="nav-text">常用软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Deepin-TIM"><span class="nav-number">1.0.14.1.</span> <span class="nav-text">Deepin TIM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NVIDIA驱动（non-free-Bumblebee）"><span class="nav-number">1.0.15.</span> <span class="nav-text">NVIDIA驱动（non-free,Bumblebee）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.0.16.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单击打开文件"><span class="nav-number">1.0.16.1.</span> <span class="nav-text">单击打开文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Realtek-RTL8111-8168-8411偶尔崩溃"><span class="nav-number">1.0.16.2.</span> <span class="nav-text">Realtek RTL8111/8168/8411偶尔崩溃</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NVIDIA驱动"><span class="nav-number">1.0.17.</span> <span class="nav-text">NVIDIA驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSD配置"><span class="nav-number">1.0.18.</span> <span class="nav-text">SSD配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#miniconda"><span class="nav-number">1.0.19.</span> <span class="nav-text">miniconda</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更改miniconda的pypi镜像"><span class="nav-number">1.0.19.1.</span> <span class="nav-text">更改miniconda的pypi镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装pytorch和tensorflow"><span class="nav-number">1.0.20.</span> <span class="nav-text">安装pytorch和tensorflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">1.0.21.</span> <span class="nav-text">alias</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#人生苦短，我用Manjaro"><span class="nav-number">1.</span> <span class="nav-text">人生苦短，我用Manjaro</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">系统安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改pacman镜像"><span class="nav-number">1.0.2.</span> <span class="nav-text">更改pacman镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步更新"><span class="nav-number">1.0.3.</span> <span class="nav-text">同步更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加Arch-Linux-中文社区仓库"><span class="nav-number">1.0.4.</span> <span class="nav-text">添加Arch Linux 中文社区仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZSH"><span class="nav-number">1.0.5.</span> <span class="nav-text">ZSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除Octopi换Pamac"><span class="nav-number">1.0.6.</span> <span class="nav-text">移除Octopi换Pamac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装yay"><span class="nav-number">1.0.7.</span> <span class="nav-text">安装yay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文输入法"><span class="nav-number">1.0.8.</span> <span class="nav-text">中文输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clash-for-Manajro"><span class="nav-number">1.0.9.</span> <span class="nav-text">Clash for Manajro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局截图"><span class="nav-number">1.0.10.</span> <span class="nav-text">全局截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类Unity全局菜单"><span class="nav-number">1.0.11.</span> <span class="nav-text">类Unity全局菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终端走代理"><span class="nav-number">1.0.12.</span> <span class="nav-text">终端走代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.0.12.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.0.12.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alias"><span class="nav-number">1.0.13.</span> <span class="nav-text">Alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用软件"><span class="nav-number">1.0.14.</span> <span class="nav-text">常用软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Deepin-TIM"><span class="nav-number">1.0.14.1.</span> <span class="nav-text">Deepin TIM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NVIDIA驱动（non-free-Bumblebee）"><span class="nav-number">1.0.15.</span> <span class="nav-text">NVIDIA驱动（non-free,Bumblebee）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.0.16.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单击打开文件"><span class="nav-number">1.0.16.1.</span> <span class="nav-text">单击打开文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Realtek-RTL8111-8168-8411偶尔崩溃"><span class="nav-number">1.0.16.2.</span> <span class="nav-text">Realtek RTL8111/8168/8411偶尔崩溃</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NVIDIA驱动"><span class="nav-number">1.0.17.</span> <span class="nav-text">NVIDIA驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSD配置"><span class="nav-number">1.0.18.</span> <span class="nav-text">SSD配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#miniconda"><span class="nav-number">1.0.19.</span> <span class="nav-text">miniconda</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更改miniconda的pypi镜像"><span class="nav-number">1.0.19.1.</span> <span class="nav-text">更改miniconda的pypi镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装pytorch和tensorflow"><span class="nav-number">1.0.20.</span> <span class="nav-text">安装pytorch和tensorflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">1.0.21.</span> <span class="nav-text">alias</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1205,7 +1206,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">474k</span>
+    <span title="Symbols count total">477k</span>
   
 
   
@@ -1216,7 +1217,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Reading time total &asymp;</span>
     
-    <span title="Reading time total">7:11</span>
+    <span title="Reading time total">7:13</span>
   
 </div>
 
