@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="GeekJoe">
 <meta property="og:description" content="HeadTitle OneLinux 基础">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-20T11:50:00.000Z">
+<meta property="og:updated_time" content="2019-10-30T11:50:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 基础">
 <meta name="twitter:description" content="HeadTitle OneLinux 基础">
@@ -503,6 +503,22 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-10-30 19:50:00" itemprop="dateModified" datetime="2019-10-30T19:50:00+08:00">2019-10-30</time>
+              
+            
           </span>
 
           
@@ -565,7 +581,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">391</span>
+                <span title="Symbols count in article">548</span>
               
 
               
@@ -603,6 +619,9 @@
 <h4 id="scp传输文件到服务器"><a href="#scp传输文件到服务器" class="headerlink" title="scp传输文件到服务器"></a>scp传输文件到服务器</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /path/to/<span class="built_in">local</span>/file1.txt /path/to/<span class="built_in">local</span>/file2.txt user@192.168.10.100:/remote/path/</span><br></pre></td></tr></table></figure>
 <h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive_name.zip</span><br></pre></td></tr></table></figure>
 <h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包</span></span><br><span class="line">tar -cvf archive_name.tar directory_to_compress</span><br><span class="line"><span class="comment"># 解包</span></span><br><span class="line">tar -xvf archive_name.tar.gz </span><br><span class="line"><span class="comment"># 或者指定路径</span></span><br><span class="line">tar -xvf archive_name.tar -C /tmp/extract_here/</span><br><span class="line"><span class="comment"># 常用tar.gz</span></span><br><span class="line">tar -zcvf archive_name.tar.gz directory_to_compress</span><br><span class="line">tar -zxvf archive_name.tar.gz</span><br></pre></td></tr></table></figure>
+<h4 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="built_in">source</span> dist</span><br><span class="line"><span class="built_in">source</span>:文件原始地址</span><br><span class="line">dist：文件想要建立链接的位置</span><br></pre></td></tr></table></figure>
+<h4 id="修改用户id"><a href="#修改用户id" class="headerlink" title="修改用户id"></a>修改用户id</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># root权限</span><br><span class="line">usermod -u 1001 lau</span><br><span class="line">groupmod -g 1001 lau</span><br></pre></td></tr></table></figure>
+<h4 id="修改文件所属user-group"><a href="#修改文件所属user-group" class="headerlink" title="修改文件所属user/group"></a>修改文件所属user/group</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R user.user files</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -620,7 +639,7 @@
   <p><span>本文标题:</span><a href="/posts/825149920.html">Linux 基础</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Joseph 的个人博客">Joseph</a></p>
   <p><span>发布时间:</span>2019年10月20日 - 19:10</p>
-  <p><span>最后更新:</span>2019年10月20日 - 19:10</p>
+  <p><span>最后更新:</span>2019年10月30日 - 19:10</p>
   <p><span>原始链接:</span><a href="/posts/825149920.html" title="Linux 基础">https://jacksonleon.gitee.io/posts/825149920.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jacksonleon.gitee.io/posts/825149920.html" aria-label="复制成功！"></i></span>
   </p>
@@ -1077,7 +1096,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HeadTitle-One"><span class="nav-number">1.</span> <span class="nav-text">HeadTitle One</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-基础"><span class="nav-number">2.</span> <span class="nav-text">Linux 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scp传输文件到服务器"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">scp传输文件到服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解压缩"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">解压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tar"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">tar</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HeadTitle-One"><span class="nav-number">1.</span> <span class="nav-text">HeadTitle One</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-基础"><span class="nav-number">2.</span> <span class="nav-text">Linux 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scp传输文件到服务器"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">scp传输文件到服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解压缩"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">解压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tar"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软连接"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">软连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改用户id"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">修改用户id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文件所属user-group"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">修改文件所属user/group</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1129,7 +1148,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Reading time total &asymp;</span>
     
-    <span title="Reading time total">7:13</span>
+    <span title="Reading time total">7:14</span>
   
 </div>
 
