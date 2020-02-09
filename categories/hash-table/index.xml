@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hash Table on GeekJoe</title>
+    <link>//localhost:1313/categories/hash-table/</link>
+    <description>Recent content in Hash Table on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Apr 2018 14:56:23 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/hash-table/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 387. First Unique Character in a String</title>
+      <link>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</link>
+      <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;s = &amp;quot;leetcode&amp;quot;
+return 0.
+
+s = &amp;quot;loveleetcode&amp;quot;,
+return 2.
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You may assume the string contain only lowercase letters.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 771. Jewels and Stones</title>
+      <link>//localhost:1313/note/leetcode-771.-jewels-and-stones/</link>
+      <pubDate>Thu, 22 Mar 2018 15:11:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-771.-jewels-and-stones/</guid>
+      <description>Desciption  You&amp;rsquo;re given strings J representing the types of stones that are jewels, and S representing the stones you have. Each character in S is a type of stone you have. You want to know how many of the stones you have are also jewels. The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so &amp;ldquo;a&amp;rdquo; is considered a different type of stone from &amp;ldquo;A&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

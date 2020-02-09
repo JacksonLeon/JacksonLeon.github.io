@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on GeekJoe</title>
+    <link>//localhost:1313/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Apr 2019 11:16:05 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>吴恩达「机器学习」（三）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</link>
+      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;逻辑回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（二）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
+      <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;多变量线性回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（一）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;什么是机器学习？&lt;/li&gt;
+&lt;li&gt;什么是监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是非监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是单变量线性回归？&lt;/li&gt;
+&lt;li&gt;线性代数知识点回顾&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

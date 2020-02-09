@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Note | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Java Note</span></h1>
+
+<h2 class="date">2018/12/07</h2>
+</div>
+
+<main>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>此文用来记录平时使用Java遇到的问题与心得.</p>
+<p>本文长期更新.</p>
+</blockquote>
+<h2 id="java常用函数">Java常用函数</h2>
+<h3 id="string">String</h3>
+<ul>
+<li>indexOf()</li>
+<li>charAt()</li>
+</ul>
+<h2 id="unix-时间戳与标准时间互转">Unix 时间戳与标准时间互转</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Java将Unix时间戳转换成指定格式日期字符串
+</span><span style="color:#75715e"> * @param timestampString 时间戳 如：&#34;1473048265&#34;;
+</span><span style="color:#75715e"> * @param formats 要格式化的格式 默认：&#34;yyyy-MM-dd HH:mm:ss&#34;;
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @return 返回结果 如：&#34;2016-09-05 16:06:42&#34;;
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">// imported
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> java.text.SimpleDateFormat<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Locale<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Date<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">TimeStamp2Date</span><span style="color:#f92672">(</span>String timestampString<span style="color:#f92672">,</span> String formats<span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+    Long timestamp <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>timestampString<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    String _date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>formats<span style="color:#f92672">,</span> Locale<span style="color:#f92672">.</span><span style="color:#a6e22e">CHINA</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>timestamp<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> _date<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p>调用方法</p>
+<p><code>TimeStamp2Date(&quot;1473048265&quot;, &quot;yyyy-MM-dd HH:mm:ss”);</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 日期格式字符串转换成时间戳
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @param dateStr 字符串日期
+</span><span style="color:#75715e"> * @param format   如：yyyy-MM-dd HH:mm:ss
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @return
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">Date2TimeStamp</span><span style="color:#f92672">(</span>String dateStr<span style="color:#f92672">,</span> String format<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        SimpleDateFormat sdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>format<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>sdf<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateStr<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getTime</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>吴恩达「机器学习」（三） | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">吴恩达「机器学习」（三）</span></h1>
+
+<h2 class="date">2019/04/19</h2>
+</div>
+
+<main>
+<ul>
+<li>逻辑回归</li>
+</ul>
+<h2 id="逻辑回归logistic-regression">逻辑回归(Logistic Regression)</h2>
+<h3 id="分类问题">分类问题</h3>
+<p>在分类问题中，你要预测的变量 $y$ 是离散的值，我们将学习一种叫做逻辑回归 (<strong>Logistic Regression</strong>) 的算法，这是目前最流行使用最广泛的一种学习算法。</p>
+<p>在分类问题中，我们尝试预测的是结果是否属于某一个类（例如正确或错误）。分类问题的例子有：判断一封电子邮件是否是垃圾邮件；判断一次金融交易是否是欺诈；之前我们也谈到了肿瘤分类问题的例子，区别一个肿瘤是恶性的还是良性的。</p>
+<p><img src="https://i.loli.net/2019/04/30/5cc831f59ef6e.jpg" alt="image-20190419113034539"></p>
+<p>这个算法的性质是：它的输出值永远在0到 1 之间。</p>
+<p>顺便说一下，逻辑回归算法是分类算法，我们将它作为分类算法使用。有时候可能因为这个算法的名字中出现了“回归”使你感到困惑，但逻辑回归算法实际上是一种分类算法，它适用于标签 $y$ 取值离散的情况，如：1 0 0 1。</p>
+<h3 id="假说表示">假说表示</h3>
+<p>逻辑回归模型</p>
+<p>$h_{\theta}=g(\theta^Tx)$ &amp; $g(z)=\frac{1}{1+e^{-z} }$ =&gt; $h_{\theta}=\frac{1}{1+e^{-\theta^Tx} }$</p>
+<p>对模型的理解： $g(z)=\frac{1}{1+e^{-z} }$。</p>
+<p>$h_\theta (x)$的作用是，对于给定的输入变量，根据选择的参数计算输出变量=1的可能性（**estimated probablity**）即$h_\theta(x)=P( y=1|x;\theta )$ 例如，如果对于给定的$x$，通过已经确定的参数计算得出$h_\theta (x)=0.7$，则表示有70%的几率$y$为正向类，相应地$y$为负向类的几率为1-0.7=0.3。</p>
+<h3 id="判定边界">判定边界</h3>
+<p><img src="https://i.loli.net/2019/04/30/5cc831fb61317.jpg" alt="image-20190419114449018"></p>
+<p>e.g. $h_{\theta}=g(\theta_0+\theta_1x_1+\theta_2x_2)$,其中$\theta=\left[\begin{matrix} -3 &amp; 1 &amp; 1\end{matrix}\right]^T$</p>
+<p><img src="https://i.loli.net/2019/04/30/5cc832010ab1b.jpg" alt="image-20190419115043852"></p>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

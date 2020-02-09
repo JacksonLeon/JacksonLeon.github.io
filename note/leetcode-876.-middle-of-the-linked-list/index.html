@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leetcode 876. Middle of the Linked List | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Leetcode 876. Middle of the Linked List</span></h1>
+
+<h2 class="date">2018/07/30</h2>
+</div>
+
+<main>
+<h3 id="description">Description</h3>
+<blockquote>
+<p>Given a non-empty, singly linked list with head node <code>head</code>, return a middle node of linked list.</p>
+<p>If there are two middle nodes, return the second middle node.</p>
+</blockquote>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>
+<p>one</p>
+<pre><code>Input: [1,2,3,4,5]
+Output: Node 3 from this list (Serialization: [3,4,5])
+The returned node has value 3.  (The judge's serialization of this node is [3,4,5]).
+Note that we returned a ListNode object ans, such that:
+ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.
+</code></pre></li>
+<li>
+<p>two</p>
+<pre><code>Input: [1,2,3,4,5,6]
+Output: Node 4 from this list (Serialization: [4,5,6])
+Since the list has two middle nodes with values 3 and 4, we return the second one.
+</code></pre></li>
+</ul>
+<p><strong>Note</strong>: The number of nodes in the given list will be between <code>1</code> and <code>100</code>.</p>
+<h3 id="solution">Solution</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for singly-linked list.
+</span><span style="color:#75715e"> * struct ListNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     ListNode *next;
+</span><span style="color:#75715e"> *     ListNode(int x) : val(x), next(NULL) {}
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    ListNode<span style="color:#f92672">*</span> middleNode(ListNode<span style="color:#f92672">*</span> head) {
+        ListNode <span style="color:#f92672">*</span>slow, <span style="color:#f92672">*</span>fast;
+        slow<span style="color:#f92672">=</span>head;fast<span style="color:#f92672">=</span>head;
+        <span style="color:#66d9ef">while</span>(fast<span style="color:#f92672">!</span><span style="color:#f92672">=</span>NULL <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> fast<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next<span style="color:#f92672">!</span><span style="color:#f92672">=</span>NULL)
+        {
+            slow<span style="color:#f92672">=</span>slow<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+            fast<span style="color:#f92672">=</span>fast<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+        }
+        <span style="color:#66d9ef">return</span> slow;
+    }
+};
+</code></pre></div><h3 id="thinking">Thinking</h3>
+<p>其实是一个搜索的过程，正常逻辑就是遍历链表到头，获取一半的长度，截取后半部分就可以，但是由于是链表，搜索起来耗费时间空间。</p>
+<p>可以把链表内容复制到数组，从而将目标找到。也可以设置两个指针: <code>slow</code> 、<code>fast</code>，<code>fast</code>移动速度为<code>slow</code>的两倍，那么当<code>fast</code>到达链表尾部时，<code>slow</code>此时在链表中部，返回<code>slow</code>指针就达到了我们的目的。</p>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

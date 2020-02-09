@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on GeekJoe</title>
+    <link>//localhost:1313/tags/git/</link>
+    <description>Recent content in Git on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 May 2019 09:09:27 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Commit messages guide</title>
+      <link>//localhost:1313/note/commit-messages-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/commit-messages-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebHook Based on Git(Using PHP)</title>
+      <link>//localhost:1313/note/webhook-based-on-gitusing-php/</link>
+      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/webhook-based-on-gitusing-php/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>TortoiseGit on windows tutorial</title>
+      <link>//localhost:1313/note/tortoisegit-on-windows-tutorial/</link>
+      <pubDate>Mon, 10 Dec 2018 11:47:43 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/tortoisegit-on-windows-tutorial/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tutorial of TortoiseGit on Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TortoiseGit&lt;/strong&gt; is a &lt;a href=&#34;https://en.wikipedia.org/wiki/Git_(software)&#34;&gt;Git&lt;/a&gt; revision control client, implemented as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_shell_extension&#34;&gt;Windows shell extension&lt;/a&gt; and based on &lt;a href=&#34;https://en.wikipedia.org/wiki/TortoiseSVN&#34;&gt;TortoiseSVN&lt;/a&gt;. It is &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_software&#34;&gt;free software&lt;/a&gt; released under the &lt;a href=&#34;https://en.wikipedia.org/wiki/GNU_General_Public_License&#34;&gt;GNU General Public License&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_Explorer&#34;&gt;Windows Explorer&lt;/a&gt;, besides showing context menu items for Git commands, TortoiseGit provides icon overlays that indicate the status of Git working trees and files.&lt;/p&gt;
+&lt;p&gt;It also comes with the TortoiseGitMerge utility to visually compare two files and resolve conflicts.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git note</title>
+      <link>//localhost:1313/note/git-note/</link>
+      <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/git-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

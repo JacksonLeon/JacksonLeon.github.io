@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>使用Python爬虫爬取网络小说 | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">使用Python爬虫爬取网络小说</span></h1>
+
+<h2 class="date">2018/04/12</h2>
+</div>
+
+<main>
+<ul>
+<li>小说网址</li>
+</ul>
+<blockquote>
+<p><a href="https://www.uxiaoshuo.com/">https://www.uxiaoshuo.com/</a></p>
+</blockquote>
+<ul>
+<li>使用<a href="https://www.uxiaoshuo.com/124/124629/">绝色妖娆：鬼医至尊</a>为例（主要是女朋友想看<code>^_^</code>）</li>
+</ul>
+<p>下面是程序代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#coding:utf-8</span>
+
+<span style="color:#f92672">import</span>  requests
+<span style="color:#f92672">import</span> threading
+<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+<span style="color:#f92672">import</span> re
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> time
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> threading
+
+req_header<span style="color:#f92672">=</span>{
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept-Encoding</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">gzip, deflate, br</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept-Language</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">zh-CN,zh;q=0.9</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Cookie</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UM_distinctid=162afbabff819e-03f2f082776e95-b34356b-1fa400-162afbabff9294; CNZZDATA1259019190=1993576859-1523364262-https</span><span style="color:#e6db74">%</span><span style="color:#e6db74">253A</span><span style="color:#e6db74">%252F</span><span style="color:#e6db74">%252F</span><span style="color:#e6db74">www.baidu.com</span><span style="color:#e6db74">%252F</span><span style="color:#e6db74">%</span><span style="color:#e6db74">7C1523364262; bookid=124629; chapterid=6510968; chaptername=</span><span style="color:#e6db74">%25u</span><span style="color:#e6db74">7B2C1</span><span style="color:#e6db74">%25u</span><span style="color:#e6db74">7AE0</span><span style="color:#e6db74">%2520%</span><span style="color:#e6db74">25u6797</span><span style="color:#e6db74">%25u</span><span style="color:#e6db74">4E2D</span><span style="color:#e6db74">%25u</span><span style="color:#e6db74">9634</span><span style="color:#e6db74">%25u</span><span style="color:#e6db74">8C0B</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Host</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">www.uxiaoshuo.com</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Proxy-Connection</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">keep-alive</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Referer</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://www.uxiaoshuo.com/</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Upgrade-Insecure-Requests</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>,
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">User-Agent</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36</span><span style="color:#e6db74">&#39;</span>
+}
+
+req_url_base<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://www.uxiaoshuo.com</span><span style="color:#e6db74">&#39;</span>                <span style="color:#75715e">#小说主地址</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_txt</span>(txt_id):
+    txt<span style="color:#f92672">=</span>{}
+    _req_url<span style="color:#f92672">=</span>[]
+    txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">title</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span>str(txt_id)                                   <span style="color:#75715e">#小说编号</span>
+    _req_url<span style="color:#f92672">=</span>txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>)
+    req_url<span style="color:#f92672">=</span>req_url_base<span style="color:#f92672">+</span> txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#39;</span>]                         <span style="color:#75715e">#根据小说编号获取小说URL</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">小说编号：</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>req_url)
+    <span style="color:#66d9ef">try</span>:
+        res<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(req_url, params<span style="color:#f92672">=</span>req_header)             <span style="color:#75715e">#获取小说第一章界面</span>
+        soups<span style="color:#f92672">=</span>BeautifulSoup(res<span style="color:#f92672">.</span>text,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">html.parser</span><span style="color:#e6db74">&#34;</span>)             <span style="color:#75715e">#soup转化</span>
+        <span style="color:#75715e">#获取小说题目</span>
+        txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">title</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span>soups<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#webhtml .box_con .con_top a</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>text
+        <span style="color:#75715e">#打开小说文件写入小说相关信息</span>
+        fo <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0}.txt</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">title</span><span style="color:#e6db74">&#39;</span>]), <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ab+</span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#75715e">#循环写入章节内容</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#ae81ff">1</span>:
+            <span style="color:#66d9ef">if</span> _req_url[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">!=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">html</span><span style="color:#e6db74">&#39;</span>:
+                <span style="color:#66d9ef">print</span>(txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">title</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">全部下载成功！</span><span style="color:#e6db74">&#34;</span>)
+                <span style="color:#66d9ef">break</span>
+            txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">c_title</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span>soups<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#webhtml .box_con .zhangjieming h1</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text     <span style="color:#75715e">##章节名称</span>
+            txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span>soups<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#webhtml .box_con .zhangjieTXT</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#ae81ff">0</span>]
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">script</span><span style="color:#e6db74">&#34;</span>):           <span style="color:#75715e">#去除无用内容</span>
+                i<span style="color:#f92672">.</span>decompose()
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">div</span><span style="color:#e6db74">&#34;</span>):
+                i<span style="color:#f92672">.</span>decompose()
+            txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span>re<span style="color:#f92672">.</span>sub( <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\</span><span style="color:#e6db74">s+</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\r</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>, txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>text)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\r</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+            <span style="color:#75715e">#以二进制写入章节题目</span>
+            fo<span style="color:#f92672">.</span>write((<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span>txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">c_title</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\r</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UTF-8</span><span style="color:#e6db74">&#39;</span>))
+            <span style="color:#75715e">#以二进制写入章节内容</span>
+            fo<span style="color:#f92672">.</span>write((<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span>txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UTF-8</span><span style="color:#e6db74">&#39;</span>))
+            <span style="color:#66d9ef">print</span>(txt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">c_title</span><span style="color:#e6db74">&#39;</span>])
+            <span style="color:#75715e"># print(&#39;章节名:&#39;+txt[&#39;c_title&#39;])</span>
+            <span style="color:#75715e"># print(&#34;章节内容：\n&#34;+txt[&#39;content&#39;])</span>
+            req_url<span style="color:#f92672">=</span>soups<span style="color:#f92672">.</span>select(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#webhtml .zhangjieming .bottem1 a</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#ae81ff">3</span>][<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>]
+            _req_url<span style="color:#f92672">=</span>req_url<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>)
+            req_url<span style="color:#f92672">=</span>req_url_base<span style="color:#f92672">+</span>req_url
+            res<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(req_url, params<span style="color:#f92672">=</span>req_header)             <span style="color:#75715e">#获取下一章界面</span>
+            soups<span style="color:#f92672">=</span>BeautifulSoup(res<span style="color:#f92672">.</span>text,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">html.parser</span><span style="color:#e6db74">&#34;</span>)             <span style="color:#75715e">#soup转化</span>
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+        <span style="color:#66d9ef">print</span>(e)
+    <span style="color:#66d9ef">finally</span>:
+        <span style="color:#66d9ef">return</span>
+
+get_txt(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/124/124629/7404934.html</span><span style="color:#e6db74">&#39;</span>)
+get_txt(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/135/135169/7373986.html</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><blockquote>
+<p>要爬取该网站内的小说，只需要将参数改成自己需要的小说就可以了</p>
+</blockquote>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

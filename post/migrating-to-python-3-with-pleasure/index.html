@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Migrating to Python 3 with pleasure | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Migrating to Python 3 with pleasure</span></h1>
+
+<h2 class="date">2019/05/04</h2>
+</div>
+
+<main>
+<h1 id="migrating-to-python-3-with-pleasure">Migrating to Python 3 with pleasure</h1>
+<blockquote>
+<p>Migrating to Python 3 with pleasure</p>
+</blockquote>
+<h1 id="english-version">English version</h1>
+<h2 id="a-short-guide-on-features-of-python-3-for-data-scientists">A short guide on features of Python 3 for data scientists</h2>
+<p>Python became a mainstream language for machine learning and other scientific fields that heavily operate with data;
+it boasts various deep learning frameworks and well-established set of tools for data processing and visualization.</p>
+<p>However, Python ecosystem co-exists in Python 2 and Python 3, and Python 2 is still used among data scientists.
+By the end of 2019 the scientific stack will <a href="http://www.python3statement.org">stop supporting Python2</a>.
+As for numpy, after 2018 any new feature releases will only support <a href="https://github.com/numpy/numpy/blob/master/doc/neps/dropping-python2.7-proposal.rst">Python3</a>. <em>Update (Sep 2018): same story now with pandas, matplotlib, ipython, jupyter notebook and jupyter lab.</em></p>
+<p>To make the transition less frustrating, I&rsquo;ve collected a bunch of Python 3 features that you may find useful.</p>
+<p><!-- raw HTML omitted --></p>
+<p>Image from <a href="https://www.toptal.com/python/python-3-is-it-worth-the-switch">Dario Bertini post (toptal)</a></p>
+<h2 id="better-paths-handling-with-pathlib">Better paths handling with <code>pathlib</code></h2>
+<p><code>pathlib</code> is a default module in python3, that helps you to avoid tons of <code>os.path.join</code>s:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+dataset <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">wiki_images</span><span style="color:#e6db74">&#39;</span>
+datasets_root <span style="color:#f92672">=</span> Path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/to/datasets/</span><span style="color:#e6db74">&#39;</span>)
+
+train_path <span style="color:#f92672">=</span> datasets_root <span style="color:#f92672">/</span> dataset <span style="color:#f92672">/</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">train</span><span style="color:#e6db74">&#39;</span>
+test_path <span style="color:#f92672">=</span> datasets_root <span style="color:#f92672">/</span> dataset <span style="color:#f92672">/</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>
+
+<span style="color:#66d9ef">for</span> image_path <span style="color:#f92672">in</span> train_path<span style="color:#f92672">.</span>iterdir():
+    <span style="color:#66d9ef">with</span> image_path<span style="color:#f92672">.</span>open() <span style="color:#66d9ef">as</span> f: <span style="color:#75715e"># note, open is a method of Path object</span>
+        <span style="color:#75715e"># do something with an image</span>
+</code></pre></div><p>Previously it was always tempting to use string concatenation (concise, but obviously bad),
+now with <code>pathlib</code> the code is safe, concise, and readable.</p>
+<p>Also <code>pathlib.Path</code> has a bunch of methods and properties, that every python novice previously had to google:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p<span style="color:#f92672">.</span>exists()
+p<span style="color:#f92672">.</span>is_dir()
+p<span style="color:#f92672">.</span>parts
+p<span style="color:#f92672">.</span>with_name(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sibling.png</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># only change the name, but keep the folder</span>
+p<span style="color:#f92672">.</span>with_suffix(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.jpg</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># only change the extension, but keep the folder and the name</span>
+p<span style="color:#f92672">.</span>chmod(mode)
+p<span style="color:#f92672">.</span>rmdir()
+</code></pre></div><p><code>pathlib</code> should save you lots of time,
+please see <a href="https://docs.python.org/3/library/pathlib.html">docs</a> and <a href="https://pymotw.com/3/pathlib/">reference</a> for more.</p>
+<h2 id="type-hinting-is-now-part-of-the-language">Type hinting is now part of the language</h2>
+<p>Example of type hinting in pycharm: <!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<p>Python is not just a language for small scripts anymore,
+data pipelines these days include numerous steps each involving different frameworks (and sometimes very different logic).</p>
+<p>Type hinting was introduced to help with growing complexity of programs, so machines could help with code verification.
+Previously different modules used custom ways to point <a href="https://www.jetbrains.com/help/pycharm/type-hinting-in-pycharm.html#legacy">types in docstrings</a>
+(Hint: pycharm can convert old docstrings to fresh type hinting).</p>
+<p>As a simple example, the following code may work with different types of data (that&rsquo;s what we like about python data stack).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat_each_entry</span>(data):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"> Each entry in the data is doubled</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    &lt;blah blah nobody reads the documentation till the end&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    index <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>repeat(numpy<span style="color:#f92672">.</span>arange(len(data)), <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> data[index]
+</code></pre></div><p>This code e.g. works for <code>numpy.array</code> (incl. multidimensional ones), <code>astropy.Table</code> and <code>astropy.Column</code>, <code>bcolz</code>, <code>cupy</code>, <code>mxnet.ndarray</code> and others.</p>
+<p>This code will work for <code>pandas.Series</code>, but in the wrong way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">repeat_each_entry(pandas<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], index<span style="color:#f92672">=</span>[<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>])) <span style="color:#75715e"># returns Series with Nones inside</span>
+</code></pre></div><p>This was two lines of code. Imagine how unpredictable behavior of a complex system, because just one function may misbehave.
+Stating explicitly which types a method expects is very helpful in large systems, this will warn you if a function was passed unexpected arguments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat_each_entry</span>(data: Union[numpy<span style="color:#f92672">.</span>ndarray, bcolz<span style="color:#f92672">.</span>carray]):
+</code></pre></div><p>If you have a significant codebase, hinting tools like <a href="http://mypy.readthedocs.io">MyPy</a> are likely to become part of your continuous integration pipeline.
+A webinar <a href="https://www.youtube.com/watch?v=JqBCFfiE11g">&ldquo;Putting Type Hints to Work&rdquo;</a> by Daniel Pyrathon is good for a brief introduction.</p>
+<p>Sidenote: unfortunately, hinting is not yet powerful enough to provide fine-grained typing for ndarrays/tensors, but <a href="https://github.com/numpy/numpy/issues/7370">maybe we&rsquo;ll have it once</a>, and this will be a great feature for DS.</p>
+<h2 id="type-hinting--type-checking-in-runtime">Type hinting → type checking in runtime</h2>
+<p>By default, function annotations do not influence how your code is working, but merely help you to point code intentions.</p>
+<p>However, you can enforce type checking in runtime with tools like &hellip; <a href="https://github.com/RussBaz/enforce">enforce</a>,
+this can help you in debugging (there are many cases when type hinting is not working).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@enforce.runtime_validation</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(text: str) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
+    <span style="color:#66d9ef">print</span>(text)
+
+foo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Hi</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># ok</span>
+foo(<span style="color:#ae81ff">5</span>)    <span style="color:#75715e"># fails</span>
+
+
+<span style="color:#a6e22e">@enforce.runtime_validation</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">any2</span>(x: List[bool]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> bool:
+    <span style="color:#66d9ef">return</span> any(x)
+
+any ([False, False, True, False]) <span style="color:#75715e"># True</span>
+any2([False, False, True, False]) <span style="color:#75715e"># True</span>
+
+any ([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">False</span><span style="color:#e6db74">&#39;</span>]) <span style="color:#75715e"># True</span>
+any2([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">False</span><span style="color:#e6db74">&#39;</span>]) <span style="color:#75715e"># fails</span>
+
+any ([False, None, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># False</span>
+any2([False, None, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># fails</span>
+
+</code></pre></div><h2 id="strikeother-usages-of-function-annotationsstrike"><!-- raw HTML omitted -->Other usages of function annotations<!-- raw HTML omitted --></h2>
+<p><em>Update: starting from python 3.7 this behavior was <a href="https://www.python.org/dev/peps/pep-0563/#non-typing-usage-of-annotations">depreciated</a>, and function annotations should be used for type hinting only. Python 4 will not support other usages of annotations.</em></p>
+<p>As mentioned before, annotations do not influence code execution, but rather provide some meta-information,
+and you can use it as you wish.</p>
+<p>For instance, measurement units are a common pain in scientific areas, <code>astropy</code> package <a href="http://docs.astropy.org/en/stable/units/quantity.html#functions-that-accept-quantities">provides a simple decorator</a> to control units of input quantities and convert output to required units</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+<span style="color:#f92672">from</span> astropy <span style="color:#f92672">import</span> units <span style="color:#66d9ef">as</span> u
+<span style="color:#a6e22e">@u.quantity_input</span>()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">frequency</span>(speed: u<span style="color:#f92672">.</span>meter <span style="color:#f92672">/</span> u<span style="color:#f92672">.</span>s, wavelength: u<span style="color:#f92672">.</span>nm) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> u<span style="color:#f92672">.</span>terahertz:
+    <span style="color:#66d9ef">return</span> speed <span style="color:#f92672">/</span> wavelength
+
+frequency(speed<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>_000 <span style="color:#f92672">*</span> u<span style="color:#f92672">.</span>km <span style="color:#f92672">/</span> u<span style="color:#f92672">.</span>s, wavelength<span style="color:#f92672">=</span><span style="color:#ae81ff">555</span> <span style="color:#f92672">*</span> u<span style="color:#f92672">.</span>nm)
+<span style="color:#75715e"># output: 540.5405405405404 THz, frequency of green visible light</span>
+</code></pre></div><p>If you&rsquo;re processing tabular scientific data in python (not necessarily astronomical), you should give <code>astropy</code> a shot.</p>
+<p>You can also define your application-specific decorators to perform control / conversion of inputs and output in the same manner.</p>
+<h2 id="matrix-multiplication-with-">Matrix multiplication with @</h2>
+<p>Let&rsquo;s implement one of the simplest ML models — a linear regression with l2 regularization (a.k.a. ridge regression):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># l2-regularized linear regression: || AX - y ||^2 + alpha * ||x||^2 -&gt; min</span>
+
+<span style="color:#75715e"># Python 2</span>
+X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(np<span style="color:#f92672">.</span>dot(A<span style="color:#f92672">.</span>T, A) <span style="color:#f92672">+</span> alpha <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))<span style="color:#f92672">.</span>dot(A<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(y))
+<span style="color:#75715e"># Python 3</span>
+X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(A<span style="color:#f92672">.</span>T <span style="color:#960050;background-color:#1e0010">@</span> A <span style="color:#f92672">+</span> alpha <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])) <span style="color:#960050;background-color:#1e0010">@</span> (A<span style="color:#f92672">.</span>T <span style="color:#960050;background-color:#1e0010">@</span> y)
+</code></pre></div><p>The code with <code>@</code> becomes more readable and more translatable between deep learning frameworks: same code <code>X @ W + b[None, :]</code> for a single layer of perceptron works in <code>numpy</code>, <code>cupy</code>, <code>pytorch</code>, <code>tensorflow</code> (and other frameworks that operate with tensors).</p>
+<h2 id="globbing-with-">Globbing with <code>**</code></h2>
+<p>Recursive folder globbing is not easy in Python 2, even though the <a href="https://github.com/miracle2k/python-glob2">glob2</a> custom module exists that overcomes this. A recursive flag is supported since Python 3.5:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> glob
+
+<span style="color:#75715e"># Python 2</span>
+found_images <span style="color:#f92672">=</span> (
+    glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>))
+
+<span style="color:#75715e"># Python 3</span>
+found_images <span style="color:#f92672">=</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/**/*.jpg</span><span style="color:#e6db74">&#39;</span>, recursive<span style="color:#f92672">=</span>True)
+</code></pre></div><p>A better option is to use <code>pathlib</code> in python3 (minus one import!):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+found_images <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">**/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>Note: there are <a href="https://github.com/arogozhnikov/python3_with_pleasure/issues/16">minor differences</a> between <code>glob.glob</code>, <code>Path.glob</code> and bash globbing.</p>
+<h2 id="print-is-a-function-now">Print is a function now</h2>
+<p>Yes, code now has these annoying parentheses, but there are some advantages:</p>
+<ul>
+<li>
+<p>simple syntax for using file descriptor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#f92672">&gt;&gt;</span>sys<span style="color:#f92672">.</span>stderr, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">critical error</span><span style="color:#e6db74">&#34;</span>      <span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">critical error</span><span style="color:#e6db74">&#34;</span>, file<span style="color:#f92672">=</span>sys<span style="color:#f92672">.</span>stderr)  <span style="color:#75715e"># Python 3</span>
+</code></pre></div></li>
+<li>
+<p>printing tab-aligned tables without <code>str.join</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#f92672">*</span>array, sep<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(batch, epoch, loss, accuracy, time, sep<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div></li>
+<li>
+<p>hacky suppressing / redirection of printing output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+_print <span style="color:#f92672">=</span> <span style="color:#66d9ef">print</span> <span style="color:#75715e"># store the original print function</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kargs):
+    <span style="color:#66d9ef">pass</span>  <span style="color:#75715e"># do something useful, e.g. store output to some file</span>
+</code></pre></div><p>In jupyter it is desirable to log each output to a separate file (to track what&rsquo;s happening after you got disconnected), so you can override <code>print</code> now.</p>
+<p>Below you can see a context manager that temporarily overrides behavior of print:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@contextlib.contextmanager</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">replace_print</span>():
+    <span style="color:#f92672">import</span> builtins
+    _print <span style="color:#f92672">=</span> <span style="color:#66d9ef">print</span> <span style="color:#75715e"># saving old print function</span>
+    <span style="color:#75715e"># or use some other function here</span>
+    builtins<span style="color:#f92672">.</span><span style="color:#66d9ef">print</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> <span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs: _print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">new printing</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs)
+    <span style="color:#66d9ef">yield</span>
+    builtins<span style="color:#f92672">.</span><span style="color:#66d9ef">print</span> <span style="color:#f92672">=</span> _print
+
+<span style="color:#66d9ef">with</span> replace_print():
+    <span style="color:#f92672">&lt;</span>code here will invoke other <span style="color:#66d9ef">print</span> function<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>It is <em>not</em> a recommended approach, but a small dirty hack that is now possible.</p>
+</li>
+<li>
+<p><code>print</code> can participate in list comprehensions and other language constructs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+result <span style="color:#f92672">=</span> process(x) <span style="color:#66d9ef">if</span> is_valid(x) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">invalid item: </span><span style="color:#e6db74">&#39;</span>, x)
+</code></pre></div></li>
+</ul>
+<h2 id="underscores-in-numeric-literal-thousands-separator">Underscores in Numeric Literal (Thousands Separator)</h2>
+<p><a href="https://www.python.org/dev/peps/pep-0515/" title="PEP-515">PEP-515</a> introduced underscores in Numeric Literals.
+In Python3, underscores can be used to group digits visually in integral, floating-point, and complex number literals.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># grouping decimal numbers by thousands</span>
+one_million <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>_000_000
+
+<span style="color:#75715e"># grouping hexadecimal addresses by words</span>
+addr <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xCAFE</span>_F00D
+
+<span style="color:#75715e"># grouping bits into nibbles in a binary literal</span>
+flags <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b_0011_1111_0100_1110
+
+<span style="color:#75715e"># same, for string conversions</span>
+flags <span style="color:#f92672">=</span> int(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0b_1111_0000</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>)
+</code></pre></div><h2 id="f-strings-for-simple-and-reliable-formatting">f-strings for simple and reliable formatting</h2>
+<p>The default formatting system provides a flexibility that is not required in data experiments.
+The resulting code is either too verbose or too fragile towards any changes.</p>
+<p>Quite typically data scientists outputs some logging information iteratively in a fixed format.
+It is common to have a code like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{batch:3} {epoch:3} / {total_epochs:3}  accuracy: {acc_mean:0.4f}±{acc_std:0.4f} time: {avg_time:3.2f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
+    batch<span style="color:#f92672">=</span>batch, epoch<span style="color:#f92672">=</span>epoch, total_epochs<span style="color:#f92672">=</span>total_epochs,
+    acc_mean<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>mean(accuracies), acc_std<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>std(accuracies),
+    avg_time<span style="color:#f92672">=</span>time <span style="color:#f92672">/</span> len(data_batch)
+)
+
+<span style="color:#75715e"># Python 2 (too error-prone during fast modifications, please avoid):</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{:3} {:3} / {:3}  accuracy: {:0.4f}±{:0.4f} time: {:3.2f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
+    batch, epoch, total_epochs, numpy<span style="color:#f92672">.</span>mean(accuracies), numpy<span style="color:#f92672">.</span>std(accuracies),
+    time <span style="color:#f92672">/</span> len(data_batch)
+)
+</code></pre></div><p>Sample output:</p>
+<pre><code>120  12 / 300  accuracy: 0.8180±0.4649 time: 56.60
+</code></pre><p><strong>f-strings</strong> aka formatted string literals were introduced in Python 3.6:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3.6+</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{batch:3} {epoch:3} / {total_epochs:3}  accuracy: {numpy.mean(accuracies):0.4f}±{numpy.std(accuracies):0.4f} time: {time / len(data_batch):3.2f}</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="explicit-difference-between-true-division-and-floor-division">Explicit difference between &lsquo;true division&rsquo; and &lsquo;floor division&rsquo;</h2>
+<p>For data science this is definitely a handy change</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">timing.csv</span><span style="color:#e6db74">&#39;</span>)
+velocity <span style="color:#f92672">=</span> data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">distance</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">/</span> data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">time</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><p>Results in Python 2 depend on whether &lsquo;time&rsquo; and &lsquo;distance&rsquo; (e.g. measured in meters and seconds) are stored as integers.
+In Python 3, the result is correct in both cases, because the result of division is float.</p>
+<p>Another case is floor division, which is now an explicit operation:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n_gifts <span style="color:#f92672">=</span> money <span style="color:#f92672">/</span><span style="color:#f92672">/</span> gift_price  <span style="color:#75715e"># correct for int and float arguments</span>
+</code></pre></div><p>In a nutshell:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> truediv, floordiv
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> truediv<span style="color:#f92672">.</span>__doc__, floordiv<span style="color:#f92672">.</span>__doc__
+(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">truediv(a, b) -- Same as a / b.</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">floordiv(a, b) -- Same as a // b.</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> (<span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">3.0</span> <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>)
+(<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.0</span>)
+</code></pre></div><p>Note, that this applies both to built-in types and to custom types provided by data packages (e.g. <code>numpy</code> or <code>pandas</code>).</p>
+<h2 id="strict-ordering">Strict ordering</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># All these comparisons are illegal in Python 3</span>
+<span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;</span> None
+(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">3</span>, None)
+(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+
+<span style="color:#75715e"># False in both Python 2 and Python 3</span>
+(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>) <span style="color:#f92672">==</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+</code></pre></div><ul>
+<li>prevents from occasional sorting of instances of different types
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sorted([<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">3</span>])  <span style="color:#75715e"># invalid for Python 3, in Python 2 returns [2, 3, &#39;1&#39;]</span>
+</code></pre></div></li>
+<li>helps to spot some problems that arise when processing raw data</li>
+</ul>
+<p>Sidenote: proper check for None is (in both Python versions)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> a <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
+  <span style="color:#66d9ef">pass</span>
+
+<span style="color:#66d9ef">if</span> a: <span style="color:#75715e"># WRONG check for None</span>
+  <span style="color:#66d9ef">pass</span>
+</code></pre></div><h2 id="unicode-for-nlp">Unicode for NLP</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">您好</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#66d9ef">print</span>(len(s))
+<span style="color:#66d9ef">print</span>(s[:<span style="color:#ae81ff">2</span>])
+</code></pre></div><p>Output:</p>
+<ul>
+<li>Python 2: <code>6\n��</code></li>
+<li>Python 3: <code>2\n您好</code>.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">со</span><span style="color:#e6db74">&#39;</span>
+x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">co</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># ok</span>
+x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">со</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># fail</span>
+</code></pre></div><p>Python 2 fails, Python 3 works as expected (because I&rsquo;ve used russian letters in strings).</p>
+<p>In Python 3 <code>str</code>s are unicode strings, and it is more convenient for NLP processing of non-english texts.</p>
+<p>There are other funny things, for instance:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&lt;</span> type <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>  <span style="color:#75715e"># Python 2: True</span>
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>         <span style="color:#75715e"># Python 2: False</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+Counter(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Möbelstück</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><ul>
+<li>Python 2: <code>Counter({'\xc3': 2, 'b': 1, 'e': 1, 'c': 1, 'k': 1, 'M': 1, 'l': 1, 's': 1, 't': 1, '\xb6': 1, '\xbc': 1})</code></li>
+<li>Python 3: <code>Counter({'M': 1, 'ö': 1, 'b': 1, 'e': 1, 'l': 1, 's': 1, 't': 1, 'ü': 1, 'c': 1, 'k': 1})</code></li>
+</ul>
+<p>You can handle all of this in Python 2 properly, but Python 3 is more friendly.</p>
+<h2 id="preserving-order-of-dictionaries-and-kwargs">Preserving order of dictionaries and **kwargs</h2>
+<p>In CPython 3.6+ dicts behave like <code>OrderedDict</code> by default (and <a href="https://stackoverflow.com/questions/39980323/are-dictionaries-ordered-in-python-3-6">this is guaranteed in Python 3.7+</a>).
+This preserves order during dict comprehensions (and other operations, e.g. during json serialization/deserialization)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+x <span style="color:#f92672">=</span> {str(i):i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)}
+json<span style="color:#f92672">.</span>loads(json<span style="color:#f92672">.</span>dumps(x))
+<span style="color:#75715e"># Python 2</span>
+{<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">4</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">4</span>}
+<span style="color:#75715e"># Python 3</span>
+{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">4</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">4</span>}
+</code></pre></div><p>Same applies to <code>**kwargs</code> (in Python 3.6+), they&rsquo;re kept in the same order as they appear in parameters.
+Order is crucial when it comes to data pipelines, previously we had to write it in a cumbersome manner:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> torch <span style="color:#f92672">import</span> nn
+
+<span style="color:#75715e"># Python 2</span>
+model <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(OrderedDict([
+          (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">conv1</span><span style="color:#e6db74">&#39;</span>, nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">5</span>)),
+          (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">relu1</span><span style="color:#e6db74">&#39;</span>, nn<span style="color:#f92672">.</span>ReLU()),
+          (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">conv2</span><span style="color:#e6db74">&#39;</span>, nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">64</span>,<span style="color:#ae81ff">5</span>)),
+          (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">relu2</span><span style="color:#e6db74">&#39;</span>, nn<span style="color:#f92672">.</span>ReLU())
+        ]))
+
+<span style="color:#75715e"># Python 3.6+, how it *can* be done, not supported right now in pytorch</span>
+model <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+    conv1<span style="color:#f92672">=</span>nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">5</span>),
+    relu1<span style="color:#f92672">=</span>nn<span style="color:#f92672">.</span>ReLU(),
+    conv2<span style="color:#f92672">=</span>nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">64</span>,<span style="color:#ae81ff">5</span>),
+    relu2<span style="color:#f92672">=</span>nn<span style="color:#f92672">.</span>ReLU())
+)
+</code></pre></div><p>Did you notice? Uniqueness of names is also checked automatically.</p>
+<h2 id="iterable-unpacking">Iterable unpacking</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># handy when amount of additional stored info may vary between experiments, but the same code can be used in all cases</span>
+model_paramteres, optimizer_parameters, <span style="color:#f92672">*</span>other_params <span style="color:#f92672">=</span> load(checkpoint_name)
+
+<span style="color:#75715e"># picking two last values from a sequence</span>
+<span style="color:#f92672">*</span>prev, next_to_last, last <span style="color:#f92672">=</span> values_history
+
+<span style="color:#75715e"># This also works with any iterables, so if you have a function that yields e.g. qualities,</span>
+<span style="color:#75715e"># below is a simple way to take only last two values from a list</span>
+<span style="color:#f92672">*</span>prev, next_to_last, last <span style="color:#f92672">=</span> iter_train(args)
+</code></pre></div><h2 id="default-pickle-engine-provides-better-compression-for-arrays">Default pickle engine provides better compression for arrays</h2>
+<p>Pickling is a mechanism to pass data between threads / processes, in particular used inside <code>multiprocessing</code> package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#f92672">import</span> cPickle <span style="color:#f92672">as</span> pickle
+<span style="color:#f92672">import</span> numpy
+<span style="color:#66d9ef">print</span> len(pickle<span style="color:#f92672">.</span>dumps(numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>])))
+<span style="color:#75715e"># result: 23691675</span>
+
+<span style="color:#75715e"># Python 3</span>
+<span style="color:#f92672">import</span> pickle
+<span style="color:#f92672">import</span> numpy
+len(pickle<span style="color:#f92672">.</span>dumps(numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>])))
+<span style="color:#75715e"># result: 8000162</span>
+</code></pre></div><p>Three times less space. And it is <em>much</em> faster.
+Actually similar compression (but not speed) is achievable with <code>protocol=2</code> parameter, but developers typically ignore this option (or simply are not aware of it).</p>
+<p>Note: pickle is <a href="https://docs.python.org/3/library/pickle.html">not safe</a> (and not quite transferrable), so never unpickle data received from an untrusted or unauthenticated source.</p>
+<h2 id="safer-comprehensions">Safer comprehensions</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">labels <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span>initial_value<span style="color:#f92672">&gt;</span>
+predictions <span style="color:#f92672">=</span> [model<span style="color:#f92672">.</span>predict(data) <span style="color:#66d9ef">for</span> data, labels <span style="color:#f92672">in</span> dataset]
+
+<span style="color:#75715e"># labels are overwritten in Python 2</span>
+<span style="color:#75715e"># labels are not affected by comprehension in Python 3</span>
+</code></pre></div><h2 id="super-simply-super">Super, simply super()</h2>
+<p>Python 2 <code>super(...)</code> was a frequent source of mistakes in code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MySubClass</span>(MySuperClass):
+    <span style="color:#66d9ef">def</span> __init__(self, name, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options):
+        super(MySubClass, self)<span style="color:#f92672">.</span>__init__(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">subclass</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options)
+
+<span style="color:#75715e"># Python 3</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MySubClass</span>(MySuperClass):
+    <span style="color:#66d9ef">def</span> __init__(self, name, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options):
+        super()<span style="color:#f92672">.</span>__init__(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">subclass</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options)
+</code></pre></div><p>More on <code>super</code> and method resolution order on <a href="https://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods">stackoverflow</a>.</p>
+<h2 id="better-ide-suggestions-with-variable-annotations">Better IDE suggestions with variable annotations</h2>
+<p>The most enjoyable thing about programming in languages like Java, C# and alike is that IDE can make very good suggestions,
+because type of each identifier is known before executing a program.</p>
+<p>In python this is hard to achieve, but annotations will help you</p>
+<ul>
+<li>write your expectations in a clear form</li>
+<li>and get good suggestions from IDE</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+This is an example of PyCharm suggestions with variable annotations.
+This works even in situations when functions you use are not annotated (e.g. due to backward compatibility).</p>
+<h2 id="multiple-unpacking">Multiple unpacking</h2>
+<p>Here is how you merge two dicts now:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> dict(a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+y <span style="color:#f92672">=</span> dict(b<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, d<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+<span style="color:#75715e"># Python 3.5+</span>
+z <span style="color:#f92672">=</span> {<span style="color:#f92672">*</span><span style="color:#f92672">*</span>x, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>y}
+<span style="color:#75715e"># z = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;d&#39;: 4}, note that value for `b` is taken from the latter dict.</span>
+</code></pre></div><p>See <a href="https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression">this thread at StackOverflow</a> for a comparison with Python 2.</p>
+<p>The same approach also works for lists, tuples, and sets (<code>a</code>, <code>b</code>, <code>c</code> are any iterables):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c] <span style="color:#75715e"># list, concatenating</span>
+(<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c) <span style="color:#75715e"># tuple, concatenating</span>
+{<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c} <span style="color:#75715e"># set, union</span>
+</code></pre></div><p>Functions also <a href="https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-448">support multiple unpacking</a> for <code>*args</code> and <code>**kwargs</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3.5+</span>
+do_something(<span style="color:#f92672">*</span><span style="color:#f92672">*</span>{<span style="color:#f92672">*</span><span style="color:#f92672">*</span>default_settings, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>custom_settings})
+
+<span style="color:#75715e"># Also possible, this code also checks there is no intersection between keys of dictionaries</span>
+do_something(<span style="color:#f92672">*</span><span style="color:#f92672">*</span>first_args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>second_args)
+</code></pre></div><h2 id="future-proof-apis-with-keyword-only-arguments">Future-proof APIs with keyword-only arguments</h2>
+<p>Let&rsquo;s consider this snippet</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> sklearn<span style="color:#f92672">.</span>svm<span style="color:#f92672">.</span>SVC(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">poly</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0.5</span>)
+</code></pre></div><p>Obviously, an author of this code didn&rsquo;t get the Python style of coding yet (most probably, just jumped from cpp or rust).
+Unfortunately, this is not just question of taste, because changing the order of arguments (adding/deleting) in <code>SVC</code> will break this code. In particular, <code>sklearn</code> does some reordering/renaming from time to time of numerous algorithm parameters to provide consistent API. Each such refactoring may drive to broken code.</p>
+<p>In Python 3, library authors may demand explicitly named parameters by using <code>*</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SVC</span>(BaseSVC):
+    <span style="color:#66d9ef">def</span> __init__(self, <span style="color:#f92672">*</span>, C<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, kernel<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">rbf</span><span style="color:#e6db74">&#39;</span>, degree<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, gamma<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">auto</span><span style="color:#e6db74">&#39;</span>, coef0<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span> )
+</code></pre></div><ul>
+<li>users have to specify names of parameters <code>sklearn.svm.SVC(C=2, kernel='poly', degree=2, gamma=4, coef0=0.5)</code> now</li>
+<li>this mechanism provides a great combination of reliability and flexibility of APIs</li>
+</ul>
+<h2 id="data-classes">Data classes</h2>
+<p>Python 3.7 introduces data classes, a good replacement for <code>namedtuple</code> in most cases.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+    name: str
+    age: int
+
+<span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coder</span>(Person):
+    preferred_language: str <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Python 3</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p><code>dataclass</code> decorator takes the job of implementing routine methods for you (initialization, representation, comparison, and hashing when applicable). 
+Let&rsquo;s name some features:</p>
+<ul>
+<li>data classes can be both mutable and immutable</li>
+<li>default values for fields are supported</li>
+<li>inheritance</li>
+<li>data classes are still old good classes: you can define new methods and override existing</li>
+<li>post-init processing (e.g. to verify consistency)</li>
+</ul>
+<p>Geir Arne Hjelle gives a good overview of dataclasses <a href="https://realpython.com/python-data-classes/">in his post</a>.</p>
+<h2 id="customizing-access-to-module-attributes">Customizing access to module attributes</h2>
+<p>In Python you can control attribute access and hinting with <code>__getattr__</code> and <code>__dir__</code> for any object. Since python 3.7 you can do it for modules too.</p>
+<p>A natural example is implementing a <code>random</code> submodule of tensor libraries, which is typically a shortcut to skip initialization and passing of RandomState objects. Here&rsquo;s implementation for numpy:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># nprandom.py</span>
+<span style="color:#f92672">import</span> numpy
+__random_state <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>RandomState()
+
+<span style="color:#66d9ef">def</span> __getattr__(name):
+    <span style="color:#66d9ef">return</span> getattr(__random_state, name)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__dir__</span>():
+    <span style="color:#66d9ef">return</span> dir(__random_state)
+    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">seed</span>(seed):
+    __random_state <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>RandomState(seed<span style="color:#f92672">=</span>seed)
+</code></pre></div><p>One can also mix this way functionalities of different objects/submodules. Compare with tricks in <a href="https://github.com/pytorch/pytorch/blob/3ce17bf8f6a2c4239085191ea60d6ee51cd620a5/torch/__init__.py#L253-L256">pytorch</a> and <a href="https://github.com/cupy/cupy/blob/94592ecac8152d5f4a56a129325cc91d184480ad/cupy/random/distributions.py">cupy</a>.</p>
+<p>Additionally, now one can</p>
+<ul>
+<li>use it for <a href="https://snarky.ca/lazy-importing-in-python-3-7/">lazy loading of submodules</a>. For example, <code>import tensorflow</code> takes <strong>~150MB</strong> of RAM is imports all submodules (and dependencies).</li>
+<li>use this for <a href="https://www.python.org/dev/peps/pep-0562/">deprecations in API</a></li>
+<li>introduce runtime routing between submodules</li>
+</ul>
+<h2 id="built-in-breakpoint">Built-in breakpoint()</h2>
+<p>Just write <code>breakpoint()</code> in the code to invoke debugger.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3.7+, not all IDEs support this at the moment</span>
+foo()
+breakpoint()
+bar()
+</code></pre></div><p>For remote debugging you may want to try <a href="https://hackernoon.com/python-3-7s-new-builtin-breakpoint-a-quick-tour-4f1aebc444c">combining breakpoint() with <code>web-pdb</code></a></p>
+<h2 id="minor-constants-in-math-module">Minor: constants in <code>math</code> module</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+math<span style="color:#f92672">.</span>inf <span style="color:#75715e"># Infinite float</span>
+math<span style="color:#f92672">.</span>nan <span style="color:#75715e"># not a number</span>
+
+max_quality <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>inf  <span style="color:#75715e"># no more magic initial values!</span>
+
+<span style="color:#66d9ef">for</span> model <span style="color:#f92672">in</span> trained_models:
+    max_quality <span style="color:#f92672">=</span> max(max_quality, compute_quality(model, data))
+</code></pre></div><h2 id="minor-single-integer-type">Minor: single integer type</h2>
+<p>Python 2 provides two basic integer types, which are <code>int</code> (64-bit signed integer) and <code>long</code> for long arithmetics (quite confusing after C++).</p>
+<p>Python 3 has a single type <code>int</code>, which incorporates long arithmetics.</p>
+<p>Here is how you check that value is integer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">isinstance(x, numbers<span style="color:#f92672">.</span>Integral) <span style="color:#75715e"># Python 2, the canonical way</span>
+isinstance(x, (long, int))      <span style="color:#75715e"># Python 2</span>
+isinstance(x, int)              <span style="color:#75715e"># Python 3, easier to remember</span>
+</code></pre></div><p>Update: first check also works for <em>other integral types</em>, such as <code>numpy.int32</code>, <code>numpy.int64</code>, but others don&rsquo;t. So they&rsquo;re not equivalent.</p>
+<h2 id="other-stuff">Other stuff</h2>
+<ul>
+<li><code>Enum</code>s are theoretically useful, but
+<ul>
+<li>string-typing is already widely adopted in the python data stack</li>
+<li><code>Enum</code>s don&rsquo;t seem to interplay with numpy and categorical from pandas</li>
+</ul>
+</li>
+<li>coroutines also <em>sound</em> very promising for data pipelining (see <a href="http://www.dabeaz.com/coroutines/Coroutines.pdf">slides</a> by David Beazley), but I don&rsquo;t see their adoption in the wild.</li>
+<li>Python 3 has <a href="https://www.python.org/dev/peps/pep-0384/">stable ABI</a></li>
+<li>Python 3 supports unicode identifies (so <code>ω = Δφ / Δt</code> is ok), but you&rsquo;d <a href="https://stackoverflow.com/a/29855176/498892">better use good old ASCII names</a></li>
+<li>some libraries e.g. <a href="https://github.com/jupyterhub/jupyterhub">jupyterhub</a> (jupyter in cloud), django and fresh ipython only support Python 3, so features that sound useless for you are useful for libraries you&rsquo;ll probably want to use once.</li>
+</ul>
+<h3 id="problems-for-code-migration-specific-for-data-science-and-how-to-resolve-those">Problems for code migration specific for data science (and how to resolve those)</h3>
+<ul>
+<li>
+<p>support for nested arguments <a href="https://www.python.org/dev/peps/pep-3113/">was dropped</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">map(<span style="color:#66d9ef">lambda</span> x, (y, z): x, z, dict<span style="color:#f92672">.</span>items())
+</code></pre></div><p>However, it is still perfectly working with different comprehensions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{x:z <span style="color:#66d9ef">for</span> x, (y, z) <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>items()}
+</code></pre></div><p>In general, comprehensions are also better &lsquo;translatable&rsquo; between Python 2 and 3.</p>
+</li>
+<li>
+<p><code>map()</code>, <code>.keys()</code>, <code>.values()</code>, <code>.items()</code>, etc. return iterators, not lists. Main problems with iterators are:</p>
+<ul>
+<li>no trivial slicing</li>
+<li>can&rsquo;t be iterated twice</li>
+</ul>
+<p>Almost all of the problems are resolved by converting result to list.</p>
+</li>
+<li>
+<p>see <a href="https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/">Python FAQ: How do I port to Python 3?</a> when in trouble</p>
+</li>
+</ul>
+<h3 id="main-problems-for-teaching-machine-learning-and-data-science-with-python">Main problems for teaching machine learning and data science with python</h3>
+<p>Course authors should spend time in the first lectures to explain what is an iterator,
+why it can&rsquo;t be sliced / concatenated / multiplied / iterated twice like a string (and how to deal with it).</p>
+<p>I think most course authors would be happy to avoid these details, but now it is hardly possible.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Python 2 and Python 3 have co-existed for almost 10 years, but we <em>should</em> move to Python 3.</p>
+<p>Research and production code should become a bit shorter, more readable, and significantly safer after moving to Python 3-only codebase.</p>
+<p>Right now most libraries support both Python versions.
+And I can&rsquo;t wait for the bright moment when packages drop support for Python 2 and enjoy new language features.</p>
+<p>Following migrations are promised to be smoother: <a href="https://snarky.ca/why-python-3-exists/">&ldquo;we will never do this kind of backwards-incompatible change again&rdquo;</a></p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">Key differences between Python 2.7 and Python 3.x</a></li>
+<li><a href="https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/">Python FAQ: How do I port to Python 3?</a></li>
+<li><a href="http://www.asmeurer.com/python3-presentation/slides.html">10 awesome features of Python that you can&rsquo;t use because you refuse to upgrade to Python 3</a></li>
+<li><a href="http://pyvideo.org/pycon-us-2013/python-33-trust-me-its-better-than-27.html">Trust me, python 3.3 is better than 2.7 (video)</a></li>
+<li><a href="http://python-3-for-scientists.readthedocs.io/en/latest/">Python 3 for scientists</a></li>
+</ul>
+<h3 id="license">License</h3>
+<p>This text was published by <a href="https://arogozhnikov.github.io/about/">Alex Rogozhnikov</a> and <a href="https://github.com/arogozhnikov/python3_with_pleasure/graphs/contributors">contributors</a> under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 License</a> (excluding images).</p>
+<h1 id="中文版本">中文版本</h1>
+<h2 id="为数据科学家提供的关于python-3特性的简介">为数据科学家提供的关于Python 3特性的简介</h2>
+<blockquote>
+<p>Python became a mainstream language for machine learning and other scientific fields that heavily operate with data;
+it boasts various deep learning frameworks and well-established set of tools for data processing and visualization.</p>
+</blockquote>
+<p>Python 已成为机器学习以及其他紧密结合数据的科学领域的主流语言；它提供了各种深度学习的框架以及一系列完善的数据处理和可视化工具。</p>
+<blockquote>
+<p>However, Python ecosystem co-exists in Python 2 and Python 3, and Python 2 is still used among data scientists.
+By the end of 2019 the scientific stack will <a href="http://www.python3statement.org">stop supporting Python2</a>.
+As for numpy, after 2018 any new feature releases will only support <a href="https://github.com/numpy/numpy/blob/master/doc/neps/dropping-python2.7-proposal.rst">Python3</a>.</p>
+</blockquote>
+<p>然而，Python 的生态圈中 Python 2 和 Python 3 是共存状态，并且数据科学家之中是依然有使用 Python 2 的。2019年年底（Python的）科学组件将会<a href="http://www.python3statement.org">停止支持 Python 2 </a>。 至于numpy，2018年之后任何推出的新特性将会只支持<a href="https://github.com/numpy/numpy/blob/master/doc/neps/dropping-python2.7-proposal.rst">Python 3</a> 。</p>
+<blockquote>
+<p>To make the transition less frustrating, I&rsquo;ve collected a bunch of Python 3 features that you may find useful.</p>
+</blockquote>
+<p>为了让这一过渡更轻松一点，我整理了一些 Python 3 你可能觉得有用的特性。</p>
+<p><!-- raw HTML omitted --></p>
+<p>图片来源 <a href="https://www.toptal.com/python/python-3-is-it-worth-the-switch">Dario Bertini post (toptal)</a></p>
+<h2 id="pathlib提供了更好的路径处理"><code>pathlib</code>提供了更好的路径处理</h2>
+<blockquote>
+<p><code>pathlib</code> is a default module in python3, that helps you to avoid tons of <code>os.path.join</code>s:</p>
+</blockquote>
+<p><code>pathlib</code> 是Python 3 一个默认的组件，有助于避免大量使用<code>os.path.join</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+dataset <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">wiki_images</span><span style="color:#e6db74">&#39;</span>
+datasets_root <span style="color:#f92672">=</span> Path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/to/datasets/</span><span style="color:#e6db74">&#39;</span>)
+
+train_path <span style="color:#f92672">=</span> datasets_root <span style="color:#f92672">/</span> dataset <span style="color:#f92672">/</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">train</span><span style="color:#e6db74">&#39;</span>
+test_path <span style="color:#f92672">=</span> datasets_root <span style="color:#f92672">/</span> dataset <span style="color:#f92672">/</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>
+
+<span style="color:#66d9ef">for</span> image_path <span style="color:#f92672">in</span> train_path<span style="color:#f92672">.</span>iterdir():
+    <span style="color:#66d9ef">with</span> image_path<span style="color:#f92672">.</span>open() <span style="color:#66d9ef">as</span> f: <span style="color:#75715e"># note, open is a method of Path object</span>
+        <span style="color:#75715e"># do something with an image</span>
+</code></pre></div><blockquote>
+<p>Previously it was always tempting to use string concatenation (concise, but obviously bad),
+now with <code>pathlib</code> the code is safe, concise, and readable.</p>
+</blockquote>
+<p>以前，人们倾向于使用字符串连接（虽然简洁，但明显不好）；现在，代码中用<code>pathlib</code>是安全的，简洁的，并且更有可读性。</p>
+<blockquote>
+<p>Also <code>pathlib.Path</code> has a bunch of methods and properties, that every python novice previously had to google:</p>
+</blockquote>
+<p>此外，<code>pathlib.Path</code>有大量的方法和属性，每一位 Python 早期的初学者不得不谷歌了解：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p<span style="color:#f92672">.</span>exists()
+p<span style="color:#f92672">.</span>is_dir()
+p<span style="color:#f92672">.</span>parts
+p<span style="color:#f92672">.</span>with_name(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sibling.png</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># only change the name, but keep the folder</span>
+p<span style="color:#f92672">.</span>with_suffix(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.jpg</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># only change the extension, but keep the folder and the name</span>
+p<span style="color:#f92672">.</span>chmod(mode)
+p<span style="color:#f92672">.</span>rmdir()
+</code></pre></div><blockquote>
+<p><code>pathlib</code> should save you lots of time,
+please see <a href="https://docs.python.org/3/library/pathlib.html">docs</a> and <a href="https://pymotw.com/3/pathlib/">reference</a> for more.</p>
+</blockquote>
+<p><code>pathlib</code> 应当会节省大量时间，请参看<a href="https://docs.python.org/3/library/pathlib.html">文档</a>以及<a href="https://pymotw.com/3/pathlib/">指南</a>了解更多。</p>
+<h2 id="类型提示现在已是这语言的一部分">类型提示现在已是这语言的一部分</h2>
+<blockquote>
+<p>Example of type hinting in pycharm: <!-- raw HTML omitted --></p>
+</blockquote>
+<p>pycharm环境类型提示的例子：</p>
+<p><!-- raw HTML omitted --></p>
+<blockquote>
+<p>Python is not just a language for small scripts anymore,
+data pipelines these days include numerous steps each involving different frameworks (and sometimes very different logic).</p>
+</blockquote>
+<p>Python 不再是一种小型的脚本语言，数据管道现如今包含数个级别，而每一级又涉及到不同的框架（甚至有时是千差万别的逻辑）。</p>
+<blockquote>
+<p>Type hinting was introduced to help with growing complexity of programs, so machines could help with code verification.
+Previously different modules used custom ways to point <a href="https://www.jetbrains.com/help/pycharm/type-hinting-in-pycharm.html#legacy">types in docstrings</a>
+(Hint: pycharm can convert old docstrings to fresh type hinting).</p>
+</blockquote>
+<p>类型提示的引入是为了在程序的持续增加的复杂性方面提供帮助，这样机器可以辅助代码验证。以前不同的模块使用自定义的方式指定<a href="https://www.jetbrains.com/help/pycharm/type-hinting-in-pycharm.html#legacy">文档字符中的类型</a>(提示：pycharm可以将旧的字符串转换成新的类型提示)。</p>
+<blockquote>
+<p>As a simple example, the following code may work with different types of data (that&rsquo;s what we like about python data stack).</p>
+</blockquote>
+<p>作为一个简单的例子，下面的代码可以适用于数据的不同类型（这也是关于数据栈我们喜欢的一点）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat_each_entry</span>(data):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"> Each entry in the data is doubled</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    &lt;blah blah nobody reads the documentation till the end&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    index <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>repeat(numpy<span style="color:#f92672">.</span>arange(len(data)), <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> data[index]
+</code></pre></div><blockquote>
+<p>This code e.g. works for <code>numpy.array</code> (incl. multidimensional ones), <code>astropy.Table</code> and <code>astropy.Column</code>, <code>bcolz</code>, <code>cupy</code>, <code>mxnet.ndarray</code> and others.</p>
+</blockquote>
+<p>这段代码可适用于例如 <code>numpy.array</code> (包括多维数组)， <code>astropy.Table</code> 以及 <code>astropy.Column</code>， <code>bcolz</code>， <code>cupy</code>, <code>mxnet.ndarray</code> 和其他的组件。</p>
+<blockquote>
+<p>This code will work for <code>pandas.Series</code>, but in the wrong way:</p>
+</blockquote>
+<p>这段代码虽然也适用于<code>pandas.Series</code>，但是是错误的使用方式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">repeat_each_entry(pandas<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], index<span style="color:#f92672">=</span>[<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>])) <span style="color:#75715e"># returns Series with Nones inside</span>
+</code></pre></div><blockquote>
+<p>This was two lines of code. Imagine how unpredictable behavior of a complex system, because just one function may misbehave.
+Stating explicitly which types a method expects is very helpful in large systems, this will warn you if a function was passed unexpected arguments.</p>
+</blockquote>
+<p>这曾经是两行代码。想象一下一个复杂系统不可预知的行为，仅仅是因为一个功能可能会失败。在大型的系统中，明确地指出方法期望的类型是非常有帮助的。如果一个方法通过了意外参数，则会给出警告。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat_each_entry</span>(data: Union[numpy<span style="color:#f92672">.</span>ndarray, bcolz<span style="color:#f92672">.</span>carray]):
+</code></pre></div><blockquote>
+<p>If you have a significant codebase, hinting tools like <a href="http://mypy.readthedocs.io">MyPy</a> are likely to become part of your continuous integration pipeline.A webinar <a href="https://www.youtube.com/watch?v=JqBCFfiE11g">&ldquo;Putting Type Hints to Work&rdquo;</a> by Daniel Pyrathon is good for a brief introduction.</p>
+</blockquote>
+<p>如果你有一个重要的代码仓库，比如<a href="http://mypy.readthedocs.io">MyPy</a>的提示工具有可能成为你持续集成管道的一部分。Daniel Pyrathon主持的<a href="https://www.youtube.com/watch?v=JqBCFfiE11g">&ldquo;Putting Type Hints to Work&rdquo;</a>研讨会，给出了一个很好的简介。</p>
+<blockquote>
+<p>Sidenote: unfortunately, hinting is not yet powerful enough to provide fine-grained typing for ndarrays/tensors, but <a href="https://github.com/numpy/numpy/issues/7370">maybe we&rsquo;ll have it once</a>, and this will be a great feature for DS.</p>
+</blockquote>
+<p>边注：不幸的是，提示信息还不够强大为多维数组/张量提供精细的提示。但是<a href="https://github.com/numpy/numpy/issues/7370">也许我们会有</a>，并且这将是DS的一个强大功能。</p>
+<h2 id="类型提示--在运行时检查类型">类型提示 → 在运行时检查类型</h2>
+<blockquote>
+<p>By default, function annotations do not influence how your code is working, but merely help you to point code intentions.</p>
+</blockquote>
+<p>默认情况下，方法声明不会影响你运行中的代码，而只是帮助你指出代码的意图。</p>
+<blockquote>
+<p>However, you can enforce type checking in runtime with tools like &hellip; <a href="https://github.com/RussBaz/enforce">enforce</a>,
+this can help you in debugging (there are many cases when type hinting is not working).</p>
+</blockquote>
+<p>然而，你可以利用工具，比如<a href="https://github.com/RussBaz/enforce">enforce</a>，在代码运行时执行类型检查，这对你在debug代码时是很有帮助的（类型提示不起作用的情况也很多）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@enforce.runtime_validation</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(text: str) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
+    <span style="color:#66d9ef">print</span>(text)
+
+foo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Hi</span><span style="color:#e6db74">&#39;</span>) <span style="color:#75715e"># ok</span>
+foo(<span style="color:#ae81ff">5</span>)    <span style="color:#75715e"># fails</span>
+
+
+<span style="color:#a6e22e">@enforce.runtime_validation</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">any2</span>(x: List[bool]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> bool:
+    <span style="color:#66d9ef">return</span> any(x)
+
+any ([False, False, True, False]) <span style="color:#75715e"># True</span>
+any2([False, False, True, False]) <span style="color:#75715e"># True</span>
+
+any ([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">False</span><span style="color:#e6db74">&#39;</span>]) <span style="color:#75715e"># True</span>
+any2([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">False</span><span style="color:#e6db74">&#39;</span>]) <span style="color:#75715e"># fails</span>
+
+any ([False, None, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># False</span>
+any2([False, None, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># fails</span>
+
+</code></pre></div><h2 id="方法声明的其他用途">方法声明的其他用途</h2>
+<blockquote>
+<p>As mentioned before, annotations do not influence code execution, but rather provide some meta-information,
+and you can use it as you wish.</p>
+</blockquote>
+<p>正如之前提到的，声明不会影响代码执行，而只是提供一些元信息，此外你也可以随意使用。</p>
+<blockquote>
+<p>For instance, measurement units are a common pain in scientific areas, <code>astropy</code> package <a href="http://docs.astropy.org/en/stable/units/quantity.html#functions-that-accept-quantities">provides a simple decorator</a> to control units of input quantities and convert output to required units.</p>
+</blockquote>
+<p>比如，测量单位是科学领域常见的痛点，<code>astropy</code>包<a href="http://docs.astropy.org/en/stable/units/quantity.html#functions-that-accept-quantities">提供了一个简单的装饰器</a>用来控制输入数量的单位及转换输出部分所需的单位。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+<span style="color:#f92672">from</span> astropy <span style="color:#f92672">import</span> units <span style="color:#66d9ef">as</span> u
+<span style="color:#a6e22e">@u.quantity_input</span>()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">frequency</span>(speed: u<span style="color:#f92672">.</span>meter <span style="color:#f92672">/</span> u<span style="color:#f92672">.</span>s, wavelength: u<span style="color:#f92672">.</span>m) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> u<span style="color:#f92672">.</span>terahertz:
+    <span style="color:#66d9ef">return</span> speed <span style="color:#f92672">/</span> wavelength
+
+frequency(speed<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>_000 <span style="color:#f92672">*</span> u<span style="color:#f92672">.</span>km <span style="color:#f92672">/</span> u<span style="color:#f92672">.</span>s, wavelength<span style="color:#f92672">=</span><span style="color:#ae81ff">555</span> <span style="color:#f92672">*</span> u<span style="color:#f92672">.</span>nm)
+<span style="color:#75715e"># output: 540.5405405405404 THz, frequency of green visible light</span>
+</code></pre></div><blockquote>
+<p>If you&rsquo;re processing tabular scientific data in python (not necessarily astronomical), you should give <code>astropy</code> a shot.</p>
+</blockquote>
+<p>如果你正在用Python处理表格式的科学数据（没必要是天文数字），那么你应该试试<code>astropy</code>。</p>
+<blockquote>
+<p>You can also define your application-specific decorators to perform control / conversion of inputs and output in the same manner.</p>
+</blockquote>
+<p>你也可以自定义专用的装饰器，以相同的方式执行输入和输出的控制/转换。</p>
+<h2 id="矩阵乘号-">矩阵乘号 @</h2>
+<blockquote>
+<p>Let&rsquo;s implement one of the simplest ML models — a linear regression with l2 regularization (a.k.a. ridge regression):</p>
+</blockquote>
+<p>让我们来实现一个最简单的 ML(机器学习) 模型 — 具有 l2 正则化的线性回归（又名岭回归）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># l2-regularized linear regression: || AX - b ||^2 + alpha * ||x||^2 -&gt; min</span>
+
+<span style="color:#75715e"># Python 2</span>
+X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(np<span style="color:#f92672">.</span>dot(A<span style="color:#f92672">.</span>T, A) <span style="color:#f92672">+</span> alpha <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))<span style="color:#f92672">.</span>dot(A<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(b))
+<span style="color:#75715e"># Python 3</span>
+X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(A<span style="color:#f92672">.</span>T <span style="color:#960050;background-color:#1e0010">@</span> A <span style="color:#f92672">+</span> alpha <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])) <span style="color:#960050;background-color:#1e0010">@</span> (A<span style="color:#f92672">.</span>T <span style="color:#960050;background-color:#1e0010">@</span> b)
+</code></pre></div><blockquote>
+<p>The code with <code>@</code> becomes more readable and more translatable between deep learning frameworks: same code <code>X @ W + b[None, :]</code> for a single layer of perceptron works in <code>numpy</code>, <code>cupy</code>, <code>pytorch</code>, <code>tensorflow</code> (and other frameworks that operate with tensors).</p>
+</blockquote>
+<p>使用<code>@</code>的代码在深度学习框架之间变得更有可读性和可转换性：对于单层感知器，相同的代码<code>X @ W + b[None, :]</code> 可运行与<code>numpy</code>、 <code>cupy</code>、 <code>pytorch</code>、 <code>tensorflow</code>（以及其他基于张量运行的框架）。</p>
+<h2 id="通配符-">通配符 <code>**</code></h2>
+<blockquote>
+<p>Recursive folder globbing is not easy in Python 2, even though the <a href="https://github.com/miracle2k/python-glob2">glob2</a> custom module exists that overcomes this. A recursive flag is supported since Python 3.5:</p>
+</blockquote>
+<p>即使<a href="https://github.com/miracle2k/python-glob2">glob2</a>的自定义模块克服了这一点，但是在Python 2中递归的文件夹通配依旧不容易。自Python3.5以来便支持了递归标志：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> glob
+
+<span style="color:#75715e"># Python 2</span>
+found_images <span style="color:#f92672">=</span> \
+    glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*.jpg</span><span style="color:#e6db74">&#39;</span>) \
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*.jpg</span><span style="color:#e6db74">&#39;</span>) \
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>) \
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>) \
+  <span style="color:#f92672">+</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/*/*/*/*/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#75715e"># Python 3</span>
+found_images <span style="color:#f92672">=</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/**/*.jpg</span><span style="color:#e6db74">&#39;</span>, recursive<span style="color:#f92672">=</span>True)
+</code></pre></div><blockquote>
+<p>A better option is to use <code>pathlib</code> in python3 (minus one import!):</p>
+</blockquote>
+<p>一个更好的选项就是在Python 3中使用<code>pathlib</code>(减少了一个导入！)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+found_images <span style="color:#f92672">=</span> pathlib<span style="color:#f92672">.</span>Path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/path/</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>glob(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">**/*.jpg</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="print-现在成了一个方法">Print 现在成了一个方法</h2>
+<blockquote>
+<p>Yes, code now has these annoying parentheses, but there are some advantages:</p>
+</blockquote>
+<p>是的，代码现在有了这些烦人的括号，但也是有一些好处的：</p>
+<blockquote>
+<ul>
+<li>simple syntax for using file descriptor:</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>使用文件描述符的简单语法:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> <span style="color:#f92672">&gt;&gt;</span>sys<span style="color:#f92672">.</span>stderr, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">critical error</span><span style="color:#e6db74">&#34;</span>      <span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">critical error</span><span style="color:#e6db74">&#34;</span>, file<span style="color:#f92672">=</span>sys<span style="color:#f92672">.</span>stderr)  <span style="color:#75715e"># Python 3</span>
+</code></pre></div></li>
+</ul>
+<blockquote>
+<ul>
+<li>printing tab-aligned tables without <code>str.join</code>:</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>不使用<code>str.join</code>打印制表符对齐表：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#f92672">*</span>array, sep<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(batch, epoch, loss, accuracy, time, sep<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div></li>
+</ul>
+<blockquote>
+<ul>
+<li>hacky suppressing / redirection of printing output:</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>结束/重定向打印输出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+_print <span style="color:#f92672">=</span> <span style="color:#66d9ef">print</span> <span style="color:#75715e"># store the original print function</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kargs):
+    <span style="color:#66d9ef">pass</span>  <span style="color:#75715e"># do something useful, e.g. store output to some file</span>
+</code></pre></div><p>In jupyter it is desirable to log each output to a separate file (to track what&rsquo;s happening after you got disconnected), so you can override <code>print</code> now.</p>
+<p>在jupyter中，最好将每个输出记录到一个单独的文件中（以便跟踪断开连接后发生的情况），以便你现在可以重写 <code>print</code> 。</p>
+<p>Below you can see a context manager that temporarily overrides behavior of print:</p>
+<p>下面你可以看到暂时覆盖打印行为的上下文管理器：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@contextlib.contextmanager</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">replace_print</span>():
+    <span style="color:#f92672">import</span> builtins
+    _print <span style="color:#f92672">=</span> <span style="color:#66d9ef">print</span> <span style="color:#75715e"># saving old print function</span>
+    <span style="color:#75715e"># or use some other function here</span>
+    builtins<span style="color:#f92672">.</span><span style="color:#66d9ef">print</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> <span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs: _print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">new printing</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs)
+    <span style="color:#66d9ef">yield</span>
+    builtins<span style="color:#f92672">.</span><span style="color:#66d9ef">print</span> <span style="color:#f92672">=</span> _print
+
+<span style="color:#66d9ef">with</span> replace_print():
+    <span style="color:#f92672">&lt;</span>code here will invoke other <span style="color:#66d9ef">print</span> function<span style="color:#f92672">&gt;</span>
+</code></pre></div><p>It is <em>not</em> a recommended approach, but a small dirty hack that is now possible.</p>
+<p>这<em>并不是</em>推荐的方法，现在却可能是一次小小的黑客攻击。</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><code>print</code> can participate in list comprehensions and other language constructs</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><code>print</code> 可以参与列表推导式和其他语言结构:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+result <span style="color:#f92672">=</span> process(x) <span style="color:#66d9ef">if</span> is_valid(x) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">invalid item: </span><span style="color:#e6db74">&#39;</span>, x)
+</code></pre></div></li>
+</ul>
+<h2 id="数字中的下划线-千位分隔符">数字中的下划线 （千位分隔符）</h2>
+<blockquote>
+<p><a href="https://www.python.org/dev/peps/pep-0515/" title="PEP-515">PEP-515</a> introduced underscores in Numeric Literals.
+In Python3, underscores can be used to group digits visually in integral, floating-point, and complex number literals.</p>
+</blockquote>
+<p><a href="https://www.python.org/dev/peps/pep-0515/" title="PEP-515">PEP-515</a>在数字中引入了下划线。在Python 3 中，下划线可以用于在整数，浮点数，以及一些复杂的数字中以可视的方式对数字分组。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># grouping decimal numbers by thousands</span>
+one_million <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>_000_000
+
+<span style="color:#75715e"># grouping hexadecimal addresses by words</span>
+addr <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xCAFE</span>_F00D
+
+<span style="color:#75715e"># grouping bits into nibbles in a binary literal</span>
+flags <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b_0011_1111_0100_1110
+
+<span style="color:#75715e"># same, for string conversions</span>
+flags <span style="color:#f92672">=</span> int(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0b_1111_0000</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>)
+</code></pre></div><h2 id="用于简单可靠格式化的-f-strings">用于简单可靠格式化的 f-strings</h2>
+<blockquote>
+<p>The default formatting system provides a flexibility that is not required in data experiments.
+The resulting code is either too verbose or too fragile towards any changes.</p>
+</blockquote>
+<p>默认的格式化系统提供了数据实验中不必要的灵活性。由此产生的代码对于任何更改都显得过于冗长或者脆弱。</p>
+<blockquote>
+<p>Quite typically data scientists outputs some logging information iteratively in a fixed format.
+It is common to have a code like:</p>
+</blockquote>
+<p>通常数据科学家会以固定的格式反复输出一些记录信息。如下代码就是常见的一段：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{batch:3} {epoch:3} / {total_epochs:3}  accuracy: {acc_mean:0.4f}±{acc_std:0.4f} time: {avg_time:3.2f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
+    batch<span style="color:#f92672">=</span>batch, epoch<span style="color:#f92672">=</span>epoch, total_epochs<span style="color:#f92672">=</span>total_epochs,
+    acc_mean<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>mean(accuracies), acc_std<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>std(accuracies),
+    avg_time<span style="color:#f92672">=</span>time <span style="color:#f92672">/</span> len(data_batch)
+))
+
+<span style="color:#75715e"># Python 2 (too error-prone during fast modifications, please avoid):</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{:3} {:3} / {:3}  accuracy: {:0.4f}±{:0.4f} time: {:3.2f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
+    batch, epoch, total_epochs, numpy<span style="color:#f92672">.</span>mean(accuracies), numpy<span style="color:#f92672">.</span>std(accuracies),
+    time <span style="color:#f92672">/</span> len(data_batch)
+))
+</code></pre></div><p>简单输出:</p>
+<pre><code>120  12 / 300  accuracy: 0.8180±0.4649 time: 56.60
+</code></pre><blockquote>
+<p><strong>f-strings</strong> aka formatted string literals were introduced in Python 3.6:</p>
+</blockquote>
+<p><strong>f-string</strong> 又名格式化的字符串，在Python 3.6 中引入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3.6+</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{batch:3} {epoch:3} / {total_epochs:3}  accuracy: {numpy.mean(accuracies):0.4f}±{numpy.std(accuracies):0.4f} time: {time / len(data_batch):3.2f}</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="真正的除法与整数除法之间的明显区别">“真正的除法”与“整数除法”之间的明显区别</h2>
+<blockquote>
+<p>For data science this is definitely a handy change.</p>
+</blockquote>
+<p>对于数据科学来说，这绝对是一个便利的改变。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">timing.csv</span><span style="color:#e6db74">&#39;</span>)
+velocity <span style="color:#f92672">=</span> data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">distance</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">/</span> data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">time</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><blockquote>
+<p>Results in Python 2 depend on whether &lsquo;time&rsquo; and &lsquo;distance&rsquo; (e.g. measured in meters and seconds) are stored as integers.
+In Python 3, the result is correct in both cases, because the result of division is float.</p>
+</blockquote>
+<p>Python 2 中的计算结果取决于“时间”和“距离”（例如，分别以米和秒计量）是否存储为整数，而在Python 3 中，结果在两种情况下都是正确的，因为除法的计算结果是浮点型了。</p>
+<blockquote>
+<p>Another case is integer division, which is now an explicit operation:</p>
+</blockquote>
+<p>另一种情况是整数除法，它现在是一种精确的运算了：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n_gifts <span style="color:#f92672">=</span> money <span style="color:#f92672">/</span><span style="color:#f92672">/</span> gift_price  <span style="color:#75715e"># correct for int and float arguments</span>
+</code></pre></div><blockquote>
+<p>Note, that this applies both to built-in types and to custom types provided by data packages (e.g. <code>numpy</code> or <code>pandas</code>).</p>
+</blockquote>
+<p>注意，这都适用于内置类型及数据包提供的自定义类型（如<code>numpy</code> 或者 <code>pandas</code>）。</p>
+<h2 id="严谨的排序">严谨的排序</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># All these comparisons are illegal in Python 3</span>
+<span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;</span> None
+(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">3</span>, None)
+(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+
+<span style="color:#75715e"># False in both Python 2 and Python 3</span>
+(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>) <span style="color:#f92672">==</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+</code></pre></div><blockquote>
+<ul>
+<li>prevents from occasional sorting of instances of different types</li>
+</ul>
+</blockquote>
+<ul>
+<li>防止偶尔对不同类型的实例进行排序
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sorted([<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">3</span>])  <span style="color:#75715e"># invalid for Python 3, in Python 2 returns [2, 3, &#39;1&#39;]</span>
+</code></pre></div></li>
+</ul>
+<blockquote>
+<ul>
+<li>helps to spot some problems that arise when processing raw data</li>
+</ul>
+</blockquote>
+<ul>
+<li>有助于发现在处理原始数据时的一些问题</li>
+</ul>
+<blockquote>
+<p>Sidenote: proper check for None is (in both Python versions)</p>
+</blockquote>
+<p>边注：合理检查None的情况（Python两个版本中都有）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> a <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
+  <span style="color:#66d9ef">pass</span>
+
+<span style="color:#66d9ef">if</span> a: <span style="color:#75715e"># WRONG check for None</span>
+  <span style="color:#66d9ef">pass</span>
+</code></pre></div><h2 id="用于nlp的unicode">用于NLP的Unicode</h2>
+<p>*译者注：NLP，自然语言处理 (Natural Language Processing) *</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">您好</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#66d9ef">print</span>(len(s))
+<span style="color:#66d9ef">print</span>(s[:<span style="color:#ae81ff">2</span>])
+</code></pre></div><p>输出:</p>
+<ul>
+<li>Python 2: <code>6\n��</code></li>
+<li>Python 3: <code>2\n您好</code>.</li>
+</ul>
+<pre><code>x = u'со'
+x += 'co' # ok
+x += 'со' # fail
+</code></pre><blockquote>
+<p>Python 2 fails, Python 3 works as expected (because I&rsquo;ve used russian letters in strings).</p>
+</blockquote>
+<p>Python 2 失败了，Python 3 如预期运行（因为我在字符串中使用了俄语的文字）。</p>
+<blockquote>
+<p>In Python 3 <code>str</code>s are unicode strings, and it is more convenient for NLP processing of non-english texts.</p>
+</blockquote>
+<p>在Python 3 中，<code>str</code>是unicode字符串，对于非英文文本的NLP处理更为方便。</p>
+<blockquote>
+<p>There are other funny things, for instance:</p>
+</blockquote>
+<p>这还有一些其他有趣的事情，比如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&lt;</span> type <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>  <span style="color:#75715e"># Python 2: True</span>
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>         <span style="color:#75715e"># Python 2: False</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+Counter(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Möbelstück</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><ul>
+<li>Python 2: <code>Counter({'\xc3': 2, 'b': 1, 'e': 1, 'c': 1, 'k': 1, 'M': 1, 'l': 1, 's': 1, 't': 1, '\xb6': 1, '\xbc': 1})</code></li>
+<li>Python 3: <code>Counter({'M': 1, 'ö': 1, 'b': 1, 'e': 1, 'l': 1, 's': 1, 't': 1, 'ü': 1, 'c': 1, 'k': 1})</code></li>
+</ul>
+<blockquote>
+<p>You can handle all of this in Python 2 properly, but Python 3 is more friendly.</p>
+</blockquote>
+<p>虽然你可以用Python 2正确地处理所有这些情况，但Python 3显得更加友好。</p>
+<h2 id="保留字典和-kwargs的顺序">保留字典和** kwargs的顺序</h2>
+<blockquote>
+<p>In CPython 3.6+ dicts behave like <code>OrderedDict</code> by default (and <a href="https://stackoverflow.com/questions/39980323/are-dictionaries-ordered-in-python-3-6">this is guaranteed in Python 3.7+</a>).
+This preserves order during dict comprehensions (and other operations, e.g. during json serialization/deserialization)</p>
+</blockquote>
+<p>在CPython 3.6+中，字典的默认行为与<code>OrderedDict</code>类似（并且<a href="(https://stackoverflow.com/questions/39980323/are-dictionaries-ordered-in-python-3-6)">这在Python 3.7+ 中也得到了保证</a>）。这在字典释义时提供了顺序（以及其他操作执行时，比如json序列化/反序列化）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+x <span style="color:#f92672">=</span> {str(i):i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)}
+json<span style="color:#f92672">.</span>loads(json<span style="color:#f92672">.</span>dumps(x))
+<span style="color:#75715e"># Python 2</span>
+{<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">4</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">4</span>}
+<span style="color:#75715e"># Python 3</span>
+{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">3</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">4</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">4</span>}
+</code></pre></div><blockquote>
+<p>Same applies to <code>**kwargs</code> (in Python 3.6+), they&rsquo;re kept in the same order as they appear in parameters.
+Order is crucial when it comes to data pipelines, previously we had to write it in a cumbersome manner:</p>
+</blockquote>
+<p>同样适用于<code>** kwargs</code>（Python 3.6+），它们保持与它们在参数中出现的顺序相同。在数据管道方面，顺序至关重要，以前我们必须以繁琐的方式来编写：</p>
+<pre><code>from torch import nn
+
+# Python 2
+model = nn.Sequential(OrderedDict([
+          ('conv1', nn.Conv2d(1,20,5)),
+          ('relu1', nn.ReLU()),
+          ('conv2', nn.Conv2d(20,64,5)),
+          ('relu2', nn.ReLU())
+        ]))
+
+# Python 3.6+, how it *can* be done, not supported right now in pytorch
+model = nn.Sequential(
+    conv1=nn.Conv2d(1,20,5),
+    relu1=nn.ReLU(),
+    conv2=nn.Conv2d(20,64,5),
+    relu2=nn.ReLU())
+)
+</code></pre><blockquote>
+<p>Did you notice? Uniqueness of names is also checked automatically.</p>
+</blockquote>
+<p>你注意到了吗？命名的唯一性也会自动检查。</p>
+<h2 id="可迭代对象的iterable解压">可迭代对象的（Iterable）解压</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># handy when amount of additional stored info may vary between experiments, but the same code can be used in all cases</span>
+model_paramteres, optimizer_parameters, <span style="color:#f92672">*</span>other_params <span style="color:#f92672">=</span> load(checkpoint_name)
+
+<span style="color:#75715e"># picking two last values from a sequence</span>
+<span style="color:#f92672">*</span>prev, next_to_last, last <span style="color:#f92672">=</span> values_history
+
+<span style="color:#75715e"># This also works with any iterables, so if you have a function that yields e.g. qualities,</span>
+<span style="color:#75715e"># below is a simple way to take only last two values from a list</span>
+<span style="color:#f92672">*</span>prev, next_to_last, last <span style="color:#f92672">=</span> iter_train(args)
+</code></pre></div><h2 id="默认的pickle引擎为数组提供更好的压缩">默认的pickle引擎为数组提供更好的压缩</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#f92672">import</span> cPickle <span style="color:#f92672">as</span> pickle
+<span style="color:#f92672">import</span> numpy
+<span style="color:#66d9ef">print</span> len(pickle<span style="color:#f92672">.</span>dumps(numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>])))
+<span style="color:#75715e"># result: 23691675</span>
+
+<span style="color:#75715e"># Python 3</span>
+<span style="color:#f92672">import</span> pickle
+<span style="color:#f92672">import</span> numpy
+len(pickle<span style="color:#f92672">.</span>dumps(numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>])))
+<span style="color:#75715e"># result: 8000162</span>
+</code></pre></div><blockquote>
+<p>Three times less space. And it is <em>much</em> faster.
+Actually similar compression (but not speed) is achievable with <code>protocol=2</code> parameter, but users typically ignore this option (or simply are not aware of it).</p>
+</blockquote>
+<p>1/3的空间，以及<em>更加</em>快的速度。事实上，使用<code>protocol = 2</code>参数可以实现类似的压缩（速度则大相径庭），但用户通常会忽略此选项（或者根本不知道它）。</p>
+<h2 id="更安全的压缩">更安全的压缩</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">labels <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span>initial_value<span style="color:#f92672">&gt;</span>
+predictions <span style="color:#f92672">=</span> [model<span style="color:#f92672">.</span>predict(data) <span style="color:#66d9ef">for</span> data, labels <span style="color:#f92672">in</span> dataset]
+
+<span style="color:#75715e"># labels are overwritten in Python 2</span>
+<span style="color:#75715e"># labels are not affected by comprehension in Python 3</span>
+</code></pre></div><h2 id="超简单的super函数">超简单的super()函数</h2>
+<blockquote>
+<p>Python 2 <code>super(...)</code> was a frequent source of mistakes in code.</p>
+</blockquote>
+<p>Python 2 中的<code>super(...)</code>曾是代码中最常见的错误源头。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 2</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MySubClass</span>(MySuperClass):
+    <span style="color:#66d9ef">def</span> __init__(self, name, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options):
+        super(MySubClass, self)<span style="color:#f92672">.</span>__init__(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">subclass</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options)
+
+<span style="color:#75715e"># Python 3</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MySubClass</span>(MySuperClass):
+    <span style="color:#66d9ef">def</span> __init__(self, name, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options):
+        super()<span style="color:#f92672">.</span>__init__(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">subclass</span><span style="color:#e6db74">&#39;</span>, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>options)
+</code></pre></div><blockquote>
+<p>More on <code>super</code> and method resolution order on <a href="https://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods">stackoverflow</a>.</p>
+</blockquote>
+<p><a href="https://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods">stackoverflow</a>上有更多关于<code>super</code>和方法解决的信息。</p>
+<h2 id="有着变量注释的更好的ide建议">有着变量注释的更好的IDE建议</h2>
+<blockquote>
+<p>The most enjoyable thing about programming in languages like Java, C# and alike is that IDE can make very good suggestions,
+because type of each identifier is known before executing a program.</p>
+</blockquote>
+<p>关于Java，C＃等语言编程最令人享受的事情是IDE可以提出非常好的建议，因为每个标识符的类型在执行程序之前是已知的。</p>
+<blockquote>
+<p>In python this is hard to achieve, but annotations will help you</p>
+<ul>
+<li>write your expectations in a clear form</li>
+<li>and get good suggestions from IDE</li>
+</ul>
+</blockquote>
+<p>Python中这很难实现，但注释是会帮助你的</p>
+<ul>
+<li>以清晰的形式写下你的期望</li>
+<li>并从IDE获得很好的建议</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>This is an example of PyCharm suggestions with variable annotations.
+This works even in situations when functions you use are not annotated (e.g. due to backward compatibility).</p>
+</blockquote>
+<p>这是PyCharm带有变量声明建议的一个例子。即使在你使用的功能未被注释过的情况依旧是有效的（例如，向后的兼容性）。</p>
+<h2 id="更多的解包unpacking">更多的解包（unpacking）</h2>
+<blockquote>
+<p>Here is how you merge two dicts now:</p>
+</blockquote>
+<p>现在展示如何合并两个字典：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> dict(a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+y <span style="color:#f92672">=</span> dict(b<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, d<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+<span style="color:#75715e"># Python 3.5+</span>
+z <span style="color:#f92672">=</span> {<span style="color:#f92672">*</span><span style="color:#f92672">*</span>x, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>y}
+<span style="color:#75715e"># z = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;d&#39;: 4}, note that value for `b` is taken from the latter dict.</span>
+</code></pre></div><blockquote>
+<p>See <a href="https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression">this thread at StackOverflow</a> for a comparison with Python 2.</p>
+</blockquote>
+<p>请参照<a href="https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression">在StackOverflow上的这一过程</a>，与Python 2进行比较。</p>
+<blockquote>
+<p>The same approach also works for lists, tuples, and sets (<code>a</code>, <code>b</code>, <code>c</code> are any iterables):</p>
+</blockquote>
+<p>同样的方法对于列表，元组，以及集合（<code>a</code>, <code>b</code>, <code>c</code> 是可任意迭代的）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c] <span style="color:#75715e"># list, concatenating</span>
+(<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c) <span style="color:#75715e"># tuple, concatenating</span>
+{<span style="color:#f92672">*</span>a, <span style="color:#f92672">*</span>b, <span style="color:#f92672">*</span>c} <span style="color:#75715e"># set, union</span>
+</code></pre></div><blockquote>
+<p>Functions also <a href="https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-448">support this</a> for <code>*args</code> and <code>**kwargs</code>:</p>
+</blockquote>
+<p>函数对于参数<code>*args</code>和<code>**kwargs</code>同样<a href="https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-448">支持</a></p>
+<pre><code>Python 3.5+
+do_something(**{**default_settings, **custom_settings})
+
+# Also possible, this code also checks there is no intersection between keys of dictionaries
+do_something(**first_args, **second_args)
+</code></pre><h2 id="具有关键字参数的面向未来的api">具有关键字参数的面向未来的API</h2>
+<p>让我们看一下这个代码片段：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> sklearn<span style="color:#f92672">.</span>svm<span style="color:#f92672">.</span>SVC(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">poly</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0.5</span>)
+</code></pre></div><blockquote>
+<p>Obviously, an author of this code didn&rsquo;t get the Python style of coding yet (most probably, just jumped from cpp or rust).
+Unfortunately, this is not just question of taste, because changing the order of arguments (adding/deleting) in <code>SVC</code> will break this code. In particular, <code>sklearn</code> does some reordering/renaming from time to time of numerous algorithm parameters to provide consistent API. Each such refactoring may drive to broken code.</p>
+</blockquote>
+<p>很明显，代码的作者还未理解Python的编码风格（很有可能是从cpp或者rust转到Python的）。
+不幸的是，这不仅仅是品味的问题，因为在<code>SVC</code>中改变参数顺序（添加/删除）都会破坏代码。 特别是，<code>sklearn</code>会不时地对许多算法参数进行重新排序/重命名以提供一致的API。 每个这样的重构都可能导致代码损坏。</p>
+<blockquote>
+<p>In Python 3, library authors may demand explicitly named parameters by using <code>*</code>:</p>
+</blockquote>
+<p>在Python 3中，类库作者可能会通过使用<code>*</code>来要求明确命名的参数：</p>
+<pre><code>class SVC(BaseSVC):
+    def __init__(self, *, C=1.0, kernel='rbf', degree=3, gamma='auto', coef0=0.0, ... )
+</code></pre><blockquote>
+<ul>
+<li>users have to specify names of parameters <code>sklearn.svm.SVC(C=2, kernel='poly', degree=2, gamma=4, coef0=0.5)</code> now</li>
+<li>this mechanism provides a great combination of reliability and flexibility of APIs</li>
+</ul>
+</blockquote>
+<ul>
+<li>用户现在必须指定参数名称为<code>sklearn.svm.SVC(C=2, kernel='poly', degree=2, gamma=4, coef0=0.5)</code></li>
+<li>这种机制提供了API完美结合的可靠性和灵活性</li>
+</ul>
+<h2 id="次要-math模块中的常量">次要: <code>math</code>模块中的常量</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 3</span>
+math<span style="color:#f92672">.</span>inf <span style="color:#75715e"># &#39;largest&#39; number</span>
+math<span style="color:#f92672">.</span>nan <span style="color:#75715e"># not a number</span>
+
+max_quality <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>inf  <span style="color:#75715e"># no more magic initial values!</span>
+
+<span style="color:#66d9ef">for</span> model <span style="color:#f92672">in</span> trained_models:
+    max_quality <span style="color:#f92672">=</span> max(max_quality, compute_quality(model, data))
+</code></pre></div><h2 id="次要-单一的整数类型">次要: 单一的整数类型</h2>
+<blockquote>
+<p>Python 2 provides two basic integer types, which are int (64-bit signed integer) and long for long arithmetics (quite confusing after C++).</p>
+</blockquote>
+<p>Python 2提供了两种基础的整数类型，int(64位有符号的整数)以及对于长整型计算的long（在C++之后就变得非常混乱）。</p>
+<blockquote>
+<p>Python 3 has a single type <code>int</code>, which incorporates long arithmetics.</p>
+</blockquote>
+<p>Python 3有着单一的类型<code>int</code>，其同时融合了长整型的计算。</p>
+<blockquote>
+<p>Here is how you check that value is integer:</p>
+</blockquote>
+<p>如下为如何检查该值是整数：</p>
+<pre><code>isinstance(x, numbers.Integral) # Python 2, the canonical way
+isinstance(x, (long, int))      # Python 2
+isinstance(x, int)              # Python 3, easier to remember
+</code></pre><h2 id="其他事项">其他事项</h2>
+<ul>
+<li><code>Enum</code>s are theoretically useful, but
+<ul>
+<li>string-typing is already widely adopted in the python data stack</li>
+<li><code>Enum</code>s don&rsquo;t seem to interplay with numpy and categorical from pandas</li>
+</ul>
+</li>
+<li>coroutines also <em>sound</em> very promising for data pipelining (see <a href="http://www.dabeaz.com/coroutines/Coroutines.pdf">slides</a> by David Beazley), but I don&rsquo;t see their adoption in the wild.</li>
+<li>Python 3 has <a href="https://www.python.org/dev/peps/pep-0384/">stable ABI</a></li>
+<li>Python 3 supports unicode identifies (so <code>ω = Δφ / Δt</code> is ok), but you&rsquo;d <a href="https://stackoverflow.com/a/29855176/498892">better use good old ASCII names</a></li>
+<li>some libraries e.g. <a href="https://github.com/jupyterhub/jupyterhub">jupyterhub</a> (jupyter in cloud), django and fresh ipython only support Python 3, so features that sound useless for you are useful for libraries you&rsquo;ll probably want to use once.</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><code>Enum</code>（枚举类）理论上是有用的，但是</p>
+<ul>
+<li>string-typing 已经在Python数据栈中被广泛采用</li>
+<li><code>Enum</code>似乎不会与numpy和pandas的分类相互作用</li>
+</ul>
+</li>
+<li>
+<p>协程（coroutines）<em>听起来</em>也非常适用于数据管道（参见David Beazley的<a href="http://www.dabeaz.com/coroutines/Coroutines.pdf">幻灯片</a>），但是我从来没见过代码引用它们。</p>
+</li>
+<li>
+<p>Python 3 有着<a href="https://www.python.org/dev/peps/pep-0384/">稳定的ABI</a></p>
+<p><em>ABI（Application Binary Interface）: 应用程序二进制接口 描述了应用程序和操作系统之间，一个应用和它的库之间，或者应用的组成部分之间的低接口。</em></p>
+</li>
+<li>
+<p>Python 3支持unicode标识（甚至<code>ω=Δφ/Δt</code>也可以），但是你<a href="https://stackoverflow.com/a/29855176/498892">最好使用好的旧ASCII名称</a>。</p>
+</li>
+<li>
+<p>一些类库例如 <a href="https://github.com/jupyterhub/jupyterhub">jupyterhub</a>（云端的jupyter），django和最新的ipython仅支持Python 3，因此对于您来说听起来无用的功能，对于您可能想要使用的库却很有用。</p>
+</li>
+</ul>
+<h3 id="特定于数据科学的代码迁移问题以及如何解决这些问题">特定于数据科学的代码迁移问题（以及如何解决这些问题）</h3>
+<blockquote>
+<ul>
+<li>support for nested arguments <a href="https://www.python.org/dev/peps/pep-3113/">was dropped</a></li>
+</ul>
+</blockquote>
+<ul>
+<li>对于嵌套参数的支持<a href="https://www.python.org/dev/peps/pep-3113/">已被删除</a>。</li>
+</ul>
+<pre><code>  map(lambda x, (y, z): x, z, dict.items())
+</code></pre><blockquote>
+<p>However, it is still perfectly working with different comprehensions:</p>
+</blockquote>
+<p>但是，它仍然完全适用于不同的（列表）解析：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{x:z <span style="color:#66d9ef">for</span> x, (y, z) <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>items()}
+</code></pre></div><blockquote>
+<p>In general, comprehensions are also better &lsquo;translatable&rsquo; between Python 2 and 3.</p>
+</blockquote>
+<p>一般来说，Python 2和Python 3之间的解析也是有着更好的“可翻译性”。</p>
+<blockquote>
+<ul>
+<li><code>map()</code>, <code>.keys()</code>, <code>.values()</code>, <code>.items()</code>, etc. return iterators, not lists. Main problems with iterators are:</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>no trivial slicing</p>
+</li>
+<li>
+<p>can&rsquo;t be iterated twice</p>
+</li>
+<li>
+<p><code>map()</code>， <code>.keys()</code>， <code>.values()</code>， <code>.items()</code>等等返回的是迭代器（iterators），而不是列表（lists）。迭代器的主要问题如下：</p>
+<ul>
+<li>没有细小的切片</li>
+<li>不能迭代两次</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Almost all of the problems are resolved by converting result to list.</p>
+</blockquote>
+<p>将结果转换为列表几乎可以解决所有问题。</p>
+<blockquote>
+<ul>
+<li>see <a href="https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/">Python FAQ: How do I port to Python 3?</a> when in trouble.</li>
+</ul>
+</blockquote>
+<ul>
+<li>当你遇到问题时请参见<a href="https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/">Python FAQ: How do I port to Python 3?</a>。</li>
+</ul>
+<h3 id="使用python教授机器学习和数据科学的主要问题">使用python教授机器学习和数据科学的主要问题</h3>
+<blockquote>
+<p>Course authors should spend time in the first lectures to explain what is an iterator,
+why it can&rsquo;t be sliced / concatenated / multiplied / iterated twice like a string (and how to deal with it).</p>
+</blockquote>
+<p>课程讲解者应该花时间在第一讲中解释什么是迭代器，
+为什么它不能像字符串一样被分割/连接/相乘/重复两次（以及如何处理它）。</p>
+<blockquote>
+<p>I think most course authors would be happy to avoid these details, but now it is hardly possible.</p>
+</blockquote>
+<p>我认为大多数课程讲解者曾经都乐于避开这些细节，但现在几乎不可能（再避开了）。</p>
+<h2 id="结论">结论</h2>
+<blockquote>
+<p>Python 2 and Python 3 have co-existed for almost 10 years, but we <em>should</em> move to Python 3.</p>
+</blockquote>
+<p>虽然Python 2 和 Python 3 已经共存了十年有余，但是我们<em>应该</em>要过渡到Python 3 了。</p>
+<blockquote>
+<p>Research and production code should become a bit shorter, more readable, and significantly safer after moving to Python 3-only codebase.</p>
+</blockquote>
+<p>在转向使用唯一的 Python 3 代码库之后，研究和生产的代码将会变得更剪短，更有可读性，以及明显是更加安全的。</p>
+<blockquote>
+<p>Right now most libraries support both Python versions.
+And I can&rsquo;t wait for the bright moment when packages drop support for Python 2 and enjoy new language features.</p>
+</blockquote>
+<p>目前大部分类库都会支持两个Python版本，我已等不及要使用新的语言特性了，也同样期待依赖包舍弃对 Python 2 支持这一光明时刻的到来。</p>
+<blockquote>
+<p>Following migrations are promised to be smoother: <a href="https://snarky.ca/why-python-3-exists/">&ldquo;we will never do this kind of backwards-incompatible change again&rdquo;</a></p>
+</blockquote>
+<p>以后的(版本)迁移会更加顺利：<a href="https://snarky.ca/why-python-3-exists/">我们再也不会做这种不向后兼容的变化了</a>。</p>
+<h3 id="相关链接">相关链接</h3>
+<ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">Key differences between Python 2.7 and Python 3.x</a></li>
+<li><a href="https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/">Python FAQ: How do I port to Python 3?</a></li>
+<li><a href="http://www.asmeurer.com/python3-presentation/slides.html">10 awesome features of Python that you can&rsquo;t use because you refuse to upgrade to Python 3</a></li>
+<li><a href="http://pyvideo.org/pycon-us-2013/python-33-trust-me-its-better-than-27.html">Trust me, python 3.3 is better than 2.7 (video)</a></li>
+<li><a href="http://python-3-for-scientists.readthedocs.io/en/latest/">Python 3 for scientists</a></li>
+</ul>
+<h3 id="版权声明">版权声明</h3>
+<p>This text was published by <a href="https://arogozhnikov.github.io/about/">Alex Rogozhnikov</a> under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 License</a> (excluding images)</p>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

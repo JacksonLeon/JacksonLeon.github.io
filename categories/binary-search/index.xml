@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binary Search on GeekJoe</title>
+    <link>//localhost:1313/categories/binary-search/</link>
+    <description>Recent content in Binary Search on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jul 2018 18:31:11 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 852. Peak Index in a Mountain Array</title>
+      <link>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</link>
+      <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let&amp;rsquo;s call an array &lt;code&gt;A&lt;/code&gt; a &lt;em&gt;mountain&lt;/em&gt; if the following properties hold:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A.length &amp;gt;= 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;There exists some &lt;code&gt;0 &amp;lt; i &amp;lt; A.length - 1&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given an array that is definitely a mountain, return any &lt;code&gt;i&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

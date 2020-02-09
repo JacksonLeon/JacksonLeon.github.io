@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leetcode 771. Jewels and Stones | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Leetcode 771. Jewels and Stones</span></h1>
+
+<h2 class="date">2018/03/22</h2>
+</div>
+
+<main>
+<h3 id="desciption">Desciption</h3>
+<blockquote>
+<p>You&rsquo;re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels. The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so &ldquo;a&rdquo; is considered a different type of stone from &ldquo;A&rdquo;.</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="example">Example</h3>
+<ul>
+<li>Example 1</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m" data-lang="m">Input: J = &#34;aA&#34;, S = &#34;aAAbbbb&#34;
+Output: <span style="color:#ae81ff">3</span>
+</code></pre></div><ul>
+<li>Example 2</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m" data-lang="m">Input: J = &#34;z&#34;, S = &#34;ZZ&#34;
+Output: <span style="color:#ae81ff">0</span>
+</code></pre></div><h3 id="note">Note</h3>
+<ul>
+<li>S and J  wil consist of letters and have length at most 500</li>
+<li>The charactors in J are distinct</li>
+</ul>
+<h3 id="solutions">Solutions</h3>
+<h4 id="first-try">first try</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span>(string J, string S) {
+        <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>J.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        {
+            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>S.size();j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+            {
+                <span style="color:#66d9ef">if</span>(J[i]<span style="color:#f92672">=</span><span style="color:#f92672">=</span>S[j])
+                {
+                    c<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> c;
+    }
+</code></pre></div><h4 id="solutions-in-discuss">Solutions in Discuss</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span>(string J, string S) {
+        <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+        set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span> setj(J.begin(),J.end());
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> s:S)<span style="color:#66d9ef">if</span>(setj.count(s))c<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">return</span> c;
+    }
+</code></pre></div><p>Java Solution</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span><span style="color:#f92672">(</span>String J<span style="color:#f92672">,</span> String S<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>J<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">-</span>1<span style="color:#f92672">)</span>
+                c<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> c<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

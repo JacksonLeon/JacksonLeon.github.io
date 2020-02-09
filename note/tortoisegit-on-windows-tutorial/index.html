@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TortoiseGit on windows tutorial | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">TortoiseGit on windows tutorial</span></h1>
+
+<h2 class="date">2018/12/10</h2>
+</div>
+
+<main>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>Tutorial of TortoiseGit on Windows.</p>
+</blockquote>
+<blockquote>
+<p><strong>TortoiseGit</strong> is a <a href="https://en.wikipedia.org/wiki/Git_(software)">Git</a> revision control client, implemented as a <a href="https://en.wikipedia.org/wiki/Windows_shell_extension">Windows shell extension</a> and based on <a href="https://en.wikipedia.org/wiki/TortoiseSVN">TortoiseSVN</a>. It is <a href="https://en.wikipedia.org/wiki/Free_software">free software</a> released under the <a href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a>.</p>
+<p>In <a href="https://en.wikipedia.org/wiki/Windows_Explorer">Windows Explorer</a>, besides showing context menu items for Git commands, TortoiseGit provides icon overlays that indicate the status of Git working trees and files.</p>
+<p>It also comes with the TortoiseGitMerge utility to visually compare two files and resolve conflicts.</p>
+</blockquote>
+<h2 id="安装-tortoisegit">安装 TortoiseGit</h2>
+<ul>
+<li>需要下载<a href="https://git-for-windows.github.io/">Git</a> 以及<a href="https://tortoisegit.org/download/">TortoiseGit</a></li>
+<li>TortoiseGit 官网自带<a href="https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-64bit-zh_CN.msi">中文语言包(64位)</a></li>
+</ul>
+<p>安装比较简单,一路Next,只需要注意下面几点:</p>
+<ul>
+<li>开始安装一路Next</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8315f3303e.jpg" alt=""></p>
+<h2 id="配置软件">配置软件</h2>
+<ul>
+<li>勾选Run first start wizard</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831671944b.jpg" alt=""></p>
+<ul>
+<li>设置本地Git路径</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8316d65b19.jpg" alt=""></p>
+<ul>
+<li>设置用户名与邮箱地址</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831723ef60.jpg" alt=""></p>
+<ul>
+<li>选择OpenSSh作为SSH软件工具(默认的会出现不知名错误)</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8317791285.jpg" alt=""></p>
+<ul>
+<li>在相同的页面选择Generate PuTTY key pair</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8317d84186.jpg" alt=""></p>
+<ul>
+<li>点击生成,鼠标需要在空白处移动,不然进度会非常慢</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc83182d5222.jpg" alt=""></p>
+<ul>
+<li>把生成的密钥内容粘贴进git库中的SSH 密钥的位置(设置-SSH 公钥)并保存到本地</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8318979b81.jpg" alt=""></p>
+<ul>
+<li>打开Pageant(TortoiseGit文件夹下),点击Add,将刚刚生成的文件添加进去</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8318d7debc.jpg" alt=""></p>
+<h2 id="开始使用">开始使用</h2>
+<h3 id="clone到本地">Clone到本地</h3>
+<ul>
+<li>工程文件夹下选择Git Clone,将Remote工程文件夹拉取到本地</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8319796c77.jpg" alt=""></p>
+<ul>
+<li>URL中填写项目地址(SSH),Directory中填写工程所在位置,点击OK即可拉取到本地(与SVN操作大致相同)</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc8319f13886.jpg" alt=""></p>
+<h3 id="将本地更新推送到远程">将本地更新推送到远程</h3>
+<ul>
+<li>选择Git Commit&hellip;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831a5ee860.jpg" alt=""></p>
+<ul>
+<li>输入Message后点击Commit</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831acb7c9b.jpg" alt=""></p>
+<ul>
+<li>接着点击Push并勾选合适的参数推送到远程客户端</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831b27eea8.jpg" alt=""></p>
+<p><img src="https://i.loli.net/2019/04/30/5cc831b853356.jpg" alt=""></p>
+<ul>
+<li>Push完成,一次本地更新结束,其他操作类似</li>
+</ul>
+<h3 id="其他功能">其他功能</h3>
+<ul>
+<li>TortoiseGitDiff</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831bdd9e68.jpg" alt=""></p>
+<p><img src="https://i.loli.net/2019/04/30/5cc831c3cd65e.jpg" alt=""></p>
+<ul>
+<li>TortoiseGit选项</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/30/5cc831c97a2f3.jpg" alt=""></p>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

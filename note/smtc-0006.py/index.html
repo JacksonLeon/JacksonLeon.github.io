@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMTC 0006.py | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">SMTC 0006.py</span></h1>
+
+<h2 class="date">2019/02/04</h2>
+</div>
+
+<main>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>Show me the code 第0006题 Python版</p>
+<p>{% post_link show-me-the-code 完整题目 %}</p>
+</blockquote>
+<h2 id="题目">题目</h2>
+<p><strong>第 0006 题：</strong> 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。</p>
+<h2 id="思路">思路</h2>
+<ol>
+<li>首先英文可以避免分词的问题，中文可能就需要引入终止词</li>
+<li>需要对日记进行清洗，去除掉标点符号等</li>
+<li>对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词</li>
+<li>这就可以用到第0004题中的Solution</li>
+</ol>
+<h2 id="solution">Solution</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">GetTF</span>(filesPath):
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(filesPath):
+        <span style="color:#66d9ef">return</span>
+    files<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>listdir(filesPath)
+    <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> files:
+        filePath<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(filesPath,file)
+        <span style="color:#75715e"># 判断是否为文件且文件后缀名是否为.txt</span>
+        <span style="color:#75715e"># 去除其他文件的影响</span>
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.txt</span><span style="color:#e6db74">&#39;</span>:
+            <span style="color:#66d9ef">with</span> open(filePath) <span style="color:#66d9ef">as</span> text:
+                content<span style="color:#f92672">=</span>text<span style="color:#f92672">.</span>read()
+                <span style="color:#75715e"># 去除标点符号</span>
+                <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-.,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>:
+                    content<span style="color:#f92672">=</span>content<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
+                content<span style="color:#f92672">=</span>content<span style="color:#f92672">.</span>lower()
+                wordList<span style="color:#f92672">=</span>content<span style="color:#f92672">.</span>split()
+                wordDic<span style="color:#f92672">=</span>{}
+                <span style="color:#75715e"># 去除无用词</span>
+                exceptWord<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">the</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">to</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">and</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">of</span><span style="color:#e6db74">&#39;</span>]
+                <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> wordList:
+                    <span style="color:#66d9ef">if</span> word <span style="color:#f92672">in</span> exceptWord:
+                        <span style="color:#66d9ef">continue</span>
+                    <span style="color:#66d9ef">if</span> word <span style="color:#f92672">in</span> wordDic:
+                        wordDic[word]<span style="color:#f92672">+</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+                    <span style="color:#66d9ef">else</span>:
+                        wordDic[word]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+                <span style="color:#75715e"># 倒序排序</span>
+                res<span style="color:#f92672">=</span>sorted(wordDic<span style="color:#f92672">.</span>items(),key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> t: t[<span style="color:#ae81ff">1</span>],reverse<span style="color:#f92672">=</span>True)
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">the most important word in {0} is {1}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(filePath,res[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]))
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
+    GetTF(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Users/lau/Documents/Coding/Python/SMTC/source/0006</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p><strong>Result：</strong></p>
+<pre><code>the most important word in /Users/lau/Documents/Coding/Python/SMTC/source/0006/3.txt is language
+the most important word in /Users/lau/Documents/Coding/Python/SMTC/source/0006/2.txt is based
+the most important word in /Users/lau/Documents/Coding/Python/SMTC/source/0006/1.txt is programming
+</code></pre><h2 id="qa">Q&amp;A</h2>
+<ol>
+<li>
+<p><code>os.path.splitext(path)</code></p>
+<p>Split the pathname <em>path</em> into a pair <code>(root, ext)</code> such that <code>root + ext == path</code>, and <em>ext</em> is empty or begins with a period and contains at most one period. Leading periods on the basename are ignored; <code>splitext('.cshrc')</code> returns<code>('.cshrc', '')</code>.</p>
+</li>
+</ol>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

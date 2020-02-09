@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Library on GeekJoe</title>
+    <link>//localhost:1313/categories/library/</link>
+    <description>Recent content in Library on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Jan 2019 22:42:51 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Library</title>
+      <link>//localhost:1313/note/python-library/</link>
+      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/python-library/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;汇总使用过的Python库&lt;/p&gt;
+&lt;p&gt;简单记一下模块功能以及函数原型&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

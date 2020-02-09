@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMTC 0000.py | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">SMTC 0000.py</span></h1>
+
+<h2 class="date">2019/01/29</h2>
+</div>
+
+<main>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>Show me the code 第0000题 Python版</p>
+<p>{% post_link show-me-the-code 完整题目 %}</p>
+</blockquote>
+<h2 id="题目">题目</h2>
+<p>第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果：</p>
+<p><img src="https://camo.githubusercontent.com/d518d3929e4054ce2f9183b23e52908da7e5632d/687474703a2f2f692e696d6775722e636f6d2f736732646b75592e706e673f31" alt="头像"></p>
+<h2 id="思路">思路</h2>
+<p><a href="https://pillow.readthedocs.io/en/4.0.x/reference/ImageDraw.html">利用Pillow模块中提供的ImageDraw</a>在图片上画图形或者文字。</p>
+<p>首先打开图片，使用<code>Image.open()</code>，在这之前需要导入<code>pillow</code>模块库，<code>import PIL</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Creates an object that can be used to draw in the given image.</span>
+<span style="color:#75715e"># PIL.ImageDraw.Draw(im, mode=None)</span>
+imgDraw <span style="color:#f92672">=</span> ImageDraw<span style="color:#f92672">.</span>Draw(image)
+</code></pre></div><p>设置填充字体以及颜色，获取图片大小，好设置填充位置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 颜色</span>
+fillColor <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#ff0000</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#75715e"># 大小</span>
+width, height <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>size
+<span style="color:#75715e"># 字体</span>
+myFont <span style="color:#f92672">=</span> ImageFont<span style="color:#f92672">.</span>truetype(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Library/Fonts/Tahoma.ttf</span><span style="color:#e6db74">&#39;</span>, size<span style="color:#f92672">=</span>width<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)
+</code></pre></div><p>接着<code>imgDraw.text((width-100, 0), 'hello', *fill*=fillColor, *font*=myFont)</code>，填充数字或者单词。</p>
+<p>保存图片完成。</p>
+<h2 id="solution">Solution</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding:utf-8 -*-</span>
+<span style="color:#f92672">import</span> PIL
+<span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+<span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> ImageDraw
+<span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> ImageFont
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_num</span>(imgName):
+    <span style="color:#75715e"># 打开图片</span>
+    image <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(imgName)
+    <span style="color:#75715e"># Creates an object that can be used to draw in the given image.</span>
+    <span style="color:#75715e"># PIL.ImageDraw.Draw(im, mode=None)</span>
+    imgDraw <span style="color:#f92672">=</span> ImageDraw<span style="color:#f92672">.</span>Draw(image)
+    <span style="color:#75715e"># 颜色</span>
+    fillColor <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#ff0000</span><span style="color:#e6db74">&#39;</span>
+    <span style="color:#75715e"># 大小</span>
+    width, height <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>size
+    <span style="color:#75715e"># 字体</span>
+    <span style="color:#75715e"># 使用中文字体时才可以渲染中文</span>
+    myFont <span style="color:#f92672">=</span> ImageFont<span style="color:#f92672">.</span>truetype(
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Library/Fonts/Songti.ttc</span><span style="color:#e6db74">&#39;</span>, size<span style="color:#f92672">=</span>width<span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)
+    imgDraw<span style="color:#f92672">.</span>text((width<span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">0</span>), <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">你好</span><span style="color:#e6db74">&#39;</span>, fill<span style="color:#f92672">=</span>fillColor, font<span style="color:#f92672">=</span>myFont)
+    <span style="color:#75715e"># image.show()</span>
+    image<span style="color:#f92672">.</span>save(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Users/lau/Documents/Coding/Python/SMTC/0000/result.jpg</span><span style="color:#e6db74">&#39;</span>)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
+    add_num(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Users/lau/Documents/Coding/Python/SMTC/0000/0000.jpeg</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p><strong>原图</strong>：</p>
+<p><img src="https://i.loli.net/2019/04/30/5cc831cf1b5f7.jpg" alt="0000"></p>
+<p><strong>效果图</strong>：</p>
+<p><img src="https://i.loli.net/2019/04/30/5cc831d7cc127.jpg" alt="result"></p>
+<h2 id="qa">Q&amp;A</h2>
+<ol>
+<li>
+<p>ModuleNotFoundError: No module named &lsquo;PIL’</p>
+<p>由于pillow模块未安装，所以需要使用pip(3)安装</p>
+<p><code>pip3 install Pillow</code></p>
+</li>
+<li>
+<p><code>/usr/local/bin/python3 -m pip install -U pylint --user</code></p>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-pylint/index.html">Pylint 是什么</a></p>
+</li>
+<li>
+<p>ImageDraw</p>
+<p><a href="https://pillow.readthedocs.io/en/4.0.x/reference/ImageDraw.html">官方文档</a></p>
+</li>
+<li>
+<p>找不到图片</p>
+<p>相对路径找不到时，试试绝对路径。</p>
+</li>
+<li>
+<p>如果要加汉字呢？编码问题怎么解决？</p>
+<ul>
+<li>换个中文字体</li>
+<li>指定utf-8<strong>编码</strong></li>
+</ul>
+</li>
+</ol>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

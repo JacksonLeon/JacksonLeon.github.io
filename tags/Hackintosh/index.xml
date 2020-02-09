@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackintosh on GeekJoe</title>
+    <link>//localhost:1313/tags/hackintosh/</link>
+    <description>Recent content in Hackintosh on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Dec 2018 21:50:01 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/hackintosh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hackintosh for Lenovo Ideapad 700 15isk</title>
+      <link>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</link>
+      <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引言
+最近更换了固态硬盘，所以就有一个闲置了出来，然后就在京东上面买了一个M.2接口NGFF协议的固态硬盘盒，用来装Hackintosh.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

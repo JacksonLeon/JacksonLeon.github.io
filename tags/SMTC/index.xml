@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMTC on GeekJoe</title>
+    <link>//localhost:1313/tags/smtc/</link>
+    <description>Recent content in SMTC on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Feb 2019 11:51:54 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/smtc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SMTC 0007.py</title>
+      <link>//localhost:1313/note/smtc-0007.py/</link>
+      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0007.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0006.py</title>
+      <link>//localhost:1313/note/smtc-0006.py/</link>
+      <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0006.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0000.py</title>
+      <link>//localhost:1313/note/smtc-0000.py/</link>
+      <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0000.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

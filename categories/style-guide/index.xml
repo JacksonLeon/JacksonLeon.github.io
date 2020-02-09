@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Style Guide on GeekJoe</title>
+    <link>//localhost:1313/categories/style-guide/</link>
+    <description>Recent content in Style Guide on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/style-guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pytorch Style Guide</title>
+      <link>//localhost:1313/note/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/pytorch-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>//localhost:1313/note/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/google-python-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

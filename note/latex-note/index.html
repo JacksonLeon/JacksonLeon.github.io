@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LaTeX Note | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">LaTeX Note</span></h1>
+
+<h2 class="date">2019/03/19</h2>
+</div>
+
+<main>
+<h2 id="description">Description</h2>
+<blockquote>
+<p>LaTeX Note</p>
+</blockquote>
+<h2 id="安装">安装</h2>
+<h3 id="mac">Mac</h3>
+<p>MacTex 安装包非常大，而且自带了很多图形应用。但是我更喜欢用命令行，而且MacTex 还有 no-gui 版本，省去安装各种缺少的包。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install mactex-no-gui
+<span style="color:#75715e"># 添加到环境变量</span>
+export PATH<span style="color:#f92672">=</span>/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+<span style="color:#75715e"># 换源</span>
+sudo tlmgr update --self --repository http://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+sudo tlmgr install latexmk --repository http://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+</code></pre></div><p>测试</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">xelatex test.tex
+</code></pre></div><h2 id="公式">公式</h2>
+<h3 id="数学公式">数学公式</h3>
+<ul>
+<li>
+<p>二元运算符</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>公式</th>
+<th>符号</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\triangleleft$</td>
+<td><code>\triangleleft</code></td>
+<td>$\times$</td>
+<td><code>\times</code></td>
+</tr>
+<tr>
+<td>$\bigtriangleup$</td>
+<td><code>\bigtriangleup</code></td>
+<td>$\div$</td>
+<td><code>\div</code></td>
+</tr>
+<tr>
+<td>$\bullet$</td>
+<td><code>\bullet</code></td>
+<td>$\cdot$</td>
+<td><code>\cdot</code></td>
+</tr>
+<tr>
+<td>$\ast$</td>
+<td><code>\ast</code></td>
+<td>$\otimes$</td>
+<td><code>\otimes</code></td>
+</tr>
+<tr>
+<td>$\circ$</td>
+<td><code>\circ</code></td>
+<td>$\setminus$</td>
+<td><code>\setminus</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>矩阵
+$$
+A=\left[\begin{matrix}1402 &amp; 191 \ 1371 &amp; 821 \ 949 &amp; 1437 \ 147 &amp; 1448\end{matrix}\right]
+$$</p>
+</li>
+<li>
+<p>数学公式
+$$
+\frac{\partial}{\partial \theta_j}J(\theta_0,\theta_1)=\frac{\partial}{\partial \theta_j} \frac{1}{2m}\sum\limits_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})^2\<br>
+=\frac{\partial}{\partial \theta_j}J(\theta_0,\theta_1)=\frac{\partial}{\partial \theta_j} \frac{1}{2m}\sum\limits_{i=1}^m(\theta_0+\theta_1x^{(i)}-y^{(i)})^2
+$$</p>
+</li>
+</ul>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

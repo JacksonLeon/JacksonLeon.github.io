@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hexo Note | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Hexo Note</span></h1>
+
+<h2 class="date">2018/03/25</h2>
+</div>
+
+<main>
+<h2 id="小技巧">小技巧</h2>
+<h3 id="hexo博客实现页内跳转">Hexo博客实现页内跳转</h3>
+<blockquote>
+<p>如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面</p>
+</blockquote>
+<p><del>{% post_link Macintosh-Note 传送门在此 %}，代码如下：</del></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"># 出现了莫名的BUG
+{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}
+</code></pre></div><p>上面的方法失效了，本博客目前使用的是<code>permalink</code>链接到唯一的文章，改了文章名也没有关系</p>
+<p><a href="/posts/1540132352.html">具体设置方法请看这里</a></p>
+<h3 id="next-主题中渲染-latex数学公式">Next 主题中渲染 LaTeX数学公式</h3>
+<h4 id="原因">原因</h4>
+<p>Hexo 默认使用 hexo-renderer-marked 引擎渲染网页，该引擎会把一些特殊的 markdown 符号转换为相应的 html 标签，比如在 markdown 语法中，下划线<code>_</code>代表斜体，会被渲染引擎处理为<code>&lt;em&gt;</code>标签。</p>
+<p>因为类 Latex 格式书写的数学公式下划线<code>_</code>表示下标，有特殊的含义，如果被强制转换为<code>&lt;em&gt;</code>标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。</p>
+<p>类似的语义冲突的符号还包括<code>*</code>, <code>{</code>, <code>}</code>, <code>\\</code>等。</p>
+<h4 id="解决方法">解决方法</h4>
+<p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npm uninstall hexo-renderer-marked --save
+$ npm install hexo-renderer-kramed --save
+</code></pre></div><p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。
+然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到<code>node_modules\kramed\lib\rules\inline.js</code>，把第11行的 escape 变量的值做相应的修改：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//escape: /^\\([\\`*{}\[\]()#$+\-.!_&gt;])/,
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">escape</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,
+</code></pre></div><p>这一步是在原基础上取消了对,{,}的转义(escape)。
+同时把第20行的em变量也要做相应的修改。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">em</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,
+</code></pre></div><p>重新启动hexo（先clean再generate）,问题完美解决。哦，如果不幸还没解决的话，看看是不是还需要在使用的主题中配置mathjax开关。</p>
+<h4 id="在-next-主题中开启-mathjax-开关">在 Next 主题中开启 MathJax 开关</h4>
+<p>如何使用了主题了，别忘了在主题（Theme）中开启 MathJax 开关，下面以 next 主题为例，介绍下如何打开 MathJax 开关。</p>
+<p>进入到主题目录，找到 _config.yml 配置问题，把 math 默认的 false 修改为true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">math:
+  <span style="color:#75715e"># enable: false</span>
+  <span style="color:#66d9ef">enable</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#75715e"># Default(true) will load mathjax/katex script on demand</span>
+  <span style="color:#75715e"># That is it only render those page who has `mathjax: true` in Front Matter.</span>
+  <span style="color:#75715e"># If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.</span>
+  <span style="color:#66d9ef">per_page</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">engine</span>: mathjax
+  <span style="color:#75715e">#engine: katex</span>
+  <span style="color:#75715e"># hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.</span>
+  mathjax:
+    <span style="color:#75715e"># Use 2.7.1 as default, jsdelivr as default CDN, works everywhere even in China</span>
+    <span style="color:#66d9ef">cdn</span>: //cdn.jsdelivr.net/npm/mathjax@<span style="color:#ae81ff">2.7</span><span style="color:#ae81ff">.1</span>/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+</code></pre></div><p>还需要在post的Front-matter里打开mathjax开关</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">---
+title: {{ title }}
+date: {{ date }}
+updated: {{ date }}
+copyright: true
+comments: true
+mathjax: false
+tags: 
+<span style="color:#66d9ef">-</span> 
+categories: 
+<span style="color:#66d9ef">-</span> Uncategoried
+image: 
+sticky: 
+---
+</code></pre></div><p>需要渲染LaTeX公式的再选择开启。</p>
+<h3 id="markdown写作注意事项">Markdown写作注意事项</h3>
+<ul>
+<li>
+<p>引用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">blockquote</span>&gt;引用内容&lt;/<span style="color:#f92672">blockquote</span>&gt;
+  
+/* 如果上下间距很小，可以像下面这样写 */
+&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">blockquote</span>&gt;引用内容&lt;/<span style="color:#f92672">blockquote</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>居中和右对齐</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">/* 居中 */
+&lt;<span style="color:#f92672">center</span>&gt;内容&lt;/<span style="color:#f92672">center</span>&gt;
+  
+/* 右对齐 */
+&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-align:right&#34;</span>&gt;内容&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>字体大小和颜色</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">font</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#xxxxxx&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span>&gt;内容&lt;/<span style="color:#f92672">font</span>&gt;
+/* 详细请查看 http://www.w3school.com.cn/tags/tag_font.asp */
+</code></pre></div></li>
+<li>
+<p>Todo list</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-check-square&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 已完成&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-square&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 未完成&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div></li>
+</ul>
+<h3 id="主题自带样式-note-标签">主题自带样式 note 标签</h3>
+<p>在主题配置文件<code>_config.yml</code>里有一个关于这个的配置，但官方文档没有提供 HTML 的使用方式，个人认为这种方式更简单，也不会产生一些奇怪的显示 bugs……</p>
+<!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;
+</code></pre><!-- raw HTML omitted -->
+<p>{% note danger %}
+note danger, note danger, note danger
+note danger, note danger, note danger
+note danger, note danger, note danger
+{% endnote %}</p>
+<pre><code>&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;
+// 或者这样
+{% note danger %}
+note danger, note danger, note danger
+note danger, note danger, note danger
+note danger, note danger, note danger
+{% endnote %}
+</code></pre><!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;
+</code></pre><p>首先可以在主题配置文件中需要配置下，贴上我的：</p>
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Note tag (bs-callout).
+note:
+  # 风格
+  style: flat
+  # 要不要图标
+  icons: true
+  # 圆角矩形
+  border_radius: 3
+  light_bg_offset:
+</code></pre><p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697">这个页面</a>，更多的介绍也在这个页面。</p>
+<h3 id="主题自带样式-label-标签">主题自带样式 label 标签</h3>
+<p>首先可以在主题配置文件中有配置，需要配置下，贴上我的：</p>
+<pre><code>文件位置：~/blog/themes/next/_config.yml# Label tag.
+label: true
+</code></pre><p>然后效果如下（@ 前面的是<code>label</code>的名字，后面的是要显示的文字）：</p>
+<p>{% label default@default %}</p>
+<pre><code>{% label default@default %}
+</code></pre><p>{% label primary@primary %}</p>
+<pre><code>{% label primary@primary %}
+</code></pre><p>{% label success@success %}</p>
+<pre><code>{% label success@success %}
+</code></pre><p>{% label info@info %}</p>
+<pre><code>{% label info@info %}
+</code></pre><p>{% label warning@warning %}</p>
+<pre><code>{% label warning@warning %}
+</code></pre><p>{% label danger@danger %}</p>
+<pre><code>{% label danger@danger %}
+</code></pre><p>{% note warning %}</p>
+<p>目前博主发现个 bug，如果把它加在一段文字的段首，则会有点问题，见<a href="https://github.com/iissnan/hexo-theme-next/issues/2022">issue</a> 。</p>
+<p>{% endnote %}</p>
+<h2 id="bugs">BUGs</h2>
+<ol>
+<li>
+<p>Hexo解析问题</p>
+<blockquote>
+<p>例如：文章中代码块外出现<code>}}</code>时，Hexo 解析就会出现问题</p>
+</blockquote>
+<p><strong>解决办法：</strong></p>
+<ul>
+<li>
+<p>One</p>
+<pre><code>{% raw %}
+ 含有双大括号的内容
+{% endraw %}
+</code></pre></li>
+<li>
+<p>The Other</p>
+<blockquote>
+<p>避免这种问题</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

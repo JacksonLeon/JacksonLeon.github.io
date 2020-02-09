@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebHook Based on Git(Using PHP) | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">WebHook Based on Git(Using PHP)</span></h1>
+
+<h2 class="date">2018/12/12</h2>
+</div>
+
+<main>
+<blockquote>
+<p>使用Webhook实现远程服务器自动拉取更新内容</p>
+</blockquote>
+<h2 id="生成公钥">生成公钥</h2>
+<ul>
+<li>Git用户公钥</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;test@test.com&#34;</span>
+<span style="color:#75715e"># 然后一直回车就行</span>
+<span style="color:#75715e"># 生成的文件通常是 /root/.ssh/id_rsa，如果非root用户请查看提示上的路径</span>
+</code></pre></div><ul>
+<li>单独的服务器用户公钥</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo -Hu www ssh-keygen -t rsa 
+<span style="color:#75715e"># 服务器运行PHP的用户为www,所以Hooks文件中涉及到权限的地方都需要声明为该用户</span>
+<span style="color:#75715e"># 所以也就需要在Remote中加入该用户对应的公钥</span>
+<span style="color:#75715e"># 意思是为www用户生成公钥</span>
+<span style="color:#75715e"># 也是一直回车,中间会提示密钥存储位置</span>
+</code></pre></div><p>接下来将这两个公钥加入账户中,获取对仓库的权限</p>
+<h2 id="hook文件">Hook文件</h2>
+<h3 id="创建和修改目录权限">创建和修改目录权限：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 创建目录</span>
+mkdir /mnt/wwwroot/xxxx
+<span style="color:#75715e"># 修改目录权限</span>
+chown -R www:www /mnt/wwwroot/xxxx
+</code></pre></div><h3 id="用www用户创建hook文件声明权限">用www用户创建Hook文件,声明权限</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo -Hu www touch /data/wwwroot/xxxx/webhook.php
+</code></pre></div><h3 id="创建log文件夹">创建log文件夹</h3>
+<p><code>sudo -Hu www mkdir log</code></p>
+<h3 id="hook文件内容">Hook文件内容</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">//git webhook 自动部署脚本
+</span><span style="color:#75715e">//项目存放物理路径
+</span><span style="color:#75715e"></span>$path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/wwwroot/www.xxxx.com&#34;</span>;
+
+$requestBody <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;php://input&#34;</span>);
+$content <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($requestBody, <span style="color:#66d9ef">true</span>);
+
+<span style="color:#75715e">//if(empty($content)){
+</span><span style="color:#75715e">//    die(&#34;sent fail&#34;);
+</span><span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//若是主分支且提交数大于0
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ($content[<span style="color:#e6db74">&#39;ref&#39;</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;refs/heads/master&#39;</span> <span style="color:#f92672">&amp;&amp;</span> $content[<span style="color:#e6db74">&#39;total_commits_count&#39;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>) {
+
+    <span style="color:#75715e">//$res = shell_exec(&#34;cd {$path} &amp;&amp; git fetch --all &amp;&amp; git reset --hard origin/master &#34;);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//$res = shell_exec(&#34;cd {$path} &amp;&amp; git add . &amp;&amp; git commit -m &#39;commit by svn&#39; &amp;&amp; git pull &amp;&amp; git push 2&gt;&amp;1&#34;);
+</span><span style="color:#75715e"></span>    $res <span style="color:#f92672">=</span> <span style="color:#a6e22e">shell_exec</span>(<span style="color:#e6db74">&#34;cd </span><span style="color:#e6db74">{</span>$path<span style="color:#e6db74">}</span><span style="color:#e6db74"> &amp;&amp; git pull origin master &#34;</span>);
+
+    $res_log <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-------------------------&#39;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">PHP_EOL</span>;
+    $res_log <span style="color:#f92672">.=</span> $content[<span style="color:#e6db74">&#39;user_name&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39; 在&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#39;Y-m-d H:i:s&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;向&#39;</span> <span style="color:#f92672">.</span> $content[<span style="color:#e6db74">&#39;repository&#39;</span>][<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;项目的&#39;</span> <span style="color:#f92672">.</span> $content[<span style="color:#e6db74">&#39;ref&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;分支push了
+</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">.</span> $content[<span style="color:#e6db74">&#39;total_commits_count&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;个commit：&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+    $res_log <span style="color:#f92672">.=</span> $res<span style="color:#f92672">.</span><span style="color:#a6e22e">PHP_EOL</span>;
+
+    <span style="color:#a6e22e">file_put_contents</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>$path<span style="color:#e6db74">}</span><span style="color:#e6db74">/log/&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#39;Y-m&#39;</span>,<span style="color:#a6e22e">time</span>())<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;.txt&#34;</span>, $res_log, <span style="color:#a6e22e">FILE_APPEND</span>);
+}
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div><p>确保你的hook文件可以访问,例如https://test.com/hook.php ,Hook文件准备完成.</p>
+<h3 id="配置remote和服务器仓库">配置Remote和服务器仓库</h3>
+<ul>
+<li>
+<p>配置公钥,将之前生成的公钥文件加入到Remote仓库的SSH公钥选项中</p>
+</li>
+<li>
+<p>服务器仓库</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo -Hu www clone git@repo_address/gittest.git /自定义文件夹
+<span style="color:#75715e"># 意思是以www用户的身份clone仓库,权限属于www用户</span>
+</code></pre></div><ul>
+<li>添加WebHooks规则</li>
+</ul>
+<blockquote>
+<p>在每个仓库的设置中进行设置</p>
+<p>可以选择推送事件/标签推送事件/评论/缺陷事件/合并请求/构建事件</p>
+</blockquote>
+<p>链接中填写外网访问服务器Hook文件的地址, 点击增加WEBHOOKS即可.</p>
+<h2 id="测试">测试</h2>
+<p>在本地仓库中:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vim test.txt
+git add .
+git commit -m <span style="color:#e6db74">&#34;test hook&#34;</span>
+git push
+</code></pre></div><p>在服务器端:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 查看更改是否拉取到服务器</span>
+vim test.txt
+</code></pre></div>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

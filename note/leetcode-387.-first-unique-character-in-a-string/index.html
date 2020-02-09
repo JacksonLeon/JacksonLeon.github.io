@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leetcode 387. First Unique Character in a String | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Leetcode 387. First Unique Character in a String</span></h1>
+
+<h2 class="date">2018/04/09</h2>
+</div>
+
+<main>
+<h3 id="description">Description</h3>
+<blockquote>
+<p>Given a string, find the first non-repeating character in it and return it&rsquo;s index. If it doesn&rsquo;t exist, return -1.</p>
+</blockquote>
+<h3 id="examples">Examples</h3>
+<pre><code>s = &quot;leetcode&quot;
+return 0.
+
+s = &quot;loveleetcode&quot;,
+return 2.
+</code></pre><blockquote>
+<p><strong>Note:</strong> You may assume the string contain only lowercase letters.</p>
+</blockquote>
+<h3 id="solutions">Solutions</h3>
+<ul>
+<li>C++ Solution</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">int</span> firstUniqChar(string s) {
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">26</span>];
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> c:s)
+        {
+            alp[c<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        }
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>s.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        {
+            <span style="color:#66d9ef">if</span>(alp[s[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#66d9ef">return</span> i;
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+};
+</code></pre></div><ul>
+<li>Someting Wrong</li>
+</ul>
+<blockquote>
+<p>明明测试用例是对的，但是提交就是错的，很郁闷，结果在下面发现</p>
+</blockquote>
+<blockquote>
+<p>Note: is Run Code inconsistent with Submit Solution? If you are using global variables or C/C++, check this out.First, please check if you are using any global or static variables. They are Evil, period. If you must declare one, reset them in the first line of your called method or in the default constructor. Why? Because the judger executes all test cases using the same program instance, global/static variables affect the program state from one test case to another. See this Discuss thread for more details.Are you using C or C++? If the answer is yes, chances are your code has bugs in it which cause one of the earlier test cases to trigger an undefined behavior. See this Discuss thread for an example of undefined behavior. These bugs could be hard to debug, so good luck. Or just give up on C/C++ entirely and code in a more predictable language, like Java. Just kidding.
+总之很郁闷</p>
+</blockquote>
+<ul>
+<li>Jave Solution</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">firstUniqChar</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>26<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> arr<span style="color:#f92672">=</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c<span style="color:#f92672">:</span>arr<span style="color:#f92672">)</span>
+        <span style="color:#f92672">{</span>
+            alp<span style="color:#f92672">[</span>c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span>
+        <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>alp<span style="color:#f92672">[</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>1<span style="color:#f92672">)</span><span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>9 ms Soluton in Java</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">firstUniqChar</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> resIndex <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>resIndex <span style="color:#f92672">=</span><span style="color:#f92672">=</span> 0<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;z&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>           
+            <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>      
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>index<span style="color:#f92672">!</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span>1 <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> index <span style="color:#f92672">=</span><span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">lastIndexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+                resIndex <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>resIndex<span style="color:#f92672">,</span>index<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>        
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">return</span> resIndex <span style="color:#f92672">=</span><span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span>1 <span style="color:#f92672">:</span> resIndex<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

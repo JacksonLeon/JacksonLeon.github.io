@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application on GeekJoe</title>
+    <link>//localhost:1313/categories/application/</link>
+    <description>Recent content in Application on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 13:35:42 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/application/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Settings of iTerm2 on Mac</title>
+      <link>//localhost:1313/note/settings-of-iterm2-on-mac/</link>
+      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/settings-of-iterm2-on-mac/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完成配置后的iTerm 2具备功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;语法高亮&lt;/li&gt;
+&lt;li&gt;命令Tab补全&lt;/li&gt;
+&lt;li&gt;自动提示&lt;/li&gt;
+&lt;li&gt;Git相关功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homebrew for Mac</title>
+      <link>//localhost:1313/note/homebrew-for-mac/</link>
+      <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/homebrew-for-mac/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Homebrew简介，安装与使用&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

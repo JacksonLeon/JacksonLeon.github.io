@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on GeekJoe</title>
+    <link>//localhost:1313/tags/python/</link>
+    <description>Recent content in Python on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 May 2019 09:30:29 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating to Python 3 with pleasure</title>
+      <link>//localhost:1313/post/migrating-to-python-3-with-pleasure/</link>
+      <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
+      
+      <guid>//localhost:1313/post/migrating-to-python-3-with-pleasure/</guid>
+      <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
+      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
+&lt;p&gt;一起来造轮子吧！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pytorch Style Guide</title>
+      <link>//localhost:1313/note/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/pytorch-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>//localhost:1313/note/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/google-python-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0007.py</title>
+      <link>//localhost:1313/note/smtc-0007.py/</link>
+      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0007.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0006.py</title>
+      <link>//localhost:1313/note/smtc-0006.py/</link>
+      <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0006.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Library</title>
+      <link>//localhost:1313/note/python-library/</link>
+      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/python-library/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;汇总使用过的Python库&lt;/p&gt;
+&lt;p&gt;简单记一下模块功能以及函数原型&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0000.py</title>
+      <link>//localhost:1313/note/smtc-0000.py/</link>
+      <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0000.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Note</title>
+      <link>//localhost:1313/note/python-note/</link>
+      <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/python-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python个人笔记&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django-blog</title>
+      <link>//localhost:1313/note/django-blog/</link>
+      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/django-blog/</guid>
+      <description>pip install -r requirement.txt requirement.txt
+ bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
+    </item>
+    
+    <item>
+      <title>使用Python爬虫爬取网络小说</title>
+      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
+      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;小说网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例（主要是女朋友想看&lt;code&gt;^_^&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

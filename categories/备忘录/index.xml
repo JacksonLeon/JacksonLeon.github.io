@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>备忘录 on GeekJoe</title>
+    <link>//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+    <description>Recent content in 备忘录 on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manjaro备忘录</title>
+      <link>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description>优点：
+ 显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：
+ 需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro下载https://manjaro.org/download/kde/ rufus下载https://rufus.ie/
+更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
+# 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加sudo pacman -S pacman-mirrors# 中国区镜像排序，一般选择前两个镜像sudo pacman-mirrors -i -c China -m rank同步更新 新系统先更新一下
+sudo pacman -Syysudo pacman -Syu移除Octopi换Pamac KDE自带的软件管理器octopi比较丑，可以换另一个管理器pamac。
+# 安装pamacsudo pacman -S pamac打开pamac，搜索octopi，移除所有octopi相关的orphan依赖包。
+安装yay 尽管pamac也可以安装AUR里的软件包（需要在pamac设置里开启aur选项），但yay更符合命令行的习惯。安装yay非常简单，在pamac里搜索安装即可，安装完成后选择清华aur镜像。
+yay --aururl &amp;quot;https://aur.tuna.tsinghua.edu.cn&amp;quot; --save调整Baloo限制 Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项 https://wiki.archlinux.org/index.php/Baloo
+# 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288安装base-devel 安装基础开发工具
+sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和字体</description>
+    </item>
+    
+    <item>
+      <title>Hexo备忘录</title>
+      <link>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description>生成密钥并添加
+ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
+# 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git
+# git默认设置git config --global user.email &amp;quot;im.lauzh@outlook.com&amp;quot;git config --global user.name &amp;quot;lau&amp;quot;# 切换分支deploygit checkout -b deploy# 修改及添加remotegit remote rename origin githubgit remote add gitee git@gitee.</description>
+    </item>
+    
+  </channel>
+</rss>

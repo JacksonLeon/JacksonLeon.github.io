@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on GeekJoe</title>
+    <link>//localhost:1313/note/</link>
+    <description>Recent content in Notes on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manjaro备忘录</title>
+      <link>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description>优点：
+ 显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：
+ 需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro下载https://manjaro.org/download/kde/ rufus下载https://rufus.ie/
+更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
+# 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加sudo pacman -S pacman-mirrors# 中国区镜像排序，一般选择前两个镜像sudo pacman-mirrors -i -c China -m rank同步更新 新系统先更新一下
+sudo pacman -Syysudo pacman -Syu移除Octopi换Pamac KDE自带的软件管理器octopi比较丑，可以换另一个管理器pamac。
+# 安装pamacsudo pacman -S pamac打开pamac，搜索octopi，移除所有octopi相关的orphan依赖包。
+安装yay 尽管pamac也可以安装AUR里的软件包（需要在pamac设置里开启aur选项），但yay更符合命令行的习惯。安装yay非常简单，在pamac里搜索安装即可，安装完成后选择清华aur镜像。
+yay --aururl &amp;quot;https://aur.tuna.tsinghua.edu.cn&amp;quot; --save调整Baloo限制 Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项 https://wiki.archlinux.org/index.php/Baloo
+# 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288安装base-devel 安装基础开发工具
+sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和字体</description>
+    </item>
+    
+    <item>
+      <title>Hexo备忘录</title>
+      <link>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description>生成密钥并添加
+ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
+# 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git
+# git默认设置git config --global user.email &amp;quot;im.lauzh@outlook.com&amp;quot;git config --global user.name &amp;quot;lau&amp;quot;# 切换分支deploygit checkout -b deploy# 修改及添加remotegit remote rename origin githubgit remote add gitee git@gitee.</description>
+    </item>
+    
+    <item>
+      <title>Commit messages guide</title>
+      <link>//localhost:1313/note/commit-messages-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/commit-messages-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
+      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
+&lt;p&gt;一起来造轮子吧！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 图床更改及博客推送</title>
+      <link>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
+      <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pytorch Style Guide</title>
+      <link>//localhost:1313/note/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/pytorch-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>//localhost:1313/note/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/google-python-style-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（三）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</link>
+      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;逻辑回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（二）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
+      <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;多变量线性回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（一）</title>
+      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;什么是机器学习？&lt;/li&gt;
+&lt;li&gt;什么是监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是非监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是单变量线性回归？&lt;/li&gt;
+&lt;li&gt;线性代数知识点回顾&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LaTeX Note</title>
+      <link>//localhost:1313/note/latex-note/</link>
+      <pubDate>Tue, 19 Mar 2019 20:27:25 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/latex-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LaTeX Note&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0007.py</title>
+      <link>//localhost:1313/note/smtc-0007.py/</link>
+      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0007.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Her</title>
+      <link>//localhost:1313/note/her/</link>
+      <pubDate>Mon, 04 Feb 2019 22:41:56 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/her/</guid>
+      <description>新的一年，宝贝儿我们一起加油哦！</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0006.py</title>
+      <link>//localhost:1313/note/smtc-0006.py/</link>
+      <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0006.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Library</title>
+      <link>//localhost:1313/note/python-library/</link>
+      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/python-library/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;汇总使用过的Python库&lt;/p&gt;
+&lt;p&gt;简单记一下模块功能以及函数原型&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0000.py</title>
+      <link>//localhost:1313/note/smtc-0000.py/</link>
+      <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/smtc-0000.py/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
+&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Show Me The Code</title>
+      <link>//localhost:1313/note/show-me-the-code/</link>
+      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/show-me-the-code/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
+&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Note</title>
+      <link>//localhost:1313/note/python-note/</link>
+      <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/python-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python个人笔记&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Settings of iTerm2 on Mac</title>
+      <link>//localhost:1313/note/settings-of-iterm2-on-mac/</link>
+      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/settings-of-iterm2-on-mac/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完成配置后的iTerm 2具备功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;语法高亮&lt;/li&gt;
+&lt;li&gt;命令Tab补全&lt;/li&gt;
+&lt;li&gt;自动提示&lt;/li&gt;
+&lt;li&gt;Git相关功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homebrew for Mac</title>
+      <link>//localhost:1313/note/homebrew-for-mac/</link>
+      <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/homebrew-for-mac/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Homebrew简介，安装与使用&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows Note</title>
+      <link>//localhost:1313/note/windows-note/</link>
+      <pubDate>Mon, 21 Jan 2019 17:23:36 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/windows-note/</guid>
+      <description>重装电脑   UWP
+ 网易云音乐 OneNote QuickLook    Applications
+ Coding  {% post_link VSCode VS Code %} Intellij IDEA Git Notepad++ Java Python3   Office Fun  Tim WeChat PotPlayer Chrome   Tools  7-zip SSR v2rayN Notion Picgo IDM 迅雷 Pandownload Rainmeter Typora      Others
+ Hexo Blog    </description>
+    </item>
+    
+    <item>
+      <title>V2Ray Tutorial</title>
+      <link>//localhost:1313/note/v2ray-tutorial/</link>
+      <pubDate>Mon, 24 Dec 2018 10:30:05 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/v2ray-tutorial/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;v2ray是一个代理平台，能够配置多种协议，有很多的玩法、用法（动态端口、mKCP、Mux等等）。更多的内容请查看&lt;a href=&#34;https://www.v2ray.com/&#34;&gt;V2Ray官网&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker Tutorial</title>
+      <link>//localhost:1313/note/docker-tutorial/</link>
+      <pubDate>Sat, 22 Dec 2018 16:36:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/docker-tutorial/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Macintosh Note</title>
+      <link>//localhost:1313/note/macintosh-note/</link>
+      <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/macintosh-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Mac遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Maven Tutorial</title>
+      <link>//localhost:1313/note/maven-tutorial/</link>
+      <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/maven-tutorial/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Maven是一个非常有用的依赖管理工具，Maven一个很重要的作用是用来管理Jar包的.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过maven工程可以直接从maven仓库下载需要的jar包到本地，不用再需要从外部添加，maven仓库可以是网上的镜像地址，也可以是公司内部的仓库；&lt;/li&gt;
+&lt;li&gt;通过maven可以实现对java 工程的同意管理和规范化使用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文主要介绍Maven的配置过程.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>VSCode Customised</title>
+      <link>//localhost:1313/note/vscode-customised/</link>
+      <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/vscode-customised/</guid>
+      <description>USER SETTINGS Windows {&amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;,&amp;#34;editor.minimap.enabled&amp;#34;: false,&amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;,&amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;,&amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false,&amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;,&amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;,&amp;#34;latex-workshop.latex.tools&amp;#34;: [{&amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;-pdf&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;%DOCFILE%&amp;#34;]}],&amp;#34;latex-workshop.</description>
+    </item>
+    
+    <item>
+      <title>Linux Note</title>
+      <link>//localhost:1313/note/linux-note/</link>
+      <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/linux-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Linux遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebHook Based on Git(Using PHP)</title>
+      <link>//localhost:1313/note/webhook-based-on-gitusing-php/</link>
+      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/webhook-based-on-gitusing-php/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>TortoiseGit on windows tutorial</title>
+      <link>//localhost:1313/note/tortoisegit-on-windows-tutorial/</link>
+      <pubDate>Mon, 10 Dec 2018 11:47:43 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/tortoisegit-on-windows-tutorial/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tutorial of TortoiseGit on Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TortoiseGit&lt;/strong&gt; is a &lt;a href=&#34;https://en.wikipedia.org/wiki/Git_(software)&#34;&gt;Git&lt;/a&gt; revision control client, implemented as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_shell_extension&#34;&gt;Windows shell extension&lt;/a&gt; and based on &lt;a href=&#34;https://en.wikipedia.org/wiki/TortoiseSVN&#34;&gt;TortoiseSVN&lt;/a&gt;. It is &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_software&#34;&gt;free software&lt;/a&gt; released under the &lt;a href=&#34;https://en.wikipedia.org/wiki/GNU_General_Public_License&#34;&gt;GNU General Public License&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_Explorer&#34;&gt;Windows Explorer&lt;/a&gt;, besides showing context menu items for Git commands, TortoiseGit provides icon overlays that indicate the status of Git working trees and files.&lt;/p&gt;
+&lt;p&gt;It also comes with the TortoiseGitMerge utility to visually compare two files and resolve conflicts.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java Note</title>
+      <link>//localhost:1313/note/java-note/</link>
+      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/java-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Java遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL Note</title>
+      <link>//localhost:1313/note/mysql-note/</link>
+      <pubDate>Fri, 07 Dec 2018 09:52:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/mysql-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用MySQL遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hackintosh for Lenovo Ideapad 700 15isk</title>
+      <link>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</link>
+      <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引言
+最近更换了固态硬盘，所以就有一个闲置了出来，然后就在京东上面买了一个M.2接口NGFF协议的固态硬盘盒，用来装Hackintosh.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 627. Swap Salary</title>
+      <link>//localhost:1313/note/leetcode-627.-swap-salary/</link>
+      <pubDate>Mon, 30 Jul 2018 19:58:46 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-627.-swap-salary/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;p&gt;Given a table &lt;code&gt;salary&lt;/code&gt;, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | m   | 2500   |
+| 2  | B    | f   | 1500   |
+| 3  | C    | m   | 5500   |
+| 4  | D    | f   | 500    |
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running your query, the above salary table should have the following rows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | f   | 2500   |
+| 2  | B    | m   | 1500   |
+| 3  | C    | f   | 5500   |
+| 4  | D    | m   | 500    |
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 876. Middle of the Linked List</title>
+      <link>//localhost:1313/note/leetcode-876.-middle-of-the-linked-list/</link>
+      <pubDate>Mon, 30 Jul 2018 18:59:07 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-876.-middle-of-the-linked-list/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given a non-empty, singly linked list with head node &lt;code&gt;head&lt;/code&gt;, return a middle node of linked list.&lt;/p&gt;
+&lt;p&gt;If there are two middle nodes, return the second middle node.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 852. Peak Index in a Mountain Array</title>
+      <link>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</link>
+      <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let&amp;rsquo;s call an array &lt;code&gt;A&lt;/code&gt; a &lt;em&gt;mountain&lt;/em&gt; if the following properties hold:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A.length &amp;gt;= 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;There exists some &lt;code&gt;0 &amp;lt; i &amp;lt; A.length - 1&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given an array that is definitely a mountain, return any &lt;code&gt;i&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 617. Merge Two Binary Trees</title>
+      <link>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</link>
+      <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.&lt;/p&gt;
+&lt;p&gt;You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo-NexT博客样式自定义</title>
+      <link>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 832. Flipping an Image</title>
+      <link>//localhost:1313/note/leetcode-832.-flipping-an-image/</link>
+      <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-832.-flipping-an-image/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.
+To flip an image horizontally means that each row of the image is reversed.  For example, flipping &lt;code&gt;[1, 1, 0]&lt;/code&gt; horizontally results in &lt;code&gt;[0, 1, 1]&lt;/code&gt;.
+To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting &lt;code&gt;[0, 1, 1]&lt;/code&gt; results in &lt;code&gt;[1, 0, 0]&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 709. To Lower Case</title>
+      <link>//localhost:1313/note/leetcode-709.-to-lower-case/</link>
+      <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-709.-to-lower-case/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django-blog</title>
+      <link>//localhost:1313/note/django-blog/</link>
+      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/django-blog/</guid>
+      <description>pip install -r requirement.txt requirement.txt
+ bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
+    </item>
+    
+    <item>
+      <title>Operating System Note</title>
+      <link>//localhost:1313/note/operating-system-note/</link>
+      <pubDate>Tue, 22 May 2018 14:30:14 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/operating-system-note/</guid>
+      <description>页面置换算法  选择调出页面的算法就称为页面置换算法。好的页面置换算法应有较低的页面更换频率，也就是说，应将以后不会再访问或者以后较长时间内不会再访问的页面先调出。
+ 常见的页面置换算法有：最佳置换算法、先进先出（FIFO）、最近最久未使用（LRU）、时钟（CLOCK）置换算法。
+OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面,这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法其实是无法实现。
+ 虽然OPT算法是无法实现的，但是我们可以利用他对其他页面置换算法进行评价。</description>
+    </item>
+    
+    <item>
+      <title>OpenCV Note</title>
+      <link>//localhost:1313/note/opencv-note/</link>
+      <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/opencv-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用OpenCV遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>MATLAB Note</title>
+      <link>//localhost:1313/note/matlab-note/</link>
+      <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/matlab-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用MatLab遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Python爬虫爬取网络小说</title>
+      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
+      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;小说网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例（主要是女朋友想看&lt;code&gt;^_^&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 657. Judge Route Circle</title>
+      <link>//localhost:1313/note/leetcode-657.-judge-route-circle/</link>
+      <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-657.-judge-route-circle/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
+The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are &lt;code&gt;R&lt;/code&gt; (Right), &lt;code&gt;L&lt;/code&gt; (Left), &lt;code&gt;U&lt;/code&gt; (Up) and &lt;code&gt;D&lt;/code&gt; (down). The output should be true or false representing whether the robot makes a circle.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 387. First Unique Character in a String</title>
+      <link>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</link>
+      <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;s = &amp;quot;leetcode&amp;quot;
+return 0.
+
+s = &amp;quot;loveleetcode&amp;quot;,
+return 2.
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You may assume the string contain only lowercase letters.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>双系统删除Ubuntu后出现grub rescure&gt;解决办法</title>
+      <link>//localhost:1313/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在笔记本电脑上安装了两个Linux系统，有一个几乎不用，所以决定把它给删除了,然后就出现了问题.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 386. Lexicographical Numbers</title>
+      <link>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</link>
+      <pubDate>Mon, 26 Mar 2018 15:04:22 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</guid>
+      <description>Description  Given an integer n, return 1-n in lexicographical order. For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9]. Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
+ Solution class Solution {public:vector&amp;lt;int&amp;gt; lexicalOrder(int n) {vector&amp;lt;int&amp;gt; res;int cur=1;for(int i=1;i&amp;lt;=n;i++){res.push_back(cur);if(cur*10&amp;lt;=n) //首先判断能否直接再后面加0 cur*=10;else if(cur%10!=9&amp;amp;&amp;amp;(cur+1)&amp;lt;=n) //正常情况下+1 cur++;else{while((cur/10)%10==9) //处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20 {cur/=10;}cur=(cur/10)+1; //这一轮个位结束，从上一位+1继续开始 } }return res;}};Hints  字典排序(数字)</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 807. Max Increase to Keep City Skyline</title>
+      <link>//localhost:1313/note/leetcode-807.-max-increase-to-keep-city-skyline/</link>
+      <pubDate>Sun, 25 Mar 2018 19:12:34 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-807.-max-increase-to-keep-city-skyline/</guid>
+      <description>Description  In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. At the end, the &amp;ldquo;skyline&amp;rdquo; when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 804. Unique Morse Code Words</title>
+      <link>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</link>
+      <pubDate>Sun, 25 Mar 2018 14:04:15 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</guid>
+      <description>Description  International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: &amp;quot;a&amp;quot; maps to &amp;quot;.-&amp;quot;, &amp;quot;b&amp;quot; maps to &amp;quot;-...&amp;quot;, &amp;quot;c&amp;quot; maps to &amp;quot;-.-.&amp;quot;, and so on.
+  For convenience, the full table for the 26 letters of the English alphabet is given below:
+ [&amp;quot;.-&amp;quot;,&amp;quot;-...&amp;quot;,&amp;quot;-.-.&amp;quot;,&amp;quot;-..&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;..-.&amp;quot;,&amp;quot;--.&amp;quot;,&amp;quot;....&amp;quot;,&amp;quot;..&amp;quot;,&amp;quot;.---&amp;quot;,&amp;quot;-.-&amp;quot;,&amp;quot;.-..&amp;quot;,&amp;quot;--&amp;quot;,&amp;quot;-.&amp;quot;,&amp;quot;---&amp;quot;,&amp;quot;.--.&amp;quot;,&amp;quot;--.-&amp;quot;,&amp;quot;.-.&amp;quot;,&amp;quot;...&amp;quot;,&amp;quot;-&amp;quot;,&amp;quot;..-&amp;quot;,&amp;quot;...-&amp;quot;,&amp;quot;.--&amp;quot;,&amp;quot;-..-&amp;quot;,&amp;quot;-.--&amp;quot;,&amp;quot;--..&amp;quot;] Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 191. Number of 1 Bits</title>
+      <link>//localhost:1313/note/leetcode-191.-number-of-1-bits/</link>
+      <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-191.-number-of-1-bits/</guid>
+      <description>Description  Write a function that takes an unsigned integer and returns the number of 1 bits it has (also known as the Hamming weight). For example, the 32-bit integer 11 has binary representation 00000000000000000000000000001011, so the function should return 3.
+ Solutions  Hamming Weight  class Solution {public:int hammingWeight(uint32_t n) {int c=0;while(n){c++;n&amp;amp;=n-1; //逐次获取最低非0 bit位 }return c;}}; Bit Mask  class Solution(object):def hammingWeight(self, n):&amp;#34;&amp;#34;&amp;#34;:type n: int:rtype: int&amp;#34;&amp;#34;&amp;#34;res=0mask=1for i in range(32):if n&amp;amp;mask: # &amp;amp;：按位与 res+=1mask=mask&amp;lt;&amp;lt;1# n=n&amp;gt;&amp;gt;1 #n移位或者mask移位 return res</description>
+    </item>
+    
+    <item>
+      <title>Hexo Note</title>
+      <link>//localhost:1313/note/hexo-note/</link>
+      <pubDate>Sun, 25 Mar 2018 13:10:22 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hexo-note/</guid>
+      <description>小技巧 Hexo博客实现页内跳转  如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面
+ {% post_link Macintosh-Note 传送门在此 %}，代码如下：
+# 出现了莫名的BUG{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}上面的方法失效了，本博客目前使用的是permalink链接到唯一的文章，改了文章名也没有关系
+具体设置方法请看这里
+Next 主题中渲染 LaTeX数学公式 原因 Hexo 默认使用 hexo-renderer-marked 引擎渲染网页，该引擎会把一些特殊的 markdown 符号转换为相应的 html 标签，比如在 markdown 语法中，下划线_代表斜体，会被渲染引擎处理为&amp;lt;em&amp;gt;标签。
+因为类 Latex 格式书写的数学公式下划线_表示下标，有特殊的含义，如果被强制转换为&amp;lt;em&amp;gt;标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。
+类似的语义冲突的符号还包括*, {, }, \\等。
+解决方法 更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。
+$ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed --save执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。 然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的 escape 变量的值做相应的修改：
+//escape: /^\\([\\`*{}\[\]()#$+\-.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 461. Hamming Distance</title>
+      <link>//localhost:1313/note/leetcode-461.-hamming-distance/</link>
+      <pubDate>Sun, 25 Mar 2018 12:19:52 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-461.-hamming-distance/</guid>
+      <description>Description  The Hamming distance between two integers is the number of positions at which the corresponding bits are different.Given two integers x and y, calculate the Hamming distance.
+ Example Input: x = 1, y = 4Output: 2Explanation:1 (0 0 0 1)4 (0 1 0 0)↑ ↑The above arrows point to positions where the corresponding bits are different.Note  0 ≤ x , y &amp;lt; 2^31</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 654. Maximum Binary Tree</title>
+      <link>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</link>
+      <pubDate>Sat, 24 Mar 2018 23:35:37 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</guid>
+      <description>Description  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</description>
+    </item>
+    
+    <item>
+      <title>Hexo建站备忘录</title>
+      <link>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Thu, 22 Mar 2018 19:05:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description>使用Hexo与Github Pages服务一同搭建个人博客
+添加功能   添加permanant link
+  添加置顶
+在node_modules/hexo-generate-index-pin-top/lib/generate.js中替换top为sticky：
+&amp;#39;use strict&amp;#39;;var pagination = require(&amp;#39;hexo-pagination&amp;#39;);module.exports = function(locals){var config = this.config;var posts = locals.posts;posts.data = posts.data.sort(function(a, b) {if(a.sticky &amp;amp;&amp;amp; b.sticky) { // 两篇文章sticky都有定义 if(a.sticky == b.sticky) return b.date - a.date; // 若sticky值一样则按照文章日期降序排 else return b.sticky - a.sticky; // 否则按照sticky值降序排 }else if(a.sticky &amp;amp;&amp;amp; !b.sticky) { // 以下是只有一篇文章sticky有定义，那么将有sticky的排在前面（这里用异或操作居然不行233） return -1;}else if(!</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 771. Jewels and Stones</title>
+      <link>//localhost:1313/note/leetcode-771.-jewels-and-stones/</link>
+      <pubDate>Thu, 22 Mar 2018 15:11:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/leetcode-771.-jewels-and-stones/</guid>
+      <description>Desciption  You&amp;rsquo;re given strings J representing the types of stones that are jewels, and S representing the stones you have. Each character in S is a type of stone you have. You want to know how many of the stones you have are also jewels. The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so &amp;ldquo;a&amp;rdquo; is considered a different type of stone from &amp;ldquo;A&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Markdown 语法说明 (简体中文版)</title>
+      <link>//localhost:1313/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</link>
+      <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</guid>
+      <description>NOTE: This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to Markdown: Syntax.
+声明： 这份文档派生(fork)于繁体中文版，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里查看它的源文件。「繁体中文版的原始文件可以查看这里 。」&amp;ndash;By @riku / 本项目托管于 GitCafe
+注： 本项目同时也托管于 Github 上，请通过 fork＋pull request 方式来帮忙改进本项目。
+概述 宗旨 Markdown 的目标是实现「易读易写」。
+可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。
+总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像* 强调 *。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。
+兼容 HTML Markdown 语法的目标是：成为一种适用于网络的_书写_语言。
+Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想_不是_要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种_发布_的格式，Markdown 是一种_书写_的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</description>
+    </item>
+    
+    <item>
+      <title>Vim Note</title>
+      <link>//localhost:1313/note/vim-note/</link>
+      <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/vim-note/</guid>
+      <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾G ##注意大写:1,:d ## 删除全部内容 删除部分内容  ## 定位到要删除的文档末尾200G:9,:d ##删除9-200之间的内容复制粘贴 # 复制当前行yy# 在当前行粘贴p查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
+Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
+ 注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。
+ 查找当前单词 在normal模式下按下*即可查找光标所在单词（word）， 要求每次出现的前后为空白字符或标点符号。例如当前为foo， 可以匹配foo bar中的foo，但不可匹配foobar中的foo。 这在查找函数名、变量名时非常有用。
+按下g*即可查找光标所在单词的字符序列，每次出现前后字符无要求。 即foo bar和foobar中的foo均可被匹配到。
+:s（substitute）命令用来查找和替换字符串。语法如下：
+:{作用范围}s/{目标}/{替换}/{替换标志}例如:%s/foo/bar/g会在全局范围(%)查找foo并替换为bar，所有出现都会被替换（g）。
+作用范围 作用范围分为当前行、全文、选区等等。
+当前行：
+:s/foo/bar/g全文：
+:%s/foo/bar/g选区，在Visual模式下选择区域后输入:，Vim即可自动补全为 :&#39;&amp;lt;,&#39;&amp;gt;。
+:&#39;&amp;lt;,&#39;&amp;gt;s/foo/bar/g2-11行：
+:5,12s/foo/bar/g当前行.与接下来两行+2：
+:.,+2s/foo/bar/g替换标志 上文中命令结尾的g即是替换标志之一，表示全局global替换（即替换目标的所有出现）。 还有很多其他有用的替换标志：
+空替换标志表示只替换从光标位置开始，目标的第一次出现：
+:%s/foo/bari表示大小写不敏感查找，I表示大小写敏感：
+:%s/foo/bar/i# 等效于模式中的\c（不敏感）或\C（敏感）:%s/foo\c/barc表示需要确认，例如全局查找&amp;quot;foo&amp;quot;替换为&amp;quot;bar&amp;quot;并且需要确认：</description>
+    </item>
+    
+    <item>
+      <title>Git note</title>
+      <link>//localhost:1313/note/git-note/</link>
+      <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/git-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>//localhost:1313/note/hello-world/</link>
+      <pubDate>Wed, 14 Feb 2018 13:14:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34;More info: Writing
+Run server $ hexo serverMore info: Server
+Generate static files $ hexo generateMore info: Generating
+Deploy to remote sites $ hexo deployMore info: Deployment</description>
+    </item>
+    
+  </channel>
+</rss>

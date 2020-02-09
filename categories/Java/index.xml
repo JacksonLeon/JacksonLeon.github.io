@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on GeekJoe</title>
+    <link>//localhost:1313/categories/java/</link>
+    <description>Recent content in Java on GeekJoe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Dec 2018 17:34:56 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven Tutorial</title>
+      <link>//localhost:1313/note/maven-tutorial/</link>
+      <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/maven-tutorial/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Maven是一个非常有用的依赖管理工具，Maven一个很重要的作用是用来管理Jar包的.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过maven工程可以直接从maven仓库下载需要的jar包到本地，不用再需要从外部添加，maven仓库可以是网上的镜像地址，也可以是公司内部的仓库；&lt;/li&gt;
+&lt;li&gt;通过maven可以实现对java 工程的同意管理和规范化使用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文主要介绍Maven的配置过程.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java Note</title>
+      <link>//localhost:1313/note/java-note/</link>
+      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
+      
+      <guid>//localhost:1313/note/java-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Java遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

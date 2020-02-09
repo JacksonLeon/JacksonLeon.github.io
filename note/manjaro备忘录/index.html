@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manjaro备忘录 | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Manjaro备忘录</span></h1>
+
+<h2 class="date">2019/09/14</h2>
+</div>
+
+<main>
+<p>优点：</p>
+<ul>
+<li>显卡驱动安装省心,好评</li>
+<li>aur里有各种软件</li>
+<li>pacman安装方便</li>
+<li>背靠arch文档丰富</li>
+<li>相对arch稳定多</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要对linux有一定的了解</li>
+<li>滚动更新还是有几率挂的，做好系统备份</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="系统安装">系统安装</h3>
+<p>我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。
+<strong>manjaro下载</strong><a href="https://manjaro.org/download/kde/">https://manjaro.org/download/kde/</a>
+<strong>rufus下载</strong><a href="https://rufus.ie/">https://rufus.ie/</a></p>
+<h3 id="更改pacman镜像">更改pacman镜像</h3>
+<p>manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。</p>
+<pre><code># 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加
+sudo pacman -S pacman-mirrors
+# 中国区镜像排序，一般选择前两个镜像
+sudo pacman-mirrors -i -c China -m rank
+</code></pre><h3 id="同步更新">同步更新</h3>
+<p>新系统先更新一下</p>
+<pre><code>sudo pacman -Syysudo pacman -Syu
+</code></pre><h3 id="移除octopi换pamac">移除Octopi换Pamac</h3>
+<p>KDE自带的软件管理器octopi比较丑，可以换另一个管理器pamac。</p>
+<pre><code># 安装pamac
+sudo pacman -S pamac
+</code></pre><p>打开pamac，搜索octopi，移除所有octopi相关的orphan依赖包。</p>
+<h3 id="安装yay">安装yay</h3>
+<p>尽管pamac也可以安装AUR里的软件包（需要在pamac设置里开启aur选项），但yay更符合命令行的习惯。安装yay非常简单，在pamac里搜索安装即可，安装完成后选择清华aur镜像。</p>
+<pre><code>yay --aururl &quot;https://aur.tuna.tsinghua.edu.cn&quot; --save
+</code></pre><h3 id="调整baloo限制">调整Baloo限制</h3>
+<p>Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项
+<a href="https://wiki.archlinux.org/index.php/Baloo">https://wiki.archlinux.org/index.php/Baloo</a></p>
+<pre><code># 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288
+</code></pre><h3 id="安装base-devel">安装base-devel</h3>
+<p>安装基础开发工具</p>
+<pre><code>sudo pacman -S base-devel
+</code></pre><h3 id="中文输入法">中文输入法</h3>
+<p>安装中文谷歌拼音输入法和字体</p>
+<pre><code>sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+sudo pacman -S fcitx fcitx-googlepinyin fcitx-im fcitx-configtool
+# 编辑 ~/.xinitrc
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+# 重新登录后，在开始菜单System里找到Input Method设置，添加谷歌拼音输入法
+</code></pre><h3 id="科学上网">科学上网</h3>
+<p>大部分国内软件安装的问题都是因为众所周知的原因，并且优秀资料多为英文，因此科学上网在中国是非常有必要的。arch社区对此有非常详细的指导（中文资料领先英文，中国部分领域领先的典范^_^）。
+<a href="https://wiki.archlinux.org/index.php/Shadowsocks">https://wiki.archlinux.org/index.php/Shadowsocks</a></p>
+<pre><code># ss的libev版本比较稳定
+sudo pacman -S shadowsocks-libev
+sudo mkdir /etc/shadowsocks
+
+# 配置ss文件(服务器地址和密码)
+sudo nano /etc/shadowsocks/config.json
+
+# 以daemon开机启动
+sudo systemctl start shadowsocks-libev@config
+sudo systemctl enable shadowsocks-libev@config
+
+# 下载gfwpac列表，将其填入firefox的代理配置URL（file:///home/xxx/gfwlist.pac）
+wget https://raw.githubusercontent.com/petronny/gfwlist2pac/master/gfwlist.pac
+
+# 配置http代理转发socks5代理
+sudo pacman -S privoxy
+
+# 编辑 /etc/privoxy/config，添加socks5转发和http监听地址
+forward-socks5 / 127.0.0.1:1080 .
+listen-address  127.0.0.1:8010
+
+# 重启privoxy服务
+sudo systemctl enable privoxy.service
+sudo systemctl restart privoxy.service
+
+# 安装proxychains-ng
+sudo pacman -S proxychains-ng
+
+# 编辑 /etc/proxychains.conf, 修改最后一行为
+socks5 127.0.0.1 1080
+</code></pre><h3 id="nvidia驱动">NVIDIA驱动</h3>
+<p>首先上 <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn">NVIDIA</a> 官网下载自己的显卡驱动，操作系统选择 <code>Linux 64-bit</code>。下载下来的文件应该是一个扩展名为 <code>.run</code> 的文件，将它存放至 <code>~/</code> 或者其他目录。</p>
+<p>我们还需要安装开发工具以及内核头文件来编译驱动，首先是内核头文件，先检查自己的内核版本。</p>
+<pre><code>$ uname -r
+4.19.69-1-MANJARO
+</code></pre><p>我们需要安装的内核头文件则是<code>linux419-headers</code>:</p>
+<pre><code>$ sudo pacman -S linux419-headers
+</code></pre><p>接着安装开发工具，出现选项时直接按下 <code>回车键</code> 安装全部。</p>
+<pre><code>$ sudo pacman -S base-devel dkms
+</code></pre><p>禁用 Nouveau 开源驱动：</p>
+<p>编辑 <code>/etc/default/grub</code> Grub 配置文件
+将 <code>GRUB_CMDLINE_LINUX</code> 开头的那一行改为 <code>GRUB_CMDLINE_LINUX=&quot;nouveau.modeset=0&quot;</code>。
+完成之后更新grub</p>
+<pre><code>$ sudo update-grub
+# 重启
+$ sudo reboot
+#重启之后，由于没有显卡驱动的支持，可能会卡在 BIOS Logo 界面或者是黑屏。这个时候你需要按下 ALT + CTRL + F2 进入到 TTY 文本模式。
+</code></pre><pre><code># 运行，全部yes
+$ chmod +777 NVIDIA-Linux-x86_64-430.50.run
+$ sudo ./NVIDIA-Linux-x86_64-430.50.run
+# 重启
+$ sudo reboot
+</code></pre><p>测试一下：</p>
+<pre><code>$ nvidia-smi
+Sun Sep 15 17:25:02 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 430.50       Driver Version: 430.50       CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 950M    Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   37C    P0    N/A /  N/A |      0MiB /  2004MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre><h3 id="ssd配置">SSD配置</h3>
+<p>如果安装在SSD上，可以选择以下命令</p>
+<pre><code>sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+</code></pre><h3 id="安装nfs-utils">安装nfs-utils</h3>
+<p>实验室数据存在NFS服务器上，因此安装nfs-utils</p>
+<pre><code>sudo pacman -S nfs-utils
+
+# 挂载NFS服务
+sudo mount server:/nfs/data /mountpoint/on/client
+
+# 修改 /etc/fstab, 添加
+server:/nfs/data /mountpoint/on/client nfs defaults 0 0
+</code></pre><h3 id="安装java">安装Java</h3>
+<p>我安装的是arch官方维护的openjdk。</p>
+<pre><code>sudo pacman -S jdk-openjdk
+source /etc/profile
+</code></pre><h3 id="安装vscode">安装vscode</h3>
+<p>vscode是我常用的编辑器</p>
+<pre><code>sudo pacman -S code
+</code></pre><h3 id="miniconda">miniconda</h3>
+<h4 id="安装">安装</h4>
+<p>我使用miniconda管理环境并安装python相关package。</p>
+<pre><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh 
+
+# 编辑 ~/.zshrc,在最后添加如下环境变量（注意PATH要在前面）
+export PATH=&quot;$PATH:$HOME/miniconda3/bin&quot;
+
+# 编辑完成后
+source .zshrc
+
+# 测试成功
+conda -V
+</code></pre><h4 id="更改miniconda的pypi镜像">更改miniconda的pypi镜像</h4>
+<pre><code># 进入base环境或新建的python环境
+source activate
+
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre><h3 id="安装pytorch和tensorflow">安装pytorch和tensorflow</h3>
+<p>manjaro的cuda（10.1）和cudnn（7.5）版本都是最新的，pytorch和tensorflow没有对应的二进制版本，pip不好用。最简单的方式是使用conda安装。</p>
+<pre><code># 安装cuda和cudnn
+sudo pacman -S cuda cudnn
+
+# 进入conda环境，py36是我的python3.6.5环境
+source activate py36
+
+conda install tensorflow-gpu
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+</code></pre><h3 id="安装nodejs">安装nodejs</h3>
+<p>为了写博客，我得安装hexo。</p>
+<pre><code># 安装nvm版本管理（直接安装nodejs会有权限错误）
+yay -S nvm
+source /usr/share/nvm/init-nvm.sh
+nvm install node
+
+# 安装npm和hexo
+sudo pacman -S npm
+npm install hexo-cli -g
+npm install hexo-deployer-git --save
+</code></pre><h3 id="安装网易云音乐">安装网易云音乐</h3>
+<pre><code>yay -S netease-cloud-music
+</code></pre><h3 id="安装teamviewer">安装teamviewer</h3>
+<pre><code>yay -S teamviewersudo systemctl start teamviewerdsudo systemctl enable teamviewerd
+</code></pre><h3 id="安装虚拟机">安装虚拟机</h3>
+<p>用虚拟机装win10使用office和其他专用软件，或者用office online来处理文档。</p>
+<pre><code>sudo pacman -S virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat
+
+# 编辑/etc/libvirt/qemu.conf，提供UEFI安装
+nvram = [
+    &quot;/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd&quot;
+]
+
+# pci passthrough， 编辑/etc/default/grub, 在以下行内添加amd_iommu=on或intel_iommu=on
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet amd_iommu=on&quot;
+
+sudo systemctl enable libvirtd.service dnsmasq.service ebtables.service virtlogd.service
+sudo systemctl start libvirtd.service dnsmasq.service ebtables.service virtlogd.service
+</code></pre><p>安装Win10虚拟机需要在下载虚拟机驱动，系统安装完毕后挂载光驱安装相应驱动
+<a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html">https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html</a>
+此外，cpu核心数需要根据cpu pinning一节手动调整，virt-manager图形界面无法调整（默认单核心）
+<a href="https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning">https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning</a></p>
+<pre><code>su
+# 切换默认编辑器为nano
+EDITOR=nano
+
+# 列出当前所有虚拟机名称
+virsh list --all
+
+virsh edit vmname
+# 修改以下内容（4核8线程)
+...
+&lt;vcpu placement='static'&gt;8&lt;/vcpu&gt;
+&lt;iothreads&gt;1&lt;/iothreads&gt;
+&lt;cputune&gt;
+  &lt;vcpupin vcpu='0' cpuset='2'/&gt;
+  &lt;vcpupin vcpu='1' cpuset='3'/&gt;
+  &lt;vcpupin vcpu='2' cpuset='4'/&gt;
+  &lt;vcpupin vcpu='3' cpuset='5'/&gt;
+  &lt;vcpupin vcpu='4' cpuset='6'/&gt;
+  &lt;vcpupin vcpu='5' cpuset='7'/&gt;
+  &lt;vcpupin vcpu='6' cpuset='8'/&gt;
+  &lt;vcpupin vcpu='7' cpuset='9'/&gt;
+  &lt;emulatorpin cpuset='0-1'/&gt;
+  &lt;iothreadpin iothread='1' cpuset='0-1'/&gt;
+&lt;/cputune&gt;
+    ...
+    &lt;topology sockets='1' cores='4' threads='2'/&gt;
+    ...
+</code></pre><h3 id="samba文件传输">samba文件传输</h3>
+<p>使用samba在manjaro和虚拟机间共享文件，安装完成后，新建文件夹在属性的share里设置共享权限。</p>
+<pre><code># 安装设置
+sudo pacman -S manjaro-settings-samba
+
+# 添加当前用户到sambashare组
+sudo usermod -a -G sambashare yourusername
+sudo systemctl enable smb nmb
+sudo systemctl start smb nmb
+
+# 设置samba密码
+sudo smbpasswd -a yourusername
+
+# 在win10虚拟机网络磁盘中填入host的ip，输入用户名和密码即可共享使用
+</code></pre><h3 id="onedrive">onedrive</h3>
+<p>manjaro也能用onedrive。
+<a href="https://github.com/abraunegg/onedrive/">https://github.com/abraunegg/onedrive/</a></p>
+<pre><code>yay -S onedrive-abrauneeg-git
+
+# 按说明设置
+onedrive
+
+# 开始同步（同步效果不太好，可能得多运行几次才能全部同步完成）
+onedrive --synchronize
+</code></pre><h3 id="下种子下种子">下种子下种子</h3>
+<pre><code>sudo pacman -S qbittorrent
+</code></pre><h3 id="开机自动挂载ntfs硬盘">开机自动挂载ntfs硬盘</h3>
+<pre><code># 编辑 /etc/fstab,文件末尾添加UUID=分区的UUID /你的特定目录 ntfs-3g defaults 0 0
+</code></pre><h3 id="ssh-keygen和git配置">ssh-keygen和git配置</h3>
+<pre><code>ssh-keygen
+
+git config --global user.name &quot;your name&quot;
+git config --global user.email your@email
+</code></pre><h3 id="远程桌面">远程桌面</h3>
+<pre><code># 安装Remmina和freerdp即可和windows远程桌面通信
+sudo pacman -Syu remmina freerdp
+</code></pre><h3 id="rslsync">rslsync</h3>
+<pre><code>git clone https://aur.archlinux.org/rslsync.git
+cd rslsync
+proxychains makepkg -Acs
+sudo pacman -U package.tar.xz
+</code></pre><h3 id="全局截图">全局截图</h3>
+<p>使用<code>deepin-screenshot</code>截图工具</p>
+<pre><code>yay -S deepin-screenshot
+</code></pre><p>配置系统快捷键，在【系统设置】-【工作区】-【自定义快捷键】中，点击【编辑】-【新建】-【全局快捷键】-【命令/URL：】，然后填写动作名称，如我这里是<code>Deepin截图</code>,然后分别填写注释（非必须）、触发器（win+shift+s）和动作（deepin-screenshot）。</p>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+
