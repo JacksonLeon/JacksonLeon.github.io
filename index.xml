@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on GeekJoe</title>
-    <link>//localhost:1313/</link>
+    <link>/</link>
     <description>Recent content in Home on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Manjaro备忘录</title>
-      <link>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
-      <guid>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>优点：
  显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：
  需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro下载https://manjaro.org/download/kde/ rufus下载https://rufus.ie/
@@ -32,10 +32,10 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     
     <item>
       <title>Hexo备忘录</title>
-      <link>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>生成密钥并添加
 ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
 # 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git
@@ -44,10 +44,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>How to be a Postgraduate student(MIT)</title>
-      <link>//localhost:1313/post/how-to-be-a-postgraduate-studentmit/</link>
+      <link>/post/how-to-be-a-postgraduate-studentmit/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>//localhost:1313/post/how-to-be-a-postgraduate-studentmit/</guid>
+      <guid>/post/how-to-be-a-postgraduate-studentmit/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -73,10 +73,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Migrating to Python 3 with pleasure</title>
-      <link>//localhost:1313/post/migrating-to-python-3-with-pleasure/</link>
+      <link>/post/migrating-to-python-3-with-pleasure/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>//localhost:1313/post/migrating-to-python-3-with-pleasure/</guid>
+      <guid>/post/migrating-to-python-3-with-pleasure/</guid>
       <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
@@ -85,10 +85,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Commit messages guide</title>
-      <link>//localhost:1313/note/commit-messages-guide/</link>
+      <link>/note/commit-messages-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>//localhost:1313/note/commit-messages-guide/</guid>
+      <guid>/note/commit-messages-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
@@ -96,10 +96,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
-      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
+      <link>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
 &lt;p&gt;一起来造轮子吧！&lt;/p&gt;
@@ -108,10 +108,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Markdown 图床更改及博客推送</title>
-      <link>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
+      <link>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
       <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
       
-      <guid>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
+      <guid>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -119,28 +119,28 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>//localhost:1313/note/pytorch-style-guide/</link>
+      <link>/note/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>//localhost:1313/note/pytorch-style-guide/</guid>
+      <guid>/note/pytorch-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>Google Python Style Guide</title>
-      <link>//localhost:1313/note/google-python-style-guide/</link>
+      <link>/note/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
-      <guid>//localhost:1313/note/google-python-style-guide/</guid>
+      <guid>/note/google-python-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>吴恩达「机器学习」（三）</title>
-      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</link>
+      <link>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</guid>
+      <guid>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;逻辑回归&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -148,10 +148,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>吴恩达「机器学习」（二）</title>
-      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
+      <link>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
       <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
+      <guid>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;多变量线性回归&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -159,10 +159,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>吴恩达「机器学习」（一）</title>
-      <link>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <link>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
       <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <guid>/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;什么是机器学习？&lt;/li&gt;
 &lt;li&gt;什么是监督学习算法？&lt;/li&gt;
@@ -174,10 +174,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>LaTeX Note</title>
-      <link>//localhost:1313/note/latex-note/</link>
+      <link>/note/latex-note/</link>
       <pubDate>Tue, 19 Mar 2019 20:27:25 +0000</pubDate>
       
-      <guid>//localhost:1313/note/latex-note/</guid>
+      <guid>/note/latex-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;LaTeX Note&lt;/p&gt;
@@ -186,10 +186,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>SMTC 0007.py</title>
-      <link>//localhost:1313/note/smtc-0007.py/</link>
+      <link>/note/smtc-0007.py/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0007.py/</guid>
+      <guid>/note/smtc-0007.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
@@ -199,28 +199,28 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Her</title>
-      <link>//localhost:1313/note/her/</link>
+      <link>/note/her/</link>
       <pubDate>Mon, 04 Feb 2019 22:41:56 +0000</pubDate>
       
-      <guid>//localhost:1313/note/her/</guid>
+      <guid>/note/her/</guid>
       <description>新的一年，宝贝儿我们一起加油哦！</description>
     </item>
     
     <item>
       <title>2019猪年快乐</title>
-      <link>//localhost:1313/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
+      <link>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
-      <guid>//localhost:1313/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
+      <guid>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
       <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;**2019㊗️大家🐷年大吉！**&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>SMTC 0006.py</title>
-      <link>//localhost:1313/note/smtc-0006.py/</link>
+      <link>/note/smtc-0006.py/</link>
       <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0006.py/</guid>
+      <guid>/note/smtc-0006.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
@@ -230,10 +230,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Python Library</title>
-      <link>//localhost:1313/note/python-library/</link>
+      <link>/note/python-library/</link>
       <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
       
-      <guid>//localhost:1313/note/python-library/</guid>
+      <guid>/note/python-library/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;汇总使用过的Python库&lt;/p&gt;
@@ -243,10 +243,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>SMTC 0000.py</title>
-      <link>//localhost:1313/note/smtc-0000.py/</link>
+      <link>/note/smtc-0000.py/</link>
       <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0000.py/</guid>
+      <guid>/note/smtc-0000.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
@@ -256,10 +256,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Show Me The Code</title>
-      <link>//localhost:1313/note/show-me-the-code/</link>
+      <link>/note/show-me-the-code/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>//localhost:1313/note/show-me-the-code/</guid>
+      <guid>/note/show-me-the-code/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
@@ -269,10 +269,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Python Note</title>
-      <link>//localhost:1313/note/python-note/</link>
+      <link>/note/python-note/</link>
       <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
       
-      <guid>//localhost:1313/note/python-note/</guid>
+      <guid>/note/python-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python个人笔记&lt;/p&gt;
@@ -281,10 +281,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Settings of iTerm2 on Mac</title>
-      <link>//localhost:1313/note/settings-of-iterm2-on-mac/</link>
+      <link>/note/settings-of-iterm2-on-mac/</link>
       <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
       
-      <guid>//localhost:1313/note/settings-of-iterm2-on-mac/</guid>
+      <guid>/note/settings-of-iterm2-on-mac/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;完成配置后的iTerm 2具备功能：&lt;/p&gt;
@@ -299,10 +299,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Homebrew for Mac</title>
-      <link>//localhost:1313/note/homebrew-for-mac/</link>
+      <link>/note/homebrew-for-mac/</link>
       <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
       
-      <guid>//localhost:1313/note/homebrew-for-mac/</guid>
+      <guid>/note/homebrew-for-mac/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Homebrew简介，安装与使用&lt;/p&gt;
@@ -311,10 +311,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Windows Note</title>
-      <link>//localhost:1313/note/windows-note/</link>
+      <link>/note/windows-note/</link>
       <pubDate>Mon, 21 Jan 2019 17:23:36 +0000</pubDate>
       
-      <guid>//localhost:1313/note/windows-note/</guid>
+      <guid>/note/windows-note/</guid>
       <description>重装电脑   UWP
  网易云音乐 OneNote QuickLook    Applications
  Coding  {% post_link VSCode VS Code %} Intellij IDEA Git Notepad++ Java Python3   Office Fun  Tim WeChat PotPlayer Chrome   Tools  7-zip SSR v2rayN Notion Picgo IDM 迅雷 Pandownload Rainmeter Typora      Others
@@ -323,10 +323,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>V2Ray Tutorial</title>
-      <link>//localhost:1313/note/v2ray-tutorial/</link>
+      <link>/note/v2ray-tutorial/</link>
       <pubDate>Mon, 24 Dec 2018 10:30:05 +0000</pubDate>
       
-      <guid>//localhost:1313/note/v2ray-tutorial/</guid>
+      <guid>/note/v2ray-tutorial/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;v2ray是一个代理平台，能够配置多种协议，有很多的玩法、用法（动态端口、mKCP、Mux等等）。更多的内容请查看&lt;a href=&#34;https://www.v2ray.com/&#34;&gt;V2Ray官网&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -334,10 +334,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Docker Tutorial</title>
-      <link>//localhost:1313/note/docker-tutorial/</link>
+      <link>/note/docker-tutorial/</link>
       <pubDate>Sat, 22 Dec 2018 16:36:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/docker-tutorial/</guid>
+      <guid>/note/docker-tutorial/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
@@ -347,10 +347,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Macintosh Note</title>
-      <link>//localhost:1313/note/macintosh-note/</link>
+      <link>/note/macintosh-note/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
       
-      <guid>//localhost:1313/note/macintosh-note/</guid>
+      <guid>/note/macintosh-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Mac遇到的问题与心得.&lt;/p&gt;
@@ -360,10 +360,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Maven Tutorial</title>
-      <link>//localhost:1313/note/maven-tutorial/</link>
+      <link>/note/maven-tutorial/</link>
       <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
       
-      <guid>//localhost:1313/note/maven-tutorial/</guid>
+      <guid>/note/maven-tutorial/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Maven是一个非常有用的依赖管理工具，Maven一个很重要的作用是用来管理Jar包的.&lt;/p&gt;
@@ -377,19 +377,19 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>VSCode Customised</title>
-      <link>//localhost:1313/note/vscode-customised/</link>
+      <link>/note/vscode-customised/</link>
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
-      <guid>//localhost:1313/note/vscode-customised/</guid>
+      <guid>/note/vscode-customised/</guid>
       <description>USER SETTINGS Windows {&amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;,&amp;#34;editor.minimap.enabled&amp;#34;: false,&amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;,&amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;,&amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false,&amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;,&amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;,&amp;#34;latex-workshop.latex.tools&amp;#34;: [{&amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;-pdf&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;%DOCFILE%&amp;#34;]}],&amp;#34;latex-workshop.</description>
     </item>
     
     <item>
       <title>Linux Note</title>
-      <link>//localhost:1313/note/linux-note/</link>
+      <link>/note/linux-note/</link>
       <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
       
-      <guid>//localhost:1313/note/linux-note/</guid>
+      <guid>/note/linux-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Linux遇到的问题与心得.&lt;/p&gt;
@@ -399,10 +399,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>WebHook Based on Git(Using PHP)</title>
-      <link>//localhost:1313/note/webhook-based-on-gitusing-php/</link>
+      <link>/note/webhook-based-on-gitusing-php/</link>
       <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
-      <guid>//localhost:1313/note/webhook-based-on-gitusing-php/</guid>
+      <guid>/note/webhook-based-on-gitusing-php/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -410,10 +410,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>TortoiseGit on windows tutorial</title>
-      <link>//localhost:1313/note/tortoisegit-on-windows-tutorial/</link>
+      <link>/note/tortoisegit-on-windows-tutorial/</link>
       <pubDate>Mon, 10 Dec 2018 11:47:43 +0000</pubDate>
       
-      <guid>//localhost:1313/note/tortoisegit-on-windows-tutorial/</guid>
+      <guid>/note/tortoisegit-on-windows-tutorial/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tutorial of TortoiseGit on Windows.&lt;/p&gt;
@@ -427,10 +427,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Java Note</title>
-      <link>//localhost:1313/note/java-note/</link>
+      <link>/note/java-note/</link>
       <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
       
-      <guid>//localhost:1313/note/java-note/</guid>
+      <guid>/note/java-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Java遇到的问题与心得.&lt;/p&gt;
@@ -440,10 +440,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>MySQL Note</title>
-      <link>//localhost:1313/note/mysql-note/</link>
+      <link>/note/mysql-note/</link>
       <pubDate>Fri, 07 Dec 2018 09:52:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/mysql-note/</guid>
+      <guid>/note/mysql-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用MySQL遇到的问题与心得.&lt;/p&gt;
@@ -453,10 +453,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Hackintosh for Lenovo Ideapad 700 15isk</title>
-      <link>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</link>
+      <link>/note/hackintosh-for-lenovo-ideapad-700-15isk/</link>
       <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hackintosh-for-lenovo-ideapad-700-15isk/</guid>
+      <guid>/note/hackintosh-for-lenovo-ideapad-700-15isk/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;引言
@@ -466,10 +466,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Leetcode 627. Swap Salary</title>
-      <link>//localhost:1313/note/leetcode-627.-swap-salary/</link>
+      <link>/note/leetcode-627.-swap-salary/</link>
       <pubDate>Mon, 30 Jul 2018 19:58:46 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-627.-swap-salary/</guid>
+      <guid>/note/leetcode-627.-swap-salary/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;p&gt;Given a table &lt;code&gt;salary&lt;/code&gt;, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
@@ -491,10 +491,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Leetcode 876. Middle of the Linked List</title>
-      <link>//localhost:1313/note/leetcode-876.-middle-of-the-linked-list/</link>
+      <link>/note/leetcode-876.-middle-of-the-linked-list/</link>
       <pubDate>Mon, 30 Jul 2018 18:59:07 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-876.-middle-of-the-linked-list/</guid>
+      <guid>/note/leetcode-876.-middle-of-the-linked-list/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a non-empty, singly linked list with head node &lt;code&gt;head&lt;/code&gt;, return a middle node of linked list.&lt;/p&gt;
@@ -504,10 +504,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Leetcode 852. Peak Index in a Mountain Array</title>
-      <link>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</link>
+      <link>/note/leetcode-852.-peak-index-in-a-mountain-array/</link>
       <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-852.-peak-index-in-a-mountain-array/</guid>
+      <guid>/note/leetcode-852.-peak-index-in-a-mountain-array/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s call an array &lt;code&gt;A&lt;/code&gt; a &lt;em&gt;mountain&lt;/em&gt; if the following properties hold:&lt;/p&gt;
@@ -521,10 +521,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Leetcode 617. Merge Two Binary Trees</title>
-      <link>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</link>
+      <link>/note/leetcode-617.-merge-two-binary-trees/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</guid>
+      <guid>/note/leetcode-617.-merge-two-binary-trees/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.&lt;/p&gt;
@@ -534,19 +534,19 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>LeetCode Analysis</title>
-      <link>//localhost:1313/post/leetcode-analysis/</link>
+      <link>/post/leetcode-analysis/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>//localhost:1313/post/leetcode-analysis/</guid>
+      <guid>/post/leetcode-analysis/</guid>
       <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
     </item>
     
     <item>
       <title>Hexo-NexT博客样式自定义</title>
-      <link>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <link>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <guid>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;
@@ -555,10 +555,10 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     
     <item>
       <title>Leetcode 832. Flipping an Image</title>
-      <link>//localhost:1313/note/leetcode-832.-flipping-an-image/</link>
+      <link>/note/leetcode-832.-flipping-an-image/</link>
       <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-832.-flipping-an-image/</guid>
+      <guid>/note/leetcode-832.-flipping-an-image/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.
@@ -569,10 +569,10 @@ To invert an image means that each 0 is replaced by 1, and each 1 is replaced by
     
     <item>
       <title>Leetcode 709. To Lower Case</title>
-      <link>//localhost:1313/note/leetcode-709.-to-lower-case/</link>
+      <link>/note/leetcode-709.-to-lower-case/</link>
       <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-709.-to-lower-case/</guid>
+      <guid>/note/leetcode-709.-to-lower-case/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.&lt;/p&gt;
@@ -581,20 +581,20 @@ To invert an image means that each 0 is replaced by 1, and each 1 is replaced by
     
     <item>
       <title>Django-blog</title>
-      <link>//localhost:1313/note/django-blog/</link>
+      <link>/note/django-blog/</link>
       <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/django-blog/</guid>
+      <guid>/note/django-blog/</guid>
       <description>pip install -r requirement.txt requirement.txt
  bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
     </item>
     
     <item>
       <title>Operating System Note</title>
-      <link>//localhost:1313/note/operating-system-note/</link>
+      <link>/note/operating-system-note/</link>
       <pubDate>Tue, 22 May 2018 14:30:14 +0000</pubDate>
       
-      <guid>//localhost:1313/note/operating-system-note/</guid>
+      <guid>/note/operating-system-note/</guid>
       <description>页面置换算法  选择调出页面的算法就称为页面置换算法。好的页面置换算法应有较低的页面更换频率，也就是说，应将以后不会再访问或者以后较长时间内不会再访问的页面先调出。
  常见的页面置换算法有：最佳置换算法、先进先出（FIFO）、最近最久未使用（LRU）、时钟（CLOCK）置换算法。
 OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面,这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法其实是无法实现。
@@ -603,10 +603,10 @@ OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，
     
     <item>
       <title>OpenCV Note</title>
-      <link>//localhost:1313/note/opencv-note/</link>
+      <link>/note/opencv-note/</link>
       <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
       
-      <guid>//localhost:1313/note/opencv-note/</guid>
+      <guid>/note/opencv-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用OpenCV遇到的问题与心得.&lt;/p&gt;
@@ -616,10 +616,10 @@ OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，
     
     <item>
       <title>MATLAB Note</title>
-      <link>//localhost:1313/note/matlab-note/</link>
+      <link>/note/matlab-note/</link>
       <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
       
-      <guid>//localhost:1313/note/matlab-note/</guid>
+      <guid>/note/matlab-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用MatLab遇到的问题与心得.&lt;/p&gt;
@@ -629,10 +629,10 @@ OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，
     
     <item>
       <title>使用Python爬虫爬取网络小说</title>
-      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
+      <link>/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
+      <guid>/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;小说网址&lt;/li&gt;
 &lt;/ul&gt;
@@ -646,10 +646,10 @@ OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，
     
     <item>
       <title>Leetcode 657. Judge Route Circle</title>
-      <link>//localhost:1313/note/leetcode-657.-judge-route-circle/</link>
+      <link>/note/leetcode-657.-judge-route-circle/</link>
       <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-657.-judge-route-circle/</guid>
+      <guid>/note/leetcode-657.-judge-route-circle/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
@@ -659,10 +659,10 @@ The move sequence is represented by a string. And each move is represent by a ch
     
     <item>
       <title>Leetcode 387. First Unique Character in a String</title>
-      <link>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</link>
+      <link>/note/leetcode-387.-first-unique-character-in-a-string/</link>
       <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</guid>
+      <guid>/note/leetcode-387.-first-unique-character-in-a-string/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
@@ -680,10 +680,10 @@ return 2.
     
     <item>
       <title>双系统删除Ubuntu后出现grub rescure&gt;解决办法</title>
-      <link>//localhost:1313/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在笔记本电脑上安装了两个Linux系统，有一个几乎不用，所以决定把它给删除了,然后就出现了问题.&lt;/p&gt;
@@ -692,29 +692,29 @@ return 2.
     
     <item>
       <title>Leetcode 386. Lexicographical Numbers</title>
-      <link>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</link>
+      <link>/note/leetcode-386.-lexicographical-numbers/</link>
       <pubDate>Mon, 26 Mar 2018 15:04:22 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</guid>
+      <guid>/note/leetcode-386.-lexicographical-numbers/</guid>
       <description>Description  Given an integer n, return 1-n in lexicographical order. For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9]. Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
  Solution class Solution {public:vector&amp;lt;int&amp;gt; lexicalOrder(int n) {vector&amp;lt;int&amp;gt; res;int cur=1;for(int i=1;i&amp;lt;=n;i++){res.push_back(cur);if(cur*10&amp;lt;=n) //首先判断能否直接再后面加0 cur*=10;else if(cur%10!=9&amp;amp;&amp;amp;(cur+1)&amp;lt;=n) //正常情况下+1 cur++;else{while((cur/10)%10==9) //处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20 {cur/=10;}cur=(cur/10)+1; //这一轮个位结束，从上一位+1继续开始 } }return res;}};Hints  字典排序(数字)</description>
     </item>
     
     <item>
       <title>Leetcode 807. Max Increase to Keep City Skyline</title>
-      <link>//localhost:1313/note/leetcode-807.-max-increase-to-keep-city-skyline/</link>
+      <link>/note/leetcode-807.-max-increase-to-keep-city-skyline/</link>
       <pubDate>Sun, 25 Mar 2018 19:12:34 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-807.-max-increase-to-keep-city-skyline/</guid>
+      <guid>/note/leetcode-807.-max-increase-to-keep-city-skyline/</guid>
       <description>Description  In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. At the end, the &amp;ldquo;skyline&amp;rdquo; when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid.</description>
     </item>
     
     <item>
       <title>Leetcode 804. Unique Morse Code Words</title>
-      <link>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</link>
+      <link>/note/leetcode-804.-unique-morse-code-words/</link>
       <pubDate>Sun, 25 Mar 2018 14:04:15 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</guid>
+      <guid>/note/leetcode-804.-unique-morse-code-words/</guid>
       <description>Description  International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: &amp;quot;a&amp;quot; maps to &amp;quot;.-&amp;quot;, &amp;quot;b&amp;quot; maps to &amp;quot;-...&amp;quot;, &amp;quot;c&amp;quot; maps to &amp;quot;-.-.&amp;quot;, and so on.
   For convenience, the full table for the 26 letters of the English alphabet is given below:
  [&amp;quot;.-&amp;quot;,&amp;quot;-...&amp;quot;,&amp;quot;-.-.&amp;quot;,&amp;quot;-..&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;..-.&amp;quot;,&amp;quot;--.&amp;quot;,&amp;quot;....&amp;quot;,&amp;quot;..&amp;quot;,&amp;quot;.---&amp;quot;,&amp;quot;-.-&amp;quot;,&amp;quot;.-..&amp;quot;,&amp;quot;--&amp;quot;,&amp;quot;-.&amp;quot;,&amp;quot;---&amp;quot;,&amp;quot;.--.&amp;quot;,&amp;quot;--.-&amp;quot;,&amp;quot;.-.&amp;quot;,&amp;quot;...&amp;quot;,&amp;quot;-&amp;quot;,&amp;quot;..-&amp;quot;,&amp;quot;...-&amp;quot;,&amp;quot;.--&amp;quot;,&amp;quot;-..-&amp;quot;,&amp;quot;-.--&amp;quot;,&amp;quot;--..&amp;quot;] Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter.</description>
@@ -722,20 +722,20 @@ return 2.
     
     <item>
       <title>Leetcode 191. Number of 1 Bits</title>
-      <link>//localhost:1313/note/leetcode-191.-number-of-1-bits/</link>
+      <link>/note/leetcode-191.-number-of-1-bits/</link>
       <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-191.-number-of-1-bits/</guid>
+      <guid>/note/leetcode-191.-number-of-1-bits/</guid>
       <description>Description  Write a function that takes an unsigned integer and returns the number of 1 bits it has (also known as the Hamming weight). For example, the 32-bit integer 11 has binary representation 00000000000000000000000000001011, so the function should return 3.
  Solutions  Hamming Weight  class Solution {public:int hammingWeight(uint32_t n) {int c=0;while(n){c++;n&amp;amp;=n-1; //逐次获取最低非0 bit位 }return c;}}; Bit Mask  class Solution(object):def hammingWeight(self, n):&amp;#34;&amp;#34;&amp;#34;:type n: int:rtype: int&amp;#34;&amp;#34;&amp;#34;res=0mask=1for i in range(32):if n&amp;amp;mask: # &amp;amp;：按位与 res+=1mask=mask&amp;lt;&amp;lt;1# n=n&amp;gt;&amp;gt;1 #n移位或者mask移位 return res</description>
     </item>
     
     <item>
       <title>Hexo Note</title>
-      <link>//localhost:1313/note/hexo-note/</link>
+      <link>/note/hexo-note/</link>
       <pubDate>Sun, 25 Mar 2018 13:10:22 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo-note/</guid>
+      <guid>/note/hexo-note/</guid>
       <description>小技巧 Hexo博客实现页内跳转  如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面
  {% post_link Macintosh-Note 传送门在此 %}，代码如下：
 # 出现了莫名的BUG{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}上面的方法失效了，本博客目前使用的是permalink链接到唯一的文章，改了文章名也没有关系
@@ -750,29 +750,29 @@ $ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed -
     
     <item>
       <title>Leetcode 461. Hamming Distance</title>
-      <link>//localhost:1313/note/leetcode-461.-hamming-distance/</link>
+      <link>/note/leetcode-461.-hamming-distance/</link>
       <pubDate>Sun, 25 Mar 2018 12:19:52 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-461.-hamming-distance/</guid>
+      <guid>/note/leetcode-461.-hamming-distance/</guid>
       <description>Description  The Hamming distance between two integers is the number of positions at which the corresponding bits are different.Given two integers x and y, calculate the Hamming distance.
  Example Input: x = 1, y = 4Output: 2Explanation:1 (0 0 0 1)4 (0 1 0 0)↑ ↑The above arrows point to positions where the corresponding bits are different.Note  0 ≤ x , y &amp;lt; 2^31</description>
     </item>
     
     <item>
       <title>Leetcode 654. Maximum Binary Tree</title>
-      <link>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</link>
+      <link>/note/leetcode-654.-maximum-binary-tree/</link>
       <pubDate>Sat, 24 Mar 2018 23:35:37 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</guid>
+      <guid>/note/leetcode-654.-maximum-binary-tree/</guid>
       <description>Description  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</description>
     </item>
     
     <item>
       <title>Hexo建站备忘录</title>
-      <link>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Thu, 22 Mar 2018 19:05:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>使用Hexo与Github Pages服务一同搭建个人博客
 添加功能   添加permanant link
   添加置顶
@@ -782,19 +782,19 @@ $ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed -
     
     <item>
       <title>Leetcode 771. Jewels and Stones</title>
-      <link>//localhost:1313/note/leetcode-771.-jewels-and-stones/</link>
+      <link>/note/leetcode-771.-jewels-and-stones/</link>
       <pubDate>Thu, 22 Mar 2018 15:11:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-771.-jewels-and-stones/</guid>
+      <guid>/note/leetcode-771.-jewels-and-stones/</guid>
       <description>Desciption  You&amp;rsquo;re given strings J representing the types of stones that are jewels, and S representing the stones you have. Each character in S is a type of stone you have. You want to know how many of the stones you have are also jewels. The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so &amp;ldquo;a&amp;rdquo; is considered a different type of stone from &amp;ldquo;A&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Markdown 语法说明 (简体中文版)</title>
-      <link>//localhost:1313/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</link>
+      <link>/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</link>
       <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
       
-      <guid>//localhost:1313/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</guid>
+      <guid>/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</guid>
       <description>NOTE: This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to Markdown: Syntax.
 声明： 这份文档派生(fork)于繁体中文版，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里查看它的源文件。「繁体中文版的原始文件可以查看这里 。」&amp;ndash;By @riku / 本项目托管于 GitCafe
 注： 本项目同时也托管于 Github 上，请通过 fork＋pull request 方式来帮忙改进本项目。
@@ -807,10 +807,10 @@ Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法
     
     <item>
       <title>Vim Note</title>
-      <link>//localhost:1313/note/vim-note/</link>
+      <link>/note/vim-note/</link>
       <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/vim-note/</guid>
+      <guid>/note/vim-note/</guid>
       <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾G ##注意大写:1,:d ## 删除全部内容 删除部分内容  ## 定位到要删除的文档末尾200G:9,:d ##删除9-200之间的内容复制粘贴 # 复制当前行yy# 在当前行粘贴p查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
 Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
  注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。
@@ -832,10 +832,10 @@ Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quo
     
     <item>
       <title>Git note</title>
-      <link>//localhost:1313/note/git-note/</link>
+      <link>/note/git-note/</link>
       <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
       
-      <guid>//localhost:1313/note/git-note/</guid>
+      <guid>/note/git-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
@@ -845,10 +845,10 @@ Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quo
     
     <item>
       <title>Hello World</title>
-      <link>//localhost:1313/note/hello-world/</link>
+      <link>/note/hello-world/</link>
       <pubDate>Wed, 14 Feb 2018 13:14:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hello-world/</guid>
+      <guid>/note/hello-world/</guid>
       <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34;More info: Writing
 Run server $ hexo serverMore info: Server
@@ -858,10 +858,10 @@ Deploy to remote sites $ hexo deployMore info: Deployment</description>
     
     <item>
       <title>About</title>
-      <link>//localhost:1313/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/about/</guid>
+      <guid>/about/</guid>
       <description>联系方式 EMail: im.lauzh@gmail.com
 Telegram: @JosephyLau
 Github: @imlauzh

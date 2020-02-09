@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hexo on GeekJoe</title>
-    <link>//localhost:1313/categories/hexo/</link>
+    <link>/categories/hexo/</link>
     <description>Recent content in Hexo on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jul 2018 08:36:16 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hexo-NexT博客样式自定义</title>
-      <link>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <link>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <guid>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Hexo Note</title>
-      <link>//localhost:1313/note/hexo-note/</link>
+      <link>/note/hexo-note/</link>
       <pubDate>Sun, 25 Mar 2018 13:10:22 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo-note/</guid>
+      <guid>/note/hexo-note/</guid>
       <description>小技巧 Hexo博客实现页内跳转  如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面
  {% post_link Macintosh-Note 传送门在此 %}，代码如下：
 # 出现了莫名的BUG{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}上面的方法失效了，本博客目前使用的是permalink链接到唯一的文章，改了文章名也没有关系

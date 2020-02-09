@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on GeekJoe</title>
-    <link>//localhost:1313/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to be a Postgraduate student(MIT)</title>
-      <link>//localhost:1313/post/how-to-be-a-postgraduate-studentmit/</link>
+      <link>/post/how-to-be-a-postgraduate-studentmit/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>//localhost:1313/post/how-to-be-a-postgraduate-studentmit/</guid>
+      <guid>/post/how-to-be-a-postgraduate-studentmit/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -42,10 +42,10 @@
     
     <item>
       <title>Migrating to Python 3 with pleasure</title>
-      <link>//localhost:1313/post/migrating-to-python-3-with-pleasure/</link>
+      <link>/post/migrating-to-python-3-with-pleasure/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>//localhost:1313/post/migrating-to-python-3-with-pleasure/</guid>
+      <guid>/post/migrating-to-python-3-with-pleasure/</guid>
       <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
@@ -54,19 +54,19 @@
     
     <item>
       <title>2019猪年快乐</title>
-      <link>//localhost:1313/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
+      <link>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
-      <guid>//localhost:1313/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
+      <guid>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
       <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;**2019㊗️大家🐷年大吉！**&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>LeetCode Analysis</title>
-      <link>//localhost:1313/post/leetcode-analysis/</link>
+      <link>/post/leetcode-analysis/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>//localhost:1313/post/leetcode-analysis/</guid>
+      <guid>/post/leetcode-analysis/</guid>
       <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
     </item>
     

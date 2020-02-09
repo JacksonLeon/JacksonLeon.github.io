@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iTerm 2 on GeekJoe</title>
-    <link>//localhost:1313/categories/iterm-2/</link>
+    <link>/categories/iterm-2/</link>
     <description>Recent content in iTerm 2 on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jan 2019 13:35:42 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/iterm-2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/iterm-2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Settings of iTerm2 on Mac</title>
-      <link>//localhost:1313/note/settings-of-iterm2-on-mac/</link>
+      <link>/note/settings-of-iterm2-on-mac/</link>
       <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
       
-      <guid>//localhost:1313/note/settings-of-iterm2-on-mac/</guid>
+      <guid>/note/settings-of-iterm2-on-mac/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;完成配置后的iTerm 2具备功能：&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sort on GeekJoe</title>
-    <link>//localhost:1313/tags/sort/</link>
+    <link>/tags/sort/</link>
     <description>Recent content in Sort on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Mar 2018 15:04:22 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sort/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leetcode 386. Lexicographical Numbers</title>
-      <link>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</link>
+      <link>/note/leetcode-386.-lexicographical-numbers/</link>
       <pubDate>Mon, 26 Mar 2018 15:04:22 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-386.-lexicographical-numbers/</guid>
+      <guid>/note/leetcode-386.-lexicographical-numbers/</guid>
       <description>Description  Given an integer n, return 1-n in lexicographical order. For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9]. Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
  Solution class Solution {public:vector&amp;lt;int&amp;gt; lexicalOrder(int n) {vector&amp;lt;int&amp;gt; res;int cur=1;for(int i=1;i&amp;lt;=n;i++){res.push_back(cur);if(cur*10&amp;lt;=n) //首先判断能否直接再后面加0 cur*=10;else if(cur%10!=9&amp;amp;&amp;amp;(cur+1)&amp;lt;=n) //正常情况下+1 cur++;else{while((cur/10)%10==9) //处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20 {cur/=10;}cur=(cur/10)+1; //这一轮个位结束，从上一位+1继续开始 } }return res;}};Hints  字典排序(数字)</description>
     </item>

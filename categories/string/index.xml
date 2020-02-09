@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>String on GeekJoe</title>
-    <link>//localhost:1313/categories/string/</link>
+    <link>/categories/string/</link>
     <description>Recent content in String on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2018 10:15:53 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/string/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/string/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leetcode 709. To Lower Case</title>
-      <link>//localhost:1313/note/leetcode-709.-to-lower-case/</link>
+      <link>/note/leetcode-709.-to-lower-case/</link>
       <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-709.-to-lower-case/</guid>
+      <guid>/note/leetcode-709.-to-lower-case/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Leetcode 657. Judge Route Circle</title>
-      <link>//localhost:1313/note/leetcode-657.-judge-route-circle/</link>
+      <link>/note/leetcode-657.-judge-route-circle/</link>
       <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-657.-judge-route-circle/</guid>
+      <guid>/note/leetcode-657.-judge-route-circle/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
@@ -38,10 +38,10 @@ The move sequence is represented by a string. And each move is represent by a ch
     
     <item>
       <title>Leetcode 387. First Unique Character in a String</title>
-      <link>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</link>
+      <link>/note/leetcode-387.-first-unique-character-in-a-string/</link>
       <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-387.-first-unique-character-in-a-string/</guid>
+      <guid>/note/leetcode-387.-first-unique-character-in-a-string/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
@@ -59,10 +59,10 @@ return 2.
     
     <item>
       <title>Leetcode 804. Unique Morse Code Words</title>
-      <link>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</link>
+      <link>/note/leetcode-804.-unique-morse-code-words/</link>
       <pubDate>Sun, 25 Mar 2018 14:04:15 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-804.-unique-morse-code-words/</guid>
+      <guid>/note/leetcode-804.-unique-morse-code-words/</guid>
       <description>Description  International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: &amp;quot;a&amp;quot; maps to &amp;quot;.-&amp;quot;, &amp;quot;b&amp;quot; maps to &amp;quot;-...&amp;quot;, &amp;quot;c&amp;quot; maps to &amp;quot;-.-.&amp;quot;, and so on.
   For convenience, the full table for the 26 letters of the English alphabet is given below:
  [&amp;quot;.-&amp;quot;,&amp;quot;-...&amp;quot;,&amp;quot;-.-.&amp;quot;,&amp;quot;-..&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;..-.&amp;quot;,&amp;quot;--.&amp;quot;,&amp;quot;....&amp;quot;,&amp;quot;..&amp;quot;,&amp;quot;.---&amp;quot;,&amp;quot;-.-&amp;quot;,&amp;quot;.-..&amp;quot;,&amp;quot;--&amp;quot;,&amp;quot;-.&amp;quot;,&amp;quot;---&amp;quot;,&amp;quot;.--.&amp;quot;,&amp;quot;--.-&amp;quot;,&amp;quot;.-.&amp;quot;,&amp;quot;...&amp;quot;,&amp;quot;-&amp;quot;,&amp;quot;..-&amp;quot;,&amp;quot;...-&amp;quot;,&amp;quot;.--&amp;quot;,&amp;quot;-..-&amp;quot;,&amp;quot;-.--&amp;quot;,&amp;quot;--..&amp;quot;] Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter.</description>

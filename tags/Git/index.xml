@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on GeekJoe</title>
-    <link>//localhost:1313/tags/git/</link>
+    <link>/tags/git/</link>
     <description>Recent content in Git on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 May 2019 09:09:27 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Commit messages guide</title>
-      <link>//localhost:1313/note/commit-messages-guide/</link>
+      <link>/note/commit-messages-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>//localhost:1313/note/commit-messages-guide/</guid>
+      <guid>/note/commit-messages-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>WebHook Based on Git(Using PHP)</title>
-      <link>//localhost:1313/note/webhook-based-on-gitusing-php/</link>
+      <link>/note/webhook-based-on-gitusing-php/</link>
       <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
-      <guid>//localhost:1313/note/webhook-based-on-gitusing-php/</guid>
+      <guid>/note/webhook-based-on-gitusing-php/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>TortoiseGit on windows tutorial</title>
-      <link>//localhost:1313/note/tortoisegit-on-windows-tutorial/</link>
+      <link>/note/tortoisegit-on-windows-tutorial/</link>
       <pubDate>Mon, 10 Dec 2018 11:47:43 +0000</pubDate>
       
-      <guid>//localhost:1313/note/tortoisegit-on-windows-tutorial/</guid>
+      <guid>/note/tortoisegit-on-windows-tutorial/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Tutorial of TortoiseGit on Windows.&lt;/p&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>Git note</title>
-      <link>//localhost:1313/note/git-note/</link>
+      <link>/note/git-note/</link>
       <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
       
-      <guid>//localhost:1313/note/git-note/</guid>
+      <guid>/note/git-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;

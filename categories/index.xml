@@ -2,399 +2,399 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on GeekJoe</title>
-    <link>//localhost:1313/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>备忘录</title>
-      <link>//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>//localhost:1313/categories/python/</link>
+      <link>/categories/python/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/python/</guid>
+      <guid>/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>//localhost:1313/categories/git/</link>
+      <link>/categories/git/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/git/</guid>
+      <guid>/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>//localhost:1313/categories/blog/</link>
+      <link>/categories/blog/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/blog/</guid>
+      <guid>/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Style Guide</title>
-      <link>//localhost:1313/categories/style-guide/</link>
+      <link>/categories/style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/style-guide/</guid>
+      <guid>/categories/style-guide/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Andrew NG</title>
-      <link>//localhost:1313/categories/andrew-ng/</link>
+      <link>/categories/andrew-ng/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/andrew-ng/</guid>
+      <guid>/categories/andrew-ng/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>//localhost:1313/categories/machine-learning/</link>
+      <link>/categories/machine-learning/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/machine-learning/</guid>
+      <guid>/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LaTeX</title>
-      <link>//localhost:1313/categories/latex/</link>
+      <link>/categories/latex/</link>
       <pubDate>Tue, 19 Mar 2019 20:27:25 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/latex/</guid>
+      <guid>/categories/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SMTC</title>
-      <link>//localhost:1313/categories/smtc/</link>
+      <link>/categories/smtc/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/smtc/</guid>
+      <guid>/categories/smtc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Library</title>
-      <link>//localhost:1313/categories/library/</link>
+      <link>/categories/library/</link>
       <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/library/</guid>
+      <guid>/categories/library/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Uncategoried</title>
-      <link>//localhost:1313/categories/uncategoried/</link>
+      <link>/categories/uncategoried/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/uncategoried/</guid>
+      <guid>/categories/uncategoried/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Application</title>
-      <link>//localhost:1313/categories/application/</link>
+      <link>/categories/application/</link>
       <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/application/</guid>
+      <guid>/categories/application/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iTerm 2</title>
-      <link>//localhost:1313/categories/iterm-2/</link>
+      <link>/categories/iterm-2/</link>
       <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/iterm-2/</guid>
+      <guid>/categories/iterm-2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Macintosh</title>
-      <link>//localhost:1313/categories/macintosh/</link>
+      <link>/categories/macintosh/</link>
       <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/macintosh/</guid>
+      <guid>/categories/macintosh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Homebrew</title>
-      <link>//localhost:1313/categories/homebrew/</link>
+      <link>/categories/homebrew/</link>
       <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/homebrew/</guid>
+      <guid>/categories/homebrew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>//localhost:1313/categories/windows/</link>
+      <link>/categories/windows/</link>
       <pubDate>Mon, 21 Jan 2019 17:23:36 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/windows/</guid>
+      <guid>/categories/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>V2Ray</title>
-      <link>//localhost:1313/categories/v2ray/</link>
+      <link>/categories/v2ray/</link>
       <pubDate>Mon, 24 Dec 2018 10:30:05 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/v2ray/</guid>
+      <guid>/categories/v2ray/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>//localhost:1313/categories/docker/</link>
+      <link>/categories/docker/</link>
       <pubDate>Sat, 22 Dec 2018 16:36:00 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/docker/</guid>
+      <guid>/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>//localhost:1313/categories/java/</link>
+      <link>/categories/java/</link>
       <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/java/</guid>
+      <guid>/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maven</title>
-      <link>//localhost:1313/categories/maven/</link>
+      <link>/categories/maven/</link>
       <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/maven/</guid>
+      <guid>/categories/maven/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Applications</title>
-      <link>//localhost:1313/categories/applications/</link>
+      <link>/categories/applications/</link>
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/applications/</guid>
+      <guid>/categories/applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VSCode</title>
-      <link>//localhost:1313/categories/vscode/</link>
+      <link>/categories/vscode/</link>
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/vscode/</guid>
+      <guid>/categories/vscode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>//localhost:1313/categories/linux/</link>
+      <link>/categories/linux/</link>
       <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/linux/</guid>
+      <guid>/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WebHook</title>
-      <link>//localhost:1313/categories/webhook/</link>
+      <link>/categories/webhook/</link>
       <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/webhook/</guid>
+      <guid>/categories/webhook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>//localhost:1313/categories/mysql/</link>
+      <link>/categories/mysql/</link>
       <pubDate>Fri, 07 Dec 2018 09:52:54 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/mysql/</guid>
+      <guid>/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hackintosh</title>
-      <link>//localhost:1313/categories/hackintosh/</link>
+      <link>/categories/hackintosh/</link>
       <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/hackintosh/</guid>
+      <guid>/categories/hackintosh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LeetCode</title>
-      <link>//localhost:1313/categories/leetcode/</link>
+      <link>/categories/leetcode/</link>
       <pubDate>Mon, 30 Jul 2018 19:58:46 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/leetcode/</guid>
+      <guid>/categories/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linked List</title>
-      <link>//localhost:1313/categories/linked-list/</link>
+      <link>/categories/linked-list/</link>
       <pubDate>Mon, 30 Jul 2018 18:59:07 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/linked-list/</guid>
+      <guid>/categories/linked-list/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Binary Search</title>
-      <link>//localhost:1313/categories/binary-search/</link>
+      <link>/categories/binary-search/</link>
       <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/binary-search/</guid>
+      <guid>/categories/binary-search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tree</title>
-      <link>//localhost:1313/categories/tree/</link>
+      <link>/categories/tree/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/tree/</guid>
+      <guid>/categories/tree/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>//localhost:1313/categories/hexo/</link>
+      <link>/categories/hexo/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/hexo/</guid>
+      <guid>/categories/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Array</title>
-      <link>//localhost:1313/categories/array/</link>
+      <link>/categories/array/</link>
       <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/array/</guid>
+      <guid>/categories/array/</guid>
       <description></description>
     </item>
     
     <item>
       <title>String</title>
-      <link>//localhost:1313/categories/string/</link>
+      <link>/categories/string/</link>
       <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/string/</guid>
+      <guid>/categories/string/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django</title>
-      <link>//localhost:1313/categories/django/</link>
+      <link>/categories/django/</link>
       <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/django/</guid>
+      <guid>/categories/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenCV</title>
-      <link>//localhost:1313/categories/opencv/</link>
+      <link>/categories/opencv/</link>
       <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/opencv/</guid>
+      <guid>/categories/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MatLab</title>
-      <link>//localhost:1313/categories/matlab/</link>
+      <link>/categories/matlab/</link>
       <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/matlab/</guid>
+      <guid>/categories/matlab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reptile</title>
-      <link>//localhost:1313/categories/reptile/</link>
+      <link>/categories/reptile/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/reptile/</guid>
+      <guid>/categories/reptile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hash Table</title>
-      <link>//localhost:1313/categories/hash-table/</link>
+      <link>/categories/hash-table/</link>
       <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/hash-table/</guid>
+      <guid>/categories/hash-table/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BUGs</title>
-      <link>//localhost:1313/categories/bugs/</link>
+      <link>/categories/bugs/</link>
       <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/bugs/</guid>
+      <guid>/categories/bugs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>//localhost:1313/categories/ubuntu/</link>
+      <link>/categories/ubuntu/</link>
       <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/ubuntu/</guid>
+      <guid>/categories/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bit Manipulation</title>
-      <link>//localhost:1313/categories/bit-manipulation/</link>
+      <link>/categories/bit-manipulation/</link>
       <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/bit-manipulation/</guid>
+      <guid>/categories/bit-manipulation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>//localhost:1313/categories/markdown/</link>
+      <link>/categories/markdown/</link>
       <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/markdown/</guid>
+      <guid>/categories/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>//localhost:1313/categories/vim/</link>
+      <link>/categories/vim/</link>
       <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
       
-      <guid>//localhost:1313/categories/vim/</guid>
+      <guid>/categories/vim/</guid>
       <description></description>
     </item>
     

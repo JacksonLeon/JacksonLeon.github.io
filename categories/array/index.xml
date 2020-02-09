@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Array on GeekJoe</title>
-    <link>//localhost:1313/categories/array/</link>
+    <link>/categories/array/</link>
     <description>Recent content in Array on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jul 2018 18:53:14 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/array/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/array/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leetcode 832. Flipping an Image</title>
-      <link>//localhost:1313/note/leetcode-832.-flipping-an-image/</link>
+      <link>/note/leetcode-832.-flipping-an-image/</link>
       <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-832.-flipping-an-image/</guid>
+      <guid>/note/leetcode-832.-flipping-an-image/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.

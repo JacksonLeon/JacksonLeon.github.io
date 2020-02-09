@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Circle on GeekJoe</title>
-    <link>//localhost:1313/tags/circle/</link>
+    <link>/tags/circle/</link>
     <description>Recent content in Circle on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Apr 2018 16:19:57 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/circle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/circle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leetcode 657. Judge Route Circle</title>
-      <link>//localhost:1313/note/leetcode-657.-judge-route-circle/</link>
+      <link>/note/leetcode-657.-judge-route-circle/</link>
       <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-657.-judge-route-circle/</guid>
+      <guid>/note/leetcode-657.-judge-route-circle/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.

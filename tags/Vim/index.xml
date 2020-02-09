@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on GeekJoe</title>
-    <link>//localhost:1313/tags/vim/</link>
+    <link>/tags/vim/</link>
     <description>Recent content in Vim on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Mar 2018 13:42:00 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vim Note</title>
-      <link>//localhost:1313/note/vim-note/</link>
+      <link>/note/vim-note/</link>
       <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/vim-note/</guid>
+      <guid>/note/vim-note/</guid>
       <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾G ##注意大写:1,:d ## 删除全部内容 删除部分内容  ## 定位到要删除的文档末尾200G:9,:d ##删除9-200之间的内容复制粘贴 # 复制当前行yy# 在当前行粘贴p查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
 Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
  注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。

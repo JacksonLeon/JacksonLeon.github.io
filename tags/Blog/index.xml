@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on GeekJoe</title>
-    <link>//localhost:1313/tags/blog/</link>
+    <link>/tags/blog/</link>
     <description>Recent content in Blog on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 May 2019 14:57:54 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
-      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
+      <link>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
 &lt;p&gt;一起来造轮子吧！&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Markdown 图床更改及博客推送</title>
-      <link>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
+      <link>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
       <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
       
-      <guid>//localhost:1313/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
+      <guid>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -36,20 +36,20 @@
     
     <item>
       <title>Django-blog</title>
-      <link>//localhost:1313/note/django-blog/</link>
+      <link>/note/django-blog/</link>
       <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/django-blog/</guid>
+      <guid>/note/django-blog/</guid>
       <description>pip install -r requirement.txt requirement.txt
  bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
     </item>
     
     <item>
       <title>Hexo建站备忘录</title>
-      <link>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Thu, 22 Mar 2018 19:05:00 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>使用Hexo与Github Pages服务一同搭建个人博客
 添加功能   添加permanant link
   添加置顶

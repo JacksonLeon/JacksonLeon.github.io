@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>备忘录 on GeekJoe</title>
-    <link>//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+    <link>/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
     <description>Recent content in 备忘录 on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/%E5%A4%87%E5%BF%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Manjaro备忘录</title>
-      <link>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
-      <guid>//localhost:1313/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>优点：
  显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：
  需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro下载https://manjaro.org/download/kde/ rufus下载https://rufus.ie/
@@ -32,10 +32,10 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     
     <item>
       <title>Hexo备忘录</title>
-      <link>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
       
-      <guid>//localhost:1313/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>生成密钥并添加
 ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
 # 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git

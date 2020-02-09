@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tree on GeekJoe</title>
-    <link>//localhost:1313/tags/tree/</link>
+    <link>/tags/tree/</link>
     <description>Recent content in Tree on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Jul 2018 16:09:21 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/tree/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tree/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Leetcode 617. Merge Two Binary Trees</title>
-      <link>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</link>
+      <link>/note/leetcode-617.-merge-two-binary-trees/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-617.-merge-two-binary-trees/</guid>
+      <guid>/note/leetcode-617.-merge-two-binary-trees/</guid>
       <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Leetcode 654. Maximum Binary Tree</title>
-      <link>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</link>
+      <link>/note/leetcode-654.-maximum-binary-tree/</link>
       <pubDate>Sat, 24 Mar 2018 23:35:37 +0000</pubDate>
       
-      <guid>//localhost:1313/note/leetcode-654.-maximum-binary-tree/</guid>
+      <guid>/note/leetcode-654.-maximum-binary-tree/</guid>
       <description>Description  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</description>
     </item>
     

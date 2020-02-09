@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Operating System on GeekJoe</title>
-    <link>//localhost:1313/tags/operating-system/</link>
+    <link>/tags/operating-system/</link>
     <description>Recent content in Operating System on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 May 2018 14:30:14 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/tags/operating-system/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/operating-system/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Operating System Note</title>
-      <link>//localhost:1313/note/operating-system-note/</link>
+      <link>/note/operating-system-note/</link>
       <pubDate>Tue, 22 May 2018 14:30:14 +0000</pubDate>
       
-      <guid>//localhost:1313/note/operating-system-note/</guid>
+      <guid>/note/operating-system-note/</guid>
       <description>页面置换算法  选择调出页面的算法就称为页面置换算法。好的页面置换算法应有较低的页面更换频率，也就是说，应将以后不会再访问或者以后较长时间内不会再访问的页面先调出。
  常见的页面置换算法有：最佳置换算法、先进先出（FIFO）、最近最久未使用（LRU）、时钟（CLOCK）置换算法。
 OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面,这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法其实是无法实现。

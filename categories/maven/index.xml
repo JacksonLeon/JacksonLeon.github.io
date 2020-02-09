@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maven on GeekJoe</title>
-    <link>//localhost:1313/categories/maven/</link>
+    <link>/categories/maven/</link>
     <description>Recent content in Maven on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Dec 2018 17:34:56 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/maven/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/maven/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Maven Tutorial</title>
-      <link>//localhost:1313/note/maven-tutorial/</link>
+      <link>/note/maven-tutorial/</link>
       <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
       
-      <guid>//localhost:1313/note/maven-tutorial/</guid>
+      <guid>/note/maven-tutorial/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Maven是一个非常有用的依赖管理工具，Maven一个很重要的作用是用来管理Jar包的.&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on GeekJoe</title>
-    <link>//localhost:1313/categories/python/</link>
+    <link>/categories/python/</link>
     <description>Recent content in Python on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 May 2019 09:30:29 +0000</lastBuildDate>
     
-	<atom:link href="//localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migrating to Python 3 with pleasure</title>
-      <link>//localhost:1313/post/migrating-to-python-3-with-pleasure/</link>
+      <link>/post/migrating-to-python-3-with-pleasure/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>//localhost:1313/post/migrating-to-python-3-with-pleasure/</guid>
+      <guid>/post/migrating-to-python-3-with-pleasure/</guid>
       <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
@@ -25,28 +25,28 @@
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>//localhost:1313/note/pytorch-style-guide/</link>
+      <link>/note/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>//localhost:1313/note/pytorch-style-guide/</guid>
+      <guid>/note/pytorch-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>Google Python Style Guide</title>
-      <link>//localhost:1313/note/google-python-style-guide/</link>
+      <link>/note/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
-      <guid>//localhost:1313/note/google-python-style-guide/</guid>
+      <guid>/note/google-python-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>SMTC 0007.py</title>
-      <link>//localhost:1313/note/smtc-0007.py/</link>
+      <link>/note/smtc-0007.py/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0007.py/</guid>
+      <guid>/note/smtc-0007.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>SMTC 0006.py</title>
-      <link>//localhost:1313/note/smtc-0006.py/</link>
+      <link>/note/smtc-0006.py/</link>
       <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0006.py/</guid>
+      <guid>/note/smtc-0006.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
@@ -69,10 +69,10 @@
     
     <item>
       <title>Python Library</title>
-      <link>//localhost:1313/note/python-library/</link>
+      <link>/note/python-library/</link>
       <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
       
-      <guid>//localhost:1313/note/python-library/</guid>
+      <guid>/note/python-library/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;汇总使用过的Python库&lt;/p&gt;
@@ -82,10 +82,10 @@
     
     <item>
       <title>SMTC 0000.py</title>
-      <link>//localhost:1313/note/smtc-0000.py/</link>
+      <link>/note/smtc-0000.py/</link>
       <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
       
-      <guid>//localhost:1313/note/smtc-0000.py/</guid>
+      <guid>/note/smtc-0000.py/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
@@ -95,10 +95,10 @@
     
     <item>
       <title>Python Note</title>
-      <link>//localhost:1313/note/python-note/</link>
+      <link>/note/python-note/</link>
       <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
       
-      <guid>//localhost:1313/note/python-note/</guid>
+      <guid>/note/python-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python个人笔记&lt;/p&gt;
@@ -107,20 +107,20 @@
     
     <item>
       <title>Django-blog</title>
-      <link>//localhost:1313/note/django-blog/</link>
+      <link>/note/django-blog/</link>
       <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
       
-      <guid>//localhost:1313/note/django-blog/</guid>
+      <guid>/note/django-blog/</guid>
       <description>pip install -r requirement.txt requirement.txt
  bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
     </item>
     
     <item>
       <title>使用Python爬虫爬取网络小说</title>
-      <link>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
+      <link>/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>//localhost:1313/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
+      <guid>/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;小说网址&lt;/li&gt;
 &lt;/ul&gt;
