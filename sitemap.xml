@@ -73,12 +73,12 @@
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
   </url>
   
@@ -98,12 +98,12 @@
   </url>
   
   <url>
-    <loc>/tags/blog/</loc>
+    <loc>/categories/blog/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
   </url>
   
@@ -173,12 +173,12 @@
   </url>
   
   <url>
-    <loc>/categories/latex/</loc>
+    <loc>/tags/latex/</loc>
     <lastmod>2019-03-19T20:27:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/latex/</loc>
+    <loc>/categories/latex/</loc>
     <lastmod>2019-03-19T20:27:25+00:00</lastmod>
   </url>
   
@@ -258,12 +258,12 @@
   </url>
   
   <url>
-    <loc>/categories/macintosh/</loc>
+    <loc>/tags/macintosh/</loc>
     <lastmod>2019-01-24T13:35:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/macintosh/</loc>
+    <loc>/categories/macintosh/</loc>
     <lastmod>2019-01-24T13:35:42+00:00</lastmod>
   </url>
   
@@ -313,12 +313,12 @@
   </url>
   
   <url>
-    <loc>/tags/docker/</loc>
+    <loc>/categories/docker/</loc>
     <lastmod>2018-12-22T16:36:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/docker/</loc>
+    <loc>/tags/docker/</loc>
     <lastmod>2018-12-22T16:36:00+00:00</lastmod>
   </url>
   
@@ -343,12 +343,12 @@
   </url>
   
   <url>
-    <loc>/tags/maven/</loc>
+    <loc>/categories/maven/</loc>
     <lastmod>2018-12-20T17:34:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/maven/</loc>
+    <loc>/tags/maven/</loc>
     <lastmod>2018-12-20T17:34:56+00:00</lastmod>
   </url>
   
@@ -358,12 +358,12 @@
   </url>
   
   <url>
-    <loc>/tags/applications/</loc>
+    <loc>/categories/applications/</loc>
     <lastmod>2018-12-16T00:01:39+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/applications/</loc>
+    <loc>/tags/applications/</loc>
     <lastmod>2018-12-16T00:01:39+00:00</lastmod>
   </url>
   
@@ -413,12 +413,12 @@
   </url>
   
   <url>
-    <loc>/tags/mysql/</loc>
+    <loc>/categories/mysql/</loc>
     <lastmod>2018-12-07T09:52:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/mysql/</loc>
+    <loc>/tags/mysql/</loc>
     <lastmod>2018-12-07T09:52:54+00:00</lastmod>
   </url>
   
@@ -443,12 +443,12 @@
   </url>
   
   <url>
-    <loc>/tags/leetcode/</loc>
+    <loc>/categories/leetcode/</loc>
     <lastmod>2018-07-30T19:58:46+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/leetcode/</loc>
+    <loc>/tags/leetcode/</loc>
     <lastmod>2018-07-30T19:58:46+00:00</lastmod>
   </url>
   
@@ -498,12 +498,12 @@
   </url>
   
   <url>
-    <loc>/tags/tree/</loc>
+    <loc>/categories/tree/</loc>
     <lastmod>2018-07-30T16:09:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/tree/</loc>
+    <loc>/tags/tree/</loc>
     <lastmod>2018-07-30T16:09:21+00:00</lastmod>
   </url>
   
@@ -548,12 +548,12 @@
   </url>
   
   <url>
-    <loc>/tags/django/</loc>
+    <loc>/categories/django/</loc>
     <lastmod>2018-06-21T16:16:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/django/</loc>
+    <loc>/tags/django/</loc>
     <lastmod>2018-06-21T16:16:54+00:00</lastmod>
   </url>
   
@@ -603,12 +603,12 @@
   </url>
   
   <url>
-    <loc>/categories/reptile/</loc>
+    <loc>/tags/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/reptile/</loc>
+    <loc>/categories/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
@@ -743,12 +743,12 @@
   </url>
   
   <url>
-    <loc>/tags/vim/</loc>
+    <loc>/categories/vim/</loc>
     <lastmod>2018-03-21T13:42:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/vim/</loc>
+    <loc>/tags/vim/</loc>
     <lastmod>2018-03-21T13:42:00+00:00</lastmod>
   </url>
   
