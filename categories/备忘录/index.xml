@@ -6,10 +6,54 @@
     <description>Recent content in 备忘录 on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>深度学习笔记</title>
+      <link>/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      
+      <guid>/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;深度学习笔记&#34;&gt;深度学习笔记&lt;/h1&gt;
+&lt;p&gt;报错与解决&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 基础</title>
+      <link>/note/linux-%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/note/linux-%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;h1 id=&#34;headtitle-one&#34;&gt;HeadTitle One&lt;/h1&gt;
+&lt;h1 id=&#34;linux-基础&#34;&gt;Linux 基础&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Note</title>
+      <link>/note/ubuntu-note/</link>
+      <pubDate>Sat, 19 Oct 2019 23:06:25 +0000</pubDate>
+      
+      <guid>/note/ubuntu-note/</guid>
+      <description>&lt;h1 id=&#34;ubuntu备忘录&#34;&gt;Ubuntu备忘录&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;apt换源&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>人生苦短，我用Docker</title>
+      <link>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</link>
+      <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
+      
+      <guid>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</guid>
+      <description>&lt;h1 id=&#34;人生苦短我用docker&#34;&gt;人生苦短，我用Docker&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;使用服务器Docker服务搭建Deepo-jupyter深度学习框架&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     
     <item>
       <title>Manjaro备忘录</title>
@@ -28,18 +72,6 @@ sudo pacman -Syysudo pacman -Syu移除Octopi换Pamac KDE自带的软件管理�
 yay --aururl &amp;quot;https://aur.tuna.tsinghua.edu.cn&amp;quot; --save调整Baloo限制 Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项 https://wiki.archlinux.org/index.php/Baloo
 # 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288安装base-devel 安装基础开发工具
 sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和字体</description>
-    </item>
-    
-    <item>
-      <title>Hexo备忘录</title>
-      <link>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
-      <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
-      
-      <guid>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description>生成密钥并添加
-ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
-# 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git
-# git默认设置git config --global user.email &amp;quot;im.lauzh@outlook.com&amp;quot;git config --global user.name &amp;quot;lau&amp;quot;# 切换分支deploygit checkout -b deploy# 修改及添加remotegit remote rename origin githubgit remote add gitee git@gitee.</description>
     </item>
     
   </channel>

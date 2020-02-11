@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linux 基础 | GeekJoe</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Linux 基础</span></h1>
+
+<h2 class="date">2019/10/20</h2>
+</div>
+
+<main>
+<h1 id="headtitle-one">HeadTitle One</h1>
+<h1 id="linux-基础">Linux 基础</h1>
+<h4 id="scp传输文件到服务器">scp传输文件到服务器</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">scp /path/to/local/file1.txt /path/to/local/file2.txt user@192.168.10.100:/remote/path/
+</code></pre></div><h4 id="解压缩">解压缩</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">unzip archive_name.zip
+</code></pre></div><h4 id="tar">tar</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 打包</span>
+tar -cvf archive_name.tar directory_to_compress
+<span style="color:#75715e"># 解包</span>
+tar -xvf archive_name.tar.gz 
+<span style="color:#75715e"># 或者指定路径</span>
+tar -xvf archive_name.tar -C /tmp/extract_here/
+<span style="color:#75715e"># 常用tar.gz</span>
+tar -zcvf archive_name.tar.gz directory_to_compress
+tar -zxvf archive_name.tar.gz
+</code></pre></div><h4 id="软连接">软连接</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ln -s source dist
+source:文件原始地址
+dist：文件想要建立链接的位置
+</code></pre></div><h4 id="修改用户id">修改用户id</h4>
+<pre><code># root权限
+usermod -u 1001 lau
+groupmod -g 1001 lau
+</code></pre><h4 id="修改文件所属usergroup">修改文件所属user/group</h4>
+<pre><code>sudo chown -R user.user files
+</code></pre>
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+  
+  <hr/>
+  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

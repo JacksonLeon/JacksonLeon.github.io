@@ -21,12 +21,37 @@
     </item>
     
     <item>
+      <title>Pytorch Style Guide</title>
+      <link>/post/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>/post/pytorch-style-guide/</guid>
+      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
+&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
+&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Google Python Style Guide</title>
       <link>/note/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
       <guid>/note/google-python-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>/post/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>/post/google-python-style-guide/</guid>
+      <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
   </channel>

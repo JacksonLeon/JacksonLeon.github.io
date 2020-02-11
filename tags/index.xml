@@ -6,10 +6,73 @@
     <description>Recent content in Tags on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>备忘录</title>
+      <link>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      
+      <guid>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>深度学习</title>
+      <link>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      
+      <guid>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>/tags/ubuntu/</link>
+      <pubDate>Sat, 19 Oct 2019 23:06:25 +0000</pubDate>
+      
+      <guid>/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NLP</title>
+      <link>/tags/nlp/</link>
+      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
+      
+      <guid>/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reproduce</title>
+      <link>/tags/reproduce/</link>
+      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
+      
+      <guid>/tags/reproduce/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Manjaro</title>
@@ -17,33 +80,6 @@
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
       <guid>/tags/manjaro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>备忘录</title>
-      <link>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
-      <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
-      
-      <guid>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hexo</title>
-      <link>/tags/hexo/</link>
-      <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
-      
-      <guid>/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reproduce</title>
-      <link>/tags/reproduce/</link>
-      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
-      
-      <guid>/tags/reproduce/</guid>
       <description></description>
     </item>
     
@@ -147,15 +183,6 @@
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sat, 22 Dec 2018 16:36:00 +0000</pubDate>
-      
-      <guid>/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>/tags/java/</link>
       <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
@@ -179,15 +206,6 @@
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
       <guid>/tags/applications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -242,6 +260,15 @@
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
       <guid>/tags/tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>/tags/hexo/</link>
+      <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
+      
+      <guid>/tags/hexo/</guid>
       <description></description>
     </item>
     
@@ -314,15 +341,6 @@
       <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
       
       <guid>/tags/circle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>/tags/ubuntu/</link>
-      <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
-      
-      <guid>/tags/ubuntu/</guid>
       <description></description>
     </item>
     

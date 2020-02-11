@@ -23,23 +23,5 @@
 &lt;/blockquote&gt;</description>
     </item>
     
-    <item>
-      <title>Hexo Note</title>
-      <link>/note/hexo-note/</link>
-      <pubDate>Sun, 25 Mar 2018 13:10:22 +0000</pubDate>
-      
-      <guid>/note/hexo-note/</guid>
-      <description>小技巧 Hexo博客实现页内跳转  如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面
- {% post_link Macintosh-Note 传送门在此 %}，代码如下：
-# 出现了莫名的BUG{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}上面的方法失效了，本博客目前使用的是permalink链接到唯一的文章，改了文章名也没有关系
-具体设置方法请看这里
-Next 主题中渲染 LaTeX数学公式 原因 Hexo 默认使用 hexo-renderer-marked 引擎渲染网页，该引擎会把一些特殊的 markdown 符号转换为相应的 html 标签，比如在 markdown 语法中，下划线_代表斜体，会被渲染引擎处理为&amp;lt;em&amp;gt;标签。
-因为类 Latex 格式书写的数学公式下划线_表示下标，有特殊的含义，如果被强制转换为&amp;lt;em&amp;gt;标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。
-类似的语义冲突的符号还包括*, {, }, \\等。
-解决方法 更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。
-$ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed --save执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。 然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的 escape 变量的值做相应的修改：
-//escape: /^\\([\\`*{}\[\]()#$+\-.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -4,12 +4,97 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-10-20T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2019-10-20T19:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/linux-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-10-20T19:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ubuntu/</loc>
+    <lastmod>2019-10-19T23:06:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/ubuntu-note/</loc>
+    <lastmod>2019-10-19T23:06:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2019-10-10T10:11:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</loc>
+    <lastmod>2019-10-10T10:11:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nlp/</loc>
+    <lastmod>2019-09-21T16:46:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nlp/</loc>
+    <lastmod>2019-09-21T16:46:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/nlp-1/</loc>
+    <lastmod>2019-09-21T16:46:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/reproduce/</loc>
+    <lastmod>2019-09-21T16:46:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/nlp-0/</loc>
+    <lastmod>2019-09-21T16:31:45+00:00</lastmod>
   </url>
   
   <url>
@@ -23,36 +108,6 @@
   </url>
   
   <url>
-    <loc>/note/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2019-09-14T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/hexo/</loc>
-    <lastmod>2019-09-14T21:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2019-09-14T21:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/how-to-be-a-postgraduate-studentmit/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url>
@@ -63,22 +118,17 @@
   </url>
   
   <url>
-    <loc>/tags/reproduce/</loc>
-    <lastmod>2019-05-18T11:08:40+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/migrating-to-python-3-with-pleasure/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
   </url>
   
@@ -98,12 +148,12 @@
   </url>
   
   <url>
-    <loc>/categories/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/blog/</loc>
+    <loc>/categories/blog/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
   </url>
   
@@ -133,6 +183,11 @@
   </url>
   
   <url>
+    <loc>/post/pytorch-style-guide/</loc>
+    <lastmod>2019-05-01T09:03:11+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/style-guide/</loc>
     <lastmod>2019-05-01T09:03:11+00:00</lastmod>
   </url>
@@ -143,17 +198,22 @@
   </url>
   
   <url>
+    <loc>/post/google-python-style-guide/</loc>
+    <lastmod>2019-04-30T20:37:51+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/andrew-ng/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/machine-learning/</loc>
+    <loc>/categories/machine-learning/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/machine-learning/</loc>
+    <loc>/tags/machine-learning/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url>
   
@@ -188,12 +248,12 @@
   </url>
   
   <url>
-    <loc>/tags/smtc/</loc>
+    <loc>/categories/smtc/</loc>
     <lastmod>2019-02-05T11:51:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/smtc/</loc>
+    <loc>/tags/smtc/</loc>
     <lastmod>2019-02-05T11:51:54+00:00</lastmod>
   </url>
   
@@ -258,12 +318,12 @@
   </url>
   
   <url>
-    <loc>/tags/macintosh/</loc>
+    <loc>/categories/macintosh/</loc>
     <lastmod>2019-01-24T13:35:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/macintosh/</loc>
+    <loc>/tags/macintosh/</loc>
     <lastmod>2019-01-24T13:35:42+00:00</lastmod>
   </url>
   
@@ -313,32 +373,17 @@
   </url>
   
   <url>
-    <loc>/categories/docker/</loc>
-    <lastmod>2018-12-22T16:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2018-12-22T16:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/docker-tutorial/</loc>
-    <lastmod>2018-12-22T16:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/note/macintosh-note/</loc>
     <lastmod>2018-12-21T15:32:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/java/</loc>
+    <loc>/tags/java/</loc>
     <lastmod>2018-12-20T17:34:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/java/</loc>
+    <loc>/categories/java/</loc>
     <lastmod>2018-12-20T17:34:56+00:00</lastmod>
   </url>
   
@@ -379,11 +424,6 @@
   
   <url>
     <loc>/categories/linux/</loc>
-    <lastmod>2018-12-13T15:10:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/linux/</loc>
     <lastmod>2018-12-13T15:10:43+00:00</lastmod>
   </url>
   
@@ -508,6 +548,11 @@
   </url>
   
   <url>
+    <loc>/tags/hexo/</loc>
+    <lastmod>2018-07-17T08:36:16+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/hexo/</loc>
     <lastmod>2018-07-17T08:36:16+00:00</lastmod>
   </url>
@@ -548,12 +593,12 @@
   </url>
   
   <url>
-    <loc>/categories/django/</loc>
+    <loc>/tags/django/</loc>
     <lastmod>2018-06-21T16:16:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/django/</loc>
+    <loc>/categories/django/</loc>
     <lastmod>2018-06-21T16:16:54+00:00</lastmod>
   </url>
   
@@ -603,12 +648,12 @@
   </url>
   
   <url>
-    <loc>/tags/reptile/</loc>
+    <loc>/categories/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/reptile/</loc>
+    <loc>/tags/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
@@ -639,11 +684,6 @@
   
   <url>
     <loc>/categories/bugs/</loc>
-    <lastmod>2018-03-27T15:06:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ubuntu/</loc>
     <lastmod>2018-03-27T15:06:07+00:00</lastmod>
   </url>
   
@@ -703,11 +743,6 @@
   </url>
   
   <url>
-    <loc>/note/hexo-note/</loc>
-    <lastmod>2018-03-25T13:10:22+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/note/leetcode-461.-hamming-distance/</loc>
     <lastmod>2018-03-25T12:19:52+00:00</lastmod>
   </url>
@@ -715,11 +750,6 @@
   <url>
     <loc>/note/leetcode-654.-maximum-binary-tree/</loc>
     <lastmod>2018-03-24T23:35:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2018-03-22T19:05:00+00:00</lastmod>
   </url>
   
   <url>
@@ -743,12 +773,12 @@
   </url>
   
   <url>
-    <loc>/categories/vim/</loc>
+    <loc>/tags/vim/</loc>
     <lastmod>2018-03-21T13:42:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/vim/</loc>
+    <loc>/categories/vim/</loc>
     <lastmod>2018-03-21T13:42:00+00:00</lastmod>
   </url>
   

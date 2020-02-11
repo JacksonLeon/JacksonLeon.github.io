@@ -6,10 +6,82 @@
     <description>Recent content in Home on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>深度学习笔记</title>
+      <link>/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      
+      <guid>/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;深度学习笔记&#34;&gt;深度学习笔记&lt;/h1&gt;
+&lt;p&gt;报错与解决&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 基础</title>
+      <link>/note/linux-%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/note/linux-%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;h1 id=&#34;headtitle-one&#34;&gt;HeadTitle One&lt;/h1&gt;
+&lt;h1 id=&#34;linux-基础&#34;&gt;Linux 基础&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Note</title>
+      <link>/note/ubuntu-note/</link>
+      <pubDate>Sat, 19 Oct 2019 23:06:25 +0000</pubDate>
+      
+      <guid>/note/ubuntu-note/</guid>
+      <description>&lt;h1 id=&#34;ubuntu备忘录&#34;&gt;Ubuntu备忘录&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;apt换源&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>人生苦短，我用Docker</title>
+      <link>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</link>
+      <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
+      
+      <guid>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</guid>
+      <description>&lt;h1 id=&#34;人生苦短我用docker&#34;&gt;人生苦短，我用Docker&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;使用服务器Docker服务搭建Deepo-jupyter深度学习框架&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>NLP-1</title>
+      <link>/note/nlp-1/</link>
+      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
+      
+      <guid>/note/nlp-1/</guid>
+      <description>&lt;h1 id=&#34;nlper-建议&#34;&gt;NLPer 建议&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;转载自知乎专栏https://zhuanlan.zhihu.com/p/69358248&lt;/p&gt;
+&lt;p&gt;作者：&lt;a href=&#34;https://www.zhihu.com/people/songyingxin&#34;&gt;老宋的茶书会&lt;/a&gt;，诗和远方，我选择苟且&lt;/p&gt;
+&lt;p&gt;前些日子刷知乎的时候，刷到一个研究生提到，其在开学之初，老师给了他一份礼物： &lt;strong&gt;论文大礼包&lt;/strong&gt;。emmm， 瞬间觉得自己好惨，我整个研究生涯完全是放养，自己摸索过来的， 不要说论文大礼包，老师都没见过几次，哎，说多了都是泪。&lt;/p&gt;
+&lt;p&gt;考虑到， 我国研究生现状， 估计很多人都无法遇到很合意的老师，更不要说论文大礼包了，于是，我决定，将我整个一年多来看过的，觉得值得一看的论文总结一下，给各位还在挣扎在NLP 门口的各位同学一些参考。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>NLP-0</title>
+      <link>/note/nlp-0/</link>
+      <pubDate>Sat, 21 Sep 2019 16:31:45 +0000</pubDate>
+      
+      <guid>/note/nlp-0/</guid>
+      <description>&lt;h2 id=&#34;初入nlp领域的一些小建议&#34;&gt;初入NLP领域的一些小建议&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;作者：香侬科技 李纪为 斯坦福大学计算机博士&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/59184256&#34;&gt;https://zhuanlan.zhihu.com/p/59184256&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>Manjaro备忘录</title>
@@ -28,18 +100,6 @@ sudo pacman -Syysudo pacman -Syu移除Octopi换Pamac KDE自带的软件管理�
 yay --aururl &amp;quot;https://aur.tuna.tsinghua.edu.cn&amp;quot; --save调整Baloo限制 Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项 https://wiki.archlinux.org/index.php/Baloo
 # 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288安装base-devel 安装基础开发工具
 sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和字体</description>
-    </item>
-    
-    <item>
-      <title>Hexo备忘录</title>
-      <link>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</link>
-      <pubDate>Sat, 14 Sep 2019 21:44:26 +0000</pubDate>
-      
-      <guid>/note/hexo%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description>生成密钥并添加
-ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@github.com:JacksonLeon/Hexo_Blog.git Blog  安装Hexo
-# 安装nvm版本管理（直接安装nodejs会有权限错误）yay -S nvmsource /usr/share/nvm/init-nvm.shnvm install node# 安装npm和hexosudo pacman -S npmnpm install hexo-cli -gsudo npm install hexo -g# 安装依赖sudo npm install  Git
-# git默认设置git config --global user.email &amp;quot;im.lauzh@outlook.com&amp;quot;git config --global user.name &amp;quot;lau&amp;quot;# 切换分支deploygit checkout -b deploy# 修改及添加remotegit remote rename origin githubgit remote add gitee git@gitee.</description>
     </item>
     
     <item>
@@ -127,12 +187,37 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
     </item>
     
     <item>
+      <title>Pytorch Style Guide</title>
+      <link>/post/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>/post/pytorch-style-guide/</guid>
+      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
+&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
+&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Google Python Style Guide</title>
       <link>/note/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
       <guid>/note/google-python-style-guide/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>/post/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>/post/google-python-style-guide/</guid>
+      <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
@@ -329,19 +414,6 @@ ssh-keygen -t rsa -C &amp;quot;email&amp;quot;# 拉取到本地git clone git@g
       <guid>/note/v2ray-tutorial/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;v2ray是一个代理平台，能够配置多种协议，有很多的玩法、用法（动态端口、mKCP、Mux等等）。更多的内容请查看&lt;a href=&#34;https://www.v2ray.com/&#34;&gt;V2Ray官网&lt;/a&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker Tutorial</title>
-      <link>/note/docker-tutorial/</link>
-      <pubDate>Sat, 22 Dec 2018 16:36:00 +0000</pubDate>
-      
-      <guid>/note/docker-tutorial/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
-&lt;p&gt;本文长期更新.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -731,24 +803,6 @@ return 2.
     </item>
     
     <item>
-      <title>Hexo Note</title>
-      <link>/note/hexo-note/</link>
-      <pubDate>Sun, 25 Mar 2018 13:10:22 +0000</pubDate>
-      
-      <guid>/note/hexo-note/</guid>
-      <description>小技巧 Hexo博客实现页内跳转  如何在Hexo中写MarkDown文档，不使用绝对地址进行跳转到本博客中另外一个页面
- {% post_link Macintosh-Note 传送门在此 %}，代码如下：
-# 出现了莫名的BUG{% post_link Settings-of-iTerm2-on-Mac 详细设置请看这篇文章 %}上面的方法失效了，本博客目前使用的是permalink链接到唯一的文章，改了文章名也没有关系
-具体设置方法请看这里
-Next 主题中渲染 LaTeX数学公式 原因 Hexo 默认使用 hexo-renderer-marked 引擎渲染网页，该引擎会把一些特殊的 markdown 符号转换为相应的 html 标签，比如在 markdown 语法中，下划线_代表斜体，会被渲染引擎处理为&amp;lt;em&amp;gt;标签。
-因为类 Latex 格式书写的数学公式下划线_表示下标，有特殊的含义，如果被强制转换为&amp;lt;em&amp;gt;标签，那么 MathJax 引擎在渲染数学公式的时候就会出错。
-类似的语义冲突的符号还包括*, {, }, \\等。
-解决方法 更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。
-$ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed --save执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。 然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为 hexo-renderer-kramed 引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的 escape 变量的值做相应的修改：
-//escape: /^\\([\\`*{}\[\]()#$+\-.</description>
-    </item>
-    
-    <item>
       <title>Leetcode 461. Hamming Distance</title>
       <link>/note/leetcode-461.-hamming-distance/</link>
       <pubDate>Sun, 25 Mar 2018 12:19:52 +0000</pubDate>
@@ -765,19 +819,6 @@ $ npm uninstall hexo-renderer-marked --save$ npm install hexo-renderer-kramed -
       
       <guid>/note/leetcode-654.-maximum-binary-tree/</guid>
       <description>Description  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</description>
-    </item>
-    
-    <item>
-      <title>Hexo建站备忘录</title>
-      <link>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</link>
-      <pubDate>Thu, 22 Mar 2018 19:05:00 +0000</pubDate>
-      
-      <guid>/note/hexo%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description>使用Hexo与Github Pages服务一同搭建个人博客
-添加功能   添加permanant link
-  添加置顶
-在node_modules/hexo-generate-index-pin-top/lib/generate.js中替换top为sticky：
-&amp;#39;use strict&amp;#39;;var pagination = require(&amp;#39;hexo-pagination&amp;#39;);module.exports = function(locals){var config = this.config;var posts = locals.posts;posts.data = posts.data.sort(function(a, b) {if(a.sticky &amp;amp;&amp;amp; b.sticky) { // 两篇文章sticky都有定义 if(a.sticky == b.sticky) return b.date - a.date; // 若sticky值一样则按照文章日期降序排 else return b.sticky - a.sticky; // 否则按照sticky值降序排 }else if(a.sticky &amp;amp;&amp;amp; !b.sticky) { // 以下是只有一篇文章sticky有定义，那么将有sticky的排在前面（这里用异或操作居然不行233） return -1;}else if(!</description>
     </item>
     
     <item>
