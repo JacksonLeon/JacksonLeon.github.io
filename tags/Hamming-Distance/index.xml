@@ -1,35 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hamming-Distance on GeekJoe</title>
-    <link>/tags/hamming-distance/</link>
-    <description>Recent content in Hamming-Distance on GeekJoe</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 25 Mar 2018 13:32:38 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/hamming-distance/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Leetcode 191. Number of 1 Bits</title>
-      <link>/note/leetcode-191.-number-of-1-bits/</link>
-      <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
-      
-      <guid>/note/leetcode-191.-number-of-1-bits/</guid>
-      <description>Description  Write a function that takes an unsigned integer and returns the number of 1 bits it has (also known as the Hamming weight). For example, the 32-bit integer 11 has binary representation 00000000000000000000000000001011, so the function should return 3.
- Solutions  Hamming Weight  class Solution {public:int hammingWeight(uint32_t n) {int c=0;while(n){c++;n&amp;amp;=n-1; //逐次获取最低非0 bit位 }return c;}}; Bit Mask  class Solution(object):def hammingWeight(self, n):&amp;#34;&amp;#34;&amp;#34;:type n: int:rtype: int&amp;#34;&amp;#34;&amp;#34;res=0mask=1for i in range(32):if n&amp;amp;mask: # &amp;amp;：按位与 res+=1mask=mask&amp;lt;&amp;lt;1# n=n&amp;gt;&amp;gt;1 #n移位或者mask移位 return res</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 461. Hamming Distance</title>
-      <link>/note/leetcode-461.-hamming-distance/</link>
-      <pubDate>Sun, 25 Mar 2018 12:19:52 +0000</pubDate>
-      
-      <guid>/note/leetcode-461.-hamming-distance/</guid>
-      <description>Description  The Hamming distance between two integers is the number of positions at which the corresponding bits are different.Given two integers x and y, calculate the Hamming distance.
- Example Input: x = 1, y = 4Output: 2Explanation:1 (0 0 0 1)4 (0 1 0 0)↑ ↑The above arrows point to positions where the corresponding bits are different.Note  0 ≤ x , y &amp;lt; 2^31</description>
-    </item>
-    
-  </channel>
-</rss>

@@ -1,25 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Django on GeekJoe</title>
-    <link>/categories/django/</link>
-    <description>Recent content in Django on GeekJoe</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jun 2018 16:16:54 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/django/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Django-blog</title>
-      <link>/note/django-blog/</link>
-      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
-      
-      <guid>/note/django-blog/</guid>
-      <description>pip install -r requirement.txt requirement.txt
- bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
-    </item>
-    
-  </channel>
-</rss>
