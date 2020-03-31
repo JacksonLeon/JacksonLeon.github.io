@@ -27,20 +27,7 @@
       <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
       
       <guid>/note/linux-%E5%9F%BA%E7%A1%80/</guid>
-      <description>&lt;h1 id=&#34;headtitle-one&#34;&gt;HeadTitle One&lt;/h1&gt;
-&lt;h1 id=&#34;linux-基础&#34;&gt;Linux 基础&lt;/h1&gt;</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu Note</title>
-      <link>/note/ubuntu-note/</link>
-      <pubDate>Sat, 19 Oct 2019 23:06:25 +0000</pubDate>
-      
-      <guid>/note/ubuntu-note/</guid>
-      <description>&lt;h1 id=&#34;ubuntu备忘录&#34;&gt;Ubuntu备忘录&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;apt换源&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>zsh sudo yum -y install zshchsh -s /bin/zsh# curlsh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;# wgetsh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;ls ~/.oh-my-zsh/themesvim ~/.zshrcZSH_THEME=&amp;quot;ys&amp;quot;source ~/.zshrc# 命令补全git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestionsvim ~/.zshrcplugins=(gitzsh-autosuggestions)source ~/.zshrcDocker # centossudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-enginesudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2sudo yum-config-manager \ --add-repo \ https://download.</description>
     </item>
     
     <item>
@@ -49,38 +36,7 @@
       <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
       
       <guid>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</guid>
-      <description>&lt;h1 id=&#34;人生苦短我用docker&#34;&gt;人生苦短，我用Docker&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;使用服务器Docker服务搭建Deepo-jupyter深度学习框架&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>NLP-1</title>
-      <link>/note/nlp-1/</link>
-      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
-      
-      <guid>/note/nlp-1/</guid>
-      <description>&lt;h1 id=&#34;nlper-建议&#34;&gt;NLPer 建议&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;转载自知乎专栏https://zhuanlan.zhihu.com/p/69358248&lt;/p&gt;
-&lt;p&gt;作者：&lt;a href=&#34;https://www.zhihu.com/people/songyingxin&#34;&gt;老宋的茶书会&lt;/a&gt;，诗和远方，我选择苟且&lt;/p&gt;
-&lt;p&gt;前些日子刷知乎的时候，刷到一个研究生提到，其在开学之初，老师给了他一份礼物： &lt;strong&gt;论文大礼包&lt;/strong&gt;。emmm， 瞬间觉得自己好惨，我整个研究生涯完全是放养，自己摸索过来的， 不要说论文大礼包，老师都没见过几次，哎，说多了都是泪。&lt;/p&gt;
-&lt;p&gt;考虑到， 我国研究生现状， 估计很多人都无法遇到很合意的老师，更不要说论文大礼包了，于是，我决定，将我整个一年多来看过的，觉得值得一看的论文总结一下，给各位还在挣扎在NLP 门口的各位同学一些参考。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>NLP-0</title>
-      <link>/note/nlp-0/</link>
-      <pubDate>Sat, 21 Sep 2019 16:31:45 +0000</pubDate>
-      
-      <guid>/note/nlp-0/</guid>
-      <description>&lt;h2 id=&#34;初入nlp领域的一些小建议&#34;&gt;初入NLP领域的一些小建议&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;作者：香侬科技 李纪为 斯坦福大学计算机博士&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/59184256&#34;&gt;https://zhuanlan.zhihu.com/p/59184256&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>人生苦短，我用Docker  使用服务器Docker服务搭建Deepo-jupyter深度学习框架  使用服务器Docker服务搭建Deepo-jupyter深度学习框架 # 需要保证服务器已经安装docker以及nvidia-docker# 首先服务器拉取deepo镜像# 注意换源，不然会非常慢的docker pull ufoym/deepo:all-py36-jupyter# 开启deepo# -it 保持输入与交互# -p 端口映射，服务器的7777映射到docker的8888# -v 文件保存# --name 设置容器名字docker run --runtime=nvidia -it -p 7890:7890 --ipc=host -v /home/liuzh/lau/:/lau --name deepo-all36 ufoym/deepo:all-py36-cu100# 注意下次启动直接使用容器，不需要重新创建docker container start deepo-jupyterdocker container attach deepo-jupyter# 启动jupyter-notebooknohup jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=&amp;#39;/Projects&amp;#39;# 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射# 本地1234映射到host的127.0.0.1:7777ssh username@host-ip -L 1234:127.0.0.1:7777## 设置alias# 本地alias ssh-jupyter=&amp;#34;ssh -p 22 name@ip -L 1234:127.</description>
     </item>
     
     <item>
@@ -89,17 +45,10 @@
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
       <guid>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description>优点：
- 显卡驱动安装省心,好评 aur里有各种软件 pacman安装方便 背靠arch文档丰富 相对arch稳定多  缺点：
- 需要对linux有一定的了解 滚动更新还是有几率挂的，做好系统备份  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro下载https://manjaro.org/download/kde/ rufus下载https://rufus.ie/
+      <description>安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro rufus
 更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
-# 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加sudo pacman -S pacman-mirrors# 中国区镜像排序，一般选择前两个镜像sudo pacman-mirrors -i -c China -m rank同步更新 新系统先更新一下
-sudo pacman -Syysudo pacman -Syu移除Octopi换Pamac KDE自带的软件管理器octopi比较丑，可以换另一个管理器pamac。
-# 安装pamacsudo pacman -S pamac打开pamac，搜索octopi，移除所有octopi相关的orphan依赖包。
-安装yay 尽管pamac也可以安装AUR里的软件包（需要在pamac设置里开启aur选项），但yay更符合命令行的习惯。安装yay非常简单，在pamac里搜索安装即可，安装完成后选择清华aur镜像。
-yay --aururl &amp;quot;https://aur.tuna.tsinghua.edu.cn&amp;quot; --save调整Baloo限制 Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项 https://wiki.archlinux.org/index.php/Baloo
-# 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288安装base-devel 安装基础开发工具
-sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和字体</description>
+# 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加# 中国区镜像排序，一般选择前两个镜像，选择一个作为备用sudo pacman-mirrors -i -c China -m rank同步更新 sudo pacman -Syyu添加Arch Linux 中文社区仓库 在 /etc/pacman.conf 文件末尾添加以下内容：
+[archlinuxcn]# SigLevel = Optional TrustedOnlySigLevel = Optional TrustAllServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$archZSH # 安装zshsudo pacman -S zsh# 安装oh-my-zshsh -c &amp;#34;$wgethttps://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)”# 使用zsh替换bashchsh -s /bin/zsh# 修改.</description>
     </item>
     
     <item>
@@ -134,24 +83,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
       <description>&lt;blockquote&gt;
 &lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
-      <link>/note/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/note/pytorch-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Google Python Style Guide</title>
-      <link>/note/google-python-style-guide/</link>
-      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
-      
-      <guid>/note/google-python-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
@@ -192,37 +123,14 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     </item>
     
     <item>
-      <title>LaTeX Note</title>
-      <link>/note/latex-note/</link>
-      <pubDate>Tue, 19 Mar 2019 20:27:25 +0000</pubDate>
-      
-      <guid>/note/latex-note/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;LaTeX Note&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>SMTC 0007.py</title>
       <link>/note/smtc-0007.py/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
       <guid>/note/smtc-0007.py/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Show me the code 第0007题 Python版&lt;/p&gt;
-&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Her</title>
-      <link>/note/her/</link>
-      <pubDate>Mon, 04 Feb 2019 22:41:56 +0000</pubDate>
-      
-      <guid>/note/her/</guid>
-      <description>新的一年，宝贝儿我们一起加油哦！</description>
+      <description>show-me-the-code 完整题目
+题目 第 0007 题： 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。
+思路  遍历文件夹下的文件 获取后缀名，找到py文件 遍历文件的每一行 如果是空的则说明是空行 用正则匹配#注释符号 统计行数输出  Solution # -*- coding: utf-8 -*- import osimport redef parse_code(filesPath):if not os.path.isdir(filesPath):return# 正则匹配# exp_re = re.compile(&amp;#39;^#.*&amp;#39;)fileList = os.listdir(filesPath)print(&amp;#39;{0}\t{1}\t{2}\t{3}&amp;#39;.format(&amp;#39;fileName&amp;#39;,&amp;#39;all_lines&amp;#39;, &amp;#39;space_lines&amp;#39;, &amp;#39;exp_lines&amp;#39;))for file in fileList:filePath = os.path.join(filesPath, file)if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == &amp;#39;.py&amp;#39;:with open(filePath) as code:all_lines = 0space_lines = 0exp_lines = 0for line in code.</description>
     </item>
     
     <item>
@@ -231,11 +139,9 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
       <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
       
       <guid>/note/smtc-0006.py/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Show me the code 第0006题 Python版&lt;/p&gt;
-&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>show-me-the-code 完整题目
+题目 第 0006 题： 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。
+思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import osdef GetTF(filesPath):if not os.path.isdir(filesPath):returnfiles=os.listdir(filesPath)for file in files:filePath=os.path.join(filesPath,file)# 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;:with open(filePath) as text:content=text.read()# 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;:content=content.replace(char, &amp;#39;&amp;#39;)content=content.lower()wordList=content.split()wordDic={}# 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;]for word in wordList:if word in exceptWord:continueif word in wordDic:wordDic[word]+=1else:wordDic[word]=1# 倒序排序 res=sorted(wordDic.</description>
     </item>
     
     <item>
@@ -257,24 +163,14 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
       <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
       
       <guid>/note/smtc-0000.py/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Show me the code 第0000题 Python版&lt;/p&gt;
-&lt;p&gt;{% post_link show-me-the-code 完整题目 %}&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Show Me The Code</title>
-      <link>/note/show-me-the-code/</link>
-      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
-      
-      <guid>/note/show-me-the-code/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
-&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>show-me-the-code 完整题目
+题目 第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果：
+思路 利用Pillow模块中提供的ImageDraw在图片上画图形或者文字。
+首先打开图片，使用Image.open()，在这之前需要导入pillow模块库，import PIL。
+# Creates an object that can be used to draw in the given image. # PIL.ImageDraw.Draw(im, mode=None) imgDraw = ImageDraw.Draw(image)设置填充字体以及颜色，获取图片大小，好设置填充位置
+# 颜色 fillColor = &amp;#39;#ff0000&amp;#39;# 大小 width, height = image.size# 字体 myFont = ImageFont.truetype(&amp;#39;/Library/Fonts/Tahoma.ttf&amp;#39;, size=width//10)接着imgDraw.text((width-100, 0), &#39;hello&#39;, *fill*=fillColor, *font*=myFont)，填充数字或者单词。
+保存图片完成。
+Solution # -*- coding:utf-8 -*- import PILfrom PIL import Imagefrom PIL import ImageDrawfrom PIL import ImageFontdef add_num(imgName):# 打开图片 image = Image.</description>
     </item>
     
     <item>
@@ -286,59 +182,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python个人笔记&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Settings of iTerm2 on Mac</title>
-      <link>/note/settings-of-iterm2-on-mac/</link>
-      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
-      
-      <guid>/note/settings-of-iterm2-on-mac/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;完成配置后的iTerm 2具备功能：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;语法高亮&lt;/li&gt;
-&lt;li&gt;命令Tab补全&lt;/li&gt;
-&lt;li&gt;自动提示&lt;/li&gt;
-&lt;li&gt;Git相关功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Homebrew for Mac</title>
-      <link>/note/homebrew-for-mac/</link>
-      <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
-      
-      <guid>/note/homebrew-for-mac/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Homebrew简介，安装与使用&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Windows Note</title>
-      <link>/note/windows-note/</link>
-      <pubDate>Mon, 21 Jan 2019 17:23:36 +0000</pubDate>
-      
-      <guid>/note/windows-note/</guid>
-      <description>重装电脑   UWP
- 网易云音乐 OneNote QuickLook    Applications
- Coding  {% post_link VSCode VS Code %} Intellij IDEA Git Notepad++ Java Python3   Office Fun  Tim WeChat PotPlayer Chrome   Tools  7-zip SSR v2rayN Notion Picgo IDM 迅雷 Pandownload Rainmeter Typora      Others
- Hexo Blog    </description>
-    </item>
-    
-    <item>
-      <title>V2Ray Tutorial</title>
-      <link>/note/v2ray-tutorial/</link>
-      <pubDate>Mon, 24 Dec 2018 10:30:05 +0000</pubDate>
-      
-      <guid>/note/v2ray-tutorial/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;v2ray是一个代理平台，能够配置多种协议，有很多的玩法、用法（动态端口、mKCP、Mux等等）。更多的内容请查看&lt;a href=&#34;https://www.v2ray.com/&#34;&gt;V2Ray官网&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -356,42 +199,12 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     </item>
     
     <item>
-      <title>Maven Tutorial</title>
-      <link>/note/maven-tutorial/</link>
-      <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
-      
-      <guid>/note/maven-tutorial/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Maven是一个非常有用的依赖管理工具，Maven一个很重要的作用是用来管理Jar包的.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过maven工程可以直接从maven仓库下载需要的jar包到本地，不用再需要从外部添加，maven仓库可以是网上的镜像地址，也可以是公司内部的仓库；&lt;/li&gt;
-&lt;li&gt;通过maven可以实现对java 工程的同意管理和规范化使用；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文主要介绍Maven的配置过程.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>VSCode Customised</title>
       <link>/note/vscode-customised/</link>
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
       <guid>/note/vscode-customised/</guid>
       <description>USER SETTINGS Windows {&amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;,&amp;#34;editor.minimap.enabled&amp;#34;: false,&amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;,&amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;,&amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false,&amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;,&amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;,&amp;#34;latex-workshop.latex.tools&amp;#34;: [{&amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;-pdf&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;%DOCFILE%&amp;#34;]}],&amp;#34;latex-workshop.</description>
-    </item>
-    
-    <item>
-      <title>Linux Note</title>
-      <link>/note/linux-note/</link>
-      <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
-      
-      <guid>/note/linux-note/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文用来记录平时使用Linux遇到的问题与心得.&lt;/p&gt;
-&lt;p&gt;本文长期更新.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -406,23 +219,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     </item>
     
     <item>
-      <title>TortoiseGit on windows tutorial</title>
-      <link>/note/tortoisegit-on-windows-tutorial/</link>
-      <pubDate>Mon, 10 Dec 2018 11:47:43 +0000</pubDate>
-      
-      <guid>/note/tortoisegit-on-windows-tutorial/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Tutorial of TortoiseGit on Windows.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;TortoiseGit&lt;/strong&gt; is a &lt;a href=&#34;https://en.wikipedia.org/wiki/Git_(software)&#34;&gt;Git&lt;/a&gt; revision control client, implemented as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_shell_extension&#34;&gt;Windows shell extension&lt;/a&gt; and based on &lt;a href=&#34;https://en.wikipedia.org/wiki/TortoiseSVN&#34;&gt;TortoiseSVN&lt;/a&gt;. It is &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_software&#34;&gt;free software&lt;/a&gt; released under the &lt;a href=&#34;https://en.wikipedia.org/wiki/GNU_General_Public_License&#34;&gt;GNU General Public License&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_Explorer&#34;&gt;Windows Explorer&lt;/a&gt;, besides showing context menu items for Git commands, TortoiseGit provides icon overlays that indicate the status of Git working trees and files.&lt;/p&gt;
-&lt;p&gt;It also comes with the TortoiseGitMerge utility to visually compare two files and resolve conflicts.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>Java Note</title>
       <link>/note/java-note/</link>
       <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
@@ -431,19 +227,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Java遇到的问题与心得.&lt;/p&gt;
-&lt;p&gt;本文长期更新.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>MySQL Note</title>
-      <link>/note/mysql-note/</link>
-      <pubDate>Fri, 07 Dec 2018 09:52:54 +0000</pubDate>
-      
-      <guid>/note/mysql-note/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文用来记录平时使用MySQL遇到的问题与心得.&lt;/p&gt;
 &lt;p&gt;本文长期更新.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -462,74 +245,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
     </item>
     
     <item>
-      <title>Leetcode 627. Swap Salary</title>
-      <link>/note/leetcode-627.-swap-salary/</link>
-      <pubDate>Mon, 30 Jul 2018 19:58:46 +0000</pubDate>
-      
-      <guid>/note/leetcode-627.-swap-salary/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;Given a table &lt;code&gt;salary&lt;/code&gt;, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.&lt;/p&gt;
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | m   | 2500   |
-| 2  | B    | f   | 1500   |
-| 3  | C    | m   | 5500   |
-| 4  | D    | f   | 500    |
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running your query, the above salary table should have the following rows:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | f   | 2500   |
-| 2  | B    | m   | 1500   |
-| 3  | C    | f   | 5500   |
-| 4  | D    | m   | 500    |
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 876. Middle of the Linked List</title>
-      <link>/note/leetcode-876.-middle-of-the-linked-list/</link>
-      <pubDate>Mon, 30 Jul 2018 18:59:07 +0000</pubDate>
-      
-      <guid>/note/leetcode-876.-middle-of-the-linked-list/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Given a non-empty, singly linked list with head node &lt;code&gt;head&lt;/code&gt;, return a middle node of linked list.&lt;/p&gt;
-&lt;p&gt;If there are two middle nodes, return the second middle node.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 852. Peak Index in a Mountain Array</title>
-      <link>/note/leetcode-852.-peak-index-in-a-mountain-array/</link>
-      <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
-      
-      <guid>/note/leetcode-852.-peak-index-in-a-mountain-array/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s call an array &lt;code&gt;A&lt;/code&gt; a &lt;em&gt;mountain&lt;/em&gt; if the following properties hold:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;A.length &amp;gt;= 3&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;There exists some &lt;code&gt;0 &amp;lt; i &amp;lt; A.length - 1&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Given an array that is definitely a mountain, return any &lt;code&gt;i&lt;/code&gt; such that &lt;code&gt;A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1]&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 617. Merge Two Binary Trees</title>
-      <link>/note/leetcode-617.-merge-two-binary-trees/</link>
-      <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
-      
-      <guid>/note/leetcode-617.-merge-two-binary-trees/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.&lt;/p&gt;
-&lt;p&gt;You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>Hexo-NexT博客样式自定义</title>
       <link>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
@@ -539,54 +254,6 @@ sudo pacman -S base-devel中文输入法 安装中文谷歌拼音输入法和�
 &lt;blockquote&gt;
 &lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 832. Flipping an Image</title>
-      <link>/note/leetcode-832.-flipping-an-image/</link>
-      <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
-      
-      <guid>/note/leetcode-832.-flipping-an-image/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.
-To flip an image horizontally means that each row of the image is reversed.  For example, flipping &lt;code&gt;[1, 1, 0]&lt;/code&gt; horizontally results in &lt;code&gt;[0, 1, 1]&lt;/code&gt;.
-To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting &lt;code&gt;[0, 1, 1]&lt;/code&gt; results in &lt;code&gt;[1, 0, 0]&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 709. To Lower Case</title>
-      <link>/note/leetcode-709.-to-lower-case/</link>
-      <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
-      
-      <guid>/note/leetcode-709.-to-lower-case/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Django-blog</title>
-      <link>/note/django-blog/</link>
-      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
-      
-      <guid>/note/django-blog/</guid>
-      <description>pip install -r requirement.txt requirement.txt
- bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
-    </item>
-    
-    <item>
-      <title>Operating System Note</title>
-      <link>/note/operating-system-note/</link>
-      <pubDate>Tue, 22 May 2018 14:30:14 +0000</pubDate>
-      
-      <guid>/note/operating-system-note/</guid>
-      <description>页面置换算法  选择调出页面的算法就称为页面置换算法。好的页面置换算法应有较低的页面更换频率，也就是说，应将以后不会再访问或者以后较长时间内不会再访问的页面先调出。
- 常见的页面置换算法有：最佳置换算法、先进先出（FIFO）、最近最久未使用（LRU）、时钟（CLOCK）置换算法。
-OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面,这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法其实是无法实现。
- 虽然OPT算法是无法实现的，但是我们可以利用他对其他页面置换算法进行评价。</description>
     </item>
     
     <item>
@@ -628,122 +295,8 @@ OPT  最佳置换算法所选择的被淘汰页面将是以后永不使用的，
 &lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例（主要是女朋友想看&lt;code&gt;^_^&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 657. Judge Route Circle</title>
-      <link>/note/leetcode-657.-judge-route-circle/</link>
-      <pubDate>Mon, 09 Apr 2018 16:19:57 +0000</pubDate>
-      
-      <guid>/note/leetcode-657.-judge-route-circle/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
-The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are &lt;code&gt;R&lt;/code&gt; (Right), &lt;code&gt;L&lt;/code&gt; (Left), &lt;code&gt;U&lt;/code&gt; (Up) and &lt;code&gt;D&lt;/code&gt; (down). The output should be true or false representing whether the robot makes a circle.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 387. First Unique Character in a String</title>
-      <link>/note/leetcode-387.-first-unique-character-in-a-string/</link>
-      <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
-      
-      <guid>/note/leetcode-387.-first-unique-character-in-a-string/</guid>
-      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;s = &amp;quot;leetcode&amp;quot;
-return 0.
-
-s = &amp;quot;loveleetcode&amp;quot;,
-return 2.
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You may assume the string contain only lowercase letters.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>双系统删除Ubuntu后出现grub rescure&gt;解决办法</title>
-      <link>/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
-      
-      <guid>/note/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4ubuntu%E5%90%8E%E5%87%BA%E7%8E%B0grub-rescure%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在笔记本电脑上安装了两个Linux系统，有一个几乎不用，所以决定把它给删除了,然后就出现了问题.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 386. Lexicographical Numbers</title>
-      <link>/note/leetcode-386.-lexicographical-numbers/</link>
-      <pubDate>Mon, 26 Mar 2018 15:04:22 +0000</pubDate>
-      
-      <guid>/note/leetcode-386.-lexicographical-numbers/</guid>
-      <description>Description  Given an integer n, return 1-n in lexicographical order. For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9]. Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
- Solution class Solution {public:vector&amp;lt;int&amp;gt; lexicalOrder(int n) {vector&amp;lt;int&amp;gt; res;int cur=1;for(int i=1;i&amp;lt;=n;i++){res.push_back(cur);if(cur*10&amp;lt;=n) //首先判断能否直接再后面加0 cur*=10;else if(cur%10!=9&amp;amp;&amp;amp;(cur+1)&amp;lt;=n) //正常情况下+1 cur++;else{while((cur/10)%10==9) //处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20 {cur/=10;}cur=(cur/10)+1; //这一轮个位结束，从上一位+1继续开始 } }return res;}};Hints  字典排序(数字)</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 807. Max Increase to Keep City Skyline</title>
-      <link>/note/leetcode-807.-max-increase-to-keep-city-skyline/</link>
-      <pubDate>Sun, 25 Mar 2018 19:12:34 +0000</pubDate>
-      
-      <guid>/note/leetcode-807.-max-increase-to-keep-city-skyline/</guid>
-      <description>Description  In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. At the end, the &amp;ldquo;skyline&amp;rdquo; when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 804. Unique Morse Code Words</title>
-      <link>/note/leetcode-804.-unique-morse-code-words/</link>
-      <pubDate>Sun, 25 Mar 2018 14:04:15 +0000</pubDate>
-      
-      <guid>/note/leetcode-804.-unique-morse-code-words/</guid>
-      <description>Description  International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: &amp;quot;a&amp;quot; maps to &amp;quot;.-&amp;quot;, &amp;quot;b&amp;quot; maps to &amp;quot;-...&amp;quot;, &amp;quot;c&amp;quot; maps to &amp;quot;-.-.&amp;quot;, and so on.
-  For convenience, the full table for the 26 letters of the English alphabet is given below:
- [&amp;quot;.-&amp;quot;,&amp;quot;-...&amp;quot;,&amp;quot;-.-.&amp;quot;,&amp;quot;-..&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;..-.&amp;quot;,&amp;quot;--.&amp;quot;,&amp;quot;....&amp;quot;,&amp;quot;..&amp;quot;,&amp;quot;.---&amp;quot;,&amp;quot;-.-&amp;quot;,&amp;quot;.-..&amp;quot;,&amp;quot;--&amp;quot;,&amp;quot;-.&amp;quot;,&amp;quot;---&amp;quot;,&amp;quot;.--.&amp;quot;,&amp;quot;--.-&amp;quot;,&amp;quot;.-.&amp;quot;,&amp;quot;...&amp;quot;,&amp;quot;-&amp;quot;,&amp;quot;..-&amp;quot;,&amp;quot;...-&amp;quot;,&amp;quot;.--&amp;quot;,&amp;quot;-..-&amp;quot;,&amp;quot;-.--&amp;quot;,&amp;quot;--..&amp;quot;] Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 191. Number of 1 Bits</title>
-      <link>/note/leetcode-191.-number-of-1-bits/</link>
-      <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
-      
-      <guid>/note/leetcode-191.-number-of-1-bits/</guid>
-      <description>Description  Write a function that takes an unsigned integer and returns the number of 1 bits it has (also known as the Hamming weight). For example, the 32-bit integer 11 has binary representation 00000000000000000000000000001011, so the function should return 3.
- Solutions  Hamming Weight  class Solution {public:int hammingWeight(uint32_t n) {int c=0;while(n){c++;n&amp;amp;=n-1; //逐次获取最低非0 bit位 }return c;}}; Bit Mask  class Solution(object):def hammingWeight(self, n):&amp;#34;&amp;#34;&amp;#34;:type n: int:rtype: int&amp;#34;&amp;#34;&amp;#34;res=0mask=1for i in range(32):if n&amp;amp;mask: # &amp;amp;：按位与 res+=1mask=mask&amp;lt;&amp;lt;1# n=n&amp;gt;&amp;gt;1 #n移位或者mask移位 return res</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 461. Hamming Distance</title>
-      <link>/note/leetcode-461.-hamming-distance/</link>
-      <pubDate>Sun, 25 Mar 2018 12:19:52 +0000</pubDate>
-      
-      <guid>/note/leetcode-461.-hamming-distance/</guid>
-      <description>Description  The Hamming distance between two integers is the number of positions at which the corresponding bits are different.Given two integers x and y, calculate the Hamming distance.
- Example Input: x = 1, y = 4Output: 2Explanation:1 (0 0 0 1)4 (0 1 0 0)↑ ↑The above arrows point to positions where the corresponding bits are different.Note  0 ≤ x , y &amp;lt; 2^31</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 654. Maximum Binary Tree</title>
-      <link>/note/leetcode-654.-maximum-binary-tree/</link>
-      <pubDate>Sat, 24 Mar 2018 23:35:37 +0000</pubDate>
-      
-      <guid>/note/leetcode-654.-maximum-binary-tree/</guid>
-      <description>Description  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow: The root is the maximum number in the array. The left subtree is the maximum tree constructed from left part subarray divided by the maximum number. The right subtree is the maximum tree constructed from right part subarray divided by the maximum number. Construct the maximum tree by the given array and output the root node of this tree.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode 771. Jewels and Stones</title>
-      <link>/note/leetcode-771.-jewels-and-stones/</link>
-      <pubDate>Thu, 22 Mar 2018 15:11:00 +0000</pubDate>
-      
-      <guid>/note/leetcode-771.-jewels-and-stones/</guid>
-      <description>Desciption  You&amp;rsquo;re given strings J representing the types of stones that are jewels, and S representing the stones you have. Each character in S is a type of stone you have. You want to know how many of the stones you have are also jewels. The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so &amp;ldquo;a&amp;rdquo; is considered a different type of stone from &amp;ldquo;A&amp;rdquo;.</description>
     </item>
     
     <item>

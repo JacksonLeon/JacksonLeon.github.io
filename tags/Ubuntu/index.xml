@@ -6,22 +6,10 @@
     <description>Recent content in Ubuntu on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2019 23:06:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Mar 2018 15:06:07 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Ubuntu Note</title>
-      <link>/note/ubuntu-note/</link>
-      <pubDate>Sat, 19 Oct 2019 23:06:25 +0000</pubDate>
-      
-      <guid>/note/ubuntu-note/</guid>
-      <description>&lt;h1 id=&#34;ubuntu备忘录&#34;&gt;Ubuntu备忘录&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;apt换源&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
     
     <item>
       <title>双系统删除Ubuntu后出现grub rescure&gt;解决办法</title>

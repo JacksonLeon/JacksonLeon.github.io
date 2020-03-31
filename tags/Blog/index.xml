@@ -34,15 +34,5 @@
 &lt;/blockquote&gt;</description>
     </item>
     
-    <item>
-      <title>Django-blog</title>
-      <link>/note/django-blog/</link>
-      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
-      
-      <guid>/note/django-blog/</guid>
-      <description>pip install -r requirement.txt requirement.txt
- bootstrap-admin dj-database-url dj-static Django django-markdown django-toolbelt Markdown markdown2 pip psycopg2 Pygments pygobject python-apt pytz setuptools ssh-import-id static3 virtualenv wheel $ django-admin.py startproject my_blog$ python manage.py startapp articleINSTALLED_APPS = (...&amp;#39;article&amp;#39;, #这里填写的是app的名称)ALLOWED_HOSTS = [&amp;#39;*&amp;#39;]$ python manage.py runserver 0.0.0.0:2210</description>
-    </item>
-    
   </channel>
 </rss>

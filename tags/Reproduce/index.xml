@@ -6,38 +6,10 @@
     <description>Recent content in Reproduce on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Sep 2019 16:46:51 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate>
     
 	<atom:link href="/tags/reproduce/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>NLP-1</title>
-      <link>/note/nlp-1/</link>
-      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
-      
-      <guid>/note/nlp-1/</guid>
-      <description>&lt;h1 id=&#34;nlper-建议&#34;&gt;NLPer 建议&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;转载自知乎专栏https://zhuanlan.zhihu.com/p/69358248&lt;/p&gt;
-&lt;p&gt;作者：&lt;a href=&#34;https://www.zhihu.com/people/songyingxin&#34;&gt;老宋的茶书会&lt;/a&gt;，诗和远方，我选择苟且&lt;/p&gt;
-&lt;p&gt;前些日子刷知乎的时候，刷到一个研究生提到，其在开学之初，老师给了他一份礼物： &lt;strong&gt;论文大礼包&lt;/strong&gt;。emmm， 瞬间觉得自己好惨，我整个研究生涯完全是放养，自己摸索过来的， 不要说论文大礼包，老师都没见过几次，哎，说多了都是泪。&lt;/p&gt;
-&lt;p&gt;考虑到， 我国研究生现状， 估计很多人都无法遇到很合意的老师，更不要说论文大礼包了，于是，我决定，将我整个一年多来看过的，觉得值得一看的论文总结一下，给各位还在挣扎在NLP 门口的各位同学一些参考。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>NLP-0</title>
-      <link>/note/nlp-0/</link>
-      <pubDate>Sat, 21 Sep 2019 16:31:45 +0000</pubDate>
-      
-      <guid>/note/nlp-0/</guid>
-      <description>&lt;h2 id=&#34;初入nlp领域的一些小建议&#34;&gt;初入NLP领域的一些小建议&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;作者：香侬科技 李纪为 斯坦福大学计算机博士&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/59184256&#34;&gt;https://zhuanlan.zhihu.com/p/59184256&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
     
     <item>
       <title>How to be a Postgraduate student(MIT)</title>
@@ -93,15 +65,6 @@
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>/note/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/note/pytorch-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
       <link>/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
@@ -113,15 +76,6 @@
 &lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
 &lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Google Python Style Guide</title>
-      <link>/note/google-python-style-guide/</link>
-      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
-      
-      <guid>/note/google-python-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>

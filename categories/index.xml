@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>NLP</title>
-      <link>/categories/nlp/</link>
-      <pubDate>Sat, 21 Sep 2019 16:46:51 +0000</pubDate>
-      
-      <guid>/categories/nlp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Python</title>
       <link>/categories/python/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
@@ -84,15 +75,6 @@
     </item>
     
     <item>
-      <title>LaTeX</title>
-      <link>/categories/latex/</link>
-      <pubDate>Tue, 19 Mar 2019 20:27:25 +0000</pubDate>
-      
-      <guid>/categories/latex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>SMTC</title>
       <link>/categories/smtc/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
@@ -120,74 +102,11 @@
     </item>
     
     <item>
-      <title>Application</title>
-      <link>/categories/application/</link>
-      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
-      
-      <guid>/categories/application/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iTerm 2</title>
-      <link>/categories/iterm-2/</link>
-      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
-      
-      <guid>/categories/iterm-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Macintosh</title>
       <link>/categories/macintosh/</link>
-      <pubDate>Thu, 24 Jan 2019 13:35:42 +0000</pubDate>
+      <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
       
       <guid>/categories/macintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Homebrew</title>
-      <link>/categories/homebrew/</link>
-      <pubDate>Wed, 23 Jan 2019 21:31:23 +0000</pubDate>
-      
-      <guid>/categories/homebrew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>/categories/windows/</link>
-      <pubDate>Mon, 21 Jan 2019 17:23:36 +0000</pubDate>
-      
-      <guid>/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>V2Ray</title>
-      <link>/categories/v2ray/</link>
-      <pubDate>Mon, 24 Dec 2018 10:30:05 +0000</pubDate>
-      
-      <guid>/categories/v2ray/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>/categories/java/</link>
-      <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
-      
-      <guid>/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>/categories/maven/</link>
-      <pubDate>Thu, 20 Dec 2018 17:34:56 +0000</pubDate>
-      
-      <guid>/categories/maven/</guid>
       <description></description>
     </item>
     
@@ -210,15 +129,6 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>/categories/linux/</link>
-      <pubDate>Thu, 13 Dec 2018 15:10:43 +0000</pubDate>
-      
-      <guid>/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>WebHook</title>
       <link>/categories/webhook/</link>
       <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
@@ -228,11 +138,11 @@
     </item>
     
     <item>
-      <title>MySQL</title>
-      <link>/categories/mysql/</link>
-      <pubDate>Fri, 07 Dec 2018 09:52:54 +0000</pubDate>
+      <title>Java</title>
+      <link>/categories/java/</link>
+      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
       
-      <guid>/categories/mysql/</guid>
+      <guid>/categories/java/</guid>
       <description></description>
     </item>
     
@@ -248,36 +158,9 @@
     <item>
       <title>LeetCode</title>
       <link>/categories/leetcode/</link>
-      <pubDate>Mon, 30 Jul 2018 19:58:46 +0000</pubDate>
-      
-      <guid>/categories/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linked List</title>
-      <link>/categories/linked-list/</link>
-      <pubDate>Mon, 30 Jul 2018 18:59:07 +0000</pubDate>
-      
-      <guid>/categories/linked-list/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Binary Search</title>
-      <link>/categories/binary-search/</link>
-      <pubDate>Mon, 30 Jul 2018 18:31:11 +0000</pubDate>
-      
-      <guid>/categories/binary-search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tree</title>
-      <link>/categories/tree/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>/categories/tree/</guid>
+      <guid>/categories/leetcode/</guid>
       <description></description>
     </item>
     
@@ -287,33 +170,6 @@
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
       <guid>/categories/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Array</title>
-      <link>/categories/array/</link>
-      <pubDate>Sun, 15 Jul 2018 18:53:14 +0000</pubDate>
-      
-      <guid>/categories/array/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>String</title>
-      <link>/categories/string/</link>
-      <pubDate>Sat, 14 Jul 2018 10:15:53 +0000</pubDate>
-      
-      <guid>/categories/string/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django</title>
-      <link>/categories/django/</link>
-      <pubDate>Thu, 21 Jun 2018 16:16:54 +0000</pubDate>
-      
-      <guid>/categories/django/</guid>
       <description></description>
     </item>
     
@@ -341,42 +197,6 @@
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
       <guid>/categories/reptile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hash Table</title>
-      <link>/categories/hash-table/</link>
-      <pubDate>Mon, 09 Apr 2018 14:56:23 +0000</pubDate>
-      
-      <guid>/categories/hash-table/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BUGs</title>
-      <link>/categories/bugs/</link>
-      <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
-      
-      <guid>/categories/bugs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>/categories/ubuntu/</link>
-      <pubDate>Tue, 27 Mar 2018 15:06:07 +0000</pubDate>
-      
-      <guid>/categories/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bit Manipulation</title>
-      <link>/categories/bit-manipulation/</link>
-      <pubDate>Sun, 25 Mar 2018 13:32:38 +0000</pubDate>
-      
-      <guid>/categories/bit-manipulation/</guid>
       <description></description>
     </item>
     

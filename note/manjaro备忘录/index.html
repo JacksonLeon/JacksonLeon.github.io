@@ -38,103 +38,236 @@
 </div>
 
 <main>
-<p>优点：</p>
-<ul>
-<li>显卡驱动安装省心,好评</li>
-<li>aur里有各种软件</li>
-<li>pacman安装方便</li>
-<li>背靠arch文档丰富</li>
-<li>相对arch稳定多</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>需要对linux有一定的了解</li>
-<li>滚动更新还是有几率挂的，做好系统备份</li>
-</ul>
-<!-- raw HTML omitted -->
+<ol>
+<li>安装、pacman镜像源、更新</li>
+<li>zsh配置</li>
+<li>输入法及中文</li>
+<li>全局截图、全局菜单</li>
+<li>alias</li>
+<li>Nvidia显卡驱动安装</li>
+<li>常用软件</li>
+</ol>
 <h3 id="系统安装">系统安装</h3>
 <p>我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。
-<strong>manjaro下载</strong><a href="https://manjaro.org/download/kde/">https://manjaro.org/download/kde/</a>
-<strong>rufus下载</strong><a href="https://rufus.ie/">https://rufus.ie/</a></p>
+<a href="https://manjaro.org/download/kde/">manjaro</a>
+<a href="https://rufus.ie/">rufus</a></p>
 <h3 id="更改pacman镜像">更改pacman镜像</h3>
 <p>manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。</p>
 <pre><code># 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加
-sudo pacman -S pacman-mirrors
-# 中国区镜像排序，一般选择前两个镜像
+# 中国区镜像排序，一般选择前两个镜像，选择一个作为备用
 sudo pacman-mirrors -i -c China -m rank
 </code></pre><h3 id="同步更新">同步更新</h3>
-<p>新系统先更新一下</p>
-<pre><code>sudo pacman -Syysudo pacman -Syu
-</code></pre><h3 id="移除octopi换pamac">移除Octopi换Pamac</h3>
-<p>KDE自带的软件管理器octopi比较丑，可以换另一个管理器pamac。</p>
-<pre><code># 安装pamac
-sudo pacman -S pamac
-</code></pre><p>打开pamac，搜索octopi，移除所有octopi相关的orphan依赖包。</p>
-<h3 id="安装yay">安装yay</h3>
-<p>尽管pamac也可以安装AUR里的软件包（需要在pamac设置里开启aur选项），但yay更符合命令行的习惯。安装yay非常简单，在pamac里搜索安装即可，安装完成后选择清华aur镜像。</p>
-<pre><code>yay --aururl &quot;https://aur.tuna.tsinghua.edu.cn&quot; --save
-</code></pre><h3 id="调整baloo限制">调整Baloo限制</h3>
-<p>Baloo是manjaroKDE的文件搜索软件，我的电脑上查看日志发现Baloo经常有watch limit error，调整以下选项
-<a href="https://wiki.archlinux.org/index.php/Baloo">https://wiki.archlinux.org/index.php/Baloo</a></p>
-<pre><code># 编辑/etc/sysctl.d/50-max_user_watches.conffs.inotify.max_user_watches = 524288
-</code></pre><h3 id="安装base-devel">安装base-devel</h3>
-<p>安装基础开发工具</p>
-<pre><code>sudo pacman -S base-devel
+<pre><code>sudo pacman -Syyu
+</code></pre><h3 id="添加arch-linux-中文社区仓库">添加Arch Linux 中文社区仓库</h3>
+<p>在 <code>/etc/pacman.conf</code> 文件末尾添加以下内容：</p>
+<pre><code>[archlinuxcn]
+# SigLevel = Optional TrustedOnly
+SigLevel = Optional TrustAll
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre><h3 id="zsh">ZSH</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 安装zsh</span>
+sudo  pacman -S zsh
+<span style="color:#75715e"># 安装oh-my-zsh</span>
+sh -c <span style="color:#e6db74">&#34;</span>$wget<span style="color:#e6db74"> https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)”
+</span><span style="color:#e6db74"># 使用zsh替换bash
+</span><span style="color:#e6db74">chsh -s /bin/zsh
+</span><span style="color:#e6db74"># 修改.zshrc主题
+</span><span style="color:#e6db74">ZSH_THEME=</span><span style="color:#e6db74">&#34;</span>ys<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"># zsh-autosuggestions 和 zsh-syntax-highlighting
+</span><span style="color:#e6db74">sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
+</span><span style="color:#e6db74">vim ~/.zshrc
+</span><span style="color:#e6db74"># 加入
+</span><span style="color:#e6db74">source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+</span><span style="color:#e6db74">source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+</span></code></pre></div><h3 id="安装yay">安装yay</h3>
+<pre><code>sudo pacman -S yay
+yay --aururl &quot;https://aur.tuna.tsinghua.edu.cn&quot; --save
 </code></pre><h3 id="中文输入法">中文输入法</h3>
 <p>安装中文谷歌拼音输入法和字体</p>
-<pre><code>sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 sudo pacman -S fcitx fcitx-googlepinyin fcitx-im fcitx-configtool
-# 编辑 ~/.xinitrc
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-# 重新登录后，在开始菜单System里找到Input Method设置，添加谷歌拼音输入法
-</code></pre><h3 id="科学上网">科学上网</h3>
-<p>大部分国内软件安装的问题都是因为众所周知的原因，并且优秀资料多为英文，因此科学上网在中国是非常有必要的。arch社区对此有非常详细的指导（中文资料领先英文，中国部分领域领先的典范^_^）。
-<a href="https://wiki.archlinux.org/index.php/Shadowsocks">https://wiki.archlinux.org/index.php/Shadowsocks</a></p>
-<pre><code># ss的libev版本比较稳定
-sudo pacman -S shadowsocks-libev
-sudo mkdir /etc/shadowsocks
+<span style="color:#75715e"># 编辑 ~/.xprofile</span>
+export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+export QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
+export XMODIFIERS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@im=fcitx&#34;</span>
+<span style="color:#75715e"># exec放到最后</span>
+<span style="color:#75715e"># 重新登录后，在开始菜单System里找到Input Method设置，添加谷歌拼音输入法</span>
+</code></pre></div><h3 id="解压中文压缩包乱码">解压中文压缩包乱码</h3>
+<p>来源<a href="https://wiki.archlinux.org/index.php/Localization/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#zip%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%B1%E7%A0%81">wiki.archlinux.org/zip压缩包乱码</a></p>
+<p>非utf8编码环境下(一般windwos下的中文环境即是）不使用zip进行压缩（建议使用7z)。 解决方案：安装使用<a href="https://aur.archlinux.org/packages/unzip-iconv/">unzip-iconv</a>AUR或者<a href="https://aur.archlinux.org/packages/unzip-natspec/">unzip-natspec</a>AUR取代原版的<a href="https://www.archlinux.org/packages/?name=unzip">unzip</a>来解压缩，示例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> sudo pacman -S unzip-natspec p7zip-natspec
+ unzip -O gbk file.zip
+</code></pre></div><p>file.zip是压缩文件，gbk是该文件的编码格式，以-O指定（原版unzip无-O选项）。</p>
+<h3 id="clash-for-manajro">Clash for Manajro</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ pacs clash
+community/haskell-clash-prelude 0.99.3-66
+CAES Language <span style="color:#66d9ef">for</span> Synchronous Hardware - Prelude library
+archlinuxcn/clash 0.15.0-5
+A rule based proxy in Go
+$ sudo pacman -S clash
+$ cd ~/.config/clash
+$ mv your-config.yaml config.yaml
+<span style="color:#75715e"># 下载Country.mmdb</span>
+<span style="color:#75715e"># 地址：https://drop.me/Brbk0r</span>
+$ mv ~/Download/Country.mmdb Country.mmdb
+<span style="color:#75715e"># 运行clash</span>
+$ clash -d ~/.config/clash
+<span style="color:#75715e"># 重新启动 clash-linux 以加载配置文件，可通过 http://clash.razord.top/ 或者 http://yacd.haishan.me/#/ 进行策略组节点的切换，连接的 ip 和端口根据自己的 config.yml 中的external-controller填写</span>
+<span style="color:#75715e"># 开机启动</span>
+在设置-》工作区-》开机和关机-》自动启动中添加程序，命令为：/usr/bin/clash -d ~/.config/clash
+$ ps aux | grep clash | grep -v grep
+</code></pre></div><h3 id="全局截图">全局截图</h3>
+<p>使用<code>flameshot</code>截图工具</p>
+<pre><code>sudo pacman -S flameshot
+</code></pre><p>配置系统快捷键，在【系统设置】-【工作区】-【自定义快捷键】中，点击【编辑】-【新建】-【全局快捷键】-【命令/URL：】，然后填写动作名称，如我这里是<code>Deepin截图</code>,然后分别填写注释（非必须）、触发器（win+shift+s）和动作（flameshot gui）。</p>
+<h3 id="类unity全局菜单">类Unity全局菜单</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S appmenu-gtk-module libdbusmenu-glib
+</code></pre></div><p>添加部件中选择全局菜单，并放置到合适的位置。</p>
+<p><img src="https://i.loli.net/2019/09/18/5BGNWUpszb2RSPm.png" alt="深度截图_20190917232323"></p>
+<p>改进后：</p>
+<p><img src="https://i.loli.net/2019/09/18/qiLNC4csk5dHzGr.png" alt="globalmenu_2019091822134.png"></p>
+<p>安装<code>plasma5-applets-active-window-control</code></p>
+<pre><code>sudo pacman -S plasma5-applets-active-window-control
+</code></pre><p>配置配件：</p>
+<p>添加部件到全局菜单左边：</p>
+<p><!-- raw HTML omitted --></p>
+<p>配置软件：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="终端走代理">终端走代理</h3>
+<h4 id="方法一">方法一</h4>
+<p>在终端中直接运行命令</p>
+<pre><code>export http_proxy=http://proxyAddress:port
+</code></pre><p>这个办法的好处是简单直接，并且影响面很小（只对当前终端有效，退出就不行了）。</p>
+<p>如果你用的是ss代理，在当前终端运行以下命令，那么<code>wget</code> <code>curl</code> 这类网络命令都会经过ss代理</p>
+<pre><code>export ALL_PROXY=socks5://127.0.0.1:1080
+</code></pre><h4 id="方法二">方法二</h4>
+<p>把代理服务器地址写入shell配置文件<code>.bashrc</code>或者<code>.zshrc</code></p>
+<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容</p>
+<pre><code>export http_proxy=&quot;http://localhost:port&quot;
+export https_proxy=&quot;http://localhost:port&quot;
+</code></pre><p>以使用shadowsocks代理为例，ss的代理端口为<code>1080</code>,那么应该设置为</p>
+<pre><code>export http_proxy=&quot;socks5://127.0.0.1:1080&quot;
+export https_proxy=&quot;socks5://127.0.0.1:1080&quot;
+</code></pre><p>或者直接设置ALL_PROXY</p>
+<pre><code>export ALL_PROXY=socks5://127.0.0.1:1080
+</code></pre><p><code>localhost</code>就是一个域名，域名默认指向 <code>127.0.0.1</code>，两者是一样的。</p>
+<p>然后<code>ESC</code>后<code>:wq</code>保存文件，接着在终端中执行
+<code>source ~/.bashrc</code></p>
+<p>或者退出当前终端再起一个终端。 这个办法的好处是把代理服务器永久保存了，下次就可以直接用了。</p>
+<p>或者通过设置alias简写来简化操作，每次要用的时候输入<code>setproxy</code>，不用了就<code>unsetproxy</code>。</p>
+<pre><code>alias setproxy=&quot;export ALL_PROXY=socks5://127.0.0.1:1080&quot;
+alias unsetproxy=&quot;unset ALL_PROXY&quot;
+alias ip=&quot;curl -i http://ip.cn&quot;
+</code></pre><h3 id="alias">Alias</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 编辑~/.zshrc或者/etc/zsh/zprofile，前面的是对应当前用户，后面的对应全局用户</span>
+<span style="color:#75715e"># 或者直接在终端中输入，不过重启后会失效</span>
+<span style="color:#75715e"># pacman aliases</span>
+alias pac<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -S&#39;</span>   		<span style="color:#75715e"># install</span>
+alias pacu<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Syu&#39;</span>		<span style="color:#75715e"># upgrade, add &#39;a&#39; to the list of letters to update AUR packages if you use yaourt</span>
+alias pacy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Sy&#39;</span>		<span style="color:#75715e"># update</span>
+alias pacr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Rns&#39;</span>		<span style="color:#75715e"># remove</span> 
+alias pacs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Ss&#39;</span>		<span style="color:#75715e"># search packages</span>
+alias paci<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Si&#39;</span>		<span style="color:#75715e"># info</span>
+alias paclo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Qdt&#39;</span>		<span style="color:#75715e"># list orphans</span>
+alias pacro<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;paclo &amp;&amp; sudo pacman -Rns $(sudo pacman -Qtdq)&#39;</span> <span style="color:#75715e"># remove orphans</span>
+alias pacc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Scc&#39;</span>		<span style="color:#75715e"># clean cache</span>
+alias paclf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Ql&#39;</span>		<span style="color:#75715e"># list files</span>
+<span style="color:#75715e"># proxy</span>
+alias setproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;export ALL_PROXY=socks5://127.0.0.1:1080&#34;</span>
+alias unsetproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unset ALL_PROXY&#34;</span>
+alias ip<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;curl -i http://ip.cn&#34;</span>
+<span style="color:#75715e"># NVIDIA driver</span>
+alias nv_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; ON&#34;</span>
+alias nv_off<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; OFF&#34;</span>
+alias nv_setting<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optirun -b none nvidia-settings -c :8&#34;</span>
+<span style="color:#75715e"># 其他</span>
 
-# 配置ss文件(服务器地址和密码)
-sudo nano /etc/shadowsocks/config.json
-
-# 以daemon开机启动
-sudo systemctl start shadowsocks-libev@config
-sudo systemctl enable shadowsocks-libev@config
-
-# 下载gfwpac列表，将其填入firefox的代理配置URL（file:///home/xxx/gfwlist.pac）
-wget https://raw.githubusercontent.com/petronny/gfwlist2pac/master/gfwlist.pac
-
-# 配置http代理转发socks5代理
-sudo pacman -S privoxy
-
-# 编辑 /etc/privoxy/config，添加socks5转发和http监听地址
-forward-socks5 / 127.0.0.1:1080 .
-listen-address  127.0.0.1:8010
-
-# 重启privoxy服务
-sudo systemctl enable privoxy.service
-sudo systemctl restart privoxy.service
-
-# 安装proxychains-ng
-sudo pacman -S proxychains-ng
-
-# 编辑 /etc/proxychains.conf, 修改最后一行为
-socks5 127.0.0.1 1080
-</code></pre><h3 id="nvidia驱动">NVIDIA驱动</h3>
-<p>首先上 <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn">NVIDIA</a> 官网下载自己的显卡驱动，操作系统选择 <code>Linux 64-bit</code>。下载下来的文件应该是一个扩展名为 <code>.run</code> 的文件，将它存放至 <code>~/</code> 或者其他目录。</p>
-<p>我们还需要安装开发工具以及内核头文件来编译驱动，首先是内核头文件，先检查自己的内核版本。</p>
+</code></pre></div><h3 id="常用软件">常用软件</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S chromium
+sudo pacman -S vlc
+sudo pacman -S visual-studio-code-bin
+sudo pacman -S typora
+sudo pacman -S vim
+sudo pacman -S netease-cloud-music
+<span style="color:#75715e"># 分辨率以及多显示器</span>
+sudo pacman -S kscreen
+</code></pre></div><h4 id="deepin-tim">Deepin TIM</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Tim on KDE</span>
+sudo pacman -S gnome-settings-daemon
+<span style="color:#75715e"># 在非gnome桌面下安装gnome的套件。</span>
+<span style="color:#75715e"># deepin-wine可能调用到某些功能。</span>
+cp /etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop ~/.config/autostart/
+<span style="color:#75715e"># 加入到用户开机自启的配置</span>
+sudo pacman -S deepin.com.qq.office
+</code></pre></div><h3 id="nvidia驱动non-freebumblebee">NVIDIA驱动（non-free,Bumblebee）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S bumblebee bbswitch		<span style="color:#75715e"># 安装bumblebee</span>
+sudo gpasswd -a username bumblebee		<span style="color:#75715e"># 将当前用户添加到bumblebee组中</span>
+sudo systemctl enable bumblebeed.service# 启用服务
+<span style="color:#75715e"># 转自ArchLinux Wiki</span>
+<span style="color:#75715e"># 在64位的操作系统上，假如您想32位的程序发挥好nvidia-utils的优势，还必须启用multilib源来安装lib32的包(例如lib32-nvidia-utils, lib32-nvidia-340xx-utils AUR 或者 lib32-nvidia-304xx-utils)。</span>
+<span style="color:#75715e"># 启用multilib源</span>
+<span style="color:#75715e"># 对于multilib这个源，我们只需要简单的将/etc/pacman.conf中的multilib的注释取消了就行</span>
+<span style="color:#75715e"># 安装依赖</span>
+sudo pacman -S bumblebee nvidia opencl-nvidia lib32-nvidia-utils lib32-opencl-nvidia mesa lib32-mesa-libgl xf86-video-intel
+<span style="color:#75715e"># 配置bumblebee：</span>
+<span style="color:#75715e"># 编辑/etc/bumblebee/bumblebee.conf</span>
+Driver<span style="color:#f92672">=</span>nvidia
+-----------------
+<span style="color:#f92672">[</span>driver-nvidia<span style="color:#f92672">]</span>
+PMMethod<span style="color:#f92672">=</span>bbswitch
+<span style="color:#75715e"># 重启电脑</span>
+reboot
+<span style="color:#75715e"># 开启NVIDIA显卡</span>
+sudo tee /proc/acpi/bbswitch <span style="color:#f92672">&lt;&lt;&lt;</span> ON			<span style="color:#75715e">#关闭则是off</span>
+<span style="color:#75715e"># 查看显卡状态</span>
+nvidia-smi
+<span style="color:#75715e"># 启动nvidia-settings</span>
+optirun -b none nvidia-settings -c :8		<span style="color:#75715e">#正常使用nvidia-settings是启动不了的，需要用optirun调用</span>
+<span style="color:#75715e"># 测试一下</span>
+sudo tee /proc/acpi/bbswitch <span style="color:#f92672">&lt;&lt;&lt;</span> ON			<span style="color:#75715e"># 需要开启NVIDIA显卡</span>
+nvidia-smi
+Mon Sep <span style="color:#ae81ff">23</span> 21:38:32 2019
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 430.40       Driver Version: 430.40       CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>|
+|   <span style="color:#ae81ff">0</span>  GeForce GTX 950M    Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   37C    P0    N/A /  N/A |      0MiB /  2004MiB |      1%      Default |
++-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre></div><h3 id="其他">其他</h3>
+<h4 id="单击打开文件">单击打开文件</h4>
+<p>KDE 默认是单击打开文件，但是用习惯 Windows 的我们肯定是不习惯的：</p>
+<p><code>System Settings &gt; Desktop Behavior &gt; Workspace &gt; Click Behavior &gt; Double-Click to open files and folders(single click to select)</code></p>
+<h4 id="realtek-rtl811181688411偶尔崩溃">Realtek RTL8111/8168/8411偶尔崩溃</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S linux-lts-r8168
+<span style="color:#75715e"># 需要注意的是r8168和r8169冲突，两个只能使用一个</span>
+<span style="color:#75715e"># 如果使用r8168驱动，需要将r8169加入黑名单</span>
+<span style="color:#75715e"># 在/etc/modprobe.d文件夹下添加r8169_blacklist.conf文件，内容为blacklist r8169</span>
+reboot
+</code></pre></div><p><del>以前的内核是比较适合使用r8168这个驱动的，用r8169会崩溃，所以一般会有一个黑名单文件直接将r8169禁用了。但是现在情况反了过来，r8169驱动对于新的内核支持的比较好，所以可以将黑名单修改一下，并卸载r8168驱动，重启就可以了。</del></p>
+<p><del>在<code>/etc/modprobe.d</code>文件夹下，将<code>r8169_blacklist.conf</code>这个文件名里面的内容修改为<code>blacklist r8168</code>。</del></p>
+<p><del>重启就好了。</del></p>
+<h3 id="nvidia驱动"><del>NVIDIA驱动</del></h3>
+<p><del>首先上 <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn">NVIDIA</a> 官网下载自己的显卡驱动，操作系统选择 <code>Linux 64-bit</code>。下载下来的文件应该是一个扩展名为 <code>.run</code> 的文件，将它存放至 <code>~/</code> 或者其他目录。</del></p>
+<p><del>我们还需要安装开发工具以及内核头文件来编译驱动，首先是内核头文件，先检查自己的内核版本。</del></p>
 <pre><code>$ uname -r
 4.19.69-1-MANJARO
-</code></pre><p>我们需要安装的内核头文件则是<code>linux419-headers</code>:</p>
+</code></pre><p><del>我们需要安装的内核头文件则是<code>linux419-headers</code>:</del></p>
 <pre><code>$ sudo pacman -S linux419-headers
-</code></pre><p>接着安装开发工具，出现选项时直接按下 <code>回车键</code> 安装全部。</p>
+</code></pre><p><del>接着安装开发工具，出现选项时直接按下 <code>回车键</code> 安装全部。</del></p>
 <pre><code>$ sudo pacman -S base-devel dkms
-</code></pre><p>禁用 Nouveau 开源驱动：</p>
-<p>编辑 <code>/etc/default/grub</code> Grub 配置文件
-将 <code>GRUB_CMDLINE_LINUX</code> 开头的那一行改为 <code>GRUB_CMDLINE_LINUX=&quot;nouveau.modeset=0&quot;</code>。
-完成之后更新grub</p>
+</code></pre><p><del>禁用 Nouveau 开源驱动：</del></p>
+<p><del>编辑 <code>/etc/default/grub</code> Grub 配置文件</del>
+<del>将 <code>GRUB_CMDLINE_LINUX</code> 开头的那一行改为 <code>GRUB_CMDLINE_LINUX=&quot;nouveau.modeset=0&quot;</code>。</del>
+<del>完成之后更新grub</del></p>
 <pre><code>$ sudo update-grub
 # 重启
 $ sudo reboot
@@ -144,7 +277,7 @@ $ chmod +777 NVIDIA-Linux-x86_64-430.50.run
 $ sudo ./NVIDIA-Linux-x86_64-430.50.run
 # 重启
 $ sudo reboot
-</code></pre><p>测试一下：</p>
+</code></pre><p><del>测试一下：</del></p>
 <pre><code>$ nvidia-smi
 Sun Sep 15 17:25:02 2019       
 +-----------------------------------------------------------------------------+
@@ -167,24 +300,7 @@ Sun Sep 15 17:25:02 2019
 <p>如果安装在SSD上，可以选择以下命令</p>
 <pre><code>sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
-</code></pre><h3 id="安装nfs-utils">安装nfs-utils</h3>
-<p>实验室数据存在NFS服务器上，因此安装nfs-utils</p>
-<pre><code>sudo pacman -S nfs-utils
-
-# 挂载NFS服务
-sudo mount server:/nfs/data /mountpoint/on/client
-
-# 修改 /etc/fstab, 添加
-server:/nfs/data /mountpoint/on/client nfs defaults 0 0
-</code></pre><h3 id="安装java">安装Java</h3>
-<p>我安装的是arch官方维护的openjdk。</p>
-<pre><code>sudo pacman -S jdk-openjdk
-source /etc/profile
-</code></pre><h3 id="安装vscode">安装vscode</h3>
-<p>vscode是我常用的编辑器</p>
-<pre><code>sudo pacman -S code
 </code></pre><h3 id="miniconda">miniconda</h3>
-<h4 id="安装">安装</h4>
 <p>我使用miniconda管理环境并安装python相关package。</p>
 <pre><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh 
@@ -212,112 +328,199 @@ source activate py36
 
 conda install tensorflow-gpu
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-</code></pre><h3 id="安装nodejs">安装nodejs</h3>
-<p>为了写博客，我得安装hexo。</p>
-<pre><code># 安装nvm版本管理（直接安装nodejs会有权限错误）
-yay -S nvm
-source /usr/share/nvm/init-nvm.sh
-nvm install node
-
-# 安装npm和hexo
-sudo pacman -S npm
-npm install hexo-cli -g
-npm install hexo-deployer-git --save
-</code></pre><h3 id="安装网易云音乐">安装网易云音乐</h3>
-<pre><code>yay -S netease-cloud-music
-</code></pre><h3 id="安装teamviewer">安装teamviewer</h3>
-<pre><code>yay -S teamviewersudo systemctl start teamviewerdsudo systemctl enable teamviewerd
-</code></pre><h3 id="安装虚拟机">安装虚拟机</h3>
-<p>用虚拟机装win10使用office和其他专用软件，或者用office online来处理文档。</p>
-<pre><code>sudo pacman -S virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat
-
-# 编辑/etc/libvirt/qemu.conf，提供UEFI安装
-nvram = [
-    &quot;/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd&quot;
-]
-
-# pci passthrough， 编辑/etc/default/grub, 在以下行内添加amd_iommu=on或intel_iommu=on
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet amd_iommu=on&quot;
-
-sudo systemctl enable libvirtd.service dnsmasq.service ebtables.service virtlogd.service
-sudo systemctl start libvirtd.service dnsmasq.service ebtables.service virtlogd.service
-</code></pre><p>安装Win10虚拟机需要在下载虚拟机驱动，系统安装完毕后挂载光驱安装相应驱动
-<a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html">https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html</a>
-此外，cpu核心数需要根据cpu pinning一节手动调整，virt-manager图形界面无法调整（默认单核心）
-<a href="https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning">https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#CPU_pinning</a></p>
-<pre><code>su
-# 切换默认编辑器为nano
-EDITOR=nano
-
-# 列出当前所有虚拟机名称
-virsh list --all
-
-virsh edit vmname
-# 修改以下内容（4核8线程)
-...
-&lt;vcpu placement='static'&gt;8&lt;/vcpu&gt;
-&lt;iothreads&gt;1&lt;/iothreads&gt;
-&lt;cputune&gt;
-  &lt;vcpupin vcpu='0' cpuset='2'/&gt;
-  &lt;vcpupin vcpu='1' cpuset='3'/&gt;
-  &lt;vcpupin vcpu='2' cpuset='4'/&gt;
-  &lt;vcpupin vcpu='3' cpuset='5'/&gt;
-  &lt;vcpupin vcpu='4' cpuset='6'/&gt;
-  &lt;vcpupin vcpu='5' cpuset='7'/&gt;
-  &lt;vcpupin vcpu='6' cpuset='8'/&gt;
-  &lt;vcpupin vcpu='7' cpuset='9'/&gt;
-  &lt;emulatorpin cpuset='0-1'/&gt;
-  &lt;iothreadpin iothread='1' cpuset='0-1'/&gt;
-&lt;/cputune&gt;
-    ...
-    &lt;topology sockets='1' cores='4' threads='2'/&gt;
-    ...
-</code></pre><h3 id="samba文件传输">samba文件传输</h3>
-<p>使用samba在manjaro和虚拟机间共享文件，安装完成后，新建文件夹在属性的share里设置共享权限。</p>
-<pre><code># 安装设置
-sudo pacman -S manjaro-settings-samba
-
-# 添加当前用户到sambashare组
-sudo usermod -a -G sambashare yourusername
-sudo systemctl enable smb nmb
-sudo systemctl start smb nmb
-
-# 设置samba密码
-sudo smbpasswd -a yourusername
-
-# 在win10虚拟机网络磁盘中填入host的ip，输入用户名和密码即可共享使用
-</code></pre><h3 id="onedrive">onedrive</h3>
-<p>manjaro也能用onedrive。
-<a href="https://github.com/abraunegg/onedrive/">https://github.com/abraunegg/onedrive/</a></p>
-<pre><code>yay -S onedrive-abrauneeg-git
-
-# 按说明设置
-onedrive
-
-# 开始同步（同步效果不太好，可能得多运行几次才能全部同步完成）
-onedrive --synchronize
-</code></pre><h3 id="下种子下种子">下种子下种子</h3>
-<pre><code>sudo pacman -S qbittorrent
-</code></pre><h3 id="开机自动挂载ntfs硬盘">开机自动挂载ntfs硬盘</h3>
-<pre><code># 编辑 /etc/fstab,文件末尾添加UUID=分区的UUID /你的特定目录 ntfs-3g defaults 0 0
-</code></pre><h3 id="ssh-keygen和git配置">ssh-keygen和git配置</h3>
-<pre><code>ssh-keygen
-
-git config --global user.name &quot;your name&quot;
-git config --global user.email your@email
-</code></pre><h3 id="远程桌面">远程桌面</h3>
-<pre><code># 安装Remmina和freerdp即可和windows远程桌面通信
-sudo pacman -Syu remmina freerdp
-</code></pre><h3 id="rslsync">rslsync</h3>
-<pre><code>git clone https://aur.archlinux.org/rslsync.git
-cd rslsync
-proxychains makepkg -Acs
-sudo pacman -U package.tar.xz
-</code></pre><h3 id="全局截图">全局截图</h3>
-<p>使用<code>deepin-screenshot</code>截图工具</p>
-<pre><code>yay -S deepin-screenshot
-</code></pre><p>配置系统快捷键，在【系统设置】-【工作区】-【自定义快捷键】中，点击【编辑】-【新建】-【全局快捷键】-【命令/URL：】，然后填写动作名称，如我这里是<code>Deepin截图</code>,然后分别填写注释（非必须）、触发器（win+shift+s）和动作（deepin-screenshot）。</p>
-
+</code></pre><h3 id="alias-1">alias</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># alias -L</span>
+alias -- -<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -&#39;</span>
+alias -g ...<span style="color:#f92672">=</span>../..
+alias -g ....<span style="color:#f92672">=</span>../../..
+alias -g .....<span style="color:#f92672">=</span>../../../..
+alias -g ......<span style="color:#f92672">=</span>../../../../..
+alias 1<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -&#39;</span>
+alias 2<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -2&#39;</span>
+alias 3<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -3&#39;</span>
+alias 4<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -4&#39;</span>
+alias 5<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -5&#39;</span>
+alias 6<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -6&#39;</span>
+alias 7<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -7&#39;</span>
+alias 8<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -8&#39;</span>
+alias 9<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd -9&#39;</span>
+alias _<span style="color:#f92672">=</span>sudo
+alias afind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ack -il&#39;</span>
+alias g<span style="color:#f92672">=</span>git
+alias ga<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add&#39;</span>
+alias gaa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add --all&#39;</span>
+alias gap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git apply&#39;</span>
+alias gapa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add --patch&#39;</span>
+alias gau<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add --update&#39;</span>
+alias gav<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add --verbose&#39;</span>
+alias gb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch&#39;</span>
+alias gbD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch -D&#39;</span>
+alias gba<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch -a&#39;</span>
+alias gbd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch -d&#39;</span>
+alias gbda<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch --no-color --merged | command grep -vE &#34;^(\+|\*|\s*(master|develop|dev)\s*$)&#34; | command xargs -n 1 git branch -d&#39;</span>
+alias gbl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git blame -b -w&#39;</span>
+alias gbnm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch --no-merged&#39;</span>
+alias gbr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch --remote&#39;</span>
+alias gbs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git bisect&#39;</span>
+alias gbsb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git bisect bad&#39;</span>
+alias gbsg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git bisect good&#39;</span>
+alias gbsr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git bisect reset&#39;</span>
+alias gbss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git bisect start&#39;</span>
+alias gc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v&#39;</span>
+alias <span style="color:#e6db74">&#39;gc!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v --amend&#39;</span>
+alias gca<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v -a&#39;</span>
+alias <span style="color:#e6db74">&#39;gca!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v -a --amend&#39;</span>
+alias gcam<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -a -m&#39;</span>
+alias <span style="color:#e6db74">&#39;gcan!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v -a --no-edit --amend&#39;</span>
+alias <span style="color:#e6db74">&#39;gcans!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v -a -s --no-edit --amend&#39;</span>
+alias gcb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git checkout -b&#39;</span>
+alias gcd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git checkout develop&#39;</span>
+alias gcf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git config --list&#39;</span>
+alias gcl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git clone --recurse-submodules&#39;</span>
+alias gclean<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git clean -id&#39;</span>
+alias gcm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git checkout master&#39;</span>
+alias gcmsg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -m&#39;</span>
+alias <span style="color:#e6db74">&#39;gcn!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -v --no-edit --amend&#39;</span>
+alias gco<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git checkout&#39;</span>
+alias gcount<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git shortlog -sn&#39;</span>
+alias gcp<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git cherry-pick&#39;</span>
+alias gcpa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git cherry-pick --abort&#39;</span>
+alias gcpc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git cherry-pick --continue&#39;</span>
+alias gcs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -S&#39;</span>
+alias gcsm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git commit -s -m&#39;</span>
+alias gd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff&#39;</span>
+alias gdca<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff --cached&#39;</span>
+alias gdct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git describe --tags $(git rev-list --tags --max-count=1)&#39;</span>
+alias gdcw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff --cached --word-diff&#39;</span>
+alias gds<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff --staged&#39;</span>
+alias gdt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff-tree --no-commit-id --name-only -r&#39;</span>
+alias gdw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git diff --word-diff&#39;</span>
+alias gf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git fetch&#39;</span>
+alias gfa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git fetch --all --prune&#39;</span>
+alias gfg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git ls-files | grep&#39;</span>
+alias gfo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git fetch origin&#39;</span>
+alias gg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git gui citool&#39;</span>
+alias gga<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git gui citool --amend&#39;</span>
+alias ggpull<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull origin &#34;$(git_current_branch)&#34;&#39;</span>
+alias ggpur<span style="color:#f92672">=</span>ggu
+alias ggpush<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push origin &#34;$(git_current_branch)&#34;&#39;</span>
+alias ggsup<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git branch --set-upstream-to=origin/$(git_current_branch)&#39;</span>
+alias ghh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git help&#39;</span>
+alias gignore<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git update-index --assume-unchanged&#39;</span>
+alias gignored<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git ls-files -v | grep &#34;^[[:lower:]]&#34;&#39;</span>
+alias git-svn-dcommit-push<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git svn dcommit &amp;&amp; git push github master:svntrunk&#39;</span>
+alias gk<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\gitk --all --branches&#39;</span>
+alias gke<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\gitk --all $(git log -g --pretty=%h)&#39;</span>
+alias gl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull&#39;</span>
+alias glg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --stat&#39;</span>
+alias glgg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph&#39;</span>
+alias glgga<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --decorate --all&#39;</span>
+alias glgm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --max-count=10&#39;</span>
+alias glgp<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --stat -p&#39;</span>
+alias glo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --oneline --decorate&#39;</span>
+alias globurl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;noglob urlglobber &#39;</span>
+alias glod<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --pretty=&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span style="color:#ae81ff">\&#39;</span>
+alias glods<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --pretty=&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; --date=short&#39;</span>
+alias glog<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --oneline --decorate --graph&#39;</span>
+alias gloga<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --oneline --decorate --graph --all&#39;</span>
+alias glol<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --pretty=&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span style="color:#ae81ff">\&#39;</span>
+alias glola<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --pretty=&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; --all&#39;</span>
+alias glols<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log --graph --pretty=&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39; --stat&#39;</span>
+alias glp<span style="color:#f92672">=</span>_git_log_prettily
+alias glum<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull upstream master&#39;</span>
+alias gm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git merge&#39;</span>
+alias gma<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git merge --abort&#39;</span>
+alias gmom<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git merge origin/master&#39;</span>
+alias gmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git mergetool --no-prompt&#39;</span>
+alias gmtvim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git mergetool --no-prompt --tool=vimdiff&#39;</span>
+alias gmum<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git merge upstream/master&#39;</span>
+alias gp<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push&#39;</span>
+alias gpd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push --dry-run&#39;</span>
+alias gpf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push --force-with-lease&#39;</span>
+alias <span style="color:#e6db74">&#39;gpf!&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push --force&#39;</span>
+alias gpoat<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push origin --all &amp;&amp; git push origin --tags&#39;</span>
+alias gpristine<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git reset --hard &amp;&amp; git clean -dfx&#39;</span>
+alias gpsup<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push --set-upstream origin $(git_current_branch)&#39;</span>
+alias gpu<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push upstream&#39;</span>
+alias gpv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git push -v&#39;</span>
+alias gr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote&#39;</span>
+alias gra<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote add&#39;</span>
+alias grb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase&#39;</span>
+alias grba<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase --abort&#39;</span>
+alias grbc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase --continue&#39;</span>
+alias grbd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase develop&#39;</span>
+alias grbi<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase -i&#39;</span>
+alias grbm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase master&#39;</span>
+alias grbs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase --skip&#39;</span>
+alias grep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}&#39;</span>
+alias grev<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git revert&#39;</span>
+alias grh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git reset&#39;</span>
+alias grhh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git reset --hard&#39;</span>
+alias grm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rm&#39;</span>
+alias grmc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rm --cached&#39;</span>
+alias grmv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote rename&#39;</span>
+alias groh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git reset origin/$(git_current_branch) --hard&#39;</span>
+alias grrm<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote remove&#39;</span>
+alias grs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git restore&#39;</span>
+alias grset<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote set-url&#39;</span>
+alias grss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git restore --source&#39;</span>
+alias grt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cd &#34;$(git rev-parse --show-toplevel || echo .)&#34;&#39;</span>
+alias gru<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git reset --&#39;</span>
+alias grup<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote update&#39;</span>
+alias grv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git remote -v&#39;</span>
+alias gsb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git status -sb&#39;</span>
+alias gsd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git svn dcommit&#39;</span>
+alias gsh<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git show&#39;</span>
+alias gsi<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git submodule init&#39;</span>
+alias gsps<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git show --pretty=short --show-signature&#39;</span>
+alias gsr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git svn rebase&#39;</span>
+alias gss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git status -s&#39;</span>
+alias gst<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git status&#39;</span>
+alias gsta<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash push&#39;</span>
+alias gstaa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash apply&#39;</span>
+alias gstall<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash --all&#39;</span>
+alias gstc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash clear&#39;</span>
+alias gstd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash drop&#39;</span>
+alias gstl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash list&#39;</span>
+alias gstp<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash pop&#39;</span>
+alias gsts<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git stash show --text&#39;</span>
+alias gsu<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git submodule update&#39;</span>
+alias gsw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git switch&#39;</span>
+alias gswc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git switch -c&#39;</span>
+alias gtl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gtl(){ git tag --sort=-v:refname -n -l &#34;${1}*&#34; }; noglob gtl&#39;</span>
+alias gts<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git tag -s&#39;</span>
+alias gtv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git tag | sort -V&#39;</span>
+alias gunignore<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git update-index --no-assume-unchanged&#39;</span>
+alias gunwip<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git log -n 1 | grep -q -c &#34;\-\-wip\-\-&#34; &amp;&amp; git reset HEAD~1&#39;</span>
+alias gup<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull --rebase&#39;</span>
+alias gupa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull --rebase --autostash&#39;</span>
+alias gupav<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull --rebase --autostash -v&#39;</span>
+alias gupv<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git pull --rebase -v&#39;</span>
+alias gwch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git whatchanged -p --abbrev-commit --pretty=medium&#39;</span>
+alias gwip<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify --no-gpg-sign -m &#34;--wip-- [skip ci]&#34;&#39;</span>
+alias history<span style="color:#f92672">=</span>omz_history
+alias ip<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;curl -i http://ip.cn&#39;</span>
+alias l<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls -lah&#39;</span>
+alias la<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls -lAh&#39;</span>
+alias ll<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls -lh&#39;</span>
+alias ls<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls --color=tty&#39;</span>
+alias lsa<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls -lah&#39;</span>
+alias md<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mkdir -p&#39;</span>
+alias pac<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -S&#39;</span>
+alias pacc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Scc&#39;</span>
+alias paci<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Si&#39;</span>
+alias paclf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Ql&#39;</span>
+alias paclo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Qdt&#39;</span>
+alias pacr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -R&#39;</span>
+alias pacs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Ss&#39;</span>
+alias pacu<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Syu&#39;</span>
+alias pacy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Sy&#39;</span>
+alias rd<span style="color:#f92672">=</span>rmdir
+alias run-help<span style="color:#f92672">=</span>man
+alias setproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;export ALL_PROXY=socks5://127.0.0.1:1080&#39;</span>
+alias unsetproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;unset ALL_PROXY&#39;</span>
+alias which-command<span style="color:#f92672">=</span>whence
+</code></pre></div>
 </main>
 
   <footer>

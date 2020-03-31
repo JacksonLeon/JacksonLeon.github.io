@@ -13,15 +13,6 @@
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>/note/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/note/pytorch-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
       <link>/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
@@ -33,15 +24,6 @@
 &lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
 &lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Google Python Style Guide</title>
-      <link>/note/google-python-style-guide/</link>
-      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
-      
-      <guid>/note/google-python-style-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>

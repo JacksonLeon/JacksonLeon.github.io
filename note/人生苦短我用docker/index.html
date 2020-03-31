@@ -52,7 +52,7 @@ docker pull ufoym/deepo:all-py36-jupyter
 <span style="color:#75715e"># -p 端口映射，服务器的7777映射到docker的8888</span>
 <span style="color:#75715e"># -v 文件保存</span>
 <span style="color:#75715e"># --name 设置容器名字</span>
-nvidia-docker run -it -p 7777:8888 --ipc<span style="color:#f92672">=</span>host -v /home/username/Projects/:/Projects --name deepo-jupyter ufoym/deepo:all-py36-jupyter
+docker run --runtime<span style="color:#f92672">=</span>nvidia -it -p 7890:7890 --ipc<span style="color:#f92672">=</span>host -v /home/liuzh/lau/:/lau --name deepo-all36 ufoym/deepo:all-py36-cu100
 <span style="color:#75715e"># 注意下次启动直接使用容器，不需要重新创建</span>
 docker container start deepo-jupyter
 docker container attach deepo-jupyter
@@ -80,7 +80,10 @@ source /etc/bash.bashrc
 usermod -u <span style="color:#ae81ff">1001</span> user
 groupmod -g <span style="color:#ae81ff">1001</span> user
 chown -R user.user files
-</code></pre></div>
+</code></pre></div><h2 id="docker服务启动不了">docker服务启动不了</h2>
+<pre><code># 查看docker当前情况，用于排除问题很有用
+$ dockerd
+</code></pre>
 </main>
 
   <footer>
