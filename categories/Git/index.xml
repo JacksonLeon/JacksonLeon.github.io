@@ -19,29 +19,5 @@
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>WebHook Based on Git(Using PHP)</title>
-      <link>/blog/note/webhook-based-on-gitusing-php/</link>
-      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
-      
-      <guid>/blog/note/webhook-based-on-gitusing-php/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Git note</title>
-      <link>/blog/note/git-note/</link>
-      <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
-      
-      <guid>/blog/note/git-note/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
-&lt;p&gt;本文长期更新.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
   </channel>
 </rss>

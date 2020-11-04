@@ -7,22 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate><atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>备忘录</title>
-      <link>/blog/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
-      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      <title>LeetCode</title>
+      <link>/blog/categories/leetcode/</link>
+      <pubDate>Tue, 31 Mar 2020 14:16:36 +0800</pubDate>
       
-      <guid>/blog/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/blog/categories/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Python</title>
-      <link>/blog/categories/python/</link>
-      <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
+      <title>Note</title>
+      <link>/blog/categories/note/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
-      <guid>/blog/categories/python/</guid>
+      <guid>/blog/categories/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notebook</title>
+      <link>/blog/categories/notebook/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/blog/categories/notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reproduce</title>
+      <link>/blog/categories/reproduce/</link>
+      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
+      
+      <guid>/blog/categories/reproduce/</guid>
       <description></description>
     </item>
     
@@ -32,33 +50,6 @@
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
       <guid>/blog/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>/blog/categories/blog/</link>
-      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
-      
-      <guid>/blog/categories/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Style Guide</title>
-      <link>/blog/categories/style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/categories/style-guide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Andrew NG</title>
-      <link>/blog/categories/andrew-ng/</link>
-      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
-      
-      <guid>/blog/categories/andrew-ng/</guid>
       <description></description>
     </item>
     
@@ -81,60 +72,6 @@
     </item>
     
     <item>
-      <title>Library</title>
-      <link>/blog/categories/library/</link>
-      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
-      
-      <guid>/blog/categories/library/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Uncategoried</title>
-      <link>/blog/categories/uncategoried/</link>
-      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
-      
-      <guid>/blog/categories/uncategoried/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macintosh</title>
-      <link>/blog/categories/macintosh/</link>
-      <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
-      
-      <guid>/blog/categories/macintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Applications</title>
-      <link>/blog/categories/applications/</link>
-      <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
-      
-      <guid>/blog/categories/applications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VSCode</title>
-      <link>/blog/categories/vscode/</link>
-      <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
-      
-      <guid>/blog/categories/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WebHook</title>
-      <link>/blog/categories/webhook/</link>
-      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
-      
-      <guid>/blog/categories/webhook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>/blog/categories/java/</link>
       <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
@@ -144,74 +81,11 @@
     </item>
     
     <item>
-      <title>Hackintosh</title>
-      <link>/blog/categories/hackintosh/</link>
-      <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
-      
-      <guid>/blog/categories/hackintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LeetCode</title>
-      <link>/blog/categories/leetcode/</link>
-      <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
-      
-      <guid>/blog/categories/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hexo</title>
-      <link>/blog/categories/hexo/</link>
-      <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
-      
-      <guid>/blog/categories/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OpenCV</title>
-      <link>/blog/categories/opencv/</link>
-      <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
-      
-      <guid>/blog/categories/opencv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MatLab</title>
-      <link>/blog/categories/matlab/</link>
-      <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
-      
-      <guid>/blog/categories/matlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reptile</title>
-      <link>/blog/categories/reptile/</link>
+      <title>Python</title>
+      <link>/blog/categories/python/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>/blog/categories/reptile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>/blog/categories/markdown/</link>
-      <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
-      
-      <guid>/blog/categories/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>/blog/categories/vim/</link>
-      <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
-      
-      <guid>/blog/categories/vim/</guid>
+      <guid>/blog/categories/python/</guid>
       <description></description>
     </item>
     

@@ -30,5 +30,34 @@
 思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import os def GetTF(filesPath): if not os.path.isdir(filesPath): return files=os.listdir(filesPath) for file in files: filePath=os.path.join(filesPath,file) # 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;: with open(filePath) as text: content=text.read() # 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;: content=content.replace(char, &amp;#39; &amp;#39;) content=content.lower() wordList=content.split() wordDic={} # 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;] for word in wordList: if word in exceptWord: continue if word in wordDic: wordDic[word]+=1 else: wordDic[word]=1 # 倒序排序 res=sorted(wordDic.</description>
     </item>
     
+    <item>
+      <title>SMTC 0000.py</title>
+      <link>/blog/note/smtc-0000.py/</link>
+      <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
+      
+      <guid>/blog/note/smtc-0000.py/</guid>
+      <description>show-me-the-code 完整题目
+题目 第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果：
+思路 利用Pillow模块中提供的ImageDraw在图片上画图形或者文字。
+首先打开图片，使用Image.open()，在这之前需要导入pillow模块库，import PIL。
+# Creates an object that can be used to draw in the given image. # PIL.ImageDraw.Draw(im, mode=None) imgDraw = ImageDraw.Draw(image) 设置填充字体以及颜色，获取图片大小，好设置填充位置
+# 颜色 fillColor = &amp;#39;#ff0000&amp;#39; # 大小 width, height = image.size # 字体 myFont = ImageFont.truetype(&amp;#39;/Library/Fonts/Tahoma.ttf&amp;#39;, size=width//10) 接着imgDraw.text((width-100, 0), &#39;hello&#39;, *fill*=fillColor, *font*=myFont)，填充数字或者单词。
+保存图片完成。
+Solution # -*- coding:utf-8 -*- import PIL from PIL import Image from PIL import ImageDraw from PIL import ImageFont def add_num(imgName): # 打开图片 image = Image.</description>
+    </item>
+    
+    <item>
+      <title>Show Me The Code</title>
+      <link>/blog/note/show-me-the-code/</link>
+      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
+      
+      <guid>/blog/note/show-me-the-code/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
+&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
   </channel>
 </rss>

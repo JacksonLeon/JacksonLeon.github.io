@@ -360,10 +360,10 @@ Solution # -*- coding:utf-8 -*- import PIL from PIL import Image from PIL import
     
     <item>
       <title>Show Me The Code</title>
-      <link>/blog/post/show-me-the-code/</link>
+      <link>/blog/note/show-me-the-code/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>/blog/post/show-me-the-code/</guid>
+      <guid>/blog/note/show-me-the-code/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
@@ -449,18 +449,6 @@ Solution # -*- coding:utf-8 -*- import PIL from PIL import Image from PIL import
       
       <guid>/blog/post/leetcode-analysis/</guid>
       <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
-    </item>
-    
-    <item>
-      <title>Hexo-NexT博客样式自定义</title>
-      <link>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
-      <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
-      
-      <guid>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -558,19 +546,6 @@ Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quo
 &lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
 &lt;p&gt;本文长期更新.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>/blog/note/hello-world/</link>
-      <pubDate>Wed, 14 Feb 2018 13:14:00 +0000</pubDate>
-      
-      <guid>/blog/note/hello-world/</guid>
-      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing
-Run server $ hexo server More info: Server
-Generate static files $ hexo generate More info: Generating
-Deploy to remote sites $ hexo deploy More info: Deployment</description>
     </item>
     
     <item>

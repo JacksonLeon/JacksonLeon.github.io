@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/categories/</loc>
+    <lastmod>2020-03-31T14:16:36+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
+    <lastmod>2020-03-31T14:16:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/leetcode/</loc>
     <lastmod>2020-03-31T14:16:36+08:00</lastmod>
   </url>
   
@@ -28,28 +38,18 @@
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
-    <lastmod>2019-10-30T19:50:00+00:00</lastmod>
+    <loc>/blog/tags/deep-learning/</loc>
+    <lastmod>2019-10-29T22:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/note/</loc>
+    <lastmod>2019-10-29T22:42:47+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/tags/</loc>
     <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2019-10-29T22:42:47+00:00</lastmod>
   </url>
   
   <url>
@@ -64,6 +64,11 @@
   
   <url>
     <loc>/blog/note/linux-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-10-30T19:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/notebook/</loc>
     <lastmod>2019-10-30T19:50:00+00:00</lastmod>
   </url>
   
@@ -93,7 +98,7 @@
   </url>
   
   <url>
-    <loc>/blog/tags/reproduce/</loc>
+    <loc>/blog/categories/reproduce/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url>
   
@@ -108,17 +113,7 @@
   </url>
   
   <url>
-    <loc>/blog/categories/python/</loc>
-    <lastmod>2019-05-04T09:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/note/commit-messages-guide/</loc>
-    <lastmod>2019-05-04T09:09:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/git/</loc>
     <lastmod>2019-05-04T09:09:27+00:00</lastmod>
   </url>
   
@@ -128,17 +123,12 @@
   </url>
   
   <url>
+    <loc>/blog/tags/reproduce/</loc>
+    <lastmod>2019-05-04T09:09:27+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/tags/blog/</loc>
-    <lastmod>2019-05-01T14:57:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/blog/</loc>
-    <lastmod>2019-05-01T14:57:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/requests/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
   </url>
   
@@ -153,17 +143,12 @@
   </url>
   
   <url>
-    <loc>/blog/tags/picture-bed/</loc>
-    <lastmod>2019-05-01T10:43:45+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/post/pytorch-style-guide/</loc>
     <lastmod>2019-05-01T09:03:11+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/style-guide/</loc>
+    <loc>/blog/tags/style-guide/</loc>
     <lastmod>2019-05-01T09:03:11+00:00</lastmod>
   </url>
   
@@ -173,12 +158,7 @@
   </url>
   
   <url>
-    <loc>/blog/categories/andrew-ng/</loc>
-    <lastmod>2019-04-19T11:16:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/machine-learning/</loc>
+    <loc>/blog/tags/andrew-ng/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url>
   
@@ -203,11 +183,6 @@
   </url>
   
   <url>
-    <loc>/blog/tags/smtc/</loc>
-    <lastmod>2019-02-05T11:51:54+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/categories/smtc/</loc>
     <lastmod>2019-02-05T11:51:54+00:00</lastmod>
   </url>
@@ -228,11 +203,6 @@
   </url>
   
   <url>
-    <loc>/blog/categories/library/</loc>
-    <lastmod>2019-02-04T16:07:43+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/note/python-library/</loc>
     <lastmod>2019-02-04T16:07:43+00:00</lastmod>
   </url>
@@ -243,12 +213,7 @@
   </url>
   
   <url>
-    <loc>/blog/post/show-me-the-code/</loc>
-    <lastmod>2019-01-29T22:58:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/uncategoried/</loc>
+    <loc>/blog/note/show-me-the-code/</loc>
     <lastmod>2019-01-29T22:58:44+00:00</lastmod>
   </url>
   
@@ -263,28 +228,8 @@
   </url>
   
   <url>
-    <loc>/blog/categories/macintosh/</loc>
-    <lastmod>2019-02-03T18:13:25+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/note/macintosh-note/</loc>
     <lastmod>2019-02-03T18:13:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/applications/</loc>
-    <lastmod>2019-05-02T12:58:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/applications/</loc>
-    <lastmod>2019-05-02T12:58:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/vscode/</loc>
-    <lastmod>2019-05-02T12:58:43+00:00</lastmod>
   </url>
   
   <url>
@@ -293,18 +238,18 @@
   </url>
   
   <url>
-    <loc>/blog/categories/webhook/</loc>
+    <loc>/blog/tags/git/</loc>
+    <lastmod>2019-02-03T18:13:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/webhook/</loc>
     <lastmod>2018-02-14T13:14:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/note/webhook-based-on-gitusing-php/</loc>
     <lastmod>2018-02-14T13:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/java/</loc>
-    <lastmod>2018-12-28T15:49:42+00:00</lastmod>
   </url>
   
   <url>
@@ -323,48 +268,13 @@
   </url>
   
   <url>
-    <loc>/blog/categories/hackintosh/</loc>
-    <lastmod>2019-01-26T22:25:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/note/hackintosh-for-lenovo-ideapad-700-15isk/</loc>
     <lastmod>2019-01-26T22:25:44+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/leetcode/</loc>
-    <lastmod>2018-07-30T16:09:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/leetcode/</loc>
-    <lastmod>2018-07-30T16:09:21+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/post/leetcode-analysis/</loc>
     <lastmod>2018-07-30T16:09:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/hexo/</loc>
-    <lastmod>2019-02-02T13:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/hexo/</loc>
-    <lastmod>2019-02-02T13:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</loc>
-    <lastmod>2019-02-02T13:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/opencv/</loc>
-    <lastmod>2018-12-22T14:40:14+00:00</lastmod>
   </url>
   
   <url>
@@ -378,11 +288,6 @@
   </url>
   
   <url>
-    <loc>/blog/categories/matlab/</loc>
-    <lastmod>2018-04-28T16:48:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/tags/matlab/</loc>
     <lastmod>2018-04-28T16:48:06+00:00</lastmod>
   </url>
@@ -393,12 +298,12 @@
   </url>
   
   <url>
-    <loc>/blog/tags/reptile/</loc>
+    <loc>/blog/categories/python/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/reptile/</loc>
+    <loc>/blog/tags/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url>
   
@@ -413,22 +318,12 @@
   </url>
   
   <url>
-    <loc>/blog/categories/markdown/</loc>
-    <lastmod>2018-03-22T15:01:45+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</loc>
     <lastmod>2018-03-22T15:01:45+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/tags/vim/</loc>
-    <lastmod>2019-01-30T04:11:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/vim/</loc>
     <lastmod>2019-01-30T04:11:22+00:00</lastmod>
   </url>
   
@@ -440,11 +335,6 @@
   <url>
     <loc>/blog/note/git-note/</loc>
     <lastmod>2019-02-03T18:13:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/note/hello-world/</loc>
-    <lastmod>2018-02-14T13:14:00+00:00</lastmod>
   </url>
   
   <url>

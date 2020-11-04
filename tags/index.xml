@@ -9,20 +9,11 @@
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>备忘录</title>
-      <link>/blog/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <title>Deep Learning</title>
+      <link>/blog/tags/deep-learning/</link>
       <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
-      <guid>/blog/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>深度学习</title>
-      <link>/blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
-      
-      <guid>/blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>/blog/tags/deep-learning/</guid>
       <description></description>
     </item>
     
@@ -54,15 +45,6 @@
     </item>
     
     <item>
-      <title>Reproduce</title>
-      <link>/blog/tags/reproduce/</link>
-      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
-      
-      <guid>/blog/tags/reproduce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Python</title>
       <link>/blog/tags/python/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
@@ -72,11 +54,11 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>/blog/tags/git/</link>
+      <title>Reproduce</title>
+      <link>/blog/tags/reproduce/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/blog/tags/git/</guid>
+      <guid>/blog/tags/reproduce/</guid>
       <description></description>
     </item>
     
@@ -90,38 +72,20 @@
     </item>
     
     <item>
-      <title>Requests</title>
-      <link>/blog/tags/requests/</link>
-      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
+      <title>Style Guide</title>
+      <link>/blog/tags/style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>/blog/tags/requests/</guid>
+      <guid>/blog/tags/style-guide/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Picture Bed</title>
-      <link>/blog/tags/picture-bed/</link>
-      <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
-      
-      <guid>/blog/tags/picture-bed/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>/blog/tags/machine-learning/</link>
+      <title>Andrew NG</title>
+      <link>/blog/tags/andrew-ng/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>/blog/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SMTC</title>
-      <link>/blog/tags/smtc/</link>
-      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
-      
-      <guid>/blog/tags/smtc/</guid>
+      <guid>/blog/tags/andrew-ng/</guid>
       <description></description>
     </item>
     
@@ -135,20 +99,20 @@
     </item>
     
     <item>
-      <title>Applications</title>
-      <link>/blog/tags/applications/</link>
-      <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
+      <title>Git</title>
+      <link>/blog/tags/git/</link>
+      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
-      <guid>/blog/tags/applications/</guid>
+      <guid>/blog/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Java</title>
-      <link>/blog/tags/java/</link>
-      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
+      <title>WebHook</title>
+      <link>/blog/tags/webhook/</link>
+      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
-      <guid>/blog/tags/java/</guid>
+      <guid>/blog/tags/webhook/</guid>
       <description></description>
     </item>
     
@@ -158,24 +122,6 @@
       <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
       
       <guid>/blog/tags/hackintosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LeetCode</title>
-      <link>/blog/tags/leetcode/</link>
-      <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
-      
-      <guid>/blog/tags/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hexo</title>
-      <link>/blog/tags/hexo/</link>
-      <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
-      
-      <guid>/blog/tags/hexo/</guid>
       <description></description>
     </item>
     

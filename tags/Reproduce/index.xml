@@ -7,48 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/tags/reproduce/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to be a Postgraduate student(MIT)</title>
-      <link>/blog/post/how-to-be-a-postgraduate-studentmit/</link>
-      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
-      
-      <guid>/blog/post/how-to-be-a-postgraduate-studentmit/</guid>
-      <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Reproduce&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;本文的主旨是解释如何做研究。我们提供的这些建议，对于研究本身（阅读、写作和程序设计）、理解研究过程以及开始研究（方法论、选题、选导师和情感因素），都是极具价值的。&lt;/p&gt;
-&lt;p&gt;这是什么？并没有什么神丹妙药可以保证在研究中取得成功，本文只是列举了一些可能会对研究有所帮助的非正式意见。&lt;/p&gt;
-&lt;p&gt;目标读者是谁？本文主要是为新入学的研究生而写。&lt;/p&gt;
-&lt;p&gt;如何使用？要精读完本文，太长了一些，最好是采用浏览的方式。很多人觉得下面的方法很有效：先快速通读一遍，然后选取其中与自己当前研究项目有关的部分仔细研究。&lt;/p&gt;
-&lt;p&gt;本文被粗略地分为两部分。第一部分涉及研究者所需具备的各种技能：如阅读，写作和程序设计等等。第二部分讨论研究过程本身：即研究究竟是怎么回事，如何做研究，如何选题和选导师，如何考虑研究中的情感因素。很多读者反映，从长远看，第二部分比第一部分更有价值，也更让人感兴趣。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;本文的主要内容包括：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;一、掌握一些阅读的诀窍。&lt;/p&gt;
-&lt;p&gt;二、如何成为研究领域的一员：与相关人员保持联系，他们可以使你保持对研究前沿的跟踪，知道应该读什么材料。&lt;/p&gt;
-&lt;p&gt;三、学习相关领域的知识：对几个领域都有基本的理解，对于一个或者两个领域要精通。&lt;/p&gt;
-&lt;p&gt;四、如何做研究笔记。&lt;/p&gt;
-&lt;p&gt;五、如何写期刊论文和毕业论文。如何为草稿写评审意见，如何利用别人的评审意见。如何发表论文。&lt;/p&gt;
-&lt;p&gt;六、如何做研究报告及演讲。&lt;/p&gt;
-&lt;p&gt;七、掌握和自己相关领域的程序设计。&lt;/p&gt;
-&lt;p&gt;八、有关研究生涯最重要的问题，如何选导师。不同的导师具有不同的风格，导师是你必须了解如何利用的资源。&lt;/p&gt;
-&lt;p&gt;九、关于毕业论文。毕业论文将占据研究生生涯的大部分时间，本部分涉及如何选题，以及如何避免浪费时间。&lt;/p&gt;
-&lt;p&gt;十、研究方法论。&lt;/p&gt;
-&lt;p&gt;十一、或许是最重要的一节：涉及研究过程中的情感因素，包括如何面对失败，如何设定目标，如何避免不安全感，保持自信，享受快乐。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Migrating to Python 3 with pleasure</title>
-      <link>/blog/post/migrating-to-python-3-with-pleasure/</link>
-      <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
-      
-      <guid>/blog/post/migrating-to-python-3-with-pleasure/</guid>
-      <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
+    <lastBuildDate>Sat, 04 May 2019 09:09:27 +0000</lastBuildDate><atom:link href="/blog/tags/reproduce/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Commit messages guide</title>
       <link>/blog/note/commit-messages-guide/</link>
@@ -58,47 +17,6 @@
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
-      <link>/blog/post/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/post/pytorch-style-guide/</guid>
-      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
-&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
-&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Google Python Style Guide</title>
-      <link>/blog/post/google-python-style-guide/</link>
-      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
-      
-      <guid>/blog/post/google-python-style-guide/</guid>
-      <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Markdown 语法说明 (简体中文版)</title>
-      <link>/blog/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</link>
-      <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
-      
-      <guid>/blog/note/markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88/</guid>
-      <description>NOTE: This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to Markdown: Syntax.
-声明： 这份文档派生(fork)于繁体中文版，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里查看它的源文件。「繁体中文版的原始文件可以查看这里 。」&amp;ndash;By @riku / 本项目托管于 GitCafe
-注： 本项目同时也托管于 Github 上，请通过 fork＋pull request 方式来帮忙改进本项目。
-概述 宗旨 Markdown 的目标是实现「易读易写」。
-可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。
-总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像* 强调 *。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。
-兼容 HTML Markdown 语法的目标是：成为一种适用于网络的_书写_语言。
-Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想_不是_要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种_发布_的格式，Markdown 是一种_书写_的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</description>
     </item>
     
   </channel>

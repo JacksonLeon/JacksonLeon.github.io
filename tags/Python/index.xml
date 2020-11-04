@@ -21,18 +21,6 @@
     </item>
     
     <item>
-      <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
-      <link>/blog/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
-      
-      <guid>/blog/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
-&lt;p&gt;一起来造轮子吧！&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>Pytorch Style Guide</title>
       <link>/blog/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
@@ -58,28 +46,6 @@
     </item>
     
     <item>
-      <title>SMTC 0007.py</title>
-      <link>/blog/note/smtc-0007.py/</link>
-      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
-      
-      <guid>/blog/note/smtc-0007.py/</guid>
-      <description>show-me-the-code 完整题目
-题目 第 0007 题： 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。
-思路  遍历文件夹下的文件 获取后缀名，找到py文件 遍历文件的每一行 如果是空的则说明是空行 用正则匹配#注释符号 统计行数输出  Solution # -*- coding: utf-8 -*- import os import re def parse_code(filesPath): if not os.path.isdir(filesPath): return # 正则匹配# exp_re = re.compile(&amp;#39;^#.*&amp;#39;) fileList = os.listdir(filesPath) print(&amp;#39;{0}\t{1}\t{2}\t{3}&amp;#39;.format(&amp;#39;fileName&amp;#39;, &amp;#39;all_lines&amp;#39;, &amp;#39;space_lines&amp;#39;, &amp;#39;exp_lines&amp;#39;)) for file in fileList: filePath = os.path.join(filesPath, file) if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == &amp;#39;.py&amp;#39;: with open(filePath) as code: all_lines = 0 space_lines = 0 exp_lines = 0 for line in code.</description>
-    </item>
-    
-    <item>
-      <title>SMTC 0006.py</title>
-      <link>/blog/note/smtc-0006.py/</link>
-      <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
-      
-      <guid>/blog/note/smtc-0006.py/</guid>
-      <description>show-me-the-code 完整题目
-题目 第 0006 题： 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。
-思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import os def GetTF(filesPath): if not os.path.isdir(filesPath): return files=os.listdir(filesPath) for file in files: filePath=os.path.join(filesPath,file) # 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;: with open(filePath) as text: content=text.read() # 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;: content=content.replace(char, &amp;#39; &amp;#39;) content=content.lower() wordList=content.split() wordDic={} # 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;] for word in wordList: if word in exceptWord: continue if word in wordDic: wordDic[word]+=1 else: wordDic[word]=1 # 倒序排序 res=sorted(wordDic.</description>
-    </item>
-    
-    <item>
       <title>Python Library</title>
       <link>/blog/note/python-library/</link>
       <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
@@ -102,23 +68,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;Python个人笔记&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用Python爬虫爬取网络小说</title>
-      <link>/blog/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
-      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
-      
-      <guid>/blog/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;小说网址&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

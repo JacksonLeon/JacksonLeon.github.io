@@ -186,19 +186,6 @@ return 2.
     </item>
     
     <item>
-      <title>Show Me The Code</title>
-      <link>/blog/post/show-me-the-code/</link>
-      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
-      
-      <guid>/blog/post/show-me-the-code/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
-&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>LeetCode Analysis</title>
       <link>/blog/post/leetcode-analysis/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
