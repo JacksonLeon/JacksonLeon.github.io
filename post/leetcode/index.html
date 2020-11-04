@@ -1,44 +1,85 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LeetCode | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> LeetCode |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/post/leetcode/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">LeetCode</span></h1>
+<article id="article">
+  <header>
+  
 
-<h2 class="date">2020/03/31</h2>
-</div>
+    <h1 style="text-align: center;" >LeetCode</h1>
+    <div class="post-meta">
+    
+      <time datetime="2020-03-31T14:16:36&#43;08:00">March 31, 2020</time> &nbsp; 
+    
 
-<main>
-<h2 id="leetcode-191-number-of-1-bits">Leetcode 191. Number of 1 Bits</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        17 min
+      
+      12 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="leetcode-191-number-of-1-bits">Leetcode 191. Number of 1 Bits</h2>
 <h3 id="description">Description</h3>
 <blockquote>
 <p>Write a function that takes an unsigned integer and returns the number of <code>1</code> bits it has (also known as the <code>Hamming weight</code>). For example, the 32-bit integer <code>11</code> has binary representation <code>00000000000000000000000000001011</code>, so the function should return 3.</p>
@@ -54,8 +95,8 @@
         <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
         <span style="color:#66d9ef">while</span>(n)
         {
-            c<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
-            n<span style="color:#f92672">&amp;</span><span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//逐次获取最低非0 bit位
+            c<span style="color:#f92672">++</span>;
+            n<span style="color:#f92672">&amp;=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//逐次获取最低非0 bit位
 </span><span style="color:#75715e"></span>        }
         <span style="color:#66d9ef">return</span> c;
     }
@@ -65,15 +106,15 @@
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hammingWeight</span>(self, n):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        :type n: int</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        :rtype: int</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type n: int
+</span><span style="color:#e6db74">        :rtype: int
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
         res<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
         mask<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
         <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">32</span>):
             <span style="color:#66d9ef">if</span> n<span style="color:#f92672">&amp;</span>mask:  <span style="color:#75715e"># &amp;：按位与</span>
-                res<span style="color:#f92672">+</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+                res<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
             mask<span style="color:#f92672">=</span>mask<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">1</span>
             <span style="color:#75715e"># n=n&gt;&gt;1    #n移位或者mask移位</span>
         <span style="color:#66d9ef">return</span> res
@@ -89,18 +130,18 @@
     vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> lexicalOrder(<span style="color:#66d9ef">int</span> n) {
         vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> res;
         <span style="color:#66d9ef">int</span> cur<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>n;i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>)
         {
             res.push_back(cur);
-            <span style="color:#66d9ef">if</span>(cur<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>n)   <span style="color:#75715e">//首先判断能否直接再后面加0
-</span><span style="color:#75715e"></span>                cur<span style="color:#f92672">*</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
-            <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(cur<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span><span style="color:#f92672">!</span><span style="color:#f92672">=</span><span style="color:#ae81ff">9</span><span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>(cur<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>n)  <span style="color:#75715e">//正常情况下+1
-</span><span style="color:#75715e"></span>                cur<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+            <span style="color:#66d9ef">if</span>(cur<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">&lt;=</span>n)   <span style="color:#75715e">//首先判断能否直接再后面加0
+</span><span style="color:#75715e"></span>                cur<span style="color:#f92672">*=</span><span style="color:#ae81ff">10</span>;
+            <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(cur<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span><span style="color:#f92672">!=</span><span style="color:#ae81ff">9</span><span style="color:#f92672">&amp;&amp;</span>(cur<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">&lt;=</span>n)  <span style="color:#75715e">//正常情况下+1
+</span><span style="color:#75715e"></span>                cur<span style="color:#f92672">++</span>;
             <span style="color:#66d9ef">else</span>
             {
-                <span style="color:#66d9ef">while</span>((cur<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">9</span>)   <span style="color:#75715e">//处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20
+                <span style="color:#66d9ef">while</span>((cur<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span><span style="color:#f92672">==</span><span style="color:#ae81ff">9</span>)   <span style="color:#75715e">//处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20
 </span><span style="color:#75715e"></span>                {
-                    cur<span style="color:#f92672">/</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+                    cur<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>;
                 }
                 cur<span style="color:#f92672">=</span>(cur<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//这一轮个位结束，从上一位+1继续开始
 </span><span style="color:#75715e"></span>            } 
@@ -142,11 +183,11 @@ return 2.
         <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">26</span>];
         <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> c:s)
         {
-            alp[c<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+            alp[c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]<span style="color:#f92672">++</span>;
         }
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>s.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>s.size();i<span style="color:#f92672">++</span>)
         {
-            <span style="color:#66d9ef">if</span>(alp[s[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#66d9ef">return</span> i;
+            <span style="color:#66d9ef">if</span>(alp[s[i]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)<span style="color:#66d9ef">return</span> i;
         }
         <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
     }
@@ -166,15 +207,15 @@ return 2.
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">firstUniqChar</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>26<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> arr<span style="color:#f92672">=</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>26<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> arr<span style="color:#f92672">=</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">();</span>
         <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c<span style="color:#f92672">:</span>arr<span style="color:#f92672">)</span>
         <span style="color:#f92672">{</span>
-            alp<span style="color:#f92672">[</span>c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">;</span>
+            alp<span style="color:#f92672">[</span>c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]++;</span>
         <span style="color:#f92672">}</span>
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>i<span style="color:#f92672">++)</span>
         <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>alp<span style="color:#f92672">[</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>1<span style="color:#f92672">)</span><span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>alp<span style="color:#f92672">[</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]-</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">]==</span>1<span style="color:#f92672">)</span><span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
         <span style="color:#f92672">}</span>
         <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
@@ -184,19 +225,19 @@ return 2.
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">firstUniqChar</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">int</span> resIndex <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> resIndex <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
 
-        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>resIndex <span style="color:#f92672">=</span><span style="color:#f92672">=</span> 0<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>resIndex <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>
             <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
 
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;z&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>           
-            <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">;</span>      
-            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>index<span style="color:#f92672">!</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span>1 <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> index <span style="color:#f92672">=</span><span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">lastIndexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
-                resIndex <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>resIndex<span style="color:#f92672">,</span>index<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">&lt;=</span><span style="color:#e6db74">&#39;z&#39;</span><span style="color:#f92672">;</span>c<span style="color:#f92672">++){</span>           
+            <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">);</span>      
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>index<span style="color:#f92672">!=-</span>1 <span style="color:#f92672">&amp;&amp;</span> index <span style="color:#f92672">==</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">lastIndexOf</span><span style="color:#f92672">(</span>c<span style="color:#f92672">)){</span>
+                resIndex <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>resIndex<span style="color:#f92672">,</span>index<span style="color:#f92672">);</span>
             <span style="color:#f92672">}</span>        
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">return</span> resIndex <span style="color:#f92672">=</span><span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span>1 <span style="color:#f92672">:</span> resIndex<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> resIndex <span style="color:#f92672">==</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span>1 <span style="color:#f92672">:</span> resIndex<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h2 id="leetcode-461-hamming-distance">Leetcode 461. Hamming Distance</h2>
@@ -228,8 +269,8 @@ The above arrows point to positions where the corresponding bits are different.
         <span style="color:#66d9ef">int</span> tmp<span style="color:#f92672">=</span>x<span style="color:#f92672">^</span>y;
         <span style="color:#66d9ef">while</span>(tmp)
         {
-            dist<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
-            tmp<span style="color:#f92672">&amp;</span><span style="color:#f92672">=</span>tmp<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+            dist<span style="color:#f92672">++</span>;
+            tmp<span style="color:#f92672">&amp;=</span>tmp<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
         }
         <span style="color:#66d9ef">return</span> dist;
     }
@@ -278,13 +319,13 @@ Merged tree:
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
     TreeNode<span style="color:#f92672">*</span> mergeTrees(TreeNode<span style="color:#f92672">*</span> t1, TreeNode<span style="color:#f92672">*</span> t2) {
-        <span style="color:#66d9ef">if</span>(t1<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> t2<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL)<span style="color:#66d9ef">return</span> NULL;
+        <span style="color:#66d9ef">if</span>(t1<span style="color:#f92672">==</span>NULL <span style="color:#f92672">&amp;&amp;</span> t2<span style="color:#f92672">==</span>NULL)<span style="color:#66d9ef">return</span> NULL;
           
-        <span style="color:#66d9ef">int</span> tempValue<span style="color:#f92672">=</span>(t1<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>t1<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val)<span style="color:#f92672">+</span>(t2<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>t2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val);
+        <span style="color:#66d9ef">int</span> tempValue<span style="color:#f92672">=</span>(t1<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>t1<span style="color:#f92672">-&gt;</span>val)<span style="color:#f92672">+</span>(t2<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>t2<span style="color:#f92672">-&gt;</span>val);
         TreeNode<span style="color:#f92672">*</span> res<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> TreeNode(tempValue);
           
-        res<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>left<span style="color:#f92672">=</span>mergeTrees((t1<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t1<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>left),(t2<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>left));
-        res<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>right<span style="color:#f92672">=</span>mergeTrees((t1<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t1<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>right),(t2<span style="color:#f92672">=</span><span style="color:#f92672">=</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>right));
+        res<span style="color:#f92672">-&gt;</span>left<span style="color:#f92672">=</span>mergeTrees((t1<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t1<span style="color:#f92672">-&gt;</span>left),(t2<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t2<span style="color:#f92672">-&gt;</span>left));
+        res<span style="color:#f92672">-&gt;</span>right<span style="color:#f92672">=</span>mergeTrees((t1<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t1<span style="color:#f92672">-&gt;</span>right),(t2<span style="color:#f92672">==</span>NULL<span style="color:#f92672">?</span>NULL<span style="color:#f92672">:</span>t2<span style="color:#f92672">-&gt;</span>right));
         <span style="color:#66d9ef">return</span> res;
     }
 };
@@ -312,7 +353,7 @@ Merged tree:
 <h3 id="solution-3">Solution</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e"># Write your MySQL query statement below
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">update</span> salary 
-<span style="color:#66d9ef">set</span> sex<span style="color:#f92672">=</span><span style="color:#66d9ef">IF</span>(sex<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">set</span> sex<span style="color:#f92672">=</span><span style="color:#66d9ef">IF</span>(sex<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;f&#39;</span>,<span style="color:#e6db74">&#39;m&#39;</span>,<span style="color:#e6db74">&#39;f&#39;</span>)
 </code></pre></div><h2 id="leetcode-654-maximum-binary-tree">Leetcode 654. Maximum Binary Tree</h2>
 <h3 id="description-6">Description</h3>
 <blockquote>
@@ -347,20 +388,20 @@ Output: return the tree root node representing the following tree:
 </span><span style="color:#75715e"> */</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    TreeNode<span style="color:#f92672">*</span> constructMaximumBinaryTree(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> nums) {
-        vector<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">*</span><span style="color:#f92672">&gt;</span> mbt;  <span style="color:#75715e">//堆栈存储数组
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>nums.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)  <span style="color:#75715e">//从左到右扫描数组
+    TreeNode<span style="color:#f92672">*</span> constructMaximumBinaryTree(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums) {
+        vector<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">*&gt;</span> mbt;  <span style="color:#75715e">//堆栈存储数组
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>nums.size();i<span style="color:#f92672">++</span>)  <span style="color:#75715e">//从左到右扫描数组
 </span><span style="color:#75715e"></span>        {
             TreeNode<span style="color:#f92672">*</span> cur<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> TreeNode(nums[i]);    <span style="color:#75715e">//当前数初始化树节点
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>mbt.empty()<span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>mbt.back()<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val<span style="color:#f92672">&lt;</span>nums[i])
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>mbt.empty()<span style="color:#f92672">&amp;&amp;</span>mbt.back()<span style="color:#f92672">-&gt;</span>val<span style="color:#f92672">&lt;</span>nums[i])
             {   <span style="color:#75715e">/*当堆栈不空且新数比堆栈中最后的数字小时，
 </span><span style="color:#75715e">                当前节点作为父节点，先前的作为左子树
 </span><span style="color:#75715e">                */</span>
-                cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>left<span style="color:#f92672">=</span>mbt.back();
+                cur<span style="color:#f92672">-&gt;</span>left<span style="color:#f92672">=</span>mbt.back();
                 mbt.pop_back();
             }
             <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>mbt.empty())    <span style="color:#75715e">//正常情况新节点直接作为右子树
-</span><span style="color:#75715e"></span>                mbt.back()<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>right<span style="color:#f92672">=</span>cur;
+</span><span style="color:#75715e"></span>                mbt.back()<span style="color:#f92672">-&gt;</span>right<span style="color:#f92672">=</span>cur;
             mbt.push_back(cur);
         }
         <span style="color:#66d9ef">return</span> mbt.front(); <span style="color:#75715e">//返回头节点
@@ -378,10 +419,10 @@ Output: return the tree root node representing the following tree:
 <h4 id="python-递归">Python 递归</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">constructMaximumBinaryTree</span>(self, nums):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        :type nums: List[int]</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        :rtype: TreeNode</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type nums: List[int]
+</span><span style="color:#e6db74">        :rtype: TreeNode
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
         <span style="color:#66d9ef">if</span> nums:
             pos<span style="color:#f92672">=</span>nums<span style="color:#f92672">.</span>index(max(nums))
             root<span style="color:#f92672">=</span>TreeNode(nums[pos])
@@ -424,13 +465,13 @@ Output: false
         <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> c:moves)
         {
             <span style="color:#66d9ef">switch</span>(c){
-                <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">R</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">:</span>a<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">break</span>;
-                <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">L</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">:</span>a<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;<span style="color:#66d9ef">break</span>;
-                <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">U</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">:</span>b<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">break</span>;
-                <span style="color:#66d9ef">case</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">D</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">:</span>b<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;<span style="color:#66d9ef">break</span>;
+                <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;R&#39;</span><span style="color:#f92672">:</span>a<span style="color:#f92672">++</span>;<span style="color:#66d9ef">break</span>;
+                <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;L&#39;</span><span style="color:#f92672">:</span>a<span style="color:#f92672">--</span>;<span style="color:#66d9ef">break</span>;
+                <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;U&#39;</span><span style="color:#f92672">:</span>b<span style="color:#f92672">++</span>;<span style="color:#66d9ef">break</span>;
+                <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;D&#39;</span><span style="color:#f92672">:</span>b<span style="color:#f92672">--</span>;<span style="color:#66d9ef">break</span>;
             }
         }
-        <span style="color:#66d9ef">return</span> a<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>b<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">return</span> a<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>b<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>;
     }
 };
 </code></pre></div><ul>
@@ -445,9 +486,9 @@ Output: false
         <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> alp<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">26</span>];
         <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> c:moves)
         {
-            alp[c<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+            alp[c<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span>]<span style="color:#f92672">++</span>;
         }
-        <span style="color:#66d9ef">if</span>((alp[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">R</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">=</span><span style="color:#f92672">=</span>alp[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">L</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>])<span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>(alp[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">U</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>]      <span style="color:#f92672">=</span><span style="color:#f92672">=</span>alp[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">D</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>]))<span style="color:#66d9ef">return</span> true;
+        <span style="color:#66d9ef">if</span>((alp[<span style="color:#e6db74">&#39;R&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span>]<span style="color:#f92672">==</span>alp[<span style="color:#e6db74">&#39;L&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span>])<span style="color:#f92672">&amp;&amp;</span>(alp[<span style="color:#e6db74">&#39;U&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span>]      <span style="color:#f92672">==</span>alp[<span style="color:#e6db74">&#39;D&#39;</span><span style="color:#f92672">-</span><span style="color:#e6db74">&#39;A&#39;</span>]))<span style="color:#66d9ef">return</span> true;
         <span style="color:#66d9ef">else</span>
             <span style="color:#66d9ef">return</span> false;
     }
@@ -475,7 +516,7 @@ expect: true
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
     string toLowerCase(string str) {        
-        transform(str.begin(),str.end(),str.begin(),<span style="color:#f92672">:</span><span style="color:#f92672">:</span>tolower);
+        transform(str.begin(),str.end(),str.begin(),<span style="color:#f92672">::</span>tolower);
         <span style="color:#66d9ef">return</span> str;
     }
 };
@@ -495,29 +536,29 @@ template <span style="color:#f92672">&lt;</span> class InputIterator1, class Inp
 </code></pre></div><blockquote>
 <p>测试代码</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;  </span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;  </span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;  </span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>using namespace std;  
   
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()  
 {  
-    string strA <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">pmbjackson@outlook.com</span><span style="color:#e6db74">&#34;</span>;  
-    string strB <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">pumbjackson@gmail.com</span><span style="color:#e6db74">&#34;</span>;  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Before transform:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strB:%s </span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
+    string strA <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pmbjackson@outlook.com&#34;</span>;  
+    string strB <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pumbjackson@gmail.com&#34;</span>;  
+    printf(<span style="color:#e6db74">&#34;Before transform:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
+    printf(<span style="color:#e6db74">&#34;strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
+    printf(<span style="color:#e6db74">&#34;strB:%s </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
   
-    transform(strA.begin(), strA.end(), strA.begin(), <span style="color:#f92672">:</span><span style="color:#f92672">:</span>toupper);  
-    transform(strB.begin(), strB.end(), strB.begin(), <span style="color:#f92672">:</span><span style="color:#f92672">:</span>toupper);  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">After transform to toupper:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strB:%s </span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
+    transform(strA.begin(), strA.end(), strA.begin(), <span style="color:#f92672">::</span>toupper);  
+    transform(strB.begin(), strB.end(), strB.begin(), <span style="color:#f92672">::</span>toupper);  
+    printf(<span style="color:#e6db74">&#34;After transform to toupper:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
+    printf(<span style="color:#e6db74">&#34;strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
+    printf(<span style="color:#e6db74">&#34;strB:%s </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
   
-    transform(strA.begin(), strA.end(), strA.begin(), <span style="color:#f92672">:</span><span style="color:#f92672">:</span>tolower);  
-    transform(strB.begin(), strB.end(), strB.begin(), <span style="color:#f92672">:</span><span style="color:#f92672">:</span>tolower);  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">After transform to lower:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">strB:%s </span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
+    transform(strA.begin(), strA.end(), strA.begin(), <span style="color:#f92672">::</span>tolower);  
+    transform(strB.begin(), strB.end(), strB.begin(), <span style="color:#f92672">::</span>tolower);  
+    printf(<span style="color:#e6db74">&#34;After transform to lower:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);  
+    printf(<span style="color:#e6db74">&#34;strA:%s </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, strA.c_str());  
+    printf(<span style="color:#e6db74">&#34;strB:%s </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>, strB.c_str());  
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;  
 }
 </code></pre></div><blockquote>
@@ -536,7 +577,7 @@ strB:pumbjackson@gmail.com
 </code></pre><h2 id="java-solution">Java Solution</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toLowerCase</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toLowerCase</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toLowerCase</span><span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h2 id="leetcode-771-jewels-and-stones">Leetcode 771. Jewels and Stones</h2>
@@ -565,13 +606,13 @@ Output: <span style="color:#ae81ff">0</span>
 <h4 id="first-try">first try</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span>(string J, string S) {
         <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>J.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>J.size();i<span style="color:#f92672">++</span>)
         {
-            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>S.size();j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>S.size();j<span style="color:#f92672">++</span>)
             {
-                <span style="color:#66d9ef">if</span>(J[i]<span style="color:#f92672">=</span><span style="color:#f92672">=</span>S[j])
+                <span style="color:#66d9ef">if</span>(J[i]<span style="color:#f92672">==</span>S[j])
                 {
-                    c<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+                    c<span style="color:#f92672">++</span>;
                 }
             }
         }
@@ -581,16 +622,16 @@ Output: <span style="color:#ae81ff">0</span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span>(string J, string S) {
         <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
         set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span> setj(J.begin(),J.end());
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> s:S)<span style="color:#66d9ef">if</span>(setj.count(s))c<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">char</span> s:S)<span style="color:#66d9ef">if</span>(setj.count(s))c<span style="color:#f92672">++</span>;
         <span style="color:#66d9ef">return</span> c;
     }
 </code></pre></div><p>Java Solution</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numJewelsInStones</span><span style="color:#f92672">(</span>String J<span style="color:#f92672">,</span> String S<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         <span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span>
-            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>J<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">-</span>1<span style="color:#f92672">)</span>
-                c<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>i<span style="color:#f92672">++)</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>J<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>S<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">))&gt;-</span>1<span style="color:#f92672">)</span>
+                c<span style="color:#f92672">++;</span>
         <span style="color:#66d9ef">return</span> c<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
@@ -604,7 +645,7 @@ Output: <span style="color:#ae81ff">0</span>
 </blockquote>
 <pre><code>[&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;]
 </code></pre><blockquote>
-<p>Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter. For example, &ldquo;cab&rdquo; can be written as &ldquo;-.-.-&hellip;.-&quot;, (which is the concatenation &ldquo;-.-.&rdquo; + &ldquo;-&hellip;&rdquo; + &ldquo;.-&quot;). We&rsquo;ll call such a concatenation, the transformation of a word. Return the number of different transformations among all words we have.</p>
+<p>Now, given a list of words, each word can be written as a concatenation of the Morse code of each letter. For example, &ldquo;cab&rdquo; can be written as &ldquo;-.-.-&hellip;.-&rdquo;, (which is the concatenation &ldquo;-.-.&rdquo; + &ldquo;-&hellip;&rdquo; + &ldquo;.-&quot;). We&rsquo;ll call such a concatenation, the transformation of a word. Return the number of different transformations among all words we have.</p>
 </blockquote>
 <!-- raw HTML omitted -->
 <h3 id="example-4">Example</h3>
@@ -627,15 +668,15 @@ There are 2 different transformations, &quot;--...-.&quot; and &quot;--...--.&qu
 <h3 id="solution-4">Solution</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">int</span> uniqueMorseRepresentations(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> words) {
-        vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> letters<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-...</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-.-.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-..</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">..-.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">--.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">....</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">..</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.---</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-.-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.-..</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">--</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">---</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.--.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">--.-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.-.</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">...</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">..-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">...-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.--</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-..-</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-.--</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">--..</span><span style="color:#e6db74">&#34;</span>};
+    <span style="color:#66d9ef">int</span> uniqueMorseRepresentations(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&amp;</span> words) {
+        vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> letters<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;.-&#34;</span>,<span style="color:#e6db74">&#34;-...&#34;</span>,<span style="color:#e6db74">&#34;-.-.&#34;</span>,<span style="color:#e6db74">&#34;-..&#34;</span>,<span style="color:#e6db74">&#34;.&#34;</span>,<span style="color:#e6db74">&#34;..-.&#34;</span>,<span style="color:#e6db74">&#34;--.&#34;</span>,<span style="color:#e6db74">&#34;....&#34;</span>,<span style="color:#e6db74">&#34;..&#34;</span>,<span style="color:#e6db74">&#34;.---&#34;</span>,<span style="color:#e6db74">&#34;-.-&#34;</span>,<span style="color:#e6db74">&#34;.-..&#34;</span>,<span style="color:#e6db74">&#34;--&#34;</span>,<span style="color:#e6db74">&#34;-.&#34;</span>,<span style="color:#e6db74">&#34;---&#34;</span>,<span style="color:#e6db74">&#34;.--.&#34;</span>,<span style="color:#e6db74">&#34;--.-&#34;</span>,<span style="color:#e6db74">&#34;.-.&#34;</span>,<span style="color:#e6db74">&#34;...&#34;</span>,<span style="color:#e6db74">&#34;-&#34;</span>,<span style="color:#e6db74">&#34;..-&#34;</span>,<span style="color:#e6db74">&#34;...-&#34;</span>,<span style="color:#e6db74">&#34;.--&#34;</span>,<span style="color:#e6db74">&#34;-..-&#34;</span>,<span style="color:#e6db74">&#34;-.--&#34;</span>,<span style="color:#e6db74">&#34;--..&#34;</span>};
         set<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> res;
         <span style="color:#66d9ef">for</span>(string word:words)
         {
             string code;
             <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> w:word)
             {
-                code<span style="color:#f92672">+</span><span style="color:#f92672">=</span>letters[w<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>];
+                code<span style="color:#f92672">+=</span>letters[w<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;a&#39;</span>];
             }
             res.insert(code);
         }
@@ -685,31 +726,31 @@ gridNew = [ [8, 4, 8, 7],
 <h3 id="solution-5">Solution</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">int</span> maxIncreaseKeepingSkyline(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> grid) {
+    <span style="color:#66d9ef">int</span> maxIncreaseKeepingSkyline(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> grid) {
         <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> grid.size();
         vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> col, row;   <span style="color:#75715e">//The Skyline Matrix
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> max;    <span style="color:#75715e">//初始化col、row数组
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) 
         {
             max<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">++</span>) 
                 <span style="color:#66d9ef">if</span>(max<span style="color:#f92672">&lt;</span>grid[i][j])max<span style="color:#f92672">=</span>grid[i][j];
             row.push_back(max);
         }
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) 
         {
             max<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">++</span>) 
                 <span style="color:#66d9ef">if</span>(max<span style="color:#f92672">&lt;</span>grid[j][i])max<span style="color:#f92672">=</span>grid[j][i];
             col.push_back(max);
         }
         <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
         <span style="color:#66d9ef">int</span> tmp;
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
-            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; j<span style="color:#f92672">++</span>)
             {
                 tmp<span style="color:#f92672">=</span>row[i]<span style="color:#f92672">&lt;</span>col[j]<span style="color:#f92672">?</span>row[i]<span style="color:#f92672">:</span>col[j];    <span style="color:#75715e">//girdNew
-</span><span style="color:#75715e"></span>                res <span style="color:#f92672">+</span><span style="color:#f92672">=</span> tmp <span style="color:#f92672">-</span> grid[i][j];    <span style="color:#75715e">//累加增加的值
+</span><span style="color:#75715e"></span>                res <span style="color:#f92672">+=</span> tmp <span style="color:#f92672">-</span> grid[i][j];    <span style="color:#75715e">//累加增加的值
 </span><span style="color:#75715e"></span>            }
         <span style="color:#66d9ef">return</span> res;
     }
@@ -741,13 +782,13 @@ Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 <h3 id="solution-6">Solution</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> flipAndInvertImage(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> A) {
+    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> flipAndInvertImage(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> A) {
         <span style="color:#66d9ef">int</span> size<span style="color:#f92672">=</span>A[<span style="color:#ae81ff">0</span>].size();
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>A.size();i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>A.size();i<span style="color:#f92672">++</span>)
         {
             <span style="color:#75715e">//矩阵内顺序反转
 </span><span style="color:#75715e"></span>            reverse(A[i].begin(),A[i].end());
-            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>size;j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>size;j<span style="color:#f92672">++</span>)
             {
                 <span style="color:#75715e">//反转
 </span><span style="color:#75715e"></span>                A[i][j]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>A[i][j];
@@ -837,29 +878,61 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
     ListNode<span style="color:#f92672">*</span> middleNode(ListNode<span style="color:#f92672">*</span> head) {
         ListNode <span style="color:#f92672">*</span>slow, <span style="color:#f92672">*</span>fast;
         slow<span style="color:#f92672">=</span>head;fast<span style="color:#f92672">=</span>head;
-        <span style="color:#66d9ef">while</span>(fast<span style="color:#f92672">!</span><span style="color:#f92672">=</span>NULL <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> fast<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next<span style="color:#f92672">!</span><span style="color:#f92672">=</span>NULL)
+        <span style="color:#66d9ef">while</span>(fast<span style="color:#f92672">!=</span>NULL <span style="color:#f92672">&amp;&amp;</span> fast<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">!=</span>NULL)
         {
-            slow<span style="color:#f92672">=</span>slow<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
-            fast<span style="color:#f92672">=</span>fast<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+            slow<span style="color:#f92672">=</span>slow<span style="color:#f92672">-&gt;</span>next;
+            fast<span style="color:#f92672">=</span>fast<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next;
         }
         <span style="color:#66d9ef">return</span> slow;
     }
 };
 </code></pre></div><p>其实是一个搜索的过程，正常逻辑就是遍历链表到头，获取一半的长度，截取后半部分就可以，但是由于是链表，搜索起来耗费时间空间。</p>
 <p>可以把链表内容复制到数组，从而将目标找到。也可以设置两个指针: <code>slow</code> 、<code>fast</code>，<code>fast</code>移动速度为<code>slow</code>的两倍，那么当<code>fast</code>到达链表尾部时，<code>slow</code>此时在链表中部，返回<code>slow</code>指针就达到了我们的目的。</p>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

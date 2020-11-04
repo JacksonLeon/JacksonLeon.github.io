@@ -5,12 +5,9 @@
     <link>/tags/reptile/</link>
     <description>Recent content in Reptile on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 12 Apr 2018 10:57:34 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/reptile/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Thu, 12 Apr 2018 10:57:34 +0000</lastBuildDate><atom:link href="/tags/reptile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Python爬虫爬取网络小说</title>
       <link>/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>

@@ -1,44 +1,92 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMTC 0007.py | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> SMTC 0007.py |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/smtc-0007.py/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">SMTC 0007.py</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/python">Python</a>
+    &nbsp;
+    
+    <a href="/categories/smtc">SMTC</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/02/05</h2>
-</div>
+    <h1 style="text-align: center;" >SMTC 0007.py</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-02-05T11:51:54Z">February 05, 2019</time> &nbsp; 
+    
 
-<main>
-<p><a href="/note/show-me-the-code/">show-me-the-code 完整题目</a></p>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+      58 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <p><a href="/note/show-me-the-code/">show-me-the-code 完整题目</a></p>
 <h2 id="题目">题目</h2>
 <p><strong>第 0007 题：</strong> 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。</p>
 <h2 id="思路">思路</h2>
@@ -51,7 +99,7 @@
 <li>统计行数输出</li>
 </ol>
 <h2 id="solution">Solution</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 
 <span style="color:#f92672">import</span> os
 <span style="color:#f92672">import</span> re
@@ -60,48 +108,114 @@
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_code</span>(filesPath):
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(filesPath):
         <span style="color:#66d9ef">return</span>
-    <span style="color:#75715e"># 正则匹配#</span>
-    exp_re <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">^#.*</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#75715e"># 正则匹配#</span>
+    exp_re <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">&#39;^#.*&#39;</span>)
     fileList <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(filesPath)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{1}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{2}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fileName</span><span style="color:#e6db74">&#39;</span>,
-                                      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">all_lines</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">space_lines</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">exp_lines</span><span style="color:#e6db74">&#39;</span>))
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{1}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{2}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{3}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;fileName&#39;</span>,
+                                      <span style="color:#e6db74">&#39;all_lines&#39;</span>, <span style="color:#e6db74">&#39;space_lines&#39;</span>, <span style="color:#e6db74">&#39;exp_lines&#39;</span>))
     <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> fileList:
         filePath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(filesPath, file)
-        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.py</span><span style="color:#e6db74">&#39;</span>:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.py&#39;</span>:
             <span style="color:#66d9ef">with</span> open(filePath) <span style="color:#66d9ef">as</span> code:
                 all_lines <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
                 space_lines <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
                 exp_lines <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
                 <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> code<span style="color:#f92672">.</span>readlines():
-                    all_lines <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-                    <span style="color:#75715e"># 空行</span>
-                    <span style="color:#66d9ef">if</span> line<span style="color:#f92672">.</span>strip() <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>:
-                        space_lines <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-                    <span style="color:#75715e"># 注释</span>
+                    all_lines <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#75715e"># 空行</span>
+                    <span style="color:#66d9ef">if</span> line<span style="color:#f92672">.</span>strip() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
+                        space_lines <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#75715e"># 注释</span>
                     exp <span style="color:#f92672">=</span> exp_re<span style="color:#f92672">.</span>findall(line<span style="color:#f92672">.</span>strip())
                     <span style="color:#66d9ef">if</span> exp:
-                        exp_lines <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0}</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{1}</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{2}</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
+                        exp_lines <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0}</span><span style="color:#ae81ff">\t\t</span><span style="color:#e6db74">{1}</span><span style="color:#ae81ff">\t\t</span><span style="color:#e6db74">{2}</span><span style="color:#ae81ff">\t\t</span><span style="color:#e6db74">{3}&#39;</span><span style="color:#f92672">.</span>format(
                 file, all_lines, space_lines, exp_lines))
 
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    parse_code(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    parse_code(<span style="color:#e6db74">&#39;./SMTC&#39;</span>)
 
 </code></pre></div>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+        <a href="/tags/smtc">SMTC</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0006.py/">SMTC 0006.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0000.py/">SMTC 0000.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-library/">Python Library</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-note/">Python Note</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/">使用Python爬虫爬取网络小说</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

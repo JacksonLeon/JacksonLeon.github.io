@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Show Me The Code | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Show Me The Code |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/post/show-me-the-code/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Show Me The Code</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/uncategoried">Uncategoried</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/01/29</h2>
-</div>
+    <h1 style="text-align: center;" >Show Me The Code</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-01-29T20:37:25Z">January 29, 2019</time> &nbsp; 
+    
 
-<main>
-<h2 id="description">Description</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        19 min
+      
+      43 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
 <blockquote>
 <p>Python 练习册，每天一个小程序</p>
 <p>From<a href="https://github.com/Yixiaohan/show-me-the-code"><strong>show me the code</strong></a></p>
@@ -65,23 +112,23 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
-        Re <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+        Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
-            Re <span style="color:#f92672">+</span><span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(forSelect)
+            Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
-    conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">l</span><span style="color:#e6db74">&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>)
+    conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;test&#39;</span>)
     cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
     codes <span style="color:#f92672">=</span> gen_code(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">20</span>)
     <span style="color:#66d9ef">for</span> code <span style="color:#f92672">in</span> codes:
-        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>, params<span style="color:#f92672">=</span>[code])
+        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)&#34;</span>, params<span style="color:#f92672">=</span>[code])
     conn<span style="color:#f92672">.</span>commit()
     cursor<span style="color:#f92672">.</span>close()
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
 </ul>
@@ -101,23 +148,23 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
-        Re <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+        Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
-            Re <span style="color:#f92672">+</span><span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(forSelect)
+            Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
-    conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">l</span><span style="color:#e6db74">&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>)
+    conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;test&#39;</span>)
     cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
     codes <span style="color:#f92672">=</span> gen_code(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">20</span>)
     <span style="color:#66d9ef">for</span> code <span style="color:#f92672">in</span> codes:
-        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>, params<span style="color:#f92672">=</span>[code])
+        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)&#34;</span>, params<span style="color:#f92672">=</span>[code])
     conn<span style="color:#f92672">.</span>commit()
     cursor<span style="color:#f92672">.</span>close()
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
 </ul>
@@ -134,23 +181,23 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
-        Re <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+        Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
-            Re <span style="color:#f92672">+</span><span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(forSelect)
+            Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
-    r <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">127.0.0.1</span><span style="color:#e6db74">&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">6379</span><span style="color:#e6db74">&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">linyii</span><span style="color:#e6db74">&#39;</span>)
+    r <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;6379&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;linyii&#39;</span>)
     codes <span style="color:#f92672">=</span> gen_code(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">20</span>)
     p <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>pipeline()
     <span style="color:#66d9ef">for</span> code <span style="color:#f92672">in</span> codes:
-        p<span style="color:#f92672">.</span>sadd(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">code</span><span style="color:#e6db74">&#39;</span>, code)
+        p<span style="color:#f92672">.</span>sadd(<span style="color:#e6db74">&#39;code&#39;</span>, code)
     p<span style="color:#f92672">.</span>execute()
-    <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>scard(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">code</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>scard(<span style="color:#e6db74">&#39;code&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
 </ul>
@@ -160,41 +207,41 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
   
-Text <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.  We hold these truths to be</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-<span style="color:#75715e"># clean</span>
-<span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-.,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>:
-    Text <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
+Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature&#39;s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.  We hold these truths to be
+</span><span style="color:#e6db74">self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. &#34;&#34;&#34;</span>
+<span style="color:#75715e"># clean</span>
+<span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;-.,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>:
+    Text <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74">&#39; &#39;</span>)
 Text <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>lower()
 word_list <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>split()
   
-<span style="color:#75715e"># solution 1</span>
+<span style="color:#75715e"># solution 1</span>
 res <span style="color:#f92672">=</span> Counter(word_list)<span style="color:#f92672">.</span>most_common()
   
-<span style="color:#75715e"># solution 2</span>
-<span style="color:#75715e"># 使用字典，key-value，单词与个数一一对应</span>
+<span style="color:#75715e"># solution 2</span>
+<span style="color:#75715e"># 使用字典，key-value，单词与个数一一对应</span>
 d <span style="color:#f92672">=</span> {}
 <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> word_list:
-    <span style="color:#75715e"># 找到个数然后+1，没有就默认0然后+1</span>
-    <span style="color:#75715e"># dict.get(key, default = None)</span>
-    <span style="color:#75715e"># key − This is the Key to be searched in the dictionary.</span>
-    <span style="color:#75715e"># default − This is the Value to be returned in case key does not exist.</span>
-    <span style="color:#75715e"># This method return a value for the given key. If key is not available, then returns default value None.</span>
+    <span style="color:#75715e"># 找到个数然后+1，没有就默认0然后+1</span>
+    <span style="color:#75715e"># dict.get(key, default = None)</span>
+    <span style="color:#75715e"># key − This is the Key to be searched in the dictionary.</span>
+    <span style="color:#75715e"># default − This is the Value to be returned in case key does not exist.</span>
+    <span style="color:#75715e"># This method return a value for the given key. If key is not available, then returns default value None.</span>
     d[word] <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>get(word, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-<span style="color:#75715e"># 使用列表为了排序</span>
+<span style="color:#75715e"># 使用列表为了排序</span>
 word_freq <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> key, value <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>items():
     word_freq<span style="color:#f92672">.</span>append((value, key))
 word_freq<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span>True)
   
-<span style="color:#75715e"># solution 3</span>
-<span style="color:#75715e"># 不使用get()方法</span>
+<span style="color:#75715e"># solution 3</span>
+<span style="color:#75715e"># 不使用get()方法</span>
 d <span style="color:#f92672">=</span> {}
 <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> word_list:
     <span style="color:#66d9ef">if</span> word <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> d:
         d[word] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    d[word] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    d[word] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 word_freq <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> key, value <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>items():
     word_freq<span style="color:#f92672">.</span>append((value, key))
@@ -208,19 +255,19 @@ word_freq<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 <span style="color:#f92672">import</span> os
   
-path<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Users/lau/Pictures</span><span style="color:#e6db74">&#39;</span>
-resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Users/lau/Desktop</span><span style="color:#e6db74">&#39;</span>
+path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Users/lau/Pictures&#39;</span>
+resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Users/lau/Desktop&#39;</span>
   
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(resPath):
     os<span style="color:#f92672">.</span>mkdir(resPath)
 <span style="color:#66d9ef">for</span> fileName <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
-    <span style="color:#75715e"># mac系统会出现.DS_Store文件，会报错，所以简单的办法就是</span>
-    <span style="color:#75715e"># 去这个文件夹删除隐藏文件</span>
+    <span style="color:#75715e"># mac系统会出现.DS_Store文件，会报错，所以简单的办法就是</span>
+    <span style="color:#75715e"># 去这个文件夹删除隐藏文件</span>
     picPath<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(path,fileName)
     <span style="color:#66d9ef">print</span>(picPath)
     <span style="color:#66d9ef">with</span> Image<span style="color:#f92672">.</span>open(picPath) <span style="color:#66d9ef">as</span> im:
         im<span style="color:#f92672">.</span>thumbnail((<span style="color:#ae81ff">1366</span>,<span style="color:#ae81ff">640</span>))
-        im<span style="color:#f92672">.</span>save(resPath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/f_</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span>fileName,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">jpeg</span><span style="color:#e6db74">&#39;</span>)
+        im<span style="color:#f92672">.</span>save(resPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/f_&#39;</span><span style="color:#f92672">+</span>fileName,<span style="color:#e6db74">&#39;jpeg&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0006 题：</strong> 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。</p>
@@ -231,7 +278,7 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
   
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 <span style="color:#f92672">import</span> os
@@ -243,22 +290,22 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
     filesList <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(filesPath)
     <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> filesList:
         filePath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(filesPath, file)
-        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.html</span><span style="color:#e6db74">&#39;</span>:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.html&#39;</span>:
             <span style="color:#66d9ef">with</span> open(filePath) <span style="color:#66d9ef">as</span> fileHtml:
-                text <span style="color:#f92672">=</span> BeautifulSoup(fileHtml, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lxml</span><span style="color:#e6db74">&#39;</span>)
-                content <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>getText()<span style="color:#f92672">.</span>strip(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+                text <span style="color:#f92672">=</span> BeautifulSoup(fileHtml, <span style="color:#e6db74">&#39;lxml&#39;</span>)
+                content <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>getText()<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
                 <span style="color:#66d9ef">print</span>(content)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    html_body(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0008</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    html_body(<span style="color:#e6db74">&#39;./SMTC/source/0008&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0009 题：</strong> 一个HTML文件，找出里面的<strong>链接</strong>。</p>
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
   
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 <span style="color:#f92672">import</span> os
@@ -271,18 +318,18 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
     links <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> filesList:
         filePath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(filesPath, file)
-        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.html</span><span style="color:#e6db74">&#39;</span>:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filePath)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.html&#39;</span>:
             <span style="color:#66d9ef">with</span> open(filePath) <span style="color:#66d9ef">as</span> fileHtml:
-                text <span style="color:#f92672">=</span> BeautifulSoup(fileHtml, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lxml</span><span style="color:#e6db74">&#39;</span>)
-                <span style="color:#75715e"># 找到a标签</span>
-                <span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> text<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>):
-                    <span style="color:#75715e"># 获取链接</span>
-                    links<span style="color:#f92672">.</span>append(link<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
+                text <span style="color:#f92672">=</span> BeautifulSoup(fileHtml, <span style="color:#e6db74">&#39;lxml&#39;</span>)
+                <span style="color:#75715e"># 找到a标签</span>
+                <span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> text<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>):
+                    <span style="color:#75715e"># 获取链接</span>
+                    links<span style="color:#f92672">.</span>append(link<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;href&#39;</span>))
     <span style="color:#66d9ef">print</span>(links)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    html_link(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0008</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    html_link(<span style="color:#e6db74">&#39;./SMTC/source/0008&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0010 题：</strong> 使用 Python 生成类似于下图中的<strong>字母验证码图片</strong></p>
@@ -293,16 +340,16 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
 </li>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片</span>
   
 <span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image, ImageDraw, ImageFont, ImageFilter
 <span style="color:#f92672">import</span> random
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">randomLetter</span>():
-    <span style="color:#75715e"># 大写字母65-90</span>
-    <span style="color:#75715e"># 数字转字符</span>
+    <span style="color:#75715e"># 大写字母65-90</span>
+    <span style="color:#75715e"># 数字转字符</span>
     <span style="color:#66d9ef">return</span> chr(random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">65</span>, <span style="color:#ae81ff">90</span>))
   
   
@@ -316,10 +363,10 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_codepic</span>(savePath):
     width <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>
     height <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
-    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RGB</span><span style="color:#e6db74">&#39;</span>, (width, height), (<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>))
-    <span style="color:#75715e"># 字体</span>
+    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;RGB&#39;</span>, (width, height), (<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>))
+    <span style="color:#75715e"># 字体</span>
     font <span style="color:#f92672">=</span> ImageFont<span style="color:#f92672">.</span>truetype(
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/Library/Fonts/Songti.ttc</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">36</span>)
+        <span style="color:#e6db74">&#39;/Library/Fonts/Songti.ttc&#39;</span>, <span style="color:#ae81ff">36</span>)
     imgDraw <span style="color:#f92672">=</span> ImageDraw<span style="color:#f92672">.</span>Draw(img)
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(width):
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(height):
@@ -329,11 +376,11 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74"></span><s
                      font<span style="color:#f92672">=</span>font, fill<span style="color:#f92672">=</span>randomColor(<span style="color:#ae81ff">2</span>))
   
     img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>filter(ImageFilter<span style="color:#f92672">.</span>BLUR)
-    img<span style="color:#f92672">.</span>save(savePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">codepic.jpg</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">JPEG</span><span style="color:#e6db74">&#39;</span>)
+    img<span style="color:#f92672">.</span>save(savePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;codepic.jpg&#39;</span>, <span style="color:#e6db74">&#39;JPEG&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    gen_codepic(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0010/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    gen_codepic(<span style="color:#e6db74">&#39;./SMTC/source/0010/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0011 题：</strong> 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</p>
@@ -351,8 +398,8 @@ jiangge
 </code></pre><ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</span>
   
 <span style="color:#f92672">import</span> os
   
@@ -362,46 +409,46 @@ jiangge
     fileList<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>listdir(filesPath)
     <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> fileList:
         filePath<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(filesPath,file)
-        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(filePath)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">filtered_words.txt</span><span style="color:#e6db74">&#39;</span>:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(filePath) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(filePath)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;filtered_words.txt&#39;</span>:
             <span style="color:#66d9ef">with</span> open(filePath) <span style="color:#66d9ef">as</span> text:
-                text<span style="color:#f92672">=</span>text<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
-                getInput<span style="color:#f92672">=</span>input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">input:</span><span style="color:#e6db74">&#39;</span>)
+                text<span style="color:#f92672">=</span>text<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+                getInput<span style="color:#f92672">=</span>input(<span style="color:#e6db74">&#39;input:&#39;</span>)
                 <span style="color:#66d9ef">if</span> getInput <span style="color:#f92672">in</span> text:
-                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Freedom</span><span style="color:#e6db74">&#39;</span>)
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Freedom&#39;</span>)
                 <span style="color:#66d9ef">else</span>:
-                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Human Rights</span><span style="color:#e6db74">&#39;</span>)
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Human Rights&#39;</span>)
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    Freedom(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0011</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    Freedom(<span style="color:#e6db74">&#39;./SMTC/source/0011&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0012 题：</strong> 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</p>
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</span>
   
 <span style="color:#f92672">import</span> os
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Freedom</span>(filePath):
     word_filter <span style="color:#f92672">=</span> set()
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">filtered_words.txt</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;filtered_words.txt&#39;</span>) <span style="color:#66d9ef">as</span> f:
         <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines():
             word_filter<span style="color:#f92672">.</span>add(word<span style="color:#f92672">.</span>strip())
     <span style="color:#66d9ef">while</span> True:
-        s <span style="color:#f92672">=</span> input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">input:</span><span style="color:#e6db74">&#39;</span>)
-        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">exit</span><span style="color:#e6db74">&#39;</span>:
+        s <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;input:&#39;</span>)
+        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;exit&#39;</span>:
             <span style="color:#66d9ef">return</span>
         <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> word_filter:
             <span style="color:#66d9ef">if</span> w <span style="color:#f92672">in</span> s:
-                s <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>replace(w, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">*</span>len(w))
+                s <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>replace(w, <span style="color:#e6db74">&#39;*&#39;</span><span style="color:#f92672">*</span>len(w))
         <span style="color:#66d9ef">print</span>(s)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    Freedom(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0011/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    Freedom(<span style="color:#e6db74">&#39;./SMTC/source/0011/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0013 题：</strong> 用 Python 写一个爬图片的程序，爬 <a href="http://tieba.baidu.com/p/2166231880">这个链接里的日本妹子图片 :-)</a></p>
@@ -411,8 +458,8 @@ jiangge
 </li>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 用 Python 写一个爬图片的程序，爬这个链接里的日本妹子图片(http://tieba.baidu.com/p/2166231880) :-)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 用 Python 写一个爬图片的程序，爬这个链接里的日本妹子图片(http://tieba.baidu.com/p/2166231880) :-)</span>
   
 <span style="color:#f92672">import</span> requests
 <span style="color:#f92672">import</span> urllib.request
@@ -422,37 +469,37 @@ jiangge
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">spy_pic</span>(url, savePath, header):
     response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, headers<span style="color:#f92672">=</span>header)
-    content <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lxml</span><span style="color:#e6db74">&#39;</span>)
-    img_tag <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">img</span><span style="color:#e6db74">&#39;</span>)
+    content <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;lxml&#39;</span>)
+    img_tag <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;img&#39;</span>)
     img_link <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> img_tag:
-        <span style="color:#66d9ef">if</span> i<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">pic_type</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>:
-            img_link<span style="color:#f92672">.</span>append(i<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">src</span><span style="color:#e6db74">&#39;</span>))
+        <span style="color:#66d9ef">if</span> i<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;pic_type&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span>:
+            img_link<span style="color:#f92672">.</span>append(i<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;src&#39;</span>))
     index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(savePath):
         os<span style="color:#f92672">.</span>mkdir(savePath)
     <span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> img_link:
         pic_html <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(link)
-        picPath <span style="color:#f92672">=</span> savePath<span style="color:#f92672">+</span>str(index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span>link<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-        <span style="color:#66d9ef">with</span> open(picPath, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">wb</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> pic:
+        picPath <span style="color:#f92672">=</span> savePath<span style="color:#f92672">+</span>str(index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>link<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+        <span style="color:#66d9ef">with</span> open(picPath, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> pic:
             pic<span style="color:#f92672">.</span>write(pic_html<span style="color:#f92672">.</span>content)
             pic<span style="color:#f92672">.</span>flush
         pic<span style="color:#f92672">.</span>close()
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">第{0}张图片抓取完成</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
-        index <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">抓取完成！</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;第{0}张图片抓取完成&#39;</span><span style="color:#f92672">.</span>format(index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+        index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;抓取完成！&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     reqHeader <span style="color:#f92672">=</span> {
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><span style="color:#e6db74">&#39;</span>,
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept-Encoding</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">gzip, deflate</span><span style="color:#e6db74">&#39;</span>,
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Accept-Language</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7</span><span style="color:#e6db74">&#39;</span>,
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Cookie</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TIEBA_USERTYPE=7b00a4223cb9934b1b9270ad; wise_device=0; bdshare_firstime=1549795215089; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1549795215; Hm_lvt_287705c8d9e2073d13275b18dbd746dc=1549795216; Hm_lpvt_98b9d8c2fd6608d564bf2ac2ae642948=1549847500; Hm_lpvt_287705c8d9e2073d13275b18dbd746dc=1549847500; BAIDUID=48130036CAF55267908C2180103698DC:FG=1; cflag=13</span><span style="color:#e6db74">%</span><span style="color:#e6db74">3A3; BDUSS=HN6WUx-aGVQMGlNR0NlcEhCd0pjUkJVQXpBbWFxY3hYTjZNfmozdjV6RFlkb2hjQVFBQUFBJCQAAAAAAAAAAAEAAAAZhpwmbmljZWxpdXppAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANjpYFzY6WBcO; TIEBAUID=35f770fc8e0ac33633210842; STOKEN=42c9d0d4dc2e420802cf269968ec38e4101a2a5d7f095a603f36b0261f413597</span><span style="color:#e6db74">&#39;</span>,
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Host</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">tieba.baidu.com</span><span style="color:#e6db74">&#39;</span>,
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">User-Agent</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36</span><span style="color:#e6db74">&#39;</span>
+        <span style="color:#e6db74">&#39;Accept&#39;</span>: <span style="color:#e6db74">&#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#39;</span>,
+        <span style="color:#e6db74">&#39;Accept-Encoding&#39;</span>: <span style="color:#e6db74">&#39;gzip, deflate&#39;</span>,
+        <span style="color:#e6db74">&#39;Accept-Language&#39;</span>: <span style="color:#e6db74">&#39;zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7&#39;</span>,
+        <span style="color:#e6db74">&#39;Cookie&#39;</span>: <span style="color:#e6db74">&#39;TIEBA_USERTYPE=7b00a4223cb9934b1b9270ad; wise_device=0; bdshare_firstime=1549795215089; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1549795215; Hm_lvt_287705c8d9e2073d13275b18dbd746dc=1549795216; Hm_lpvt_98b9d8c2fd6608d564bf2ac2ae642948=1549847500; Hm_lpvt_287705c8d9e2073d13275b18dbd746dc=1549847500; BAIDUID=48130036CAF55267908C2180103698DC:FG=1; cflag=13%3A3; BDUSS=HN6WUx-aGVQMGlNR0NlcEhCd0pjUkJVQXpBbWFxY3hYTjZNfmozdjV6RFlkb2hjQVFBQUFBJCQAAAAAAAAAAAEAAAAZhpwmbmljZWxpdXppAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANjpYFzY6WBcO; TIEBAUID=35f770fc8e0ac33633210842; STOKEN=42c9d0d4dc2e420802cf269968ec38e4101a2a5d7f095a603f36b0261f413597&#39;</span>,
+        <span style="color:#e6db74">&#39;Host&#39;</span>: <span style="color:#e6db74">&#39;tieba.baidu.com&#39;</span>,
+        <span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36&#39;</span>
     }
-    spy_pic(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://tieba.baidu.com/p/2166231880</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0013/</span><span style="color:#e6db74">&#39;</span>, reqHeader
+    spy_pic(<span style="color:#e6db74">&#39;http://tieba.baidu.com/p/2166231880&#39;</span>, <span style="color:#e6db74">&#39;./SMTC/source/0013/&#39;</span>, reqHeader
             )
 </code></pre></div></li>
 <li>
@@ -479,30 +526,30 @@ jiangge
 </li>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xml2exl</span>(filePath):
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">student.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> dic:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> dic:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(dic)
         workbook <span style="color:#f92672">=</span> Workbook()
-        sheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">student</span><span style="color:#e6db74">&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
-        <span style="color:#75715e"># 输出元素序号</span>
+        sheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74">&#39;student&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
+        <span style="color:#75715e"># 输出元素序号</span>
         <span style="color:#66d9ef">for</span> index, (key, values) <span style="color:#f92672">in</span> enumerate(content<span style="color:#f92672">.</span>items()):
-            <span style="color:#75715e"># sheet.write(row, col, *args)</span>
-            <span style="color:#75715e"># 输入第一列数据</span>
+            <span style="color:#75715e"># sheet.write(row, col, *args)</span>
+            <span style="color:#75715e"># 输入第一列数据</span>
             sheet<span style="color:#f92672">.</span>write(index, <span style="color:#ae81ff">0</span>, key)
             <span style="color:#66d9ef">for</span> i, value <span style="color:#f92672">in</span> enumerate(values):
-                <span style="color:#75715e"># 输入每一行第二列开始的数据</span>
+                <span style="color:#75715e"># 输入每一行第二列开始的数据</span>
                 sheet<span style="color:#f92672">.</span>write(index, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, value)
-        workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">student.xls</span><span style="color:#e6db74">&#39;</span>)
+        workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xls&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    xml2exl(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0014/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    xml2exl(<span style="color:#e6db74">&#39;./SMTC/source/0014/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0015 题：</strong></p>
@@ -516,29 +563,29 @@ jiangge
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xml2exl</span>(filePath):
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">city.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f)
         workBook <span style="color:#f92672">=</span> Workbook()
-        sheet <span style="color:#f92672">=</span> workBook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">city</span><span style="color:#e6db74">&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
-        <span style="color:#75715e"># enumerate可以分开词语</span>
+        sheet <span style="color:#f92672">=</span> workBook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74">&#39;city&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
+        <span style="color:#75715e"># enumerate可以分开词语</span>
         <span style="color:#66d9ef">for</span> index, (key, value) <span style="color:#f92672">in</span> enumerate(content<span style="color:#f92672">.</span>items()):
             sheet<span style="color:#f92672">.</span>write(index, <span style="color:#ae81ff">0</span>, key)
-            <span style="color:#75715e"># 与上一题不同的是</span>
-            <span style="color:#75715e"># 这题中的value只有一列值</span>
-            <span style="color:#75715e"># 不需要使用enumerate</span>
+            <span style="color:#75715e"># 与上一题不同的是</span>
+            <span style="color:#75715e"># 这题中的value只有一列值</span>
+            <span style="color:#75715e"># 不需要使用enumerate</span>
             sheet<span style="color:#f92672">.</span>write(index, <span style="color:#ae81ff">1</span>, value)
-        workBook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">city.xls</span><span style="color:#e6db74">&#39;</span>)
+        workBook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xls&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    xml2exl(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0015/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    xml2exl(<span style="color:#e6db74">&#39;./SMTC/source/0015/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0016 题：</strong> 纯文本文件 numbers.txt, 里面的内容（包括方括号）如下所示：</p>
@@ -552,25 +599,25 @@ jiangge
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 纯文本文件 numbers.txt, 里面的内容（包括方括号）</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 纯文本文件 numbers.txt, 里面的内容（包括方括号）</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json2xls</span>(filePath):
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f)
         workbook <span style="color:#f92672">=</span> Workbook()
-        sheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers</span><span style="color:#e6db74">&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
+        sheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_sheet(<span style="color:#e6db74">&#39;numbers&#39;</span>, cell_overwrite_ok<span style="color:#f92672">=</span>True)
         <span style="color:#66d9ef">for</span> row, list <span style="color:#f92672">in</span> enumerate(content):
             <span style="color:#66d9ef">for</span> col, value <span style="color:#f92672">in</span> enumerate(list):
                 sheet<span style="color:#f92672">.</span>write(row, col, value)
-        workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers.xls</span><span style="color:#e6db74">&#39;</span>)
+        workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xls&#39;</span>)
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    json2xls(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0016/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    json2xls(<span style="color:#e6db74">&#39;./SMTC/source/0016/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0017 题：</strong> 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中，如</p>
@@ -592,34 +639,34 @@ jiangge
 </code></pre><ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
-    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span>)
+    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
     doc<span style="color:#f92672">.</span>appendChild(root)
-    students <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">students</span><span style="color:#e6db74">&#39;</span>)
+    students <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;students&#39;</span>)
     root<span style="color:#f92672">.</span>appendChild(students)
-    comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">学生信息表</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> : [名字, 数学, 语文, 英文]</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+    comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;学生信息表</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#34;id&#34; : [名字, 数学, 语文, 英文]</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>)
     students<span style="color:#f92672">.</span>appendChild(comment)
   
-    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">student.xls</span><span style="color:#e6db74">&#39;</span>)
+    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xls&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
     sheet_content <span style="color:#f92672">=</span> dict()
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nrows):
         sheet_content[str(sheet<span style="color:#f92672">.</span>cell(i, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>value)] <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">1</span>:]
     students<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_content)))
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">student.xml</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> student_xml:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> student_xml:
         student_xml<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    xls2xml(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0014/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0014/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0018 题：</strong> 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中，如下 所示：</p>
@@ -639,34 +686,34 @@ jiangge
 </code></pre><ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
-    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span>)
+    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
     doc<span style="color:#f92672">.</span>appendChild(root)
-    cities <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cities</span><span style="color:#e6db74">&#39;</span>)
+    cities <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;cities&#39;</span>)
     root<span style="color:#f92672">.</span>appendChild(cities)
-    comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">城市信息</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+    comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">城市信息</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>)
     cities<span style="color:#f92672">.</span>appendChild(comment)
   
-    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">city.xls</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span>)
+    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xls&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
     sheet_content <span style="color:#f92672">=</span> dict()
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nrows):
         sheet_content[sheet<span style="color:#f92672">.</span>cell(i, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>value] <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">1</span>:]
     cities<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_content)))
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">city.xml</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
         f<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    xls2xml(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0015/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0015/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0019 题：</strong> 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中，如下</p>
@@ -689,40 +736,40 @@ jiangge
 </code></pre><ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#75715e"># 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#75715e"># 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
-    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span>)
+    root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
     doc<span style="color:#f92672">.</span>appendChild(root)
-    numbers <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers</span><span style="color:#e6db74">&#39;</span>)
+    numbers <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;numbers&#39;</span>)
     root<span style="color:#f92672">.</span>appendChild(numbers)
-    numbers<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">数字信息</span><span style="color:#ae81ff">\n</span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>))
+    numbers<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">数字信息</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>))
   
-    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers.xls</span><span style="color:#e6db74">&#39;</span>)
+    content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xls&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
     sheet_list <span style="color:#f92672">=</span> list()
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nrows):
         sheet_list<span style="color:#f92672">.</span>append(sheet<span style="color:#f92672">.</span>row_values(i))
     numbers<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_list)))
-    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">numbers.xml</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
         f<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    xls2xml(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0016/</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0016/&#39;</span>)
 </code></pre></div></li>
 </ul>
 <p><strong>第 0020 题：</strong> <a href="http://iservice.10010.com/index_.html">登陆中国联通网上营业厅</a> 后选择「自助服务」 &ndash;&gt; 「详单查询」，然后选择你要查询的时间段，点击「查询」按钮，查询结果页面的最下方，点击「导出」，就会生成类似于 2014年10月01日～2014年10月31日通话详单.xls 文件。写代码，对每月通话时间做个统计。</p>
 <ul>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#f92672">import</span> time
 <span style="color:#f92672">import</span> re
 <span style="color:#f92672">import</span> xlrd
@@ -730,30 +777,30 @@ jiangge
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">str2sec</span>(str):
     sec <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    time_re <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">\</span><span style="color:#e6db74">d+)(</span><span style="color:#e6db74">\</span><span style="color:#e6db74">D+)</span><span style="color:#e6db74">&#39;</span>)
+    time_re <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\d+)(\D+)&#39;</span>)
     time_list <span style="color:#f92672">=</span> time_re<span style="color:#f92672">.</span>findall(str)
     <span style="color:#66d9ef">for</span> time_item <span style="color:#f92672">in</span> time_list:
-        <span style="color:#66d9ef">if</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">秒</span><span style="color:#e6db74">&#39;</span>:
-            sec <span style="color:#f92672">+</span><span style="color:#f92672">=</span> int(time_item[<span style="color:#ae81ff">0</span>])
-        <span style="color:#66d9ef">elif</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">分</span><span style="color:#e6db74">&#39;</span>:
-            sec <span style="color:#f92672">+</span><span style="color:#f92672">=</span> int(time_item[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>
-        <span style="color:#66d9ef">elif</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">小时</span><span style="color:#e6db74">&#39;</span>:
-            sec <span style="color:#f92672">+</span><span style="color:#f92672">=</span> int(time_item[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>
+        <span style="color:#66d9ef">if</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;秒&#39;</span>:
+            sec <span style="color:#f92672">+=</span> int(time_item[<span style="color:#ae81ff">0</span>])
+        <span style="color:#66d9ef">elif</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;分&#39;</span>:
+            sec <span style="color:#f92672">+=</span> int(time_item[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>
+        <span style="color:#66d9ef">elif</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;小时&#39;</span>:
+            sec <span style="color:#f92672">+=</span> int(time_item[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>
     <span style="color:#66d9ef">return</span> sec
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sec2str</span>(sec):
-    h <span style="color:#f92672">=</span> sec <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>
-    m <span style="color:#f92672">=</span> sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>
+    h <span style="color:#f92672">=</span> sec <span style="color:#f92672">//</span> <span style="color:#ae81ff">3600</span>
+    m <span style="color:#f92672">=</span> sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">60</span>
     s <span style="color:#f92672">=</span> sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">小时</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">分</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">秒</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (h, m, s)
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">小时</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">分</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">秒&#39;</span> <span style="color:#f92672">%</span> (h, m, s)
   
   
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minidata</span>():
-    all_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  <span style="color:#75715e"># 使用总时间（秒）</span>
-    start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2018-09-01</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y-</span><span style="color:#e6db74">%</span><span style="color:#e6db74">m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
-    end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">2018-10-01</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y-</span><span style="color:#e6db74">%</span><span style="color:#e6db74">m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
-    data <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./SMTC/source/0020/2018年09月语音通信.xls</span><span style="color:#e6db74">&#39;</span>)
+    all_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  <span style="color:#75715e"># 使用总时间（秒）</span>
+    start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2018-09-01&#39;</span>, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
+    end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2018-10-01&#39;</span>, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
+    data <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;./SMTC/source/0020/2018年09月语音通信.xls&#39;</span>)
     table <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>nrows
   
@@ -761,14 +808,14 @@ jiangge
         <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
             <span style="color:#66d9ef">continue</span>
         this_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(
-            table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">2</span>], <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y-</span><span style="color:#e6db74">%</span><span style="color:#e6db74">m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%</span><span style="color:#e6db74">H:</span><span style="color:#e6db74">%</span><span style="color:#e6db74">M:</span><span style="color:#e6db74">%</span><span style="color:#e6db74">S</span><span style="color:#e6db74">&#39;</span>))
-        <span style="color:#66d9ef">if</span> this_time <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> start_time <span style="color:#f92672">and</span> this_time <span style="color:#f92672">&lt;</span> end_time:
-            all_time <span style="color:#f92672">+</span><span style="color:#f92672">=</span> str2sec(table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">3</span>])
+            table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">2</span>], <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#39;</span>))
+        <span style="color:#66d9ef">if</span> this_time <span style="color:#f92672">&gt;=</span> start_time <span style="color:#f92672">and</span> this_time <span style="color:#f92672">&lt;</span> end_time:
+            all_time <span style="color:#f92672">+=</span> str2sec(table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">3</span>])
   
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">总时间:</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span>sec2str(all_time))
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;总时间:&#39;</span><span style="color:#f92672">+</span>sec2str(all_time))
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     minidata()
 </code></pre></div></li>
 </ul>
@@ -785,7 +832,7 @@ jiangge
 </li>
 <li>
 <p>解答</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#f92672">import</span> os
 <span style="color:#f92672">from</span> hashlib <span style="color:#f92672">import</span> sha256
 <span style="color:#f92672">from</span> hmac <span style="color:#f92672">import</span> HMAC
@@ -798,12 +845,12 @@ jiangge
     <span style="color:#66d9ef">assert</span> isinstance(salt, bytes)
     <span style="color:#66d9ef">assert</span> isinstance(password, str)
     <span style="color:#66d9ef">if</span> isinstance(password, str):
-        password <span style="color:#f92672">=</span> password<span style="color:#f92672">.</span>encode(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">utf-8</span><span style="color:#e6db74">&#39;</span>)
+        password <span style="color:#f92672">=</span> password<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
   
     <span style="color:#66d9ef">assert</span> isinstance(password, bytes)
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
         password <span style="color:#f92672">=</span> HMAC(password, salt, sha256)<span style="color:#f92672">.</span>digest()
-    <span style="color:#75715e"># print(&#39;password:&#39;, password)</span>
+    <span style="color:#75715e"># print(&#39;password:&#39;, password)</span>
     <span style="color:#66d9ef">return</span> salt<span style="color:#f92672">+</span>password
   
   
@@ -811,9 +858,9 @@ jiangge
     <span style="color:#66d9ef">return</span> hashed <span style="color:#f92672">==</span> encrypt_passwd(input, hashed[:<span style="color:#ae81ff">8</span>])
   
   
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    hashed <span style="color:#f92672">=</span> encrypt_passwd(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">123456</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">print</span>(validate_passwd(hashed, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">123456</span><span style="color:#e6db74">&#39;</span>))
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    hashed <span style="color:#f92672">=</span> encrypt_passwd(<span style="color:#e6db74">&#39;123456&#39;</span>)
+    <span style="color:#66d9ef">print</span>(validate_passwd(hashed, <span style="color:#e6db74">&#39;123456&#39;</span>))
 </code></pre></div></li>
 </ul>
 <p><strong>第 0022 题：</strong> iPhone 6、iPhone 6 Plus 早已上市开卖。请查看你写得 第 0005 题的代码是否可以复用。</p>
@@ -837,19 +884,51 @@ jiangge
 
 STT API Google API
 </code></pre><p>3:文本&ndash;&gt;电脑命令</p>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

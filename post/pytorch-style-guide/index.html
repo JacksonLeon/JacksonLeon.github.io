@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pytorch Style Guide | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Pytorch Style Guide |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/post/pytorch-style-guide/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Pytorch Style Guide</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/python">Python</a>
+    &nbsp;
+    
+    <a href="/categories/style-guide">Style Guide</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/05/01</h2>
-</div>
+    <h1 style="text-align: center;" >Pytorch Style Guide</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-05-01T09:03:11Z">May 01, 2019</time> &nbsp; 
+    
 
-<main>
-<h1 id="pytorch-style-guide">Pytorch Style Guide</h1>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        12 min
+      
+      55 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="pytorch-style-guide">Pytorch Style Guide</h1>
 <!-- raw HTML omitted -->
 <blockquote>
 <p>This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.</p>
@@ -94,7 +144,7 @@ Please refer to the well-documented  <a href="https://github.com/google/stylegui
 <tr>
 <td>Variables</td>
 <td>lower_with_under</td>
-<td><strong>background_color='Blue&rsquo;</strong></td>
+<td><strong>background_color=&lsquo;Blue&rsquo;</strong></td>
 </tr>
 </tbody>
 </table>
@@ -224,9 +274,9 @@ Python scripts should be used as soon as you want to train the model on a bigger
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConvBlock</span>(nn<span style="color:#f92672">.</span>Module):
     <span style="color:#66d9ef">def</span> __init__(self):
         super(ConvBlock, self)<span style="color:#f92672">.</span>__init__()
-        block <span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
-        block <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>ReLU()]
-        block <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>BatchNorm2d(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
+        block <span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">...</span>)]
+        block <span style="color:#f92672">+=</span> [nn<span style="color:#f92672">.</span>ReLU()]
+        block <span style="color:#f92672">+=</span> [nn<span style="color:#f92672">.</span>BatchNorm2d(<span style="color:#f92672">...</span>)]
         self<span style="color:#f92672">.</span>block <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(<span style="color:#f92672">*</span>block)
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
@@ -235,10 +285,10 @@ Python scripts should be used as soon as you want to train the model on a bigger
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SimpleNetwork</span>(nn<span style="color:#f92672">.</span>Module):
     <span style="color:#66d9ef">def</span> __init__(self, num_resnet_blocks<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>):
         super(SimpleNetwork, self)<span style="color:#f92672">.</span>__init__()
-        <span style="color:#75715e"># here we add the individual layers</span>
-        layers <span style="color:#f92672">=</span> [ConvBlock(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
+        <span style="color:#75715e"># here we add the individual layers</span>
+        layers <span style="color:#f92672">=</span> [ConvBlock(<span style="color:#f92672">...</span>)]
         <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num_resnet_blocks):
-            layers <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [ResBlock(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
+            layers <span style="color:#f92672">+=</span> [ResBlock(<span style="color:#f92672">...</span>)]
         self<span style="color:#f92672">.</span>net <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(<span style="color:#f92672">*</span>layers)
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
@@ -253,19 +303,19 @@ Python scripts should be used as soon as you want to train the model on a bigger
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResnetBlock</span>(nn<span style="color:#f92672">.</span>Module):
     <span style="color:#66d9ef">def</span> __init__(self, dim, padding_type, norm_layer, use_dropout, use_bias):
         super(ResnetBlock, self)<span style="color:#f92672">.</span>__init__()
-        self<span style="color:#f92672">.</span>conv_block <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>build_conv_block(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
+        self<span style="color:#f92672">.</span>conv_block <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>build_conv_block(<span style="color:#f92672">...</span>)
 
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_conv_block</span>(self, <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_conv_block</span>(self, <span style="color:#f92672">...</span>):
         conv_block <span style="color:#f92672">=</span> []
 
-        conv_block <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>),
-                       norm_layer(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>),
+        conv_block <span style="color:#f92672">+=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">...</span>),
+                       norm_layer(<span style="color:#f92672">...</span>),
                        nn<span style="color:#f92672">.</span>ReLU()]
         <span style="color:#66d9ef">if</span> use_dropout:
-            conv_block <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>Dropout(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
+            conv_block <span style="color:#f92672">+=</span> [nn<span style="color:#f92672">.</span>Dropout(<span style="color:#f92672">...</span>)]
             
-        conv_block <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>),
-                       norm_layer(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)]
+        conv_block <span style="color:#f92672">+=</span> [nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#f92672">...</span>),
+                       norm_layer(<span style="color:#f92672">...</span>)]
 
         <span style="color:#66d9ef">return</span> nn<span style="color:#f92672">.</span>Sequential(<span style="color:#f92672">*</span>conv_block)
 
@@ -314,7 +364,7 @@ Python scripts should be used as soon as you want to train the model on a bigger
         super(CustomLoss,self)<span style="color:#f92672">.</span>__init__()
         
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self,x,y):
-        loss <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>mean((x <span style="color:#f92672">-</span> y)<span style="color:#f92672">*</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)
+        loss <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>mean((x <span style="color:#f92672">-</span> y)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
         <span style="color:#66d9ef">return</span> loss
 </code></pre></div><h2 id="recommended-code-structure-for-training-your-model">Recommended code structure for training your model</h2>
 <p>Note that we used the following patterns:</p>
@@ -322,27 +372,27 @@ Python scripts should be used as soon as you want to train the model on a bigger
 <li>We use <em>BackgroundGenerator</em> from <em>prefetch_generator</em> to load next batches in background</li>
 <li>We use tqdm to monitor training progress and show the <em>compute efficiency</em>. This helps us find bottlenecks in our data loading pipeline.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import statements</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import statements</span>
 <span style="color:#f92672">import</span> torch
 <span style="color:#f92672">import</span> torch.nn <span style="color:#f92672">as</span> nn
 <span style="color:#f92672">from</span> torch.utils <span style="color:#f92672">import</span> data
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 
-<span style="color:#75715e"># set flags / seeds</span>
+<span style="color:#75715e"># set flags / seeds</span>
 torch<span style="color:#f92672">.</span>backends<span style="color:#f92672">.</span>cudnn<span style="color:#f92672">.</span>benchmark <span style="color:#f92672">=</span> True
 np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">1</span>)
 torch<span style="color:#f92672">.</span>manual_seed(<span style="color:#ae81ff">1</span>)
 torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>manual_seed(<span style="color:#ae81ff">1</span>)
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 
-<span style="color:#75715e"># Start with main code</span>
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#75715e"># argparse for additional flags for experiment</span>
-    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Train a network for ...</span><span style="color:#e6db74">&#34;</span>)
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#75715e"># Start with main code</span>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#75715e"># argparse for additional flags for experiment</span>
+    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Train a network for ...&#34;</span>)
+    <span style="color:#f92672">...</span>
     opt <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args() 
     
-    <span style="color:#75715e"># add code for datasets (we always use train and validation/ test set)</span>
+    <span style="color:#75715e"># add code for datasets (we always use train and validation/ test set)</span>
     data_transforms <span style="color:#f92672">=</span> transforms<span style="color:#f92672">.</span>Compose([
         transforms<span style="color:#f92672">.</span>Resize((opt<span style="color:#f92672">.</span>img_size, opt<span style="color:#f92672">.</span>img_size)),
         transforms<span style="color:#f92672">.</span>RandomHorizontalFlip(),
@@ -351,107 +401,107 @@ torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span
     ])
     
     train_dataset <span style="color:#f92672">=</span> datasets<span style="color:#f92672">.</span>ImageFolder(
-        root<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(opt<span style="color:#f92672">.</span>path_to_data, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">train</span><span style="color:#e6db74">&#34;</span>),
+        root<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(opt<span style="color:#f92672">.</span>path_to_data, <span style="color:#e6db74">&#34;train&#34;</span>),
         transform<span style="color:#f92672">=</span>data_transforms)
-    train_data_loader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(train_dataset, <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
+    train_data_loader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(train_dataset, <span style="color:#f92672">...</span>)
     
     test_dataset <span style="color:#f92672">=</span> datasets<span style="color:#f92672">.</span>ImageFolder(
-        root<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(opt<span style="color:#f92672">.</span>path_to_data, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#34;</span>),
+        root<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(opt<span style="color:#f92672">.</span>path_to_data, <span style="color:#e6db74">&#34;test&#34;</span>),
         transform<span style="color:#f92672">=</span>data_transforms)
-    test_data_loader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(test_dataset <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    test_data_loader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(test_dataset <span style="color:#f92672">...</span>)
+    <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># instantiate network (which has been imported from *networks.py*)</span>
-    net <span style="color:#f92672">=</span> MyNetwork(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    <span style="color:#75715e"># instantiate network (which has been imported from *networks.py*)</span>
+    net <span style="color:#f92672">=</span> MyNetwork(<span style="color:#f92672">...</span>)
+    <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># create losses (criterion in pytorch)</span>
+    <span style="color:#75715e"># create losses (criterion in pytorch)</span>
     criterion_L1 <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>nn<span style="color:#f92672">.</span>L1Loss()
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># if running on GPU and we want to use cuda move model there</span>
+    <span style="color:#75715e"># if running on GPU and we want to use cuda move model there</span>
     use_cuda <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>is_available()
     <span style="color:#66d9ef">if</span> use_cuda:
         net <span style="color:#f92672">=</span> net<span style="color:#f92672">.</span>cuda()
-        <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+        <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># create optimizers</span>
+    <span style="color:#75715e"># create optimizers</span>
     optim <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>Adam(net<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span>opt<span style="color:#f92672">.</span>lr)
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># load checkpoint if needed/ wanted</span>
+    <span style="color:#75715e"># load checkpoint if needed/ wanted</span>
     start_n_iter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     start_epoch <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     <span style="color:#66d9ef">if</span> opt<span style="color:#f92672">.</span>resume:
-        ckpt <span style="color:#f92672">=</span> load_checkpoint(opt<span style="color:#f92672">.</span>path_to_checkpoint) <span style="color:#75715e"># custom method for loading last checkpoint</span>
-        net<span style="color:#f92672">.</span>load_state_dict(ckpt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">net</span><span style="color:#e6db74">&#39;</span>])
-        start_epoch <span style="color:#f92672">=</span> ckpt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">epoch</span><span style="color:#e6db74">&#39;</span>]
-        start_n_iter <span style="color:#f92672">=</span> ckpt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">n_iter</span><span style="color:#e6db74">&#39;</span>]
-        optim<span style="color:#f92672">.</span>load_state_dict(ckpt[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">optim</span><span style="color:#e6db74">&#39;</span>])
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">last checkpoint restored</span><span style="color:#e6db74">&#34;</span>)
-        <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+        ckpt <span style="color:#f92672">=</span> load_checkpoint(opt<span style="color:#f92672">.</span>path_to_checkpoint) <span style="color:#75715e"># custom method for loading last checkpoint</span>
+        net<span style="color:#f92672">.</span>load_state_dict(ckpt[<span style="color:#e6db74">&#39;net&#39;</span>])
+        start_epoch <span style="color:#f92672">=</span> ckpt[<span style="color:#e6db74">&#39;epoch&#39;</span>]
+        start_n_iter <span style="color:#f92672">=</span> ckpt[<span style="color:#e6db74">&#39;n_iter&#39;</span>]
+        optim<span style="color:#f92672">.</span>load_state_dict(ckpt[<span style="color:#e6db74">&#39;optim&#39;</span>])
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;last checkpoint restored&#34;</span>)
+        <span style="color:#f92672">...</span>
         
-    <span style="color:#75715e"># if we want to run experiment on multiple GPUs we move the models there</span>
+    <span style="color:#75715e"># if we want to run experiment on multiple GPUs we move the models there</span>
     net <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>nn<span style="color:#f92672">.</span>DataParallel(net)
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    <span style="color:#f92672">...</span>
     
-    <span style="color:#75715e"># typically we use tensorboardX to keep track of experiments</span>
-    writer <span style="color:#f92672">=</span> SummaryWriter(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
+    <span style="color:#75715e"># typically we use tensorboardX to keep track of experiments</span>
+    writer <span style="color:#f92672">=</span> SummaryWriter(<span style="color:#f92672">...</span>)
     
-    <span style="color:#75715e"># now we start the main loop</span>
+    <span style="color:#75715e"># now we start the main loop</span>
     n_iter <span style="color:#f92672">=</span> start_n_iter
     <span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(start_epoch, opt<span style="color:#f92672">.</span>epochs):
-        <span style="color:#75715e"># set models to train mode</span>
+        <span style="color:#75715e"># set models to train mode</span>
         net<span style="color:#f92672">.</span>train()
-        <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+        <span style="color:#f92672">...</span>
         
-        <span style="color:#75715e"># use prefetch_generator and tqdm for iterating through data</span>
-        pbar <span style="color:#f92672">=</span> tqdm(enumerate(BackgroundGenerator(train_data_loader, <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)),
+        <span style="color:#75715e"># use prefetch_generator and tqdm for iterating through data</span>
+        pbar <span style="color:#f92672">=</span> tqdm(enumerate(BackgroundGenerator(train_data_loader, <span style="color:#f92672">...</span>)),
                     total<span style="color:#f92672">=</span>len(train_data_loader))
         start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
         
-        <span style="color:#75715e"># for loop going through dataset</span>
+        <span style="color:#75715e"># for loop going through dataset</span>
         <span style="color:#66d9ef">for</span> i, data <span style="color:#f92672">in</span> pbar:
-            <span style="color:#75715e"># data preparation</span>
+            <span style="color:#75715e"># data preparation</span>
             img, label <span style="color:#f92672">=</span> data
             <span style="color:#66d9ef">if</span> use_cuda:
                 img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>cuda()
                 label <span style="color:#f92672">=</span> label<span style="color:#f92672">.</span>cuda()
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+            <span style="color:#f92672">...</span>
             
-            <span style="color:#75715e"># It&#39;s very good practice to keep track of preparation time and computation time using tqdm to find any issues in your dataloader</span>
+            <span style="color:#75715e"># It&#39;s very good practice to keep track of preparation time and computation time using tqdm to find any issues in your dataloader</span>
             prepare_time <span style="color:#f92672">=</span> start_time<span style="color:#f92672">-</span>time<span style="color:#f92672">.</span>time()
             
-            <span style="color:#75715e"># forward and backward pass</span>
+            <span style="color:#75715e"># forward and backward pass</span>
             optim<span style="color:#f92672">.</span>zero_grad()
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+            <span style="color:#f92672">...</span>
             loss<span style="color:#f92672">.</span>backward()
             optim<span style="color:#f92672">.</span>step()
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+            <span style="color:#f92672">...</span>
             
-            <span style="color:#75715e"># udpate tensorboardX</span>
-            writer<span style="color:#f92672">.</span>add_scalar(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>, n_iter)
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+            <span style="color:#75715e"># udpate tensorboardX</span>
+            writer<span style="color:#f92672">.</span>add_scalar(<span style="color:#f92672">...</span>, n_iter)
+            <span style="color:#f92672">...</span>
             
-            <span style="color:#75715e"># compute computation time and *compute_efficiency*</span>
+            <span style="color:#75715e"># compute computation time and *compute_efficiency*</span>
             process_time <span style="color:#f92672">=</span> start_time<span style="color:#f92672">-</span>time<span style="color:#f92672">.</span>time()<span style="color:#f92672">-</span>prepare_time
-            pbar<span style="color:#f92672">.</span>set_description(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Compute efficiency: {:.2f}, epoch: {}/{}:</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(
+            pbar<span style="color:#f92672">.</span>set_description(<span style="color:#e6db74">&#34;Compute efficiency: {:.2f}, epoch: {}/{}:&#34;</span><span style="color:#f92672">.</span>format(
                 process_time<span style="color:#f92672">/</span>(process_time<span style="color:#f92672">+</span>prepare_time), epoch, opt<span style="color:#f92672">.</span>epochs))
             start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
             
-        <span style="color:#75715e"># maybe do a test pass every x epochs</span>
+        <span style="color:#75715e"># maybe do a test pass every x epochs</span>
         <span style="color:#66d9ef">if</span> epoch <span style="color:#f92672">%</span> x <span style="color:#f92672">==</span> x<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-            <span style="color:#75715e"># bring models to evaluation mode</span>
+            <span style="color:#75715e"># bring models to evaluation mode</span>
             net<span style="color:#f92672">.</span>eval()
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-            <span style="color:#75715e">#do some tests</span>
-            pbar <span style="color:#f92672">=</span> tqdm(enumerate(BackgroundGenerator(test_data_loader, <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)),
+            <span style="color:#f92672">...</span>
+            <span style="color:#75715e">#do some tests</span>
+            pbar <span style="color:#f92672">=</span> tqdm(enumerate(BackgroundGenerator(test_data_loader, <span style="color:#f92672">...</span>)),
                     total<span style="color:#f92672">=</span>len(test_data_loader)) 
             <span style="color:#66d9ef">for</span> i, data <span style="color:#f92672">in</span> pbar:
-                <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+                <span style="color:#f92672">...</span>
                 
-            <span style="color:#75715e"># save checkpoint if needed</span>
-            <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+            <span style="color:#75715e"># save checkpoint if needed</span>
+            <span style="color:#f92672">...</span>
 </code></pre></div><h2 id="training-on-multiple-gpus-in-pytorch">Training on Multiple GPUs in PyTorch</h2>
 <p>There are two distinct patterns in PyTorch to use multiple GPUs for training.
 From our experience both patterns are valid. The first one results however in nicer and less code. The second one seems to have a slight performance advantage due to less communication between the GPUs. <a href="https://discuss.pytorch.org/t/how-to-best-use-dataparallel-with-multiple-models/39289">I asked a question in the official PyTorch forum about the two approaches here</a></p>
@@ -471,12 +521,12 @@ From our experience both patterns are valid. The first one results however in ni
 <p>Typically we train our models for thousands of steps. Therefore, it is enough to log loss and other results every n&rsquo;th step to reduce the overhead. Especially, saving intermediary results as images can be costly during training.</p>
 <h3 id="use-command-line-arguments">Use Command-line Arguments</h3>
 <p>It&rsquo;s very handy to use command-line arguments to set parameters during code execution (<em>batch size</em>, <em>learning rate</em>, etc). An easy way to keep track of the arguments for an experiment is by just printing the dictionary received from <em>parse_args</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#75715e"># saves arguments to config.txt file</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+<span style="color:#75715e"># saves arguments to config.txt file</span>
 opt <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">config.txt</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">as</span> f:
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;config.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> f:
     f<span style="color:#f92672">.</span>write(opt<span style="color:#f92672">.</span>__str__())
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 </code></pre></div><h3 id="use-detach-to-free-tensors-from-the-graph-if-possible">Use <strong>.detach()</strong> to free tensors from the graph if possible</h3>
 <p>PyTorch keeps track of of all operations involving tensors for automatic differentiation. Use <strong>.detach()</strong> to prevent recording of unnecessary operations.</p>
 <h3 id="use-item-for-printing-scalar-tensors">Use <strong>.item()</strong> for printing scalar tensors</h3>
@@ -484,7 +534,7 @@ opt <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</sp
 <h3 id="use-the-call-method-instead-of-forward-on-a-nnmodule">Use the call method instead of forward on a <strong>nn.Module</strong></h3>
 <p>The two ways are not identical as pointed out in one of the issues <a href="https://github.com/IgorSusmelj/pytorch-styleguide/issues/3">here</a>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>net<span style="color:#f92672">.</span>forward(input)
-<span style="color:#75715e"># they are not equal!</span>
+<span style="color:#75715e"># they are not equal!</span>
 output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>net(input)
 </code></pre></div><h2 id="faq">FAQ</h2>
 <ol>
@@ -515,53 +565,53 @@ torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span
 <blockquote>
 <p>In PyTorch we can implement very easily virtual batch sizes. We just prevent the optimizer from making an update of the parameters and sum up the gradients for <em>batch_size</em> cycles.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#75715e"># in the main loop</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+<span style="color:#75715e"># in the main loop</span>
 out <span style="color:#f92672">=</span> net(input)
 loss <span style="color:#f92672">=</span> criterion(out, label)
-<span style="color:#75715e"># we just call backward to sum up gradients but don&#39;t perform step here</span>
+<span style="color:#75715e"># we just call backward to sum up gradients but don&#39;t perform step here</span>
 loss<span style="color:#f92672">.</span>backward() 
-total_loss <span style="color:#f92672">+</span><span style="color:#f92672">=</span> loss<span style="color:#f92672">.</span>item() <span style="color:#f92672">/</span> batch_size
+total_loss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item() <span style="color:#f92672">/</span> batch_size
 <span style="color:#66d9ef">if</span> n_iter <span style="color:#f92672">%</span> batch_size <span style="color:#f92672">==</span> batch_size<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-    <span style="color:#75715e"># here we perform out optimization step using a virtual batch size</span>
+    <span style="color:#75715e"># here we perform out optimization step using a virtual batch size</span>
     optim<span style="color:#f92672">.</span>step()
     optim<span style="color:#f92672">.</span>zero_grad()
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Total loss: </span><span style="color:#e6db74">&#39;</span>, total_loss)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Total loss: &#39;</span>, total_loss)
     total_loss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 </code></pre></div><ol start="5">
 <li>How can I adjust the learning rate during training?</li>
 </ol>
 <blockquote>
 <p>We can access the learning rate directly using the instantiated optimizer as shown here:</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
 <span style="color:#66d9ef">for</span> param_group <span style="color:#f92672">in</span> optim<span style="color:#f92672">.</span>param_groups:
-    old_lr <span style="color:#f92672">=</span> param_group[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lr</span><span style="color:#e6db74">&#39;</span>]
+    old_lr <span style="color:#f92672">=</span> param_group[<span style="color:#e6db74">&#39;lr&#39;</span>]
     new_lr <span style="color:#f92672">=</span> old_lr <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>
-    param_group[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lr</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> new_lr
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Updated lr from {} to {}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(old_lr, new_lr))
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    param_group[<span style="color:#e6db74">&#39;lr&#39;</span>] <span style="color:#f92672">=</span> new_lr
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Updated lr from {} to {}&#39;</span><span style="color:#f92672">.</span>format(old_lr, new_lr))
+<span style="color:#f92672">...</span>
 </code></pre></div><ol start="6">
 <li>How to use a pretrained model as a loss (non backprop) during training</li>
 </ol>
 <blockquote>
 <p>If you want to use a pretrained model such as VGG to compute a loss but not train it (e.g. Perceptual loss in style-transfer/ GANs/ Auto-encoder) you can use the following pattern:</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#75715e"># instantiate the model</span>
-pretrained_VGG <span style="color:#f92672">=</span> VGG19(<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+<span style="color:#75715e"># instantiate the model</span>
+pretrained_VGG <span style="color:#f92672">=</span> VGG19(<span style="color:#f92672">...</span>)
 
-<span style="color:#75715e"># disable gradients (prevent training)</span>
-<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> pretrained_VGG<span style="color:#f92672">.</span>parameters():  <span style="color:#75715e"># reset requires_grad</span>
+<span style="color:#75715e"># disable gradients (prevent training)</span>
+<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> pretrained_VGG<span style="color:#f92672">.</span>parameters():  <span style="color:#75715e"># reset requires_grad</span>
     p<span style="color:#f92672">.</span>requires_grad <span style="color:#f92672">=</span> False
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#75715e"># you don&#39;t have to use the no_grad() namespace but can just run the model</span>
-<span style="color:#75715e"># no gradients will be computed for the VGG model</span>
+<span style="color:#f92672">...</span>
+<span style="color:#75715e"># you don&#39;t have to use the no_grad() namespace but can just run the model</span>
+<span style="color:#75715e"># no gradients will be computed for the VGG model</span>
 out_real <span style="color:#f92672">=</span> pretrained_VGG(input_a)
 out_fake <span style="color:#f92672">=</span> pretrained_VGG(input_b)
 loss <span style="color:#f92672">=</span> any_criterion(out_real, out_fake)
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 </code></pre></div><ol start="7">
 <li>Why do we use <em>.train()</em> and <em>.eval()</em> in PyTorch?</li>
 </ol>
@@ -575,7 +625,7 @@ loss <span style="color:#f92672">=</span> any_criterion(out_real, out_fake)
 <p>Make sure that no gradients get computed and stored during your code execution. You can simply use the following pattern to assure that:</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
-    <span style="color:#75715e"># run model here</span>
+    <span style="color:#75715e"># run model here</span>
     out_tensor <span style="color:#f92672">=</span> net(in_tensor)
 </code></pre></div><ol start="9">
 <li>How to fine-tune a pretrained model?</li>
@@ -584,8 +634,8 @@ loss <span style="color:#f92672">=</span> any_criterion(out_real, out_fake)
 <p>In PyTorch you can freeze layers. This will prevent them from being updated during an optimization step.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#75715e"># you can freeze whole modules using</span>
-<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> pretrained_VGG<span style="color:#f92672">.</span>parameters():  <span style="color:#75715e"># reset requires_grad</span>
+<span style="color:#75715e"># you can freeze whole modules using</span>
+<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> pretrained_VGG<span style="color:#f92672">.</span>parameters():  <span style="color:#75715e"># reset requires_grad</span>
     p<span style="color:#f92672">.</span>requires_grad <span style="color:#f92672">=</span> False
 
 </code></pre></div><ol start="10">
@@ -626,19 +676,85 @@ result in <em>out of memory</em> or other errors.</p>
 <blockquote>
 <p>If frees a tensor from a computation graph. A nice illustration is shown <a href="http://www.bnikolic.co.uk/blog/pytorch-detach.html">here</a></p>
 </blockquote>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+        <a href="/tags/reproduce">Reproduce</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0007.py/">SMTC 0007.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0006.py/">SMTC 0006.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-library/">Python Library</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0000.py/">SMTC 0000.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-note/">Python Note</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manjaro备忘录 | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Manjaro备忘录 |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Manjaro备忘录</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95">备忘录</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/09/14</h2>
-</div>
+    <h1 style="text-align: center;" >Manjaro备忘录</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-09-14T21:48:52Z">September 14, 2019</time> &nbsp; 
+    
 
-<main>
-<ol>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        20 min
+      
+      48 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <ol>
 <li>安装、pacman镜像源、更新</li>
 <li>zsh配置</li>
 <li>输入法及中文</li>
@@ -72,7 +119,7 @@ sh -c <span style="color:#e6db74">&#34;</span>$wget<span style="color:#e6db74"> 
 </span><span style="color:#e6db74"># 使用zsh替换bash
 </span><span style="color:#e6db74">chsh -s /bin/zsh
 </span><span style="color:#e6db74"># 修改.zshrc主题
-</span><span style="color:#e6db74">ZSH_THEME=</span><span style="color:#e6db74">&#34;</span>ys<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">ZSH_THEME=&#34;</span>ys<span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74"># zsh-autosuggestions 和 zsh-syntax-highlighting
 </span><span style="color:#e6db74">sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 </span><span style="color:#e6db74">vim ~/.zshrc
@@ -165,7 +212,7 @@ alias ip=&quot;curl -i http://ip.cn&quot;
 alias pac<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -S&#39;</span>   		<span style="color:#75715e"># install</span>
 alias pacu<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Syu&#39;</span>		<span style="color:#75715e"># upgrade, add &#39;a&#39; to the list of letters to update AUR packages if you use yaourt</span>
 alias pacy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Sy&#39;</span>		<span style="color:#75715e"># update</span>
-alias pacr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Rns&#39;</span>		<span style="color:#75715e"># remove</span> 
+alias pacr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Rns&#39;</span>		<span style="color:#75715e"># remove </span>
 alias pacs<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Ss&#39;</span>		<span style="color:#75715e"># search packages</span>
 alias paci<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Si&#39;</span>		<span style="color:#75715e"># info</span>
 alias paclo<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo pacman -Qdt&#39;</span>		<span style="color:#75715e"># list orphans</span>
@@ -226,20 +273,20 @@ optirun -b none nvidia-settings -c :8		<span style="color:#75715e">#正常使用
 <span style="color:#75715e"># 测试一下</span>
 sudo tee /proc/acpi/bbswitch <span style="color:#f92672">&lt;&lt;&lt;</span> ON			<span style="color:#75715e"># 需要开启NVIDIA显卡</span>
 nvidia-smi
-Mon Sep <span style="color:#ae81ff">23</span> 21:38:32 2019
+Mon Sep <span style="color:#ae81ff">23</span> 21:38:32 <span style="color:#ae81ff">2019</span>
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 430.40       Driver Version: 430.40       CUDA Version: 10.1     |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>|
+|<span style="color:#f92672">===============================</span>+<span style="color:#f92672">======================</span>+<span style="color:#f92672">======================</span>|
 |   <span style="color:#ae81ff">0</span>  GeForce GTX 950M    Off  | 00000000:01:00.0 Off |                  N/A |
 | N/A   37C    P0    N/A /  N/A |      0MiB /  2004MiB |      1%      Default |
 +-------------------------------+----------------------+----------------------+
 +-----------------------------------------------------------------------------+
 | Processes:                                                       GPU Memory |
 |  GPU       PID   Type   Process name                             Usage      |
-|<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>|
+|<span style="color:#f92672">=============================================================================</span>|
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 </code></pre></div><h3 id="其他">其他</h3>
@@ -521,19 +568,60 @@ alias setproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#
 alias unsetproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;unset ALL_PROXY&#39;</span>
 alias which-command<span style="color:#f92672">=</span>whence
 </code></pre></div>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/manjaro">Manjaro</a>
+        &nbsp;
+      
+        <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95">备忘录</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

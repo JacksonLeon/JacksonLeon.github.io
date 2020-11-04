@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Macintosh Note | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Macintosh Note |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/macintosh-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Macintosh Note</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/macintosh">Macintosh</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2018/12/21</h2>
-</div>
+    <h1 style="text-align: center;" >Macintosh Note</h1>
+    <div class="post-meta">
+    
+      <time datetime="2018-12-21T15:32:06Z">December 21, 2018</time> &nbsp; 
+    
 
-<main>
-<h2 id="description">Description</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        12 min
+      
+      4 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
 <blockquote>
 <p>此文用来记录平时使用Mac遇到的问题与心得.</p>
 <p>本文长期更新.</p>
@@ -181,30 +228,30 @@ $ defaults -currentHost read -globalDomain AppleFontSmoothing
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span><span style="color:#75715e"># Author: Matt Mastracci (matthew@mastracci.com)</span>
 <span style="color:#75715e"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span>
-<span style="color:#75715e"># licensed under cc-wiki with attribution required</span> 
+<span style="color:#75715e"># licensed under cc-wiki with attribution required </span>
 <span style="color:#75715e"># Remainder of script public domain</span>
        
 osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to version&#39;</span> &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> NAME<span style="color:#f92672">=</span>iTerm2 <span style="color:#f92672">||</span> NAME<span style="color:#f92672">=</span>iTerm
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span><span style="color:#f92672">[</span> $NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iTerm&#34;</span> <span style="color:#f92672">]</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iTerm&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
     FILE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm&#34; to activate&#39;</span> -e <span style="color:#e6db74">&#39;tell application &#34;iTerm&#34; to set thefile to choose folder with prompt &#34;Choose a folder to place received files in&#34;&#39;</span> -e <span style="color:#e6db74">&#34;do shell script (\&#34;echo \&#34;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&#34;\&#34;)&#34;</span><span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">else</span>
     FILE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to activate&#39;</span> -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to set thefile to choose folder with prompt &#34;Choose a folder to place received files in&#34;&#39;</span> -e <span style="color:#e6db74">&#34;do shell script (\&#34;echo \&#34;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&#34;\&#34;)&#34;</span><span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">fi</span>
        
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span><span style="color:#f92672">[</span> $FILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $FILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
     echo Cancelled.
     <span style="color:#75715e"># Send ZModem cancel</span>
     echo -e <span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18
-    sleep 1
+    sleep <span style="color:#ae81ff">1</span>
     echo
     echo <span style="color:#ae81ff">\#</span> Cancelled transfer
 <span style="color:#66d9ef">else</span>
     cd <span style="color:#e6db74">&#34;</span>$FILE<span style="color:#e6db74">&#34;</span>
     /usr/local/bin/rz -E -e -b
-    sleep 1
+    sleep <span style="color:#ae81ff">1</span>
     echo
     echo
-    echo <span style="color:#ae81ff">\#</span> Sent <span style="color:#ae81ff">\-</span><span style="color:#ae81ff">\&gt;</span> $FILE
+    echo <span style="color:#ae81ff">\#</span> Sent <span style="color:#ae81ff">\-\&gt;</span> $FILE
 <span style="color:#66d9ef">fi</span>
 </code></pre></div></li>
 <li>
@@ -212,25 +259,25 @@ osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span><span style="color:#75715e"># Author: Matt Mastracci (matthew@mastracci.com)</span>
 <span style="color:#75715e"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span>
-<span style="color:#75715e"># licensed under cc-wiki with attribution required</span> 
+<span style="color:#75715e"># licensed under cc-wiki with attribution required </span>
 <span style="color:#75715e"># Remainder of script public domain</span>
        
 osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to version&#39;</span> &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> NAME<span style="color:#f92672">=</span>iTerm2 <span style="color:#f92672">||</span> NAME<span style="color:#f92672">=</span>iTerm
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span><span style="color:#f92672">[</span> $NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iTerm&#34;</span> <span style="color:#f92672">]</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;iTerm&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
     FILE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm&#34; to activate&#39;</span> -e <span style="color:#e6db74">&#39;tell application &#34;iTerm&#34; to set thefile to choose file with prompt &#34;Choose a file to send&#34;&#39;</span> -e <span style="color:#e6db74">&#34;do shell script (\&#34;echo \&#34;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&#34;\&#34;)&#34;</span><span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">else</span>
     FILE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to activate&#39;</span> -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; to set thefile to choose file with prompt &#34;Choose a file to send&#34;&#39;</span> -e <span style="color:#e6db74">&#34;do shell script (\&#34;echo \&#34;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&#34;\&#34;)&#34;</span><span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">fi</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span><span style="color:#f92672">[</span> $FILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $FILE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
     echo Cancelled.
     <span style="color:#75715e"># Send ZModem cancel</span>
     echo -e <span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18<span style="color:#ae81ff">\\</span>x18
-    sleep 1
+    sleep <span style="color:#ae81ff">1</span>
     echo
     echo <span style="color:#ae81ff">\#</span> Cancelled transfer
 <span style="color:#66d9ef">else</span>
     /usr/local/bin/sz <span style="color:#e6db74">&#34;</span>$FILE<span style="color:#e6db74">&#34;</span> -e -b
-    sleep 1
+    sleep <span style="color:#ae81ff">1</span>
     echo
     echo <span style="color:#ae81ff">\#</span> Received $FILE
 <span style="color:#66d9ef">fi</span> 
@@ -244,11 +291,11 @@ osascript -e <span style="color:#e6db74">&#39;tell application &#34;iTerm2&#34; 
 <li>
 <p>配置iTerm2</p>
 <p>点击 iTerm2 的设置界面 Perference-&gt; Profiles -&gt; Default -&gt; Advanced -&gt; Triggers 的 Edit 按钮</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Regular expression: rz waiting to receive.<span style="color:#ae81ff">\*</span><span style="color:#ae81ff">\*</span>B0100
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Regular expression: rz waiting to receive.<span style="color:#ae81ff">\*\*</span>B0100
 Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-send-zmodem.sh
      
-Regular expression: <span style="color:#ae81ff">\*</span><span style="color:#ae81ff">\*</span>B00000000000000
+Regular expression: <span style="color:#ae81ff">\*\*</span>B00000000000000
 Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
 </code></pre></div></li>
@@ -334,7 +381,7 @@ fi
 # send SQL to www.dpriver.com and replace the formatted SQL string in first responder; if a parser error occurred
 # show error message and try to jump to the error
 cat <span style="color:#960050;background-color:#1e0010">&lt;</span>&lt;<span style="color:#f92672">HTML</span>
-<span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">PUBLIC</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">-</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">W3C</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">DTD</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">01</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">EN</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">http:</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">w3</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">org</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">TR</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html4</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">strict</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">dtd</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+<span style="color:#960050;background-color:#1e0010">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">PUBLIC</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">-</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">W3C</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">DTD</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">01</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">EN</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">http:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">w3</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">org</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">TR</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html4</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">strict</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">dtd</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 	&lt;<span style="color:#f92672">base</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.dpriver.com/pp/&#34;</span>&gt;
@@ -464,26 +511,64 @@ cat <span style="color:#960050;background-color:#1e0010">&lt;</span>&lt;<span st
 HTML
 </code></pre></div><h2 id="调整launchpad图标大小">调整Launchpad图标大小</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 调整每一列显示图标数量</span>
-defaults write com.apple.dock springboard-rows -int 7
+defaults write com.apple.dock springboard-rows -int <span style="color:#ae81ff">7</span>
 <span style="color:#75715e"># 调整每一行显示图标数量</span>
-defaults write com.apple.dock springboard-columns -int 12
+defaults write com.apple.dock springboard-columns -int <span style="color:#ae81ff">12</span>
 <span style="color:#75715e"># 由于修改了每一页显示图标数量，需要重启Launchpad</span>
 defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock
 </code></pre></div><h2 id="vs-code">VS Code</h2>
 <p>{% post_link VSCode VS Code的相关内容已在另外一篇文章中进行演绎,就不在此赘述了 %}</p>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/macintosh">Macintosh</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

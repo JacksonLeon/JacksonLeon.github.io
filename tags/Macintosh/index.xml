@@ -5,12 +5,9 @@
     <link>/tags/macintosh/</link>
     <description>Recent content in Macintosh on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 21 Dec 2018 15:32:06 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/macintosh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 21 Dec 2018 15:32:06 +0000</lastBuildDate><atom:link href="/tags/macintosh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macintosh Note</title>
       <link>/note/macintosh-note/</link>

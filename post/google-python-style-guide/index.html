@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Google Python Style Guide | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Google Python Style Guide |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/post/google-python-style-guide/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Google Python Style Guide</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/python">Python</a>
+    &nbsp;
+    
+    <a href="/categories/style-guide">Style Guide</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/04/30</h2>
-</div>
+    <h1 style="text-align: center;" >Google Python Style Guide</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-04-30T20:37:51Z">April 30, 2019</time> &nbsp; 
+    
 
-<main>
-<h1 id="google-python-style-guide">Google Python Style Guide</h1>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        48 min
+      
+      46 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="google-python-style-guide">Google Python Style Guide</h1>
 <!-- raw HTML omitted -->
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="1-background">1 Background</h2>
@@ -74,7 +124,7 @@ Write around it b) Suppress its warnings or c) Improve it.</p>
 <p>Make sure you run <code>pylint</code> on your code.</p>
 <p>Suppress warnings if they are inappropriate so that other issues are not hidden.
 To suppress warnings, you can set a line-level comment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dict <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">something awful</span><span style="color:#e6db74">&#39;</span>  <span style="color:#75715e"># Bad Idea... pylint: disable=redefined-builtin</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dict <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;something awful&#39;</span>  <span style="color:#75715e"># Bad Idea... pylint: disable=redefined-builtin</span>
 </code></pre></div><p><code>pylint</code> warnings are each identified by symbolic name (<code>empty-docstring</code>)
 Google-specific warnings start with <code>g-</code>.</p>
 <p>If the reason for the suppression is not clear from the symbolic name, add an
@@ -90,7 +140,7 @@ suppressions and revisit them.</p>
 beginning of the function. Always include a comment explaining why you are
 deleting it. &ldquo;Unused.&rdquo; is sufficient. For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">viking_cafe_order</span>(spam, beans, eggs<span style="color:#f92672">=</span>None):
-    <span style="color:#66d9ef">del</span> beans, eggs  <span style="color:#75715e"># Unused by vikings.</span>
+    <span style="color:#66d9ef">del</span> beans, eggs  <span style="color:#75715e"># Unused by vikings.</span>
     <span style="color:#66d9ef">return</span> spam <span style="color:#f92672">+</span> spam <span style="color:#f92672">+</span> spam
 </code></pre></div><p>Other common forms of suppressing this warning include using &lsquo;<code>_</code>&rsquo; as the
 identifier for the unused argument, prefixing the argument name with
@@ -127,7 +177,7 @@ name with no prefix.</li>
 </ul>
 <p>For example the module <code>sound.effects.echo</code> may be imported as follows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sound.effects <span style="color:#f92672">import</span> echo
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
 echo<span style="color:#f92672">.</span>EchoFilter(input, output, delay<span style="color:#f92672">=</span><span style="color:#ae81ff">0.7</span>, atten<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
 </code></pre></div><p>Do not use relative names in imports. Even if the module is in the same package,
 use the full package name. This helps prevent unintentionally importing a
@@ -150,20 +200,20 @@ hierarchy.  Not really a problem with modern deployment mechanisms.</p>
 <p>All new code should import each module by its full package name.</p>
 <p>Imports should be as follows:</p>
 <p>Yes:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Reference absl.flags in code with the complete name (verbose).</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Reference absl.flags in code with the complete name (verbose).</span>
 <span style="color:#f92672">import</span> absl.flags
 <span style="color:#f92672">from</span> doctor.who <span style="color:#f92672">import</span> jodie
 
 FLAGS <span style="color:#f92672">=</span> absl<span style="color:#f92672">.</span>flags<span style="color:#f92672">.</span>FLAGS
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Reference flags in code with just the module name (common).</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Reference flags in code with just the module name (common).</span>
 <span style="color:#f92672">from</span> absl <span style="color:#f92672">import</span> flags
 <span style="color:#f92672">from</span> doctor.who <span style="color:#f92672">import</span> jodie
 
 FLAGS <span style="color:#f92672">=</span> flags<span style="color:#f92672">.</span>FLAGS
 </code></pre></div><p>No: <em>(assume this file lives in <code>doctor/who/</code> where <code>jodie.py</code> also exists)</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Unclear what module the author wanted and what will be imported.  The actual</span>
-<span style="color:#75715e"># import behavior depends on external factors controlling sys.path.</span>
-<span style="color:#75715e"># Which possible jodie module did the author intend to import?</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Unclear what module the author wanted and what will be imported.  The actual</span>
+<span style="color:#75715e"># import behavior depends on external factors controlling sys.path.</span>
+<span style="color:#75715e"># Which possible jodie module did the author intend to import?</span>
 <span style="color:#f92672">import</span> jodie
 </code></pre></div><p>The directory the main binary is located in should not be assumed to be in
 <code>sys.path</code> despite that happening in some environments.  This being the case,
@@ -204,33 +254,33 @@ occurred. If an exception is desired in the latter cases, use a raise
 statement. For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connect_to_next_port</span>(self, minimum):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Connects to the next available port.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Args:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      minimum: A port value greater or equal to 1024.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Raises:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      ValueError: If the minimum port specified is less than 1024.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      ConnectionError: If no available port is found.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Returns:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      The new minimum port.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;Connects to the next available port.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Args:
+</span><span style="color:#e6db74">      minimum: A port value greater or equal to 1024.
+</span><span style="color:#e6db74">    Raises:
+</span><span style="color:#e6db74">      ValueError: If the minimum port specified is less than 1024.
+</span><span style="color:#e6db74">      ConnectionError: If no available port is found.
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">      The new minimum port.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#66d9ef">if</span> minimum <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1024</span>:
-      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Minimum port must be at least 1024, not </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (minimum,))
+      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#39;Minimum port must be at least 1024, not </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">.&#39;</span> <span style="color:#f92672">%</span> (minimum,))
     port <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_find_next_open_port(minimum)
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> port:
-      <span style="color:#66d9ef">raise</span> ConnectionError(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Could not connect to service on </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> or higher.</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (minimum,))
-    <span style="color:#66d9ef">assert</span> port <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> minimum, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Unexpected port </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> when minimum was </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (port, minimum)
+      <span style="color:#66d9ef">raise</span> ConnectionError(<span style="color:#e6db74">&#39;Could not connect to service on </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> or higher.&#39;</span> <span style="color:#f92672">%</span> (minimum,))
+    <span style="color:#66d9ef">assert</span> port <span style="color:#f92672">&gt;=</span> minimum, <span style="color:#e6db74">&#39;Unexpected port </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> when minimum was </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">.&#39;</span> <span style="color:#f92672">%</span> (port, minimum)
     <span style="color:#66d9ef">return</span> port
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connect_to_next_port</span>(self, minimum):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Connects to the next available port.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Args:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      minimum: A port value greater or equal to 1024.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Returns:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">      The new minimum port.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-    <span style="color:#66d9ef">assert</span> minimum <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Minimum port must be at least 1024.</span><span style="color:#e6db74">&#39;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;Connects to the next available port.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Args:
+</span><span style="color:#e6db74">      minimum: A port value greater or equal to 1024.
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">      The new minimum port.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">assert</span> minimum <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1024</span>, <span style="color:#e6db74">&#39;Minimum port must be at least 1024.&#39;</span>
     port <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_find_next_open_port(minimum)
     <span style="color:#66d9ef">assert</span> port <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None
     <span style="color:#66d9ef">return</span> port
@@ -344,14 +394,14 @@ complicated.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
   result <span style="color:#f92672">=</span> [mapping_expr <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> iterable <span style="color:#66d9ef">if</span> filter_expr]
 
-  result <span style="color:#f92672">=</span> [{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">key</span><span style="color:#e6db74">&#39;</span>: value} <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> iterable
+  result <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;key&#39;</span>: value} <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> iterable
             <span style="color:#66d9ef">if</span> a_long_filter_expression(value)]
 
   result <span style="color:#f92672">=</span> [complicated_transform(x)
             <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> iterable <span style="color:#66d9ef">if</span> predicate(x)]
 
   descriptive_name <span style="color:#f92672">=</span> [
-      transform({<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">key</span><span style="color:#e6db74">&#39;</span>: key, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">value</span><span style="color:#e6db74">&#39;</span>: value}, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>)
+      transform({<span style="color:#e6db74">&#39;key&#39;</span>: key, <span style="color:#e6db74">&#39;value&#39;</span>: value}, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;black&#39;</span>)
       <span style="color:#66d9ef">for</span> key, value <span style="color:#f92672">in</span> generate_iterable(some_input)
       <span style="color:#66d9ef">if</span> complicated_condition_is_met(key, value)
   ]
@@ -366,12 +416,12 @@ complicated.</p>
           <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> long_generator_function(parameter)
           <span style="color:#66d9ef">if</span> x <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None}
 
-  squares_generator <span style="color:#f92672">=</span> (x<span style="color:#f92672">*</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>))
+  squares_generator <span style="color:#f92672">=</span> (x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>))
 
   unique_names <span style="color:#f92672">=</span> {user<span style="color:#f92672">.</span>name <span style="color:#66d9ef">for</span> user <span style="color:#f92672">in</span> users <span style="color:#66d9ef">if</span> user <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None}
 
   eat(jelly_bean <span style="color:#66d9ef">for</span> jelly_bean <span style="color:#f92672">in</span> jelly_beans
-      <span style="color:#66d9ef">if</span> jelly_bean<span style="color:#f92672">.</span>color <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>)
+      <span style="color:#66d9ef">if</span> jelly_bean<span style="color:#f92672">.</span>color <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;black&#39;</span>)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
   result <span style="color:#f92672">=</span> [complicated_transform(
                 x, some_argument<span style="color:#f92672">=</span>x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
@@ -410,16 +460,16 @@ dictionaries, and files. The built-in types define iterator methods, too. Prefer
 these methods to methods that return lists, except that you should not mutate a
 container while iterating over it. Never use Python 2 specific iteration
 methods such as <code>dict.iter*()</code> unless necessary.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:  <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> adict: <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">if</span> key <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> adict: <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">if</span> obj <span style="color:#f92672">in</span> alist: <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> afile: <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> adict<span style="color:#f92672">.</span>items(): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> six<span style="color:#f92672">.</span>iteritems(adict): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:   <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> adict<span style="color:#f92672">.</span>keys(): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> adict<span style="color:#f92672">.</span>has_key(key): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> afile<span style="color:#f92672">.</span>readlines(): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>iteritems(): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:  <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> adict: <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">if</span> key <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> adict: <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">if</span> obj <span style="color:#f92672">in</span> alist: <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> afile: <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> adict<span style="color:#f92672">.</span>items(): <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> six<span style="color:#f92672">.</span>iteritems(adict): <span style="color:#f92672">...</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:   <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> adict<span style="color:#f92672">.</span>keys(): <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> adict<span style="color:#f92672">.</span>has_key(key): <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> afile<span style="color:#f92672">.</span>readlines(): <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>iteritems(): <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="29-generators">2.9 Generators</h3>
@@ -520,14 +570,14 @@ definition.</p>
 Yes: <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b: Optional[Sequence] <span style="color:#f92672">=</span> None):
          <span style="color:#66d9ef">if</span> b <span style="color:#f92672">is</span> None:
              b <span style="color:#f92672">=</span> []
-Yes: <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b: Sequence <span style="color:#f92672">=</span> ()):  <span style="color:#75715e"># Empty tuple OK since tuples are immutable</span>
-         <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+Yes: <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b: Sequence <span style="color:#f92672">=</span> ()):  <span style="color:#75715e"># Empty tuple OK since tuples are immutable</span>
+         <span style="color:#f92672">...</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b<span style="color:#f92672">=</span>[]):
-         <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b<span style="color:#f92672">=</span>time<span style="color:#f92672">.</span>time()):  <span style="color:#75715e"># The time the module was loaded???</span>
-         <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b<span style="color:#f92672">=</span>FLAGS<span style="color:#f92672">.</span>my_thing):  <span style="color:#75715e"># sys.argv has not yet been parsed...</span>
-         <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+         <span style="color:#f92672">...</span>
+No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b<span style="color:#f92672">=</span>time<span style="color:#f92672">.</span>time()):  <span style="color:#75715e"># The time the module was loaded???</span>
+         <span style="color:#f92672">...</span>
+No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b<span style="color:#f92672">=</span>FLAGS<span style="color:#f92672">.</span>my_thing):  <span style="color:#75715e"># sys.argv has not yet been parsed...</span>
+         <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="213-properties">2.13 Properties</h3>
@@ -561,27 +611,27 @@ Template Method DP).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: <span style="color:#f92672">import</span> math
 
      <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span>(object):
-         <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">A square with two properties: a writable area and a read-only perimeter.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         To use:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq = Square(3)</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq.area</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         9</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq.perimeter</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         12</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq.area = 16</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq.side</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         4</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         &gt;&gt;&gt; sq.perimeter</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         16</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+         <span style="color:#e6db74">&#34;&#34;&#34;A square with two properties: a writable area and a read-only perimeter.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">         To use:
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq = Square(3)
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq.area
+</span><span style="color:#e6db74">         9
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq.perimeter
+</span><span style="color:#e6db74">         12
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq.area = 16
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq.side
+</span><span style="color:#e6db74">         4
+</span><span style="color:#e6db74">         &gt;&gt;&gt; sq.perimeter
+</span><span style="color:#e6db74">         16
+</span><span style="color:#e6db74">         &#34;&#34;&#34;</span>
 
          <span style="color:#66d9ef">def</span> __init__(self, side):
              self<span style="color:#f92672">.</span>side <span style="color:#f92672">=</span> side
 
          <span style="color:#a6e22e">@property</span>
          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">area</span>(self):
-             <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Gets or sets the area of the square.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+             <span style="color:#e6db74">&#34;&#34;&#34;Gets or sets the area of the square.&#34;&#34;&#34;</span>
              <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_get_area()
 
          <span style="color:#a6e22e">@area.setter</span>
@@ -589,11 +639,11 @@ Template Method DP).</p>
              <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_set_area(area)
 
          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_get_area</span>(self):
-             <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Indirect accessor to calculate the </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">area</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> property.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-             <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>side <span style="color:#f92672">*</span><span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+             <span style="color:#e6db74">&#34;&#34;&#34;Indirect accessor to calculate the &#39;area&#39; property.&#34;&#34;&#34;</span>
+             <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>side <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
 
          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_set_area</span>(self, area):
-             <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Indirect setter to set the </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">area</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> property.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+             <span style="color:#e6db74">&#34;&#34;&#34;Indirect setter to set the &#39;area&#39; property.&#34;&#34;&#34;</span>
              self<span style="color:#f92672">.</span>side <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>sqrt(area)
 
          <span style="color:#a6e22e">@property</span>
@@ -646,7 +696,7 @@ and <code>if not len(seq):</code> respectively.</p>
 known to be an integer (and is not the result of <code>len()</code>) against the
 integer 0.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> users:
-         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">no users</span><span style="color:#e6db74">&#39;</span>)
+         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;no users&#39;</span>)
 
      <span style="color:#66d9ef">if</span> foo <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
          self<span style="color:#f92672">.</span>handle_zero()
@@ -658,7 +708,7 @@ integer 0.</p>
          <span style="color:#66d9ef">if</span> x <span style="color:#f92672">is</span> None:
              x <span style="color:#f92672">=</span> []
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  <span style="color:#66d9ef">if</span> len(users) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">no users</span><span style="color:#e6db74">&#39;</span>)
+         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;no users&#39;</span>)
 
      <span style="color:#66d9ef">if</span> foo <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> foo:
          self<span style="color:#f92672">.</span>handle_zero()
@@ -688,14 +738,14 @@ generally preferable.</p>
 <h4 id="2152-decision">2.15.2 Decision</h4>
 <p>We do not use any Python version which does not support these features, so there
 is no reason not to use the new styles.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: words <span style="color:#f92672">=</span> foo<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">:</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: words <span style="color:#f92672">=</span> foo<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)
 
      [x[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> my_list <span style="color:#66d9ef">if</span> x[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>]
 
-     map(math<span style="color:#f92672">.</span>sqrt, data)    <span style="color:#75715e"># Ok. No inlined lambda expression.</span>
+     map(math<span style="color:#f92672">.</span>sqrt, data)    <span style="color:#75715e"># Ok. No inlined lambda expression.</span>
 
-     fn(<span style="color:#f92672">*</span>args, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kwargs)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  words <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>split(foo, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">:</span><span style="color:#e6db74">&#39;</span>)
+     fn(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  words <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>split(foo, <span style="color:#e6db74">&#39;:&#39;</span>)
 
      map(<span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">1</span>], filter(<span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>, my_list))
 
@@ -714,7 +764,7 @@ variable, even if the use precedes the assignment. If a global declaration
 occurs, the name is treated as a global variable.</p>
 <p>An example of the use of this feature is:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_adder</span>(summand1):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Returns a function that adds numbers to a given number.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;Returns a function that adds numbers to a given number.&#34;&#34;&#34;</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adder</span>(summand2):
         <span style="color:#66d9ef">return</span> summand1 <span style="color:#f92672">+</span> summand2
 
@@ -730,12 +780,12 @@ experienced Lisp and Scheme (and Haskell and ML and &hellip;) programmers.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(x):
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bar</span>():
-        <span style="color:#66d9ef">print</span>(i, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#75715e"># ...</span>
-    <span style="color:#75715e"># A bunch of code here</span>
-    <span style="color:#75715e"># ...</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> x:  <span style="color:#75715e"># Ah, i *is* local to foo, so this is what bar sees</span>
-        <span style="color:#66d9ef">print</span>(i, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(i, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+    <span style="color:#75715e"># ...</span>
+    <span style="color:#75715e"># A bunch of code here</span>
+    <span style="color:#75715e"># ...</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> x:  <span style="color:#75715e"># Ah, i *is* local to foo, so this is what bar sees</span>
+        <span style="color:#66d9ef">print</span>(i, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
     bar()
 </code></pre></div><p>So <code>foo([1, 2, 3])</code> will print <code>1 2 3 3</code>, not <code>1 2 3 4</code>.</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
@@ -757,11 +807,11 @@ some function <code>my_decorator</code>, this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span>(object):
     <span style="color:#a6e22e">@my_decorator</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method</span>(self):
-        <span style="color:#75715e"># method body ...</span>
+        <span style="color:#75715e"># method body ...</span>
 </code></pre></div><p>is equivalent to:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span>(object):
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method</span>(self):
-        <span style="color:#75715e"># method body ...</span>
+        <span style="color:#75715e"># method body ...</span>
     method <span style="color:#f92672">=</span> my_decorator(method)
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="2172-pros">2.17.2 Pros</h4>
@@ -891,9 +941,9 @@ modules.</p>
 <h4 id="2211-definition">2.21.1 Definition</h4>
 <p>Type annotations (or &ldquo;type hints&rdquo;) are for function or method arguments and
 return values:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: int) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> List[int]:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: int) <span style="color:#f92672">-&gt;</span> List[int]:
 </code></pre></div><p>You can also declare the type of a variable using a special comment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> SomeFunc()  <span style="color:#75715e"># type: SomeType</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> SomeFunc()  <span style="color:#75715e"># type: SomeType</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="2212-pros">2.21.2 Pros</h4>
 <p>Type annotations improve the readability and maintainability of your code. The
@@ -931,21 +981,21 @@ three or more context managers.</p>
 <p>Make use of Python&rsquo;s <a href="http://docs.python.org/reference/lexical_analysis.html#implicit-line-joining">implicit line joining inside parentheses, brackets and
 braces</a>.
 If necessary, you can add an extra pair of parentheses around an expression.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: foo_bar(self, width, height, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>, design<span style="color:#f92672">=</span>None, x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#39;</span>,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: foo_bar(self, width, height, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;black&#39;</span>, design<span style="color:#f92672">=</span>None, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;foo&#39;</span>,
              emphasis<span style="color:#f92672">=</span>None, highlight<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
 
      <span style="color:#66d9ef">if</span> (width <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span>
-         color <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">and</span> emphasis <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">strong</span><span style="color:#e6db74">&#39;</span>):
+         color <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;red&#39;</span> <span style="color:#f92672">and</span> emphasis <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;strong&#39;</span>):
 </code></pre></div><p>When a literal string won&rsquo;t fit on a single line, use parentheses for implicit
 line joining.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">This will build a very long long </span><span style="color:#e6db74">&#39;</span>
-     <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">long long long long long long string</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;This will build a very long long &#39;</span>
+     <span style="color:#e6db74">&#39;long long long long long long string&#39;</span>)
 </code></pre></div><p>Within comments, put long URLs on their own line if necessary.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:  <span style="color:#75715e"># See details at</span>
-      <span style="color:#75715e"># http://www.example.com/us/developer/documentation/api/content/v2.0/csv_file_name_extension_full_specification.html</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  <span style="color:#75715e"># See details at</span>
-     <span style="color:#75715e"># http://www.example.com/us/developer/documentation/api/content/\</span>
-     <span style="color:#75715e"># v2.0/csv_file_name_extension_full_specification.html</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:  <span style="color:#75715e"># See details at</span>
+      <span style="color:#75715e"># http://www.example.com/us/developer/documentation/api/content/v2.0/csv_file_name_extension_full_specification.html</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  <span style="color:#75715e"># See details at</span>
+     <span style="color:#75715e"># http://www.example.com/us/developer/documentation/api/content/\</span>
+     <span style="color:#75715e"># v2.0/csv_file_name_extension_full_specification.html</span>
 </code></pre></div><p>It is permissible to use backslash continuation when defining a <code>with</code> statement
 whose expressions span three or more lines. For two lines of expressions, use a
 nested <code>with</code> statement:</p>
@@ -976,12 +1026,12 @@ implied line continuation or to indicate a tuple.</p>
          bar()
      <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> x:
          bar()
-     <span style="color:#75715e"># For a 1 item tuple the ()s are more visually obvious than the comma.</span>
+     <span style="color:#75715e"># For a 1 item tuple the ()s are more visually obvious than the comma.</span>
      onesie <span style="color:#f92672">=</span> (foo,)
      <span style="color:#66d9ef">return</span> foo
      <span style="color:#66d9ef">return</span> spam, beans
      <span style="color:#66d9ef">return</span> (spam, beans)
-     <span style="color:#66d9ef">for</span> (x, y) <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>items(): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+     <span style="color:#66d9ef">for</span> (x, y) <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>items(): <span style="color:#f92672">...</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  <span style="color:#66d9ef">if</span> (x):
          bar()
      <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(x):
@@ -996,20 +1046,20 @@ you should align wrapped elements either vertically, as per the examples in the
 <a href="#s3.2-line-length">line length</a> section; or using a hanging indent of 4 spaces,
 in which case there should be nothing after the open parenthesis or bracket on
 the first line.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:   <span style="color:#75715e"># Aligned with opening delimiter</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:   <span style="color:#75715e"># Aligned with opening delimiter</span>
        foo <span style="color:#f92672">=</span> long_function_name(var_one, var_two,
                                 var_three, var_four)
        meal <span style="color:#f92672">=</span> (spam,
                beans)
 
-       <span style="color:#75715e"># Aligned with opening delimiter in a dictionary</span>
+       <span style="color:#75715e"># Aligned with opening delimiter in a dictionary</span>
        foo <span style="color:#f92672">=</span> {
            long_dictionary_key: value1 <span style="color:#f92672">+</span>
                                 value2,
-           <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+           <span style="color:#f92672">...</span>
        }
 
-       <span style="color:#75715e"># 4-space hanging indent; nothing on first line</span>
+       <span style="color:#75715e"># 4-space hanging indent; nothing on first line</span>
        foo <span style="color:#f92672">=</span> long_function_name(
            var_one, var_two, var_three,
            var_four)
@@ -1017,28 +1067,28 @@ the first line.</p>
            spam,
            beans)
 
-       <span style="color:#75715e"># 4-space hanging indent in a dictionary</span>
+       <span style="color:#75715e"># 4-space hanging indent in a dictionary</span>
        foo <span style="color:#f92672">=</span> {
            long_dictionary_key:
                long_dictionary_value,
-           <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+           <span style="color:#f92672">...</span>
        }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:    <span style="color:#75715e"># Stuff on first line forbidden</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:    <span style="color:#75715e"># Stuff on first line forbidden</span>
        foo <span style="color:#f92672">=</span> long_function_name(var_one, var_two,
            var_three, var_four)
        meal <span style="color:#f92672">=</span> (spam,
            beans)
 
-       <span style="color:#75715e"># 2-space hanging indent forbidden</span>
+       <span style="color:#75715e"># 2-space hanging indent forbidden</span>
        foo <span style="color:#f92672">=</span> long_function_name(
          var_one, var_two, var_three,
          var_four)
 
-       <span style="color:#75715e"># No hanging indent in a dictionary</span>
+       <span style="color:#75715e"># No hanging indent in a dictionary</span>
        foo <span style="color:#f92672">=</span> {
            long_dictionary_key:
            long_dictionary_value,
-           <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+           <span style="color:#f92672">...</span>
        }
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
@@ -1087,8 +1137,8 @@ comma, semicolon, or colon, except at the end of the line.</p>
 indexing or slicing.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: spam(<span style="color:#ae81ff">1</span>)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  spam (<span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: dict[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">key</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> list[index]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  dict [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">key</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> list [index]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: dict[<span style="color:#e6db74">&#39;key&#39;</span>] <span style="color:#f92672">=</span> list[index]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:  dict [<span style="color:#e6db74">&#39;key&#39;</span>] <span style="color:#f92672">=</span> list [index]
 </code></pre></div><p>Surround binary operators with a single space on either side for assignment
 (<code>=</code>), comparisons (<code>==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is, is not</code>), and
 Booleans (<code>and, or, not</code>). Use your better judgment for the insertion of spaces
@@ -1106,20 +1156,20 @@ No:  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">complex<
 </code></pre></div><p>Don&rsquo;t use spaces to vertically align tokens on consecutive lines, since it
 becomes a maintenance burden (applies to <code>:</code>, <code>#</code>, <code>=</code>, etc.):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
-  foo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># comment</span>
-  long_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># comment that should not be aligned</span>
+  foo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># comment</span>
+  long_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># comment that should not be aligned</span>
 
   dictionary <span style="color:#f92672">=</span> {
-      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">1</span>,
-      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">long_name</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>,
+      <span style="color:#e6db74">&#39;foo&#39;</span>: <span style="color:#ae81ff">1</span>,
+      <span style="color:#e6db74">&#39;long_name&#39;</span>: <span style="color:#ae81ff">2</span>,
   }
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
-  foo       <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># comment</span>
-  long_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>     <span style="color:#75715e"># comment that should not be aligned</span>
+  foo       <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># comment</span>
+  long_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>     <span style="color:#75715e"># comment that should not be aligned</span>
 
   dictionary <span style="color:#f92672">=</span> {
-      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#39;</span>      : <span style="color:#ae81ff">1</span>,
-      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">long_name</span><span style="color:#e6db74">&#39;</span>: <span style="color:#ae81ff">2</span>,
+      <span style="color:#e6db74">&#39;foo&#39;</span>      : <span style="color:#ae81ff">1</span>,
+      <span style="color:#e6db74">&#39;long_name&#39;</span>: <span style="color:#ae81ff">2</span>,
   }
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted -->
@@ -1207,34 +1257,34 @@ sentence is sufficient to describe return value.</dd>
 <dd>List all exceptions that are relevant to the interface.</dd>
 </dl>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_bigtable_rows</span>(big_table, keys, other_silly_variable<span style="color:#f92672">=</span>None):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Fetches rows from a Bigtable.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Retrieves rows pertaining to the given keys from the Table instance</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    represented by big_table.  Silly things may happen if</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    other_silly_variable is not None.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Args:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        big_table: An open Bigtable Table instance.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        keys: A sequence of strings representing the key of each table row</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">            to fetch.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        other_silly_variable: Another optional variable, that has a much</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">            longer name than the other args, and which does nothing.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Returns:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        A dict mapping keys to the corresponding table row data</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        fetched. Each row is represented as a tuple of strings. For</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        example:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        {</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Serak</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">: (</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Rigel VII</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">, </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Preparer</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">),</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Zim</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">: (</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Irk</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">, </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Invader</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">),</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">         </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Lrrr</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">: (</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Omicron Persei 8</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">, </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Emperor</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        If a key from the keys argument is missing from the dictionary,</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        then that row was not found in the table.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Raises:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        IOError: An error occurred accessing the bigtable.Table object.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;Fetches rows from a Bigtable.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Retrieves rows pertaining to the given keys from the Table instance
+</span><span style="color:#e6db74">    represented by big_table.  Silly things may happen if
+</span><span style="color:#e6db74">    other_silly_variable is not None.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Args:
+</span><span style="color:#e6db74">        big_table: An open Bigtable Table instance.
+</span><span style="color:#e6db74">        keys: A sequence of strings representing the key of each table row
+</span><span style="color:#e6db74">            to fetch.
+</span><span style="color:#e6db74">        other_silly_variable: Another optional variable, that has a much
+</span><span style="color:#e6db74">            longer name than the other args, and which does nothing.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Returns:
+</span><span style="color:#e6db74">        A dict mapping keys to the corresponding table row data
+</span><span style="color:#e6db74">        fetched. Each row is represented as a tuple of strings. For
+</span><span style="color:#e6db74">        example:
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
+</span><span style="color:#e6db74">         &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
+</span><span style="color:#e6db74">         &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        If a key from the keys argument is missing from the dictionary,
+</span><span style="color:#e6db74">        then that row was not found in the table.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Raises:
+</span><span style="color:#e6db74">        IOError: An error occurred accessing the bigtable.Table object.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="384-classes">3.8.4 Classes</h4>
@@ -1243,23 +1293,23 @@ If your class has public attributes, they should be documented here in an
 <code>Attributes</code> section and follow the same formatting as a
 <a href="#doc-function-args">function&rsquo;s <code>Args</code></a> section.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleClass</span>(object):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Summary of class here.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Longer class information....</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Longer class information....</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Attributes:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        likes_spam: A boolean indicating if we like SPAM or not.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        eggs: An integer count of the eggs we have laid.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;Summary of class here.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Longer class information....
+</span><span style="color:#e6db74">    Longer class information....
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Attributes:
+</span><span style="color:#e6db74">        likes_spam: A boolean indicating if we like SPAM or not.
+</span><span style="color:#e6db74">        eggs: An integer count of the eggs we have laid.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
 
     <span style="color:#66d9ef">def</span> __init__(self, likes_spam<span style="color:#f92672">=</span>False):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Inits SampleClass with blah.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#e6db74">&#34;&#34;&#34;Inits SampleClass with blah.&#34;&#34;&#34;</span>
         self<span style="color:#f92672">.</span>likes_spam <span style="color:#f92672">=</span> likes_spam
         self<span style="color:#f92672">.</span>eggs <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">public_method</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Performs operation blah.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#e6db74">&#34;&#34;&#34;Performs operation blah.&#34;&#34;&#34;</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="385-block-and-inline-comments">3.8.5 Block and Inline Comments</h4>
@@ -1268,18 +1318,18 @@ to have to explain it at the next <a href="http://en.wikipedia.org/wiki/Code_rev
 review</a>, you should comment it
 now. Complicated operations get a few lines of comments before the operations
 commence. Non-obvious ones get comments at the end of the line.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># We use a weighted dictionary search to find out where i is in</span>
-<span style="color:#75715e"># the array.  We extrapolate position based on the largest num</span>
-<span style="color:#75715e"># in the array and the array size and then do binary search to</span>
-<span style="color:#75715e"># get the exact number.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># We use a weighted dictionary search to find out where i is in</span>
+<span style="color:#75715e"># the array.  We extrapolate position based on the largest num</span>
+<span style="color:#75715e"># in the array and the array size and then do binary search to</span>
+<span style="color:#75715e"># get the exact number.</span>
 
-<span style="color:#66d9ef">if</span> i <span style="color:#f92672">&amp;</span> (i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># True if i is 0 or a power of 2.</span>
+<span style="color:#66d9ef">if</span> i <span style="color:#f92672">&amp;</span> (i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:  <span style="color:#75715e"># True if i is 0 or a power of 2.</span>
 </code></pre></div><p>To improve legibility, these comments should be at least 2 spaces away from the
 code.</p>
 <p>On the other hand, never describe the code. Assume the person reading the code
 knows Python (though not what you&rsquo;re trying to do) better than you do.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># BAD COMMENT: Now go through the b array and make sure whenever i occurs</span>
-<span style="color:#75715e"># the next element is i+1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># BAD COMMENT: Now go through the b array and make sure whenever i occurs</span>
+<span style="color:#75715e"># the next element is i+1</span>
 </code></pre></div><!-- raw HTML omitted -->
 <p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
@@ -1310,7 +1360,7 @@ punctuation, spelling, and grammar help with that goal.</p>
 
 
      <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildClass</span>(ParentClass):
-         <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Explicitly inherits from another class already.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+         <span style="color:#e6db74">&#34;&#34;&#34;Explicitly inherits from another class already.&#34;&#34;&#34;</span>
 
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No: <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleClass</span>:
         <span style="color:#66d9ef">pass</span>
@@ -1332,53 +1382,53 @@ including <code>__new__</code>, <code>__init__</code>, <code>__delattr__</code>,
 the parameters are all strings. Use your best judgement to decide between <code>+</code>
 and <code>%</code> (or <code>format</code>) though.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: x <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b
-     x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">!</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (imperative, expletive)
-     x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}, {}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(first, second)
-     x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">name: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">; score: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (name, n)
-     x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">name: {}; score: {}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(name, n)
-     x <span style="color:#f92672">=</span> f<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">name: {name}; score: {n}</span><span style="color:#e6db74">&#39;</span>  <span style="color:#75715e"># Python 3.6+</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No: x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (a, b)  <span style="color:#75715e"># use + in this case</span>
-    x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(a, b)  <span style="color:#75715e"># use + in this case</span>
-    x <span style="color:#f92672">=</span> first <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">, </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> second
-    x <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">name: </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">; score: </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> str(n)
+     x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">!&#39;</span> <span style="color:#f92672">%</span> (imperative, expletive)
+     x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}, {}&#39;</span><span style="color:#f92672">.</span>format(first, second)
+     x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">; score: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (name, n)
+     x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name: {}; score: {}&#39;</span><span style="color:#f92672">.</span>format(name, n)
+     x <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;name: {name}; score: {n}&#39;</span>  <span style="color:#75715e"># Python 3.6+</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No: x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (a, b)  <span style="color:#75715e"># use + in this case</span>
+    x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}{}&#39;</span><span style="color:#f92672">.</span>format(a, b)  <span style="color:#75715e"># use + in this case</span>
+    x <span style="color:#f92672">=</span> first <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> second
+    x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name: &#39;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;; score: &#39;</span> <span style="color:#f92672">+</span> str(n)
 </code></pre></div><p>Avoid using the <code>+</code> and <code>+=</code> operators to accumulate a string within a loop.
 Since strings are immutable, this creates unnecessary temporary objects and
 results in quadratic rather than linear running time. Instead, add each
 substring to a list and <code>''.join</code> the list after the loop terminates (or, write
 each substring to a <code>io.BytesIO</code> buffer).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: items <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;table&gt;</span><span style="color:#e6db74">&#39;</span>]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes: items <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&lt;table&gt;&#39;</span>]
      <span style="color:#66d9ef">for</span> last_name, first_name <span style="color:#f92672">in</span> employee_list:
-         items<span style="color:#f92672">.</span>append(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;tr&gt;&lt;td&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/td&gt;&lt;/tr&gt;</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (last_name, first_name))
-     items<span style="color:#f92672">.</span>append(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;/table&gt;</span><span style="color:#e6db74">&#39;</span>)
-     employee_table <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(items)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No: employee_table <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;table&gt;</span><span style="color:#e6db74">&#39;</span>
+         items<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;&lt;tr&gt;&lt;td&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/td&gt;&lt;/tr&gt;&#39;</span> <span style="color:#f92672">%</span> (last_name, first_name))
+     items<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;&lt;/table&gt;&#39;</span>)
+     employee_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(items)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No: employee_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;table&gt;&#39;</span>
     <span style="color:#66d9ef">for</span> last_name, first_name <span style="color:#f92672">in</span> employee_list:
-        employee_table <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;tr&gt;&lt;td&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/td&gt;&lt;/tr&gt;</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (last_name, first_name)
-    employee_table <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&lt;/table&gt;</span><span style="color:#e6db74">&#39;</span>
+        employee_table <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;tr&gt;&lt;td&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/td&gt;&lt;/tr&gt;&#39;</span> <span style="color:#f92672">%</span> (last_name, first_name)
+    employee_table <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/table&gt;&#39;</span>
 </code></pre></div><p>Be consistent with your choice of string quote character within a file. Pick <code>'</code>
 or <code>&quot;</code> and stick with it. It is okay to use the other quote character on a
 string to avoid the need to <code>\\</code> escape within the string. <code>gpylint</code> enforces
 this.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
-  Python(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Why are you hiding your eyes?</span><span style="color:#e6db74">&#39;</span>)
-  Gollum(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">I</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">m scared of lint errors.</span><span style="color:#e6db74">&#34;</span>)
-  Narrator(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Good!</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> thought a happy Python reviewer.</span><span style="color:#e6db74">&#39;</span>)
+  Python(<span style="color:#e6db74">&#39;Why are you hiding your eyes?&#39;</span>)
+  Gollum(<span style="color:#e6db74">&#34;I&#39;m scared of lint errors.&#34;</span>)
+  Narrator(<span style="color:#e6db74">&#39;&#34;Good!&#34; thought a happy Python reviewer.&#39;</span>)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
-  Python(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Why are you hiding your eyes?</span><span style="color:#e6db74">&#34;</span>)
-  Gollum(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">The lint. It burns. It burns us.</span><span style="color:#e6db74">&#39;</span>)
-  Gollum(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Always the great lint. Watching. Watching.</span><span style="color:#e6db74">&#34;</span>)
+  Python(<span style="color:#e6db74">&#34;Why are you hiding your eyes?&#34;</span>)
+  Gollum(<span style="color:#e6db74">&#39;The lint. It burns. It burns us.&#39;</span>)
+  Gollum(<span style="color:#e6db74">&#34;Always the great lint. Watching. Watching.&#34;</span>)
 </code></pre></div><p>Prefer <code>&quot;&quot;&quot;</code> for multi-line strings rather than <code>'''</code>. Projects may choose to
 use <code>'''</code> for all non-docstring multi-line strings if and only if they also use
 <code>'</code> for regular strings. Docstrings must use <code>&quot;&quot;&quot;</code> regardless. Note that it is
 often cleaner to use implicit line joining since multi-line strings do not flow
 with the indentation of the rest of the program:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  Yes:
-  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">This is much nicer.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Do it this way.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;This is much nicer.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#e6db74">&#34;Do it this way.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  No:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">This is pretty ugly.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">Don</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">t do this.</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;&#34;&#34;This is pretty ugly.
+</span><span style="color:#e6db74">Don&#39;t do this.
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>)
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="311-files-and-sockets">3.11 Files and Sockets</h3>
@@ -1409,14 +1459,14 @@ may keep it around longer than intended.</li>
 </ul>
 <p>The preferred way to manage files is using the <a href="http://docs.python.org/reference/compound_stmts.html#the-with-statement">&ldquo;with&rdquo;
 statement</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello.txt</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">as</span> hello_file:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;hello.txt&#34;</span>) <span style="color:#66d9ef">as</span> hello_file:
     <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> hello_file:
         <span style="color:#66d9ef">print</span>(line)
 </code></pre></div><p>For file-like objects that do not support the &ldquo;with&rdquo; statement, use
 <code>contextlib.closing()</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> contextlib
 
-<span style="color:#66d9ef">with</span> contextlib<span style="color:#f92672">.</span>closing(urllib<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://www.python.org/</span><span style="color:#e6db74">&#34;</span>)) <span style="color:#66d9ef">as</span> front_page:
+<span style="color:#66d9ef">with</span> contextlib<span style="color:#f92672">.</span>closing(urllib<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74">&#34;http://www.python.org/&#34;</span>)) <span style="color:#66d9ef">as</span> front_page:
     <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> front_page:
         <span style="color:#66d9ef">print</span>(line)
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
@@ -1433,8 +1483,8 @@ out how to get more details. A <code>TODO</code> is not a commitment that the pe
 referenced will fix the problem. Thus when you create a
 <code>TODO</code>, it is almost always your name
 that is given.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># TODO(kl@gmail.com): Use a &#34;*&#34; here for string repetition.</span>
-<span style="color:#75715e"># TODO(Zeke) Change this to use relations.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># TODO(kl@gmail.com): Use a &#34;*&#34; here for string repetition.</span>
+<span style="color:#75715e"># TODO(Zeke) Change this to use relations.</span>
 </code></pre></div><p>If your <code>TODO</code> is of the form &ldquo;At a future date do something&rdquo; make sure that you
 either include a very specific date (&ldquo;Fix by November 2009&rdquo;) or a very specific
 event (&ldquo;Remove this code when all clients can handle XML responses.&quot;).</p>
@@ -1495,9 +1545,9 @@ line between import sections.</p>
 <span style="color:#f92672">from</span> otherproject.ai <span style="color:#f92672">import</span> mind
 <span style="color:#f92672">from</span> otherproject.ai <span style="color:#f92672">import</span> soul
 
-<span style="color:#75715e"># Older style code may have these imports down here instead:</span>
-<span style="color:#75715e">#from myproject.backend.hgwells import time_machine</span>
-<span style="color:#75715e">#from myproject.backend.state_machine import main_loop</span>
+<span style="color:#75715e"># Older style code may have these imports down here instead:</span>
+<span style="color:#75715e">#from myproject.backend.hgwells import time_machine</span>
+<span style="color:#75715e">#from myproject.backend.state_machine import main_loop</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="314-statements">3.14 Statements</h3>
@@ -1635,9 +1685,9 @@ functionality. The main functionality should be in a <code>main()</code> functio
 code should always check <code>if __name__ == '__main__'</code> before executing your main
 program so that the main program is not executed when the module is imported.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    <span style="color:#f92672">...</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     main()
 </code></pre></div><p>All code at the top level will be executed when the module is imported. Be
 careful not to call functions, create objects, or perform other operations that
@@ -1691,33 +1741,33 @@ too much flexibility.</li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self,
               first_var: int,
               second_var: Foo,
-              third_var: Optional[Bar]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> int:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+              third_var: Optional[Bar]) <span style="color:#f92672">-&gt;</span> int:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>Always prefer breaking between variables, and not for example between variable
 names and type annotations. However, if everything fits on the same line,
 go for it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self, first_var: int) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> int:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self, first_var: int) <span style="color:#f92672">-&gt;</span> int:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>If the combination of the function name, the last parameter, and the return type
 is too long, indent by 4 in a new line.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(
-    self, first_var: int) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Tuple[MyLongType1, MyLongType1]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    self, first_var: int) <span style="color:#f92672">-&gt;</span> Tuple[MyLongType1, MyLongType1]:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>When the return type does not fit on the same line as the last parameter, the
 preferred way is to indent the parameters by 4 on a new line and align the
 closing parenthesis with the def.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(
-    self, <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kw_args: Optional[MyLongType]
-) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict[OtherLongType, MyLongType]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    self, <span style="color:#f92672">**</span>kw_args: Optional[MyLongType]
+) <span style="color:#f92672">-&gt;</span> Dict[OtherLongType, MyLongType]:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p><code>pylint</code> allows you to move the closing parenthesis to a new line and align
 with the opening one, but this is less readable.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self,
-              <span style="color:#f92672">*</span><span style="color:#f92672">*</span>kw_args: Optional[MyLongType]
-             ) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict[OtherLongType, MyLongType]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+              <span style="color:#f92672">**</span>kw_args: Optional[MyLongType]
+             ) <span style="color:#f92672">-&gt;</span> Dict[OtherLongType, MyLongType]:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>As in the examples above, prefer not to break types. However, sometimes they are
 too long to be on a single line (try to keep sub-types unbroken).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(
@@ -1725,8 +1775,8 @@ too long to be on a single line (try to keep sub-types unbroken).</p>
     first_var: Tuple[List[MyLongType1],
                      List[MyLongType2]],
     second_var: List[Dict[
-        MyLongType3, MyLongType4]]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+        MyLongType3, MyLongType4]]) <span style="color:#f92672">-&gt;</span> None:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>If a single name and type is too long, consider using an
 <a href="#typing-aliases">alias</a> for the type. The last resort is to break after the
 colon and indent by 4.</p>
@@ -1734,14 +1784,14 @@ colon and indent by 4.</p>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_function</span>(
     long_variable_name:
         long_module_name<span style="color:#f92672">.</span>LongTypeName,
-) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+) <span style="color:#f92672">-&gt;</span> None:
+  <span style="color:#f92672">...</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_function</span>(
     long_variable_name: long_module_name<span style="color:#f92672">.</span>
         LongTypeName,
-) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+) <span style="color:#f92672">-&gt;</span> None:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3193-forward-declarations">3.19.3 Forward Declarations</h4>
@@ -1751,7 +1801,7 @@ class that is defined below &ndash; use a string for the class name.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>(object):
 
   <span style="color:#66d9ef">def</span> __init__(self,
-               stack: List[<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MyClass</span><span style="color:#e6db74">&#34;</span>]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
+               stack: List[<span style="color:#e6db74">&#34;MyClass&#34;</span>]) <span style="color:#f92672">-&gt;</span> None:
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3194-default-values">3.19.4 Default Values</h4>
@@ -1760,11 +1810,11 @@ class that is defined below &ndash; use a string for the class name.</p>
 spaces around the <code>=</code> <em>only</em> for arguments that have both a type annotation and
 a default value.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> int:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">-&gt;</span> int:
+  <span style="color:#f92672">...</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a:int<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> int:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a:int<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">-&gt;</span> int:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3195-nonetype">3.19.5 NoneType</h4>
@@ -1776,15 +1826,15 @@ use <code>Optional</code>.</p>
 484 allowed <code>a: Text = None</code> to be interpretted as <code>a: Optional[Text] = None</code>,
 but that is no longer the preferred behavior.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Yes:
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: Optional[Text], b: Optional[Text] <span style="color:#f92672">=</span> None) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Text:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiple_nullable_union</span>(a: Union[None, Text, int]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Text
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(a: Optional[Text], b: Optional[Text] <span style="color:#f92672">=</span> None) <span style="color:#f92672">-&gt;</span> Text:
+  <span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiple_nullable_union</span>(a: Union[None, Text, int]) <span style="color:#f92672">-&gt;</span> Text
+  <span style="color:#f92672">...</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nullable_union</span>(a: Union[None, Text]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Text:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">implicit_optional</span>(a: Text <span style="color:#f92672">=</span> None) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Text:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nullable_union</span>(a: Union[None, Text]) <span style="color:#f92672">-&gt;</span> Text:
+  <span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">implicit_optional</span>(a: Text <span style="color:#f92672">=</span> None) <span style="color:#f92672">-&gt;</span> Text:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3196-type-aliases">3.19.6 Type Aliases</h4>
@@ -1802,22 +1852,22 @@ function (as a tuple).</p>
 <p>You can disable type checking on a line with the special comment
 <code># type: ignore</code>.</p>
 <p><code>pytype</code> has a disable option for specific errors (similar to lint):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># pytype: disable=attribute-error</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># pytype: disable=attribute-error</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3198-typing-internal-variables">3.19.8 Typing internal variables</h4>
 <p>If an internal variable has a type that is hard or impossible to infer, you can
 supply it as a special comment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> SomeUndecoratedFunction()  <span style="color:#75715e"># type: Foo</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> SomeUndecoratedFunction()  <span style="color:#75715e"># type: Foo</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="3199-tuples-vs-lists">3.19.9 Tuples vs Lists</h4>
 <p>Unlike Lists, which can only have a single type, Tuples can have either a single
 repeated type or a set number of elements with different types. The latter is
 commonly used as return type from a function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]  <span style="color:#75715e"># type: List[int]</span>
-b <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)  <span style="color:#75715e"># type: Tuple[int, ...]</span>
-c <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">2</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">3.5</span>)  <span style="color:#75715e"># type: Tuple[int, Text, float]</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]  <span style="color:#75715e"># type: List[int]</span>
+b <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)  <span style="color:#75715e"># type: Tuple[int, ...]</span>
+c <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#ae81ff">3.5</span>)  <span style="color:#75715e"># type: Tuple[int, Text, float]</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="31910-typevar">3.19.10 TypeVar</h4>
@@ -1826,20 +1876,20 @@ c <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>, <s
 function <code>TypeVar</code> is a common way to use them.</p>
 <p>Example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, TypeVar
-T <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">T</span><span style="color:#e6db74">&#34;</span>)
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">next</span>(l: List[T]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> T:
+T <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74">&#34;T&#34;</span>)
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">next</span>(l: List[T]) <span style="color:#f92672">-&gt;</span> T:
   <span style="color:#66d9ef">return</span> l<span style="color:#f92672">.</span>pop()
 </code></pre></div><p>A TypeVar can be constrained:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">AddableType <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">AddableType</span><span style="color:#e6db74">&#34;</span>, int, float, Text)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(a: AddableType, b: AddableType) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> AddableType:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">AddableType <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74">&#34;AddableType&#34;</span>, int, float, Text)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(a: AddableType, b: AddableType) <span style="color:#f92672">-&gt;</span> AddableType:
   <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b
 </code></pre></div><p>A common predefined type variable in the <code>typing</code> module is <code>AnyStr</code>. Use it for
 multiple annotations that can be <code>bytes</code> or <code>unicode</code> and must all be the same
 type.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> AnyStr
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_length</span>(x: AnyStr) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> AnyStr:
-  <span style="color:#66d9ef">if</span> len(x) <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>:
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_length</span>(x: AnyStr) <span style="color:#f92672">-&gt;</span> AnyStr:
+  <span style="color:#66d9ef">if</span> len(x) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">42</span>:
     <span style="color:#66d9ef">return</span> x
   <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>()
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
@@ -1856,28 +1906,28 @@ Python 3.</p>
 <p>The reason this discreprency exists is because <code>str</code> means different things
 depending on the Python version.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">No:
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_code</span>(x: str) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> unicode:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_code</span>(x: str) <span style="color:#f92672">-&gt;</span> unicode:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>For code that deals with binary data, use <code>bytes</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deals_with_binary_data</span>(x: bytes) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> bytes:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deals_with_binary_data</span>(x: bytes) <span style="color:#f92672">-&gt;</span> bytes:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>For Python 2 compatible code that processes text data (<code>str</code> or <code>unicode</code> in
 Python 2, <code>str</code> in Python 3), use <code>Text</code>. For Python 3 only code that process
 text data, prefer <code>str</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Text
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_compatible</span>(x: Text) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Text:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py3_only</span>(x: str) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> str:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_compatible</span>(x: Text) <span style="color:#f92672">-&gt;</span> Text:
+  <span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py3_only</span>(x: str) <span style="color:#f92672">-&gt;</span> str:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>If the type can be either bytes or text, use <code>Union</code>, with the appropriate text
 type.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Text, Union
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_compatible</span>(x: Union[bytes, Text]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Union[bytes, Text]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py3_only</span>(x: Union[bytes, str]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Union[bytes, str]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py2_compatible</span>(x: Union[bytes, Text]) <span style="color:#f92672">-&gt;</span> Union[bytes, Text]:
+  <span style="color:#f92672">...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py3_only</span>(x: Union[bytes, str]) <span style="color:#f92672">-&gt;</span> Union[bytes, str]:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>If all the string types of a function are always the same, for example if the
 return type is the same as the argument type in the code above, use
 <a href="#typing-type-var">AnyStr</a>.</p>
@@ -1918,7 +1968,7 @@ not be imported at runtime.</li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> typing
 <span style="color:#66d9ef">if</span> typing<span style="color:#f92672">.</span>TYPE_CHECKING:
   <span style="color:#f92672">import</span> sketch
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">sketch.Sketch</span><span style="color:#e6db74">&#34;</span>): <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x: <span style="color:#e6db74">&#34;sketch.Sketch&#34;</span>): <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="31914-circular-dependencies">3.19.14 Circular Dependencies</h4>
@@ -1932,32 +1982,32 @@ this module (any attribute of Any is Any). Alias definitions should be separated
 from the last import by one line.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Any
 
-some_mod <span style="color:#f92672">=</span> Any  <span style="color:#75715e"># some_mod.py imports this module.</span>
-<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+some_mod <span style="color:#f92672">=</span> Any  <span style="color:#75715e"># some_mod.py imports this module.</span>
+<span style="color:#f92672">...</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self, var: some_mod<span style="color:#f92672">.</span>SomeType) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> None:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_method</span>(self, var: some_mod<span style="color:#f92672">.</span>SomeType) <span style="color:#f92672">-&gt;</span> None:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="31915-generics">3.19.15 Generics</h4>
 <p>When annotating, prefer to specify type parameters for generic types; otherwise,
-<a href="https://www.python.org/dev/peps/pep-0484/#the-any-type">the generics&rsquo; parameters will be assumed to be <code>Any</code></a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[int]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict[int, Any]:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># These are both interpreted as get_names(employee_ids: List[Any]) -&gt; Dict[Any, Any]</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: list) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<a href="https://www.python.org/dev/peps/pep-0484/#the-any-type">the generics' parameters will be assumed to be <code>Any</code></a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[int]) <span style="color:#f92672">-&gt;</span> Dict[int, Any]:
+  <span style="color:#f92672">...</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># These are both interpreted as get_names(employee_ids: List[Any]) -&gt; Dict[Any, Any]</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: list) <span style="color:#f92672">-&gt;</span> Dict:
+  <span style="color:#f92672">...</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict:
-  <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List) <span style="color:#f92672">-&gt;</span> Dict:
+  <span style="color:#f92672">...</span>
 </code></pre></div><p>If the best type parameter for a generic is <code>Any</code>, make it explicit, but
 remember that in many cases <a href="#typing-type-var"><code>TypeVar</code></a> might be more
 appropriate:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[Any]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict[Any, Text]:
-  <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Returns a mapping from employee ID to employee name for given IDs.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">T <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">T</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[T]) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> Dict[T, Text]:
-  <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Returns a mapping from employee ID to employee name for given IDs.</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[Any]) <span style="color:#f92672">-&gt;</span> Dict[Any, Text]:
+  <span style="color:#e6db74">&#34;&#34;&#34;Returns a mapping from employee ID to employee name for given IDs.&#34;&#34;&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">T <span style="color:#f92672">=</span> TypeVar(<span style="color:#e6db74">&#39;T&#39;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_names</span>(employee_ids: List[T]) <span style="color:#f92672">-&gt;</span> Dict[T, Text]:
+  <span style="color:#e6db74">&#34;&#34;&#34;Returns a mapping from employee ID to employee name for given IDs.&#34;&#34;&#34;</span>
 </code></pre></div><h2 id="4-parting-words">4 Parting Words</h2>
 <p><em>BE CONSISTENT</em>.</p>
 <p>If you&rsquo;re editing code, take a few minutes to look at the code around you and
@@ -1970,19 +2020,85 @@ it. We present global style rules here so people know the vocabulary, but local
 style is also important. If code you add to a file looks drastically different
 from the existing code around it, it throws readers out of their rhythm when
 they go to read it. Avoid this.</p>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+        <a href="/tags/reproduce">Reproduce</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0007.py/">SMTC 0007.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0006.py/">SMTC 0006.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-library/">Python Library</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0000.py/">SMTC 0000.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-note/">Python Note</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

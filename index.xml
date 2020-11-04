@@ -5,12 +5,9 @@
     <link>/</link>
     <description>Recent content in Home on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
       <link>/post/leetcode/</link>
@@ -33,8 +30,8 @@
         &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;(n)
         {
-            c&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;;
-            n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;//逐次获取最低非0 bit位
+            c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+            n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;=&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;//逐次获取最低非0 bit位
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; c;
     }
@@ -44,15 +41,15 @@
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;(object):
     &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hammingWeight&lt;/span&gt;(self, n):
-        &lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :type n: int&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :rtype: int&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :type n: int
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :rtype: int
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
         res&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
         mask&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;):
             &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;mask:  &lt;span style=&#34;color:#75715e&#34;&gt;# &amp;amp;：按位与&lt;/span&gt;
-                res&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                res&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
             mask&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mask&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
             &lt;span style=&#34;color:#75715e&#34;&gt;# n=n&amp;gt;&amp;gt;1    #n移位或者mask移位&lt;/span&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; res
@@ -68,18 +65,18 @@
     vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; lexicalOrder(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n) {
         vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; res;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; cur&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n;i&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n;i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
         {
             res.push_back(cur);
-            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n)   &lt;span style=&#34;color:#75715e&#34;&gt;//首先判断能否直接再后面加0
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
-            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n)  &lt;span style=&#34;color:#75715e&#34;&gt;//正常情况下+1
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n)   &lt;span style=&#34;color:#75715e&#34;&gt;//首先判断能否直接再后面加0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;*=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n)  &lt;span style=&#34;color:#75715e&#34;&gt;//正常情况下+1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
             &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
             {
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;((cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;)   &lt;span style=&#34;color:#75715e&#34;&gt;//处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;((cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;)   &lt;span style=&#34;color:#75715e&#34;&gt;//处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                {
-                    cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+                    cur&lt;span style=&#34;color:#f92672&#34;&gt;/=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
                 }
                 cur&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;//这一轮个位结束，从上一位+1继续开始
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            } 
@@ -140,7 +137,7 @@ return 2.
       <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
       
       <guid>/note/linux-%E5%9F%BA%E7%A1%80/</guid>
-      <description>zsh sudo yum -y install zshchsh -s /bin/zsh# curlsh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;# wgetsh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;ls ~/.oh-my-zsh/themesvim ~/.zshrcZSH_THEME=&amp;quot;ys&amp;quot;source ~/.zshrc# 命令补全git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestionsvim ~/.zshrcplugins=(gitzsh-autosuggestions)source ~/.zshrcDocker # centossudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-enginesudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2sudo yum-config-manager \ --add-repo \ https://download.</description>
+      <description>zsh sudo yum -y install zshchsh -s /bin/zsh# curlsh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;# wgetsh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;ls ~/.oh-my-zsh/themesvim ~/.zshrcZSH_THEME=&amp;quot;ys&amp;quot;source ~/.zshrc# 命令补全git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestionsvim ~/.zshrcplugins=(gitzsh-autosuggestions)source ~/.zshrcDocker # centos sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 sudo yum-config-manager \  --add-repo \  https://download.</description>
     </item>
     
     <item>
@@ -149,7 +146,7 @@ return 2.
       <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
       
       <guid>/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/</guid>
-      <description>人生苦短，我用Docker  使用服务器Docker服务搭建Deepo-jupyter深度学习框架  使用服务器Docker服务搭建Deepo-jupyter深度学习框架 # 需要保证服务器已经安装docker以及nvidia-docker# 首先服务器拉取deepo镜像# 注意换源，不然会非常慢的docker pull ufoym/deepo:all-py36-jupyter# 开启deepo# -it 保持输入与交互# -p 端口映射，服务器的7777映射到docker的8888# -v 文件保存# --name 设置容器名字docker run --runtime=nvidia -it -p 7890:7890 --ipc=host -v /home/liuzh/lau/:/lau --name deepo-all36 ufoym/deepo:all-py36-cu100# 注意下次启动直接使用容器，不需要重新创建docker container start deepo-jupyterdocker container attach deepo-jupyter# 启动jupyter-notebooknohup jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=&amp;#39;/Projects&amp;#39;# 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射# 本地1234映射到host的127.0.0.1:7777ssh username@host-ip -L 1234:127.0.0.1:7777## 设置alias# 本地alias ssh-jupyter=&amp;#34;ssh -p 22 name@ip -L 1234:127.</description>
+      <description>人生苦短，我用Docker  使用服务器Docker服务搭建Deepo-jupyter深度学习框架  使用服务器Docker服务搭建Deepo-jupyter深度学习框架 # 需要保证服务器已经安装docker以及nvidia-docker # 首先服务器拉取deepo镜像 # 注意换源，不然会非常慢的 docker pull ufoym/deepo:all-py36-jupyter # 开启deepo # -it 保持输入与交互 # -p 端口映射，服务器的7777映射到docker的8888 # -v 文件保存 # --name 设置容器名字 docker run --runtime=nvidia -it -p 7890:7890 --ipc=host -v /home/liuzh/lau/:/lau --name deepo-all36 ufoym/deepo:all-py36-cu100 # 注意下次启动直接使用容器，不需要重新创建 docker container start deepo-jupyter docker container attach deepo-jupyter # 启动jupyter-notebook nohup jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=&amp;#39;/Projects&amp;#39; # 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射 # 本地1234映射到host的127.0.0.1:7777 ssh username@host-ip -L 1234:127.0.0.1:7777 # # 设置alias # 本地 alias ssh-jupyter=&amp;#34;ssh -p 22 name@ip -L 1234:127.</description>
     </item>
     
     <item>
@@ -161,7 +158,7 @@ return 2.
       <description>安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro rufus
 更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
 # 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加# 中国区镜像排序，一般选择前两个镜像，选择一个作为备用sudo pacman-mirrors -i -c China -m rank同步更新 sudo pacman -Syyu添加Arch Linux 中文社区仓库 在 /etc/pacman.conf 文件末尾添加以下内容：
-[archlinuxcn]# SigLevel = Optional TrustedOnlySigLevel = Optional TrustAllServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$archZSH # 安装zshsudo pacman -S zsh# 安装oh-my-zshsh -c &amp;#34;$wgethttps://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)”# 使用zsh替换bashchsh -s /bin/zsh# 修改.</description>
+[archlinuxcn]# SigLevel = Optional TrustedOnlySigLevel = Optional TrustAllServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$archZSH # 安装zsh sudo pacman -S zsh # 安装oh-my-zsh sh -c &amp;#34;$wgethttps://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)” # 使用zsh替换bash chsh -s /bin/zsh # 修改.</description>
     </item>
     
     <item>
@@ -309,7 +306,7 @@ return 2.
       <guid>/note/smtc-0007.py/</guid>
       <description>show-me-the-code 完整题目
 题目 第 0007 题： 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。
-思路  遍历文件夹下的文件 获取后缀名，找到py文件 遍历文件的每一行 如果是空的则说明是空行 用正则匹配#注释符号 统计行数输出  Solution # -*- coding: utf-8 -*- import osimport redef parse_code(filesPath):if not os.path.isdir(filesPath):return# 正则匹配# exp_re = re.compile(&amp;#39;^#.*&amp;#39;)fileList = os.listdir(filesPath)print(&amp;#39;{0}\t{1}\t{2}\t{3}&amp;#39;.format(&amp;#39;fileName&amp;#39;,&amp;#39;all_lines&amp;#39;, &amp;#39;space_lines&amp;#39;, &amp;#39;exp_lines&amp;#39;))for file in fileList:filePath = os.path.join(filesPath, file)if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == &amp;#39;.py&amp;#39;:with open(filePath) as code:all_lines = 0space_lines = 0exp_lines = 0for line in code.</description>
+思路  遍历文件夹下的文件 获取后缀名，找到py文件 遍历文件的每一行 如果是空的则说明是空行 用正则匹配#注释符号 统计行数输出  Solution # -*- coding: utf-8 -*- import os import re def parse_code(filesPath): if not os.path.isdir(filesPath): return # 正则匹配# exp_re = re.compile(&amp;#39;^#.*&amp;#39;) fileList = os.listdir(filesPath) print(&amp;#39;{0}\t{1}\t{2}\t{3}&amp;#39;.format(&amp;#39;fileName&amp;#39;, &amp;#39;all_lines&amp;#39;, &amp;#39;space_lines&amp;#39;, &amp;#39;exp_lines&amp;#39;)) for file in fileList: filePath = os.path.join(filesPath, file) if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == &amp;#39;.py&amp;#39;: with open(filePath) as code: all_lines = 0 space_lines = 0 exp_lines = 0 for line in code.</description>
     </item>
     
     <item>
@@ -318,7 +315,7 @@ return 2.
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
       <guid>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
-      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;**2019㊗️大家🐷年大吉！**&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
+      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
@@ -329,7 +326,7 @@ return 2.
       <guid>/note/smtc-0006.py/</guid>
       <description>show-me-the-code 完整题目
 题目 第 0006 题： 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。
-思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import osdef GetTF(filesPath):if not os.path.isdir(filesPath):returnfiles=os.listdir(filesPath)for file in files:filePath=os.path.join(filesPath,file)# 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;:with open(filePath) as text:content=text.read()# 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;:content=content.replace(char, &amp;#39;&amp;#39;)content=content.lower()wordList=content.split()wordDic={}# 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;]for word in wordList:if word in exceptWord:continueif word in wordDic:wordDic[word]+=1else:wordDic[word]=1# 倒序排序 res=sorted(wordDic.</description>
+思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import os def GetTF(filesPath): if not os.path.isdir(filesPath): return files=os.listdir(filesPath) for file in files: filePath=os.path.join(filesPath,file) # 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;: with open(filePath) as text: content=text.read() # 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;: content=content.replace(char, &amp;#39; &amp;#39;) content=content.lower() wordList=content.split() wordDic={} # 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;] for word in wordList: if word in exceptWord: continue if word in wordDic: wordDic[word]+=1 else: wordDic[word]=1 # 倒序排序 res=sorted(wordDic.</description>
     </item>
     
     <item>
@@ -355,10 +352,10 @@ return 2.
 题目 第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果：
 思路 利用Pillow模块中提供的ImageDraw在图片上画图形或者文字。
 首先打开图片，使用Image.open()，在这之前需要导入pillow模块库，import PIL。
-# Creates an object that can be used to draw in the given image. # PIL.ImageDraw.Draw(im, mode=None) imgDraw = ImageDraw.Draw(image)设置填充字体以及颜色，获取图片大小，好设置填充位置
-# 颜色 fillColor = &amp;#39;#ff0000&amp;#39;# 大小 width, height = image.size# 字体 myFont = ImageFont.truetype(&amp;#39;/Library/Fonts/Tahoma.ttf&amp;#39;, size=width//10)接着imgDraw.text((width-100, 0), &#39;hello&#39;, *fill*=fillColor, *font*=myFont)，填充数字或者单词。
+# Creates an object that can be used to draw in the given image. # PIL.ImageDraw.Draw(im, mode=None) imgDraw = ImageDraw.Draw(image) 设置填充字体以及颜色，获取图片大小，好设置填充位置
+# 颜色 fillColor = &amp;#39;#ff0000&amp;#39; # 大小 width, height = image.size # 字体 myFont = ImageFont.truetype(&amp;#39;/Library/Fonts/Tahoma.ttf&amp;#39;, size=width//10) 接着imgDraw.text((width-100, 0), &#39;hello&#39;, *fill*=fillColor, *font*=myFont)，填充数字或者单词。
 保存图片完成。
-Solution # -*- coding:utf-8 -*- import PILfrom PIL import Imagefrom PIL import ImageDrawfrom PIL import ImageFontdef add_num(imgName):# 打开图片 image = Image.</description>
+Solution # -*- coding:utf-8 -*- import PIL from PIL import Image from PIL import ImageDraw from PIL import ImageFont def add_num(imgName): # 打开图片 image = Image.</description>
     </item>
     
     <item>
@@ -405,7 +402,7 @@ Solution # -*- coding:utf-8 -*- import PILfrom PIL import Imagefrom PIL impor
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
       <guid>/note/vscode-customised/</guid>
-      <description>USER SETTINGS Windows {&amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;,&amp;#34;editor.minimap.enabled&amp;#34;: false,&amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,&amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;,&amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;,&amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false,&amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;,&amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;,&amp;#34;latex-workshop.latex.tools&amp;#34;: [{&amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;-pdf&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;-synctex=1&amp;#34;,&amp;#34;-interaction=nonstopmode&amp;#34;,&amp;#34;-file-line-error&amp;#34;,&amp;#34;%DOC%&amp;#34;]},{&amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;,&amp;#34;args&amp;#34;: [&amp;#34;%DOCFILE%&amp;#34;]}],&amp;#34;latex-workshop.</description>
+      <description>USER SETTINGS Windows { &amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;, &amp;#34;editor.minimap.enabled&amp;#34;: false, &amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;, &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;, &amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;, &amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;, &amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false, &amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;, &amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;, &amp;#34;latex-workshop.latex.tools&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;-pdf&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;%DOCFILE%&amp;#34; ] } ], &amp;#34;latex-workshop.</description>
     </item>
     
     <item>
@@ -531,7 +528,7 @@ Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法
       <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
       
       <guid>/note/vim-note/</guid>
-      <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾G ##注意大写:1,:d ## 删除全部内容 删除部分内容  ## 定位到要删除的文档末尾200G:9,:d ##删除9-200之间的内容复制粘贴 # 复制当前行yy# 在当前行粘贴p查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
+      <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾 G ##注意大写 :1,:d ## 删除全部内容  删除部分内容  ## 定位到要删除的文档末尾 200G :9,:d ##删除9-200之间的内容 复制粘贴 # 复制当前行 yy # 在当前行粘贴 p 查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
 Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
  注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。
  查找当前单词 在normal模式下按下*即可查找光标所在单词（word）， 要求每次出现的前后为空白字符或标点符号。例如当前为foo， 可以匹配foo bar中的foo，但不可匹配foobar中的foo。 这在查找函数名、变量名时非常有用。
@@ -570,10 +567,10 @@ Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quo
       
       <guid>/note/hello-world/</guid>
       <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34;More info: Writing
-Run server $ hexo serverMore info: Server
-Generate static files $ hexo generateMore info: Generating
-Deploy to remote sites $ hexo deployMore info: Deployment</description>
+Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing
+Run server $ hexo server More info: Server
+Generate static files $ hexo generate More info: Generating
+Deploy to remote sites $ hexo deploy More info: Deployment</description>
     </item>
     
     <item>

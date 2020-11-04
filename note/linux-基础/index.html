@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Linux 基础 | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Linux 基础 |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/linux-%E5%9F%BA%E7%A1%80/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Linux 基础</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95">备忘录</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/10/20</h2>
-</div>
+    <h1 style="text-align: center;" >Linux 基础</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-10-20T19:50:00Z">October 20, 2019</time> &nbsp; 
+    
 
-<main>
-<h2 id="zsh">zsh</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        4 min
+      
+      39 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="zsh">zsh</h2>
 <pre><code>sudo yum -y install zsh
 chsh -s /bin/zsh
 # curl
@@ -60,33 +107,33 @@ plugins=(
 source ~/.zshrc
 </code></pre><h2 id="docker">Docker</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># centos</span>
-sudo yum remove docker <span style="color:#ae81ff">\</span>
-                  docker-client <span style="color:#ae81ff">\</span>
-                  docker-client-latest <span style="color:#ae81ff">\</span>
-                  docker-common <span style="color:#ae81ff">\</span>
-                  docker-latest <span style="color:#ae81ff">\</span>
-                  docker-latest-logrotate <span style="color:#ae81ff">\</span>
-                  docker-logrotate <span style="color:#ae81ff">\</span>
-                  docker-engine
-sudo yum install -y yum-utils <span style="color:#ae81ff">\</span>
-  device-mapper-persistent-data <span style="color:#ae81ff">\</span>
-  lvm2
-sudo yum-config-manager <span style="color:#ae81ff">\</span>
-    --add-repo <span style="color:#ae81ff">\</span>
-    https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum remove docker <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-client <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-client-latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-common <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-latest-logrotate <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-logrotate <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-engine
+sudo yum install -y yum-utils <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  device-mapper-persistent-data <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  lvm2
+sudo yum-config-manager <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --add-repo <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo docker run hello-world
 </code></pre></div><h3 id="nvidia-docker">NVIDIA-DOCKER</h3>
 <h4 id="centos-7-docker-ce-rhel-7475-docker-ce">CentOS 7 (docker-ce), RHEL 7.4/7.5 (docker-ce)</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers</span>
-docker volume ls -q -f driver<span style="color:#f92672">=</span>nvidia-docker | xargs -r -I<span style="color:#f92672">{</span><span style="color:#f92672">}</span> -n1 docker ps -q -a -f volume<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">}</span> | xargs -r docker rm -f
+docker volume ls -q -f driver<span style="color:#f92672">=</span>nvidia-docker | xargs -r -I<span style="color:#f92672">{}</span> -n1 docker ps -q -a -f volume<span style="color:#f92672">={}</span> | xargs -r docker rm -f
 sudo yum remove nvidia-docker
 
 <span style="color:#75715e"># Add the package repositories</span>
 distribution<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>. /etc/os-release;echo $ID$VERSION_ID<span style="color:#66d9ef">)</span>
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | <span style="color:#ae81ff">\</span>
-  sudo tee /etc/yum.repos.d/nvidia-docker.repo
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sudo tee /etc/yum.repos.d/nvidia-docker.repo
 
 <span style="color:#75715e"># Install nvidia-docker2 and reload the Docker daemon configuration</span>
 sudo yum install -y nvidia-docker2
@@ -96,15 +143,15 @@ sudo pkill -SIGHUP dockerd
 docker run --runtime<span style="color:#f92672">=</span>nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 </code></pre></div><h4 id="ubuntu-140416041804-debian-jessiestretch">Ubuntu 14.04/16.04/18.04, Debian Jessie/Stretch</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers</span>
-docker volume ls -q -f driver<span style="color:#f92672">=</span>nvidia-docker | xargs -r -I<span style="color:#f92672">{</span><span style="color:#f92672">}</span> -n1 docker ps -q -a -f volume<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">}</span> | xargs -r docker rm -f
+docker volume ls -q -f driver<span style="color:#f92672">=</span>nvidia-docker | xargs -r -I<span style="color:#f92672">{}</span> -n1 docker ps -q -a -f volume<span style="color:#f92672">={}</span> | xargs -r docker rm -f
 sudo apt-get purge -y nvidia-docker
 
 <span style="color:#75715e"># Add the package repositories</span>
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | <span style="color:#ae81ff">\</span>
-  sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sudo apt-key add -
 distribution<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>. /etc/os-release;echo $ID$VERSION_ID<span style="color:#66d9ef">)</span>
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | <span style="color:#ae81ff">\</span>
-  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
 
 <span style="color:#75715e"># Install nvidia-docker2 and reload the Docker daemon configuration</span>
@@ -128,8 +175,8 @@ Host alias
     HostName ip
     User user
     IdentityFile C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\L</span>au<span style="color:#ae81ff">\.</span>ssh<span style="color:#ae81ff">\i</span>d_rsa  <span style="color:#75715e">#private key location</span>
-    Port 80
-    ConnectTimeout 60
+    Port <span style="color:#ae81ff">80</span>
+    ConnectTimeout <span style="color:#ae81ff">60</span>
     <span style="color:#75715e"># windows</span>
     ProxyCommand C:<span style="color:#ae81ff">\P</span>rogram Files <span style="color:#f92672">(</span>x86<span style="color:#f92672">)</span><span style="color:#ae81ff">\N</span>map<span style="color:#ae81ff">\n</span>cat.exe --proxy-type socks5 --proxy ip:port %h %p
     <span style="color:#75715e"># linux</span>
@@ -171,7 +218,7 @@ apt-get update
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 更改Windows</span>
 <span style="color:#75715e"># 如果要让Windows把硬件时间当作UTC</span>
 <span style="color:#75715e"># 在CMD窗口（快捷键Win+R，输入cmd，回车）中输入如下命令，可以快速编辑注册表</span>
-Reg add HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+Reg add HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style="color:#ae81ff">1</span>
 <span style="color:#75715e"># 或者直接编辑注册表，打开注册表编辑器（快捷键Win+R，输入regedit，回车），并找到一下目录位置</span>
 <span style="color:#75715e"># 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1，重启后时间即回复正常</span>
 HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/
@@ -185,19 +232,73 @@ lsb_release -a
 cat /etc/redhat-release ## 这种方法只适合Redhat系的Linux
 cat /etc/issue
 </code></pre>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95">备忘录</a>
+        &nbsp;
+      
+        <a href="/tags/linux">Linux</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%E6%88%91%E7%94%A8docker/">人生苦短，我用Docker</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/">Manjaro备忘录</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

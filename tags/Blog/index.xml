@@ -5,12 +5,9 @@
     <link>/tags/blog/</link>
     <description>Recent content in Blog on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2019 14:57:54 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Wed, 01 May 2019 14:57:54 +0000</lastBuildDate><atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
       <link>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>

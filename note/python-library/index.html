@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Python Library | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Python Library |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/python-library/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Python Library</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/python">Python</a>
+    &nbsp;
+    
+    <a href="/categories/library">Library</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/01/29</h2>
-</div>
+    <h1 style="text-align: center;" >Python Library</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-01-29T22:42:51Z">January 29, 2019</time> &nbsp; 
+    
 
-<main>
-<h2 id="description">Description</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        7 min
+      
+      52 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
 <blockquote>
 <p>汇总使用过的Python库</p>
 <p>简单记一下模块功能以及函数原型</p>
@@ -173,44 +223,44 @@ Counter({'blue': 3, 'red': 2, 'green': 1})
 <h3 id="beautifulsoup">BeautifulSoup</h3>
 <p>使用BeautifulSoup解析这段代码,能够得到一个 <code>BeautifulSoup</code> 的对象,并能按照标准的缩进格式的结构输出:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-soup <span style="color:#f92672">=</span> BeautifulSoup(html_doc, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">html.parser</span><span style="color:#e6db74">&#39;</span>)
+soup <span style="color:#f92672">=</span> BeautifulSoup(html_doc, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
 
 <span style="color:#66d9ef">print</span>(soup<span style="color:#f92672">.</span>prettify())
 </code></pre></div><p>几个简单的浏览结构化数据的方法:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">soup<span style="color:#f92672">.</span>title
-<span style="color:#75715e"># &lt;title&gt;The Dormouse&#39;s story&lt;/title&gt;</span>
+<span style="color:#75715e"># &lt;title&gt;The Dormouse&#39;s story&lt;/title&gt;</span>
 
 soup<span style="color:#f92672">.</span>title<span style="color:#f92672">.</span>name
-<span style="color:#75715e"># u&#39;title&#39;</span>
+<span style="color:#75715e"># u&#39;title&#39;</span>
 
 soup<span style="color:#f92672">.</span>title<span style="color:#f92672">.</span>string
-<span style="color:#75715e"># u&#39;The Dormouse&#39;s story&#39;</span>
+<span style="color:#75715e"># u&#39;The Dormouse&#39;s story&#39;</span>
 
 soup<span style="color:#f92672">.</span>title<span style="color:#f92672">.</span>parent<span style="color:#f92672">.</span>name
-<span style="color:#75715e"># u&#39;head&#39;</span>
+<span style="color:#75715e"># u&#39;head&#39;</span>
 
 soup<span style="color:#f92672">.</span>p
-<span style="color:#75715e"># &lt;p class=&#34;title&#34;&gt;&lt;b&gt;The Dormouse&#39;s story&lt;/b&gt;&lt;/p&gt;</span>
+<span style="color:#75715e"># &lt;p class=&#34;title&#34;&gt;&lt;b&gt;The Dormouse&#39;s story&lt;/b&gt;&lt;/p&gt;</span>
 
-soup<span style="color:#f92672">.</span>p[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">class</span><span style="color:#e6db74">&#39;</span>]
-<span style="color:#75715e"># u&#39;title&#39;</span>
+soup<span style="color:#f92672">.</span>p[<span style="color:#e6db74">&#39;class&#39;</span>]
+<span style="color:#75715e"># u&#39;title&#39;</span>
 
 soup<span style="color:#f92672">.</span>a
-<span style="color:#75715e"># &lt;a class=&#34;sister&#34; href=&#34;http://example.com/elsie&#34; id=&#34;link1&#34;&gt;Elsie&lt;/a&gt;</span>
+<span style="color:#75715e"># &lt;a class=&#34;sister&#34; href=&#34;http://example.com/elsie&#34; id=&#34;link1&#34;&gt;Elsie&lt;/a&gt;</span>
 
-soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># [&lt;a class=&#34;sister&#34; href=&#34;http://example.com/elsie&#34; id=&#34;link1&#34;&gt;Elsie&lt;/a&gt;,</span>
-<span style="color:#75715e">#  &lt;a class=&#34;sister&#34; href=&#34;http://example.com/lacie&#34; id=&#34;link2&#34;&gt;Lacie&lt;/a&gt;,</span>
-<span style="color:#75715e">#  &lt;a class=&#34;sister&#34; href=&#34;http://example.com/tillie&#34; id=&#34;link3&#34;&gt;Tillie&lt;/a&gt;]</span>
+soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>)
+<span style="color:#75715e"># [&lt;a class=&#34;sister&#34; href=&#34;http://example.com/elsie&#34; id=&#34;link1&#34;&gt;Elsie&lt;/a&gt;,</span>
+<span style="color:#75715e">#  &lt;a class=&#34;sister&#34; href=&#34;http://example.com/lacie&#34; id=&#34;link2&#34;&gt;Lacie&lt;/a&gt;,</span>
+<span style="color:#75715e">#  &lt;a class=&#34;sister&#34; href=&#34;http://example.com/tillie&#34; id=&#34;link3&#34;&gt;Tillie&lt;/a&gt;]</span>
 
-soup<span style="color:#f92672">.</span>find(id<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">link3</span><span style="color:#e6db74">&#34;</span>)
-<span style="color:#75715e"># &lt;a class=&#34;sister&#34; href=&#34;http://example.com/tillie&#34; id=&#34;link3&#34;&gt;Tillie&lt;/a&gt;</span>
+soup<span style="color:#f92672">.</span>find(id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;link3&#34;</span>)
+<span style="color:#75715e"># &lt;a class=&#34;sister&#34; href=&#34;http://example.com/tillie&#34; id=&#34;link3&#34;&gt;Tillie&lt;/a&gt;</span>
 </code></pre></div><p>从文档中找到所有<!-- raw HTML omitted -->标签的链接:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>):
-    <span style="color:#66d9ef">print</span>(link<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
-    <span style="color:#75715e"># http://example.com/elsie</span>
-    <span style="color:#75715e"># http://example.com/lacie</span>
-    <span style="color:#75715e"># http://example.com/tillie</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>):
+    <span style="color:#66d9ef">print</span>(link<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;href&#39;</span>))
+    <span style="color:#75715e"># http://example.com/elsie</span>
+    <span style="color:#75715e"># http://example.com/lacie</span>
+    <span style="color:#75715e"># http://example.com/tillie</span>
 </code></pre></div><p>从文档中获取所有文字内容:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(soup<span style="color:#f92672">.</span>get_text())
 </code></pre></div><p>Beautiful Soup支持Python标准库中的HTML解析器,还支持一些第三方的解析器,其中一个是 <a href="http://lxml.de/">lxml</a> .根据操作系统不同,可以选择下列方法来安装lxml:</p>
@@ -263,12 +313,12 @@ $ pip install html5lib
 <p>The worksheet class represents an Excel worksheet. It handles operations such as writing data to cells or formatting worksheet layout.</p>
 <p>A worksheet object isn’t instantiated directly. Instead a new worksheet is created by calling the <a href="https://xlsxwriter.readthedocs.io/workbook.html#add_worksheet"><code>add_worksheet()</code></a> method from a <a href="https://xlsxwriter.readthedocs.io/workbook.html#Workbook"><code>Workbook()</code></a> object:</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">workbook   <span style="color:#f92672">=</span> xlsxwriter<span style="color:#f92672">.</span>Workbook(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">filename.xlsx</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">workbook   <span style="color:#f92672">=</span> xlsxwriter<span style="color:#f92672">.</span>Workbook(<span style="color:#e6db74">&#39;filename.xlsx&#39;</span>)
 
 worksheet1 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_worksheet()
 worksheet2 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_worksheet()
 
-worksheet1<span style="color:#f92672">.</span>write(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">123</span>)
+worksheet1<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;A1&#39;</span>, <span style="color:#ae81ff">123</span>)
 
 workbook<span style="color:#f92672">.</span>close()
 </code></pre></div><ul>
@@ -299,13 +349,13 @@ workbook<span style="color:#f92672">.</span>close()
 </tbody>
 </table>
 <p>Here are some examples:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Hello</span><span style="color:#e6db74">&#39;</span>)          <span style="color:#75715e"># write_string()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">World</span><span style="color:#e6db74">&#39;</span>)          <span style="color:#75715e"># write_string()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)                <span style="color:#75715e"># write_number()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3.00001</span>)          <span style="color:#75715e"># write_number()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">=SIN(PI()/4)</span><span style="color:#e6db74">&#39;</span>)   <span style="color:#75715e"># write_formula()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)               <span style="color:#75715e"># write_blank()</span>
-worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>, None)             <span style="color:#75715e"># write_blank()</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;Hello&#39;</span>)          <span style="color:#75715e"># write_string()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;World&#39;</span>)          <span style="color:#75715e"># write_string()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)                <span style="color:#75715e"># write_number()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3.00001</span>)          <span style="color:#75715e"># write_number()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;=SIN(PI()/4)&#39;</span>)   <span style="color:#75715e"># write_formula()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;&#39;</span>)               <span style="color:#75715e"># write_blank()</span>
+worksheet<span style="color:#f92672">.</span>write(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>, None)             <span style="color:#75715e"># write_blank()</span>
 </code></pre></div><p><img src="https://xlsxwriter.readthedocs.io/_images/worksheet01.png" alt="_images/worksheet01.png"></p>
 <p>Excel makes a distinction between data types such as strings, numbers, blanks, formulas and hyperlinks. To simplify the process of writing data to an XlsxWriter file the <code>write()</code> method acts as a general alias for several more specific methods:</p>
 <ul>
@@ -334,24 +384,79 @@ for c, value in enumerate(my_list, 1):
 # 3 grapes
 # 4 pear
 </code></pre><p>The optional argument allows us to tell <code>enumerate</code> from where to start the index. You can also create tuples containing the index and list item using a list. Here is an example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">banana</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">grapes</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">pear</span><span style="color:#e6db74">&#39;</span>]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>, <span style="color:#e6db74">&#39;grapes&#39;</span>, <span style="color:#e6db74">&#39;pear&#39;</span>]
 counter_list <span style="color:#f92672">=</span> list(enumerate(my_list, <span style="color:#ae81ff">1</span>))
 <span style="color:#66d9ef">print</span>(counter_list)
-<span style="color:#75715e"># Output: [(1, &#39;apple&#39;), (2, &#39;banana&#39;), (3, &#39;grapes&#39;), (4, &#39;pear&#39;)]</span>
+<span style="color:#75715e"># Output: [(1, &#39;apple&#39;), (2, &#39;banana&#39;), (3, &#39;grapes&#39;), (4, &#39;pear&#39;)]</span>
 </code></pre></div>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0000.py/">SMTC 0000.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-note/">Python Note</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/">使用Python爬虫爬取网络小说</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

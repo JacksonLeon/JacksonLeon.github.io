@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Python Note | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Python Note |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/python-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Python Note</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/python">Python</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/01/25</h2>
-</div>
+    <h1 style="text-align: center;" >Python Note</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-01-25T21:14:50Z">January 25, 2019</time> &nbsp; 
+    
 
-<main>
-<h2 id="description">Description</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        48 min
+      
+      44 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
 <blockquote>
 <p>Python个人笔记</p>
 </blockquote>
@@ -78,7 +125,7 @@ Traceback <span style="color:#f92672">(</span>most recent call last<span style="
     row <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>proj.project_name, proj.version<span style="color:#f92672">]</span>
   File <span style="color:#e6db74">&#34;/usr/local/lib/python3.7/site-packages/pip/_vendor/pkg_resources/__init__.py&#34;</span>, line 2589, in version
     raise ValueError<span style="color:#f92672">(</span>tmpl % self.PKG_INFO, self<span style="color:#f92672">)</span>
-ValueError: <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Missing &#39;Version:&#39; header and/or METADATA file&#34;</span>, Unknown <span style="color:#f92672">[</span>unknown version<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>/usr/local/lib/python3.7/site-packages<span style="color:#f92672">)</span><span style="color:#f92672">)</span>
+ValueError: <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Missing &#39;Version:&#39; header and/or METADATA file&#34;</span>, Unknown <span style="color:#f92672">[</span>unknown version<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>/usr/local/lib/python3.7/site-packages<span style="color:#f92672">))</span>
 </code></pre></div><p>解决方法：</p>
 <blockquote>
 <p>目前还不知道是因为什么原因引起的</p>
@@ -96,7 +143,7 @@ rm -rf ./-ip-19.0.1.dist-info
 <blockquote>
 <p>Answer:</p>
 <p><code>#!/usr/bin/python3</code> is a <strong>shebang line</strong>.</p>
-<p>A shebang line defines where the interpreter is located. In this case, the <code>python3</code> interpreter is located in <code>/usr/bin/python3</code>. A shebang line could also be a <code>bash</code>, <code>ruby</code>, <code>perl</code> or any other scripting languages&rsquo; interpreter, for example: <code>#!/bin/bash</code>.</p>
+<p>A shebang line defines where the interpreter is located. In this case, the <code>python3</code> interpreter is located in <code>/usr/bin/python3</code>. A shebang line could also be a <code>bash</code>, <code>ruby</code>, <code>perl</code> or any other scripting languages' interpreter, for example: <code>#!/bin/bash</code>.</p>
 <p>Without the shebang line, the operating system does not know it&rsquo;s a python script, even if you set the execution flag on the script and run it like <code>./script.py</code>. To make the script run by default in python3, either invoke it as <code>python3 script.py</code> or set the shebang line.</p>
 <p>You can use <code>#!/usr/bin/env python3</code> for portability across different systems in case they have the language interpreter installed in different locations.</p>
 </blockquote>
@@ -111,14 +158,14 @@ rm -rf ./-ip-19.0.1.dist-info
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> condition:
     <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">AssertionError</span>()
 </code></pre></div><p>Try it in the Python shell:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">assert</span> True <span style="color:#75715e"># nothing happens</span>
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">assert</span> False
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">assert</span> True <span style="color:#75715e"># nothing happens</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">assert</span> False
 Traceback (most recent call last):
-  File <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&lt;stdin&gt;</span><span style="color:#e6db74">&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
 <span style="color:#a6e22e">AssertionError</span>
 </code></pre></div><p>Assertions can include an optional message, and you can disable them when running the interpreter.</p>
 <p>To print a message if the assertion fails:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">assert</span> False, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Oh no! This assertion failed!</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">assert</span> False, <span style="color:#e6db74">&#34;Oh no! This assertion failed!&#34;</span>
 </code></pre></div><p>Do <strong>not</strong> use parenthesis to call <code>assert</code> like a function. It is a statement. If you do <code>assert(condition, message)</code> you&rsquo;ll be running the <code>assert</code> with a <code>(condition, message)</code> tuple as first parameter.</p>
 <p>As for disabling them, when running <code>python</code> in optimized mode, where <code>__debug__</code> is <code>False</code>, assert statements will be ignored. Just pass the <code>-O</code> flag:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">python <span style="color:#f92672">-</span>O script<span style="color:#f92672">.</span>py
@@ -139,20 +186,20 @@ Traceback (most recent call last):
 <p>字符串</p>
 <p>单引号与双引号作用相同、三引号<code>‘’'</code>/<code>“&quot;”</code>用来指定多行字符串。</p>
 <p>更多用法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 这是一个字符串对象</span>
-name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 这是一个字符串对象</span>
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Swaroop&#39;</span>
    
-<span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swa</span><span style="color:#e6db74">&#39;</span>):
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Yes, the string starts with </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Swa</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;Swa&#39;</span>):
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Yes, the string starts with &#34;Swa&#34;&#39;</span>)
    
-<span style="color:#66d9ef">if</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">in</span> name:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Yes, it contains the string </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">in</span> name:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Yes, it contains the string &#34;a&#34;&#39;</span>)
    
-<span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>find(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">war</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Yes, it contains the string </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">war</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;war&#39;</span>) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Yes, it contains the string &#34;war&#34;&#39;</span>)
    
-delimiter <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">_*_</span><span style="color:#e6db74">&#39;</span>
-mylist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Brazil</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Russia</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">India</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">China</span><span style="color:#e6db74">&#39;</span>]
+delimiter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;_*_&#39;</span>
+mylist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Brazil&#39;</span>, <span style="color:#e6db74">&#39;Russia&#39;</span>, <span style="color:#e6db74">&#39;India&#39;</span>, <span style="color:#e6db74">&#39;China&#39;</span>]
 <span style="color:#66d9ef">print</span>(delimiter<span style="color:#f92672">.</span>join(mylist))
 </code></pre></div><p>输出：</p>
 <pre><code>$ python ds_str_methods.py
@@ -163,22 +210,22 @@ Brazil_*_Russia_*_India_*_China
 </code></pre><p>格式化：<code>format()</code></p>
 <p>例如：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0} was {1} years old when he wrote this book</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(name, age))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Why is {0} playing with that python?</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(name))
-<span style="color:#75715e"># 输出：</span>
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Swaroop&#39;</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0} was {1} years old when he wrote this book&#39;</span><span style="color:#f92672">.</span>format(name, age))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Why is {0} playing with that python?&#39;</span><span style="color:#f92672">.</span>format(name))
+<span style="color:#75715e"># 输出：</span>
 Swaroop was <span style="color:#ae81ff">20</span> years old when he wrote this book
 Why <span style="color:#f92672">is</span> Swaroop playing <span style="color:#66d9ef">with</span> that python<span style="color:#960050;background-color:#1e0010">?</span>
    
    
-<span style="color:#75715e"># 对于浮点数 &#39;0.333&#39; 保留小数点(.)后三位</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0:.3f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>))
-<span style="color:#75715e"># 使用下划线填充文本，并保持文字处于中间位置</span>
-<span style="color:#75715e"># 使用 (^) 定义 &#39;___hello___&#39;字符串长度为 11</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0:_^11}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#39;</span>))
-<span style="color:#75715e"># 基于关键词输出 &#39;Swaroop wrote A Byte of Python&#39;  </span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{name} wrote {book}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>, book<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A Byte of Python</span><span style="color:#e6db74">&#39;</span>))
-<span style="color:#75715e"># 输出：</span>
+<span style="color:#75715e"># 对于浮点数 &#39;0.333&#39; 保留小数点(.)后三位</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:.3f}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>))
+<span style="color:#75715e"># 使用下划线填充文本，并保持文字处于中间位置</span>
+<span style="color:#75715e"># 使用 (^) 定义 &#39;___hello___&#39;字符串长度为 11</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:_^11}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;hello&#39;</span>))
+<span style="color:#75715e"># 基于关键词输出 &#39;Swaroop wrote A Byte of Python&#39;  </span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{name} wrote {book}&#39;</span><span style="color:#f92672">.</span>format(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Swaroop&#39;</span>, book<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;A Byte of Python&#39;</span>))
+<span style="color:#75715e"># 输出：</span>
 <span style="color:#ae81ff">0.333</span>
 ___hello___
 Swaroop wrote A Byte of Python
@@ -186,14 +233,14 @@ Swaroop wrote A Byte of Python
 <li>
 <p><code>print()</code></p>
 <p>由于我们正在讨论格式问题，就要注意 <code>print</code> 总是会以一个不可见的“新一行”字符（<code>\n</code>）结尾，因此重复调用 <code>print</code>将会在相互独立的一行中分别打印。为防止打印过程中出现这一换行符，你可以通过 <code>end</code>指定其应以空白结尾：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;b&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
 </code></pre></div><p>输出结果如下：</p>
 <pre><code>ab
 </code></pre><p>或者你通过 <code>end</code> 指定以空格结尾：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">c</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;b&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;c&#39;</span>)
 </code></pre></div><p>输出结果如下：</p>
 <pre><code>a b c
 </code></pre><p><code>end</code> 参数用在<code>print</code>函数中，目的是打印一行并允许下一次打印在同一行继续。这是一个让 <code>print</code> 能够不在打印的末尾打印出<code>\n</code>（新行换行符）符号的小窍门。</p>
@@ -396,31 +443,31 @@ Swaroop wrote A Byte of Python
 <li>
 <p><code>if</code>语句</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">number <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
-guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Enter an integer : </span><span style="color:#e6db74">&#39;</span>))
+guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#39;Enter an integer : &#39;</span>))
    
 <span style="color:#66d9ef">if</span> guess <span style="color:#f92672">==</span> number:
-    <span style="color:#75715e"># 新块从这里开始</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Congratulations, you guessed it.</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(but you do not win any prizes!)</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#75715e"># 新块在这里结束</span>
+    <span style="color:#75715e"># 新块从这里开始</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Congratulations, you guessed it.&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;(but you do not win any prizes!)&#39;</span>)
+    <span style="color:#75715e"># 新块在这里结束</span>
 <span style="color:#66d9ef">elif</span> guess <span style="color:#f92672">&lt;</span> number:
-    <span style="color:#75715e"># 另一代码块</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">No, it is a little higher than that</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#75715e"># 你可以在此做任何你希望在该代码块内进行的事情</span>
+    <span style="color:#75715e"># 另一代码块</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No, it is a little higher than that&#39;</span>)
+    <span style="color:#75715e"># 你可以在此做任何你希望在该代码块内进行的事情</span>
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">No, it is a little lower than that</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#75715e"># 你必须通过猜测一个大于（&gt;）设置数的数字来到达这里。</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No, it is a little lower than that&#39;</span>)
+    <span style="color:#75715e"># 你必须通过猜测一个大于（&gt;）设置数的数字来到达这里。</span>
    
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Done</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 这最后一句语句将在</span>
-<span style="color:#75715e"># if 语句执行完毕后执行。</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Done&#39;</span>)
+<span style="color:#75715e"># 这最后一句语句将在</span>
+<span style="color:#75715e"># if 语句执行完毕后执行。</span>
 </code></pre></div></li>
 <li>
 <p><code>for</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>):
     <span style="color:#66d9ef">print</span>(i)
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">The for loop is over</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The for loop is over&#39;</span>)
 </code></pre></div></li>
 <li>
 <p><code>while</code></p>
@@ -430,23 +477,23 @@ guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74"
 running <span style="color:#f92672">=</span> True
 
 <span style="color:#66d9ef">while</span> running:
-    guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Enter an integer : </span><span style="color:#e6db74">&#39;</span>))
+    guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#39;Enter an integer : &#39;</span>))
 
     <span style="color:#66d9ef">if</span> guess <span style="color:#f92672">==</span> number:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Congratulations, you guessed it.</span><span style="color:#e6db74">&#39;</span>)
-        <span style="color:#75715e"># 这将导致 while 循环中止</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Congratulations, you guessed it.&#39;</span>)
+        <span style="color:#75715e"># 这将导致 while 循环中止</span>
         running <span style="color:#f92672">=</span> False
     <span style="color:#66d9ef">elif</span> guess <span style="color:#f92672">&lt;</span> number:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">No, it is a little higher than that.</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No, it is a little higher than that.&#39;</span>)
     <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">No, it is a little lower than that.</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No, it is a little lower than that.&#39;</span>)
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">The while loop is over.</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#75715e"># 在这里你可以做你想做的任何事</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The while loop is over.&#39;</span>)
+    <span style="color:#75715e"># 在这里你可以做你想做的任何事</span>
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Done</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Done&#39;</span>)
 
-<span style="color:#75715e"># 输出</span>
+<span style="color:#75715e"># 输出</span>
 Enter an integer : <span style="color:#ae81ff">50</span>
 No, it <span style="color:#f92672">is</span> a little lower than that<span style="color:#f92672">.</span>
 Enter an integer : <span style="color:#ae81ff">22</span>
@@ -468,12 +515,12 @@ Done
 <p><code>continue</code> 语句用以告诉 Python 跳过当前循环块中的剩余语句，并<em>继续</em>该循环的下一次迭代，同样能用于 <code>for</code> 循环。</p>
 <h3 id="函数">函数</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say_hello</span>():
-    <span style="color:#75715e"># 该块属于这一函数</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 函数结束</span>
+    <span style="color:#75715e"># 该块属于这一函数</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;hello world&#39;</span>)
+<span style="color:#75715e"># 函数结束</span>
 
-say_hello()  <span style="color:#75715e"># 调用函数</span>
-say_hello()  <span style="color:#75715e"># 再次调用函数</span>
+say_hello()  <span style="color:#75715e"># 调用函数</span>
+say_hello()  <span style="color:#75715e"># 再次调用函数</span>
 </code></pre></div><ol start="13">
 <li>
 <p>参数</p>
@@ -498,10 +545,10 @@ say_hello()  <span style="color:#75715e"># 再次调用函数</span>
 <li>
 <p>模块的 <code>__name__</code></p>
 <p>每个模块都有一个名称，而模块中的语句可以找到它们所处的模块的名称。这对于确定模块是独立运行的还是被导入进来运行的这一特定目的来说大为有用。正如先前所提到的，当模块第一次被导入时，它所包含的代码将被执行。我们可以通过这一特性来使模块以不同的方式运行，这取决于它是为自己所用还是从其它从的模块中导入而来。这可以通过使用模块的 <code>__name__</code> 属性来实现。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">This program is being run by itself</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;This program is being run by itself&#39;</span>)
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">I am being imported from another module</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;I am being imported from another module&#39;</span>)
 </code></pre></div><p>输出：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python module_using_name.py
 This program is being run by itself
@@ -544,28 +591,28 @@ Namespaces are one honking great idea -- let's do more of those!
 <ol start="18">
 <li>
 <p><code>list</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># This is my shopping list</span>
-shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mango</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">carrot</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">banana</span><span style="color:#e6db74">&#39;</span>]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># This is my shopping list</span>
+shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;mango&#39;</span>, <span style="color:#e6db74">&#39;carrot&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>]
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">I have</span><span style="color:#e6db74">&#39;</span>, len(shoplist), <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">items to purchase.</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;I have&#39;</span>, len(shoplist), <span style="color:#e6db74">&#39;items to purchase.&#39;</span>)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">These items are:</span><span style="color:#e6db74">&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;These items are:&#39;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
 <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> shoplist:
-    <span style="color:#66d9ef">print</span>(item, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(item, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">I also have to buy rice.</span><span style="color:#e6db74">&#39;</span>)
-shoplist<span style="color:#f92672">.</span>append(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">rice</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">My shopping list is now</span><span style="color:#e6db74">&#39;</span>, shoplist)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">I also have to buy rice.&#39;</span>)
+shoplist<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;rice&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;My shopping list is now&#39;</span>, shoplist)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">I will sort my list now</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;I will sort my list now&#39;</span>)
 shoplist<span style="color:#f92672">.</span>sort()
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Sorted shopping list is</span><span style="color:#e6db74">&#39;</span>, shoplist)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Sorted shopping list is&#39;</span>, shoplist)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">The first item I will buy is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">0</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;The first item I will buy is&#39;</span>, shoplist[<span style="color:#ae81ff">0</span>])
 olditem <span style="color:#f92672">=</span> shoplist[<span style="color:#ae81ff">0</span>]
 <span style="color:#66d9ef">del</span> shoplist[<span style="color:#ae81ff">0</span>]
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">I bought the</span><span style="color:#e6db74">&#39;</span>, olditem)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">My shopping list is now</span><span style="color:#e6db74">&#39;</span>, shoplist)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;I bought the&#39;</span>, olditem)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;My shopping list is now&#39;</span>, shoplist)
 </code></pre></div><p>输出：</p>
 <pre><code>$ python ds_using_list.py
 I have 4 items to purchase.
@@ -578,28 +625,28 @@ The first item I will buy is apple
 I bought the apple
 My shopping list is now ['banana', 'carrot', 'mango', 'rice']
 </code></pre><p>If you want access to the index of each element within the body of a loop, use the built-in <code>enumerate</code> function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">animals <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cat</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dog</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">monkey</span><span style="color:#e6db74">&#39;</span>]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">animals <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;cat&#39;</span>, <span style="color:#e6db74">&#39;dog&#39;</span>, <span style="color:#e6db74">&#39;monkey&#39;</span>]
 <span style="color:#66d9ef">for</span> idx, animal <span style="color:#f92672">in</span> enumerate(animals):
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, animal))
-<span style="color:#75715e"># Prints &#34;#1: cat&#34;, &#34;#2: dog&#34;, &#34;#3: monkey&#34;, each on its own line</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;#</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, animal))
+<span style="color:#75715e"># Prints &#34;#1: cat&#34;, &#34;#2: dog&#34;, &#34;#3: monkey&#34;, each on its own line</span>
 </code></pre></div></li>
 <li>
 <p>元组</p>
 <p>元组（Tuple）用于将多个对象保存到一起。你可以将它们近似地看作列表，但是元组不能提供列表类能够提供给你的广泛的功能。<strong>元组的一大特征类似于字符串，它们是不可变的，也就是说，你不能编辑或更改元组</strong>。</p>
 <p>元组通常用于保证某一语句或某一用户定义的函数可以安全地采用一组数值，意即元组内的数值不会改变。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 我会推荐你总是使用括号</span>
-<span style="color:#75715e"># 来指明元组的开始与结束</span>
-<span style="color:#75715e"># 尽管括号是一个可选选项。</span>
-<span style="color:#75715e"># 明了胜过晦涩，显式优于隐式。</span>
-zoo <span style="color:#f92672">=</span> (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">python</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">elephant</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">penguin</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Number of animals in the zoo is</span><span style="color:#e6db74">&#39;</span>, len(zoo))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 我会推荐你总是使用括号</span>
+<span style="color:#75715e"># 来指明元组的开始与结束</span>
+<span style="color:#75715e"># 尽管括号是一个可选选项。</span>
+<span style="color:#75715e"># 明了胜过晦涩，显式优于隐式。</span>
+zoo <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;python&#39;</span>, <span style="color:#e6db74">&#39;elephant&#39;</span>, <span style="color:#e6db74">&#39;penguin&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number of animals in the zoo is&#39;</span>, len(zoo))
     
-new_zoo <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">monkey</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">camel</span><span style="color:#e6db74">&#39;</span>, zoo
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Number of cages in the new zoo is</span><span style="color:#e6db74">&#39;</span>, len(new_zoo))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">All animals in new zoo are</span><span style="color:#e6db74">&#39;</span>, new_zoo)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Animals brought from old zoo are</span><span style="color:#e6db74">&#39;</span>, new_zoo[<span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Last animal brought from old zoo is</span><span style="color:#e6db74">&#39;</span>, new_zoo[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Number of animals in the new zoo is</span><span style="color:#e6db74">&#39;</span>,
+new_zoo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;monkey&#39;</span>, <span style="color:#e6db74">&#39;camel&#39;</span>, zoo
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number of cages in the new zoo is&#39;</span>, len(new_zoo))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;All animals in new zoo are&#39;</span>, new_zoo)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Animals brought from old zoo are&#39;</span>, new_zoo[<span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Last animal brought from old zoo is&#39;</span>, new_zoo[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number of animals in the new zoo is&#39;</span>,
       len(new_zoo)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>len(new_zoo[<span style="color:#ae81ff">2</span>]))
 </code></pre></div><p>输出：</p>
 <pre><code>$ python ds_using_tuple.py
@@ -613,33 +660,33 @@ Number of animals in the new zoo is 5
 <li>
 <p>字典</p>
 <p><strong>键值必须是唯一</strong>，你只能使用不可变的对象（如字符串）作为字典的键值，但是你可以使用可变或不可变的对象作为字典中的值。基本上这段话也可以翻译为你只能使用<strong>简单对象作为键值</strong>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># “ab”是地址（Address）簿（Book）的缩写</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># “ab”是地址（Address）簿（Book）的缩写</span>
     
 ab <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">swaroop@swaroopch.com</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Larry</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">larry@wall.org</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Matsumoto</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">matz@ruby-lang.org</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Spammer</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">spammer@hotmail.com</span><span style="color:#e6db74">&#39;</span>
+    <span style="color:#e6db74">&#39;Swaroop&#39;</span>: <span style="color:#e6db74">&#39;swaroop@swaroopch.com&#39;</span>,
+    <span style="color:#e6db74">&#39;Larry&#39;</span>: <span style="color:#e6db74">&#39;larry@wall.org&#39;</span>,
+    <span style="color:#e6db74">&#39;Matsumoto&#39;</span>: <span style="color:#e6db74">&#39;matz@ruby-lang.org&#39;</span>,
+    <span style="color:#e6db74">&#39;Spammer&#39;</span>: <span style="color:#e6db74">&#39;spammer@hotmail.com&#39;</span>
 }
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s address is</span><span style="color:#e6db74">&#34;</span>, ab[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Swaroop&#39;s address is&#34;</span>, ab[<span style="color:#e6db74">&#39;Swaroop&#39;</span>])
     
-<span style="color:#75715e"># 删除一对键值—值配对</span>
-<span style="color:#66d9ef">del</span> ab[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Spammer</span><span style="color:#e6db74">&#39;</span>]
+<span style="color:#75715e"># 删除一对键值—值配对</span>
+<span style="color:#66d9ef">del</span> ab[<span style="color:#e6db74">&#39;Spammer&#39;</span>]
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">There are {} contacts in the address-book</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(len(ab)))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">There are {} contacts in the address-book</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(len(ab)))
     
 <span style="color:#66d9ef">for</span> name, address <span style="color:#f92672">in</span> ab<span style="color:#f92672">.</span>items():
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Contact {} at {}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(name, address))
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Contact {} at {}&#39;</span><span style="color:#f92672">.</span>format(name, address))
     
-<span style="color:#75715e"># 添加一对键值—值配对</span>
-ab[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Guido</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">guido@python.org</span><span style="color:#e6db74">&#39;</span>
+<span style="color:#75715e"># 添加一对键值—值配对</span>
+ab[<span style="color:#e6db74">&#39;Guido&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;guido@python.org&#39;</span>
     
-<span style="color:#66d9ef">if</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Guido</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">in</span> ab:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Guido</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s address is</span><span style="color:#e6db74">&#34;</span>, ab[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Guido</span><span style="color:#e6db74">&#39;</span>])
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Guido&#39;</span> <span style="color:#f92672">in</span> ab:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Guido&#39;s address is&#34;</span>, ab[<span style="color:#e6db74">&#39;Guido&#39;</span>])
 </code></pre></div><p>输出：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">$</span> python ds_using_dict<span style="color:#f92672">.</span>py
-Swaroop<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s address is swaroop@swaroopch.com</span>
+Swaroop<span style="color:#e6db74">&#39;s address is swaroop@swaroopch.com</span>
     
 There are <span style="color:#ae81ff">3</span> contacts <span style="color:#f92672">in</span> the address<span style="color:#f92672">-</span>book
     
@@ -647,45 +694,45 @@ Contact Swaroop at swaroop<span style="color:#a6e22e">@swaroopch.com</span>
 Contact Matsumoto at matz<span style="color:#a6e22e">@ruby</span><span style="color:#f92672">-</span>lang<span style="color:#f92672">.</span>org
 Contact Larry at larry<span style="color:#a6e22e">@wall.org</span>
     
-Guido<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s address is guido@python.org</span>
+Guido<span style="color:#e6db74">&#39;s address is guido@python.org</span>
 </code></pre></div><p>A dictionary stores (key, value) pairs, similar to a <code>Map</code> in Java or an object in Javascript. You can use it like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> {<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cat</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cute</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dog</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">furry</span><span style="color:#e6db74">&#39;</span>}  <span style="color:#75715e"># Create a new dictionary with some data</span>
-<span style="color:#66d9ef">print</span>(d[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cat</span><span style="color:#e6db74">&#39;</span>])       <span style="color:#75715e"># Get an entry from a dictionary; prints &#34;cute&#34;</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cat</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">in</span> d)     <span style="color:#75715e"># Check if a dictionary has a given key; prints &#34;True&#34;</span>
-d[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">wet</span><span style="color:#e6db74">&#39;</span>     <span style="color:#75715e"># Set an entry in a dictionary</span>
-<span style="color:#66d9ef">print</span>(d[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#39;</span>])      <span style="color:#75715e"># Prints &#34;wet&#34;</span>
-<span style="color:#75715e"># print(d[&#39;monkey&#39;])  # KeyError: &#39;monkey&#39; not a key of d</span>
-<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">monkey</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">N/A</span><span style="color:#e6db74">&#39;</span>))  <span style="color:#75715e"># Get an element with a default; prints &#34;N/A&#34;</span>
-<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">N/A</span><span style="color:#e6db74">&#39;</span>))    <span style="color:#75715e"># Get an element with a default; prints &#34;wet&#34;</span>
-<span style="color:#66d9ef">del</span> d[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#39;</span>]         <span style="color:#75715e"># Remove an element from a dictionary</span>
-<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">N/A</span><span style="color:#e6db74">&#39;</span>)) <span style="color:#75715e"># &#34;fish&#34; is no longer a key; prints &#34;N/A&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;cat&#39;</span>: <span style="color:#e6db74">&#39;cute&#39;</span>, <span style="color:#e6db74">&#39;dog&#39;</span>: <span style="color:#e6db74">&#39;furry&#39;</span>}  <span style="color:#75715e"># Create a new dictionary with some data</span>
+<span style="color:#66d9ef">print</span>(d[<span style="color:#e6db74">&#39;cat&#39;</span>])       <span style="color:#75715e"># Get an entry from a dictionary; prints &#34;cute&#34;</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;cat&#39;</span> <span style="color:#f92672">in</span> d)     <span style="color:#75715e"># Check if a dictionary has a given key; prints &#34;True&#34;</span>
+d[<span style="color:#e6db74">&#39;fish&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;wet&#39;</span>     <span style="color:#75715e"># Set an entry in a dictionary</span>
+<span style="color:#66d9ef">print</span>(d[<span style="color:#e6db74">&#39;fish&#39;</span>])      <span style="color:#75715e"># Prints &#34;wet&#34;</span>
+<span style="color:#75715e"># print(d[&#39;monkey&#39;])  # KeyError: &#39;monkey&#39; not a key of d</span>
+<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;monkey&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>))  <span style="color:#75715e"># Get an element with a default; prints &#34;N/A&#34;</span>
+<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;fish&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>))    <span style="color:#75715e"># Get an element with a default; prints &#34;wet&#34;</span>
+<span style="color:#66d9ef">del</span> d[<span style="color:#e6db74">&#39;fish&#39;</span>]         <span style="color:#75715e"># Remove an element from a dictionary</span>
+<span style="color:#66d9ef">print</span>(d<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;fish&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>)) <span style="color:#75715e"># &#34;fish&#34; is no longer a key; prints &#34;N/A&#34;</span>
 </code></pre></div></li>
 <li>
 <p><strong>序列操作</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mango</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">carrot</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">banana</span><span style="color:#e6db74">&#39;</span>]
-name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">swaroop</span><span style="color:#e6db74">&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;mango&#39;</span>, <span style="color:#e6db74">&#39;carrot&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>]
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;swaroop&#39;</span>
     
-<span style="color:#75715e"># Indexing or &#39;Subscription&#39; operation #</span>
-<span style="color:#75715e"># 索引或“下标（Subscription）”操作符 #</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 0 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">0</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 1 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 2 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 3 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">3</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item -1 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item -2 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Character 0 is</span><span style="color:#e6db74">&#39;</span>, name[<span style="color:#ae81ff">0</span>])
+<span style="color:#75715e"># Indexing or &#39;Subscription&#39; operation #</span>
+<span style="color:#75715e"># 索引或“下标（Subscription）”操作符 #</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 0 is&#39;</span>, shoplist[<span style="color:#ae81ff">0</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 1 is&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 2 is&#39;</span>, shoplist[<span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 3 is&#39;</span>, shoplist[<span style="color:#ae81ff">3</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item -1 is&#39;</span>, shoplist[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item -2 is&#39;</span>, shoplist[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Character 0 is&#39;</span>, name[<span style="color:#ae81ff">0</span>])
     
-<span style="color:#75715e"># Slicing on a list #</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 1 to 3 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 2 to end is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">2</span>:])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item 1 to -1 is</span><span style="color:#e6db74">&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Item start to end is</span><span style="color:#e6db74">&#39;</span>, shoplist[:])
+<span style="color:#75715e"># Slicing on a list #</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 1 to 3 is&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 2 to end is&#39;</span>, shoplist[<span style="color:#ae81ff">2</span>:])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item 1 to -1 is&#39;</span>, shoplist[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Item start to end is&#39;</span>, shoplist[:])
     
-<span style="color:#75715e"># 从某一字符串中切片 #</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">characters 1 to 3 is</span><span style="color:#e6db74">&#39;</span>, name[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">characters 2 to end is</span><span style="color:#e6db74">&#39;</span>, name[<span style="color:#ae81ff">2</span>:])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">characters 1 to -1 is</span><span style="color:#e6db74">&#39;</span>, name[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">characters start to end is</span><span style="color:#e6db74">&#39;</span>, name[:])
+<span style="color:#75715e"># 从某一字符串中切片 #</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;characters 1 to 3 is&#39;</span>, name[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;characters 2 to end is&#39;</span>, name[<span style="color:#ae81ff">2</span>:])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;characters 1 to -1 is&#39;</span>, name[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;characters start to end is&#39;</span>, name[:])
 </code></pre></div><p>输出：</p>
 <pre><code>Item 0 is apple
 Item 1 is mango
@@ -710,29 +757,29 @@ characters start to end is swaroop
 </li>
 <li>
 <p><strong>引用</strong>——涉及到深拷贝浅拷贝的问题</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Simple Assignment</span><span style="color:#e6db74">&#39;</span>)
-shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mango</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">carrot</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">banana</span><span style="color:#e6db74">&#39;</span>]
-<span style="color:#75715e"># mylist 只是指向同一对象的另一种名称</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Simple Assignment&#39;</span>)
+shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;mango&#39;</span>, <span style="color:#e6db74">&#39;carrot&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span>]
+<span style="color:#75715e"># mylist 只是指向同一对象的另一种名称</span>
 mylist <span style="color:#f92672">=</span> shoplist
     
-<span style="color:#75715e"># 我购买了第一项项目，所以我将其从列表中删除</span>
+<span style="color:#75715e"># 我购买了第一项项目，所以我将其从列表中删除</span>
 <span style="color:#66d9ef">del</span> shoplist[<span style="color:#ae81ff">0</span>]
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">shoplist is</span><span style="color:#e6db74">&#39;</span>, shoplist)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mylist is</span><span style="color:#e6db74">&#39;</span>, mylist)
-<span style="color:#75715e"># 注意到 shoplist 和 mylist 二者都</span>
-<span style="color:#75715e"># 打印出了其中都没有 apple 的同样的列表，以此我们确认</span>
-<span style="color:#75715e"># 它们指向的是同一个对象</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;shoplist is&#39;</span>, shoplist)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;mylist is&#39;</span>, mylist)
+<span style="color:#75715e"># 注意到 shoplist 和 mylist 二者都</span>
+<span style="color:#75715e"># 打印出了其中都没有 apple 的同样的列表，以此我们确认</span>
+<span style="color:#75715e"># 它们指向的是同一个对象</span>
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Copy by making a full slice</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 通过生成一份完整的切片制作一份列表的副本</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Copy by making a full slice&#39;</span>)
+<span style="color:#75715e"># 通过生成一份完整的切片制作一份列表的副本</span>
 mylist <span style="color:#f92672">=</span> shoplist[:]
-<span style="color:#75715e"># 删除第一个项目</span>
+<span style="color:#75715e"># 删除第一个项目</span>
 <span style="color:#66d9ef">del</span> mylist[<span style="color:#ae81ff">0</span>]
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">shoplist is</span><span style="color:#e6db74">&#39;</span>, shoplist)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mylist is</span><span style="color:#e6db74">&#39;</span>, mylist)
-<span style="color:#75715e"># 注意到现在两份列表已出现不同</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;shoplist is&#39;</span>, shoplist)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;mylist is&#39;</span>, mylist)
+<span style="color:#75715e"># 注意到现在两份列表已出现不同</span>
 </code></pre></div><p>输出：</p>
 <pre><code>$ python ds_reference.py
 Simple Assignment
@@ -770,58 +817,58 @@ mylist is ['carrot', 'banana']
 <blockquote>
 <p>所有类成员（包括数据成员）都是<em>公开的</em>，并且 Python 中所有的方法都是<em>虚拟的（Virtual）</em>。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># coding=UTF-8</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># coding=UTF-8</span>
     
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Robot</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">表示有一个带有名字的机器人。</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;表示有一个带有名字的机器人。&#34;&#34;&#34;</span>
     
-    <span style="color:#75715e"># 一个类变量，用来计数机器人的数量</span>
+    <span style="color:#75715e"># 一个类变量，用来计数机器人的数量</span>
     population <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     
     <span style="color:#66d9ef">def</span> __init__(self, name):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">初始化数据</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#e6db74">&#34;&#34;&#34;初始化数据&#34;&#34;&#34;</span>
         self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">(Initializing {})</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;(Initializing {})&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
-        <span style="color:#75715e"># 当有人被创建时，机器人</span>
-        <span style="color:#75715e"># 将会增加人口数量</span>
-        Robot<span style="color:#f92672">.</span>population <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#75715e"># 当有人被创建时，机器人</span>
+        <span style="color:#75715e"># 将会增加人口数量</span>
+        Robot<span style="color:#f92672">.</span>population <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">die</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">我挂了。</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{} is being destroyed!</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#e6db74">&#34;&#34;&#34;我挂了。&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;{} is being destroyed!&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
-        Robot<span style="color:#f92672">.</span>population <span style="color:#f92672">-</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        Robot<span style="color:#f92672">.</span>population <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
     
         <span style="color:#66d9ef">if</span> Robot<span style="color:#f92672">.</span>population <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{} was the last one.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;{} was the last one.&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
         <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">There are still {:d} robots working.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;There are still {:d} robots working.&#34;</span><span style="color:#f92672">.</span>format(
                 Robot<span style="color:#f92672">.</span>population))
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say_hi</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">来自机器人的诚挚问候</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">        没问题，你做得到。</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Greetings, my masters call me {}.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#e6db74">&#34;&#34;&#34;来自机器人的诚挚问候
+</span><span style="color:#e6db74">    
+</span><span style="color:#e6db74">        没问题，你做得到。&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Greetings, my masters call me {}.&#34;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
     <span style="color:#a6e22e">@classmethod</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">how_many</span>(cls):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">打印出当前的人口数量</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">We have {:d} robots.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(cls<span style="color:#f92672">.</span>population))
+        <span style="color:#e6db74">&#34;&#34;&#34;打印出当前的人口数量&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;We have {:d} robots.&#34;</span><span style="color:#f92672">.</span>format(cls<span style="color:#f92672">.</span>population))
     
     
-droid1 <span style="color:#f92672">=</span> Robot(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">R2-D2</span><span style="color:#e6db74">&#34;</span>)
+droid1 <span style="color:#f92672">=</span> Robot(<span style="color:#e6db74">&#34;R2-D2&#34;</span>)
 droid1<span style="color:#f92672">.</span>say_hi()
 Robot<span style="color:#f92672">.</span>how_many()
     
-droid2 <span style="color:#f92672">=</span> Robot(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">C-3PO</span><span style="color:#e6db74">&#34;</span>)
+droid2 <span style="color:#f92672">=</span> Robot(<span style="color:#e6db74">&#34;C-3PO&#34;</span>)
 droid2<span style="color:#f92672">.</span>say_hi()
 Robot<span style="color:#f92672">.</span>how_many()
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Robots can do some work here.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Robots can do some work here.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Robots have finished their work. So let</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s destroy them.</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Robots have finished their work. So let&#39;s destroy them.&#34;</span>)
 droid1<span style="color:#f92672">.</span>die()
 droid2<span style="color:#f92672">.</span>die()
     
@@ -848,52 +895,52 @@ We have 0 robots.
 <p>继承</p>
 <p>面向对象编程的一大优点是对代码的<strong>重用（Reuse）</strong>，重用的一种实现方法就是通过**继承（Inheritance）<strong>机制。继承最好是想象成在类之间实现</strong>类型与子类型（Type and Subtype）**关系的工具。</p>
 <p><code>SchoolMember</code> 类会被称作<strong>基类（Base Class）<strong>或是</strong>超类（Superclass）</strong>。<code>Teacher</code> 和 <code>Student</code> 类会被称作<strong>派生类（Derived Classes）<strong>或是</strong>子类（Subclass）</strong>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># coding=UTF-8</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># coding=UTF-8</span>
     
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SchoolMember</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">代表任何学校里的成员。</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#e6db74">&#39;&#39;&#39;代表任何学校里的成员。&#39;&#39;&#39;</span>
     <span style="color:#66d9ef">def</span> __init__(self, name, age):
         self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
         self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(Initialized SchoolMember: {})</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;(Initialized SchoolMember: {})&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tell</span>(self):
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">告诉我有关我的细节。</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Name:</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> Age:</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>age), end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#e6db74">&#39;&#39;&#39;告诉我有关我的细节。&#39;&#39;&#39;</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Name:&#34;{}&#34; Age:&#34;{}&#34;&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>age), end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; &#34;</span>)
     
     
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Teacher</span>(SchoolMember):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">代表一位老师。</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#e6db74">&#39;&#39;&#39;代表一位老师。&#39;&#39;&#39;</span>
     <span style="color:#66d9ef">def</span> __init__(self, name, age, salary):
         SchoolMember<span style="color:#f92672">.</span>__init__(self, name, age)
         self<span style="color:#f92672">.</span>salary <span style="color:#f92672">=</span> salary
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(Initialized Teacher: {})</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;(Initialized Teacher: {})&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tell</span>(self):
         SchoolMember<span style="color:#f92672">.</span>tell(self)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Salary: </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{:d}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>salary))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Salary: &#34;{:d}&#34;&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>salary))
     
     
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span>(SchoolMember):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">代表一位学生。</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#e6db74">&#39;&#39;&#39;代表一位学生。&#39;&#39;&#39;</span>
     <span style="color:#66d9ef">def</span> __init__(self, name, age, marks):
         SchoolMember<span style="color:#f92672">.</span>__init__(self, name, age)
         self<span style="color:#f92672">.</span>marks <span style="color:#f92672">=</span> marks
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(Initialized Student: {})</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;(Initialized Student: {})&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>name))
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tell</span>(self):
         SchoolMember<span style="color:#f92672">.</span>tell(self)
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Marks: </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{:d}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>marks))
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Marks: &#34;{:d}&#34;&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>marks))
     
-t <span style="color:#f92672">=</span> Teacher(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Mrs. Shrividya</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">30000</span>)
-s <span style="color:#f92672">=</span> Student(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Swaroop</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">75</span>)
+t <span style="color:#f92672">=</span> Teacher(<span style="color:#e6db74">&#39;Mrs. Shrividya&#39;</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">30000</span>)
+s <span style="color:#f92672">=</span> Student(<span style="color:#e6db74">&#39;Swaroop&#39;</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">75</span>)
     
-<span style="color:#75715e"># 打印一行空白行</span>
+<span style="color:#75715e"># 打印一行空白行</span>
 <span style="color:#66d9ef">print</span>()
     
 members <span style="color:#f92672">=</span> [t, s]
 <span style="color:#66d9ef">for</span> member <span style="color:#f92672">in</span> members:
-    <span style="color:#75715e"># 对全体师生工作</span>
+    <span style="color:#75715e"># 对全体师生工作</span>
     member<span style="color:#f92672">.</span>tell()
 </code></pre></div><p>输出：</p>
 <pre><code>$ python oop_subclass.py
@@ -921,11 +968,11 @@ Name:&quot;Swaroop&quot; Age:&quot;25&quot; Marks: &quot;75&quot;
     <span style="color:#66d9ef">return</span> text <span style="color:#f92672">==</span> reverse(text)
     
     
-something <span style="color:#f92672">=</span> input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Enter text: </span><span style="color:#e6db74">&#34;</span>)
+something <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter text: &#34;</span>)
 <span style="color:#66d9ef">if</span> is_palindrome(something):
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Yes, it is a palindrome</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Yes, it is a palindrome&#34;</span>)
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">No, it is not a palindrome</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;No, it is not a palindrome&#34;</span>)
 </code></pre></div><p>输出：</p>
 <pre><code>$ python3 io_input.py
 Enter text: sir
@@ -942,33 +989,33 @@ Yes, it is a palindrome
 <li>
 <p>文件</p>
 <p>你可以通过创建一个属于 <code>file</code> 类的对象并适当使用它的 <code>read</code>、<code>readline</code>、<code>write</code> 方法来打开或使用文件，并对它们进行读取或写入。读取或写入文件的能力取决于你指定以何种方式打开文件。最后，当你完成了文件，你可以调用 <code>close</code> 方法来告诉 Python 我们已经完成了对该文件的使用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poem <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">\</span><span style="color:#e6db74"></span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">Programming is fun</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">When the work is done</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">if you wanna make your work also fun:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    use Python!</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">poem <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">Programming is fun
+</span><span style="color:#e6db74">When the work is done
+</span><span style="color:#e6db74">if you wanna make your work also fun:
+</span><span style="color:#e6db74">    use Python!
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
     
-<span style="color:#75715e"># 打开文件以编辑（&#39;w&#39;riting）</span>
-f <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">poem.txt</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 向文件中编写文本</span>
+<span style="color:#75715e"># 打开文件以编辑（&#39;w&#39;riting）</span>
+f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;poem.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+<span style="color:#75715e"># 向文件中编写文本</span>
 f<span style="color:#f92672">.</span>write(poem)
-<span style="color:#75715e"># 关闭文件</span>
+<span style="color:#75715e"># 关闭文件</span>
 f<span style="color:#f92672">.</span>close()
     
-<span style="color:#75715e"># 如果没有特别指定，</span>
-<span style="color:#75715e"># 将假定启用默认的阅读（&#39;r&#39;ead）模式</span>
-f <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">poem.txt</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#75715e"># 如果没有特别指定，</span>
+<span style="color:#75715e"># 将假定启用默认的阅读（&#39;r&#39;ead）模式</span>
+f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;poem.txt&#39;</span>)
 <span style="color:#66d9ef">while</span> True:
     line <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readline()
-    <span style="color:#75715e"># 零长度指示 EOF</span>
+    <span style="color:#75715e"># 零长度指示 EOF</span>
     <span style="color:#66d9ef">if</span> len(line) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
         <span style="color:#66d9ef">break</span>
-    <span style="color:#75715e"># 每行（`line`）的末尾</span>
-    <span style="color:#75715e"># 都已经有了换行符</span>
-    <span style="color:#75715e">#因为它是从一个文件中进行读取的</span>
-    <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 关闭文件</span>
+    <span style="color:#75715e"># 每行（`line`）的末尾</span>
+    <span style="color:#75715e"># 都已经有了换行符</span>
+    <span style="color:#75715e">#因为它是从一个文件中进行读取的</span>
+    <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+<span style="color:#75715e"># 关闭文件</span>
 f<span style="color:#f92672">.</span>close()
 </code></pre></div><p>输出：</p>
 <pre><code>$ python3 io_using_file.py
@@ -983,23 +1030,23 @@ if you wanna make your work also fun:
 <p>Python 提供了一个叫作 <code>Pickle</code> 的标准模块，通过它你可以将<em>任何</em>纯 Python 对象存储到一个文件中，并在稍后将其取回。这叫作*持久地（Persistently）*存储对象。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pickle
     
-<span style="color:#75715e"># 我们存储相关对象的文件的名称</span>
-shoplistfile <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">shoplist.data</span><span style="color:#e6db74">&#39;</span>
-<span style="color:#75715e"># 需要购买的物品清单</span>
-shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mango</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">carrot</span><span style="color:#e6db74">&#39;</span>]
+<span style="color:#75715e"># 我们存储相关对象的文件的名称</span>
+shoplistfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;shoplist.data&#39;</span>
+<span style="color:#75715e"># 需要购买的物品清单</span>
+shoplist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;mango&#39;</span>, <span style="color:#e6db74">&#39;carrot&#39;</span>]
     
-<span style="color:#75715e"># 准备写入文件</span>
-f <span style="color:#f92672">=</span> open(shoplistfile, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">wb</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 转储对象至文件</span>
+<span style="color:#75715e"># 准备写入文件</span>
+f <span style="color:#f92672">=</span> open(shoplistfile, <span style="color:#e6db74">&#39;wb&#39;</span>)
+<span style="color:#75715e"># 转储对象至文件</span>
 pickle<span style="color:#f92672">.</span>dump(shoplist, f)
 f<span style="color:#f92672">.</span>close()
     
-<span style="color:#75715e"># 清除 shoplist 变量</span>
+<span style="color:#75715e"># 清除 shoplist 变量</span>
 <span style="color:#66d9ef">del</span> shoplist
     
-<span style="color:#75715e"># 重新打开存储文件</span>
-f <span style="color:#f92672">=</span> open(shoplistfile, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">rb</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#75715e"># 从文件中载入对象</span>
+<span style="color:#75715e"># 重新打开存储文件</span>
+f <span style="color:#f92672">=</span> open(shoplistfile, <span style="color:#e6db74">&#39;rb&#39;</span>)
+<span style="color:#75715e"># 从文件中载入对象</span>
 storedlist <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
 <span style="color:#66d9ef">print</span>(storedlist)
 </code></pre></div><p>输出：</p>
@@ -1014,23 +1061,23 @@ storedlist <span style="color:#f92672">=</span> pickle<span style="color:#f92672
 <blockquote>
 <p>注意：如果你正在使用 Python 2，我们又希望能够读写其它非英语语言，我们需要使用 <code>unicode</code> 类型，它全都以字母 <code>u</code> 开头，例如 <code>u&quot;hello world&quot;</code>。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#39;</span>
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> type(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#34;</span>)
-<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&gt;</span>
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#39;</span>
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> type(<span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world</span><span style="color:#e6db74">&#34;</span>)
-<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;hello world&#34;</span>
+<span style="color:#e6db74">&#39;hello world&#39;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> type(<span style="color:#e6db74">&#34;hello world&#34;</span>)
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#e6db74">&#39;&gt;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;hello world&#34;</span>
+<span style="color:#e6db74">&#39;hello world&#39;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> type(<span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;hello world&#34;</span>)
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#e6db74">&#39;&gt;</span>
 </code></pre></div><p>当我们阅读或写入某一文件或当我们希望与互联网上的其它计算机通信时，我们需要将我们的 Unicode 字符串转换至一个能够被发送和接收的格式，这个格式叫作“UTF-8”。我们可以在这一格式下进行读取与写入，只需使用一个简单的关键字参数到我们的标准 <code>open</code> 函数中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding=utf-8</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding=utf-8</span>
 <span style="color:#f92672">import</span> io
     
-f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc.txt</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">wt</span><span style="color:#e6db74">&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">utf-8</span><span style="color:#e6db74">&#34;</span>)
-f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Imagine non-English language here</span><span style="color:#e6db74">&#34;</span>)
+f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;abc.txt&#34;</span>, <span style="color:#e6db74">&#34;wt&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)
+f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">u</span><span style="color:#e6db74">&#34;Imagine non-English language here&#34;</span>)
 f<span style="color:#f92672">.</span>close()
     
-text <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc.txt</span><span style="color:#e6db74">&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">utf-8</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>read()
+text <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;abc.txt&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>)<span style="color:#f92672">.</span>read()
 <span style="color:#66d9ef">print</span>(text)
 </code></pre></div><p><strong>它是如何工作的</strong></p>
 <p>现在你可以忽略 <code>import</code> 语句，我们会在<a href="https://bop.mol.uno/11.modules.html#modules">模块章节</a>章节探讨有关它的更多细节。</p>
@@ -1051,13 +1098,13 @@ text <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>
 <p>如果你的程序中出现了一些无效的语句该怎么办？Python 将会对此进行处理，<strong>举起（Raises）</strong><a href="https://bop.mol.uno/16.exceptions.html#fn_1">1</a>它的小手来告诉你哪里出现了一个<strong>错误（Error）</strong>。</p>
 <p>我们可以通过使用 <code>try..except</code> 来处理异常状况。一般来说我们会把通常的语句放在 try 代码块中，将我们的错误处理器代码放置在 except 代码块中。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
-    text <span style="color:#f92672">=</span> input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Enter something --&gt; </span><span style="color:#e6db74">&#39;</span>)
+    text <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Enter something --&gt; &#39;</span>)
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">EOFError</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Why did you do an EOF on me?</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Why did you do an EOF on me?&#39;</span>)
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyboardInterrupt</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">You cancelled the operation.</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;You cancelled the operation.&#39;</span>)
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">You entered {}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(text))
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;You entered {}&#39;</span><span style="color:#f92672">.</span>format(text))
 </code></pre></div><p>输出：</p>
 <pre><code># Press ctrl + d
 $ python exceptions_handle.py
@@ -1075,28 +1122,28 @@ You entered No exceptions
 <p>抛出异常</p>
 <p>你可以通过 <code>raise</code> 语句来<em>引发</em>一次异常，具体方法是提供错误名或异常名以及要*抛出（Thrown）*异常的对象。</p>
 <p>你能够引发的错误或异常必须是直接或间接从属于 <code>Exception</code>（异常） 类的派生类。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding=UTF-8</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding=UTF-8</span>
     
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShortInputException</span>(<span style="color:#a6e22e">Exception</span>):
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">一个由用户定义的异常类</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#e6db74">&#39;&#39;&#39;一个由用户定义的异常类&#39;&#39;&#39;</span>
     <span style="color:#66d9ef">def</span> __init__(self, length, atleast):
         <span style="color:#a6e22e">Exception</span><span style="color:#f92672">.</span>__init__(self)
         self<span style="color:#f92672">.</span>length <span style="color:#f92672">=</span> length
         self<span style="color:#f92672">.</span>atleast <span style="color:#f92672">=</span> atleast
     
 <span style="color:#66d9ef">try</span>:
-    text <span style="color:#f92672">=</span> input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Enter something --&gt; </span><span style="color:#e6db74">&#39;</span>)
+    text <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Enter something --&gt; &#39;</span>)
     <span style="color:#66d9ef">if</span> len(text) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>:
         <span style="color:#66d9ef">raise</span> ShortInputException(len(text), <span style="color:#ae81ff">3</span>)
-    <span style="color:#75715e"># 其他工作能在此处继续正常运行</span>
+    <span style="color:#75715e"># 其他工作能在此处继续正常运行</span>
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">EOFError</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Why did you do an EOF on me?</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Why did you do an EOF on me?&#39;</span>)
 <span style="color:#66d9ef">except</span> ShortInputException <span style="color:#66d9ef">as</span> ex:
-    <span style="color:#66d9ef">print</span>((<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ShortInputException: The input was </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span>
-           <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0} long, expected at least {1}</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>((<span style="color:#e6db74">&#39;ShortInputException: The input was &#39;</span> <span style="color:#f92672">+</span>
+           <span style="color:#e6db74">&#39;{0} long, expected at least {1}&#39;</span>)
           <span style="color:#f92672">.</span>format(ex<span style="color:#f92672">.</span>length, ex<span style="color:#f92672">.</span>atleast))
 <span style="color:#66d9ef">else</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">No exception was raised.</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No exception was raised.&#39;</span>)
 </code></pre></div><p>输出：</p>
 <pre><code>$ python exceptions_raise.py
 Enter something --&gt; a
@@ -1111,25 +1158,25 @@ No exception was raised.
     
 f <span style="color:#f92672">=</span> None
 <span style="color:#66d9ef">try</span>:
-    f <span style="color:#f92672">=</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">poem.txt</span><span style="color:#e6db74">&#34;</span>)
-    <span style="color:#75715e"># 我们常用的文件阅读风格</span>
+    f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;poem.txt&#34;</span>)
+    <span style="color:#75715e"># 我们常用的文件阅读风格</span>
     <span style="color:#66d9ef">while</span> True:
         line <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readline()
         <span style="color:#66d9ef">if</span> len(line) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
             <span style="color:#66d9ef">break</span>
-        <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
         sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>flush()
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Press ctrl+c now</span><span style="color:#e6db74">&#34;</span>)
-        <span style="color:#75715e"># 为了确保它能运行一段时间</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Press ctrl+c now&#34;</span>)
+        <span style="color:#75715e"># 为了确保它能运行一段时间</span>
         time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">2</span>)
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Could not find file poem.txt</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Could not find file poem.txt&#34;</span>)
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyboardInterrupt</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">!! You cancelled the reading from the file.</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;!! You cancelled the reading from the file.&#34;</span>)
 <span style="color:#66d9ef">finally</span>:
     <span style="color:#66d9ef">if</span> f:
         f<span style="color:#f92672">.</span>close()
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">(Cleaning up: Closed the file)</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;(Cleaning up: Closed the file)&#34;</span>)
 </code></pre></div><p>输出：</p>
 <pre><code>$ python exceptions_finally.py
 Programming is fun
@@ -1140,9 +1187,9 @@ Press ctrl+c now
 <li>
 <p><strong>with语句</strong></p>
 <p>在 <code>try</code> 块中获取资源，然后在 <code>finally</code> 块中释放资源是一种常见的模式。因此，还有一个 <code>with</code> 语句使得这一过程可以以一种干净的姿态得以完成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">poem.txt</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">as</span> f:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;poem.txt&#34;</span>) <span style="color:#66d9ef">as</span> f:
     <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f:
-        <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">print</span>(line, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
 </code></pre></div><p>程序输出的内容应与上一个案例所呈现的相同。本例的不同之处在于我们使用的是 <code>open</code> 函数与 <code>with</code> 语句——我们将关闭文件的操作交由 <code>with open</code> 来自动完成。</p>
 <p>在幕后发生的事情是有一项 <code>with</code> 语句所使用的协议（Protocol）。它会获取由 <code>open</code> 语句返回的对象，在本案例中就是“thefile”。</p>
 <p>它<em>总会</em>在代码块开始之前调用 <code>thefile.__enter__</code> 函数，<strong>并且<em>总会</em>在代码块执行完毕之后调用 thefile.<strong>exit</strong></strong>。</p>
@@ -1157,26 +1204,26 @@ Press ctrl+c now
 <span style="color:#f92672">import</span> platform
 <span style="color:#f92672">import</span> logging
     
-<span style="color:#66d9ef">if</span> platform<span style="color:#f92672">.</span>platform()<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Windows</span><span style="color:#e6db74">&#39;</span>):
-    logging_file <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">HOMEDRIVE</span><span style="color:#e6db74">&#39;</span>),
-                                os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">HOMEPATH</span><span style="color:#e6db74">&#39;</span>),
-                                <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test.log</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">if</span> platform<span style="color:#f92672">.</span>platform()<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;Windows&#39;</span>):
+    logging_file <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#39;HOMEDRIVE&#39;</span>),
+                                os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#39;HOMEPATH&#39;</span>),
+                                <span style="color:#e6db74">&#39;test.log&#39;</span>)
 <span style="color:#66d9ef">else</span>:
-    logging_file <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">HOME</span><span style="color:#e6db74">&#39;</span>),
-                                <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test.log</span><span style="color:#e6db74">&#39;</span>)
+    logging_file <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#39;HOME&#39;</span>),
+                                <span style="color:#e6db74">&#39;test.log&#39;</span>)
     
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Logging to</span><span style="color:#e6db74">&#34;</span>, logging_file)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Logging to&#34;</span>, logging_file)
     
 logging<span style="color:#f92672">.</span>basicConfig(
     level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>DEBUG,
-    format<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>,
+    format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>,
     filename<span style="color:#f92672">=</span>logging_file,
-    filemode<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">w</span><span style="color:#e6db74">&#39;</span>,
+    filemode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>,
 )
     
-logging<span style="color:#f92672">.</span>debug(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Start of the program</span><span style="color:#e6db74">&#34;</span>)
-logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Doing something</span><span style="color:#e6db74">&#34;</span>)
-logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Dying now</span><span style="color:#e6db74">&#34;</span>)
+logging<span style="color:#f92672">.</span>debug(<span style="color:#e6db74">&#34;Start of the program&#34;</span>)
+logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Doing something&#34;</span>)
+logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#34;Dying now&#34;</span>)
 </code></pre></div><p>输出：</p>
 <pre><code>$ python stdlib_logging.py
 Logging to /Users/swa/test.log
@@ -1207,19 +1254,66 @@ $ cat /Users/swa/test.log
 </ul>
 </li>
 </ol>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/">使用Python爬虫爬取网络小说</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

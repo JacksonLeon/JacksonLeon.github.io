@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Java Note | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> Java Note |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/java-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">Java Note</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/java">Java</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2018/12/07</h2>
-</div>
+    <h1 style="text-align: center;" >Java Note</h1>
+    <div class="post-meta">
+    
+      <time datetime="2018-12-07T10:19:46Z">December 07, 2018</time> &nbsp; 
+    
 
-<main>
-<h2 id="description">Description</h2>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        1 min
+      
+      16 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
 <blockquote>
 <p>此文用来记录平时使用Java遇到的问题与心得.</p>
 <p>本文长期更新.</p>
@@ -62,9 +109,9 @@
 <span style="color:#f92672">import</span> java.util.Locale<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> java.util.Date<span style="color:#f92672">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">TimeStamp2Date</span><span style="color:#f92672">(</span>String timestampString<span style="color:#f92672">,</span> String formats<span style="color:#f92672">)</span><span style="color:#f92672">{</span>
-    Long timestamp <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>timestampString<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-    String _date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>formats<span style="color:#f92672">,</span> Locale<span style="color:#f92672">.</span><span style="color:#a6e22e">CHINA</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>timestamp<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">TimeStamp2Date</span><span style="color:#f92672">(</span>String timestampString<span style="color:#f92672">,</span> String formats<span style="color:#f92672">){</span>
+    Long timestamp <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>timestampString<span style="color:#f92672">);</span>
+    String _date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>formats<span style="color:#f92672">,</span> Locale<span style="color:#f92672">.</span><span style="color:#a6e22e">CHINA</span><span style="color:#f92672">).</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>timestamp<span style="color:#f92672">));</span>
     <span style="color:#66d9ef">return</span> _date<span style="color:#f92672">;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><blockquote>
@@ -81,27 +128,65 @@
 </span><span style="color:#75715e"> */</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">Date2TimeStamp</span><span style="color:#f92672">(</span>String dateStr<span style="color:#f92672">,</span> String format<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-        SimpleDateFormat sdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>format<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>sdf<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateStr<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getTime</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        SimpleDateFormat sdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>format<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>sdf<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateStr<span style="color:#f92672">).</span><span style="color:#a6e22e">getTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/java">Java</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

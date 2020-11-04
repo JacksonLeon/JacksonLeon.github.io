@@ -1,44 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>使用Requests模拟post请求自动构建Gitee pages服务 | GeekJoe</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.0" />
+
+  <title> 使用Requests模拟post请求自动构建Gitee pages服务 |  GeekJoe</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/classes.css">
+  <link rel="canonical" href="/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/">
+  <link rel="alternate" type="application/rss+xml" href="" title="GeekJoe">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
     
-  </head>
+    <a href="/"> Home</a>
+    
+    <a href="/post/"> Posts</a>
+    
+    <a href="/note/"> Notes</a>
+    
+    <a href="/categories/"> Categories</a>
+    
+    <a href="/tags/"> Tags</a>
+    
+    <a href="/about/"> About</a>
+    
+    <a href="/index.xml"> Subscribe</a>
+    
+  </nav>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/post/">Posts</a></li>
-      
-      <li><a href="/note/">Notes</a></li>
-      
-      <li><a href="/categories/">Categories</a></li>
-      
-      <li><a href="/tags/">Tags</a></li>
-      
-      <li><a href="/about/">About</a></li>
-      
-      <li><a href="/index.xml">Subscribe</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+  <nav class="fontawesome">
+    
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
 
-<div class="article-meta">
-<h1><span class="title">使用Requests模拟post请求自动构建Gitee pages服务</span></h1>
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/blog">Blog</a>
+    &nbsp;
+    
+  
 
-<h2 class="date">2019/05/01</h2>
-</div>
+    <h1 style="text-align: center;" >使用Requests模拟post请求自动构建Gitee pages服务</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-05-01T14:57:54Z">May 01, 2019</time> &nbsp; 
+    
 
-<main>
-<blockquote>
+     &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        2 min
+      
+      0 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <blockquote>
 <p>Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。</p>
 <p>一起来造轮子吧！</p>
 </blockquote>
@@ -64,37 +111,106 @@ Cookie: cookies
 <p>上代码：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 
-url <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://gitee.com/Username/Username/pages/rebuild</span><span style="color:#e6db74">&#39;</span>
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gitee.com/Username/Username/pages/rebuild&#39;</span>
 data <span style="color:#f92672">=</span> {}
 header <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Content-Type</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">application/x-www-form-urlencoded</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Referer</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://gitee.com/Username/Username/pages</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">X-CSRF-Token</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">***********************</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">User-Agent</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">X-Requested-With</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">XMLHttpRequest</span><span style="color:#e6db74">&#39;</span>,
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Cookie</span><span style="color:#e6db74">&#39;</span>:
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cookies</span><span style="color:#e6db74">&#39;</span>
+    <span style="color:#e6db74">&#39;Content-Type&#39;</span>:
+    <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>,
+    <span style="color:#e6db74">&#39;Referer&#39;</span>:
+    <span style="color:#e6db74">&#39;https://gitee.com/Username/Username/pages&#39;</span>,
+    <span style="color:#e6db74">&#39;X-CSRF-Token&#39;</span>:
+    <span style="color:#e6db74">&#39;***********************&#39;</span>,
+    <span style="color:#e6db74">&#39;User-Agent&#39;</span>:
+    <span style="color:#e6db74">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span>:
+    <span style="color:#e6db74">&#39;XMLHttpRequest&#39;</span>,
+    <span style="color:#e6db74">&#39;Cookie&#39;</span>:
+    <span style="color:#e6db74">&#39;cookies&#39;</span>
 }
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, headers<span style="color:#f92672">=</span>header)
 </code></pre></div><p>See,it’s so easy!</p>
-</main>
 
+  
   <footer>
-  <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/blog">Blog</a>
+        &nbsp;
+      
+        <a href="/tags/python">Python</a>
+        &nbsp;
+      
+        <a href="/tags/requests">Requests</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/">Markdown 图床更改及博客推送</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0007.py/">SMTC 0007.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0006.py/">SMTC 0006.py</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/python-library/">Python Library</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/note/smtc-0000.py/">SMTC 0000.py</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
-  
-  <hr/>
-  © <a href="https://imlauzh.github.io">Joseph Lau</a> 2017 &ndash; 2019 | <a href="https://github.com/imlauzh">Github</a>
-  
-  </footer>
-  </body>
-</html>
 
+</html>

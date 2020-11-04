@@ -5,12 +5,9 @@
     <link>/categories/style-guide/</link>
     <description>Recent content in Style Guide on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/style-guide/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate><atom:link href="/categories/style-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pytorch Style Guide</title>
       <link>/post/pytorch-style-guide/</link>
