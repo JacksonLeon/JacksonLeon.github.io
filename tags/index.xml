@@ -2,225 +2,225 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GeekJoe</title>
-    <link>/tags/</link>
+    <link>/blog/tags/</link>
     <description>Recent content in Tags on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>备忘录</title>
-      <link>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/blog/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
-      <guid>/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/blog/tags/%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>深度学习</title>
-      <link>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <link>/blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
-      <guid>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>/blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>/tags/linux/</link>
+      <link>/blog/tags/linux/</link>
       <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
       
-      <guid>/tags/linux/</guid>
+      <guid>/blog/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/tags/docker/</link>
+      <link>/blog/tags/docker/</link>
       <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
       
-      <guid>/tags/docker/</guid>
+      <guid>/blog/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Manjaro</title>
-      <link>/tags/manjaro/</link>
+      <link>/blog/tags/manjaro/</link>
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
-      <guid>/tags/manjaro/</guid>
+      <guid>/blog/tags/manjaro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reproduce</title>
-      <link>/tags/reproduce/</link>
+      <link>/blog/tags/reproduce/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/tags/reproduce/</guid>
+      <guid>/blog/tags/reproduce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>/blog/tags/python/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>/blog/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>/tags/git/</link>
+      <link>/blog/tags/git/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>/blog/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>/tags/blog/</link>
+      <link>/blog/tags/blog/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>/tags/blog/</guid>
+      <guid>/blog/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Requests</title>
-      <link>/tags/requests/</link>
+      <link>/blog/tags/requests/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>/tags/requests/</guid>
+      <guid>/blog/tags/requests/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Picture Bed</title>
-      <link>/tags/picture-bed/</link>
+      <link>/blog/tags/picture-bed/</link>
       <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
       
-      <guid>/tags/picture-bed/</guid>
+      <guid>/blog/tags/picture-bed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
+      <link>/blog/tags/machine-learning/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>/tags/machine-learning/</guid>
+      <guid>/blog/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SMTC</title>
-      <link>/tags/smtc/</link>
+      <link>/blog/tags/smtc/</link>
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
-      <guid>/tags/smtc/</guid>
+      <guid>/blog/tags/smtc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Macintosh</title>
-      <link>/tags/macintosh/</link>
+      <link>/blog/tags/macintosh/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
       
-      <guid>/tags/macintosh/</guid>
+      <guid>/blog/tags/macintosh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Applications</title>
-      <link>/tags/applications/</link>
+      <link>/blog/tags/applications/</link>
       <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
       
-      <guid>/tags/applications/</guid>
+      <guid>/blog/tags/applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>/tags/java/</link>
+      <link>/blog/tags/java/</link>
       <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
       
-      <guid>/tags/java/</guid>
+      <guid>/blog/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hackintosh</title>
-      <link>/tags/hackintosh/</link>
+      <link>/blog/tags/hackintosh/</link>
       <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
       
-      <guid>/tags/hackintosh/</guid>
+      <guid>/blog/tags/hackintosh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LeetCode</title>
-      <link>/tags/leetcode/</link>
+      <link>/blog/tags/leetcode/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>/tags/leetcode/</guid>
+      <guid>/blog/tags/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>/tags/hexo/</link>
+      <link>/blog/tags/hexo/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>/tags/hexo/</guid>
+      <guid>/blog/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Opencv</title>
-      <link>/tags/opencv/</link>
+      <link>/blog/tags/opencv/</link>
       <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
       
-      <guid>/tags/opencv/</guid>
+      <guid>/blog/tags/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matlab</title>
-      <link>/tags/matlab/</link>
+      <link>/blog/tags/matlab/</link>
       <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
       
-      <guid>/tags/matlab/</guid>
+      <guid>/blog/tags/matlab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reptile</title>
-      <link>/tags/reptile/</link>
+      <link>/blog/tags/reptile/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>/tags/reptile/</guid>
+      <guid>/blog/tags/reptile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>/tags/markdown/</link>
+      <link>/blog/tags/markdown/</link>
       <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
       
-      <guid>/tags/markdown/</guid>
+      <guid>/blog/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>/tags/vim/</link>
+      <link>/blog/tags/vim/</link>
       <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
       
-      <guid>/tags/vim/</guid>
+      <guid>/blog/tags/vim/</guid>
       <description></description>
     </item>
     

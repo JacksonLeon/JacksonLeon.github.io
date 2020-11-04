@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on GeekJoe</title>
-    <link>/categories/blog/</link>
+    <link>/blog/categories/blog/</link>
     <description>Recent content in Blog on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Wed, 01 May 2019 14:57:54 +0000</lastBuildDate><atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 May 2019 14:57:54 +0000</lastBuildDate><atom:link href="/blog/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
-      <link>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
+      <link>/blog/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
       
-      <guid>/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/blog/note/%E4%BD%BF%E7%94%A8requests%E6%A8%A1%E6%8B%9Fpost%E8%AF%B7%E6%B1%82%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BAgitee-pages%E6%9C%8D%E5%8A%A1/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
 &lt;p&gt;一起来造轮子吧！&lt;/p&gt;
@@ -22,10 +22,10 @@
     
     <item>
       <title>Markdown 图床更改及博客推送</title>
-      <link>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
+      <link>/blog/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</link>
       <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
       
-      <guid>/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
+      <guid>/blog/note/markdown-%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%94%B9%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -33,10 +33,10 @@
     
     <item>
       <title>Hexo-NexT博客样式自定义</title>
-      <link>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <link>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <guid>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Manjaro on GeekJoe</title>
-    <link>/tags/manjaro/</link>
+    <link>/blog/tags/manjaro/</link>
     <description>Recent content in Manjaro on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate><atom:link href="/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Sep 2019 21:48:52 +0000</lastBuildDate><atom:link href="/blog/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manjaro备忘录</title>
-      <link>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <link>/blog/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</link>
       <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
       
-      <guid>/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <guid>/blog/note/manjaro%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
       <description>安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro rufus
 更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
 # 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加# 中国区镜像排序，一般选择前两个镜像，选择一个作为备用sudo pacman-mirrors -i -c China -m rank同步更新 sudo pacman -Syyu添加Arch Linux 中文社区仓库 在 /etc/pacman.conf 文件末尾添加以下内容：

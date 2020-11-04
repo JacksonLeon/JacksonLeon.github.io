@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on GeekJoe</title>
-    <link>/tags/linux/</link>
+    <link>/blog/tags/linux/</link>
     <description>Recent content in Linux on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sun, 20 Oct 2019 19:50:00 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Oct 2019 19:50:00 +0000</lastBuildDate><atom:link href="/blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux 基础</title>
-      <link>/note/linux-%E5%9F%BA%E7%A1%80/</link>
+      <link>/blog/note/linux-%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
       
-      <guid>/note/linux-%E5%9F%BA%E7%A1%80/</guid>
+      <guid>/blog/note/linux-%E5%9F%BA%E7%A1%80/</guid>
       <description>zsh sudo yum -y install zshchsh -s /bin/zsh# curlsh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;# wgetsh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;ls ~/.oh-my-zsh/themesvim ~/.zshrcZSH_THEME=&amp;quot;ys&amp;quot;source ~/.zshrc# 命令补全git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestionsvim ~/.zshrcplugins=(gitzsh-autosuggestions)source ~/.zshrcDocker # centos sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 sudo yum-config-manager \  --add-repo \  https://download.</description>
     </item>
     

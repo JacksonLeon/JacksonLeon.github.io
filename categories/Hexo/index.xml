@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hexo on GeekJoe</title>
-    <link>/categories/hexo/</link>
+    <link>/blog/categories/hexo/</link>
     <description>Recent content in Hexo on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Tue, 17 Jul 2018 08:36:16 +0000</lastBuildDate><atom:link href="/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jul 2018 08:36:16 +0000</lastBuildDate><atom:link href="/blog/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hexo-NexT博客样式自定义</title>
-      <link>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <link>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Tue, 17 Jul 2018 08:36:16 +0000</pubDate>
       
-      <guid>/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <guid>/blog/note/hexo-next%E5%8D%9A%E5%AE%A2%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;默认的主题样式非常简单，但是在有些方面还有些缺陷，其实NexT主题中已经包含这些主题，我们只需要把他们启用就OK啦。&lt;/p&gt;

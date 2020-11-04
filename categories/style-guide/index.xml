@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Style Guide on GeekJoe</title>
-    <link>/categories/style-guide/</link>
+    <link>/blog/categories/style-guide/</link>
     <description>Recent content in Style Guide on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate><atom:link href="/categories/style-guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate><atom:link href="/blog/categories/style-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pytorch Style Guide</title>
-      <link>/post/pytorch-style-guide/</link>
+      <link>/blog/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>/post/pytorch-style-guide/</guid>
+      <guid>/blog/post/pytorch-style-guide/</guid>
       <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;blockquote&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Google Python Style Guide</title>
-      <link>/post/google-python-style-guide/</link>
+      <link>/blog/post/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
-      <guid>/post/google-python-style-guide/</guid>
+      <guid>/blog/post/google-python-style-guide/</guid>
       <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>

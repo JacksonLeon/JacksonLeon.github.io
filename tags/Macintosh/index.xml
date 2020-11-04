@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Macintosh on GeekJoe</title>
-    <link>/tags/macintosh/</link>
+    <link>/blog/tags/macintosh/</link>
     <description>Recent content in Macintosh on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 21 Dec 2018 15:32:06 +0000</lastBuildDate><atom:link href="/tags/macintosh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Dec 2018 15:32:06 +0000</lastBuildDate><atom:link href="/blog/tags/macintosh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macintosh Note</title>
-      <link>/note/macintosh-note/</link>
+      <link>/blog/note/macintosh-note/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
       
-      <guid>/note/macintosh-note/</guid>
+      <guid>/blog/note/macintosh-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此文用来记录平时使用Mac遇到的问题与心得.&lt;/p&gt;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on GeekJoe</title>
-    <link>/post/</link>
+    <link>/blog/post/</link>
     <description>Recent content in Posts on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
-      <link>/post/leetcode/</link>
+      <link>/blog/post/leetcode/</link>
       <pubDate>Tue, 31 Mar 2020 14:16:36 +0800</pubDate>
       
-      <guid>/post/leetcode/</guid>
+      <guid>/blog/post/leetcode/</guid>
       <description>&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -112,10 +112,10 @@ return 2.
     
     <item>
       <title>How to be a Postgraduate student(MIT)</title>
-      <link>/post/how-to-be-a-postgraduate-studentmit/</link>
+      <link>/blog/post/how-to-be-a-postgraduate-studentmit/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/post/how-to-be-a-postgraduate-studentmit/</guid>
+      <guid>/blog/post/how-to-be-a-postgraduate-studentmit/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -141,10 +141,10 @@ return 2.
     
     <item>
       <title>Migrating to Python 3 with pleasure</title>
-      <link>/post/migrating-to-python-3-with-pleasure/</link>
+      <link>/blog/post/migrating-to-python-3-with-pleasure/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>/post/migrating-to-python-3-with-pleasure/</guid>
+      <guid>/blog/post/migrating-to-python-3-with-pleasure/</guid>
       <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
@@ -153,10 +153,10 @@ return 2.
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>/post/pytorch-style-guide/</link>
+      <link>/blog/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>/post/pytorch-style-guide/</guid>
+      <guid>/blog/post/pytorch-style-guide/</guid>
       <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;blockquote&gt;
@@ -168,29 +168,29 @@ return 2.
     
     <item>
       <title>Google Python Style Guide</title>
-      <link>/post/google-python-style-guide/</link>
+      <link>/blog/post/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
-      <guid>/post/google-python-style-guide/</guid>
+      <guid>/blog/post/google-python-style-guide/</guid>
       <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>2019猪年快乐</title>
-      <link>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
+      <link>/blog/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
-      <guid>/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
+      <guid>/blog/post/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
       <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>Show Me The Code</title>
-      <link>/post/show-me-the-code/</link>
+      <link>/blog/post/show-me-the-code/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>/post/show-me-the-code/</guid>
+      <guid>/blog/post/show-me-the-code/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
@@ -200,10 +200,10 @@ return 2.
     
     <item>
       <title>LeetCode Analysis</title>
-      <link>/post/leetcode-analysis/</link>
+      <link>/blog/post/leetcode-analysis/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>/post/leetcode-analysis/</guid>
+      <guid>/blog/post/leetcode-analysis/</guid>
       <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
     </item>
     
