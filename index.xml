@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on GeekJoe</title>
+    <title>GeekJoe</title>
     <link>/blog/</link>
-    <description>Recent content in Home on GeekJoe</description>
+    <description>Recent content on GeekJoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
@@ -582,7 +582,7 @@ Deploy to remote sites $ hexo deploy More info: Deployment</description>
       <description>联系方式 EMail: im.lauzh@gmail.com
 Telegram: @JosephyLau
 Github: @imlauzh
-本站背后    生成 Hugo - The world’s fastest framework for building websites     主题 hugo-xmin-eXtremely Minimal Hugo theme: about 150 lines of code in total, including HTML and CSS (with no dependencies)   协议 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)    </description>
+本站背后    生成 Hugo - The world’s fastest framework for building websites     主题 simpleness   协议 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)    </description>
     </item>
     
   </channel>
