@@ -50,6 +50,17 @@
     </item>
     
     <item>
+      <title>Commit messages guide</title>
+      <link>/blog/note/commit-messages-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>/blog/note/commit-messages-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Pytorch Style Guide</title>
       <link>/blog/post/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>

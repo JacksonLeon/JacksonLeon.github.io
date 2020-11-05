@@ -18,20 +18,29 @@
     </item>
     
     <item>
-      <title>Note</title>
-      <link>/blog/categories/note/</link>
+      <title>Machine Learning</title>
+      <link>/blog/categories/machine-learning/</link>
       <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
-      <guid>/blog/categories/note/</guid>
+      <guid>/blog/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Notebook</title>
       <link>/blog/categories/notebook/</link>
-      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
       
       <guid>/blog/categories/notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/blog/categories/linux/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/blog/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -41,24 +50,6 @@
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
       <guid>/blog/categories/reproduce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>/blog/categories/git/</link>
-      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
-      
-      <guid>/blog/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>/blog/categories/machine-learning/</link>
-      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
-      
-      <guid>/blog/categories/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -77,15 +68,6 @@
       <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
       
       <guid>/blog/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/blog/categories/python/</link>
-      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
-      
-      <guid>/blog/categories/python/</guid>
       <description></description>
     </item>
     
