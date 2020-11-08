@@ -14,8 +14,7 @@
       <pubDate>Tue, 31 Mar 2020 14:16:36 +0800</pubDate>
       
       <guid>/blog/posts/leetcode/</guid>
-      <description>&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Write a function that takes an unsigned integer and returns the number of &lt;code&gt;1&lt;/code&gt; bits it has (also known as the &lt;code&gt;Hamming weight&lt;/code&gt;). For example, the 32-bit integer &lt;code&gt;11&lt;/code&gt; has binary representation &lt;code&gt;00000000000000000000000000001011&lt;/code&gt;, so the function should return 3.&lt;/p&gt;
