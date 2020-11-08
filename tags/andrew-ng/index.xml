@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Andrew NG on GeekJoe</title>
+    <title>Andrew NG on imlauzh</title>
     <link>/blog/tags/andrew-ng/</link>
-    <description>Recent content in Andrew NG on GeekJoe</description>
+    <description>Recent content in Andrew NG on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Fri, 19 Apr 2019 11:16:05 +0000</lastBuildDate><atom:link href="/blog/tags/andrew-ng/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>吴恩达「机器学习」（三）</title>
-      <link>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</link>
+      <link>/blog/posts/andrew-ng-ml-2/</link>
       <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
       
-      <guid>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%89/</guid>
+      <guid>/blog/posts/andrew-ng-ml-2/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;逻辑回归&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -21,10 +21,10 @@
     
     <item>
       <title>吴恩达「机器学习」（二）</title>
-      <link>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
+      <link>/blog/posts/andrew-ng-ml-1/</link>
       <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
       
-      <guid>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
+      <guid>/blog/posts/andrew-ng-ml-1/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;多变量线性回归&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -32,10 +32,10 @@
     
     <item>
       <title>吴恩达「机器学习」（一）</title>
-      <link>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <link>/blog/posts/andrew-ng-ml-0/</link>
       <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
       
-      <guid>/blog/note/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <guid>/blog/posts/andrew-ng-ml-0/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;什么是机器学习？&lt;/li&gt;
 &lt;li&gt;什么是监督学习算法？&lt;/li&gt;

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on GeekJoe</title>
+    <title>Python on imlauzh</title>
     <link>/blog/tags/python/</link>
-    <description>Recent content in Python on GeekJoe</description>
+    <description>Recent content in Python on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Sat, 04 May 2019 09:30:29 +0000</lastBuildDate><atom:link href="/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrating to Python 3 with pleasure</title>
-      <link>/blog/post/migrating-to-python-3-with-pleasure/</link>
+      <link>/blog/posts/migrating-to-python-3-with-pleasure/</link>
       <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
       
-      <guid>/blog/post/migrating-to-python-3-with-pleasure/</guid>
+      <guid>/blog/posts/migrating-to-python-3-with-pleasure/</guid>
       <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
@@ -22,10 +22,10 @@
     
     <item>
       <title>Pytorch Style Guide</title>
-      <link>/blog/post/pytorch-style-guide/</link>
+      <link>/blog/posts/pytorch-style-guide/</link>
       <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
       
-      <guid>/blog/post/pytorch-style-guide/</guid>
+      <guid>/blog/posts/pytorch-style-guide/</guid>
       <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;blockquote&gt;
@@ -37,20 +37,20 @@
     
     <item>
       <title>Google Python Style Guide</title>
-      <link>/blog/post/google-python-style-guide/</link>
+      <link>/blog/posts/google-python-style-guide/</link>
       <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
       
-      <guid>/blog/post/google-python-style-guide/</guid>
+      <guid>/blog/posts/google-python-style-guide/</guid>
       <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>Python Library</title>
-      <link>/blog/note/python-library/</link>
+      <link>/blog/posts/python-library/</link>
       <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
       
-      <guid>/blog/note/python-library/</guid>
+      <guid>/blog/posts/python-library/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;汇总使用过的Python库&lt;/p&gt;
@@ -60,10 +60,10 @@
     
     <item>
       <title>Python Note</title>
-      <link>/blog/note/python-note/</link>
+      <link>/blog/posts/python-note/</link>
       <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
       
-      <guid>/blog/note/python-note/</guid>
+      <guid>/blog/posts/python-note/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python个人笔记&lt;/p&gt;
@@ -72,10 +72,10 @@
     
     <item>
       <title>使用Python爬虫爬取网络小说</title>
-      <link>/blog/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</link>
+      <link>/blog/posts/novel-python/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>/blog/note/%E4%BD%BF%E7%94%A8python%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4/</guid>
+      <guid>/blog/posts/novel-python/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;小说网址&lt;/li&gt;
 &lt;/ul&gt;

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <title> OpenCV Note |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/opencv-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >OpenCV Note</h1>
+    <div class="post-meta">
+    
+      <time datetime="2018-05-20T23:06:44Z">May 20, 2018</time> &nbsp; 
+    
+
+     &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/opencv-note/" class="leancloud_visitors" data-flag-title="OpenCV Note">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        3 min
+      
+      7 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
+<blockquote>
+<p>此文用来记录平时使用OpenCV遇到的问题与心得.</p>
+<p>本文长期更新.</p>
+</blockquote>
+<h2 id="安装与配置">安装与配置</h2>
+<h3 id="安装">安装</h3>
+<blockquote>
+<p>这里使用VS 2017与Opencv 3.4.1为例，其他版本基本相似</p>
+</blockquote>
+<ul>
+<li><a href="https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.4.1/opencv-3.4.1-vc14_vc15.exe/download">下载Opencv</a></li>
+<li>双击运行，安装到磁盘（Opencv安装位置下面需要用到）</li>
+<li>等解压完成就可以了</li>
+</ul>
+<h3 id="配置">配置</h3>
+<h4 id="系统环境变量配置">系统环境变量配置</h4>
+<ul>
+<li>（以Windows 10为例）我的电脑-&gt;右键-&gt;属性-&gt;高级系统设置-&gt;环境变量</li>
+<li>系统变量中找到path选择编辑</li>
+<li>新建，内容为<code>%Opencv%\build\x64\vc15\bin</code>，其中<code>%Opencv%</code>为Opencv安装路径</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="vs-2017配置">VS 2017配置</h4>
+<ul>
+<li>创建VS 2017项目，Visual C++ -&gt; Win32 -&gt; Win32控制台应用程序</li>
+<li>附加选项中勾上空项目，点击完成</li>
+<li>点击视图-&gt;其他窗口-&gt;属性管理器</li>
+<li>在你需要进行编译的环境下右键选择<code>添加新项目属性表</code></li>
+<li>例如右键<code>Debug | x64</code>选择<code>添加新项目属性表</code>，名称为<code>Debug_64.props</code>，保存位置默认</li>
+<li>在通用属性 -&gt; VC++目录 -&gt; 包含目录中分别添加</li>
+</ul>
+<pre><code>%opencv%\build\include
+%opencv%\build\include\opencv
+%opencv%\build\include\opencv2
+</code></pre><ul>
+<li>库目录中添加<code>%opencv%\build\x64\vc15\lib</code></li>
+<li>在通用属性 -&gt; 链接器 -&gt; 输入中添加<code>opencv_world341d.lib</code></li>
+<li><code>Release</code>环境下的属性配置与<code>Debug</code>类似，不同的是在通用属性 -&gt; 链接器 -&gt; 输入中添加的是<code>opencv_world341.lib</code></li>
+<li>以后若是创建新项目，可以直接在属性管理器中相应的编译环境下右键<code>添加现有项目属性表</code>，添加相应的属性表</li>
+</ul>
+<h3 id="测试">测试</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2/core/core.hpp&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2/highgui/highgui.hpp&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> cv;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#75715e">// 读入一张图片（test）    
+</span><span style="color:#75715e"></span>    Mat img <span style="color:#f92672">=</span> imread(<span style="color:#e6db74">&#34;test.jpg&#34;</span>);
+    <span style="color:#75715e">// 创建一个名为 &#34;test&#34;窗口    
+</span><span style="color:#75715e"></span>    namedWindow(<span style="color:#e6db74">&#34;test&#34;</span>);
+    <span style="color:#75715e">// 在窗口中显示test
+</span><span style="color:#75715e"></span>    imshow(<span style="color:#e6db74">&#34;test&#34;</span>, img);
+    <span style="color:#75715e">// 任意按键后窗口关闭
+</span><span style="color:#75715e"></span>    waitKey(<span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+
+  
+  <footer>
+    <hr>
+    
+    <time datetime="2018-12-22T14:40:14Z">
+      update @ December 22, 2018
+    </time>
+    <p></p>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/blog/tags/opencv">Opencv</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

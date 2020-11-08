@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on GeekJoe</title>
+    <title>Tags on imlauzh</title>
     <link>/blog/tags/</link>
-    <description>Recent content in Tags on GeekJoe</description>
+    <description>Recent content in Tags on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Thu, 10 Oct 2019 10:11:18 +0000</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker</title>
@@ -86,6 +86,15 @@
       <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
       
       <guid>/blog/tags/webhook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>/blog/tags/java/</link>
+      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
+      
+      <guid>/blog/tags/java/</guid>
       <description></description>
     </item>
     

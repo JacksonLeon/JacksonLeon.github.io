@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <title> Java Note |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/java-note/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >Java Note</h1>
+    <div class="post-meta">
+    
+      <time datetime="2018-12-07T10:19:46Z">December 07, 2018</time> &nbsp; 
+    
+
+     &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/java-note/" class="leancloud_visitors" data-flag-title="Java Note">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        1 min
+      
+      16 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="description">Description</h2>
+<blockquote>
+<p>此文用来记录平时使用Java遇到的问题与心得.</p>
+<p>本文长期更新.</p>
+</blockquote>
+<h2 id="java常用函数">Java常用函数</h2>
+<h3 id="string">String</h3>
+<ul>
+<li>indexOf()</li>
+<li>charAt()</li>
+</ul>
+<h2 id="unix-时间戳与标准时间互转">Unix 时间戳与标准时间互转</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Java将Unix时间戳转换成指定格式日期字符串
+</span><span style="color:#75715e"> * @param timestampString 时间戳 如：&#34;1473048265&#34;;
+</span><span style="color:#75715e"> * @param formats 要格式化的格式 默认：&#34;yyyy-MM-dd HH:mm:ss&#34;;
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @return 返回结果 如：&#34;2016-09-05 16:06:42&#34;;
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">// imported
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> java.text.SimpleDateFormat<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Locale<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Date<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">TimeStamp2Date</span><span style="color:#f92672">(</span>String timestampString<span style="color:#f92672">,</span> String formats<span style="color:#f92672">){</span>
+    Long timestamp <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>timestampString<span style="color:#f92672">);</span>
+    String _date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>formats<span style="color:#f92672">,</span> Locale<span style="color:#f92672">.</span><span style="color:#a6e22e">CHINA</span><span style="color:#f92672">).</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>timestamp<span style="color:#f92672">));</span>
+    <span style="color:#66d9ef">return</span> _date<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p>调用方法</p>
+<p><code>TimeStamp2Date(&quot;1473048265&quot;, &quot;yyyy-MM-dd HH:mm:ss”);</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 日期格式字符串转换成时间戳
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @param dateStr 字符串日期
+</span><span style="color:#75715e"> * @param format   如：yyyy-MM-dd HH:mm:ss
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * @return
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">Date2TimeStamp</span><span style="color:#f92672">(</span>String dateStr<span style="color:#f92672">,</span> String format<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        SimpleDateFormat sdf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span>format<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>sdf<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateStr<span style="color:#f92672">).</span><span style="color:#a6e22e">getTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+
+  
+  <footer>
+    <hr>
+    
+    <time datetime="2018-12-28T15:49:42Z">
+      update @ December 28, 2018
+    </time>
+    <p></p>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/blog/tags/java">Java</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

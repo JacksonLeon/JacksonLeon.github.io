@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on GeekJoe</title>
+    <title>Categories on imlauzh</title>
     <link>/blog/categories/</link>
-    <description>Recent content in Categories on GeekJoe</description>
+    <description>Recent content in Categories on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
@@ -59,15 +59,6 @@
       <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
       
       <guid>/blog/categories/smtc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>/blog/categories/java/</link>
-      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
-      
-      <guid>/blog/categories/java/</guid>
       <description></description>
     </item>
     

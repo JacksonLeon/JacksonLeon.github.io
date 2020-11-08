@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <title> 使用Requests模拟post请求自动构建Gitee pages服务 |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/mock-gitee-auto-build-pages/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >使用Requests模拟post请求自动构建Gitee pages服务</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-05-01T14:57:54Z">May 01, 2019</time> &nbsp; 
+    
+
+     &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/mock-gitee-auto-build-pages/" class="leancloud_visitors" data-flag-title="使用Requests模拟post请求自动构建Gitee pages服务">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        2 min
+      
+      0 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <blockquote>
+<p>Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。</p>
+<p>一起来造轮子吧！</p>
+</blockquote>
+<p>（满满的资本家气息……</p>
+<p><img src="https://i.loli.net/2019/05/01/5cc949aba4f60.png" alt="image-20190501150207893"></p>
+<p>先用Chrome抓取一下：</p>
+<pre><code>POST /Username/Username/pages/rebuild HTTP/1.1
+Host: gitee.com
+Connection: keep-alive
+Content-Length: 47
+Origin: https://gitee.com
+X-CSRF-Token: ***********************
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: */*
+X-Requested-With: XMLHttpRequest
+DNT: 1
+Referer: https://gitee.com/Username/Username/pages
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: cookies
+</code></pre><p><code>post</code>请求，那么先看<code>Content-Type</code>，是<code>application/x-www-form-urlencoded</code>，注意一共有四种形式，不能混淆。那么我们就可以用对应的进行模拟</p>
+<p>上代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gitee.com/Username/Username/pages/rebuild&#39;</span>
+data <span style="color:#f92672">=</span> {}
+header <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;Content-Type&#39;</span>:
+    <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>,
+    <span style="color:#e6db74">&#39;Referer&#39;</span>:
+    <span style="color:#e6db74">&#39;https://gitee.com/Username/Username/pages&#39;</span>,
+    <span style="color:#e6db74">&#39;X-CSRF-Token&#39;</span>:
+    <span style="color:#e6db74">&#39;***********************&#39;</span>,
+    <span style="color:#e6db74">&#39;User-Agent&#39;</span>:
+    <span style="color:#e6db74">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span>:
+    <span style="color:#e6db74">&#39;XMLHttpRequest&#39;</span>,
+    <span style="color:#e6db74">&#39;Cookie&#39;</span>:
+    <span style="color:#e6db74">&#39;cookies&#39;</span>
+}
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, headers<span style="color:#f92672">=</span>header)
+</code></pre></div><p>See,it’s so easy!</p>
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/blog/tags/blog">Blog</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/blog/posts/parser-pic-blocks/">Markdown 图床更改及博客推送</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

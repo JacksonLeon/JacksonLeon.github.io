@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <title> Commit messages guide |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/commit-messages-guide/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/blog/categories/reproduce">Reproduce</a>
+    &nbsp;
+    
+  
+
+    <h1 style="text-align: center;" >Commit messages guide</h1>
+    <div class="post-meta">
+    
+      <time datetime="2019-05-04T09:09:27Z">May 04, 2019</time> &nbsp; 
+    
+
+     &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/commit-messages-guide/" class="leancloud_visitors" data-flag-title="Commit messages guide">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        9 min
+      
+      16 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <!-- raw HTML omitted -->
+<p>A guide to understanding the importance of commit messages and how to write them well.</p>
+<p>It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.</p>
+<h2 id="available-languages">Available languages</h2>
+<ul>
+<li><a href="README.md">English</a></li>
+<li><a href="README_pt-BR.md">Português</a></li>
+<li><a href="README_de-DE.md">Deutsch</a></li>
+<li><a href="README_es-AR.md">Español</a></li>
+<li><a href="README_it-IT.md">Italiano</a></li>
+<li><a href="README_ru-RU.md">Russian</a></li>
+<li><a href="README_ko-KR.md">Korean</a></li>
+</ul>
+<h2 id="what-is-a-commit">What is a &ldquo;commit&rdquo;?</h2>
+<p>In simple terms, a commit is a <em>snapshot</em> of your local files, written in your local repository.
+Contrary to what some people think, <a href="https://git-scm.com/book/eo/v1/Ekkomenci-Git-Basics#Snapshots,-Not-Differences">git doesn&rsquo;t store only the difference between the files, it stores a full version of all files</a>.
+For files that didn&rsquo;t change from one commit to another, git stores just a link to the previous identical file that is already stored.</p>
+<p>The image below shows how git stores data over time, in which each &ldquo;Version&rdquo; is a commit:</p>
+<p><img src="https://i.stack.imgur.com/AQ5TG.png" alt=""></p>
+<h2 id="why-are-commit-messages-important">Why are commit messages important?</h2>
+<ul>
+<li>To speed up and streamline code reviews</li>
+<li>To help in the understanding of a change</li>
+<li>To explain &ldquo;the whys&rdquo; that cannot be described only with code</li>
+<li>To help future maintainers figure out why and how changes were made, making troubleshooting and debugging easier</li>
+</ul>
+<p>To maximize those outcomes, we can use some good practices and standards described in the next section.</p>
+<h2 id="good-practices">Good practices</h2>
+<p>These are some practices collected from my experiences, internet articles, and other guides. If you have others (or disagree with some) feel free to open a Pull Request and contribute.</p>
+<h3 id="use-imperative-form">Use imperative form</h3>
+<pre><code># Good
+Use InventoryBackendPool to retrieve inventory backend
+</code></pre><pre><code># Bad
+Used InventoryBackendPool to retrieve inventory backend
+</code></pre><p><em>But why use the imperative form?</em></p>
+<p>A commit message describes what the referenced change actually <strong>does</strong>, its effects, not what was done.</p>
+<p><a href="https://chris.beams.io/posts/git-commit/">This excellent article from Chris Beams</a> gives us a simple sentence that can be used to help us write better commit messages in imperative form:</p>
+<pre><code>If applied, this commit will &lt;commit message&gt;
+</code></pre><p>Examples:</p>
+<pre><code># Good
+If applied, this commit will use InventoryBackendPool to retrieve inventory backend
+</code></pre><pre><code># Bad
+If applied, this commit will used InventoryBackendPool to retrieve inventory backend
+</code></pre><h3 id="capitalize-the-first-letter">Capitalize the first letter</h3>
+<pre><code># Good
+Add `use` method to Credit model
+</code></pre><pre><code># Bad
+add `use` method to Credit model
+</code></pre><p>The reason that the first letter should be capitalized is to follow the grammar rule of using capital letters at the beginning of sentences.</p>
+<p>The use of this practice may vary from person to person, team to team, or even from language to language.
+Capitalized or not, an important point is to stick to a single standard and follow it.</p>
+<h3 id="try-to-communicate-what-the-change-does-without-having-to-look-at-the-source-code">Try to communicate what the change does without having to look at the source code</h3>
+<pre><code># Good
+Add `use` method to Credit model
+
+</code></pre><pre><code># Bad
+Add `use` method
+</code></pre><pre><code># Good
+Increase left padding between textbox and layout frame
+</code></pre><pre><code># Bad
+Adjust css
+</code></pre><p>It is useful in many scenarios (e.g. multiple commits, several changes and refactors) to help reviewers understand what the committer was thinking.</p>
+<h3 id="use-the-message-body-to-explain-why-for-what-how-and-additional-details">Use the message body to explain &ldquo;why&rdquo;, &ldquo;for what&rdquo;, &ldquo;how&rdquo; and additional details</h3>
+<pre><code># Good
+Fix method name of InventoryBackend child classes
+
+Classes derived from InventoryBackend were not
+respecting the base class interface.
+
+It worked because the cart was calling the backend implementation
+incorrectly.
+</code></pre><pre><code># Good
+Serialize and deserialize credits to json in Cart
+
+Convert the Credit instances to dict for two main reasons:
+
+  - Pickle relies on file path for classes and we do not want to break up
+    everything if a refactor is needed
+  - Dict and built-in types are pickleable by default
+</code></pre><pre><code># Good
+Add `use` method to Credit
+
+Change from namedtuple to class because we need to
+setup a new attribute (in_use_amount) with a new value
+</code></pre><p>The subject and the body of the messages are separated by a blank line.
+Additional blank lines are considered as a part of the message body.</p>
+<p>Characters like <code>-</code>, <code>*</code> and ` are elements that improve readability.</p>
+<h3 id="avoid-generic-messages-or-messages-without-any-context">Avoid generic messages or messages without any context</h3>
+<pre><code># Bad
+Fix this
+
+Fix stuff
+
+It should work now
+
+Change stuff
+
+Adjust css
+</code></pre><h3 id="limit-the-number-of-characters">Limit the number of characters</h3>
+<p><a href="https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines">It&rsquo;s recommended</a> to use a maximum of 50 characters for the subject and 72 for the body.</p>
+<h3 id="keep-language-consistency">Keep language consistency</h3>
+<p>For project owners: Choose a language and write all commit messages using that language. Ideally, it should match the code comments, default translation locale (for localized projects), etc.</p>
+<p>For contributors: Write your commit messages using the same language as the existing commit history.</p>
+<pre><code># Good
+ababab Add `use` method to Credit model
+efefef Use InventoryBackendPool to retrieve inventory backend
+bebebe Fix method name of InventoryBackend child classes
+</code></pre><pre><code># Good (Portuguese example)
+ababab Adiciona o método `use` ao model Credit
+efefef Usa o InventoryBackendPool para recuperar o backend de estoque
+bebebe Corrige nome de método na classe InventoryBackend
+</code></pre><pre><code># Bad (mixes English and Portuguese)
+ababab Usa o InventoryBackendPool para recuperar o backend de estoque
+efefef Add `use` method to Credit model
+cdcdcd Agora vai
+</code></pre><h3 id="template">Template</h3>
+<p>This is a template, <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">written originally by Tim Pope</a>, which appears in the <a href="https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project"><em>Pro Git Book</em></a>.</p>
+<pre><code>Summarize changes in around 50 characters or less
+
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
+
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequences of this
+change? Here's the place to explain them.
+
+Further paragraphs come after blank lines.
+
+ - Bullet points are okay, too
+
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
+
+If you use an issue tracker, put references to them at the bottom,
+like this:
+
+Resolves: #123
+See also: #456, #789
+</code></pre><h2 id="rebase-vs-merge">Rebase vs. Merge</h2>
+<p>This section is a <strong>TL;DR</strong> of Atlassian&rsquo;s excellent tutorial, <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">&ldquo;Merging vs. Rebasing&rdquo;</a>.</p>
+<p><img src="https://wac-cdn.atlassian.com/dam/jcr:01b0b04e-64f3-4659-af21-c4d86bc7cb0b/01.svg?cdnVersion=hq" alt=""></p>
+<h3 id="rebase">Rebase</h3>
+<p><strong>TL;DR:</strong> Applies your branch commits, one by one, upon the base branch, generating a new tree.</p>
+<p><img src="https://wac-cdn.atlassian.com/dam/jcr:5b153a22-38be-40d0-aec8-5f2fffc771e5/03.svg?cdnVersion=hq" alt=""></p>
+<h3 id="merge">Merge</h3>
+<p><strong>TL;DR:</strong> Creates a new commit, called (appropriately) a <em>merge commit</em>, with the differences between the two branches.</p>
+<p><img src="https://wac-cdn.atlassian.com/dam/jcr:e229fef6-2c2f-4a4f-b270-e1e1baa94055/02.svg?cdnVersion=hq" alt=""></p>
+<h3 id="why-do-some-people-prefer-to-rebase-over-merge">Why do some people prefer to rebase over merge?</h3>
+<p>I particularly prefer to rebase over merge. The reasons include:</p>
+<ul>
+<li>It generates a &ldquo;clean&rdquo; history, without unnecessary merge commits</li>
+<li><em>What you see is what you get</em>, i.e., in a code review all changes come from a specific and entitled commit, avoiding changes hidden in merge commits</li>
+<li>More merges are resolved by the committer, and every merge change is in a commit with a proper message
+<ul>
+<li>It&rsquo;s unusual to dig in and review merge commits, so avoiding them ensures all changes have a commit where they belong</li>
+</ul>
+</li>
+</ul>
+<h3 id="when-to-squash">When to squash</h3>
+<p>&ldquo;Squashing&rdquo; is the process of taking a series of commits and condensing them into a single commit.</p>
+<p>It&rsquo;s useful in several situations, e.g.:</p>
+<ul>
+<li>Reducing commits with little or no context (typo corrections, formatting, forgotten stuff)</li>
+<li>Joining separate changes that make more sense when applied together</li>
+<li>Rewriting <em>work in progress</em> commits</li>
+</ul>
+<h3 id="when-to-avoid-rebase-or-squash">When to avoid rebase or squash?</h3>
+<p>Avoid rebase and squash in public commits or in shared branches where multiple people work on.
+Rebase and squash rewrite history and overwrite existing commits, doing it on commits that are on shared branches (i.e., commits pushed to a remote repository or that comes from others branches) can cause confusion and people may lose their changes (both locally and remotely) because of divergent trees and conflicts.</p>
+<h2 id="useful-git-commands">Useful git commands</h2>
+<h3 id="rebase--i">rebase -i</h3>
+<p>Use it to squash commits, edit messages, rewrite/delete/reorder commits, etc.</p>
+<pre><code>pick 002a7cc Improve description and update document title
+pick 897f66d Add contributing section
+pick e9549cf Add a section of Available languages
+pick ec003aa Add &quot;What is a commit&quot; section&quot;
+pick bbe5361 Add source referencing as a point of help wanted
+pick b71115e Add a section explaining the importance of commit messages
+pick 669bf2b Add &quot;Good practices&quot; section
+pick d8340d7 Add capitalization of first letter practice
+pick 925f42b Add a practice to encourage good descriptions
+pick be05171 Add a section showing good uses of message body
+pick d115bb8 Add generic messages and column limit sections
+pick 1693840 Add a section about language consistency
+pick 80c5f47 Add commit message template
+pick 8827962 Fix triple &quot;m&quot; typo
+pick 9b81c72 Add &quot;Rebase vs Merge&quot; section
+
+# Rebase 9e6dc75..9b81c72 onto 9e6dc75 (15 commands)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into the previous commit
+# f, fixup = like &quot;squash&quot;, but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+</code></pre><h4 id="fixup">fixup</h4>
+<p>Use it to clean up commits easily and without needing a more complex rebase.
+<a href="http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html">This article</a> has very good examples of how and when to do it.</p>
+<h3 id="cherry-pick">cherry-pick</h3>
+<p>It is very useful to apply that commit you made on the wrong branch, without the need to code it again.</p>
+<p>Example:</p>
+<pre><code>$ git cherry-pick 790ab21
+[master 094d820] Fix English grammar in Contributing
+ Date: Sun Feb 25 23:14:23 2018 -0300
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre><h3 id="addcheckoutreset---patch---p">add/checkout/reset [&ndash;patch | -p]</h3>
+<p>Let&rsquo;s say we have the following diff:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">diff --git a/README.md b/README.md
+index 7b45277..6b1993c 100644
+<span style="color:#f92672">--- a/README.md
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/README.md
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -186,10 +186,13 @@ bebebe Corrige nome de método na classe InventoryBackend
+</span><span style="color:#75715e"></span> ``
+ # Bad (mixes English and Portuguese)
+ ababab Usa o InventoryBackendPool para recuperar o backend de estoque
+<span style="color:#f92672">-efefef Add `use` method to Credit model
+</span><span style="color:#f92672"></span> cdcdcd Agora vai
+ ``
+
+<span style="color:#a6e22e">+### Template
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e">+This is a template, [written originally by Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which appears in the [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project).
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e"></span> ## Contributing
+
+ Any kind of help would be appreciated. Example of topics that you can help me with:
+<span style="color:#75715e">@@ -202,3 +205,4 @@ Any kind of help would be appreciated. Example of topics that you can help me wi
+</span><span style="color:#75715e"></span>
+ - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+ - [Pro Git Book - Commit guidelines](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines)
+<span style="color:#a6e22e">+- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+</span></code></pre></div><p>We can use <code>git add -p</code> to add only the patches we want to, without the need to change the code that is already written.
+It&rsquo;s useful to split a big change into smaller commits or to reset/checkout specific changes.</p>
+<pre><code>Stage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]? s
+Split into 2 hunks.
+</code></pre><h4 id="hunk-1">hunk 1</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#75715e">@@ -186,7 +186,6 @@
+</span><span style="color:#75715e"></span> ``
+ # Bad (mixes English and Portuguese)
+ ababab Usa o InventoryBackendPool para recuperar o backend de estoque
+<span style="color:#f92672">-efefef Add `use` method to Credit model
+</span><span style="color:#f92672"></span> cdcdcd Agora vai
+ ``
+
+Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]?
+</code></pre></div><h4 id="hunk-2">hunk 2</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#75715e">@@ -190,6 +189,10 @@
+</span><span style="color:#75715e"></span> ``
+ cdcdcd Agora vai
+ ``
+
+<span style="color:#a6e22e">+### Template
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e">+This is a template, [written originally by Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which appears in the [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project).
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e"></span> ## Contributing
+
+ Any kind of help would be appreciated. Example of topics that you can help me with:
+Stage this hunk [y,n,q,a,d,/,K,j,J,g,e,?]?
+
+</code></pre></div><h4 id="hunk-3">hunk 3</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#75715e">@@ -202,3 +205,4 @@ Any kind of help would be appreciated. Example of topics that you can help me wi
+</span><span style="color:#75715e"></span>
+ - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+ - [Pro Git Book - Commit guidelines](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines)
+<span style="color:#a6e22e">+- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+</span></code></pre></div><h2 id="other-interesting-stuff">Other interesting stuff</h2>
+<ul>
+<li><a href="https://whatthecommit.com/">https://whatthecommit.com/</a></li>
+<li><a href="https://gitmoji.carloscuesta.me/">https://gitmoji.carloscuesta.me/</a></li>
+</ul>
+<h2 id="like-it">Like it?</h2>
+<p><a href="https://saythanks.io/to/RomuloOliveira">Say thanks!</a></p>
+<h2 id="contributing">Contributing</h2>
+<p>Any kind of help would be appreciated. Example of topics that you can help me with:</p>
+<ul>
+<li>Grammar and spelling corrections</li>
+<li>Translation to other languages</li>
+<li>Improvement of source referencing</li>
+<li>Incorrect or incomplete information</li>
+</ul>
+<h2 id="inspirations-sources-and-further-reading">Inspirations, sources and further reading</h2>
+<ul>
+<li><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines">Pro Git Book - Commit guidelines</a></li>
+<li><a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">A Note About Git Commit Messages</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Merging vs. Rebasing</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Pro Git Book - Rewriting History</a></li>
+</ul>
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

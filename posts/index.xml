@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on imlauzh</title>
+    <link>/blog/posts/</link>
+    <description>Recent content in Posts on imlauzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode</title>
+      <link>/blog/posts/leetcode/</link>
+      <pubDate>Tue, 31 Mar 2020 14:16:36 +0800</pubDate>
+      
+      <guid>/blog/posts/leetcode/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Write a function that takes an unsigned integer and returns the number of &lt;code&gt;1&lt;/code&gt; bits it has (also known as the &lt;code&gt;Hamming weight&lt;/code&gt;). For example, the 32-bit integer &lt;code&gt;11&lt;/code&gt; has binary representation &lt;code&gt;00000000000000000000000000001011&lt;/code&gt;, so the function should return 3.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h4 id=&#34;solutions&#34;&gt;Solutions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hamming Weight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; hammingWeight(&lt;span style=&#34;color:#66d9ef&#34;&gt;uint32_t&lt;/span&gt; n) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;(n)
+        {
+            c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+            n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;=&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;//逐次获取最低非0 bit位
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; c;
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Bit Mask&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;(object):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hammingWeight&lt;/span&gt;(self, n):
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :type n: int
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :rtype: int
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+        res&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        mask&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;):
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;mask:  &lt;span style=&#34;color:#75715e&#34;&gt;# &amp;amp;：按位与&lt;/span&gt;
+                res&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            mask&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mask&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            &lt;span style=&#34;color:#75715e&#34;&gt;# n=n&amp;gt;&amp;gt;1    #n移位或者mask移位&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; res
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;leetcode-386-lexicographical-numbers&#34;&gt;Leetcode 386. Lexicographical Numbers&lt;/h2&gt;
+&lt;h3 id=&#34;description-1&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given an integer &lt;code&gt;n&lt;/code&gt;, return &lt;code&gt;1-n&lt;/code&gt; in lexicographical order. For example, given 13, return: &lt;code&gt;[1,10,11,12,13,2,3,4,5,6,7,8,9]&lt;/code&gt;. Please optimize your algorithm to use less time and space. The input size may be as large as &lt;code&gt;5,000,000&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;solution&#34;&gt;Solution&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+    vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; lexicalOrder(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n) {
+        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; res;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; cur&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n;i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+        {
+            res.push_back(cur);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n)   &lt;span style=&#34;color:#75715e&#34;&gt;//首先判断能否直接再后面加0
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;*=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;if&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;n)  &lt;span style=&#34;color:#75715e&#34;&gt;//正常情况下+1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                cur&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;((cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;)   &lt;span style=&#34;color:#75715e&#34;&gt;//处理*9_的情况，例如192(n=192)的下一个应该是(1__开头结束)2开头，而不是20
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                {
+                    cur&lt;span style=&#34;color:#f92672&#34;&gt;/=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+                }
+                cur&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(cur&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;//这一轮个位结束，从上一位+1继续开始
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            } 
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; res;
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hints&#34;&gt;Hints&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;字典排序(数字)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;首先判断能否直接再后面加0即乘10&lt;/li&gt;
+&lt;li&gt;正常情况下直接+1&lt;/li&gt;
+&lt;li&gt;还有这一轮个位结束，回到上一位+1重新开始&lt;/li&gt;
+&lt;li&gt;处理* 9 *的特殊情况，这种情况下需要从上一个不是9的位置开始也就是循环除以10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leetcode-387-first-unique-character-in-a-string&#34;&gt;Leetcode 387. First Unique Character in a String&lt;/h2&gt;
+&lt;h3 id=&#34;description-2&#34;&gt;Description&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;s = &amp;quot;leetcode&amp;quot;
+return 0.
+
+s = &amp;quot;loveleetcode&amp;quot;,
+return 2.
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You may assume the string contain only lowercase letters.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Relation Extraction in 2019</title>
+      <link>/blog/posts/relation_extraction/</link>
+      <pubDate>Tue, 03 Mar 2020 20:15:40 +0800</pubDate>
+      
+      <guid>/blog/posts/relation_extraction/</guid>
+      <description>ACL2019   Zhi-Xiu Ye and Zhen-Hua Ling. 2019. Multi-Level Matching and Aggregation Network for Few-Shot Relation Classification. In ACL2019.
+  Xiaoya Li, Fan Yin, Zijun Sun, Xiayu Li, Arianna Yuan, Duo Chai, Mingxin Zhou, Jiwei Li. 2019. Entity-Relation Extraction as Multi-Turn Question Answering. In ACL2019.
+  Wei Ye, Bo Li, Rui Xie, Zhonghao Sheng, Long Chen, Shikun Zhang. 2019. Exploiting Entity BIO Tag Embeddings and Multi-task Learning for Relation Extraction with Imbalanced Data.</description>
+    </item>
+    
+    <item>
+      <title>深度学习笔记</title>
+      <link>/blog/posts/deep-learning-note/</link>
+      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
+      
+      <guid>/blog/posts/deep-learning-note/</guid>
+      <description>&lt;h1 id=&#34;深度学习笔记&#34;&gt;深度学习笔记&lt;/h1&gt;
+&lt;p&gt;报错与解决&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 基础</title>
+      <link>/blog/posts/linux-foundations/</link>
+      <pubDate>Sun, 20 Oct 2019 19:50:00 +0000</pubDate>
+      
+      <guid>/blog/posts/linux-foundations/</guid>
+      <description>zsh sudo yum -y install zshchsh -s /bin/zsh# curlsh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;# wgetsh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;ls ~/.oh-my-zsh/themesvim ~/.zshrcZSH_THEME=&amp;quot;ys&amp;quot;source ~/.zshrc# 命令补全git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestionsvim ~/.zshrcplugins=(gitzsh-autosuggestions)source ~/.zshrcDocker # centos sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 sudo yum-config-manager \  --add-repo \  https://download.</description>
+    </item>
+    
+    <item>
+      <title>人生苦短，我用Docker</title>
+      <link>/blog/posts/docker-note/</link>
+      <pubDate>Thu, 10 Oct 2019 10:11:18 +0000</pubDate>
+      
+      <guid>/blog/posts/docker-note/</guid>
+      <description>人生苦短，我用Docker  使用服务器Docker服务搭建Deepo-jupyter深度学习框架  使用服务器Docker服务搭建Deepo-jupyter深度学习框架 # 需要保证服务器已经安装docker以及nvidia-docker # 首先服务器拉取deepo镜像 # 注意换源，不然会非常慢的 docker pull ufoym/deepo:all-py36-jupyter # 开启deepo # -it 保持输入与交互 # -p 端口映射，服务器的7777映射到docker的8888 # -v 文件保存 # --name 设置容器名字 docker run --runtime=nvidia -it -p 7890:7890 --ipc=host -v /home/liuzh/lau/:/lau --name deepo-all36 ufoym/deepo:all-py36-cu100 # 注意下次启动直接使用容器，不需要重新创建 docker container start deepo-jupyter docker container attach deepo-jupyter # 启动jupyter-notebook nohup jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=&amp;#39;/Projects&amp;#39; # 如果想在本地机器的浏览器中使用jupyter的话，ssh登录的时候需要指定端口映射 # 本地1234映射到host的127.0.0.1:7777 ssh username@host-ip -L 1234:127.0.0.1:7777 # # 设置alias # 本地 alias ssh-jupyter=&amp;#34;ssh -p 22 name@ip -L 1234:127.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro备忘录</title>
+      <link>/blog/posts/manjaro-note/</link>
+      <pubDate>Sat, 14 Sep 2019 21:48:52 +0000</pubDate>
+      
+      <guid>/blog/posts/manjaro-note/</guid>
+      <description>安装、pacman镜像源、更新 zsh配置 输入法及中文 全局截图、全局菜单 alias Nvidia显卡驱动安装 常用软件  系统安装 我选择了manjaro的KDE版，用rufus以DD模式制作U盘启动器，在BIOS里设置以U盘启动后进入manjaro的live环境，根据自带的指南安装manjaro并重启,最好按照全英文设置来，中文可以以后在系统里改, 驱动选择nonfree。 manjaro rufus
+更改pacman镜像 manjaro基于arch，用pacman做软件包管理，但是由于众所周知的原因，国内连接国外镜像非常慢，因此需要更改为国内镜像。
+# 利用pacman-mirrors选择镜像，或者手动在/etc/pacman.d/mirrorlist里添加# 中国区镜像排序，一般选择前两个镜像，选择一个作为备用sudo pacman-mirrors -i -c China -m rank同步更新 sudo pacman -Syyu添加Arch Linux 中文社区仓库 在 /etc/pacman.conf 文件末尾添加以下内容：
+[archlinuxcn]# SigLevel = Optional TrustedOnlySigLevel = Optional TrustAllServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$archZSH # 安装zsh sudo pacman -S zsh # 安装oh-my-zsh sh -c &amp;#34;$wgethttps://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)” # 使用zsh替换bash chsh -s /bin/zsh # 修改.</description>
+    </item>
+    
+    <item>
+      <title>How to be a Postgraduate student(MIT)</title>
+      <link>/blog/posts/how-to-be-a-postgraduate-student-mit/</link>
+      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
+      
+      <guid>/blog/posts/how-to-be-a-postgraduate-student-mit/</guid>
+      <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Reproduce&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文的主旨是解释如何做研究。我们提供的这些建议，对于研究本身（阅读、写作和程序设计）、理解研究过程以及开始研究（方法论、选题、选导师和情感因素），都是极具价值的。&lt;/p&gt;
+&lt;p&gt;这是什么？并没有什么神丹妙药可以保证在研究中取得成功，本文只是列举了一些可能会对研究有所帮助的非正式意见。&lt;/p&gt;
+&lt;p&gt;目标读者是谁？本文主要是为新入学的研究生而写。&lt;/p&gt;
+&lt;p&gt;如何使用？要精读完本文，太长了一些，最好是采用浏览的方式。很多人觉得下面的方法很有效：先快速通读一遍，然后选取其中与自己当前研究项目有关的部分仔细研究。&lt;/p&gt;
+&lt;p&gt;本文被粗略地分为两部分。第一部分涉及研究者所需具备的各种技能：如阅读，写作和程序设计等等。第二部分讨论研究过程本身：即研究究竟是怎么回事，如何做研究，如何选题和选导师，如何考虑研究中的情感因素。很多读者反映，从长远看，第二部分比第一部分更有价值，也更让人感兴趣。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文的主要内容包括：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一、掌握一些阅读的诀窍。&lt;/p&gt;
+&lt;p&gt;二、如何成为研究领域的一员：与相关人员保持联系，他们可以使你保持对研究前沿的跟踪，知道应该读什么材料。&lt;/p&gt;
+&lt;p&gt;三、学习相关领域的知识：对几个领域都有基本的理解，对于一个或者两个领域要精通。&lt;/p&gt;
+&lt;p&gt;四、如何做研究笔记。&lt;/p&gt;
+&lt;p&gt;五、如何写期刊论文和毕业论文。如何为草稿写评审意见，如何利用别人的评审意见。如何发表论文。&lt;/p&gt;
+&lt;p&gt;六、如何做研究报告及演讲。&lt;/p&gt;
+&lt;p&gt;七、掌握和自己相关领域的程序设计。&lt;/p&gt;
+&lt;p&gt;八、有关研究生涯最重要的问题，如何选导师。不同的导师具有不同的风格，导师是你必须了解如何利用的资源。&lt;/p&gt;
+&lt;p&gt;九、关于毕业论文。毕业论文将占据研究生生涯的大部分时间，本部分涉及如何选题，以及如何避免浪费时间。&lt;/p&gt;
+&lt;p&gt;十、研究方法论。&lt;/p&gt;
+&lt;p&gt;十一、或许是最重要的一节：涉及研究过程中的情感因素，包括如何面对失败，如何设定目标，如何避免不安全感，保持自信，享受快乐。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Python 3 with pleasure</title>
+      <link>/blog/posts/migrating-to-python-3-with-pleasure/</link>
+      <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
+      
+      <guid>/blog/posts/migrating-to-python-3-with-pleasure/</guid>
+      <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Commit messages guide</title>
+      <link>/blog/posts/commit-messages-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>/blog/posts/commit-messages-guide/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Requests模拟post请求自动构建Gitee pages服务</title>
+      <link>/blog/posts/mock-gitee-auto-build-pages/</link>
+      <pubDate>Wed, 01 May 2019 14:57:54 +0000</pubDate>
+      
+      <guid>/blog/posts/mock-gitee-auto-build-pages/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Github pages国内速度堪忧，所以有一段时间把Coding.net和Gitee作为备用网址，之后腾讯和Coding.net合作后pages服务就非常不稳定，有一段时间根本进不去，忘记是从什么时候开始Gitee pages免费版就不再支持推送后自动部署Pages服务，这样我的博客就只剩下满满的GitHub pages了。但是既然免费版也可以更新pages，只不过需要到网页上点个按钮，那么我们也可以使用python模拟post请求实现推送后自动部署。&lt;/p&gt;
+&lt;p&gt;一起来造轮子吧！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 图床更改及博客推送</title>
+      <link>/blog/posts/parser-pic-blocks/</link>
+      <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
+      
+      <guid>/blog/posts/parser-pic-blocks/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pytorch Style Guide</title>
+      <link>/blog/posts/pytorch-style-guide/</link>
+      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
+      
+      <guid>/blog/posts/pytorch-style-guide/</guid>
+      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
+&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
+&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Python Style Guide</title>
+      <link>/blog/posts/google-python-style-guide/</link>
+      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
+      
+      <guid>/blog/posts/google-python-style-guide/</guid>
+      <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（三）</title>
+      <link>/blog/posts/andrew-ng-ml-2/</link>
+      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
+      
+      <guid>/blog/posts/andrew-ng-ml-2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;逻辑回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（二）</title>
+      <link>/blog/posts/andrew-ng-ml-1/</link>
+      <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
+      
+      <guid>/blog/posts/andrew-ng-ml-1/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;多变量线性回归&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>吴恩达「机器学习」（一）</title>
+      <link>/blog/posts/andrew-ng-ml-0/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
+      
+      <guid>/blog/posts/andrew-ng-ml-0/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;什么是机器学习？&lt;/li&gt;
+&lt;li&gt;什么是监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是非监督学习算法？&lt;/li&gt;
+&lt;li&gt;什么是单变量线性回归？&lt;/li&gt;
+&lt;li&gt;线性代数知识点回顾&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0007.py</title>
+      <link>/blog/posts/smtc0007-py/</link>
+      <pubDate>Tue, 05 Feb 2019 11:51:54 +0000</pubDate>
+      
+      <guid>/blog/posts/smtc0007-py/</guid>
+      <description>show-me-the-code 完整题目
+题目 第 0007 题： 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。
+思路  遍历文件夹下的文件 获取后缀名，找到py文件 遍历文件的每一行 如果是空的则说明是空行 用正则匹配#注释符号 统计行数输出  Solution # -*- coding: utf-8 -*- import os import re def parse_code(filesPath): if not os.path.isdir(filesPath): return # 正则匹配# exp_re = re.compile(&amp;#39;^#.*&amp;#39;) fileList = os.listdir(filesPath) print(&amp;#39;{0}\t{1}\t{2}\t{3}&amp;#39;.format(&amp;#39;fileName&amp;#39;, &amp;#39;all_lines&amp;#39;, &amp;#39;space_lines&amp;#39;, &amp;#39;exp_lines&amp;#39;)) for file in fileList: filePath = os.path.join(filesPath, file) if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == &amp;#39;.py&amp;#39;: with open(filePath) as code: all_lines = 0 space_lines = 0 exp_lines = 0 for line in code.</description>
+    </item>
+    
+    <item>
+      <title>2019猪年快乐</title>
+      <link>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
+      <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
+      
+      <guid>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
+      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0006.py</title>
+      <link>/blog/posts/smtc0006-py/</link>
+      <pubDate>Mon, 04 Feb 2019 16:07:30 +0000</pubDate>
+      
+      <guid>/blog/posts/smtc0006-py/</guid>
+      <description>show-me-the-code 完整题目
+题目 第 0006 题： 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。
+思路  首先英文可以避免分词的问题，中文可能就需要引入终止词 需要对日记进行清洗，去除掉标点符号等 对于每篇日记最重要的词，应该是除了正常使用的代词外的词频最高的名词或者形容词 这就可以用到第0004题中的Solution  Solution # -*- coding: utf-8 -*- import os def GetTF(filesPath): if not os.path.isdir(filesPath): return files=os.listdir(filesPath) for file in files: filePath=os.path.join(filesPath,file) # 判断是否为文件且文件后缀名是否为.txt # 去除其他文件的影响 if os.path.isfile(filePath) and os.path.splitext(filePath)[1]==&amp;#39;.txt&amp;#39;: with open(filePath) as text: content=text.read() # 去除标点符号 for char in &amp;#39;-.,\n&amp;#39;: content=content.replace(char, &amp;#39; &amp;#39;) content=content.lower() wordList=content.split() wordDic={} # 去除无用词 exceptWord=[&amp;#39;the&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;to&amp;#39;,&amp;#39;and&amp;#39;,&amp;#39;of&amp;#39;] for word in wordList: if word in exceptWord: continue if word in wordDic: wordDic[word]+=1 else: wordDic[word]=1 # 倒序排序 res=sorted(wordDic.</description>
+    </item>
+    
+    <item>
+      <title>Python Library</title>
+      <link>/blog/posts/python-library/</link>
+      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
+      
+      <guid>/blog/posts/python-library/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;汇总使用过的Python库&lt;/p&gt;
+&lt;p&gt;简单记一下模块功能以及函数原型&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>SMTC 0000.py</title>
+      <link>/blog/posts/smtc0000.py/</link>
+      <pubDate>Tue, 29 Jan 2019 21:09:32 +0000</pubDate>
+      
+      <guid>/blog/posts/smtc0000.py/</guid>
+      <description>show-me-the-code 完整题目
+题目 第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果：
+思路 利用Pillow模块中提供的ImageDraw在图片上画图形或者文字。
+首先打开图片，使用Image.open()，在这之前需要导入pillow模块库，import PIL。
+# Creates an object that can be used to draw in the given image. # PIL.ImageDraw.Draw(im, mode=None) imgDraw = ImageDraw.Draw(image) 设置填充字体以及颜色，获取图片大小，好设置填充位置
+# 颜色 fillColor = &amp;#39;#ff0000&amp;#39; # 大小 width, height = image.size # 字体 myFont = ImageFont.truetype(&amp;#39;/Library/Fonts/Tahoma.ttf&amp;#39;, size=width//10) 接着imgDraw.text((width-100, 0), &#39;hello&#39;, *fill*=fillColor, *font*=myFont)，填充数字或者单词。
+保存图片完成。
+Solution # -*- coding:utf-8 -*- import PIL from PIL import Image from PIL import ImageDraw from PIL import ImageFont def add_num(imgName): # 打开图片 image = Image.</description>
+    </item>
+    
+    <item>
+      <title>Show Me The Code</title>
+      <link>/blog/posts/show-me-the-code/</link>
+      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
+      
+      <guid>/blog/posts/show-me-the-code/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
+&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Note</title>
+      <link>/blog/posts/python-note/</link>
+      <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
+      
+      <guid>/blog/posts/python-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python个人笔记&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Macintosh Note</title>
+      <link>/blog/posts/macintosh-note/</link>
+      <pubDate>Fri, 21 Dec 2018 15:32:06 +0000</pubDate>
+      
+      <guid>/blog/posts/macintosh-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Mac遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>VSCode Customised</title>
+      <link>/blog/posts/vscode-customised/</link>
+      <pubDate>Sun, 16 Dec 2018 00:01:39 +0000</pubDate>
+      
+      <guid>/blog/posts/vscode-customised/</guid>
+      <description>USER SETTINGS Windows { &amp;#34;workbench.startupEditor&amp;#34;: &amp;#34;newUntitledFile&amp;#34;, &amp;#34;editor.minimap.enabled&amp;#34;: false, &amp;#34;terminal.external.windowsExec&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;, &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;, &amp;#34;workbench.colorTheme&amp;#34;: &amp;#34;One Dark Pro&amp;#34;, &amp;#34;workbench.iconTheme&amp;#34;: &amp;#34;vscode-icons&amp;#34;, &amp;#34;diffEditor.ignoreTrimWhitespace&amp;#34;: false, &amp;#34;workbench.sideBar.location&amp;#34;: &amp;#34;left&amp;#34;, &amp;#34;editor.wordWrap&amp;#34;: &amp;#34;on&amp;#34;, &amp;#34;latex-workshop.latex.tools&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;latexmk&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;latexmk&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;-pdf&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;xelatex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;xelatex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;pdflatex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;pdflatex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-synctex=1&amp;#34;, &amp;#34;-interaction=nonstopmode&amp;#34;, &amp;#34;-file-line-error&amp;#34;, &amp;#34;%DOC%&amp;#34; ] }, { &amp;#34;name&amp;#34;: &amp;#34;bibtex&amp;#34;, &amp;#34;command&amp;#34;: &amp;#34;bibtex&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;%DOCFILE%&amp;#34; ] } ], &amp;#34;latex-workshop.</description>
+    </item>
+    
+    <item>
+      <title>WebHook Based on Git(Using PHP)</title>
+      <link>/blog/posts/webhook-based-on-git-php/</link>
+      <pubDate>Wed, 12 Dec 2018 16:43:58 +0000</pubDate>
+      
+      <guid>/blog/posts/webhook-based-on-git-php/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Webhook实现远程服务器自动拉取更新内容&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java Note</title>
+      <link>/blog/posts/java-note/</link>
+      <pubDate>Fri, 07 Dec 2018 10:19:46 +0000</pubDate>
+      
+      <guid>/blog/posts/java-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Java遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hackintosh for Lenovo Ideapad 700 15isk</title>
+      <link>/blog/posts/hackintosh-for-lenovo-ideapad-700-15isk/</link>
+      <pubDate>Thu, 06 Dec 2018 21:50:01 +0000</pubDate>
+      
+      <guid>/blog/posts/hackintosh-for-lenovo-ideapad-700-15isk/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引言
+最近更换了固态硬盘，所以就有一个闲置了出来，然后就在京东上面买了一个M.2接口NGFF协议的固态硬盘盒，用来装Hackintosh.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>LeetCode Analysis</title>
+      <link>/blog/posts/leetcode-analysis/</link>
+      <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
+      
+      <guid>/blog/posts/leetcode-analysis/</guid>
+      <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
+    </item>
+    
+    <item>
+      <title>OpenCV Note</title>
+      <link>/blog/posts/opencv-note/</link>
+      <pubDate>Sun, 20 May 2018 23:06:44 +0000</pubDate>
+      
+      <guid>/blog/posts/opencv-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用OpenCV遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>MATLAB Note</title>
+      <link>/blog/posts/matlab-note/</link>
+      <pubDate>Sat, 28 Apr 2018 16:48:06 +0000</pubDate>
+      
+      <guid>/blog/posts/matlab-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用MatLab遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Python爬虫爬取网络小说</title>
+      <link>/blog/posts/novel-python/</link>
+      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
+      
+      <guid>/blog/posts/novel-python/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;小说网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 语法说明 (简体中文版)</title>
+      <link>/blog/posts/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 22 Mar 2018 15:01:45 +0000</pubDate>
+      
+      <guid>/blog/posts/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>NOTE: This is Simplelified Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to Markdown: Syntax.
+声明： 这份文档派生(fork)于繁体中文版，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里查看它的源文件。「繁体中文版的原始文件可以查看这里 。」&amp;ndash;By @riku / 本项目托管于 GitCafe
+注： 本项目同时也托管于 Github 上，请通过 fork＋pull request 方式来帮忙改进本项目。
+概述 宗旨 Markdown 的目标是实现「易读易写」。
+可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。
+总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像* 强调 *。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。
+兼容 HTML Markdown 语法的目标是：成为一种适用于网络的_书写_语言。
+Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想_不是_要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种_发布_的格式，Markdown 是一种_书写_的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</description>
+    </item>
+    
+    <item>
+      <title>Vim Note</title>
+      <link>/blog/posts/vim-note/</link>
+      <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
+      
+      <guid>/blog/posts/vim-note/</guid>
+      <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾 G ##注意大写 :1,:d ## 删除全部内容  删除部分内容  ## 定位到要删除的文档末尾 200G :9,:d ##删除9-200之间的内容 复制粘贴 # 复制当前行 yy # 在当前行粘贴 p 查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
+Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
+ 注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。
+ 查找当前单词 在normal模式下按下*即可查找光标所在单词（word）， 要求每次出现的前后为空白字符或标点符号。例如当前为foo， 可以匹配foo bar中的foo，但不可匹配foobar中的foo。 这在查找函数名、变量名时非常有用。
+按下g*即可查找光标所在单词的字符序列，每次出现前后字符无要求。 即foo bar和foobar中的foo均可被匹配到。
+:s（substitute）命令用来查找和替换字符串。语法如下：
+:{作用范围}s/{目标}/{替换}/{替换标志}例如:%s/foo/bar/g会在全局范围(%)查找foo并替换为bar，所有出现都会被替换（g）。
+作用范围 作用范围分为当前行、全文、选区等等。
+当前行：
+:s/foo/bar/g全文：
+:%s/foo/bar/g选区，在Visual模式下选择区域后输入:，Vim即可自动补全为 :&#39;&amp;lt;,&#39;&amp;gt;。
+:&#39;&amp;lt;,&#39;&amp;gt;s/foo/bar/g2-11行：
+:5,12s/foo/bar/g当前行.与接下来两行+2：
+:.,+2s/foo/bar/g替换标志 上文中命令结尾的g即是替换标志之一，表示全局global替换（即替换目标的所有出现）。 还有很多其他有用的替换标志：
+空替换标志表示只替换从光标位置开始，目标的第一次出现：
+:%s/foo/bari表示大小写不敏感查找，I表示大小写敏感：
+:%s/foo/bar/i# 等效于模式中的\c（不敏感）或\C（敏感）:%s/foo\c/barc表示需要确认，例如全局查找&amp;quot;foo&amp;quot;替换为&amp;quot;bar&amp;quot;并且需要确认：</description>
+    </item>
+    
+    <item>
+      <title>Git note</title>
+      <link>/blog/posts/git-note/</link>
+      <pubDate>Tue, 20 Mar 2018 21:16:45 +0000</pubDate>
+      
+      <guid>/blog/posts/git-note/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此文用来记录平时使用Git遇到的问题与心得.&lt;/p&gt;
+&lt;p&gt;本文长期更新.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

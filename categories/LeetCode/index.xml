@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeetCode on GeekJoe</title>
+    <title>LeetCode on imlauzh</title>
     <link>/blog/categories/leetcode/</link>
-    <description>Recent content in LeetCode on GeekJoe</description>
+    <description>Recent content in LeetCode on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Tue, 31 Mar 2020 14:16:36 +0800</lastBuildDate><atom:link href="/blog/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
-      <link>/blog/post/leetcode/</link>
+      <link>/blog/posts/leetcode/</link>
       <pubDate>Tue, 31 Mar 2020 14:16:36 +0800</pubDate>
       
-      <guid>/blog/post/leetcode/</guid>
-      <description>&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
+      <guid>/blog/posts/leetcode/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;leetcode-191-number-of-1-bits&#34;&gt;Leetcode 191. Number of 1 Bits&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Write a function that takes an unsigned integer and returns the number of &lt;code&gt;1&lt;/code&gt; bits it has (also known as the &lt;code&gt;Hamming weight&lt;/code&gt;). For example, the 32-bit integer &lt;code&gt;11&lt;/code&gt; has binary representation &lt;code&gt;00000000000000000000000000001011&lt;/code&gt;, so the function should return 3.&lt;/p&gt;
@@ -112,10 +113,10 @@ return 2.
     
     <item>
       <title>LeetCode Analysis</title>
-      <link>/blog/post/leetcode-analysis/</link>
+      <link>/blog/posts/leetcode-analysis/</link>
       <pubDate>Mon, 30 Jul 2018 16:09:21 +0000</pubDate>
       
-      <guid>/blog/post/leetcode-analysis/</guid>
+      <guid>/blog/posts/leetcode-analysis/</guid>
       <description>LeetCode Analysis    LeetCode ID Name Status Difficulty Language     191 Number of 1 Bits Solved E C/C++   386 Lexicographical Numbers Solved M C/C++   387 First Unique Character in a String Solved E C/C++   461 Hamming Distance Solved E C/C++   535 Encode and Decode TinyURL Solved M C/C++   595 Big Countries Solved E C/C++   617 Merge Two Binary Trees Solved E C/C++   627 Swap Salary Solved E MySQL   654 Maximum Binary Tree Solved M C/C++   657 Judge Route Circle Solved E C/C++   709 To Lower Case Solved E C/C++   771 Jewels and Stones Solved E C/C++   804 Unique Morse Code Words Solved E C/C++   807 Max Increase to Keep City Skyline Solved M C/C++   832 Flipping an Image Solved E C/C++   852 Peak Index in a Mountain Array Solved E C/C++   876 Middle of the Linked List Solved E C/C++    </description>
     </item>
     
