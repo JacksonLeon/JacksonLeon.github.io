@@ -7,20 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sat, 12 Dec 2020 15:58:04 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Wu Et Al__Open Relation Extraction</title>
-      <link>/blog/posts/wu-et-al_2019_open-relation-extraction/</link>
-      <pubDate>Sat, 12 Dec 2020 15:58:04 +0800</pubDate>
-      
-      <guid>/blog/posts/wu-et-al_2019_open-relation-extraction/</guid>
-      <description>描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计     摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&amp;ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 05 Dec 2020 15:57:21 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Qiu Et Al__Pre Trained Models for Natural Language Processing</title>
       <link>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</link>
-      <pubDate>Sat, 12 Dec 2020 15:57:21 +0800</pubDate>
+      <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
       <guid>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</guid>
       <description>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
@@ -32,9 +23,18 @@
     </item>
     
     <item>
+      <title>Wu Et Al__Open Relation Extraction</title>
+      <link>/blog/posts/wu-et-al_2019_open-relation-extraction/</link>
+      <pubDate>Sat, 07 Nov 2020 15:58:04 +0800</pubDate>
+      
+      <guid>/blog/posts/wu-et-al_2019_open-relation-extraction/</guid>
+      <description>描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计     摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&amp;ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.</description>
+    </item>
+    
+    <item>
       <title>Peng Et Al__Learning From Context or Names</title>
       <link>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</link>
-      <pubDate>Sat, 12 Dec 2020 15:56:37 +0800</pubDate>
+      <pubDate>Wed, 04 Nov 2020 15:56:37 +0800</pubDate>
       
       <guid>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</guid>
       <description>背景   什么类型的信息在影响着RE模型区分句子包含什么关系？
@@ -46,7 +46,7 @@
     <item>
       <title>Han Et Al__More Data, More Relations, More Context and More Openness</title>
       <link>/blog/posts/han-et-al_2020_more-data-more-relations-more-context-and-more-openness/</link>
-      <pubDate>Sat, 12 Dec 2020 15:55:50 +0800</pubDate>
+      <pubDate>Mon, 02 Nov 2020 15:55:50 +0800</pubDate>
       
       <guid>/blog/posts/han-et-al_2020_more-data-more-relations-more-context-and-more-openness/</guid>
       <description>Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  </description>
@@ -55,7 +55,7 @@
     <item>
       <title>Chen Et Al__Relabel the Noise</title>
       <link>/blog/posts/chen-et-al_2020_relabel-the-noise/</link>
-      <pubDate>Fri, 11 Dec 2020 20:23:04 +0800</pubDate>
+      <pubDate>Fri, 18 Sep 2020 20:23:04 +0800</pubDate>
       
       <guid>/blog/posts/chen-et-al_2020_relabel-the-noise/</guid>
       <description>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。

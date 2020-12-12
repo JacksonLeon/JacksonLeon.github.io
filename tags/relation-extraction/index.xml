@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 11 Dec 2020 20:23:04 +0800</lastBuildDate><atom:link href="/blog/tags/relation-extraction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2020 20:23:04 +0800</lastBuildDate><atom:link href="/blog/tags/relation-extraction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chen Et Al__Relabel the Noise</title>
       <link>/blog/posts/chen-et-al_2020_relabel-the-noise/</link>
-      <pubDate>Fri, 11 Dec 2020 20:23:04 +0800</pubDate>
+      <pubDate>Fri, 18 Sep 2020 20:23:04 +0800</pubDate>
       
       <guid>/blog/posts/chen-et-al_2020_relabel-the-noise/</guid>
       <description>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。
