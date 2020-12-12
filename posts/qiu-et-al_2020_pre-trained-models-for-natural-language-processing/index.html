@@ -136,7 +136,7 @@
 <p>一个好的表示应该表达通用的知识，并不是针对特定的任务，但是对机器学习去解决AI任务会很有用。 &mdash;-Bengio</p>
 </blockquote>
 <p>对于语言表示来说，<strong>好的表示应该能够获取到隐含的语言的规律以及常识性知识</strong>，比如说lexical meanings, syntactic structures, semantic roles, and even pragmatics(语用学)。分布式表示的<strong>核心就是利用低维度的向量来描述文本中的一部分</strong>，这个向量中的每个维度都没有对应的意义，但是整个向量却表示了一个具体的含义，也许每个单独的向量是有意义的，不过<strong>现在我们无法解释，其可解释性太低</strong>，几乎没有。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Generic%20Neural%20Architecture%20for%20NLP.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Generic%20Neural%20Architecture%20for%20NLP.png" alt=""></p>
 <p>从图中可以看出，两种词嵌入，有没有上下文语意的，也就是字面意思，<strong>会不会根据上下文信息更改向量的表示</strong>，举个例子，<strong>苹果</strong>这个词语代表的词向量会不会换了个句子，其训练出来的词嵌入向量就发生变化。</p>
 <ul>
 <li>
@@ -149,7 +149,7 @@
 </li>
 </ul>
 <h2 id="neural-contextual-encoders">Neural Contextual Encoders</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Neural%20Contextual%20Encoders.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Neural%20Contextual%20Encoders.png" alt=""></p>
 <h3 id="序列模型">序列模型</h3>
 <p><strong>序列模型通常按顺序捕获单词的局部上下文。</strong></p>
 <ul>
@@ -235,7 +235,7 @@
 <li>越有挑战性的任务越对下游任务有利，例如MT</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Loss%20Functions%20of%20Pre-training%20Tasks.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Loss%20Functions%20of%20Pre-training%20Tasks.png" alt=""></li>
 <li>LM
 <ul>
 <li>单向LM的一个缺点是：每个Token只编码了左边的token和他自己</li>
@@ -343,8 +343,8 @@
 <li>拓展：知识、多语言、多模态、特定语言、特定领域、压缩</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Taxonomy%20of%20PTMs%20with%20Representative%20Examples.png" alt=""></li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/List%20of%20Representative%20PTMs.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Taxonomy%20of%20PTMs%20with%20Representative%20Examples.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/List%20of%20Representative%20PTMs.png" alt=""></li>
 </ul>
 <h1 id="ptms拓展">PTMs拓展</h1>
 <h2 id="知识">知识</h2>
@@ -388,7 +388,7 @@
 </ul>
 <h2 id="压缩">压缩</h2>
 <ul>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Comparison%20of%20Compressed%20PTMs.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Comparison%20of%20Compressed%20PTMs.png" alt=""></li>
 <li>PTMs通常参数量都相当巨大，很难部署到在线服务和移动设备上</li>
 <li>压缩方法：
 <ul>
@@ -443,7 +443,7 @@
 <li>微调对于各种任务来说更加方便使用</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Some%20common%20combinations%20of%20adapting%20PTMs.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Some%20common%20combinations%20of%20adapting%20PTMs.png" alt=""></li>
 </ul>
 </li>
 <li>微调策略
@@ -466,7 +466,7 @@
 </li>
 </ul>
 <h1 id="应用">应用</h1>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Resources%20of%20PTMs.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Resources%20of%20PTMs.png" alt=""></p>
 <h2 id="general-evaluation-benchmark">General Evaluation Benchmark</h2>
 <ul>
 <li>The General Language Understanding Evaluation (GLUE) benchmark
