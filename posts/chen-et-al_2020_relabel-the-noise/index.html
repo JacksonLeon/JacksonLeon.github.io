@@ -104,7 +104,7 @@
       
         10 min
       
-      53 s
+      45 s
       &nbsp;
     
     </div>
@@ -141,7 +141,7 @@
 <li>并且pipeline模式会产生错误级联，加剧标签分布问题</li>
 </ul>
 <h1 id="本文方法">本文方法</h1>
-<p>![[Overview of the proposed method.png]]</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Overview%20of%20the%20proposed%20method.png" alt=""></p>
 <ul>
 <li>每一个agent会通过计算连续的confidence score来evaluate实例</li>
 <li>confidence score可以用来将噪音训练数据重新分布、调整更新训练loss</li>
@@ -218,7 +218,7 @@
 </li>
 <li>Training Algorithm
 <ul>
-<li>![[Training Framework for Extractors.png]]![[Curriculum Training.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Training%20Framework%20for%20Extractors.png" alt=""><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Curriculum%20Training.png" alt=""></li>
 <li>pre-train
 <ul>
 <li>entity和relation抽取器</li>
@@ -231,8 +231,8 @@
 <h1 id="实验">实验</h1>
 <h2 id="实验设置">实验设置</h2>
 <p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Dataset.png" alt="">
-![[NER performance.png]]
-![[relation extraction performance.png]]</p>
+<img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/NER%20performance.png" alt="">
+<img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/relation%20extraction%20performance.png" alt=""></p>
 <ul>
 <li>数据集
 <ul>
@@ -256,7 +256,7 @@
 <li>relation，RRL-PCNN模型P是没有R好的，主要是由于噪音数据在实体抽取时产生的错误级联，本文的模型相比BA-Fix-PCNN可以在不知道test数据的情况下减少偏移标签分布</li>
 </ul>
 <h2 id="切片实验">切片实验</h2>
-<p>![[Ablation results of the MRL-CoType for end-to-end relation extraction.png]]</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Ablation%20results%20of%20the%20MRL-CoType%20for%20end-to-end%20relation%20extraction.png" alt=""></p>
 <ul>
 <li>training settings:
 <ul>
@@ -267,9 +267,9 @@
 </li>
 <li>对于类型比较多的数据集来说，curriculum的作用更明显</li>
 <li>更高的平均reward，代表着更高的训练效率，说明决策更加有价值，反馈更加积极
-![[Training efficiency.png]]</li>
+<img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Training%20efficiency.png" alt=""></li>
 <li>因为可以收敛到局部最优从而实现加速，curriculum learning用更少的epochs取得了更好的性能
-![[Confidence evaluations.png]]</li>
+<img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Confidence%20evaluations.png" alt=""></li>
 <li>re-labeling processes</li>
 </ul>
 

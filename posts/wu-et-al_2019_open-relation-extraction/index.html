@@ -98,7 +98,7 @@
       
         7 min
       
-      34 s
+      25 s
       &nbsp;
     
     </div>
@@ -163,7 +163,7 @@
 <li>本文方法：
 <ul>
 <li>利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，</li>
-<li>![[A flowchart of our framework in openre by wu 2019.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/A%20flowchart%20of%20our%20framework%20in%20openre%20by%20wu%202019.png" alt=""></li>
 <li>RSN与有监督、半监督、远程监督方法相结合</li>
 <li>数据集：FewRel、FewRel-distant，分割成seen和unseen两部分</li>
 <li>“RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is <strong>the first model to consider knowledge transfer in clustering-based OpenRE task</strong>.”</li>
@@ -219,7 +219,7 @@
 <li>CNN利用word和pos embedding输出关系向量v</li>
 <li>计算绝对距离并映射到<code>[0,1]</code></li>
 <li>交叉熵损失，RSN输出值p作为两个句子包含相同关系的概率值</li>
-<li>![[binary cross entropy loss for RSN.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/binary%20cross%20entropy%20loss%20for%20RSN.png" alt=""></li>
 <li>半监督RSN
 <ul>
 <li><strong>模型看到更多种类的数据对于性能是有益处的，所以半监督和远程监督是有必要的</strong></li>
@@ -228,14 +228,14 @@
 <ul>
 <li>条件熵损失，远离决策边界，也就是相似概率等于0.5</li>
 <li>虚拟对抗损失，搜索数据域，惩罚距离预测变化最大的</li>
-<li>![[semi-supervised RSN loss func.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/semi-supervised%20RSN%20loss%20func.png" alt=""></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>远程监督RSN
 <ul>
-<li>![[distant-supervised RSN loss func.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/distant-supervised%20RSN%20loss%20func.png" alt=""></li>
 <li>去除了VAL，因为会放大远程监督中的错误标签</li>
 <li>不使用其他降噪方法
 <ul>
@@ -288,7 +288,7 @@
 </li>
 <li>实验结果分析
 <ul>
-<li>![[results in different variants of RSN and baselines.png]]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/results%20in%20different%20variants%20of%20RSN%20and%20baselines.png" alt=""></li>
 <li>RW-HAC,SN-HAC，孪生网络更能捕捉句子关系信息，分布式特征表示，优化信息聚合</li>
 <li>Louvain性能优于HAC，没有使用额外的约束，关系聚类可能有奇怪的形状，违背了HAC的假设</li>
 <li>VAT可能放大了噪音数据</li>
