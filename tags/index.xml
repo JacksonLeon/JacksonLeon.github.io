@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Thu, 10 Oct 2019 10:11:18 +0000</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Dec 2020 20:23:04 +0800</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Relation Extraction</title>
+      <link>/blog/tags/relation-extraction/</link>
+      <pubDate>Fri, 11 Dec 2020 20:23:04 +0800</pubDate>
+      
+      <guid>/blog/tags/relation-extraction/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>/blog/tags/docker/</link>

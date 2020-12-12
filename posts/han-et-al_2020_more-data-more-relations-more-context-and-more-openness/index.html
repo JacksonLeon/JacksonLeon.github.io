@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title> Han Et Al__More Data, More Relations, More Context and More Openness |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/han-et-al_2020_more-data-more-relations-more-context-and-more-openness/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >Han Et Al__More Data, More Relations, More Context and More Openness</h1>
+    <div class="post-meta">
+    
+      <time datetime="2020-12-12T15:55:50&#43;08:00">December 12, 2020</time> &nbsp; 
+    
+
+    Lau &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/han-et-al_2020_more-data-more-relations-more-context-and-more-openness/" class="leancloud_visitors" data-flag-title="Han Et Al__More Data, More Relations, More Context and More Openness">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        5 min
+      
+      5 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="introduction">Introduction</h1>
+<ul>
+<li>These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations.</li>
+<li>现实情况下会更加复杂：
+<ul>
+<li>高质量人工标注数据代价高</li>
+<li>关系抽取数据存在长尾现象</li>
+<li>大部分的事实数据是出现在更大的上下文中，多个句子中</li>
+<li>预先定义好的关系集合无法覆盖所有实际存在的关系</li>
+</ul>
+</li>
+<li>概括出四个可行的方向
+<ul>
+<li>利用更多的数据
+<ul>
+<li>[[Distant Supervision|远程监督]]</li>
+<li>但是，DS带来标签错误问题，单个句子包含实体对</li>
+<li>如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？</li>
+</ul>
+</li>
+<li>更有效率的学习</li>
+<li>更加复杂的上下文
+<ul>
+<li>现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用</li>
+</ul>
+</li>
+<li>开放域</li>
+<li>关键挑战
+<ul>
+<li>[[Peng et al_2020_Learning from Context or Names|learning from text or names]]</li>
+<li>datasets towards special interests</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="background-and-existingwork">Background and ExistingWork</h1>
+<ul>
+<li>一个完整的关系抽取系统
+<ul>
+<li>命名实体识别</li>
+<li>实体链接到知识图谱（如果使用KGs的话）</li>
+<li>关系分类器</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An</a> example of RE.png)</li>
+</ul>
+</li>
+</ul>
+<h2 id="pattern-extraction-models">Pattern Extraction Models</h2>
+<ul>
+<li>自动构建模式规则</li>
+<li>更大的数据集</li>
+<li>更多模式格式</li>
+<li>这部分工作大部分都需要人类专家的检验，也是主要的限制</li>
+</ul>
+<h2 id="statistical-relation-extraction-models">Statistical Relation Extraction Models</h2>
+<ul>
+<li>覆盖更多的内容，基本不需要人类干预</li>
+<li>feature-based methods
+<ul>
+<li>设计词汇的、句法、语义的特征</li>
+</ul>
+</li>
+<li>kernel-based methods
+<ul>
+<li>比较关系的表示和句子之间的相似度</li>
+</ul>
+</li>
+<li>Graphical methods
+<ul>
+<li>利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型</li>
+</ul>
+</li>
+<li>embedding models
+<ul>
+<li>把文本编码成低维度的向量表示</li>
+</ul>
+</li>
+<li>challenges
+<ul>
+<li>需要人工设计特征和核函数</li>
+<li>模型容量</li>
+</ul>
+</li>
+</ul>
+<h2 id="neural-relation-extraction-models">Neural Relation Extraction Models</h2>
+<ul>
+<li>recursive neural networks，CNN，RNN，GNNs，attention-based</li>
+<li>[[Word Embedding|词嵌入]]
+<ul>
+<li>输入文本的语义表示</li>
+</ul>
+</li>
+<li>[[Positional Embeddings|位置嵌入]]
+<ul>
+<li>词语和实体之间的相对距离</li>
+</ul>
+</li>
+<li>预训练模型等</li>
+</ul>
+<h1 id="more-directions-for-re">“More” Directions for RE</h1>
+<h2 id="utilizing-more-data">Utilizing More Data</h2>
+<ul>
+<li>缺少高质量，大规模数据</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An</a> example of distantly supervised relationextraction.png)</li>
+<li>远程监督和启发式方法可以产生大规模的数据</li>
+<li>但是，不可避免带来噪音标签</li>
+<li>所以降噪：
+<ul>
+<li>从multi-instance中选择最具有信息的</li>
+<li>利用额外的上下文信息：KGs，多语言语料</li>
+<li>利用复杂的机制和训练策略
+<ul>
+<li>强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>还存在问题：
+<ul>
+<li>目前的远程监督方法比较古老2009年，更好的远程监督机制</li>
+<li>无监督或者半监督方法</li>
+</ul>
+</li>
+<li>Wiki-Distant</li>
+</ul>
+<h2 id="performing-more-efficient-learning">Performing More Efficient Learning</h2>
+<ul>
+<li>长尾现象，数据分布不均</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Relation">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Relation</a> distributions-long-tail.png)</li>
+<li>[[Han et al_2018_FewRel]]FewRel数据集
+<ul>
+<li>N way k shot</li>
+<li>去学习例子更好的表示</li>
+</ul>
+</li>
+<li>元学习
+<ul>
+<li>学习如何去学</li>
+<li>参数初始化和优化</li>
+</ul>
+</li>
+<li>Few-shot领域迁移</li>
+<li>Few-shot NOTA</li>
+<li>评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义</li>
+</ul>
+<h2 id="handling-more-complicated-context">Handling More Complicated Context</h2>
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/An</a> example of document-level RE.png)</li>
+<li>需要阅读、记忆、推理</li>
+<li>更多形式的上下文信息：对话、文档等等</li>
+<li>利用搜索引擎获取外部知识</li>
+</ul>
+<h2 id="orienting-more-open-domains">Orienting More Open Domains</h2>
+<ul>
+<li>开放信息抽取
+<ul>
+<li>从句子中抽取实体和关系</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/open">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/open</a> information extraction.png)</li>
+</ul>
+</li>
+<li>关系发现
+<ul>
+<li>从无监督数据中发现</li>
+<li>聚类</li>
+<li>生成</li>
+</ul>
+</li>
+<li>问题：
+<ul>
+<li>关系规范化</li>
+<li>N/A类型，并不是每个实体对都存在关系</li>
+</ul>
+</li>
+</ul>
+<h1 id="other-challenges">Other Challenges</h1>
+<h2 id="learning-from-text-or-names">Learning from Text or Names</h2>
+<ul>
+<li>实体和上下文都提供了重要的信息</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Results">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Results</a> of state-of-the-arts models on the normalsetting, masked-entity (ME) setting and only-entity(OE) setting.png)</li>
+</ul>
+<h2 id="re-datasets-towards-special-interests">RE Datasets towards Special Interests</h2>
+<ul>
+<li>针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集</li>
+<li>构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的</li>
+</ul>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

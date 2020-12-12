@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title> Qiu Et Al__Pre Trained Models for Natural Language Processing |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >Qiu Et Al__Pre Trained Models for Natural Language Processing</h1>
+    <div class="post-meta">
+    
+      <time datetime="2020-12-12T15:57:21&#43;08:00">December 12, 2020</time> &nbsp; 
+    
+
+    Lau &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/" class="leancloud_visitors" data-flag-title="Qiu Et Al__Pre Trained Models for Natural Language Processing">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        22 min
+      
+      19 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="大致框架">大致框架</h1>
+<ul>
+<li>基于四个不同的方向给PTM分类</li>
+<li>如何将PTM的知识应用到下游任务中去</li>
+<li>未来的研究中PTM潜在的几个方向</li>
+<li>本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM</li>
+</ul>
+<h1 id="介绍">介绍</h1>
+<p>现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。</p>
+<p>相比<a href="CV">[Computer Vision]</a>，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。</p>
+<p>预训练模型在大语料库上可以学习到<strong>通用的语言表示</strong>，而且不用从头开始训练一个新模型。</p>
+<p>第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。
+主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].</p>
+<p>第二代PTMs主要重点在于学习上下文词嵌入
+例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations],  [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。</p>
+<h2 id="详细框架">详细框架</h2>
+<ul>
+<li>PTMs中的背景知识、常用的符号</li>
+<li>PTMs一个简短的总结以及分类</li>
+<li>PTMs的扩展</li>
+<li>如何应用到下游任务</li>
+<li>PTMs的相关资源</li>
+<li>NLP任务的集合</li>
+<li>现在的挑战以及未来的方向</li>
+</ul>
+<h1 id="背景知识">背景知识</h1>
+<h2 id="语言表示学习">语言表示学习</h2>
+<blockquote>
+<p>a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.</p>
+<p>一个好的表示应该表达通用的知识，并不是针对特定的任务，但是对机器学习去解决AI任务会很有用。 &mdash;-Bengio</p>
+</blockquote>
+<p>对于语言表示来说，<strong>好的表示应该能够获取到隐含的语言的规律以及常识性知识</strong>，比如说lexical meanings, syntactic structures, semantic roles, and even pragmatics(语用学)。分布式表示的<strong>核心就是利用低维度的向量来描述文本中的一部分</strong>，这个向量中的每个维度都没有对应的意义，但是整个向量却表示了一个具体的含义，也许每个单独的向量是有意义的，不过<strong>现在我们无法解释，其可解释性太低</strong>，几乎没有。</p>
+<p>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Generic">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Generic</a> Neural Architecture for NLP.png)</p>
+<p>从图中可以看出，两种词嵌入，有没有上下文语意的，也就是字面意思，<strong>会不会根据上下文信息更改向量的表示</strong>，举个例子，<strong>苹果</strong>这个词语代表的词向量会不会换了个句子，其训练出来的词嵌入向量就发生变化。</p>
+<ul>
+<li>
+<p>Non-contextual Embeddings
+这类词嵌入有两种明显的局限，一是因为词嵌入是静态不变的，无法表示多义性的词语；二是，此表中<strong>未出现的词语无法表示，一般使用字符级表示或者子词表示</strong>的方法来解决这个问题。</p>
+</li>
+<li>
+<p>Contextual Embeddings
+为了解决上面两个问题，主要通过分辨词语在不同上下文中的语意，这里是将所有的词语或者子词放进一个神经编码器中去计算每个词语的上下文词嵌入或者动态词嵌入。</p>
+</li>
+</ul>
+<h2 id="neural-contextual-encoders">Neural Contextual Encoders</h2>
+<p>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Neural">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Neural</a> Contextual Encoders.png)</p>
+<h3 id="序列模型">序列模型</h3>
+<p><strong>序列模型通常按顺序捕获单词的局部上下文。</strong></p>
+<ul>
+<li>卷积模型通过卷积操作把邻居的本地信息汇总从而获得这个词语的meaning</li>
+<li>循环模型通过short momery来获取上下文表示，双向的LSTM或者是GRUs可以从两个方向收集信息，但是会受到远距离依赖问题的影响。</li>
+</ul>
+<h3 id="非序列型">非序列型</h3>
+<p>非序列模型通过<strong>预先定义好的树或者图结构（句法树、语法关系）</strong> 来学习上下文表示，其中构建一个好的图结构是一个比较有挑战的问题，也比较依赖外部的工具或者是知识，例如依存解析。</p>
+<p>实际上，更加直接的方法是使用全连接图，连接的权重是<strong>通过自注意力机制进行动态计算的</strong>，能够隐含地显示词与词之间的关系，一个比较成功的例子是[[Vaswani et al_2017_Attention Is All You Need|Transformer]]，不过也使用了一些其他的模块：[[Positional Embeddings]]、[[Feed-Forward Network(FFN)]]、[[Layer Normalization]]、[[Residual Connections]]等等。</p>
+<p>序列模型难以获取长尾的词信息，但是易于训练，多种NLP任务也可以拿到不错的成绩。</p>
+<p><strong>Transformer可以直接对序列中每两个单词之间的依赖关系进行建模，这更强大并且更适合对语言的远程依赖关系进行建模。</strong></p>
+<blockquote>
+<p>However, due to its heavy structure and less model bias, the Transformer usually requires a large training corpus and is easy to overfit on small or modestly-sized datasets.</p>
+<p>Reference: [[Radford et al_Improving Language Understanding by Generative Pre-Training|GPT]]</p>
+</blockquote>
+<p>由于transformer其强大的能力，也是目前主流的PTMs常用的结构。</p>
+<h2 id="为什么需要预训练">为什么需要预训练？</h2>
+<ul>
+<li>由于大部分NLP任务需要充分训练模型从而防止过拟合</li>
+<li>而这就需要大规模的标注数据集</li>
+<li>但是对于句法和语义等任务来说，人工标注相当昂贵</li>
+<li>所以想要先用大规模的无标注数据学习一个好的表示，再用于下游任务中</li>
+<li>优点：
+<ul>
+<li>可以学习到通用的语言表示</li>
+<li>提供了更好地模型初始化</li>
+<li>避免了在小数据集上过拟合</li>
+</ul>
+</li>
+</ul>
+<h2 id="nlp预训练历史">NLP预训练历史</h2>
+<ul>
+<li>第一代：预训练词嵌入
+<ul>
+<li>把词语表示成稠密向量，one-hot是稀疏的</li>
+<li>pair-wise ranking task而不是语言模型</li>
+<li>Mikolov提出并不需要深度神经网络来构建好的词嵌入，并提出CBOW和skip-gram模型</li>
+<li>Word2Vec、GloVe</li>
+<li>都是上下文无关的，大多数都是使用浅层模型训练，未训练到的还需要模型从头训练</li>
+</ul>
+</li>
+<li>第二代：上下文编码器
+<ul>
+<li>研究者发现预训练和微调可以提高多任务学习的性能</li>
+<li>无监督预训练可以改进seq2seq模型</li>
+<li><strong>更大的数据集、更加强大的结构、新的预训练任务</strong></li>
+<li>BiLM、ELMo的输出可以大幅度改善NLP任务，通常被用来计算上下文词嵌入</li>
+<li>ULMFiT的三个阶段：
+<ul>
+<li>在通用领域上预训练LM</li>
+<li>在目标数据上微调</li>
+<li>在目标任务上微调</li>
+</ul>
+</li>
+<li>自监督任务用于预训练模型在大规模文本语料库上学习到更多的知识</li>
+<li>微调是预训练任务用于下游任务的主要方式</li>
+</ul>
+</li>
+</ul>
+<h1 id="overview">Overview</h1>
+<p>预训练模型之间的主要区别是：上下文编码器的用途、预训练任务、目的</p>
+<h2 id="预训练任务">预训练任务</h2>
+<ul>
+<li>分类
+<ul>
+<li>有监督
+<ul>
+<li>把输入映射到输出上</li>
+</ul>
+</li>
+<li>无监督
+<ul>
+<li>从无标注数据中寻找内在的联系、知识</li>
+</ul>
+</li>
+<li>自监督
+<ul>
+<li>上面两者的混合，学习范式与SL相同，但是其训练的标签是自动生成的</li>
+<li>核心思想是预测输入的任何部分，类似MLM</li>
+</ul>
+</li>
+<li>NLP的数据一般比较少，不足以训练好的PTM</li>
+<li>越有挑战性的任务越对下游任务有利，例如MT</li>
+</ul>
+</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Loss">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Loss</a> Functions of Pre-training Tasks.png)</li>
+<li>LM
+<ul>
+<li>单向LM的一个缺点是：每个Token只编码了左边的token和他自己</li>
+<li>BiLM提出two-tower模型，编码前向和反向</li>
+</ul>
+</li>
+<li>MLM
+<ul>
+<li>Masked LM
+<ul>
+<li>完形填空，cloze</li>
+<li>“cloze procedure”: A new tool for measuring readability</li>
+<li>缺点：<strong>造成预训练和微调阶段之间的断层，因为[mask]并不出现在微调阶段</strong></li>
+<li>解决方案：special token 80，random 10，origin 10</li>
+</ul>
+</li>
+<li>s2s MLM
+<ul>
+<li>MLM通常是分类任务，softmax分类器预测</li>
+<li>范式：<strong>编码器输入masked序列，解码器利用自回归顺序输出masked token</strong></li>
+<li>MASS，T5</li>
+<li>什么样的预训练任务利于什么样的下游任务，s2s MLM有利于qa、summary、MT</li>
+</ul>
+</li>
+<li>Enhanced Masked Language Modeling
+<ul>
+<li>RoBERTa，动态Mask</li>
+<li>XLM，拼接平行双语句对，Translation Language Modeling (TLM)</li>
+<li>Span-BERT，将结构信息编码到预训练中</li>
+<li>外部知识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>乱序LM
+<ul>
+<li>预训练时的mask在微调阶段不出现，造成断层</li>
+<li>输入句子的token是重新排序的</li>
+<li>
+<blockquote>
+<p>In practice, only the last few tokens in the permuted sequences are predicted, due to the slow convergence. And a special two-stream self-attention is introduced for target-aware representations.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Denoising Autoencoder (DAE)
+<ul>
+<li>输入部分损坏，目的是为了回复原来的输入</li>
+<li>三种方式：
+<ul>
+<li>masking</li>
+<li>删除，判断丢失部分的位置</li>
+<li>填充，预测多少token丢失</li>
+<li>Sentence Permutation，句子置换，</li>
+<li>Document Rotation，判断文档开始的位置-句子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对比学习
+<ul>
+<li>正例之间在语义上比随机例子更相似</li>
+<li>通过对比来学习一般性知识</li>
+<li>一般计算复杂度相比LM低</li>
+<li>task：
+<ul>
+<li>Deep InfoMax (DIM)
+<ul>
+<li>最先用于图像，通过最大化图像表示和本地区域图像之间的共同信息来提高ptm的质量</li>
+<li>NLP中，使n-gram span比随机的span与masked句子联系更高</li>
+</ul>
+</li>
+<li>Replaced Token Detection (RTD)
+<ul>
+<li>通过上下文预测token是否被替换</li>
+<li>[[Clark et al_2020_ELECTRA_arXiv2003.10555 [cs]|ELECTRA]]使用生成器来替换序列中的token，判别器判断哪些token能被替换了，改进了RTD</li>
+<li>WKLM替换实体，而不是token，把实体替换成具有相同类型的其他实体，从而去预测</li>
+</ul>
+</li>
+<li>Next Sentence Prediction NSP
+<ul>
+<li>判断两个句子是不是来自同一个训练语料并且是连续的，正反例出现的比例是相同的</li>
+<li>学习两个句子之间的关系</li>
+<li>不过NSP任务不太可靠</li>
+</ul>
+</li>
+<li>Sentence Order Prediction (SOP)
+<ul>
+<li>目的是使生成的句子、文档更具有一致性</li>
+<li>ALBERT，sentence order prediction (SOP) loss</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ptms分类">PTMs分类</h2>
+<ul>
+<li>四个方向
+<ul>
+<li>表示类型：上下文</li>
+<li>结构：LSTM、transformer、enc、dec</li>
+<li>预训练任务类型：[[Qiu et al_2020_Pre-trained Models for Natural Language Processing#预训练任务|预训练任务]]</li>
+<li>拓展：知识、多语言、多模态、特定语言、特定领域、压缩</li>
+</ul>
+</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Taxonomy">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Taxonomy</a> of PTMs with Representative Examples.png)</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/List">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/List</a> of Representative PTMs.png)</li>
+</ul>
+<h1 id="ptms拓展">PTMs拓展</h1>
+<h2 id="知识">知识</h2>
+<ul>
+<li>注入知识会受到灾难性遗忘问题的影响
+<ul>
+<li>K-Adapter在不同的预训练使用不同的适配器进行注入知识</li>
+<li>K-BERT注入外部知识不需要重新训练，在微调时注入</li>
+<li>Logan IV et al. [119] and Hayashi et al. [57] extended language model to knowledge graph language model (KGLM) and latent relation language model (LRLM)</li>
+</ul>
+</li>
+</ul>
+<h2 id="多语言和特定语言">多语言和特定语言</h2>
+<ul>
+<li>Cross-Lingual Language Understanding (XLU)
+<ul>
+<li><strong>通常需要语言间的对齐</strong></li>
+<li>mBert多语言一般化效果还可以</li>
+<li>XLM相比mbert引入了一个多语言任务，translation language modeling (TLM)，平行双语语料融合</li>
+</ul>
+</li>
+<li>Cross-Lingual Language Generation (XLG)
+<ul>
+<li>XNLG [19] performs two-stage pre-training for cross-lingual natural language generation.
+<ul>
+<li>预训练单语和多语MLM 编码器</li>
+<li>固定编码器，训练单语DAE和交叉语言自动编码的解码器</li>
+</ul>
+</li>
+<li>在交叉语言的问题生成和摘要总结效果好</li>
+</ul>
+</li>
+</ul>
+<h2 id="多模态">多模态</h2>
+<blockquote>
+<p>Typically, tasks like visual-based MLM, masked visual-feature modeling and visual-linguistic matching are widely used in multi-modal pre-training, such as VideoBERT [165], VisualBERT [103], ViLBERT [120].</p>
+</blockquote>
+<ul>
+<li>分别对图像和文字进行编码：ViLBERT [120] and LXMERT [175]</li>
+<li>只有一个transformer：VisualBERT [103], B2T2 [2], VLBERT [163], Unicoder-VL [101] and UNITER [17]</li>
+</ul>
+<h2 id="压缩">压缩</h2>
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Comparison">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Comparison</a> of Compressed PTMs.png)</li>
+<li>PTMs通常参数量都相当巨大，很难部署到在线服务和移动设备上</li>
+<li>压缩方法：
+<ul>
+<li>模型剪枝
+<ul>
+<li>
+<blockquote>
+<p>Model pruning refers to removing part of neural network (e.g., weights, neurons, layers, channels, attention heads),</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>权值量化
+<ul>
+<li>将高精度压缩为低精度</li>
+</ul>
+</li>
+<li>参数共享
+<ul>
+<li>跨层之间进行参数共享</li>
+<li>ALBERT，尽管进行共享了，但是训练和推断的时间变长了</li>
+<li>在推断阶段并不会提高计算效率</li>
+</ul>
+</li>
+<li>知识蒸馏：TinyBERT</li>
+<li>模块替换：Theseus Compression</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用ptms到下游任务">应用PTMs到下游任务</h1>
+<h2 id="迁移学习">迁移学习</h2>
+<ul>
+<li>如何迁移
+<ul>
+<li>选择合适的预训练任务、结构、语料库
+<ul>
+<li>预训练任务、结构、语料库对于下游任务的影响相当大</li>
+<li>例如：NSP-&gt;Question Answering (QA) and Natural Language Inference (NLI)</li>
+<li>bert可以帮助理解任务，但是很难做生成任务</li>
+</ul>
+</li>
+<li>合适的层
+<ul>
+<li>预训练深度模型每层所捕捉的信息时不同的， POS tagging, parsing,long-term dependencies, semantic roles, coreference</li>
+<li>通常句法信息在浅层，语义信息在深层</li>
+<li>所以在使用ptms的时候，使用那一层的信息也是很重要的</li>
+</ul>
+</li>
+<li>微调？
+<ul>
+<li>PTMs一般作为特征抽取器和微调，区别就是看参数固不固定</li>
+<li>微调对于各种任务来说更加方便使用</li>
+</ul>
+</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Some">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Some</a> common combinations of adapting PTMs.png)</li>
+</ul>
+</li>
+<li>微调策略
+<ul>
+<li>两阶段
+<ul>
+<li>中间任务或者语料</li>
+<li>目标任务</li>
+</ul>
+</li>
+<li>多任务学习</li>
+<li>额外的模块
+<ul>
+<li>效率低下</li>
+<li>改进：原始的参数固定的基础上增加一些微调模块</li>
+</ul>
+</li>
+<li>模型融合和蒸馏等</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用">应用</h1>
+<p>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Resources">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Resources</a> of PTMs.png)</p>
+<h2 id="general-evaluation-benchmark">General Evaluation Benchmark</h2>
+<ul>
+<li>The General Language Understanding Evaluation (GLUE) benchmark
+<ul>
+<li>
+<blockquote>
+<p>a collection of nine natural language understanding tasks, including single-sentence classification tasks (CoLA and SST-2), pairwise text classification tasks (MNLI, RTE, WNLI, QQP, and MRPC), text similarity task (STSB), and relevant ranking task (QNLI). GLUE benchmark is well-designed for evaluating the robustness as well as generalization of models.</p>
+</blockquote>
+</li>
+<li>不提供真实标签，而是一个服务器</li>
+<li>superGLUE</li>
+</ul>
+</li>
+<li>Question Answering
+<ul>
+<li><strong>抽取式QA-&gt;span prediction</strong></li>
+<li><strong>multi-round generative QA</strong>：PTM+Adversarial Training+Rationale Tagging+Knowledge Distillation</li>
+</ul>
+</li>
+<li>Sentiment Analysis</li>
+<li>Named Entity Recognition
+<ul>
+<li>预测每个token对应的label</li>
+<li>bio和bieso</li>
+</ul>
+</li>
+<li>Machine Translation
+<ul>
+<li>MASS使用seq2seq MLM去一起训练编码器和解码器</li>
+</ul>
+</li>
+<li>Summarization
+<ul>
+<li>Zhong利用Siamese-BERT去计算原文档与总结之间的相似度</li>
+<li>Extractive summarization as text matching</li>
+</ul>
+</li>
+<li>Adversarial Attacks and Defenses
+<ul>
+<li>预训练模型相当脆弱</li>
+<li>所以如何攻击和防御也是研究的重点</li>
+<li>攻击：利用人类感知不到的输入变化但是能够影响模型的输出，语法上流畅，语义上也要连贯</li>
+<li>BERT在拼写错误上不敏感</li>
+</ul>
+</li>
+</ul>
+<h1 id="未来的方向">未来的方向</h1>
+<h2 id="上限">上限</h2>
+<ul>
+<li>PTMs还远没有达到上限，现在大部分模型都是利用更多的训练和更大的数据集去提高性能</li>
+<li>但是我们需要考虑的是：更加合理和深的模型结构以及更有针对性、挑战性的预训练任务</li>
+<li>
+<blockquote>
+<p>Therefore, a more practical direction is to design more efficient model architecture, self-supervised pre-training tasks, optimizers, and training skills using existing hardware and software.</p>
+</blockquote>
+</li>
+<li>[[Clark et al_2020_ELECTRA_arXiv2003.10555 [cs]|ELECTRA]]</li>
+</ul>
+<h2 id="结构">结构</h2>
+<ul>
+<li>Transformer结构的主要局限是计算复杂度，一般是输出长度的平方</li>
+<li>目前算力不够发达，大部分模型最多只能处理512个token</li>
+<li>设计深度模型的结构相当困难，也有自动搜索网络结构的工作 [[Neural architecture search with reinforcement learning]]</li>
+</ul>
+<h2 id="任务导向和模型压缩">任务导向和模型压缩</h2>
+<ul>
+<li>PTMs和下游任务之间的矛盾主要有两方面：
+<ul>
+<li>模型架构</li>
+<li>数据分布</li>
+</ul>
+</li>
+<li>参数量大，移植到移动设备等-&gt;压缩</li>
+</ul>
+<h2 id="knowledge-transfer-beyond-fine-tuning">Knowledge Transfer Beyond Fine-tuning</h2>
+<ul>
+<li>固定原始参数,在这基础上增加一些可微调的模块
+<ul>
+<li>BERT and PALs: Projected attention layers for ecient adaptation in multi-task learning</li>
+<li>Parameter-efficient transfer learning for NLP</li>
+</ul>
+</li>
+<li>需要更有效率的模型</li>
+</ul>
+<h2 id="interpretability-and-reliability-of-ptms">Interpretability and Reliability of PTMs</h2>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

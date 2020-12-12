@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title> Peng Et Al__Learning From Context or Names |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/peng-et-al_2020_learning-from-context-or-names/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >Peng Et Al__Learning From Context or Names</h1>
+    <div class="post-meta">
+    
+      <time datetime="2020-12-12T15:56:37&#43;08:00">December 12, 2020</time> &nbsp; 
+    
+
+    Lau &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/peng-et-al_2020_learning-from-context-or-names/" class="leancloud_visitors" data-flag-title="Peng Et Al__Learning From Context or Names">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        4 min
+      
+      21 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="背景">背景</h1>
+<ul>
+<li>
+<p>什么类型的信息在影响着RE模型区分句子包含什么关系？</p>
+<ul>
+<li>句子中两个重要的信息：上下文和实体mention</li>
+<li>对于人类直觉来说，句子的上下文对我们影响更大</li>
+<li>之后的方法倾向于编码成分布式表示并进行匹配从而实现预测关系分类</li>
+<li>影响程度：
+<ul>
+<li>两种信息都很重要</li>
+<li>现有的RE数据集在训练过程中会从实体提及中泄露一部分信息，提高了性能</li>
+</ul>
+</li>
+<li>以后的方向：更好地理解句子的上下文以及利用实体提及。防止只是简单的记忆（拟合）</li>
+<li>本文使用wikidata去聚类相同的关系实例，学习去分辨句子之间的相似度和属于不同的关系</li>
+</ul>
+</li>
+<li>
+<p>模型</p>
+<ul>
+<li>CNN
+<ul>
+<li><a href="https://www.aclweb.org/anthology/W15-1506">Nguyen and Grishman (2015)</a></li>
+<li><a href="https://nlp.stanford.edu/pubs/zhang2017tacred.pdf">Zhang et al. (2017)</a></li>
+</ul>
+</li>
+<li>BERT
+<ul>
+<li>BERT for RE following <a href="https://doi.org/10.18653/v1/P19-1279">Baldini Soares et al. (2019)</a></li>
+</ul>
+</li>
+<li>MTB
+<ul>
+<li><a href="https://doi.org/10.18653/v1/P19-1279">Baldini Soares et al. (2019)</a></li>
+<li>pre-train a BERTbase version of MTB</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/BERTbase">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/BERTbase</a> version of MTB.png)</li>
+</ul>
+</li>
+<li>CP</li>
+</ul>
+</li>
+<li>
+<p>实验</p>
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/TACRED">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/TACRED</a> results (micro F1) with CNN, BERTand MTB on different settings.png)</li>
+<li>Context+Mention (C+M)</li>
+<li>Context+Type (C+T)
+<ul>
+<li>We replace entity mentions with their types provided in TACRED.</li>
+<li>We use special tokens to represent them:</li>
+<li>for example, we use [person] and [date] to represent an entity with type person and date respectively.</li>
+<li>we do not repeat the special tokens for entity-length times to avoid leaking entity length information</li>
+</ul>
+</li>
+<li>Only Context (OnlyC)
+<ul>
+<li>we replace all entity mentions with the special tokens [SUBJ] and [OBJ]. In this case, the information source of entity mentions is totally blocked</li>
+</ul>
+</li>
+<li>Only Mention (OnlyM)</li>
+<li>Only Type (OnlyT)</li>
+</ul>
+</li>
+<li>
+<p>分析</p>
+<ul>
+<li>目前的模型对句子的语义信息的理解还不够，仅仅保持在记忆的阶段</li>
+<li>模型从实体名称中所利用的大部分信息是type信息</li>
+<li>基于实体名称的模型在预测阶段可能会受到训练集的bias，另一方面，单纯的C+T可能无法更好的理解文本</li>
+<li>错误分析-onlyC
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Case">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Case</a> study on unique wrong predictions made by OnlyC.png)</li>
+<li>wrong：可以推测出来但是模型预测错误：almost half</li>
+<li>no pattern：人类也无法根据上下文推测出句子包含的关系</li>
+<li>confusing：句子的意思模糊</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="contrastive-pre-training-for-re">Contrastive Pre-training for RE</h1>
+<ul>
+<li>生成数据
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Our">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Our</a> contrastive pre-training framework for RE.png)</li>
+<li>数据需要包含足够的区别，不能仅仅增加实体类型和不同的上下文，也要避免模型记住实体的mention</li>
+<li>contrastive learning：<a href="https://www.researchgate.net/profile/Yann_Lecun/publication/4246277_Dimensionality_Reduction_by_Learning_an_Invariant_Mapping/links/00b7d514af9f25ecca000000/Dimensionality-Reduction-by-Learning-an-Invariant-Mapping.pdf">Hadsell et al., 2006</a></li>
+<li>随机mask实体，70%，</li>
+<li>模型的主要目标是，使学习到的具有相同关系的句子的representation相似，而不同关系的句子的representation区分开来</li>
+<li>所以存在噪音也是可以接受的</li>
+</ul>
+</li>
+<li>训练
+<ul>
+<li>损失函数
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/training">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/training</a> objective for cp model.png)</li>
+<li>其中</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/relation-aware">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/relation-aware</a> representation for cp model.png)</li>
+<li>h和t是[E1],[E2]	$ENC_i()$是transformer的encoder输出</li>
+<li>Denote the MLM loss as LMLM</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/training">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/training</a> loss for masked language model.png)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="实验">实验</h1>
+<ul>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Results">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Results</a> on supervised RE datasets TACRED (micro F1), SemEval (micro F1), Wiki80 (accuracy) andChemProt (micro F1).png)</li>
+<li>在[[Han et al_2018_FewRel]]的基础上对模型进行修改
+<ul>
+<li>使用[E1],[E2]作为表示，而不是[CLS]</li>
+<li>使用点积，而不是欧几里得距离计算相似度</li>
+<li>性能提高“a large margin”</li>
+</ul>
+</li>
+<li>性能
+<ul>
+<li>在all C+M,OnlyC and OnlyM都取得了提升</li>
+<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Accuracy">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/Accuracy</a> on FewRel dataset in cp model.png)</li>
+</ul>
+</li>
+</ul>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2020 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>
