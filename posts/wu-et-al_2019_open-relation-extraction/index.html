@@ -96,15 +96,50 @@
       
 
       
-        6 min
+        7 min
       
-      21 s
+      34 s
       &nbsp;
     
     </div>
   </header>
 
-  <h1 id="摘要">摘要</h1>
+  <ul>
+<li><strong>描述论文作者旨在实现或已经实现的研究目标</strong>
+<ul>
+<li>学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取</li>
+</ul>
+</li>
+<li><strong>如果论文中提出了新的方法/技术，那么新方法的关键要素是什么</strong>
+<ul>
+<li>关系孪生网络</li>
+<li>从带标签的数据中学习到关系知识</li>
+<li>关系知识转移的方法</li>
+<li>[[Metric Learning]]
+<ul>
+<li>网络提取的embedding</li>
+<li>距离函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>这篇论文中哪些内容对你来说是有用的</strong>
+<ul>
+<li>不同的损失函数</li>
+<li>度量学习应用于开放式关系抽取</li>
+<li>不同的聚类方法</li>
+</ul>
+</li>
+<li><strong>你还想要继续阅读哪些参考内容</strong>
+<ul>
+<li>[[Metric Learning]]</li>
+<li>更适合开放式关系抽取的聚类方法，例如本文使用的Louvain</li>
+<li>损失函数设计</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="摘要">摘要</h1>
 <ul>
 <li>问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实</li>
 <li>提出：<strong>利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系</strong></li>
@@ -128,7 +163,7 @@
 <li>本文方法：
 <ul>
 <li>利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，</li>
-<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/A%20flowchart%20of%20our%20framework%20in%20openre%20by%20wu%202019.pn)">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/A%20flowchart%20of%20our%20framework%20in%20openre%20by%20wu%202019.pn)</a></li>
+<li>![[A flowchart of our framework in openre by wu 2019.png]]</li>
 <li>RSN与有监督、半监督、远程监督方法相结合</li>
 <li>数据集：FewRel、FewRel-distant，分割成seen和unseen两部分</li>
 <li>“RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is <strong>the first model to consider knowledge transfer in clustering-based OpenRE task</strong>.”</li>
@@ -184,7 +219,7 @@
 <li>CNN利用word和pos embedding输出关系向量v</li>
 <li>计算绝对距离并映射到<code>[0,1]</code></li>
 <li>交叉熵损失，RSN输出值p作为两个句子包含相同关系的概率值</li>
-<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/binary%20cross%20entropy%20loss%20for%20RSN.pn)">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/binary%20cross%20entropy%20loss%20for%20RSN.pn)</a></li>
+<li>![[binary cross entropy loss for RSN.png]]</li>
 <li>半监督RSN
 <ul>
 <li><strong>模型看到更多种类的数据对于性能是有益处的，所以半监督和远程监督是有必要的</strong></li>
@@ -193,14 +228,14 @@
 <ul>
 <li>条件熵损失，远离决策边界，也就是相似概率等于0.5</li>
 <li>虚拟对抗损失，搜索数据域，惩罚距离预测变化最大的</li>
-<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/semi-supervised%20RSN%20loss%20func.pn)">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/semi-supervised%20RSN%20loss%20func.pn)</a></li>
+<li>![[semi-supervised RSN loss func.png]]</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>远程监督RSN
 <ul>
-<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/distant-supervised%20RSN%20loss%20func.pn)">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/distant-supervised%20RSN%20loss%20func.pn)</a></li>
+<li>![[distant-supervised RSN loss func.png]]</li>
 <li>去除了VAL，因为会放大远程监督中的错误标签</li>
 <li>不使用其他降噪方法
 <ul>
@@ -253,7 +288,7 @@
 </li>
 <li>实验结果分析
 <ul>
-<li>![](<a href="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/results%20in%20different%20variants%20of%20RSN%20and%20baselines.pn)">https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/(https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/research/results%20in%20different%20variants%20of%20RSN%20and%20baselines.pn)</a></li>
+<li>![[results in different variants of RSN and baselines.png]]</li>
 <li>RW-HAC,SN-HAC，孪生网络更能捕捉句子关系信息，分布式特征表示，优化信息聚合</li>
 <li>Louvain性能优于HAC，没有使用额外的约束，关系聚类可能有奇怪的形状，违背了HAC的假设</li>
 <li>VAT可能放大了噪音数据</li>
