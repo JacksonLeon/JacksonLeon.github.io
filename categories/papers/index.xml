@@ -7,9 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 18 Sep 2020 20:23:04 +0800</lastBuildDate><atom:link href="/blog/categories/papers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Dec 2020 15:57:21 +0800</lastBuildDate><atom:link href="/blog/categories/papers/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chen Et Al__Relabel the Noise</title>
+      <title>Qiu Et Al_Pre Trained Models for Natural Language Processing</title>
+      <link>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</link>
+      <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
+      
+      <guid>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</guid>
+      <description>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.</description>
+    </item>
+    
+    <item>
+      <title>Peng Et Al_Learning From Context or Names</title>
+      <link>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</link>
+      <pubDate>Wed, 04 Nov 2020 15:56:37 +0800</pubDate>
+      
+      <guid>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</guid>
+      <description>背景   什么类型的信息在影响着RE模型区分句子包含什么关系？
+ 句子中两个重要的信息：上下文和实体mention 对于人类直觉来说，句子的上下文对我们影响更大 之后的方法倾向于编码成分布式表示并进行匹配从而实现预测关系分类 影响程度：  两种信息都很重要 现有的RE数据集在训练过程中会从实体提及中泄露一部分信息，提高了性能   以后的方向：更好地理解句子的上下文以及利用实体提及。防止只是简单的记忆（拟合） 本文使用wikidata去聚类相同的关系实例，学习去分辨句子之间的相似度和属于不同的关系    模型
+ CNN  Nguyen and Grishman (2015) Zhang et al. (2017)   BERT  BERT for RE following Baldini Soares et al. (2019)   MTB  Baldini Soares et al. (2019) pre-train a BERTbase version of MTB    CP    实验
+  Context+Mention (C+M) Context+Type (C+T)  We replace entity mentions with their types provided in TACRED.</description>
+    </item>
+    
+    <item>
+      <title>Chen Et Al_Relabel the Noise</title>
       <link>/blog/posts/chen-et-al_2020_relabel-the-noise/</link>
       <pubDate>Fri, 18 Sep 2020 20:23:04 +0800</pubDate>
       

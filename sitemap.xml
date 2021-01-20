@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/categories/</loc>
+    <lastmod>2020-12-05T15:57:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
+    <lastmod>2020-12-05T15:57:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/papers/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url>
   
@@ -14,6 +24,16 @@
   
   <url>
     <loc>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</loc>
+    <lastmod>2020-12-05T15:57:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/relation-extraction/</loc>
+    <lastmod>2020-12-05T15:57:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url>
   
@@ -33,27 +53,7 @@
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
-    <lastmod>2020-09-18T20:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/posts/chen-et-al_2020_relabel-the-noise/</loc>
-    <lastmod>2020-09-18T20:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/papers/</loc>
-    <lastmod>2020-09-18T20:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/relation-extraction/</loc>
-    <lastmod>2020-09-18T20:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/</loc>
     <lastmod>2020-09-18T20:23:04+08:00</lastmod>
   </url>
   
