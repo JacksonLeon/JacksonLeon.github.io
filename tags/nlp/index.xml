@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NLP on imlauzh</title>
+    <link>/blog/tags/nlp/</link>
+    <description>Recent content in NLP on imlauzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Sat, 05 Dec 2020 15:57:21 +0800</lastBuildDate><atom:link href="/blog/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qiu Et Al_Pre Trained Models for Natural Language Processing</title>
+      <link>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</link>
+      <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
+      
+      <guid>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</guid>
+      <description>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.</description>
+    </item>
+    
+  </channel>
+</rss>
