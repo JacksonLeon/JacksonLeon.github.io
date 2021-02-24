@@ -1,13 +1,17 @@
 @media (min-width: 50em) {
   @font-face {
-    font-family: 'PT Sans';
-    src: local("PT Sans"), local("PTSans-Regular"), url("../fonts/PTSans-Regular.woff") format("woff");
+    /* font-family: 'PT Sans';
+    src: local("PT Sans Bold"), local("PTSans-Bold"), url("../fonts/PTSans-Bold.woff") format("woff"); */
+    font-family: "Linux Biolinum", "Noto Serif SC", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+    src: local("");
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
-    font-family: 'PT Sans';
-    src: local("PT Sans Bold"), local("PTSans-Bold"), url("../fonts/PTSans-Bold.woff") format("woff");
+    /* font-family: 'PT Sans';
+    src: local("PT Sans Bold"), local("PTSans-Bold"), url("../fonts/PTSans-Bold.woff") format("woff"); */
+    font-family: "Linux Biolinum", "Noto Serif SC", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+    src: local("");
     font-weight: bold;
     font-style: normal;
   }
@@ -15,26 +19,27 @@
 
 @media (prefers-color-scheme: light) {
   html {
-    background: #ffffff;
+    background: #f5f5d5;
     color: #1c1d22;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    background: #1c1d22;
+    background: #323232;
     color: #ffffff;
   }
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   font-size: calc(0.8rem + 0.3vw);
 }
 
 body {
-  font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
-  font-weight: 400;
+  /* font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif; */
+  font-family: "Linux Biolinum", "Noto Serif SC", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-weight: normal;
   line-height: 1.6;
   margin: 0;
   -webkit-text-size-adjust: 100%;
@@ -180,6 +185,6 @@ body > header, body > article, body > footer {
 
 @media (min-width: 32em) {
   body > header, body > article, body > footer {
-    padding: 1.75em calc(38% - 12em);
+    padding: 1.5em calc(32% - 12em);
   }
 }

@@ -1,363 +1,219 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/blog/categories/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/nlp/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/papers/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/pre-train/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/survey/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/wu-et-al_2019_open-relation-extraction/</loc>
     <lastmod>2020-11-07T15:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</loc>
     <lastmod>2020-11-04T15:56:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/relation-extraction/</loc>
     <lastmod>2020-11-04T15:56:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/han-et-al_2020_more-data-more-relations-more-context-and-more-openness/</loc>
     <lastmod>2020-11-02T15:55:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/chen-et-al_2020_relabel-the-noise/</loc>
     <lastmod>2020-09-18T20:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/leetcode/</loc>
     <lastmod>2020-03-31T14:16:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/leetcode/</loc>
     <lastmod>2020-03-31T14:16:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/relation_extraction/</loc>
     <lastmod>2020-03-03T20:15:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/machine-learning/</loc>
     <lastmod>2019-10-29T22:42:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/notebook/</loc>
     <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/deep-learning-note/</loc>
     <lastmod>2019-10-29T22:42:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/linux/</loc>
     <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/linux-foundations/</loc>
     <lastmod>2019-10-30T19:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/docker/</loc>
     <lastmod>2019-10-30T10:11:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/docker-note/</loc>
     <lastmod>2019-10-30T10:11:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/manjaro/</loc>
     <lastmod>2019-09-20T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/manjaro-note/</loc>
     <lastmod>2019-09-20T21:48:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/how-to-be-a-postgraduate-student-mit/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/reproduce/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/migrating-to-python-3-with-pleasure/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/python/</loc>
     <lastmod>2019-05-04T09:30:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/commit-messages-guide/</loc>
     <lastmod>2019-05-04T09:09:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/blog/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/mock-gitee-auto-build-pages/</loc>
     <lastmod>2019-05-01T14:57:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/parser-pic-blocks/</loc>
     <lastmod>2019-05-01T10:43:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/pytorch-style-guide/</loc>
     <lastmod>2019-05-01T09:03:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/style-guide/</loc>
     <lastmod>2019-05-01T09:03:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/google-python-style-guide/</loc>
     <lastmod>2019-04-30T20:37:51+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/andrew-ng/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/andrew-ng-ml-2/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/andrew-ng-ml-1/</loc>
     <lastmod>2019-04-12T18:46:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/andrew-ng-ml-0/</loc>
     <lastmod>2019-04-05T17:03:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/categories/smtc/</loc>
     <lastmod>2019-02-05T11:51:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/smtc0007-py/</loc>
     <lastmod>2019-02-05T11:51:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</loc>
     <lastmod>2019-02-04T21:31:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/smtc0006-py/</loc>
     <lastmod>2019-02-04T16:07:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/python-library/</loc>
     <lastmod>2019-02-04T16:07:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/smtc0000.py/</loc>
     <lastmod>2019-01-30T11:17:32+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/show-me-the-code/</loc>
     <lastmod>2019-01-29T22:58:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/python-note/</loc>
     <lastmod>2019-02-04T16:07:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/macintosh/</loc>
     <lastmod>2019-02-03T18:13:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/macintosh-note/</loc>
     <lastmod>2019-02-03T18:13:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/vscode-customised/</loc>
     <lastmod>2019-05-02T12:58:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/git/</loc>
     <lastmod>2019-02-03T18:13:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/webhook/</loc>
     <lastmod>2018-02-14T13:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/webhook-based-on-git-php/</loc>
     <lastmod>2018-02-14T13:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/java/</loc>
     <lastmod>2018-12-28T15:49:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/java-note/</loc>
     <lastmod>2018-12-28T15:49:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/hackintosh/</loc>
     <lastmod>2019-01-26T22:25:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/hackintosh-for-lenovo-ideapad-700-15isk/</loc>
     <lastmod>2019-01-26T22:25:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/opencv/</loc>
     <lastmod>2018-12-22T14:40:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/opencv-note/</loc>
     <lastmod>2018-12-22T14:40:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/matlab/</loc>
     <lastmod>2018-04-28T16:48:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/matlab-note/</loc>
     <lastmod>2018-04-28T16:48:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/reptile/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/novel-python/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/markdown/</loc>
     <lastmod>2018-03-22T15:01:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/markdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2018-03-22T15:01:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/tags/vim/</loc>
     <lastmod>2019-01-30T04:11:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/vim-note/</loc>
     <lastmod>2019-01-30T04:11:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/posts/git-note/</loc>
     <lastmod>2019-02-03T18:13:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/series/</loc>
   </url>
-  
 </urlset>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.81.0" />
 
   <title> 深度学习笔记 |  imlauzh</title>
   <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
@@ -125,7 +125,7 @@
 --&gt; <span style="color:#ae81ff">124</span>                 <span style="color:#66d9ef">for</span> line in f:
     <span style="color:#ae81ff">125</span>                     self.itos<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> line.strip<span style="color:#f92672">()</span>
     <span style="color:#ae81ff">126</span>                     self.word_dict<span style="color:#f92672">[</span>line.strip<span style="color:#f92672">()]</span> <span style="color:#f92672">=</span> index
- ...
+	...
 UnicodeDecodeError: <span style="color:#e6db74">&#39;ascii&#39;</span> codec can<span style="color:#960050;background-color:#1e0010">&#39;</span>t decode byte 0xc2 in position 1496: ordinal not in range<span style="color:#f92672">(</span>128<span style="color:#f92672">)</span><span style="color:#e6db74">`</span>
 </code></pre></div><p>Replace</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(vocab_file, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> f:
