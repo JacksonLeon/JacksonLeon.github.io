@@ -1,37 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Vim on imlauzh</title>
-    <link>/blog/tags/vim/</link>
-    <description>Recent content in Vim on imlauzh</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Wed, 21 Mar 2018 13:42:00 +0000</lastBuildDate><atom:link href="/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Vim Note</title>
-      <link>/blog/posts/vim-note/</link>
-      <pubDate>Wed, 21 Mar 2018 13:42:00 +0000</pubDate>
-      
-      <guid>/blog/posts/vim-note/</guid>
-      <description>Vim使用技巧 批量删除内容  全部删除  ## 进入文章末尾 G ##注意大写 :1,:d ## 删除全部内容  删除部分内容  ## 定位到要删除的文档末尾 200G :9,:d ##删除9-200之间的内容 复制粘贴 # 复制当前行 yy # 在当前行粘贴 p 查找替换 在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。
-Vim查找支持正则表达式，例如/vim$匹配行尾的&amp;quot;vim&amp;quot;。 需要查找特殊字符需要转义，例如/vim\$匹配&amp;quot;vim$&amp;quot;。
- 注意查找回车应当用\n，而替换为回车应当用\r（相当于&amp;lt;CR&amp;gt;）。
- 查找当前单词 在normal模式下按下*即可查找光标所在单词（word）， 要求每次出现的前后为空白字符或标点符号。例如当前为foo， 可以匹配foo bar中的foo，但不可匹配foobar中的foo。 这在查找函数名、变量名时非常有用。
-按下g*即可查找光标所在单词的字符序列，每次出现前后字符无要求。 即foo bar和foobar中的foo均可被匹配到。
-:s（substitute）命令用来查找和替换字符串。语法如下：
-:{作用范围}s/{目标}/{替换}/{替换标志}例如:%s/foo/bar/g会在全局范围(%)查找foo并替换为bar，所有出现都会被替换（g）。
-作用范围 作用范围分为当前行、全文、选区等等。
-当前行：
-:s/foo/bar/g全文：
-:%s/foo/bar/g选区，在Visual模式下选择区域后输入:，Vim即可自动补全为 :&#39;&amp;lt;,&#39;&amp;gt;。
-:&#39;&amp;lt;,&#39;&amp;gt;s/foo/bar/g2-11行：
-:5,12s/foo/bar/g当前行.与接下来两行+2：
-:.,+2s/foo/bar/g替换标志 上文中命令结尾的g即是替换标志之一，表示全局global替换（即替换目标的所有出现）。 还有很多其他有用的替换标志：
-空替换标志表示只替换从光标位置开始，目标的第一次出现：
-:%s/foo/bari表示大小写不敏感查找，I表示大小写敏感：
-:%s/foo/bar/i# 等效于模式中的\c（不敏感）或\C（敏感）:%s/foo\c/barc表示需要确认，例如全局查找&amp;quot;foo&amp;quot;替换为&amp;quot;bar&amp;quot;并且需要确认：</description>
-    </item>
-    
-  </channel>
-</rss>

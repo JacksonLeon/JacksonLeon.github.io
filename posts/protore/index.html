@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.82.0" />
+
+  <title> [paper] Prototypical Representation Learning for Relation Extraction |  imlauzh</title>
+  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
+  <link rel="stylesheet" href="/blog/css/index.css">
+  <link rel="stylesheet" href="/blog/css/classes.css">
+  <link rel="canonical" href="/blog/posts/protore/">
+  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link 
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
+    crossorigin="anonymous">
+  </link>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+    crossorigin="anonymous">
+  </script>
+  <script 
+    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+    crossorigin="anonymous" 
+    onload="renderMathInElement(document.body);">
+  </script>
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/blog/"> Home</a>
+    
+    <a href="/blog/categories/"> Categories</a>
+    
+    <a href="/blog/tags/"> Tags</a>
+    
+    <a href="/blog/about/"> About</a>
+    
+    <a href="/blog/index.xml"> Subscribe</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/imlauzh" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="/blog/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/blog/categories/papers">Papers</a>
+    &nbsp;
+    
+  
+
+    <h1 style="text-align: center;" >[paper] Prototypical Representation Learning for Relation Extraction</h1>
+    <div class="post-meta">
+    
+      <time datetime="2021-04-13T21:46:40&#43;08:00">April 13, 2021</time> &nbsp; 
+    
+
+    Lau &nbsp;
+
+    
+    
+      <i class="far fa-eye"></i>
+      <span id="/blog/posts/protore/" class="leancloud_visitors" data-flag-title="[paper] Prototypical Representation Learning for Relation Extraction">
+          <span class="leancloud-visitors-count">  </span>
+      </span> &nbsp;
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        4 min
+      
+      57 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="问题">问题</h2>
+<ul>
+<li>针对有监督数据集，大部分模型都能够处理的很好，但是数据量小，人工标注成本高。所以使用远程监督（启发式规则）的方法自动构造数据，不可避免会带有大量噪音标签</li>
+<li>但是遇到远程监督数据集效果一般不好</li>
+<li>远程监督数据集含有大量的标签噪音</li>
+<li>语言的表达多种多样</li>
+</ul>
+<h2 id="解决办法">解决办法</h2>
+<ul>
+<li>预训练-微调范式
+<ul>
+<li>先在大规模远程监督数据集上预训练，然后针对不同的任务在目标数据集上微调</li>
+</ul>
+</li>
+<li>FuzzyRED dataset
+<ul>
+<li>验证本文方法是否能捕捉到句子潜在的语义信息</li>
+</ul>
+</li>
+<li>学习句子statement的representation
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/a%20contrastive%20objective%20function%20between%20statements.png" alt=""></li>
+<li>指示函数包含相同关系返回1，否则0</li>
+</ul>
+</li>
+<li>相似度计算，对长度归一化
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/similarity%20metric%20between%20two%20statement%20embeddings.png" alt="">
+<ul>
+<li>为什么不用点乘，作者回复说是选择这个loss是为了模型在几何上的可解释性</li>
+<li>而点积会导致公式计算时出现问题</li>
+<li>这里是沿用了[[Baldini SoaresL(2019)_Matching the Blanks]]中的loss</li>
+<li>但是并没有做消融实验验证这个相似度计算方法是否比点乘优秀</li>
+<li><strong>存在一个问题，当$s_i$和$s_j$距离近时，这个相似度应该是高的，但是这个式子得出的值实际上会很小，所表达的应该是不相似度，这个问题在rebuttal的时候也被提出来了</strong></li>
+</ul>
+</li>
+<li>分子让具有相同关系的statement距离更近，分子让其他不同关系分离开</li>
+<li>1Vn，negative pairs具有更大的权重</li>
+</ul>
+</li>
+<li>statements和proto
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/two%20key%20inductive%20biases%20in%20protore.png" alt=""></li>
+<li>第一个式子表示，对于一个关系的 proto 来说，同类的 instance 要近，不同类的要远；第二个式子表示，对于一个 instance 来说，要跟自己的 proto 近，跟别的 proto 远</li>
+<li>关系r的prototype和包含r的statements距离要比其他关系的statements要小</li>
+<li>包含r的statements和关系r的prototype距离要比其他关系的prototype要小</li>
+<li>交叉熵proto是直接求质心，本文是计算与各个样本、其它 proto 相互位置关系，这样抗噪性能显著增强，分类边界受噪声样本的干扰明显变小</li>
+</ul>
+</li>
+</ul>
+<h2 id="实验">实验</h2>
+<ul>
+<li>实验设置
+<ul>
+<li>数据
+<ul>
+<li>aligning relation tuples from the Wikidata database to Wikipedia articles</li>
+<li>more than 0.86 million relation statements covering over 700 relations</li>
+</ul>
+</li>
+<li>baseline
+<ul>
+<li>PCNN, Meta Network, GNN, Prototypical Network, MLMAN等使用开源代码</li>
+<li>MTB：在本文整理的数据集上训练出的性能比论文的低</li>
+<li>IND：topK取平均</li>
+</ul>
+</li>
+<li>有监督
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Accuracies%20(%25)%20on%20SemEval%202010%20Task%208.png" alt=""></li>
+</ul>
+</li>
+<li>few-shot
+<ul>
+<li>700*100，64+16+20</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Impact%20of%20relation%20types%20and%20instances%20per%20type.png" alt="">
+<ul>
+<li>不用训练数据的时候，相比baseline居然有17.6的F1提升，有些反直觉</li>
+<li>关系种类的多样性对于性能的提升更大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fuzzy
+<ul>
+<li>1000个句子，20种关系</li>
+<li>里面有一半是远程监督的噪声，即包含两个实体但是不表达那个关系</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Accuracies%20(%25)%20on%20FuzzyRED.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>性能
+<ul>
+<li>在supervised,few-shot, and zero-shot任务中超越SOTA</li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Few-shot%20classification%20accuracies%20(%25)%20on%20FewRel%20dataset.png" alt=""></li>
+</ul>
+</li>
+<li>鲁棒性
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/A%20set%20of%20toy%20experiments%20on%20iris%20dataset.png" alt=""></li>
+</ul>
+</li>
+<li>可解释性
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/A%20t-SNE%20visualization.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/An%20illustration%20of%20thegeometric%20explanation.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li>相似工作
+<ul>
+<li>Row-less universal schema，2016</li>
+<li>Prototypical networks for few-shot learning，2017</li>
+</ul>
+</li>
+<li>Review
+<ul>
+<li>&ldquo;Overall, I think the proposed approach is quite reasonable and also seems to work well in the evaluation tasks (learning prototype embeddings instead of taking the average of instance embeddings and adopting contrastive losses between relation statements and prototypes). However, I think the paper has many clarity and presentation issues that make it difficult to evaluate the significance of the work.&rdquo;</li>
+</ul>
+</li>
+</ul>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/blog/tags/relation-extraction">Relation Extraction</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/blog/posts/cont-or-name/">[paper] Learning from Context or Names? An Empirical Study on Neural Relation Extraction</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/blog/posts/relabel-noise/">[paper] Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+  <div class="comments-item" >
+    
+    
+    
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          highlight: false,
+          lang: "en",
+          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
+          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
+          placeholder: "Say Something......",
+          requiredFields: ["nick","mail"],
+          avatar: "robohash",
+          visitor:  true ,
+          recordIP: true
+      });
+    </script>
+    <script>
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+             if ($(window.location.hash).length) {
+                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                clearInterval(checkExist);
+             }
+          }, 100);
+      }
+    </script>
+  </div>
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2017 - 2021 &#183; 
+    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+</div>
+
+<script src="/blog/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

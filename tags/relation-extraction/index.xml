@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Wed, 04 Nov 2020 15:56:37 +0800</lastBuildDate><atom:link href="/blog/tags/relation-extraction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/tags/relation-extraction/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Peng Et Al_Learning From Context or Names</title>
-      <link>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</link>
+      <title>[paper] Prototypical Representation Learning for Relation Extraction</title>
+      <link>/blog/posts/protore/</link>
+      <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
+      
+      <guid>/blog/posts/protore/</guid>
+      <description>问题  针对有监督数据集，大部分模型都能够处理的很好，但是数据量小，人工标注成本高。所以使用远程监督（启发式规则）的方法自动构造数据，不可避免会带有大量噪音标签 但是遇到远程监督数据集效果一般不好 远程监督数据集含有大量的标签噪音 语言的表达多种多样  解决办法  预训练-微调范式  先在大规模远程监督数据集上预训练，然后针对不同的任务在目标数据集上微调   FuzzyRED dataset  验证本文方法是否能捕捉到句子潜在的语义信息   学习句子statement的representation   指示函数包含相同关系返回1，否则0   相似度计算，对长度归一化   为什么不用点乘，作者回复说是选择这个loss是为了模型在几何上的可解释性 而点积会导致公式计算时出现问题 这里是沿用了[[Baldini SoaresL(2019)_Matching the Blanks]]中的loss 但是并没有做消融实验验证这个相似度计算方法是否比点乘优秀 存在一个问题，当$s_i$和$s_j$距离近时，这个相似度应该是高的，但是这个式子得出的值实际上会很小，所表达的应该是不相似度，这个问题在rebuttal的时候也被提出来了   分子让具有相同关系的statement距离更近，分子让其他不同关系分离开 1Vn，negative pairs具有更大的权重   statements和proto   第一个式子表示，对于一个关系的 proto 来说，同类的 instance 要近，不同类的要远；第二个式子表示，对于一个 instance 来说，要跟自己的 proto 近，跟别的 proto 远 关系r的prototype和包含r的statements距离要比其他关系的statements要小 包含r的statements和关系r的prototype距离要比其他关系的prototype要小 交叉熵proto是直接求质心，本文是计算与各个样本、其它 proto 相互位置关系，这样抗噪性能显著增强，分类边界受噪声样本的干扰明显变小    实验  实验设置  数据  aligning relation tuples from the Wikidata database to Wikipedia articles more than 0.</description>
+    </item>
+    
+    <item>
+      <title>[paper] Learning from Context or Names? An Empirical Study on Neural Relation Extraction</title>
+      <link>/blog/posts/cont-or-name/</link>
       <pubDate>Wed, 04 Nov 2020 15:56:37 +0800</pubDate>
       
-      <guid>/blog/posts/peng-et-al_2020_learning-from-context-or-names/</guid>
+      <guid>/blog/posts/cont-or-name/</guid>
       <description>背景   什么类型的信息在影响着RE模型区分句子包含什么关系？
  句子中两个重要的信息：上下文和实体mention 对于人类直觉来说，句子的上下文对我们影响更大 之后的方法倾向于编码成分布式表示并进行匹配从而实现预测关系分类 影响程度：  两种信息都很重要 现有的RE数据集在训练过程中会从实体提及中泄露一部分信息，提高了性能   以后的方向：更好地理解句子的上下文以及利用实体提及。防止只是简单的记忆（拟合） 本文使用wikidata去聚类相同的关系实例，学习去分辨句子之间的相似度和属于不同的关系    模型
  CNN  Nguyen and Grishman (2015) Zhang et al. (2017)   BERT  BERT for RE following Baldini Soares et al. (2019)   MTB  Baldini Soares et al. (2019) pre-train a BERTbase version of MTB    CP    实验
@@ -21,11 +30,11 @@
     </item>
     
     <item>
-      <title>Chen Et Al_Relabel the Noise</title>
-      <link>/blog/posts/chen-et-al_2020_relabel-the-noise/</link>
+      <title>[paper] Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</title>
+      <link>/blog/posts/relabel-noise/</link>
       <pubDate>Fri, 18 Sep 2020 20:23:04 +0800</pubDate>
       
-      <guid>/blog/posts/chen-et-al_2020_relabel-the-noise/</guid>
+      <guid>/blog/posts/relabel-noise/</guid>
       <description>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。
   人工标注价格昂贵，所以出现了[[Distant Supervision]]方法，通过将外部的知识图谱对齐到语料库自动生成训练数据，但是会引入噪音标注，降低模型性能。 前人解决办法  概率图模型 注意力机制神经网络 强化学习选择   但是，大部分现存的工作都忽视了标签分布偏移问题 两种标注噪音  False Positive：没有关系的实体对被标记了关系 False Negative：有关系的实体对被忽视或者标记了None  这里的是False Negative还是True Negative？ 这里的False代表的是这条数据存在噪音，怎么判断噪音呢？DS生成的关系与base抽取器抽取出的关系不同，就认定为存在噪音（争议）。 Neg代表的是DS数据集中关系为None，但是抽取出有关系，Pos则相反。     现存的降噪工作基本都是通过对噪音数据分配低权重或者直接舍弃，并没有解决这个问题，将其恢复到正确的标注 并且pipeline模式会产生错误级联，加剧标签分布问题  本文方法  每一个agent会通过计算连续的confidence score来evaluate实例 confidence score可以用来将噪音训练数据重新分布、调整更新训练loss confidence consensus用来汇合所有agent计算到的一个特征，其实也就是平均 两个任务（实体抽取和关系抽取）之间存在某种联系和相互增强的作用，可以为减少噪音提供一些提示和帮助 -&amp;gt; 联合模型 主要流程  输入：远程监督训练数据$D={s_1,&amp;hellip;,s_n}$，实体抽取器${\theta}_e^{&#39;}$，关系抽取器${\theta}_r^{&#39;}$（都是在D上用预训练模型进行[[Fine Tune|微调]]的） multiagents利用confidence-scored label对训练集D进行重新分布，然后利用修改后的标签重新对${\theta}_e^{&#39;}$和${\theta}_r^{&#39;}$进行训练得到最终的抽取器。   本文为了达到上述的目标，将问题建模成一个mltuiagents强化学习的问题 因为我们没有测试集的gold label的数据，没法判断调整之后的label的正确性，所以使用RL来利用validation set上的性能标准来间接判断好坏 两个抽取器之间通过intermediate agent来交换信息 利用在validation上的性能分数和一致的分数来对agents进行reward 这个方法可以看作是后处理 Confidence Evaluators as Agents  status  entity：现在的句子、抽取结果（类型）、噪音标签类型 relation：句子、抽取类型、噪音标签 复用了base抽取器的句子和type向量，使其轻量化   Actions  利用神经网络去决定当前的句子是pos or neg，并且计算confidence score  pos：根据抽取出来的关系类型 neg：None type   使用[Gated Recurrent Unit]来作为[[Policy Network]]，通过一个[[Sigmoid Function]]来计算概率，其实也就是confidence score，1/0分别对应pos/neg 通过使用多个agents来解决state spaces太大的问题，如何解决的：  目标类型使用agents数量平均分 每个agents只负责一部分 前面提到过不同agents之间交互是通过一个叫做intermediate agents实现的 每个句子对应一个r agent和2个e agents，其他mask掉  这样难道不会有太多的agents么？会不会影响速度       Re-labeling with Confidence Consensus  有点像模型投票 $c = c_{sum}/3$，为什么是3呢，因为前文是1 r+2 e confidence小于0.</description>
     </item>

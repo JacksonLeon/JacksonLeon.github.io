@@ -7,17 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sun, 20 Oct 2019 22:42:47 +0000</lastBuildDate><atom:link href="/blog/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>深度学习笔记</title>
-      <link>/blog/posts/deep-learning-note/</link>
-      <pubDate>Sun, 20 Oct 2019 22:42:47 +0000</pubDate>
-      
-      <guid>/blog/posts/deep-learning-note/</guid>
-      <description>&lt;h1 id=&#34;深度学习笔记&#34;&gt;深度学习笔记&lt;/h1&gt;
-&lt;p&gt;报错与解决&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Fri, 19 Apr 2019 11:16:05 +0000</lastBuildDate><atom:link href="/blog/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>吴恩达「机器学习」（三）</title>
       <link>/blog/posts/andrew-ng-ml-2/</link>

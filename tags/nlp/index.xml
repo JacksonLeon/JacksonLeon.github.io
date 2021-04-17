@@ -9,11 +9,11 @@
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Sat, 05 Dec 2020 15:57:21 +0800</lastBuildDate><atom:link href="/blog/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Qiu Et Al_Pre Trained Models for Natural Language Processing</title>
-      <link>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</link>
+      <title>[paper] Pre Trained Models for Natural Language Processing</title>
+      <link>/blog/posts/pretrain-survey/</link>
       <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
-      <guid>/blog/posts/qiu-et-al_2020_pre-trained-models-for-natural-language-processing/</guid>
+      <guid>/blog/posts/pretrain-survey/</guid>
       <description>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
 相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
 预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。

@@ -7,19 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sat, 04 May 2019 09:30:29 +0000</lastBuildDate><atom:link href="/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Migrating to Python 3 with pleasure</title>
-      <link>/blog/posts/migrating-to-python-3-with-pleasure/</link>
-      <pubDate>Sat, 04 May 2019 09:30:29 +0000</pubDate>
-      
-      <guid>/blog/posts/migrating-to-python-3-with-pleasure/</guid>
-      <description>&lt;h1 id=&#34;migrating-to-python-3-with-pleasure&#34;&gt;Migrating to Python 3 with pleasure&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Migrating to Python 3 with pleasure&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 01 May 2019 09:03:11 +0000</lastBuildDate><atom:link href="/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pytorch Style Guide</title>
       <link>/blog/posts/pytorch-style-guide/</link>
@@ -32,41 +20,6 @@
 &lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
 &lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
 &lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Google Python Style Guide</title>
-      <link>/blog/posts/google-python-style-guide/</link>
-      <pubDate>Tue, 30 Apr 2019 20:37:51 +0000</pubDate>
-      
-      <guid>/blog/posts/google-python-style-guide/</guid>
-      <description>&lt;h1 id=&#34;google-python-style-guide&#34;&gt;Google Python Style Guide&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python Library</title>
-      <link>/blog/posts/python-library/</link>
-      <pubDate>Tue, 29 Jan 2019 22:42:51 +0000</pubDate>
-      
-      <guid>/blog/posts/python-library/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;汇总使用过的Python库&lt;/p&gt;
-&lt;p&gt;简单记一下模块功能以及函数原型&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python Note</title>
-      <link>/blog/posts/python-note/</link>
-      <pubDate>Fri, 25 Jan 2019 21:14:50 +0000</pubDate>
-      
-      <guid>/blog/posts/python-note/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Python个人笔记&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
