@@ -11,7 +11,10 @@
     <loc>/blog/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/categories/papers/</loc>
+    <loc>/blog/tags/nlp/</loc>
+    <lastmod>2021-04-13T21:46:40+08:00</lastmod>
+  </url><url>
+    <loc>/blog/categories/paper/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
     <loc>/blog/posts/</loc>
@@ -24,9 +27,6 @@
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
     <loc>/blog/posts/pretrain-survey/</loc>
-    <lastmod>2020-12-05T15:57:21+08:00</lastmod>
-  </url><url>
-    <loc>/blog/tags/nlp/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url><url>
     <loc>/blog/tags/pre-train/</loc>
@@ -47,44 +47,26 @@
     <loc>/blog/posts/relabel-noise/</loc>
     <lastmod>2020-09-18T20:23:04+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/how-to-be-a-postgraduate-student-mit/</loc>
+    <loc>/blog/posts/mit-postgrade/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
-    <loc>/blog/categories/reproduce/</loc>
+    <loc>/blog/tags/how2be/</loc>
+    <lastmod>2019-05-18T11:08:40+00:00</lastmod>
+  </url><url>
+    <loc>/blog/categories/reprint/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
     <loc>/blog/posts/commit-messages-guide/</loc>
     <lastmod>2019-05-04T09:09:27+00:00</lastmod>
   </url><url>
-    <loc>/blog/tags/blog/</loc>
-    <lastmod>2019-05-01T10:43:45+00:00</lastmod>
-  </url><url>
-    <loc>/blog/posts/parser-pic-blocks/</loc>
-    <lastmod>2019-05-01T10:43:45+00:00</lastmod>
-  </url><url>
-    <loc>/blog/tags/python/</loc>
-    <lastmod>2019-05-01T09:03:11+00:00</lastmod>
-  </url><url>
-    <loc>/blog/posts/pytorch-style-guide/</loc>
-    <lastmod>2019-05-01T09:03:11+00:00</lastmod>
-  </url><url>
-    <loc>/blog/tags/style-guide/</loc>
-    <lastmod>2019-05-01T09:03:11+00:00</lastmod>
-  </url><url>
-    <loc>/blog/tags/andrew-ng/</loc>
+    <loc>/blog/posts/andrew-ng-ml-note/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url><url>
-    <loc>/blog/categories/machine-learning/</loc>
+    <loc>/blog/tags/ml/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
   </url><url>
-    <loc>/blog/posts/andrew-ng-ml-2/</loc>
+    <loc>/blog/categories/note/</loc>
     <lastmod>2019-04-19T11:16:05+00:00</lastmod>
-  </url><url>
-    <loc>/blog/posts/andrew-ng-ml-1/</loc>
-    <lastmod>2019-04-12T18:46:34+00:00</lastmod>
-  </url><url>
-    <loc>/blog/posts/andrew-ng-ml-0/</loc>
-    <lastmod>2019-04-05T17:03:30+00:00</lastmod>
   </url><url>
     <loc>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</loc>
     <lastmod>2019-02-04T21:31:12+00:00</lastmod>
@@ -92,11 +74,11 @@
     <loc>/blog/posts/show-me-the-code/</loc>
     <lastmod>2019-01-29T22:58:44+00:00</lastmod>
   </url><url>
-    <loc>/blog/categories/smtc/</loc>
-    <lastmod>2019-01-29T22:58:44+00:00</lastmod>
+    <loc>/blog/posts/parser-pic-blocks/</loc>
+    <lastmod>2018-05-01T10:43:45+00:00</lastmod>
   </url><url>
-    <loc>/blog/tags/reptile/</loc>
-    <lastmod>2018-04-12T10:57:34+00:00</lastmod>
+    <loc>/blog/tags/blog/</loc>
+    <lastmod>2018-05-01T10:43:45+00:00</lastmod>
   </url><url>
     <loc>/blog/posts/novel-python/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>

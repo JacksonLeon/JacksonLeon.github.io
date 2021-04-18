@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reproduce on imlauzh</title>
-    <link>/blog/categories/reproduce/</link>
-    <description>Recent content in Reproduce on imlauzh</description>
+    <title>Reprint on imlauzh</title>
+    <link>/blog/categories/reprint/</link>
+    <description>Recent content in Reprint on imlauzh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/categories/reproduce/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/categories/reprint/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to be a Postgraduate student(MIT)</title>
-      <link>/blog/posts/how-to-be-a-postgraduate-student-mit/</link>
+      <title>[reprint] How to be a Postgraduate student(MIT)</title>
+      <link>/blog/posts/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/posts/how-to-be-a-postgraduate-student-mit/</guid>
+      <guid>/blog/posts/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Commit messages guide</title>
+      <title>[reprint] Commit messages guide</title>
       <link>/blog/posts/commit-messages-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
@@ -46,21 +46,6 @@
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
-      <link>/blog/posts/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/posts/pytorch-style-guide/</guid>
-      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
-&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
-&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

@@ -9,20 +9,20 @@
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>NLP</title>
+      <link>/blog/tags/nlp/</link>
+      <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
+      
+      <guid>/blog/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Relation Extraction</title>
       <link>/blog/tags/relation-extraction/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
       <guid>/blog/tags/relation-extraction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NLP</title>
-      <link>/blog/tags/nlp/</link>
-      <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
-      
-      <guid>/blog/tags/nlp/</guid>
       <description></description>
     </item>
     
@@ -36,47 +36,29 @@
     </item>
     
     <item>
+      <title>HOW2BE</title>
+      <link>/blog/tags/how2be/</link>
+      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
+      
+      <guid>/blog/tags/how2be/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>/blog/tags/ml/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
+      
+      <guid>/blog/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blog</title>
       <link>/blog/tags/blog/</link>
-      <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
+      <pubDate>Tue, 01 May 2018 10:43:45 +0000</pubDate>
       
       <guid>/blog/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/blog/tags/python/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Style Guide</title>
-      <link>/blog/tags/style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/tags/style-guide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Andrew NG</title>
-      <link>/blog/tags/andrew-ng/</link>
-      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
-      
-      <guid>/blog/tags/andrew-ng/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reptile</title>
-      <link>/blog/tags/reptile/</link>
-      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
-      
-      <guid>/blog/tags/reptile/</guid>
       <description></description>
     </item>
     

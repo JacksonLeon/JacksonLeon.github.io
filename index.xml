@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>[paper] Pre Trained Models for Natural Language Processing</title>
+      <title>[paper, survey] Pre Trained Models for Natural Language Processing</title>
       <link>/blog/posts/pretrain-survey/</link>
       <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>[paper] More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</title>
+      <title>[paper, survey] More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</title>
       <link>/blog/posts/more-data/</link>
       <pubDate>Mon, 02 Nov 2020 15:55:50 +0800</pubDate>
       
@@ -72,11 +72,11 @@
     </item>
     
     <item>
-      <title>How to be a Postgraduate student(MIT)</title>
-      <link>/blog/posts/how-to-be-a-postgraduate-student-mit/</link>
+      <title>[reprint] How to be a Postgraduate student(MIT)</title>
+      <link>/blog/posts/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/posts/how-to-be-a-postgraduate-student-mit/</guid>
+      <guid>/blog/posts/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -101,7 +101,7 @@
     </item>
     
     <item>
-      <title>Commit messages guide</title>
+      <title>[reprint] Commit messages guide</title>
       <link>/blog/posts/commit-messages-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
@@ -112,66 +112,25 @@
     </item>
     
     <item>
-      <title>Markdown 图床更改及博客推送</title>
-      <link>/blog/posts/parser-pic-blocks/</link>
-      <pubDate>Wed, 01 May 2019 10:43:45 +0000</pubDate>
-      
-      <guid>/blog/posts/parser-pic-blocks/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch Style Guide</title>
-      <link>/blog/posts/pytorch-style-guide/</link>
-      <pubDate>Wed, 01 May 2019 09:03:11 +0000</pubDate>
-      
-      <guid>/blog/posts/pytorch-style-guide/</guid>
-      <description>&lt;h1 id=&#34;pytorch-style-guide&#34;&gt;Pytorch Style Guide&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is not an official style guide for PyTorch. This document summarizes best practices from more than a year of experience with deep learning using the PyTorch framework. Note that the learnings we share come mostly from a research and startup perspective.&lt;/p&gt;
-&lt;p&gt;This is an open project and other collaborators are highly welcomed to edit and improve the document.&lt;/p&gt;
-&lt;p&gt;You will find three main parts of this doc. First, a quick recap of best practices in Python, followed by some tips and recommendations using PyTorch. Finally, we share some insights and experiences using other frameworks which helped us generally improve our workflow.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>吴恩达「机器学习」（三）</title>
-      <link>/blog/posts/andrew-ng-ml-2/</link>
-      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
-      
-      <guid>/blog/posts/andrew-ng-ml-2/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;逻辑回归&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>吴恩达「机器学习」（二）</title>
-      <link>/blog/posts/andrew-ng-ml-1/</link>
-      <pubDate>Fri, 12 Apr 2019 18:46:34 +0000</pubDate>
-      
-      <guid>/blog/posts/andrew-ng-ml-1/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;多变量线性回归&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>吴恩达「机器学习」（一）</title>
-      <link>/blog/posts/andrew-ng-ml-0/</link>
+      <title>[note] Andrew Ng Ml Note</title>
+      <link>/blog/posts/andrew-ng-ml-note/</link>
       <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
       
-      <guid>/blog/posts/andrew-ng-ml-0/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;什么是机器学习？&lt;/li&gt;
-&lt;li&gt;什么是监督学习算法？&lt;/li&gt;
-&lt;li&gt;什么是非监督学习算法？&lt;/li&gt;
-&lt;li&gt;什么是单变量线性回归？&lt;/li&gt;
-&lt;li&gt;线性代数知识点回顾&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>/blog/posts/andrew-ng-ml-note/</guid>
+      <description>什么是机器学习？   Arthur Samuel(1959)
+编程使计算机自己和自己玩10^1000跳棋游戏
+    Tom Mitchell(1998)
+计算机程序从经验E中学习任务T，并用度量P来衡量性能。条件是它由P定义的关于T的性能随着经验E而提高。
+经验E=自己玩10^1000次跳棋
+任务T=玩跳棋
+性能度量P=与新对手玩跳棋时赢的概率
+   邮件系统学习标记垃圾邮件    学习算法
+ supervised learning  我们教计算机如何做一件事情 给标准答案   unsupervised learning  计算机自己学习   others  reinforcement learning recommender systems      对应用学习算法的实用性建议（木匠）
+如何去使用这些工具（机器学习算法）
+  监督学习 Example   predict housing prices
+ 直线拟合 二次函数或者二次多项式  监督学习指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。在房价的例子中，我们给了一系列房子的数据，我们给定数据集中每个样本的正确价格，即它们实际的售价然后运用学习算法，算出更多的正确答案。比如你朋友那个新房子的价格。用术语来讲，这叫做回归问题。我们试着推测出一个连续值的结果，即房子的价格。
+一般房子的价格会记到美分，所以房价实际上是一系列离散的值，但是我们通常又把房价看成实数，看成是标量，所以又把它看成一个连续的数值。
+  breast cancer</description>
     </item>
     
     <item>
@@ -184,7 +143,7 @@
     </item>
     
     <item>
-      <title>Show Me The Code</title>
+      <title>[note] Show Me The Code</title>
       <link>/blog/posts/show-me-the-code/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
@@ -197,7 +156,18 @@
     </item>
     
     <item>
-      <title>使用Python爬虫爬取网络小说</title>
+      <title>[note] Markdown 图床更改及博客推送</title>
+      <link>/blog/posts/parser-pic-blocks/</link>
+      <pubDate>Tue, 01 May 2018 10:43:45 +0000</pubDate>
+      
+      <guid>/blog/posts/parser-pic-blocks/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[note] 使用Python爬虫爬取网络小说</title>
       <link>/blog/posts/novel-python/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
@@ -220,7 +190,7 @@
       
       <guid>/blog/about/</guid>
       <description>联系方式 EMail: im.lauzh@gmail.com
-Telegram: @imlauzh
+Telegram: @iiuzh
 Github: @imlauzh
 本站背后    imlauzh imlauzh.gitee.io/     生成 Hugo - The world’s fastest framework for building websites   主题 simpleness - A simple and concise Hugo theme   协议 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)    </description>
     </item>

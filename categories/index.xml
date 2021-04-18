@@ -9,11 +9,11 @@
     <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Papers</title>
-      <link>/blog/categories/papers/</link>
+      <title>Paper</title>
+      <link>/blog/categories/paper/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
-      <guid>/blog/categories/papers/</guid>
+      <guid>/blog/categories/paper/</guid>
       <description></description>
     </item>
     
@@ -27,29 +27,20 @@
     </item>
     
     <item>
-      <title>Reproduce</title>
-      <link>/blog/categories/reproduce/</link>
+      <title>Reprint</title>
+      <link>/blog/categories/reprint/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/categories/reproduce/</guid>
+      <guid>/blog/categories/reprint/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>/blog/categories/machine-learning/</link>
-      <pubDate>Fri, 19 Apr 2019 11:16:05 +0000</pubDate>
+      <title>Note</title>
+      <link>/blog/categories/note/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
       
-      <guid>/blog/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SMTC</title>
-      <link>/blog/categories/smtc/</link>
-      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
-      
-      <guid>/blog/categories/smtc/</guid>
+      <guid>/blog/categories/note/</guid>
       <description></description>
     </item>
     

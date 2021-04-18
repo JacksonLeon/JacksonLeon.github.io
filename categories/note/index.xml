@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note on imlauzh</title>
+    <link>/blog/categories/note/</link>
+    <description>Recent content in Note on imlauzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 05 Apr 2019 17:03:30 +0000</lastBuildDate><atom:link href="/blog/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[note] Andrew Ng Ml Note</title>
+      <link>/blog/posts/andrew-ng-ml-note/</link>
+      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
+      
+      <guid>/blog/posts/andrew-ng-ml-note/</guid>
+      <description>什么是机器学习？   Arthur Samuel(1959)
+编程使计算机自己和自己玩10^1000跳棋游戏
+    Tom Mitchell(1998)
+计算机程序从经验E中学习任务T，并用度量P来衡量性能。条件是它由P定义的关于T的性能随着经验E而提高。
+经验E=自己玩10^1000次跳棋
+任务T=玩跳棋
+性能度量P=与新对手玩跳棋时赢的概率
+   邮件系统学习标记垃圾邮件    学习算法
+ supervised learning  我们教计算机如何做一件事情 给标准答案   unsupervised learning  计算机自己学习   others  reinforcement learning recommender systems      对应用学习算法的实用性建议（木匠）
+如何去使用这些工具（机器学习算法）
+  监督学习 Example   predict housing prices
+ 直线拟合 二次函数或者二次多项式  监督学习指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。在房价的例子中，我们给了一系列房子的数据，我们给定数据集中每个样本的正确价格，即它们实际的售价然后运用学习算法，算出更多的正确答案。比如你朋友那个新房子的价格。用术语来讲，这叫做回归问题。我们试着推测出一个连续值的结果，即房子的价格。
+一般房子的价格会记到美分，所以房价实际上是一系列离散的值，但是我们通常又把房价看成实数，看成是标量，所以又把它看成一个连续的数值。
+  breast cancer</description>
+    </item>
+    
+    <item>
+      <title>[note] Show Me The Code</title>
+      <link>/blog/posts/show-me-the-code/</link>
+      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
+      
+      <guid>/blog/posts/show-me-the-code/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
+&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[note] Markdown 图床更改及博客推送</title>
+      <link>/blog/posts/parser-pic-blocks/</link>
+      <pubDate>Tue, 01 May 2018 10:43:45 +0000</pubDate>
+      
+      <guid>/blog/posts/parser-pic-blocks/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[note] 使用Python爬虫爬取网络小说</title>
+      <link>/blog/posts/novel-python/</link>
+      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
+      
+      <guid>/blog/posts/novel-python/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;小说网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
