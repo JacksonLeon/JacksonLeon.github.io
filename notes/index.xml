@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on 早柳</title>
+    <link>/blog/notes/</link>
+    <description>Recent content in Notes on 早柳</description>
+    <image>
+      <url>/blog</url>
+      <link>/blog</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>转载 - How to be a Postgraduate student(MIT)</title>
+      <link>/blog/notes/mit-postgrade/</link>
+      <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
+      
+      <guid>/blog/notes/mit-postgrade/</guid>
+      <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Reproduce&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本文的主旨是解释如何做研究。我们提供的这些建议，对于研究本身（阅读、写作和程序设计）、理解研究过程以及开始研究（方法论、选题、选导师和情感因素），都是极具价值的。&lt;/p&gt;
+&lt;p&gt;这是什么？并没有什么神丹妙药可以保证在研究中取得成功，本文只是列举了一些可能会对研究有所帮助的非正式意见。&lt;/p&gt;
+&lt;p&gt;目标读者是谁？本文主要是为新入学的研究生而写。&lt;/p&gt;
+&lt;p&gt;如何使用？要精读完本文，太长了一些，最好是采用浏览的方式。很多人觉得下面的方法很有效：先快速通读一遍，然后选取其中与自己当前研究项目有关的部分仔细研究。&lt;/p&gt;
+&lt;p&gt;本文被粗略地分为两部分。第一部分涉及研究者所需具备的各种技能：如阅读，写作和程序设计等等。第二部分讨论研究过程本身：即研究究竟是怎么回事，如何做研究，如何选题和选导师，如何考虑研究中的情感因素。很多读者反映，从长远看，第二部分比第一部分更有价值，也更让人感兴趣。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文的主要内容包括：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一、掌握一些阅读的诀窍。&lt;/p&gt;
+&lt;p&gt;二、如何成为研究领域的一员：与相关人员保持联系，他们可以使你保持对研究前沿的跟踪，知道应该读什么材料。&lt;/p&gt;
+&lt;p&gt;三、学习相关领域的知识：对几个领域都有基本的理解，对于一个或者两个领域要精通。&lt;/p&gt;
+&lt;p&gt;四、如何做研究笔记。&lt;/p&gt;
+&lt;p&gt;五、如何写期刊论文和毕业论文。如何为草稿写评审意见，如何利用别人的评审意见。如何发表论文。&lt;/p&gt;
+&lt;p&gt;六、如何做研究报告及演讲。&lt;/p&gt;
+&lt;p&gt;七、掌握和自己相关领域的程序设计。&lt;/p&gt;
+&lt;p&gt;八、有关研究生涯最重要的问题，如何选导师。不同的导师具有不同的风格，导师是你必须了解如何利用的资源。&lt;/p&gt;
+&lt;p&gt;九、关于毕业论文。毕业论文将占据研究生生涯的大部分时间，本部分涉及如何选题，以及如何避免浪费时间。&lt;/p&gt;
+&lt;p&gt;十、研究方法论。&lt;/p&gt;
+&lt;p&gt;十一、或许是最重要的一节：涉及研究过程中的情感因素，包括如何面对失败，如何设定目标，如何避免不安全感，保持自信，享受快乐。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>转载 - Commit messages guide</title>
+      <link>/blog/notes/commits-msg-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>/blog/notes/commits-msg-guide/</guid>
+      <description>&lt;div class=&#34;note warning&#34;&gt;&lt;p&gt;To be translated&lt;/p&gt;&lt;/div&gt;
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2019猪年</title>
+      <link>/blog/notes/happy2019/</link>
+      <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
+      
+      <guid>/blog/notes/happy2019/</guid>
+      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;center&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;/center&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Show Me The Code</title>
+      <link>/blog/notes/smtc/</link>
+      <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
+      
+      <guid>/blog/notes/smtc/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
+&lt;p&gt;From&lt;a href=&#34;https://github.com/Yixiaohan/show-me-the-code&#34;&gt;&lt;strong&gt;show me the code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用爬虫爬取网络小说</title>
+      <link>/blog/notes/python-novel/</link>
+      <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
+      
+      <guid>/blog/notes/python-novel/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;小说网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uxiaoshuo.com/&#34;&gt;https://www.uxiaoshuo.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.uxiaoshuo.com/124/124629/&#34;&gt;绝色妖娆：鬼医至尊&lt;/a&gt;为例&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

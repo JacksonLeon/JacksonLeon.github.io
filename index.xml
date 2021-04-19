@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>imlauzh</title>
+    <title>早柳</title>
     <link>/blog/</link>
-    <description>Recent content on imlauzh</description>
+    <description>Recent content on 早柳</description>
+    <image>
+      <url>/blog</url>
+      <link>/blog</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Apr 2021 11:15:16 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[paper] Prototypical Representation Learning for Relation Extraction</title>
+      <title>论文笔记 - Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</title>
+      <link>/blog/posts/relabel-noise/</link>
+      <pubDate>Mon, 19 Apr 2021 11:15:16 +0800</pubDate>
+      
+      <guid>/blog/posts/relabel-noise/</guid>
+      <description>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。
+  人工标注价格昂贵，所以出现了[[Distant Supervision]]方法，通过将外部的知识图谱对齐到语料库自动生成训练数据，但是会引入噪音标注，降低模型性能。 前人解决办法  概率图模型 注意力机制神经网络 强化学习选择   但是，大部分现存的工作都忽视了标签分布偏移问题 两种标注噪音  False Positive：没有关系的实体对被标记了关系 False Negative：有关系的实体对被忽视或者标记了None  这里的是False Negative还是True Negative？ 这里的False代表的是这条数据存在噪音，怎么判断噪音呢？DS生成的关系与base抽取器抽取出的关系不同，就认定为存在噪音（争议）。 Neg代表的是DS数据集中关系为None，但是抽取出有关系，Pos则相反。     现存的降噪工作基本都是通过对噪音数据分配低权重或者直接舍弃，并没有解决这个问题，将其恢复到正确的标注 并且pipeline模式会产生错误级联，加剧标签分布问题  本文方法  每一个agent会通过计算连续的confidence score来evaluate实例 confidence score可以用来将噪音训练数据重新分布、调整更新训练loss confidence consensus用来汇合所有agent计算到的一个特征，其实也就是平均 两个任务（实体抽取和关系抽取）之间存在某种联系和相互增强的作用，可以为减少噪音提供一些提示和帮助 -&amp;gt; 联合模型 主要流程  输入：远程监督训练数据$D={s_1,&amp;hellip;,s_n}$，实体抽取器${\theta}_e^{&#39;}$，关系抽取器${\theta}_r^{&#39;}$（都是在D上用预训练模型进行[[Fine Tune|微调]]的） multiagents利用confidence-scored label对训练集D进行重新分布，然后利用修改后的标签重新对${\theta}_e^{&#39;}$和${\theta}_r^{&#39;}$进行训练得到最终的抽取器。   本文为了达到上述的目标，将问题建模成一个mltuiagents强化学习的问题 因为我们没有测试集的gold label的数据，没法判断调整之后的label的正确性，所以使用RL来利用validation set上的性能标准来间接判断好坏 两个抽取器之间通过intermediate agent来交换信息 利用在validation上的性能分数和一致的分数来对agents进行reward 这个方法可以看作是后处理 Confidence Evaluators as Agents  status  entity：现在的句子、抽取结果（类型）、噪音标签类型 relation：句子、抽取类型、噪音标签 复用了base抽取器的句子和type向量，使其轻量化   Actions  利用神经网络去决定当前的句子是pos or neg，并且计算confidence score  pos：根据抽取出来的关系类型 neg：None type   使用[Gated Recurrent Unit]来作为[[Policy Network]]，通过一个[[Sigmoid Function]]来计算概率，其实也就是confidence score，1/0分别对应pos/neg 通过使用多个agents来解决state spaces太大的问题，如何解决的：  目标类型使用agents数量平均分 每个agents只负责一部分 前面提到过不同agents之间交互是通过一个叫做intermediate agents实现的 每个句子对应一个r agent和2个e agents，其他mask掉  这样难道不会有太多的agents么？会不会影响速度       Re-labeling with Confidence Consensus  有点像模型投票 $c = c_{sum}/3$，为什么是3呢，因为前文是1 r+2 e confidence小于0.</description>
+    </item>
+    
+    <item>
+      <title>论文笔记 - Prototypical Representation Learning for Relation Extraction</title>
       <link>/blog/posts/protore/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
@@ -18,7 +30,7 @@
     </item>
     
     <item>
-      <title>[paper, survey] Pre Trained Models for Natural Language Processing</title>
+      <title>论文笔记 - Pre Trained Models for Natural Language Processing</title>
       <link>/blog/posts/pretrain-survey/</link>
       <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
@@ -32,20 +44,20 @@
     </item>
     
     <item>
-      <title>[paper] Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data</title>
+      <title>论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data</title>
       <link>/blog/posts/relational-transfer/</link>
       <pubDate>Sat, 07 Nov 2020 15:58:04 +0800</pubDate>
       
       <guid>/blog/posts/relational-transfer/</guid>
-      <description>描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计     摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&amp;ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.</description>
+      <description></description>
     </item>
     
     <item>
-      <title>[paper] Learning from Context or Names? An Empirical Study on Neural Relation Extraction</title>
-      <link>/blog/posts/cont-or-name/</link>
+      <title>论文笔记 - Learning from Context or Names? An Empirical Study on Neural Relation Extraction</title>
+      <link>/blog/posts/context-or-name/</link>
       <pubDate>Wed, 04 Nov 2020 15:56:37 +0800</pubDate>
       
-      <guid>/blog/posts/cont-or-name/</guid>
+      <guid>/blog/posts/context-or-name/</guid>
       <description>背景   什么类型的信息在影响着RE模型区分句子包含什么关系？
  句子中两个重要的信息：上下文和实体mention 对于人类直觉来说，句子的上下文对我们影响更大 之后的方法倾向于编码成分布式表示并进行匹配从而实现预测关系分类 影响程度：  两种信息都很重要 现有的RE数据集在训练过程中会从实体提及中泄露一部分信息，提高了性能   以后的方向：更好地理解句子的上下文以及利用实体提及。防止只是简单的记忆（拟合） 本文使用wikidata去聚类相同的关系实例，学习去分辨句子之间的相似度和属于不同的关系    模型
  CNN  Nguyen and Grishman (2015) Zhang et al. (2017)   BERT  BERT for RE following Baldini Soares et al. (2019)   MTB  Baldini Soares et al. (2019) pre-train a BERTbase version of MTB    CP    实验
@@ -53,30 +65,20 @@
     </item>
     
     <item>
-      <title>[paper, survey] More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</title>
-      <link>/blog/posts/more-data/</link>
+      <title>论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</title>
+      <link>/blog/posts/more-data-re/</link>
       <pubDate>Mon, 02 Nov 2020 15:55:50 +0800</pubDate>
       
-      <guid>/blog/posts/more-data/</guid>
+      <guid>/blog/posts/more-data-re/</guid>
       <description>Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  </description>
     </item>
     
     <item>
-      <title>[paper] Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</title>
-      <link>/blog/posts/relabel-noise/</link>
-      <pubDate>Fri, 18 Sep 2020 20:23:04 +0800</pubDate>
-      
-      <guid>/blog/posts/relabel-noise/</guid>
-      <description>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。
-  人工标注价格昂贵，所以出现了[[Distant Supervision]]方法，通过将外部的知识图谱对齐到语料库自动生成训练数据，但是会引入噪音标注，降低模型性能。 前人解决办法  概率图模型 注意力机制神经网络 强化学习选择   但是，大部分现存的工作都忽视了标签分布偏移问题 两种标注噪音  False Positive：没有关系的实体对被标记了关系 False Negative：有关系的实体对被忽视或者标记了None  这里的是False Negative还是True Negative？ 这里的False代表的是这条数据存在噪音，怎么判断噪音呢？DS生成的关系与base抽取器抽取出的关系不同，就认定为存在噪音（争议）。 Neg代表的是DS数据集中关系为None，但是抽取出有关系，Pos则相反。     现存的降噪工作基本都是通过对噪音数据分配低权重或者直接舍弃，并没有解决这个问题，将其恢复到正确的标注 并且pipeline模式会产生错误级联，加剧标签分布问题  本文方法  每一个agent会通过计算连续的confidence score来evaluate实例 confidence score可以用来将噪音训练数据重新分布、调整更新训练loss confidence consensus用来汇合所有agent计算到的一个特征，其实也就是平均 两个任务（实体抽取和关系抽取）之间存在某种联系和相互增强的作用，可以为减少噪音提供一些提示和帮助 -&amp;gt; 联合模型 主要流程  输入：远程监督训练数据$D={s_1,&amp;hellip;,s_n}$，实体抽取器${\theta}_e^{&#39;}$，关系抽取器${\theta}_r^{&#39;}$（都是在D上用预训练模型进行[[Fine Tune|微调]]的） multiagents利用confidence-scored label对训练集D进行重新分布，然后利用修改后的标签重新对${\theta}_e^{&#39;}$和${\theta}_r^{&#39;}$进行训练得到最终的抽取器。   本文为了达到上述的目标，将问题建模成一个mltuiagents强化学习的问题 因为我们没有测试集的gold label的数据，没法判断调整之后的label的正确性，所以使用RL来利用validation set上的性能标准来间接判断好坏 两个抽取器之间通过intermediate agent来交换信息 利用在validation上的性能分数和一致的分数来对agents进行reward 这个方法可以看作是后处理 Confidence Evaluators as Agents  status  entity：现在的句子、抽取结果（类型）、噪音标签类型 relation：句子、抽取类型、噪音标签 复用了base抽取器的句子和type向量，使其轻量化   Actions  利用神经网络去决定当前的句子是pos or neg，并且计算confidence score  pos：根据抽取出来的关系类型 neg：None type   使用[Gated Recurrent Unit]来作为[[Policy Network]]，通过一个[[Sigmoid Function]]来计算概率，其实也就是confidence score，1/0分别对应pos/neg 通过使用多个agents来解决state spaces太大的问题，如何解决的：  目标类型使用agents数量平均分 每个agents只负责一部分 前面提到过不同agents之间交互是通过一个叫做intermediate agents实现的 每个句子对应一个r agent和2个e agents，其他mask掉  这样难道不会有太多的agents么？会不会影响速度       Re-labeling with Confidence Consensus  有点像模型投票 $c = c_{sum}/3$，为什么是3呢，因为前文是1 r+2 e confidence小于0.</description>
-    </item>
-    
-    <item>
-      <title>[reprint] How to be a Postgraduate student(MIT)</title>
-      <link>/blog/posts/mit-postgrade/</link>
+      <title>转载 - How to be a Postgraduate student(MIT)</title>
+      <link>/blog/notes/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/posts/mit-postgrade/</guid>
+      <guid>/blog/notes/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -101,53 +103,52 @@
     </item>
     
     <item>
-      <title>[reprint] Commit messages guide</title>
-      <link>/blog/posts/commit-messages-guide/</link>
+      <title>论文笔记 - Convolutional Neural Networks for Sentence Classification</title>
+      <link>/blog/posts/cnn4tc/</link>
+      <pubDate>Fri, 10 May 2019 19:39:50 +0800</pubDate>
+      
+      <guid>/blog/posts/cnn4tc/</guid>
+      <description>  来源：http://aclweb.org/anthology/D14-1181
+  机构：NYU
+  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩
+  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN+word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。
+  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec+CNN+最大池化+全连接层就可以达到不错的性能
+  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量
+  dropout有助于大模型的正则化
+  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合
+  ![[CNN Model architecture with two channels for an example sentence.png]]
+  ![[Summary statistics for the datasets after tokenization of CNN.png]]
+  ![[Results of our CNN models against other methods.png]]
+  </description>
+    </item>
+    
+    <item>
+      <title>转载 - Commit messages guide</title>
+      <link>/blog/notes/commits-msg-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/blog/posts/commit-messages-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <guid>/blog/notes/commits-msg-guide/</guid>
+      <description>&lt;div class=&#34;note warning&#34;&gt;&lt;p&gt;To be translated&lt;/p&gt;&lt;/div&gt;
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>[note] Andrew Ng Ml Note</title>
-      <link>/blog/posts/andrew-ng-ml-note/</link>
-      <pubDate>Fri, 05 Apr 2019 17:03:30 +0000</pubDate>
-      
-      <guid>/blog/posts/andrew-ng-ml-note/</guid>
-      <description>什么是机器学习？   Arthur Samuel(1959)
-编程使计算机自己和自己玩10^1000跳棋游戏
-    Tom Mitchell(1998)
-计算机程序从经验E中学习任务T，并用度量P来衡量性能。条件是它由P定义的关于T的性能随着经验E而提高。
-经验E=自己玩10^1000次跳棋
-任务T=玩跳棋
-性能度量P=与新对手玩跳棋时赢的概率
-   邮件系统学习标记垃圾邮件    学习算法
- supervised learning  我们教计算机如何做一件事情 给标准答案   unsupervised learning  计算机自己学习   others  reinforcement learning recommender systems      对应用学习算法的实用性建议（木匠）
-如何去使用这些工具（机器学习算法）
-  监督学习 Example   predict housing prices
- 直线拟合 二次函数或者二次多项式  监督学习指的就是我们给学习算法一个数据集。这个数据集由“正确答案”组成。在房价的例子中，我们给了一系列房子的数据，我们给定数据集中每个样本的正确价格，即它们实际的售价然后运用学习算法，算出更多的正确答案。比如你朋友那个新房子的价格。用术语来讲，这叫做回归问题。我们试着推测出一个连续值的结果，即房子的价格。
-一般房子的价格会记到美分，所以房价实际上是一系列离散的值，但是我们通常又把房价看成实数，看成是标量，所以又把它看成一个连续的数值。
-  breast cancer</description>
-    </item>
-    
-    <item>
       <title>2019猪年</title>
-      <link>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</link>
+      <link>/blog/notes/happy2019/</link>
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
-      <guid>/blog/posts/2019%E7%8C%AA%E5%B9%B4%E5%BF%AB%E4%B9%90/</guid>
-      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;</description>
+      <guid>/blog/notes/happy2019/</guid>
+      <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;center&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;/center&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
-      <title>[note] Show Me The Code</title>
-      <link>/blog/posts/show-me-the-code/</link>
+      <title>Show Me The Code</title>
+      <link>/blog/notes/smtc/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>/blog/posts/show-me-the-code/</guid>
+      <guid>/blog/notes/smtc/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
@@ -156,22 +157,11 @@
     </item>
     
     <item>
-      <title>[note] Markdown 图床更改及博客推送</title>
-      <link>/blog/posts/parser-pic-blocks/</link>
-      <pubDate>Tue, 01 May 2018 10:43:45 +0000</pubDate>
-      
-      <guid>/blog/posts/parser-pic-blocks/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;由于2019年4月份新浪图床开启了防盗链功能（不确定），部署到pages服务的图片失效，为了防止图片资源丢失，需要在本地留一份备份，但是本地的图片在线博客无法显示，所以还是需要重新找一个目前可以使用的图床以及图床工具。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>[note] 使用Python爬虫爬取网络小说</title>
-      <link>/blog/posts/novel-python/</link>
+      <title>使用爬虫爬取网络小说</title>
+      <link>/blog/notes/python-novel/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>/blog/posts/novel-python/</guid>
+      <guid>/blog/notes/python-novel/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;小说网址&lt;/li&gt;
 &lt;/ul&gt;
@@ -184,16 +174,15 @@
     </item>
     
     <item>
-      <title>AboutMe</title>
-      <link>/blog/about/</link>
+      <title>Friends</title>
+      <link>/blog/friends/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/about/</guid>
-      <description>联系方式 EMail: im.lauzh@gmail.com
-Telegram: @iiuzh
-Github: @imlauzh
-本站背后    imlauzh imlauzh.gitee.io/     生成 Hugo - The world’s fastest framework for building websites   主题 simpleness - A simple and concise Hugo theme   协议 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)    </description>
+      <guid>/blog/friends/</guid>
+      <description>friends</description>
     </item>
+    
+    
     
   </channel>
 </rss>

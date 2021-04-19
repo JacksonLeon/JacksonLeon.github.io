@@ -1,199 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.82.0" />
+<html lang="en" dir="auto">
 
-  <title> NLP |  imlauzh</title>
-  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
-  <link rel="stylesheet" href="/blog/css/index.css">
-  <link rel="stylesheet" href="/blog/css/classes.css">
-  <link rel="canonical" href="/blog/tags/nlp/">
-  <link rel="alternate" type="application/rss+xml" href="/blog/tags/nlp/index.xml" title="imlauzh">
-  
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-  <link 
-    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
-    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
-    crossorigin="anonymous">
-  </link>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
-    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
-    crossorigin="anonymous">
-  </script>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
-    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
-    crossorigin="anonymous" 
-    onload="renderMathInElement(document.body);">
-  </script>
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>NLP | 早柳</title>
+<meta name="keywords" content="" />
+<meta name="description" content="早柳">
+<meta name="author" content="iiuzh">
+<link rel="canonical" href="/blog/tags/nlp/" />
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<link rel="alternate" type="application/rss&#43;xml" href="/blog/tags/nlp/index.xml">
+
+<meta property="og:title" content="NLP" />
+<meta property="og:description" content="早柳" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/tags/nlp/" /><meta property="og:image" content="/blog"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/blog"/>
+
+<meta name="twitter:title" content="NLP"/>
+<meta name="twitter:description" content="早柳"/>
+
 </head>
 
-<body>
-  <header class="menus">
-  
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <nav >
-    
-    <a href="/blog/"> Home</a>
-    
-    <a href="/blog/categories/"> Categories</a>
-    
-    <a href="/blog/tags/"> Tags</a>
-    
-    <a href="/blog/about/"> About</a>
-    
-    <a href="/blog/index.xml"> Subscribe</a>
-    
-  </nav>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/imlauzh" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-    <a href="/blog/index.xml" target="_blank">
-        <i title="RSS" class="fas fa-rss"></i>
-    </a>
-    
-  </nav>
-  
-  
-  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/blog" accesskey="h" title="早柳 (Alt + H)">早柳</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="/blog/posts" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/archives" title="Timeline">
+                    <span>Timeline</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="/blog">Home</a>&nbsp;»&nbsp;<a href="/blog/tags/">Tags</a></div>
+  <h1>NLP</h1>
 </header>
 
-
-
-
-
-
-<article>
-  <header>
-    <h1>
-    
-      NLP
-    
-    </h1>
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</h2>
   </header>
-
-  <div>
-  
-    <h2>2021</h2>
-    
-    
-
-    <ul class="archive">
-    
-    
-      <li>
-      
-        <time datetime="2021-04-13T21:46:40&#43;08:00">2021-04-13</time>
-      
-        <a href="/blog/posts/protore/">[paper] Prototypical Representation Learning for Relation Extraction</a>
-         
-      </li>
-      
-    </ul>
-    
-  
-    <h2>2020</h2>
-    
-    
-
-    <ul class="archive">
-    
-    
-      <li>
-      
-        <time datetime="2020-12-05T15:57:21&#43;08:00">2020-12-05</time>
-      
-        <a href="/blog/posts/pretrain-survey/">[paper, survey] Pre Trained Models for Natural Language Processing</a>
-         
-      </li>
-      
-    </ul>
-    
-    
-
-    <ul class="archive">
-    
-    
-      <li>
-      
-        <time datetime="2020-11-07T15:58:04&#43;08:00">2020-11-07</time>
-      
-        <a href="/blog/posts/relational-transfer/">[paper] Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data</a>
-         
-      </li>
-      
-      <li>
-      
-        <time datetime="2020-11-04T15:56:37&#43;08:00">2020-11-04</time>
-      
-        <a href="/blog/posts/cont-or-name/">[paper] Learning from Context or Names? An Empirical Study on Neural Relation Extraction</a>
-         
-      </li>
-      
-      <li>
-      
-        <time datetime="2020-11-02T15:55:50&#43;08:00">2020-11-02</time>
-      
-        <a href="/blog/posts/more-data/">[paper, survey] More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</a>
-         
-      </li>
-      
-    </ul>
-    
-    
-
-    <ul class="archive">
-    
-    
-      <li>
-      
-        <time datetime="2020-09-18T20:23:04&#43;08:00">2020-09-18</time>
-      
-        <a href="/blog/posts/relabel-noise/">[paper] Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</a>
-         
-      </li>
-      
-    </ul>
-    
-  
-  </div>
-  
-  
+  <section class="entry-content">
+    <p>问题  协变量偏移，该问题是由受外部知识图约束的带噪声标签的训练集与人工注释的测试集之间的不一致引起的。 作者提出了一种联合提取方法，通过使用一组协作式多智能体(cooperative multiagents)重新标记噪音实例来解决此问题。
+  人工标注价格昂贵，所以出现了[[Distant Supervision]]方法，通过将外部的知识图谱对齐到语料库自动生成训练数据，但是会引入噪音标注，降低模型性能。 前人解决办法  概率图模型 注意力机制神经网络 强化学习选择   但是，大部分现存的工作都忽视了标签分布偏移问题 两种标注噪音  False Positive：没有关系的实体对被标记了关系 False Negative：有关系的实体对被忽视或者标记了None  这里的是False Negative还是True Negative？ 这里的False代表的是这条数据存在噪音，怎么判断噪音呢？DS生成的关系与base抽取器抽取出的关系不同，就认定为存在噪音（争议）。 Neg代表的是DS数据集中关系为None，但是抽取出有关系，Pos则相反。     现存的降噪工作基本都是通过对噪音数据分配低权重或者直接舍弃，并没有解决这个问题，将其恢复到正确的标注 并且pipeline模式会产生错误级联，加剧标签分布问题  本文方法  每一个agent会通过计算连续的confidence score来evaluate实例 confidence score可以用来将噪音训练数据重新分布、调整更新训练loss confidence consensus用来汇合所有agent计算到的一个特征，其实也就是平均 两个任务（实体抽取和关系抽取）之间存在某种联系和相互增强的作用，可以为减少噪音提供一些提示和帮助 -&gt; 联合模型 主要流程  输入：远程监督训练数据$D={s_1,…,s_n}$，实体抽取器${\theta}_e^{&#39;}$，关系抽取器${\theta}_r^{&#39;}$（都是在D上用预训练模型进行[[Fine Tune|微调]]的） multiagents利用confidence-scored label对训练集D进行重新分布，然后利用修改后的标签重新对${\theta}_e^{&#39;}$和${\theta}_r^{&#39;}$进行训练得到最终的抽取器。   本文为了达到上述的目标，将问题建模成一个mltuiagents强化学习的问题 因为我们没有测试集的gold label的数据，没法判断调整之后的label的正确性，所以使用RL来利用validation set上的性能标准来间接判断好坏 两个抽取器之间通过intermediate agent来交换信息 利用在validation上的性能分数和一致的分数来对agents进行reward 这个方法可以看作是后处理 Confidence Evaluators as Agents  status  entity：现在的句子、抽取结果（类型）、噪音标签类型 relation：句子、抽取类型、噪音标签 复用了base抽取器的句子和type向量，使其轻量化   Actions  利用神经网络去决定当前的句子是pos or neg，并且计算confidence score  pos：根据抽取出来的关系类型 neg：None type   使用[Gated Recurrent Unit]来作为[[Policy Network]]，通过一个[[Sigmoid Function]]来计算概率，其实也就是confidence score，1/0分别对应pos/neg 通过使用多个agents来解决state spaces太大的问题，如何解决的：  目标类型使用agents数量平均分 每个agents只负责一部分 前面提到过不同agents之间交互是通过一个叫做intermediate agents实现的 每个句子对应一个r agent和2个e agents，其他mask掉  这样难道不会有太多的agents么？会不会影响速度       Re-labeling with Confidence Consensus  有点像模型投票 $c = c_{sum}/3$，为什么是3呢，因为前文是1 r&#43;2 e confidence小于0....</p>
+  </section>
+  <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents" href="/blog/posts/relabel-noise/"></a>
 </article>
 
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Prototypical Representation Learning for Relation Extraction</h2>
+  </header>
+  <section class="entry-content">
+    <p>问题  针对有监督数据集，大部分模型都能够处理的很好，但是数据量小，人工标注成本高。所以使用远程监督（启发式规则）的方法自动构造数据，不可避免会带有大量噪音标签 但是遇到远程监督数据集效果一般不好 远程监督数据集含有大量的标签噪音 语言的表达多种多样  解决办法  预训练-微调范式  先在大规模远程监督数据集上预训练，然后针对不同的任务在目标数据集上微调   FuzzyRED dataset  验证本文方法是否能捕捉到句子潜在的语义信息   学习句子statement的representation   指示函数包含相同关系返回1，否则0   相似度计算，对长度归一化   为什么不用点乘，作者回复说是选择这个loss是为了模型在几何上的可解释性 而点积会导致公式计算时出现问题 这里是沿用了[[Baldini SoaresL(2019)_Matching the Blanks]]中的loss 但是并没有做消融实验验证这个相似度计算方法是否比点乘优秀 存在一个问题，当$s_i$和$s_j$距离近时，这个相似度应该是高的，但是这个式子得出的值实际上会很小，所表达的应该是不相似度，这个问题在rebuttal的时候也被提出来了   分子让具有相同关系的statement距离更近，分子让其他不同关系分离开 1Vn，negative pairs具有更大的权重   statements和proto   第一个式子表示，对于一个关系的 proto 来说，同类的 instance 要近，不同类的要远；第二个式子表示，对于一个 instance 来说，要跟自己的 proto 近，跟别的 proto 远 关系r的prototype和包含r的statements距离要比其他关系的statements要小 包含r的statements和关系r的prototype距离要比其他关系的prototype要小 交叉熵proto是直接求质心，本文是计算与各个样本、其它 proto 相互位置关系，这样抗噪性能显著增强，分类边界受噪声样本的干扰明显变小    实验  实验设置  数据  aligning relation tuples from the Wikidata database to Wikipedia articles more than 0....</p>
+  </section>
+  <footer class="entry-footer">April 13, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Prototypical Representation Learning for Relation Extraction" href="/blog/posts/protore/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Pre Trained Models for Natural Language Processing</h2>
+  </header>
+  <section class="entry-content">
+    <p>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks....</p>
+  </section>
+  <footer class="entry-footer">December 5, 2020&nbsp;·&nbsp;4 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Pre Trained Models for Natural Language Processing" href="/blog/posts/pretrain-survey/"></a>
+</article>
 
-  
-  
-  
-</body>
-<div class="foot">
-  
-  
-    &copy; 2017 - 2021 &#183; 
-    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data</h2>
+  </header>
+  <section class="entry-content">
+    <p></p>
+  </section>
+  <footer class="entry-footer">November 7, 2020&nbsp;·&nbsp;0 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data" href="/blog/posts/relational-transfer/"></a>
+</article>
 
-  
-</div>
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Learning from Context or Names? An Empirical Study on Neural Relation Extraction</h2>
+  </header>
+  <section class="entry-content">
+    <p>背景   什么类型的信息在影响着RE模型区分句子包含什么关系？
+ 句子中两个重要的信息：上下文和实体mention 对于人类直觉来说，句子的上下文对我们影响更大 之后的方法倾向于编码成分布式表示并进行匹配从而实现预测关系分类 影响程度：  两种信息都很重要 现有的RE数据集在训练过程中会从实体提及中泄露一部分信息，提高了性能   以后的方向：更好地理解句子的上下文以及利用实体提及。防止只是简单的记忆（拟合） 本文使用wikidata去聚类相同的关系实例，学习去分辨句子之间的相似度和属于不同的关系    模型
+ CNN  Nguyen and Grishman (2015) Zhang et al. (2017)   BERT  BERT for RE following Baldini Soares et al. (2019)   MTB  Baldini Soares et al. (2019) pre-train a BERTbase version of MTB    CP    实验
+  Context&#43;Mention (C&#43;M) Context&#43;Type (C&#43;T)  We replace entity mentions with their types provided in TACRED....</p>
+  </section>
+  <footer class="entry-footer">November 4, 2020&nbsp;·&nbsp;1 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Learning from Context or Names? An Empirical Study on Neural Relation Extraction" href="/blog/posts/context-or-name/"></a>
+</article>
 
-<script src="/blog/js/lazyload.min.js"></script>
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</h2>
+  </header>
+  <section class="entry-content">
+    <p>Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  </p>
+  </section>
+  <footer class="entry-footer">November 2, 2020&nbsp;·&nbsp;1 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction" href="/blog/posts/more-data-re/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Convolutional Neural Networks for Sentence Classification</h2>
+  </header>
+  <section class="entry-content">
+    <p>  来源：http://aclweb.org/anthology/D14-1181
+  机构：NYU
+  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩
+  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN&#43;word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。
+  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec&#43;CNN&#43;最大池化&#43;全连接层就可以达到不错的性能
+  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量
+  dropout有助于大模型的正则化
+  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合
+  ![[CNN Model architecture with two channels for an example sentence.png]]
+  ![[Summary statistics for the datasets after tokenization of CNN.png]]
+  ![[Results of our CNN models against other methods.png]]
+  </p>
+  </section>
+  <footer class="entry-footer">May 10, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Convolutional Neural Networks for Sentence Classification" href="/blog/posts/cnn4tc/"></a>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="/blog">早柳</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
-  });
-</script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
 
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
 
 </html>

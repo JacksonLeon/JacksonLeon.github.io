@@ -1,126 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.82.0" />
+<html lang="en" dir="auto">
 
-  <title> [paper, survey] Pre Trained Models for Natural Language Processing |  imlauzh</title>
-  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
-  <link rel="stylesheet" href="/blog/css/index.css">
-  <link rel="stylesheet" href="/blog/css/classes.css">
-  <link rel="canonical" href="/blog/posts/pretrain-survey/">
-  <link rel="alternate" type="application/rss+xml" href="" title="imlauzh">
-  
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-  <link 
-    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
-    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
-    crossorigin="anonymous">
-  </link>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
-    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
-    crossorigin="anonymous">
-  </script>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
-    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
-    crossorigin="anonymous" 
-    onload="renderMathInElement(document.body);">
-  </script>
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>论文笔记 - Pre Trained Models for Natural Language Processing | 早柳</title>
+<meta name="keywords" content="Pre-train, NLP" />
+<meta name="description" content="大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.">
+<meta name="author" content="iiuzh">
+<link rel="canonical" href="/blog/posts/pretrain-survey/" />
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<meta property="og:title" content="论文笔记 - Pre Trained Models for Natural Language Processing" />
+<meta property="og:description" content="大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/posts/pretrain-survey/" />
+<meta property="og:image" content="/blog/posts/pretrain-survey/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-05T15:57:21&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-05T15:57:21&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="/blog/posts/pretrain-survey/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content="论文笔记 - Pre Trained Models for Natural Language Processing"/>
+<meta name="twitter:description" content="大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "论文笔记 - Pre Trained Models for Natural Language Processing",
+      "item": "/blog/posts/pretrain-survey/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "论文笔记 - Pre Trained Models for Natural Language Processing",
+  "name": "论文笔记 - Pre Trained Models for Natural Language Processing",
+  "description": "大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。\n相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。\n预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。\n第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].\n第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。\n详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.",
+  "keywords": [
+    "Pre-train", "NLP"
+  ],
+  "articleBody": "大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。\n相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。\n预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。\n第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].\n第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。\n详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.\n一个好的表示应该表达通用的知识，并不是针对特定的任务，但是对机器学习去解决AI任务会很有用。 —-Bengio\n 对于语言表示来说，好的表示应该能够获取到隐含的语言的规律以及常识性知识，比如说lexical meanings, syntactic structures, semantic roles, and even pragmatics(语用学)。分布式表示的核心就是利用低维度的向量来描述文本中的一部分，这个向量中的每个维度都没有对应的意义，但是整个向量却表示了一个具体的含义，也许每个单独的向量是有意义的，不过现在我们无法解释，其可解释性太低，几乎没有。\n从图中可以看出，两种词嵌入，有没有上下文语意的，也就是字面意思，会不会根据上下文信息更改向量的表示，举个例子，苹果这个词语代表的词向量会不会换了个句子，其训练出来的词嵌入向量就发生变化。\n  Non-contextual Embeddings 这类词嵌入有两种明显的局限，一是因为词嵌入是静态不变的，无法表示多义性的词语；二是，此表中未出现的词语无法表示，一般使用字符级表示或者子词表示的方法来解决这个问题。\n  Contextual Embeddings 为了解决上面两个问题，主要通过分辨词语在不同上下文中的语意，这里是将所有的词语或者子词放进一个神经编码器中去计算每个词语的上下文词嵌入或者动态词嵌入。\n  Neural Contextual Encoders 序列模型 序列模型通常按顺序捕获单词的局部上下文。\n 卷积模型通过卷积操作把邻居的本地信息汇总从而获得这个词语的meaning 循环模型通过short momery来获取上下文表示，双向的LSTM或者是GRUs可以从两个方向收集信息，但是会受到远距离依赖问题的影响。  非序列型 非序列模型通过预先定义好的树或者图结构（句法树、语法关系） 来学习上下文表示，其中构建一个好的图结构是一个比较有挑战的问题，也比较依赖外部的工具或者是知识，例如依存解析。\n实际上，更加直接的方法是使用全连接图，连接的权重是通过自注意力机制进行动态计算的，能够隐含地显示词与词之间的关系，一个比较成功的例子是[[Vaswani et al_2017_Attention Is All You Need|Transformer]]，不过也使用了一些其他的模块：[[Positional Embeddings]]、[[Feed-Forward Network(FFN)]]、[[Layer Normalization]]、[[Residual Connections]]等等。\n序列模型难以获取长尾的词信息，但是易于训练，多种NLP任务也可以拿到不错的成绩。\nTransformer可以直接对序列中每两个单词之间的依赖关系进行建模，这更强大并且更适合对语言的远程依赖关系进行建模。\n However, due to its heavy structure and less model bias, the Transformer usually requires a large training corpus and is easy to overfit on small or modestly-sized datasets.\nReference: [[Radford et al_Improving Language Understanding by Generative Pre-Training|GPT]]\n 由于transformer其强大的能力，也是目前主流的PTMs常用的结构。\n为什么需要预训练？  由于大部分NLP任务需要充分训练模型从而防止过拟合 而这就需要大规模的标注数据集 但是对于句法和语义等任务来说，人工标注相当昂贵 所以想要先用大规模的无标注数据学习一个好的表示，再用于下游任务中 优点：  可以学习到通用的语言表示 提供了更好地模型初始化 避免了在小数据集上过拟合    NLP预训练历史  第一代：预训练词嵌入  把词语表示成稠密向量，one-hot是稀疏的 pair-wise ranking task而不是语言模型 Mikolov提出并不需要深度神经网络来构建好的词嵌入，并提出CBOW和skip-gram模型 Word2Vec、GloVe 都是上下文无关的，大多数都是使用浅层模型训练，未训练到的还需要模型从头训练   第二代：上下文编码器  研究者发现预训练和微调可以提高多任务学习的性能 无监督预训练可以改进seq2seq模型 更大的数据集、更加强大的结构、新的预训练任务 BiLM、ELMo的输出可以大幅度改善NLP任务，通常被用来计算上下文词嵌入 ULMFiT的三个阶段：  在通用领域上预训练LM 在目标数据上微调 在目标任务上微调   自监督任务用于预训练模型在大规模文本语料库上学习到更多的知识 微调是预训练任务用于下游任务的主要方式    Overview 预训练模型之间的主要区别是：上下文编码器的用途、预训练任务、目的\n预训练任务  分类  有监督  把输入映射到输出上   无监督  从无标注数据中寻找内在的联系、知识   自监督  上面两者的混合，学习范式与SL相同，但是其训练的标签是自动生成的 核心思想是预测输入的任何部分，类似MLM   NLP的数据一般比较少，不足以训练好的PTM 越有挑战性的任务越对下游任务有利，例如MT    LM  单向LM的一个缺点是：每个Token只编码了左边的token和他自己 BiLM提出two-tower模型，编码前向和反向   MLM  Masked LM  完形填空，cloze “cloze procedure”: A new tool for measuring readability 缺点：造成预训练和微调阶段之间的断层，因为[mask]并不出现在微调阶段 解决方案：special token 80，random 10，origin 10   s2s MLM  MLM通常是分类任务，softmax分类器预测 范式：编码器输入masked序列，解码器利用自回归顺序输出masked token MASS，T5 什么样的预训练任务利于什么样的下游任务，s2s MLM有利于qa、summary、MT   Enhanced Masked Language Modeling  RoBERTa，动态Mask XLM，拼接平行双语句对，Translation Language Modeling (TLM) Span-BERT，将结构信息编码到预训练中 外部知识     乱序LM  预训练时的mask在微调阶段不出现，造成断层 输入句子的token是重新排序的   In practice, only the last few tokens in the permuted sequences are predicted, due to the slow convergence. And a special two-stream self-attention is introduced for target-aware representations.\n    Denoising Autoencoder (DAE)  输入部分损坏，目的是为了回复原来的输入 三种方式：  masking 删除，判断丢失部分的位置 填充，预测多少token丢失 Sentence Permutation，句子置换， Document Rotation，判断文档开始的位置-句子     对比学习  正例之间在语义上比随机例子更相似 通过对比来学习一般性知识 一般计算复杂度相比LM低 task：  Deep InfoMax (DIM)  最先用于图像，通过最大化图像表示和本地区域图像之间的共同信息来提高ptm的质量 NLP中，使n-gram span比随机的span与masked句子联系更高   Replaced Token Detection (RTD)  通过上下文预测token是否被替换 [[Clark et al_2020_ELECTRA_arXiv2003.10555 [cs]|ELECTRA]]使用生成器来替换序列中的token，判别器判断哪些token能被替换了，改进了RTD WKLM替换实体，而不是token，把实体替换成具有相同类型的其他实体，从而去预测   Next Sentence Prediction NSP  判断两个句子是不是来自同一个训练语料并且是连续的，正反例出现的比例是相同的 学习两个句子之间的关系 不过NSP任务不太可靠   Sentence Order Prediction (SOP)  目的是使生成的句子、文档更具有一致性 ALBERT，sentence order prediction (SOP) loss        PTMs分类  四个方向  表示类型：上下文 结构：LSTM、transformer、enc、dec 预训练任务类型：[[Qiu et al_2020_Pre-trained Models for Natural Language Processing#预训练任务|预训练任务]] 拓展：知识、多语言、多模态、特定语言、特定领域、压缩      PTMs拓展 知识  注入知识会受到灾难性遗忘问题的影响  K-Adapter在不同的预训练使用不同的适配器进行注入知识 K-BERT注入外部知识不需要重新训练，在微调时注入 Logan IV et al. [119] and Hayashi et al. [57] extended language model to knowledge graph language model (KGLM) and latent relation language model (LRLM)    多语言和特定语言  Cross-Lingual Language Understanding (XLU)  通常需要语言间的对齐 mBert多语言一般化效果还可以 XLM相比mbert引入了一个多语言任务，translation language modeling (TLM)，平行双语语料融合   Cross-Lingual Language Generation (XLG)  XNLG [19] performs two-stage pre-training for cross-lingual natural language generation.  预训练单语和多语MLM 编码器 固定编码器，训练单语DAE和交叉语言自动编码的解码器   在交叉语言的问题生成和摘要总结效果好    多模态  Typically, tasks like visual-based MLM, masked visual-feature modeling and visual-linguistic matching are widely used in multi-modal pre-training, such as VideoBERT [165], VisualBERT [103], ViLBERT [120].\n  分别对图像和文字进行编码：ViLBERT [120] and LXMERT [175] 只有一个transformer：VisualBERT [103], B2T2 [2], VLBERT [163], Unicoder-VL [101] and UNITER [17]  压缩   PTMs通常参数量都相当巨大，很难部署到在线服务和移动设备上 压缩方法：  模型剪枝    Model pruning refers to removing part of neural network (e.g., weights, neurons, layers, channels, attention heads),\n    权值量化  将高精度压缩为低精度   参数共享  跨层之间进行参数共享 ALBERT，尽管进行共享了，但是训练和推断的时间变长了 在推断阶段并不会提高计算效率   知识蒸馏：TinyBERT 模块替换：Theseus Compression    应用PTMs到下游任务 迁移学习  如何迁移  选择合适的预训练任务、结构、语料库  预训练任务、结构、语料库对于下游任务的影响相当大 例如：NSP-Question Answering (QA) and Natural Language Inference (NLI) bert可以帮助理解任务，但是很难做生成任务   合适的层  预训练深度模型每层所捕捉的信息时不同的， POS tagging, parsing,long-term dependencies, semantic roles, coreference 通常句法信息在浅层，语义信息在深层 所以在使用ptms的时候，使用那一层的信息也是很重要的   微调？  PTMs一般作为特征抽取器和微调，区别就是看参数固不固定 微调对于各种任务来说更加方便使用      微调策略  两阶段  中间任务或者语料 目标任务   多任务学习 额外的模块  效率低下 改进：原始的参数固定的基础上增加一些微调模块   模型融合和蒸馏等    应用 General Evaluation Benchmark  The General Language Understanding Evaluation (GLUE) benchmark    a collection of nine natural language understanding tasks, including single-sentence classification tasks (CoLA and SST-2), pairwise text classification tasks (MNLI, RTE, WNLI, QQP, and MRPC), text similarity task (STSB), and relevant ranking task (QNLI). GLUE benchmark is well-designed for evaluating the robustness as well as generalization of models.\n  不提供真实标签，而是一个服务器 superGLUE   Question Answering  抽取式QA-span prediction multi-round generative QA：PTM+Adversarial Training+Rationale Tagging+Knowledge Distillation   Sentiment Analysis Named Entity Recognition  预测每个token对应的label bio和bieso   Machine Translation  MASS使用seq2seq MLM去一起训练编码器和解码器   Summarization  Zhong利用Siamese-BERT去计算原文档与总结之间的相似度 Extractive summarization as text matching   Adversarial Attacks and Defenses  预训练模型相当脆弱 所以如何攻击和防御也是研究的重点 攻击：利用人类感知不到的输入变化但是能够影响模型的输出，语法上流畅，语义上也要连贯 BERT在拼写错误上不敏感    未来的方向 上限  PTMs还远没有达到上限，现在大部分模型都是利用更多的训练和更大的数据集去提高性能 但是我们需要考虑的是：更加合理和深的模型结构以及更有针对性、挑战性的预训练任务   Therefore, a more practical direction is to design more efficient model architecture, self-supervised pre-training tasks, optimizers, and training skills using existing hardware and software.\n  [[Clark et al_2020_ELECTRA_arXiv2003.10555 [cs]|ELECTRA]]  结构  Transformer结构的主要局限是计算复杂度，一般是输出长度的平方 目前算力不够发达，大部分模型最多只能处理512个token 设计深度模型的结构相当困难，也有自动搜索网络结构的工作 [[Neural architecture search with reinforcement learning]]  任务导向和模型压缩  PTMs和下游任务之间的矛盾主要有两方面：  模型架构 数据分布   参数量大，移植到移动设备等-压缩  Knowledge Transfer Beyond Fine-tuning  固定原始参数,在这基础上增加一些可微调的模块  BERT and PALs: Projected attention layers for e\u000ecient adaptation in multi-task learning Parameter-efficient transfer learning for NLP   需要更有效率的模型  Interpretability and Reliability of PTMs ",
+  "wordCount" : "693",
+  "inLanguage": "en",
+  "image":"/blog/posts/pretrain-survey/%3Cimage%20path/url%3E","datePublished": "2020-12-05T15:57:21+08:00",
+  "dateModified": "2020-12-05T15:57:21+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "iiuzh"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/posts/pretrain-survey/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "早柳",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body>
-  <header class="menus">
-  
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <nav >
-    
-    <a href="/blog/"> Home</a>
-    
-    <a href="/blog/categories/"> Categories</a>
-    
-    <a href="/blog/tags/"> Tags</a>
-    
-    <a href="/blog/about/"> About</a>
-    
-    <a href="/blog/index.xml"> Subscribe</a>
-    
-  </nav>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/imlauzh" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-    <a href="/blog/index.xml" target="_blank">
-        <i title="RSS" class="fas fa-rss"></i>
-    </a>
-    
-  </nav>
-  
-  
-  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/blog" accesskey="h" title="早柳 (Alt + H)">早柳</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="/blog/posts" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/archives" title="Timeline">
+                    <span>Timeline</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
-<article id="article">
-  <header>
-  
-    <i class="fas fa-folder"></i>
-    
-    <a href="/blog/categories/paper">Paper</a>
-    &nbsp;
-    
-    <a href="/blog/categories/survey">Survey</a>
-    &nbsp;
-    
-  
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="/blog">Home</a>&nbsp;»&nbsp;<a href="/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      论文笔记 - Pre Trained Models for Natural Language Processing
+    </h1>
+    <div class="post-meta">December 5, 2020&nbsp;·&nbsp;4 min&nbsp;·&nbsp;iiuzh
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%a4%a7%e8%87%b4%e6%a1%86%e6%9e%b6" aria-label="大致框架">大致框架</a></li>
+                <li>
+                    <a href="#%e4%bb%8b%e7%bb%8d" aria-label="介绍">介绍</a><ul>
+                        
+                <li>
+                    <a href="#%e8%af%a6%e7%bb%86%e6%a1%86%e6%9e%b6" aria-label="详细框架">详细框架</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%83%8c%e6%99%af%e7%9f%a5%e8%af%86" aria-label="背景知识">背景知识</a><ul>
+                        
+                <li>
+                    <a href="#%e8%af%ad%e8%a8%80%e8%a1%a8%e7%a4%ba%e5%ad%a6%e4%b9%a0" aria-label="语言表示学习">语言表示学习</a></li>
+                <li>
+                    <a href="#neural-contextual-encoders" aria-label="Neural Contextual Encoders">Neural Contextual Encoders</a><ul>
+                        
+                <li>
+                    <a href="#%e5%ba%8f%e5%88%97%e6%a8%a1%e5%9e%8b" aria-label="序列模型">序列模型</a></li>
+                <li>
+                    <a href="#%e9%9d%9e%e5%ba%8f%e5%88%97%e5%9e%8b" aria-label="非序列型">非序列型</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e9%a2%84%e8%ae%ad%e7%bb%83" aria-label="为什么需要预训练？">为什么需要预训练？</a></li>
+                <li>
+                    <a href="#nlp%e9%a2%84%e8%ae%ad%e7%bb%83%e5%8e%86%e5%8f%b2" aria-label="NLP预训练历史">NLP预训练历史</a></li></ul>
+                </li>
+                <li>
+                    <a href="#overview" aria-label="Overview">Overview</a><ul>
+                        
+                <li>
+                    <a href="#%e9%a2%84%e8%ae%ad%e7%bb%83%e4%bb%bb%e5%8a%a1" aria-label="预训练任务">预训练任务</a></li>
+                <li>
+                    <a href="#ptms%e5%88%86%e7%b1%bb" aria-label="PTMs分类">PTMs分类</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ptms%e6%8b%93%e5%b1%95" aria-label="PTMs拓展">PTMs拓展</a><ul>
+                        
+                <li>
+                    <a href="#%e7%9f%a5%e8%af%86" aria-label="知识">知识</a></li>
+                <li>
+                    <a href="#%e5%a4%9a%e8%af%ad%e8%a8%80%e5%92%8c%e7%89%b9%e5%ae%9a%e8%af%ad%e8%a8%80" aria-label="多语言和特定语言">多语言和特定语言</a></li>
+                <li>
+                    <a href="#%e5%a4%9a%e6%a8%a1%e6%80%81" aria-label="多模态">多模态</a></li>
+                <li>
+                    <a href="#%e5%8e%8b%e7%bc%a9" aria-label="压缩">压缩</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ba%94%e7%94%a8ptms%e5%88%b0%e4%b8%8b%e6%b8%b8%e4%bb%bb%e5%8a%a1" aria-label="应用PTMs到下游任务">应用PTMs到下游任务</a><ul>
+                        
+                <li>
+                    <a href="#%e8%bf%81%e7%a7%bb%e5%ad%a6%e4%b9%a0" aria-label="迁移学习">迁移学习</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ba%94%e7%94%a8" aria-label="应用">应用</a><ul>
+                        
+                <li>
+                    <a href="#general-evaluation-benchmark" aria-label="General Evaluation Benchmark">General Evaluation Benchmark</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%9c%aa%e6%9d%a5%e7%9a%84%e6%96%b9%e5%90%91" aria-label="未来的方向">未来的方向</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%8a%e9%99%90" aria-label="上限">上限</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e6%9e%84" aria-label="结构">结构</a></li>
+                <li>
+                    <a href="#%e4%bb%bb%e5%8a%a1%e5%af%bc%e5%90%91%e5%92%8c%e6%a8%a1%e5%9e%8b%e5%8e%8b%e7%bc%a9" aria-label="任务导向和模型压缩">任务导向和模型压缩</a></li>
+                <li>
+                    <a href="#knowledge-transfer-beyond-fine-tuning" aria-label="Knowledge Transfer Beyond Fine-tuning">Knowledge Transfer Beyond Fine-tuning</a></li>
+                <li>
+                    <a href="#interpretability-and-reliability-of-ptms" aria-label="Interpretability and Reliability of PTMs">Interpretability and Reliability of PTMs</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
 
-    <h1 style="text-align: center;" >[paper, survey] Pre Trained Models for Natural Language Processing</h1>
-    <div class="post-meta">
-    
-      <time datetime="2020-12-05T15:57:21&#43;08:00">December 05, 2020</time> &nbsp; 
-    
-
-    Lau &nbsp;
-
-    
-    
-      <i class="far fa-eye"></i>
-      <span id="/blog/posts/pretrain-survey/" class="leancloud_visitors" data-flag-title="[paper, survey] Pre Trained Models for Natural Language Processing">
-          <span class="leancloud-visitors-count">  </span>
-      </span> &nbsp;
-    
-    
-
-    
-      <i class="far fa-clock"></i>
-      
-      
-      
-
-      
-        22 min
-      
-      9 s
-      &nbsp;
-    
-    </div>
-  </header>
-
-  <h1 id="大致框架">大致框架</h1>
+  <div class="post-content"><h2 id="大致框架">大致框架<a hidden class="anchor" aria-hidden="true" href="#大致框架">#</a></h2>
 <ul>
 <li>基于四个不同的方向给PTM分类</li>
 <li>如何将PTM的知识应用到下游任务中去</li>
 <li>未来的研究中PTM潜在的几个方向</li>
 <li>本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM</li>
 </ul>
-<h1 id="介绍">介绍</h1>
+<h2 id="介绍">介绍<a hidden class="anchor" aria-hidden="true" href="#介绍">#</a></h2>
 <p>现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。</p>
 <p>相比<a href="CV">[Computer Vision]</a>，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。</p>
 <p>预训练模型在大语料库上可以学习到<strong>通用的语言表示</strong>，而且不用从头开始训练一个新模型。</p>
@@ -128,7 +334,7 @@
 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].</p>
 <p>第二代PTMs主要重点在于学习上下文词嵌入
 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations],  [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。</p>
-<h2 id="详细框架">详细框架</h2>
+<h3 id="详细框架">详细框架<a hidden class="anchor" aria-hidden="true" href="#详细框架">#</a></h3>
 <ul>
 <li>PTMs中的背景知识、常用的符号</li>
 <li>PTMs一个简短的总结以及分类</li>
@@ -138,14 +344,15 @@
 <li>NLP任务的集合</li>
 <li>现在的挑战以及未来的方向</li>
 </ul>
-<h1 id="背景知识">背景知识</h1>
-<h2 id="语言表示学习">语言表示学习</h2>
+<h2 id="背景知识">背景知识<a hidden class="anchor" aria-hidden="true" href="#背景知识">#</a></h2>
+<h3 id="语言表示学习">语言表示学习<a hidden class="anchor" aria-hidden="true" href="#语言表示学习">#</a></h3>
 <blockquote>
 <p>a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks.</p>
 <p>一个好的表示应该表达通用的知识，并不是针对特定的任务，但是对机器学习去解决AI任务会很有用。 &mdash;-Bengio</p>
 </blockquote>
 <p>对于语言表示来说，<strong>好的表示应该能够获取到隐含的语言的规律以及常识性知识</strong>，比如说lexical meanings, syntactic structures, semantic roles, and even pragmatics(语用学)。分布式表示的<strong>核心就是利用低维度的向量来描述文本中的一部分</strong>，这个向量中的每个维度都没有对应的意义，但是整个向量却表示了一个具体的含义，也许每个单独的向量是有意义的，不过<strong>现在我们无法解释，其可解释性太低</strong>，几乎没有。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Generic%20Neural%20Architecture%20for%20NLP.png" alt=""></p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Generic%20Neural%20Architecture%20for%20NLP.png" alt=""  />
+</p>
 <p>从图中可以看出，两种词嵌入，有没有上下文语意的，也就是字面意思，<strong>会不会根据上下文信息更改向量的表示</strong>，举个例子，<strong>苹果</strong>这个词语代表的词向量会不会换了个句子，其训练出来的词嵌入向量就发生变化。</p>
 <ul>
 <li>
@@ -157,15 +364,16 @@
 为了解决上面两个问题，主要通过分辨词语在不同上下文中的语意，这里是将所有的词语或者子词放进一个神经编码器中去计算每个词语的上下文词嵌入或者动态词嵌入。</p>
 </li>
 </ul>
-<h2 id="neural-contextual-encoders">Neural Contextual Encoders</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Neural%20Contextual%20Encoders.png" alt=""></p>
-<h3 id="序列模型">序列模型</h3>
+<h3 id="neural-contextual-encoders">Neural Contextual Encoders<a hidden class="anchor" aria-hidden="true" href="#neural-contextual-encoders">#</a></h3>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Neural%20Contextual%20Encoders.png" alt=""  />
+</p>
+<h4 id="序列模型">序列模型<a hidden class="anchor" aria-hidden="true" href="#序列模型">#</a></h4>
 <p><strong>序列模型通常按顺序捕获单词的局部上下文。</strong></p>
 <ul>
 <li>卷积模型通过卷积操作把邻居的本地信息汇总从而获得这个词语的meaning</li>
 <li>循环模型通过short momery来获取上下文表示，双向的LSTM或者是GRUs可以从两个方向收集信息，但是会受到远距离依赖问题的影响。</li>
 </ul>
-<h3 id="非序列型">非序列型</h3>
+<h4 id="非序列型">非序列型<a hidden class="anchor" aria-hidden="true" href="#非序列型">#</a></h4>
 <p>非序列模型通过<strong>预先定义好的树或者图结构（句法树、语法关系）</strong> 来学习上下文表示，其中构建一个好的图结构是一个比较有挑战的问题，也比较依赖外部的工具或者是知识，例如依存解析。</p>
 <p>实际上，更加直接的方法是使用全连接图，连接的权重是<strong>通过自注意力机制进行动态计算的</strong>，能够隐含地显示词与词之间的关系，一个比较成功的例子是[[Vaswani et al_2017_Attention Is All You Need|Transformer]]，不过也使用了一些其他的模块：[[Positional Embeddings]]、[[Feed-Forward Network(FFN)]]、[[Layer Normalization]]、[[Residual Connections]]等等。</p>
 <p>序列模型难以获取长尾的词信息，但是易于训练，多种NLP任务也可以拿到不错的成绩。</p>
@@ -175,7 +383,7 @@
 <p>Reference: [[Radford et al_Improving Language Understanding by Generative Pre-Training|GPT]]</p>
 </blockquote>
 <p>由于transformer其强大的能力，也是目前主流的PTMs常用的结构。</p>
-<h2 id="为什么需要预训练">为什么需要预训练？</h2>
+<h3 id="为什么需要预训练">为什么需要预训练？<a hidden class="anchor" aria-hidden="true" href="#为什么需要预训练">#</a></h3>
 <ul>
 <li>由于大部分NLP任务需要充分训练模型从而防止过拟合</li>
 <li>而这就需要大规模的标注数据集</li>
@@ -189,7 +397,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="nlp预训练历史">NLP预训练历史</h2>
+<h3 id="nlp预训练历史">NLP预训练历史<a hidden class="anchor" aria-hidden="true" href="#nlp预训练历史">#</a></h3>
 <ul>
 <li>第一代：预训练词嵌入
 <ul>
@@ -218,9 +426,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="overview">Overview</h1>
+<h2 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h2>
 <p>预训练模型之间的主要区别是：上下文编码器的用途、预训练任务、目的</p>
-<h2 id="预训练任务">预训练任务</h2>
+<h3 id="预训练任务">预训练任务<a hidden class="anchor" aria-hidden="true" href="#预训练任务">#</a></h3>
 <ul>
 <li>分类
 <ul>
@@ -244,7 +452,8 @@
 <li>越有挑战性的任务越对下游任务有利，例如MT</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Loss%20Functions%20of%20Pre-training%20Tasks.png" alt=""></li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Loss%20Functions%20of%20Pre-training%20Tasks.png" alt=""  />
+</li>
 <li>LM
 <ul>
 <li>单向LM的一个缺点是：每个Token只编码了左边的token和他自己</li>
@@ -342,7 +551,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="ptms分类">PTMs分类</h2>
+<h3 id="ptms分类">PTMs分类<a hidden class="anchor" aria-hidden="true" href="#ptms分类">#</a></h3>
 <ul>
 <li>四个方向
 <ul>
@@ -352,11 +561,13 @@
 <li>拓展：知识、多语言、多模态、特定语言、特定领域、压缩</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Taxonomy%20of%20PTMs%20with%20Representative%20Examples.png" alt=""></li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/List%20of%20Representative%20PTMs.png" alt=""></li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Taxonomy%20of%20PTMs%20with%20Representative%20Examples.png" alt=""  />
+</li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/List%20of%20Representative%20PTMs.png" alt=""  />
+</li>
 </ul>
-<h1 id="ptms拓展">PTMs拓展</h1>
-<h2 id="知识">知识</h2>
+<h2 id="ptms拓展">PTMs拓展<a hidden class="anchor" aria-hidden="true" href="#ptms拓展">#</a></h2>
+<h3 id="知识">知识<a hidden class="anchor" aria-hidden="true" href="#知识">#</a></h3>
 <ul>
 <li>注入知识会受到灾难性遗忘问题的影响
 <ul>
@@ -366,7 +577,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="多语言和特定语言">多语言和特定语言</h2>
+<h3 id="多语言和特定语言">多语言和特定语言<a hidden class="anchor" aria-hidden="true" href="#多语言和特定语言">#</a></h3>
 <ul>
 <li>Cross-Lingual Language Understanding (XLU)
 <ul>
@@ -387,7 +598,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="多模态">多模态</h2>
+<h3 id="多模态">多模态<a hidden class="anchor" aria-hidden="true" href="#多模态">#</a></h3>
 <blockquote>
 <p>Typically, tasks like visual-based MLM, masked visual-feature modeling and visual-linguistic matching are widely used in multi-modal pre-training, such as VideoBERT [165], VisualBERT [103], ViLBERT [120].</p>
 </blockquote>
@@ -395,9 +606,10 @@
 <li>分别对图像和文字进行编码：ViLBERT [120] and LXMERT [175]</li>
 <li>只有一个transformer：VisualBERT [103], B2T2 [2], VLBERT [163], Unicoder-VL [101] and UNITER [17]</li>
 </ul>
-<h2 id="压缩">压缩</h2>
+<h3 id="压缩">压缩<a hidden class="anchor" aria-hidden="true" href="#压缩">#</a></h3>
 <ul>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Comparison%20of%20Compressed%20PTMs.png" alt=""></li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Comparison%20of%20Compressed%20PTMs.png" alt=""  />
+</li>
 <li>PTMs通常参数量都相当巨大，很难部署到在线服务和移动设备上</li>
 <li>压缩方法：
 <ul>
@@ -427,8 +639,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="应用ptms到下游任务">应用PTMs到下游任务</h1>
-<h2 id="迁移学习">迁移学习</h2>
+<h2 id="应用ptms到下游任务">应用PTMs到下游任务<a hidden class="anchor" aria-hidden="true" href="#应用ptms到下游任务">#</a></h2>
+<h3 id="迁移学习">迁移学习<a hidden class="anchor" aria-hidden="true" href="#迁移学习">#</a></h3>
 <ul>
 <li>如何迁移
 <ul>
@@ -452,7 +664,8 @@
 <li>微调对于各种任务来说更加方便使用</li>
 </ul>
 </li>
-<li><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Some%20common%20combinations%20of%20adapting%20PTMs.png" alt=""></li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Some%20common%20combinations%20of%20adapting%20PTMs.png" alt=""  />
+</li>
 </ul>
 </li>
 <li>微调策略
@@ -474,9 +687,10 @@
 </ul>
 </li>
 </ul>
-<h1 id="应用">应用</h1>
-<p><img src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Resources%20of%20PTMs.png" alt=""></p>
-<h2 id="general-evaluation-benchmark">General Evaluation Benchmark</h2>
+<h2 id="应用">应用<a hidden class="anchor" aria-hidden="true" href="#应用">#</a></h2>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Resources%20of%20PTMs.png" alt=""  />
+</p>
+<h3 id="general-evaluation-benchmark">General Evaluation Benchmark<a hidden class="anchor" aria-hidden="true" href="#general-evaluation-benchmark">#</a></h3>
 <ul>
 <li>The General Language Understanding Evaluation (GLUE) benchmark
 <ul>
@@ -522,8 +736,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="未来的方向">未来的方向</h1>
-<h2 id="上限">上限</h2>
+<h2 id="未来的方向">未来的方向<a hidden class="anchor" aria-hidden="true" href="#未来的方向">#</a></h2>
+<h3 id="上限">上限<a hidden class="anchor" aria-hidden="true" href="#上限">#</a></h3>
 <ul>
 <li>PTMs还远没有达到上限，现在大部分模型都是利用更多的训练和更大的数据集去提高性能</li>
 <li>但是我们需要考虑的是：更加合理和深的模型结构以及更有针对性、挑战性的预训练任务</li>
@@ -534,13 +748,13 @@
 </li>
 <li>[[Clark et al_2020_ELECTRA_arXiv2003.10555 [cs]|ELECTRA]]</li>
 </ul>
-<h2 id="结构">结构</h2>
+<h3 id="结构">结构<a hidden class="anchor" aria-hidden="true" href="#结构">#</a></h3>
 <ul>
 <li>Transformer结构的主要局限是计算复杂度，一般是输出长度的平方</li>
 <li>目前算力不够发达，大部分模型最多只能处理512个token</li>
 <li>设计深度模型的结构相当困难，也有自动搜索网络结构的工作 [[Neural architecture search with reinforcement learning]]</li>
 </ul>
-<h2 id="任务导向和模型压缩">任务导向和模型压缩</h2>
+<h3 id="任务导向和模型压缩">任务导向和模型压缩<a hidden class="anchor" aria-hidden="true" href="#任务导向和模型压缩">#</a></h3>
 <ul>
 <li>PTMs和下游任务之间的矛盾主要有两方面：
 <ul>
@@ -550,7 +764,7 @@
 </li>
 <li>参数量大，移植到移动设备等-&gt;压缩</li>
 </ul>
-<h2 id="knowledge-transfer-beyond-fine-tuning">Knowledge Transfer Beyond Fine-tuning</h2>
+<h3 id="knowledge-transfer-beyond-fine-tuning">Knowledge Transfer Beyond Fine-tuning<a hidden class="anchor" aria-hidden="true" href="#knowledge-transfer-beyond-fine-tuning">#</a></h3>
 <ul>
 <li>固定原始参数,在这基础上增加一些可微调的模块
 <ul>
@@ -560,116 +774,180 @@
 </li>
 <li>需要更有效率的模型</li>
 </ul>
-<h2 id="interpretability-and-reliability-of-ptms">Interpretability and Reliability of PTMs</h2>
+<h3 id="interpretability-and-reliability-of-ptms">Interpretability and Reliability of PTMs<a hidden class="anchor" aria-hidden="true" href="#interpretability-and-reliability-of-ptms">#</a></h3>
 
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/blog/tags/pre-train/">Pre-train</a></li>
+      <li><a href="/blog/tags/nlp/">NLP</a></li>
+    </ul>
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on twitter"
+        href="https://twitter.com/intent/tweet/?text=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing&amp;url=%2fblog%2fposts%2fpretrain-survey%2f&amp;hashtags=Pre-train%2cNLP">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fblog%2fposts%2fpretrain-survey%2f&amp;title=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing&amp;summary=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing&amp;source=%2fblog%2fposts%2fpretrain-survey%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on reddit"
+        href="https://reddit.com/submit?url=%2fblog%2fposts%2fpretrain-survey%2f&title=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fposts%2fpretrain-survey%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on whatsapp"
+        href="https://api.whatsapp.com/send?text=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing%20-%20%2fblog%2fposts%2fpretrain-survey%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 - Pre Trained Models for Natural Language Processing on telegram"
+        href="https://telegram.me/share/url?text=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20Pre%20Trained%20Models%20for%20Natural%20Language%20Processing&amp;url=%2fblog%2fposts%2fpretrain-survey%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
 
-  
-  <footer>
-    <hr>
-    
-    <div class="post-tags">
-    
-      <i class="fas fa-tags"></i>
-      
-        <a href="/blog/tags/pre-train">Pre-train</a>
-        &nbsp;
-      
-        <a href="/blog/tags/nlp">NLP</a>
-        &nbsp;
-      
-    
-    </div>
   </footer>
-  
-
-  
-
-<div class="releated-post">
-  <h3>Related Posts</h3>
-  
-  <i class="fas fa-paperclip"></i>
-  <a href="/blog/posts/relational-transfer/">[paper] Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data</a>
-  <br>
-  
-  <i class="fas fa-paperclip"></i>
-  <a href="/blog/posts/cont-or-name/">[paper] Learning from Context or Names? An Empirical Study on Neural Relation Extraction</a>
-  <br>
-  
-  <i class="fas fa-paperclip"></i>
-  <a href="/blog/posts/more-data/">[paper, survey] More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</a>
-  <br>
-  
-  <i class="fas fa-paperclip"></i>
-  <a href="/blog/posts/relabel-noise/">[paper] Relabel the Noise: Joint Extraction of Entities and Relations via Cooperative Multiagents</a>
-  <br>
-  
-</div>
-
-
-  <div class="comments">
-
-
-
-  <div class="comments-item" >
-    
-    
-    
-    <div id="vcomments"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-    <script type="text/javascript">
-      new Valine({
-          el: '#vcomments',
-          highlight: false,
-          lang: "en",
-          appId: "O9aoAtFO2Mk0VrPqbyHMHwah-gzGzoHsz",
-          appKey: "1bF6m0SPiN3sk9TaGxPELdjY",
-          placeholder: "Say Something......",
-          requiredFields: ["nick","mail"],
-          avatar: "robohash",
-          visitor:  true ,
-          recordIP: true
-      });
-    </script>
-    <script>
-      if(window.location.hash){
-          var checkExist = setInterval(function() {
-             if ($(window.location.hash).length) {
-                $('html, body, article').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-                clearInterval(checkExist);
-             }
-          }, 100);
-      }
-    </script>
-  </div>
-
-</div>
-
 </article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="/blog">早柳</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
 
-
-
-  
-  
-  
-</body>
-<div class="foot">
-  
-  
-    &copy; 2017 - 2021 &#183; 
-    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/blog/js/lazyload.min.js"></script>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
-  });
-</script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
 
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
 
 </html>

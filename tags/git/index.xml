@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 早柳</title>
+    <link>/blog/tags/git/</link>
+    <description>Recent content in Git on 早柳</description>
+    <image>
+      <url>/blog</url>
+      <link>/blog</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 04 May 2019 09:09:27 +0000</lastBuildDate><atom:link href="/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>转载 - Commit messages guide</title>
+      <link>/blog/notes/commits-msg-guide/</link>
+      <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
+      
+      <guid>/blog/notes/commits-msg-guide/</guid>
+      <description>&lt;div class=&#34;note warning&#34;&gt;&lt;p&gt;To be translated&lt;/p&gt;&lt;/div&gt;
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
+&lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
+&lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

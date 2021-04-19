@@ -1,135 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.82.0" />
+<html lang="en" dir="auto">
 
-  <title> Pre-train |  imlauzh</title>
-  <meta name="description" content="A website built by Joseph Lau and host by Github pages.">
-  <link rel="stylesheet" href="/blog/css/index.css">
-  <link rel="stylesheet" href="/blog/css/classes.css">
-  <link rel="canonical" href="/blog/tags/pre-train/">
-  <link rel="alternate" type="application/rss+xml" href="/blog/tags/pre-train/index.xml" title="imlauzh">
-  
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-  <link 
-    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" 
-    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" 
-    crossorigin="anonymous">
-  </link>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
-    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
-    crossorigin="anonymous">
-  </script>
-  <script 
-    defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
-    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
-    crossorigin="anonymous" 
-    onload="renderMathInElement(document.body);">
-  </script>
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Pre-train | 早柳</title>
+<meta name="keywords" content="" />
+<meta name="description" content="早柳">
+<meta name="author" content="iiuzh">
+<link rel="canonical" href="/blog/tags/pre-train/" />
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<link rel="alternate" type="application/rss&#43;xml" href="/blog/tags/pre-train/index.xml">
+
+<meta property="og:title" content="Pre-train" />
+<meta property="og:description" content="早柳" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/tags/pre-train/" /><meta property="og:image" content="/blog"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/blog"/>
+
+<meta name="twitter:title" content="Pre-train"/>
+<meta name="twitter:description" content="早柳"/>
+
 </head>
 
-<body>
-  <header class="menus">
-  
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <nav >
-    
-    <a href="/blog/"> Home</a>
-    
-    <a href="/blog/categories/"> Categories</a>
-    
-    <a href="/blog/tags/"> Tags</a>
-    
-    <a href="/blog/about/"> About</a>
-    
-    <a href="/blog/index.xml"> Subscribe</a>
-    
-  </nav>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <nav class="fontawesome">
-    
-    <a href="https://github.com/imlauzh" target="_blank">
-        <i title="GitHub" class="fab fa-github"></i>
-    </a>
-    
-    
-    <a href="/blog/index.xml" target="_blank">
-        <i title="RSS" class="fas fa-rss"></i>
-    </a>
-    
-  </nav>
-  
-  
-  <div class="hidden description">A website built by Joseph Lau and host by Github pages.</div>
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/blog" accesskey="h" title="早柳 (Alt + H)">早柳</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="/blog/posts" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/notes" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/archives" title="Timeline">
+                    <span>Timeline</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/friends/" title="Friends">
+                    <span>Friends</span>
+                </a>
+            </li>
+            <li>
+                <a href="/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="/blog">Home</a>&nbsp;»&nbsp;<a href="/blog/tags/">Tags</a></div>
+  <h1>Pre-train</h1>
 </header>
 
-
-
-
-
-
-<article>
-  <header>
-    <h1>
-    
-      Pre-train
-    
-    </h1>
+<article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="/blog/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>论文笔记 - Pre Trained Models for Natural Language Processing</h2>
   </header>
-
-  <div>
-  
-    <h2>2020</h2>
-    
-    
-
-    <ul class="archive">
-    
-    
-      <li>
-      
-        <time datetime="2020-12-05T15:57:21&#43;08:00">2020-12-05</time>
-      
-        <a href="/blog/posts/pretrain-survey/">[paper, survey] Pre Trained Models for Natural Language Processing</a>
-         
-      </li>
-      
-    </ul>
-    
-  
-  </div>
-  
-  
+  <section class="entry-content">
+    <p>大致框架  基于四个不同的方向给PTM分类 如何将PTM的知识应用到下游任务中去 未来的研究中PTM潜在的几个方向 本文旨在帮助研究者理解、使用和发展各种NLP任务下的PTM  介绍 现在NLP任务主要是应用神经网络模型，一个优势是避免了[[Feature engineering|特征工程]]问题。而非神经网络一般相当依赖离散的手动构建的特征。现如今神经网络都是使用低维度、密集的向量（[[Distributed Representation]]）来隐含地表示表示语言的句法或语法特征。
+相比[Computer Vision]，NLP领域的进展就比较小了，主要是因为大多数监督NLP任务的数据集太小（机器翻译除外）,大数量的模型参数在小数据上训练经常产生过拟合的现象，所以早期的NLP模型大多是窄模型，且只有1-3层。
+预训练模型在大语料库上可以学习到通用的语言表示，而且不用从头开始训练一个新模型。
+第一代预训练模型主要目的是为了更好地学习词嵌入表示。计算效率上有些低，不考虑上下文信息，所以也就不能捕获更深层的特征信息，存在一些问题：polysemous disambiguation, syntactic tructures, semantic roles, anaphora。 主要代表：Skip-Gram [Distributed representations of words and phrases and their compositionality] and GloVe [GloVe: Global vectors for word representation].
+第二代PTMs主要重点在于学习上下文词嵌入 例如：CoVe [Learned in translation: Contextualized word vectors], ELMo [Deep contextualized word representations], [[Radford et al_Improving Language Understanding by Generative Pre-Training|OpenAI GPT]] and [[Devlin et al_2019_BERT|BERT]]。下游NLP任务还是需要这些训练过的编码器来表示上下文的词。
+详细框架  PTMs中的背景知识、常用的符号 PTMs一个简短的总结以及分类 PTMs的扩展 如何应用到下游任务 PTMs的相关资源 NLP任务的集合 现在的挑战以及未来的方向  背景知识 语言表示学习  a good representation should express general-purpose priors that are not task-specific but would be likely to be useful for a learning machine to solve AI-tasks....</p>
+  </section>
+  <footer class="entry-footer">December 5, 2020&nbsp;·&nbsp;4 min&nbsp;·&nbsp;iiuzh</footer>
+  <a class="entry-link" aria-label="post link to 论文笔记 - Pre Trained Models for Natural Language Processing" href="/blog/posts/pretrain-survey/"></a>
 </article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="/blog">早柳</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
 
-
-
-  
-  
-  
-</body>
-<div class="foot">
-  
-  
-    &copy; 2017 - 2021 &#183; 
-    <a href="/">imlauzh</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
-    <a href="#"><i class="fas fa-chevron-up"></i></a>
-  
-
-  
-</div>
-
-<script src="/blog/js/lazyload.min.js"></script>
 <script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
-  });
-</script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
 
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
 
 </html>

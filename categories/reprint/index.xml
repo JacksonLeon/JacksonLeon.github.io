@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reprint on imlauzh</title>
+    <title>Reprint on 早柳</title>
     <link>/blog/categories/reprint/</link>
-    <description>Recent content in Reprint on imlauzh</description>
+    <description>Recent content in Reprint on 早柳</description>
+    <image>
+      <url>/blog</url>
+      <link>/blog</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>[imlauzh](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
     <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/categories/reprint/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[reprint] How to be a Postgraduate student(MIT)</title>
-      <link>/blog/posts/mit-postgrade/</link>
+      <title>转载 - How to be a Postgraduate student(MIT)</title>
+      <link>/blog/notes/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/posts/mit-postgrade/</guid>
+      <guid>/blog/notes/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -38,12 +40,13 @@
     </item>
     
     <item>
-      <title>[reprint] Commit messages guide</title>
-      <link>/blog/posts/commit-messages-guide/</link>
+      <title>转载 - Commit messages guide</title>
+      <link>/blog/notes/commits-msg-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/blog/posts/commit-messages-guide/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <guid>/blog/notes/commits-msg-guide/</guid>
+      <description>&lt;div class=&#34;note warning&#34;&gt;&lt;p&gt;To be translated&lt;/p&gt;&lt;/div&gt;
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
 &lt;p&gt;It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.&lt;/p&gt;</description>
     </item>
