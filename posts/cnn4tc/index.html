@@ -15,10 +15,7 @@
   使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量
   dropout有助于大模型的正则化
   两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合
-  ![[CNN Model architecture with two channels for an example sentence.png]]
-  ![[Summary statistics for the datasets after tokenization of CNN.png]]
-  ![[Results of our CNN models against other methods.png]]
-  ">
+        ">
 <meta name="author" content="iiuzh">
 <link rel="canonical" href="/blog/posts/cnn4tc/" />
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
@@ -45,10 +42,7 @@
   使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量
   dropout有助于大模型的正则化
   两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合
-  ![[CNN Model architecture with two channels for an example sentence.png]]
-  ![[Summary statistics for the datasets after tokenization of CNN.png]]
-  ![[Results of our CNN models against other methods.png]]
-  " />
+        " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/posts/cnn4tc/" />
 <meta property="og:image" content="/blog/posts/cnn4tc/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
@@ -66,10 +60,7 @@
   使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量
   dropout有助于大模型的正则化
   两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合
-  ![[CNN Model architecture with two channels for an example sentence.png]]
-  ![[Summary statistics for the datasets after tokenization of CNN.png]]
-  ![[Results of our CNN models against other methods.png]]
-  "/>
+        "/>
 
 
 <script type="application/ld+json">
@@ -98,12 +89,12 @@
   "@type": "BlogPosting",
   "headline": "论文笔记 - Convolutional Neural Networks for Sentence Classification",
   "name": "论文笔记 - Convolutional Neural Networks for Sentence Classification",
-  "description": "  来源：http://aclweb.org/anthology/D14-1181\n  机构：NYU\n  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩\n  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN+word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。\n  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec+CNN+最大池化+全连接层就可以达到不错的性能\n  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量\n  dropout有助于大模型的正则化\n  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合\n  ![[CNN Model architecture with two channels for an example sentence.png]]\n  ![[Summary statistics for the datasets after tokenization of CNN.png]]\n  ![[Results of our CNN models against other methods.png]]\n  ",
+  "description": "  来源：http://aclweb.org/anthology/D14-1181\n  机构：NYU\n  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩\n  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN+word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。\n  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec+CNN+最大池化+全连接层就可以达到不错的性能\n  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量\n  dropout有助于大模型的正则化\n  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合\n        ",
   "keywords": [
     "NLP"
   ],
-  "articleBody": "  来源：http://aclweb.org/anthology/D14-1181\n  机构：NYU\n  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩\n  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN+word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。\n  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec+CNN+最大池化+全连接层就可以达到不错的性能\n  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量\n  dropout有助于大模型的正则化\n  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合\n  ![[CNN Model architecture with two channels for an example sentence.png]]\n  ![[Summary statistics for the datasets after tokenization of CNN.png]]\n  ![[Results of our CNN models against other methods.png]]\n  ",
-  "wordCount" : "36",
+  "articleBody": "  来源：http://aclweb.org/anthology/D14-1181\n  机构：NYU\n  一个简单的CNN模型使用两个chanel就可以在不同的数据集上去的不错的成绩\n  论文非常清晰的表达出了自己的主要工作内容，从预训练词向量是重要的universal的特征抽取器，CNN常用于CV，而在NLP上也很有用，讲述为什么用CNN+word2vec，到本文使用的简单模型结构以及数学原理，还有重要的模型设置——dropout，再到实验的设置，超参，预训练，模型的变体，实验结果，最后到结果分析，分别讨论模型的重要创新点，multichanel，static表示，以及其他的实验发现。\n  提出了一个简单的CNN模型来做句子分类，仅仅只是word2vec+CNN+最大池化+全连接层就可以达到不错的性能\n  使用了预训练模型Word2vec，实验证明了预训练模型模型对于缺乏大规模训练数据集的任务很有帮助，做了一个很好的初始化，多个卷积核和feature map显示了模型强大的容量\n  dropout有助于大模型的正则化\n  两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合\n        ",
+  "wordCount" : "9",
   "inLanguage": "en",
   "image":"/blog/posts/cnn4tc/%3Cimage%20path/url%3E","datePublished": "2019-05-10T19:39:50+08:00",
   "dateModified": "2019-05-10T19:39:50+08:00",
@@ -288,13 +279,16 @@
 <p><strong>两个Chanel，防止微调层的向量偏差原始的太远，一定程度上防止了过拟合</strong></p>
 </li>
 <li>
-<p>![[CNN Model architecture with two channels for an example sentence.png]]</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/CNN%20Model%20architecture%20with%20two%20channels%20for%20an%20example%20sentence.png" alt=""  />
+</p>
 </li>
 <li>
-<p>![[Summary statistics for the datasets after tokenization of CNN.png]]</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Summary%20statistics%20for%20the%20datasets%20after%20tokenization%20of%20CNN.png" alt=""  />
+</p>
 </li>
 <li>
-<p>![[Results of our CNN models against other methods.png]]</p>
+<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/Results%20of%20our%20CNN%20models%20against%20other%20methods.png" alt=""  />
+</p>
 </li>
 </ul>
 
@@ -348,7 +342,20 @@
     </a>
 </div>
 
-  </footer>
+  </footer><div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://iiuzh.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </article>
     </main>
     <footer class="footer">

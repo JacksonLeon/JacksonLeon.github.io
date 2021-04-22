@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction | 早柳</title>
-<meta name="keywords" content="Relation Extraction, NLP" />
+<meta name="keywords" content="Relation Extraction, NLP, Survey" />
 <meta name="description" content="Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  ">
 <meta name="author" content="iiuzh">
 <link rel="canonical" href="/blog/posts/more-data-re/" />
@@ -67,7 +67,7 @@
   "name": "论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction",
   "description": "Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  ",
   "keywords": [
-    "Relation Extraction", "NLP"
+    "Relation Extraction", "NLP", "Survey"
   ],
   "articleBody": "Introduction  These methods mainly focus on training models with large amounts of human annotations to classify two given entities within one sentence into pre-defined relations. 现实情况下会更加复杂：  高质量人工标注数据代价高 关系抽取数据存在长尾现象 大部分的事实数据是出现在更大的上下文中，多个句子中 预先定义好的关系集合无法覆盖所有实际存在的关系   概括出四个可行的方向  利用更多的数据  [[Distant Supervision|远程监督]] 但是，DS带来标签错误问题，单个句子包含实体对 如何利用远程监督或者其他方法来获取高质量、大规模的数据去训练？   更有效率的学习 更加复杂的上下文  现在的大部分模型都是抽取单句内的关系，两句或更大的上下文还无法很好的利用   开放域 关键挑战  [[Peng et al_2020_Learning from Context or Names|learning from text or names]] datasets towards special interests      Background and ExistingWork  一个完整的关系抽取系统  命名实体识别 实体链接到知识图谱（如果使用KGs的话） 关系分类器     Pattern Extraction Models  自动构建模式规则 更大的数据集 更多模式格式 这部分工作大部分都需要人类专家的检验，也是主要的限制  Statistical Relation Extraction Models  覆盖更多的内容，基本不需要人类干预 feature-based methods  设计词汇的、句法、语义的特征   kernel-based methods  比较关系的表示和句子之间的相似度   Graphical methods  利用无环图来抽象实体、句子、关系之间的依赖，从而判断关系类型   embedding models  把文本编码成低维度的向量表示   challenges  需要人工设计特征和核函数 模型容量    Neural Relation Extraction Models  recursive neural networks，CNN，RNN，GNNs，attention-based [[Word Embedding|词嵌入]]  输入文本的语义表示   [[Positional Embeddings|位置嵌入]]  词语和实体之间的相对距离   预训练模型等  “More” Directions for RE Utilizing More Data  缺少高质量，大规模数据  远程监督和启发式方法可以产生大规模的数据 但是，不可避免带来噪音标签 所以降噪：  从multi-instance中选择最具有信息的 利用额外的上下文信息：KGs，多语言语料 利用复杂的机制和训练策略  强化学习重新打标签[[Chen et al_2020_Relabel the Noise]]     还存在问题：  目前的远程监督方法比较古老2009年，更好的远程监督机制 无监督或者半监督方法   Wiki-Distant  Performing More Efficient Learning  长尾现象，数据分布不均  [[Han et al_2018_FewRel]]FewRel数据集  N way k shot 去学习例子更好的表示   元学习  学习如何去学 参数初始化和优化   Few-shot领域迁移 Few-shot NOTA 评价标准，目前的Fewshot更偏向于拟合句子表示，而不是真正的学习语义  Handling More Complicated Context   需要阅读、记忆、推理 更多形式的上下文信息：对话、文档等等 利用搜索引擎获取外部知识  Orienting More Open Domains  开放信息抽取  从句子中抽取实体和关系    关系发现  从无监督数据中发现 聚类 生成   问题：  关系规范化 N/A类型，并不是每个实体对都存在关系    Other Challenges Learning from Text or Names  实体和上下文都提供了重要的信息   RE Datasets towards Special Interests  针对具体问题的数据集基本没有，例如跨句子的关系抽取数据集 构建结构清晰，设计优秀的细粒度特定问题的数据集是相当有必要的  ",
   "wordCount" : "182",
@@ -461,10 +461,11 @@
     <ul class="post-tags">
       <li><a href="/blog/tags/relation-extraction/">Relation Extraction</a></li>
       <li><a href="/blog/tags/nlp/">NLP</a></li>
+      <li><a href="/blog/tags/survey/">Survey</a></li>
     </ul>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 论文笔记 -  More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20%20More%20Data%2c%20More%20Relations%2c%20More%20Context%20and%20More%20Openness%3a%20A%20Review%20and%20Outlook%20for%20Relation%20Extraction&amp;url=%2fblog%2fposts%2fmore-data-re%2f&amp;hashtags=RelationExtraction%2cNLP">
+        href="https://twitter.com/intent/tweet/?text=%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0%20-%20%20More%20Data%2c%20More%20Relations%2c%20More%20Context%20and%20More%20Openness%3a%20A%20Review%20and%20Outlook%20for%20Relation%20Extraction&amp;url=%2fblog%2fposts%2fmore-data-re%2f&amp;hashtags=RelationExtraction%2cNLP%2cSurvey">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
@@ -507,7 +508,20 @@
     </a>
 </div>
 
-  </footer>
+  </footer><div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://iiuzh.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </article>
     </main>
     <footer class="footer">

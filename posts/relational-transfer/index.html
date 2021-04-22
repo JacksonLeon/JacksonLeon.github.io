@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data | 早柳</title>
 <meta name="keywords" content="Relation Extraction, NLP" />
-<meta name="description" content="论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data - 早柳">
+<meta name="description" content="Summary  来源： https://www.aclweb.org/anthology/D19-1021, EMNLP | IJCNLP 机构： 清华大学 描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计    摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.">
 <meta name="author" content="iiuzh">
 <link rel="canonical" href="/blog/posts/relational-transfer/" />
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
@@ -26,7 +26,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 <meta property="og:title" content="论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Summary  来源： https://www.aclweb.org/anthology/D19-1021, EMNLP | IJCNLP 机构： 清华大学 描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计    摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/posts/relational-transfer/" />
 <meta property="og:image" content="/blog/posts/relational-transfer/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
@@ -36,7 +36,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="/blog/posts/relational-transfer/%3Cimage%20path/url%3E" />
 <meta name="twitter:title" content="论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Summary  来源： https://www.aclweb.org/anthology/D19-1021, EMNLP | IJCNLP 机构： 清华大学 描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计    摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task."/>
 
 
 <script type="application/ld+json">
@@ -65,12 +65,12 @@
   "@type": "BlogPosting",
   "headline": "论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data",
   "name": "论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data",
-  "description": "",
+  "description": "Summary  来源： https://www.aclweb.org/anthology/D19-1021, EMNLP | IJCNLP 机构： 清华大学 描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计    摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”\u0026ndash;“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.",
   "keywords": [
     "Relation Extraction", "NLP"
   ],
-  "articleBody": "",
-  "wordCount" : "0",
+  "articleBody": "Summary  来源： https://www.aclweb.org/anthology/D19-1021, EMNLP | IJCNLP 机构： 清华大学 描述论文作者旨在实现或已经实现的研究目标  学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取   如果论文中提出了新的方法/技术，那么新方法的关键要素是什么  关系孪生网络 从带标签的数据中学习到关系知识 关系知识转移的方法 [[Metric Learning]]  网络提取的embedding 距离函数     这篇论文中哪些内容对你来说是有用的  不同的损失函数 度量学习应用于开放式关系抽取 不同的聚类方法   你还想要继续阅读哪些参考内容  [[Metric Learning]] 更适合开放式关系抽取的聚类方法，例如本文使用的Louvain 损失函数设计    摘要  问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实 提出：利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系 实验：significant improvements as compared with other state-of-the-art methods  intro  关系抽取  有监督学习效率高，但是数据构建消耗时间和精力 半监督方法：bootstrapping，主动学习，label propagation 远程监督方法：假设性强，知识库约束 很难覆盖开放文本中的相当多样化的新关系   开放式关系抽取  目的：从开放域文本中抽取出未预先定义过的关系事实 Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐 Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型 本文方法：  利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，  RSN与有监督、半监督、远程监督方法相结合 数据集：FewRel、FewRel-distant，分割成seen和unseen两部分 “RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”–“To the best of our knowledge, RSN is the first model to consider knowledge transfer in clustering-based OpenRE task.”      Related work  传统关系抽取其实是分类任务，讲句子中的关系事实分类到预先定义好的关系类型  Zeng 2014利用CNN编码器，位置嵌入，句子表示 Lin 2016利用instance-level attention提高了远程监督数据上的性能 无法解决一直涌现的开放关系-开放式关系抽取   开放式关系抽取  tagging-based  序列标注问题 从句子中抽取关系短语-关系短语太具体，下游任务不易于使用 无监督(banko)和有监督(jia 2018,cui 2018,stanovsky 2018)   clustering-based  利用外部nlp工具抽取句子特征，然后进行聚类(lin 2001,yao,2011,2012) Marcheggiani (2016),无监督数据，离散变分自动编码器     few-shot learning  只有很少的标记样本，关系分类 (Koch et al., 2015)使用卷积孪生神经网络做图片度量学习，从这里获得启发   半监督聚类  给目标类别的实例种子，Bair, 2013;Hongtao Lin, 2019 该方法中的半监督RSN不适用种子，只使用有监督数据    方法  关系相似度计算  学习预测两个句子是否包含相同的关系 CNN利用word和pos embedding输出关系向量v 计算绝对距离并映射到[0,1] 交叉熵损失，RSN输出值p作为两个句子包含相同关系的概率值  半监督RSN  模型看到更多种类的数据对于性能是有益处的，所以半监督和远程监督是有必要的 聚类假设，远离高密度区域(Chapelle and Zien, 2005) 损失函数  条件熵损失，远离决策边界，也就是相似概率等于0.5 虚拟对抗损失，搜索数据域，惩罚距离预测变化最大的      远程监督RSN   去除了VAL，因为会放大远程监督中的错误标签 不使用其他降噪方法  噪音对于反例来说影响很小 在关系密度高的区域进行聚类       关系聚类  HAC(hierarchical agglomerative clustering)  需要精确的聚类数目-需要实验   Louvain  基于图的聚类算法 不需要预先知道聚类数目 二分近似，通过优化社区模块性来寻找合适的聚类数目      实验  数据集  FewRel (Han et al., 2018)  每个句子都包含一个独有的实体对，防止记忆实体和关系 64+16关系，1600测试集   FewRel-distant  323549+60581自动标注和无标注数据   NYT-FB (Marcheggiani and Titov, 2016)  缺点：远程监督，实体对出现多次     实验结果分析   RW-HAC,SN-HAC，孪生网络更能捕捉句子关系信息，分布式特征表示，优化信息聚合 Louvain性能优于HAC，没有使用额外的约束，关系聚类可能有奇怪的形状，违背了HAC的假设 VAT可能放大了噪音数据    ",
+  "wordCount" : "160",
   "inLanguage": "en",
   "image":"/blog/posts/relational-transfer/%3Cimage%20path/url%3E","datePublished": "2020-11-07T15:58:04+08:00",
   "dateModified": "2020-11-07T15:58:04+08:00",
@@ -217,19 +217,231 @@
     <h1 class="post-title">
       论文笔记 - Open Relation Extraction: Relational Knowledge Transfer from Supervised Data to Unsupervised Data
     </h1>
-    <div class="post-meta">November 7, 2020&nbsp;·&nbsp;0 min&nbsp;·&nbsp;iiuzh
+    <div class="post-meta">November 7, 2020&nbsp;·&nbsp;1 min&nbsp;·&nbsp;iiuzh
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <div class="details">Table of Contents</div>
         </summary>
-        <div class="inner">
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#%e6%91%98%e8%a6%81" aria-label="摘要">摘要</a></li>
+                <li>
+                    <a href="#intro" aria-label="intro">intro</a></li>
+                <li>
+                    <a href="#related-work" aria-label="Related work">Related work</a></li>
+                <li>
+                    <a href="#%e6%96%b9%e6%b3%95" aria-label="方法">方法</a></li>
+                <li>
+                    <a href="#%e5%ae%9e%e9%aa%8c" aria-label="实验">实验</a>
+                </li>
+            </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content">
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<ul>
+<li>来源： <a href="https://www.aclweb.org/anthology/D19-1021,">https://www.aclweb.org/anthology/D19-1021,</a> EMNLP | IJCNLP</li>
+<li>机构： 清华大学</li>
+<li><strong>描述论文作者旨在实现或已经实现的研究目标</strong>
+<ul>
+<li>学习带标签数据中的关系相似度度量方式，应用于无标注数据，利用关系知识转移实现开放式关系抽取</li>
+</ul>
+</li>
+<li><strong>如果论文中提出了新的方法/技术，那么新方法的关键要素是什么</strong>
+<ul>
+<li>关系孪生网络</li>
+<li>从带标签的数据中学习到关系知识</li>
+<li>关系知识转移的方法</li>
+<li>[[Metric Learning]]
+<ul>
+<li>网络提取的embedding</li>
+<li>距离函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>这篇论文中哪些内容对你来说是有用的</strong>
+<ul>
+<li>不同的损失函数</li>
+<li>度量学习应用于开放式关系抽取</li>
+<li>不同的聚类方法</li>
+</ul>
+</li>
+<li><strong>你还想要继续阅读哪些参考内容</strong>
+<ul>
+<li>[[Metric Learning]]</li>
+<li>更适合开放式关系抽取的聚类方法，例如本文使用的Louvain</li>
+<li>损失函数设计</li>
+</ul>
+</li>
+</ul>
+<h2 id="摘要">摘要<a hidden class="anchor" aria-hidden="true" href="#摘要">#</a></h2>
+<ul>
+<li>问题：大部分开放式关系抽取使用无监督范式，没有利用知识库和标注数据中的关系事实</li>
+<li>提出：<strong>利用关系孪生网络学习有监督数据中的关系相似性度量方式，从而迁移关系知识，识别无监督数据中的新关系</strong></li>
+<li>实验：significant improvements as compared with other state-of-the-art methods</li>
+</ul>
+<h2 id="intro">intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<ul>
+<li>关系抽取
+<ul>
+<li>有监督学习效率高，但是数据构建消耗时间和精力</li>
+<li>半监督方法：bootstrapping，主动学习，label propagation</li>
+<li>远程监督方法：假设性强，知识库约束</li>
+<li><strong>很难覆盖开放文本中的相当多样化的新关系</strong></li>
+</ul>
+</li>
+<li>开放式关系抽取
+<ul>
+<li>目的：从开放域文本中抽取出未预先定义过的关系事实</li>
+<li>Banko 2018年直接从句子中抽取短语作为新的关系类型，但是一般不能精确表达关系，包含相同关系的关系短语很难对齐</li>
+<li>Yao 2011年使用聚类做开放式关系抽取，但是大部分都是无监督，不能有效选择有意义的关系类型</li>
+<li>本文方法：
+<ul>
+<li>利用高质量的关系抽取的有监督数据，学习关系相似性度量方式，</li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/A%20flowchart%20of%20our%20framework%20in%20openre%20by%20wu%202019.png" alt=""  />
+</li>
+<li>RSN与有监督、半监督、远程监督方法相结合</li>
+<li>数据集：FewRel、FewRel-distant，分割成seen和unseen两部分</li>
+<li>“RSN是第一次在聚类开放式关系抽取任务中提出知识迁移的概念”&ndash;“To the best of our knowledge, RSN is <strong>the first model to consider knowledge transfer in clustering-based OpenRE task</strong>.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="related-work">Related work<a hidden class="anchor" aria-hidden="true" href="#related-work">#</a></h2>
+<ul>
+<li>传统关系抽取其实是分类任务，讲句子中的关系事实分类到预先定义好的关系类型
+<ul>
+<li>Zeng 2014利用CNN编码器，位置嵌入，句子表示</li>
+<li>Lin 2016利用instance-level attention提高了远程监督数据上的性能</li>
+<li>无法解决一直涌现的开放关系-&gt;开放式关系抽取</li>
+</ul>
+</li>
+<li>开放式关系抽取
+<ul>
+<li>tagging-based
+<ul>
+<li>序列标注问题</li>
+<li>从句子中抽取关系短语-&gt;<strong>关系短语太具体</strong>，下游任务不易于使用</li>
+<li>无监督(banko)和有监督(jia 2018,cui 2018,stanovsky 2018)</li>
+</ul>
+</li>
+<li>clustering-based
+<ul>
+<li>利用外部nlp工具抽取句子特征，然后进行聚类(lin 2001,yao,2011,2012)</li>
+<li>Marcheggiani (2016),无监督数据，离散变分自动编码器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>few-shot learning
+<ul>
+<li>只有很少的标记样本，关系分类</li>
+<li>(Koch et al., 2015)使用卷积孪生神经网络做图片度量学习，从这里获得启发</li>
+</ul>
+</li>
+<li>半监督聚类
+<ul>
+<li>给目标类别的实例种子，Bair, 2013;Hongtao Lin, 2019</li>
+<li>该方法中的半监督RSN不适用种子，只使用有监督数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法">方法<a hidden class="anchor" aria-hidden="true" href="#方法">#</a></h2>
+<ul>
+<li>关系相似度计算
+<ul>
+<li>学习预测两个句子是否包含相同的关系</li>
+<li>CNN利用word和pos embedding输出关系向量v</li>
+<li>计算绝对距离并映射到<code>[0,1]</code></li>
+<li>交叉熵损失，RSN输出值p作为两个句子包含相同关系的概率值</li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/binary%20cross%20entropy%20loss%20for%20RSN.png" alt=""  />
+</li>
+<li>半监督RSN
+<ul>
+<li><strong>模型看到更多种类的数据对于性能是有益处的，所以半监督和远程监督是有必要的</strong></li>
+<li>聚类假设，远离高密度区域(Chapelle and Zien, 2005)</li>
+<li>损失函数
+<ul>
+<li>条件熵损失，远离决策边界，也就是相似概率等于0.5</li>
+<li>虚拟对抗损失，搜索数据域，惩罚距离预测变化最大的</li>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/semi-supervised%20RSN%20loss%20func.png" alt=""  />
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>远程监督RSN
+<ul>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/distant-supervised%20RSN%20loss%20func.png" alt=""  />
+</li>
+<li>去除了VAL，因为会放大远程监督中的错误标签</li>
+<li>不使用其他降噪方法
+<ul>
+<li>噪音对于反例来说影响很小</li>
+<li>在关系密度高的区域进行聚类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>关系聚类
+<ul>
+<li>HAC(hierarchical agglomerative clustering)
+<ul>
+<li>需要精确的聚类数目-&gt;<strong>需要实验</strong></li>
+</ul>
+</li>
+<li>Louvain
+<ul>
+<li>基于图的聚类算法</li>
+<li>不需要预先知道聚类数目</li>
+<li>二分近似，通过优化社区模块性来寻找合适的聚类数目</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="实验">实验<a hidden class="anchor" aria-hidden="true" href="#实验">#</a></h2>
+<ul>
+<li>数据集
+<ul>
+<li>FewRel (Han et al., 2018)
+<ul>
+<li>每个句子都包含一个独有的实体对，防止记忆实体和关系</li>
+<li>64+16关系，1600测试集</li>
+</ul>
+</li>
+<li>FewRel-distant
+<ul>
+<li>323549+60581自动标注和无标注数据</li>
+</ul>
+</li>
+<li><del>NYT-FB</del> (Marcheggiani and Titov, 2016)
+<ul>
+<li>缺点：远程监督，实体对出现多次</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实验结果分析
+<ul>
+<li><img loading="lazy" src="https://cdn.jsdelivr.net/gh/imlauzh/img_host@master/results%20in%20different%20variants%20of%20RSN%20and%20baselines.png" alt=""  />
+</li>
+<li>RW-HAC,SN-HAC，孪生网络更能捕捉句子关系信息，分布式特征表示，优化信息聚合</li>
+<li>Louvain性能优于HAC，没有使用额外的约束，关系聚类可能有奇怪的形状，违背了HAC的假设</li>
+<li>VAT可能放大了噪音数据</li>
+</ul>
+</li>
+</ul>
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
@@ -281,7 +493,20 @@
     </a>
 </div>
 
-  </footer>
+  </footer><div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://iiuzh.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </article>
     </main>
     <footer class="footer">
