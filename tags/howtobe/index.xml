@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HowToBe on 早柳</title>
-    <link>/blog/tags/howtobe/</link>
+    <link>/tags/howtobe/</link>
     <description>Recent content in HowToBe on 早柳</description>
     <image>
-      <url>/blog</url>
-      <link>/blog</link>
+      <url>/</url>
+      <link>/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/tags/howtobe/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/tags/howtobe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>转载 - How to be a Postgraduate student(MIT)</title>
-      <link>/blog/notes/mit-postgrade/</link>
+      <link>/notes/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/notes/mit-postgrade/</guid>
+      <guid>/notes/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;

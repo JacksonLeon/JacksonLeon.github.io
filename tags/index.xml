@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 早柳</title>
-    <link>/blog/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on 早柳</description>
     <image>
-      <url>/blog</url>
-      <link>/blog</link>
+      <url>/</url>
+      <link>/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NLP</title>
-      <link>/blog/tags/nlp/</link>
+      <link>/tags/nlp/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
-      <guid>/blog/tags/nlp/</guid>
+      <guid>/tags/nlp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Relation Extraction</title>
-      <link>/blog/tags/relation-extraction/</link>
+      <link>/tags/relation-extraction/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
-      <guid>/blog/tags/relation-extraction/</guid>
+      <guid>/tags/relation-extraction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pre-train</title>
-      <link>/blog/tags/pre-train/</link>
+      <link>/tags/pre-train/</link>
       <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
-      <guid>/blog/tags/pre-train/</guid>
+      <guid>/tags/pre-train/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Survey</title>
-      <link>/blog/tags/survey/</link>
+      <link>/tags/survey/</link>
       <pubDate>Sat, 05 Dec 2020 15:57:21 +0800</pubDate>
       
-      <guid>/blog/tags/survey/</guid>
+      <guid>/tags/survey/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HowToBe</title>
-      <link>/blog/tags/howtobe/</link>
+      <link>/tags/howtobe/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/tags/howtobe/</guid>
+      <guid>/tags/howtobe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>/blog/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/blog/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     

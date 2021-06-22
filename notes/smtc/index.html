@@ -13,22 +13,33 @@ Python 练习册，每天一个小程序
 Fromshow me the code
 ">
 <meta name="author" content="iiuzh">
-<link rel="canonical" href="/blog/notes/smtc/" />
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
-<link rel="icon" href="/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="/blog/safari-pinned-tab.svg">
+<link rel="canonical" href="/notes/smtc/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3699c12b108feefc51f5f989ce707ab2dc92adda6afa4880cccbe997e6867d9f.css" integrity="sha256-NpnBKxCP7vxR9fmJznB6stySrdpq&#43;kiAzMvpl&#43;aGfZ8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GJ9J8B5K8J"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GJ9J8B5K8J', { 'anonymize_ip': false });
+}
+</script>
 <meta property="og:title" content="Show Me The Code" />
 <meta property="og:description" content="Description
 
@@ -36,13 +47,13 @@ Python 练习册，每天一个小程序
 Fromshow me the code
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/notes/smtc/" />
-<meta property="og:image" content="/blog/notes/smtc/%3Cimage%20path/url%3E" /><meta property="article:section" content="notes" />
+<meta property="og:url" content="/notes/smtc/" />
+<meta property="og:image" content="/notes/smtc/%3Cimage%20path/url%3E" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2019-01-29T20:37:25&#43;00:00" />
 <meta property="article:modified_time" content="2019-01-29T20:37:25&#43;00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/blog/notes/smtc/%3Cimage%20path/url%3E" />
+<meta name="twitter:image" content="/notes/smtc/%3Cimage%20path/url%3E" />
 <meta name="twitter:title" content="Show Me The Code"/>
 <meta name="twitter:description" content="Description
 
@@ -55,18 +66,18 @@ Fromshow me the code
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Notes",
-      "item": "/blog/notes/"
-    }, 
+      "item": "/notes/"
+    }
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  1 ,
       "name": "Show Me The Code",
-      "item": "/blog/notes/smtc/"
+      "item": "/notes/smtc/"
     }
   ]
 }
@@ -84,7 +95,7 @@ Fromshow me the code
   "articleBody": "Description  Python 练习册，每天一个小程序\nFromshow me the code\n  Talk is cheap. Show me the code. –Linus Torvalds\n 第 0000 题： 将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果\n解答\n第 0001 题： 做为 Apple Store App 独立开发者，你要搞限时促销，为你的应用生成激活码（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？\n  解答\nimport mysql.connector import random import string import mysql.connector forSelect = string.ascii_letters + string.digits def gen_code(count, length): for x in range(count): Re = \"\" for y in range(length): Re += random.choice(forSelect) yield Re def save_code(): conn = mysql.connector.connect(user='root', password='l', database='test') cursor = conn.cursor() codes = gen_code(200, 20) for code in codes: cursor.execute(\"INSERT INTO `code`(`code`) VALUES(%s)\", params=[code]) conn.commit() cursor.close() if __name__ == '__main__': save_code()   第 0002 题: 将 0001 题生成的 200 个激活码（或者优惠券）保存到 MySQL 关系型数据库中。\n  解答\nimport mysql.connector import random import string import mysql.connector forSelect = string.ascii_letters + string.digits def gen_code(count, length): for x in range(count): Re = \"\" for y in range(length): Re += random.choice(forSelect) yield Re def save_code(): conn = mysql.connector.connect(user='root', password='l', database='test') cursor = conn.cursor() codes = gen_code(200, 20) for code in codes: cursor.execute(\"INSERT INTO `code`(`code`) VALUES(%s)\", params=[code]) conn.commit() cursor.close() if __name__ == '__main__': save_code()   第 0003 题： 将 0001 题生成的 200 个激活码（或者优惠券）保存到 Redis 非关系型数据库中。\n  解答\nimport redis import random import string forSelect = string.ascii_letters + string.digits def gen_code(count, length): for x in range(count): Re = \"\" for y in range(length): Re += random.choice(forSelect) yield Re def save_code(): r = redis.Redis(host='127.0.0.1', port='6379', password='linyii') codes = gen_code(200, 20) p = r.pipeline() for code in codes: p.sadd('code', code) p.execute() return r.scard('code') if __name__ == '__main__': save_code()   第 0004 题： 任一个英文的纯文本文件，统计其中的单词出现的个数。\n  解答\nfrom collections import Counter Text = \"\"\" bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. \"\"\" # clean for char in '-.,\\n': Text = Text.replace(char, ' ') Text = Text.lower() word_list = Text.split() # solution 1 res = Counter(word_list).most_common() # solution 2 # 使用字典，key-value，单词与个数一一对应 d = {} for word in word_list: # 找到个数然后+1，没有就默认0然后+1 # dict.get(key, default = None) # key − This is the Key to be searched in the dictionary. # default − This is the Value to be returned in case key does not exist. # This method return a value for the given key. If key is not available, then returns default value None. d[word] = d.get(word, 0)+1 # 使用列表为了排序 word_freq = [] for key, value in d.items(): word_freq.append((value, key)) word_freq.sort(reverse=True) # solution 3 # 不使用get()方法 d = {} for word in word_list: if word not in d: d[word] = 0 d[word] += 1 word_freq = [] for key, value in d.items(): word_freq.append((value, key)) word_freq.sort(reverse=True)   第 0005 题： 你有一个目录，装了很多照片，把它们的尺寸变成都不大于 iPhone5 分辨率的大小。\n  解答\nfrom PIL import Image import os path='/Users/lau/Pictures' resPath='/Users/lau/Desktop' if not os.path.isdir(resPath): os.mkdir(resPath) for fileName in os.listdir(path): # mac系统会出现.DS_Store文件，会报错，所以简单的办法就是 # 去这个文件夹删除隐藏文件 picPath=os.path.join(path,fileName) print(picPath) with Image.open(picPath) as im: im.thumbnail((1366,640)) im.save(resPath+'/f_'+fileName,'jpeg')   第 0006 题： 你有一个目录，放了你一个月的日记，都是 txt，为了避免分词的问题，假设内容都是英文，请统计出你认为每篇日记最重要的词。\n解答\n第 0007 题： 有个目录，里面是你自己写过的程序，统计一下你写过多少行代码。包括空行和注释，但是要分别列出来。\n解答\n第 0008 题： 一个HTML文件，找出里面的正文。\n  解答\n# -*- coding: utf-8 -*- from bs4 import BeautifulSoup import os def html_body(filesPath): if not os.path.isdir(filesPath): return filesList = os.listdir(filesPath) for file in filesList: filePath = os.path.join(filesPath, file) if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == '.html': with open(filePath) as fileHtml: text = BeautifulSoup(fileHtml, 'lxml') content = text.getText().strip('\\n') print(content) if __name__ == \"__main__\": html_body('./SMTC/source/0008')   第 0009 题： 一个HTML文件，找出里面的链接。\n  解答\n# -*- coding: utf-8 -*- from bs4 import BeautifulSoup import os def html_link(filesPath): if not os.path.isdir(filesPath): return filesList = os.listdir(filesPath) links = [] for file in filesList: filePath = os.path.join(filesPath, file) if os.path.isfile(filePath) and os.path.splitext(filePath)[1] == '.html': with open(filePath) as fileHtml: text = BeautifulSoup(fileHtml, 'lxml') # 找到a标签 for link in text.find_all('a'): # 获取链接 links.append(link.get('href')) print(links) if __name__ == \"__main__\": html_link('./SMTC/source/0008')   第 0010 题： 使用 Python 生成类似于下图中的字母验证码图片\n  阅读资料\n  解答\n# -*- coding: utf-8 -*- # 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片 from PIL import Image, ImageDraw, ImageFont, ImageFilter import random def randomLetter(): # 大写字母65-90 # 数字转字符 return chr(random.randint(65, 90)) def randomColor(argc): if argc == 1: return (random.randint(64, 255), random.randint(64, 255), random.randint(64, 255)) else: return (random.randint(0, 100), random.randint(0, 100), random.randint(0, 100)) def gen_codepic(savePath): width = 60*4 height = 60 img = Image.new('RGB', (width, height), (255, 255, 255)) # 字体 font = ImageFont.truetype( '/Library/Fonts/Songti.ttc', 36) imgDraw = ImageDraw.Draw(img) for x in range(width): for y in range(height): imgDraw.point((x, y), fill=randomColor(1)) for index in range(4): imgDraw.text((60*index+20, 5), randomLetter(), font=font, fill=randomColor(2)) img = img.filter(ImageFilter.BLUR) img.save(savePath+'codepic.jpg', 'JPEG') if __name__ == \"__main__\": gen_codepic('./SMTC/source/0010/')   第 0011 题： 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。\n北京\r程序员\r公务员\r领导\r牛比\r牛逼\r你娘\r你妈\rlove\rsex\rjiangge\r  解答\n# -*- coding: utf-8 -*- # 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。 import os def Freedom(filesPath): if not os.path.isdir(filesPath): return fileList=os.listdir(filesPath) for file in fileList: filePath=os.path.join(filesPath,file) if os.path.isfile(filePath) and os.path.split(filePath)[1]=='filtered_words.txt': with open(filePath) as text: text=text.read().split('\\n') getInput=input('input:') if getInput in text: print('Freedom') else: print('Human Rights') if __name__ == \"__main__\": Freedom('./SMTC/source/0011')   第 0012 题： 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。\n  解答\n# -*- coding: utf-8 -*- # 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。 import os def Freedom(filePath): word_filter = set() with open(filePath+'filtered_words.txt') as f: for word in f.readlines(): word_filter.add(word.strip()) while True: s = input('input:') if s == 'exit': return for w in word_filter: if w in s: s = s.replace(w, '*'*len(w)) print(s) if __name__ == \"__main__\": Freedom('./SMTC/source/0011/')   第 0013 题： 用 Python 写一个爬图片的程序，爬 这个链接里的日本妹子图片 :-)\n  参考代码\n  解答\n# -*- coding: utf-8 -*- # 用 Python 写一个爬图片的程序，爬这个链接里的日本妹子图片(http://tieba.baidu.com/p/2166231880) :-) import requests import urllib.request from bs4 import BeautifulSoup import os def spy_pic(url, savePath, header): response = requests.get(url, headers=header) content = BeautifulSoup(response.content, 'lxml') img_tag = content.find_all('img') img_link = [] for i in img_tag: if i.get('pic_type') == '0': img_link.append(i.get('src')) index = 0 if not os.path.exists(savePath): os.mkdir(savePath) for link in img_link: pic_html = requests.get(link) picPath = savePath+str(index+1)+'.'+link.split('.')[-1] with open(picPath, 'wb') as pic: pic.write(pic_html.content) pic.flush pic.close() print('第{0}张图片抓取完成'.format(index+1)) index += 1 print('抓取完成！') if __name__ == \"__main__\": reqHeader = { 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7', 'Cookie': 'TIEBA_USERTYPE=7b00a4223cb9934b1b9270ad; wise_device=0; bdshare_firstime=1549795215089; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1549795215; Hm_lvt_287705c8d9e2073d13275b18dbd746dc=1549795216; Hm_lpvt_98b9d8c2fd6608d564bf2ac2ae642948=1549847500; Hm_lpvt_287705c8d9e2073d13275b18dbd746dc=1549847500; BAIDUID=48130036CAF55267908C2180103698DC:FG=1; cflag=13%3A3; BDUSS=HN6WUx-aGVQMGlNR0NlcEhCd0pjUkJVQXpBbWFxY3hYTjZNfmozdjV6RFlkb2hjQVFBQUFBJCQAAAAAAAAAAAEAAAAZhpwmbmljZWxpdXppAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANjpYFzY6WBcO; TIEBAUID=35f770fc8e0ac33633210842; STOKEN=42c9d0d4dc2e420802cf269968ec38e4101a2a5d7f095a603f36b0261f413597', 'Host': 'tieba.baidu.com', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36' } spy_pic('http://tieba.baidu.com/p/2166231880', './SMTC/source/0013/', reqHeader )   效果展示\n  参考\n【Python爬虫系列】使用requests爬取图片\n小说爬虫\n  第 0014 题： 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示：\n{\r\"1\":[\"张三\",150,120,100],\r\"2\":[\"李四\",90,99,95],\r\"3\":[\"王五\",60,66,68]\r}\r请将上述内容写到 student.xls 文件中，如下图所示：\n  阅读资料 腾讯游戏开发 XML 和 Excel 内容相互转换\n  解答\n# -*- coding: utf-8 -*- # 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示 from xlwt import Workbook import json def xml2exl(filePath): with open(filePath+'student.txt', 'r') as dic: content = json.load(dic) workbook = Workbook() sheet = workbook.add_sheet('student', cell_overwrite_ok=True) # 输出元素序号 for index, (key, values) in enumerate(content.items()): # sheet.write(row, col, *args) # 输入第一列数据 sheet.write(index, 0, key) for i, value in enumerate(values): # 输入每一行第二列开始的数据 sheet.write(index, i+1, value) workbook.save(filePath+'student.xls') if __name__ == \"__main__\": xml2exl('./SMTC/source/0014/')   第 0015 题：\n{\r\"1\" : \"上海\",\r\"2\" : \"北京\",\r\"3\" : \"成都\"\r}\r请将上述内容写到 city.xls 文件中，如下图所示：\n  解答\n# -*- coding: utf-8 -*- # 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示： from xlwt import Workbook import json def xml2exl(filePath): with open(filePath+'city.txt', 'r') as f: content = json.load(f) workBook = Workbook() sheet = workBook.add_sheet('city', cell_overwrite_ok=True) # enumerate可以分开词语 for index, (key, value) in enumerate(content.items()): sheet.write(index, 0, key) # 与上一题不同的是 # 这题中的value只有一列值 # 不需要使用enumerate sheet.write(index, 1, value) workBook.save(filePath+'city.xls') if __name__ == \"__main__\": xml2exl('./SMTC/source/0015/')   第 0016 题： 纯文本文件 numbers.txt, 里面的内容（包括方括号）如下所示：\n[\r[1, 82, 65535], [20, 90, 13],\r[26, 809, 1024]\r]\r请将上述内容写到 numbers.xls 文件中，如下图所示：\n  解答\n# -*- coding: utf-8 -*- # 纯文本文件 numbers.txt, 里面的内容（包括方括号） from xlwt import Workbook import json def json2xls(filePath): with open(filePath+'numbers.txt', 'r') as f: content = json.load(f) workbook = Workbook() sheet = workbook.add_sheet('numbers', cell_overwrite_ok=True) for row, list in enumerate(content): for col, value in enumerate(list): sheet.write(row, col, value) workbook.save(filePath+'numbers.xls') if __name__ == \"__main__\": json2xls('./SMTC/source/0016/')   第 0017 题： 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中，如\n下所示：\n\r\r{\r\"1\" : [\"张三\", 150, 120, 100],\r\"2\" : [\"李四\", 90, 99, 95],\r\"3\" : [\"王五\", 60, 66, 68]\r}\r\r\r  解答\n# -*- coding: utf-8 -*- # 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中 from xml.dom.minidom import Document import xlrd def xls2xml(filePath): doc = Document() root = doc.createElement('root') doc.appendChild(root) students = doc.createElement('students') root.appendChild(students) comment = doc.createComment('学生信息表\\n\\t\\t\"id\" : [名字, 数学, 语文, 英文]\\n\\t\\t') students.appendChild(comment) content = xlrd.open_workbook(filePath+'student.xls') sheet = content.sheet_by_index(0) nrows = sheet.nrows sheet_content = dict() for i in range(nrows): sheet_content[str(sheet.cell(i, 0).value)] = sheet.row_values(i)[1:] students.appendChild(doc.createTextNode(str(sheet_content))) with open(filePath+'student.xml', 'w') as student_xml: student_xml.write(doc.toprettyxml()) if __name__ == \"__main__\": xls2xml('./SMTC/source/0014/')   第 0018 题： 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中，如下 所示：\n\r\r{\r\"1\" : \"上海\",\r\"2\" : \"北京\",\r\"3\" : \"成都\"\r}\r\r\r  解答\n# -*- coding: utf-8 -*- # 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中 from xml.dom.minidom import Document import xlrd def xls2xml(filePath): doc = Document() root = doc.createElement('root') doc.appendChild(root) cities = doc.createElement('cities') root.appendChild(cities) comment = doc.createComment('\\n\\t\\t城市信息\\n\\t\\t') cities.appendChild(comment) content = xlrd.open_workbook(filePath+'city.xls', 'r') sheet = content.sheet_by_index(0) nrows = sheet.nrows sheet_content = dict() for i in range(nrows): sheet_content[sheet.cell(i, 0).value] = sheet.row_values(i)[1:] cities.appendChild(doc.createTextNode(str(sheet_content))) with open(filePath+'city.xml', 'w') as f: f.write(doc.toprettyxml()) if __name__ == \"__main__\": xls2xml('./SMTC/source/0015/')   第 0019 题： 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中，如下\n所示：\n\r\r[\r[1, 82, 65535],\r[20, 90, 13],\r[26, 809, 1024]\r]\r\r\r  解答\n# -*- coding: utf-8 -*- # 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中 from xml.dom.minidom import Document import xlrd def xls2xml(filePath): doc = Document() root = doc.createElement('root') doc.appendChild(root) numbers = doc.createElement('numbers') root.appendChild(numbers) numbers.appendChild(doc.createComment('\\n\\t\\t数字信息\\n\\t\\t')) content = xlrd.open_workbook(filePath+'numbers.xls') sheet = content.sheet_by_index(0) nrows = sheet.nrows sheet_list = list() for i in range(nrows): sheet_list.append(sheet.row_values(i)) numbers.appendChild(doc.createTextNode(str(sheet_list))) with open(filePath+'numbers.xml', 'w') as f: f.write(doc.toprettyxml()) if __name__ == \"__main__\": xls2xml('./SMTC/source/0016/')   第 0020 题： 登陆中国联通网上营业厅 后选择「自助服务」 – 「详单查询」，然后选择你要查询的时间段，点击「查询」按钮，查询结果页面的最下方，点击「导出」，就会生成类似于 2014年10月01日～2014年10月31日通话详单.xls 文件。写代码，对每月通话时间做个统计。\n  解答\n# -*- coding: utf-8 -*- import time import re import xlrd def str2sec(str): sec = 0 time_re = re.compile(r'(\\d+)(\\D+)') time_list = time_re.findall(str) for time_item in time_list: if time_item[1] == '秒': sec += int(time_item[0]) elif time_item[1] == '分': sec += int(time_item[0]) * 60 elif time_item[1] == '小时': sec += int(time_item[0]) * 3600 return sec def sec2str(sec): h = sec // 3600 m = sec % 3600 // 60 s = sec % 60 return '%s小时%s分%s秒' % (h, m, s) def minidata(): all_time = 0 # 使用总时间（秒） start_time = time.mktime(time.strptime('2018-09-01', '%Y-%m-%d')) end_time = time.mktime(time.strptime('2018-10-01', '%Y-%m-%d')) data = xlrd.open_workbook('./SMTC/source/0020/2018年09月语音通信.xls') table = data.sheet_by_index(0) nrows = table.nrows for i in range(nrows): if i == 0: continue this_time = time.mktime(time.strptime( table.row_values(i)[2], '%Y-%m-%d%H:%M:%S')) if this_time = start_time and this_time  end_time: all_time += str2sec(table.row_values(i)[3]) print('总时间:'+sec2str(all_time)) if __name__ == \"__main__\": minidata()   第 0021 题： 通常，登陆某个网站或者 APP，需要使用用户名和密码。密码是如何加密后存储起来的呢？请使用 Python 对密码加密。\n  阅读资料 用户密码的存储与 Python 示例\n  阅读资料 Hashing Strings with Python\n  阅读资料 Python’s safest method to store and retrieve passwords from a database\n  解答\n# -*- coding: utf-8 -*- import os from hashlib import sha256 from hmac import HMAC def encrypt_passwd(password, salt=None): if salt is None: salt = os.urandom(8) assert 8 == len(salt) assert isinstance(salt, bytes) assert isinstance(password, str) if isinstance(password, str): password = password.encode('utf-8') assert isinstance(password, bytes) for i in range(10): password = HMAC(password, salt, sha256).digest() # print('password:', password) return salt+password def validate_passwd(hashed, input): return hashed == encrypt_passwd(input, hashed[:8]) if __name__ == \"__main__\": hashed = encrypt_passwd('123456') print(validate_passwd(hashed, '123456'))   第 0022 题： iPhone 6、iPhone 6 Plus 早已上市开卖。请查看你写得 第 0005 题的代码是否可以复用。\n第 0023 题： 使用 Python 的 Web 框架，做一个 Web 版本 留言簿 应用。\n阅读资料：Python 有哪些 Web 框架\n   第 0024 题： 使用 Python 的 Web 框架，做一个 Web 版本 TodoList 应用。\n   第 0025 题： 使用 Python 实现：对着电脑吼一声,自动打开浏览器中的默认网站。\n例如，对着笔记本电脑吼一声“百度”，浏览器自动打开百度首页。\r关键字：Speech to Text\r参考思路： 1：获取电脑录音–WAV文件 python record wav\n2：录音文件–文本\nSTT: Speech to Text\rSTT API Google API\r3:文本–电脑命令\n",
   "wordCount" : "1983",
   "inLanguage": "en",
-  "image":"/blog/notes/smtc/%3Cimage%20path/url%3E","datePublished": "2019-01-29T20:37:25Z",
+  "image":"/notes/smtc/%3Cimage%20path/url%3E","datePublished": "2019-01-29T20:37:25Z",
   "dateModified": "2019-01-29T20:37:25Z",
   "author":[{
     "@type": "Person",
@@ -92,14 +103,14 @@ Fromshow me the code
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/blog/notes/smtc/"
+    "@id": "/notes/smtc/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "早柳",
     "logo": {
       "@type": "ImageObject",
-      "url": "/blog/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
@@ -158,7 +169,7 @@ Fromshow me the code
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="/blog" accesskey="h" title="早柳 (Alt + H)">早柳</a>
+            <a href="/" accesskey="h" title="早柳 (Alt + H)">早柳</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -184,37 +195,37 @@ Fromshow me the code
         </div>
         <ul id="menu" onscroll="menu_on_scroll()">
             <li>
-                <a href="/blog/posts" title="Posts">
+                <a href="/posts" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/notes" title="Notes">
+                <a href="/notes" title="Notes">
                     <span>Notes</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/categories/" title="Categories">
+                <a href="/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/tags/" title="Tags">
+                <a href="/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/archives" title="Timeline">
+                <a href="/archives" title="Timeline">
                     <span>Timeline</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/friends/" title="Friends">
+                <a href="/friends/" title="Friends">
                     <span>Friends</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -225,7 +236,7 @@ Fromshow me the code
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/blog">Home</a>&nbsp;»&nbsp;<a href="/blog/notes/">Notes</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/notes/">Notes</a></div>
     <h1 class="post-title">
       Show Me The Code
     </h1>
@@ -262,23 +273,23 @@ Fromshow me the code
 <li>
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> mysql.connector
-  
+
 <span style="color:#f92672">import</span> random
 <span style="color:#f92672">import</span> string
-  
+
 <span style="color:#f92672">import</span> mysql.connector
-  
+
 forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>ascii_letters <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>digits
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
         Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
             Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
     conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;test&#39;</span>)
     cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
@@ -287,8 +298,8 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
         cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)&#34;</span>, params<span style="color:#f92672">=</span>[code])
     conn<span style="color:#f92672">.</span>commit()
     cursor<span style="color:#f92672">.</span>close()
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
@@ -298,23 +309,23 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
 <li>
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> mysql.connector
-  
+
 <span style="color:#f92672">import</span> random
 <span style="color:#f92672">import</span> string
-  
+
 <span style="color:#f92672">import</span> mysql.connector
-  
+
 forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>ascii_letters <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>digits
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
         Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
             Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
     conn <span style="color:#f92672">=</span> mysql<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l&#39;</span>, database<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;test&#39;</span>)
     cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
@@ -323,8 +334,8 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
         cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;INSERT INTO `code`(`code`) VALUES(</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)&#34;</span>, params<span style="color:#f92672">=</span>[code])
     conn<span style="color:#f92672">.</span>commit()
     cursor<span style="color:#f92672">.</span>close()
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
@@ -336,18 +347,18 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> redis
 <span style="color:#f92672">import</span> random
 <span style="color:#f92672">import</span> string
-  
+
 forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>ascii_letters <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>digits
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_code</span>(count, length):
     <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(count):
         Re <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
         <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(length):
             Re <span style="color:#f92672">+=</span> random<span style="color:#f92672">.</span>choice(forSelect)
         <span style="color:#66d9ef">yield</span> Re
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_code</span>():
     r <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;6379&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;linyii&#39;</span>)
     codes <span style="color:#f92672">=</span> gen_code(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">20</span>)
@@ -356,8 +367,8 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
         p<span style="color:#f92672">.</span>sadd(<span style="color:#e6db74">&#39;code&#39;</span>, code)
     p<span style="color:#f92672">.</span>execute()
     <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>scard(<span style="color:#e6db74">&#39;code&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     save_code()
 </code></pre></div></li>
@@ -367,7 +378,7 @@ forSelect <span style="color:#f92672">=</span> string<span style="color:#f92672"
 <li>
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
-  
+
 Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature&#39;s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.  We hold these truths to be
 </span><span style="color:#e6db74">self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. &#34;&#34;&#34;</span>
@@ -376,10 +387,10 @@ Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;
     Text <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74">&#39; &#39;</span>)
 Text <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>lower()
 word_list <span style="color:#f92672">=</span> Text<span style="color:#f92672">.</span>split()
-  
+
 <span style="color:#75715e"># solution 1</span>
 res <span style="color:#f92672">=</span> Counter(word_list)<span style="color:#f92672">.</span>most_common()
-  
+
 <span style="color:#75715e"># solution 2</span>
 <span style="color:#75715e"># 使用字典，key-value，单词与个数一一对应</span>
 d <span style="color:#f92672">=</span> {}
@@ -395,7 +406,7 @@ word_freq <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> key, value <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>items():
     word_freq<span style="color:#f92672">.</span>append((value, key))
 word_freq<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span>True)
-  
+
 <span style="color:#75715e"># solution 3</span>
 <span style="color:#75715e"># 不使用get()方法</span>
 d <span style="color:#f92672">=</span> {}
@@ -415,10 +426,10 @@ word_freq<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 <span style="color:#f92672">import</span> os
-  
+
 path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Users/lau/Pictures&#39;</span>
 resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Users/lau/Desktop&#39;</span>
-  
+
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(resPath):
     os<span style="color:#f92672">.</span>mkdir(resPath)
 <span style="color:#66d9ef">for</span> fileName <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(path):
@@ -440,11 +451,11 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
 <li>
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-  
+
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 <span style="color:#f92672">import</span> os
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">html_body</span>(filesPath):
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(filesPath):
         <span style="color:#66d9ef">return</span>
@@ -456,8 +467,8 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
                 text <span style="color:#f92672">=</span> BeautifulSoup(fileHtml, <span style="color:#e6db74">&#39;lxml&#39;</span>)
                 content <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>getText()<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
                 <span style="color:#66d9ef">print</span>(content)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     html_body(<span style="color:#e6db74">&#39;./SMTC/source/0008&#39;</span>)
 </code></pre></div></li>
@@ -467,11 +478,11 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
 <li>
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-  
+
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 <span style="color:#f92672">import</span> os
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">html_link</span>(filesPath):
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(filesPath):
         <span style="color:#66d9ef">return</span>
@@ -487,8 +498,8 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
                     <span style="color:#75715e"># 获取链接</span>
                     links<span style="color:#f92672">.</span>append(link<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;href&#39;</span>))
     <span style="color:#66d9ef">print</span>(links)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     html_link(<span style="color:#e6db74">&#39;./SMTC/source/0008&#39;</span>)
 </code></pre></div></li>
@@ -504,24 +515,24 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#75715e"># 第 0010 题：使用 Python 生成类似于下图中的字母验证码图片</span>
-  
+
 <span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image, ImageDraw, ImageFont, ImageFilter
 <span style="color:#f92672">import</span> random
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">randomLetter</span>():
     <span style="color:#75715e"># 大写字母65-90</span>
     <span style="color:#75715e"># 数字转字符</span>
     <span style="color:#66d9ef">return</span> chr(random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">65</span>, <span style="color:#ae81ff">90</span>))
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">randomColor</span>(argc):
     <span style="color:#66d9ef">if</span> argc <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
         <span style="color:#66d9ef">return</span> (random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">255</span>), random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">255</span>), random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">255</span>))
     <span style="color:#66d9ef">else</span>:
         <span style="color:#66d9ef">return</span> (random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>), random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>), random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>))
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_codepic</span>(savePath):
     width <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>
     height <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
@@ -536,11 +547,11 @@ resPath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Use
     <span style="color:#66d9ef">for</span> index <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
         imgDraw<span style="color:#f92672">.</span>text((<span style="color:#ae81ff">60</span><span style="color:#f92672">*</span>index<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>), randomLetter(),
                      font<span style="color:#f92672">=</span>font, fill<span style="color:#f92672">=</span>randomColor(<span style="color:#ae81ff">2</span>))
-  
+
     img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>filter(ImageFilter<span style="color:#f92672">.</span>BLUR)
     img<span style="color:#f92672">.</span>save(savePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;codepic.jpg&#39;</span>, <span style="color:#e6db74">&#39;JPEG&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     gen_codepic(<span style="color:#e6db74">&#39;./SMTC/source/0010/&#39;</span>)
 </code></pre></div></li>
@@ -562,9 +573,9 @@ jiangge
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出 Freedom，否则打印出 Human Rights。</span>
-  
+
 <span style="color:#f92672">import</span> os
-  
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Freedom</span>(filesPath):
     <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isdir(filesPath):
         <span style="color:#66d9ef">return</span>
@@ -579,7 +590,7 @@ jiangge
                     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Freedom&#39;</span>)
                 <span style="color:#66d9ef">else</span>:
                     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Human Rights&#39;</span>)
-  
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     Freedom(<span style="color:#e6db74">&#39;./SMTC/source/0011&#39;</span>)
 </code></pre></div></li>
@@ -590,10 +601,10 @@ jiangge
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#75715e"># 敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。</span>
-  
+
 <span style="color:#f92672">import</span> os
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Freedom</span>(filePath):
     word_filter <span style="color:#f92672">=</span> set()
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;filtered_words.txt&#39;</span>) <span style="color:#66d9ef">as</span> f:
@@ -607,8 +618,8 @@ jiangge
             <span style="color:#66d9ef">if</span> w <span style="color:#f92672">in</span> s:
                 s <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>replace(w, <span style="color:#e6db74">&#39;*&#39;</span><span style="color:#f92672">*</span>len(w))
         <span style="color:#66d9ef">print</span>(s)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     Freedom(<span style="color:#e6db74">&#39;./SMTC/source/0011/&#39;</span>)
 </code></pre></div></li>
@@ -622,13 +633,13 @@ jiangge
 <p>解答</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#75715e"># 用 Python 写一个爬图片的程序，爬这个链接里的日本妹子图片(http://tieba.baidu.com/p/2166231880) :-)</span>
-  
+
 <span style="color:#f92672">import</span> requests
 <span style="color:#f92672">import</span> urllib.request
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 <span style="color:#f92672">import</span> os
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">spy_pic</span>(url, savePath, header):
     response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, headers<span style="color:#f92672">=</span>header)
     content <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;lxml&#39;</span>)
@@ -650,8 +661,8 @@ jiangge
         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;第{0}张图片抓取完成&#39;</span><span style="color:#f92672">.</span>format(index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
         index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;抓取完成！&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     reqHeader <span style="color:#f92672">=</span> {
         <span style="color:#e6db74">&#39;Accept&#39;</span>: <span style="color:#e6db74">&#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#39;</span>,
@@ -695,8 +706,8 @@ jiangge
 <span style="color:#75715e"># 纯文本文件 student.txt为学生信息, 里面的内容（包括花括号）如下所示</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xml2exl</span>(filePath):
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> dic:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(dic)
@@ -711,8 +722,8 @@ jiangge
                 <span style="color:#75715e"># 输入每一行第二列开始的数据</span>
                 sheet<span style="color:#f92672">.</span>write(index, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, value)
         workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xls&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     xml2exl(<span style="color:#e6db74">&#39;./SMTC/source/0014/&#39;</span>)
 </code></pre></div></li>
@@ -733,8 +744,8 @@ jiangge
 <span style="color:#75715e"># 纯文本文件 city.txt为城市信息, 里面的内容（包括花括号）如下所示：</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xml2exl</span>(filePath):
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f)
@@ -748,8 +759,8 @@ jiangge
             <span style="color:#75715e"># 不需要使用enumerate</span>
             sheet<span style="color:#f92672">.</span>write(index, <span style="color:#ae81ff">1</span>, value)
         workBook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xls&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     xml2exl(<span style="color:#e6db74">&#39;./SMTC/source/0015/&#39;</span>)
 </code></pre></div></li>
@@ -770,8 +781,8 @@ jiangge
 <span style="color:#75715e"># 纯文本文件 numbers.txt, 里面的内容（包括方括号）</span>
 <span style="color:#f92672">from</span> xlwt <span style="color:#f92672">import</span> Workbook
 <span style="color:#f92672">import</span> json
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json2xls</span>(filePath):
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
         content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f)
@@ -781,8 +792,8 @@ jiangge
             <span style="color:#66d9ef">for</span> col, value <span style="color:#f92672">in</span> enumerate(list):
                 sheet<span style="color:#f92672">.</span>write(row, col, value)
         workbook<span style="color:#f92672">.</span>save(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xls&#39;</span>)
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     json2xls(<span style="color:#e6db74">&#39;./SMTC/source/0016/&#39;</span>)
 </code></pre></div></li>
@@ -810,8 +821,8 @@ jiangge
 <span style="color:#75715e"># 将 第 0014 题中的 student.xls 文件中的内容写到 student.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
     root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
@@ -820,7 +831,7 @@ jiangge
     root<span style="color:#f92672">.</span>appendChild(students)
     comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;学生信息表</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#34;id&#34; : [名字, 数学, 语文, 英文]</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>)
     students<span style="color:#f92672">.</span>appendChild(comment)
-  
+
     content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xls&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
@@ -830,8 +841,8 @@ jiangge
     students<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_content)))
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;student.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> student_xml:
         student_xml<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0014/&#39;</span>)
 </code></pre></div></li>
@@ -857,8 +868,8 @@ jiangge
 <span style="color:#75715e"># 将 第 0015 题中的 city.xls 文件中的内容写到 city.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
     root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
@@ -867,7 +878,7 @@ jiangge
     root<span style="color:#f92672">.</span>appendChild(cities)
     comment <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">城市信息</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>)
     cities<span style="color:#f92672">.</span>appendChild(comment)
-  
+
     content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xls&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
@@ -877,8 +888,8 @@ jiangge
     cities<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_content)))
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;city.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
         f<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0015/&#39;</span>)
 </code></pre></div></li>
@@ -907,8 +918,8 @@ jiangge
 <span style="color:#75715e"># 将 第 0016 题中的 numbers.xls 文件中的内容写到 numbers.xml 文件中</span>
 <span style="color:#f92672">from</span> xml.dom.minidom <span style="color:#f92672">import</span> Document
 <span style="color:#f92672">import</span> xlrd
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xls2xml</span>(filePath):
     doc <span style="color:#f92672">=</span> Document()
     root <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;root&#39;</span>)
@@ -916,7 +927,7 @@ jiangge
     numbers <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>createElement(<span style="color:#e6db74">&#39;numbers&#39;</span>)
     root<span style="color:#f92672">.</span>appendChild(numbers)
     numbers<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createComment(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">数字信息</span><span style="color:#ae81ff">\n\t\t</span><span style="color:#e6db74">&#39;</span>))
-  
+
     content <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xls&#39;</span>)
     sheet <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> sheet<span style="color:#f92672">.</span>nrows
@@ -926,8 +937,8 @@ jiangge
     numbers<span style="color:#f92672">.</span>appendChild(doc<span style="color:#f92672">.</span>createTextNode(str(sheet_list)))
     <span style="color:#66d9ef">with</span> open(filePath<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;numbers.xml&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
         f<span style="color:#f92672">.</span>write(doc<span style="color:#f92672">.</span>toprettyxml())
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     xls2xml(<span style="color:#e6db74">&#39;./SMTC/source/0016/&#39;</span>)
 </code></pre></div></li>
@@ -940,8 +951,8 @@ jiangge
 <span style="color:#f92672">import</span> time
 <span style="color:#f92672">import</span> re
 <span style="color:#f92672">import</span> xlrd
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">str2sec</span>(str):
     sec <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     time_re <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\d+)(\D+)&#39;</span>)
@@ -954,15 +965,15 @@ jiangge
         <span style="color:#66d9ef">elif</span> time_item[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;小时&#39;</span>:
             sec <span style="color:#f92672">+=</span> int(time_item[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>
     <span style="color:#66d9ef">return</span> sec
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sec2str</span>(sec):
     h <span style="color:#f92672">=</span> sec <span style="color:#f92672">//</span> <span style="color:#ae81ff">3600</span>
     m <span style="color:#f92672">=</span> sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">60</span>
     s <span style="color:#f92672">=</span> sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">小时</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">分</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">秒&#39;</span> <span style="color:#f92672">%</span> (h, m, s)
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minidata</span>():
     all_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  <span style="color:#75715e"># 使用总时间（秒）</span>
     start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2018-09-01&#39;</span>, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
@@ -970,7 +981,7 @@ jiangge
     data <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;./SMTC/source/0020/2018年09月语音通信.xls&#39;</span>)
     table <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>sheet_by_index(<span style="color:#ae81ff">0</span>)
     nrows <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>nrows
-  
+
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nrows):
         <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
             <span style="color:#66d9ef">continue</span>
@@ -978,10 +989,10 @@ jiangge
             table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">2</span>], <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#39;</span>))
         <span style="color:#66d9ef">if</span> this_time <span style="color:#f92672">&gt;=</span> start_time <span style="color:#f92672">and</span> this_time <span style="color:#f92672">&lt;</span> end_time:
             all_time <span style="color:#f92672">+=</span> str2sec(table<span style="color:#f92672">.</span>row_values(i)[<span style="color:#ae81ff">3</span>])
-  
+
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;总时间:&#39;</span><span style="color:#f92672">+</span>sec2str(all_time))
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     minidata()
 </code></pre></div></li>
@@ -1003,8 +1014,8 @@ jiangge
 <span style="color:#f92672">import</span> os
 <span style="color:#f92672">from</span> hashlib <span style="color:#f92672">import</span> sha256
 <span style="color:#f92672">from</span> hmac <span style="color:#f92672">import</span> HMAC
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_passwd</span>(password, salt<span style="color:#f92672">=</span>None):
     <span style="color:#66d9ef">if</span> salt <span style="color:#f92672">is</span> None:
         salt <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>urandom(<span style="color:#ae81ff">8</span>)
@@ -1013,18 +1024,18 @@ jiangge
     <span style="color:#66d9ef">assert</span> isinstance(password, str)
     <span style="color:#66d9ef">if</span> isinstance(password, str):
         password <span style="color:#f92672">=</span> password<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
-  
+
     <span style="color:#66d9ef">assert</span> isinstance(password, bytes)
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
         password <span style="color:#f92672">=</span> HMAC(password, salt, sha256)<span style="color:#f92672">.</span>digest()
     <span style="color:#75715e"># print(&#39;password:&#39;, password)</span>
     <span style="color:#66d9ef">return</span> salt<span style="color:#f92672">+</span>password
-  
-  
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validate_passwd</span>(hashed, input):
     <span style="color:#66d9ef">return</span> hashed <span style="color:#f92672">==</span> encrypt_passwd(input, hashed[:<span style="color:#ae81ff">8</span>])
-  
-  
+
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     hashed <span style="color:#f92672">=</span> encrypt_passwd(<span style="color:#e6db74">&#39;123456&#39;</span>)
     <span style="color:#66d9ef">print</span>(validate_passwd(hashed, <span style="color:#e6db74">&#39;123456&#39;</span>))
@@ -1059,42 +1070,42 @@ STT API Google API
     </ul>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on twitter"
-        href="https://twitter.com/intent/tweet/?text=Show%20Me%20The%20Code&amp;url=%2fblog%2fnotes%2fsmtc%2f&amp;hashtags=">
+        href="https://twitter.com/intent/tweet/?text=Show%20Me%20The%20Code&amp;url=%2fnotes%2fsmtc%2f&amp;hashtags=">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fblog%2fnotes%2fsmtc%2f&amp;title=Show%20Me%20The%20Code&amp;summary=Show%20Me%20The%20Code&amp;source=%2fblog%2fnotes%2fsmtc%2f">
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnotes%2fsmtc%2f&amp;title=Show%20Me%20The%20Code&amp;summary=Show%20Me%20The%20Code&amp;source=%2fnotes%2fsmtc%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on reddit"
-        href="https://reddit.com/submit?url=%2fblog%2fnotes%2fsmtc%2f&title=Show%20Me%20The%20Code">
+        href="https://reddit.com/submit?url=%2fnotes%2fsmtc%2f&title=Show%20Me%20The%20Code">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fnotes%2fsmtc%2f">
+        href="https://facebook.com/sharer/sharer.php?u=%2fnotes%2fsmtc%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on whatsapp"
-        href="https://api.whatsapp.com/send?text=Show%20Me%20The%20Code%20-%20%2fblog%2fnotes%2fsmtc%2f">
+        href="https://api.whatsapp.com/send?text=Show%20Me%20The%20Code%20-%20%2fnotes%2fsmtc%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Show Me The Code on telegram"
-        href="https://telegram.me/share/url?text=Show%20Me%20The%20Code&amp;url=%2fblog%2fnotes%2fsmtc%2f">
+        href="https://telegram.me/share/url?text=Show%20Me%20The%20Code&amp;url=%2fnotes%2fsmtc%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -1119,7 +1130,7 @@ STT API Google API
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="/blog">早柳</a></span>
+    <span>&copy; 2021 <a href="/">早柳</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

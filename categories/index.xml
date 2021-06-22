@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 早柳</title>
-    <link>/blog/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on 早柳</description>
     <image>
-      <url>/blog</url>
-      <link>/blog</link>
+      <url>/</url>
+      <link>/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 21:46:40 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paper</title>
-      <link>/blog/categories/paper/</link>
+      <link>/categories/paper/</link>
       <pubDate>Tue, 13 Apr 2021 21:46:40 +0800</pubDate>
       
-      <guid>/blog/categories/paper/</guid>
+      <guid>/categories/paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reprint</title>
-      <link>/blog/categories/reprint/</link>
+      <link>/categories/reprint/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/categories/reprint/</guid>
+      <guid>/categories/reprint/</guid>
       <description></description>
     </item>
     

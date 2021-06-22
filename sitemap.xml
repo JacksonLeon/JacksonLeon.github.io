@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/blog/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/nlp/</loc>
+    <loc>/tags/nlp/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/categories/paper/</loc>
+    <loc>/categories/paper/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/relation-extraction/</loc>
+    <loc>/tags/relation-extraction/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/</loc>
+    <loc>/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/protore/</loc>
+    <loc>/posts/protore/</loc>
     <lastmod>2021-04-13T21:46:40+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/pre-train/</loc>
+    <loc>/tags/pre-train/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/survey/</loc>
+    <loc>/tags/survey/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/pretrain-survey/</loc>
+    <loc>/posts/pretrain-survey/</loc>
     <lastmod>2020-12-05T15:57:21+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/relabel-noise/</loc>
+    <loc>/posts/relabel-noise/</loc>
     <lastmod>2020-12-01T11:15:16+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/relational-transfer/</loc>
+    <loc>/posts/relational-transfer/</loc>
     <lastmod>2020-11-07T15:58:04+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/context-or-name/</loc>
+    <loc>/posts/context-or-name/</loc>
     <lastmod>2020-11-04T15:56:37+08:00</lastmod>
   </url><url>
-    <loc>/blog/posts/more-data-re/</loc>
+    <loc>/posts/more-data-re/</loc>
     <lastmod>2020-11-02T15:55:50+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/howtobe/</loc>
+    <loc>/tags/howtobe/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/</loc>
+    <loc>/notes/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
-    <loc>/blog/categories/reprint/</loc>
+    <loc>/categories/reprint/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/mit-postgrade/</loc>
+    <loc>/notes/mit-postgrade/</loc>
     <lastmod>2019-05-18T11:08:40+00:00</lastmod>
   </url><url>
-    <loc>/blog/posts/cnn4tc/</loc>
+    <loc>/posts/cnn4tc/</loc>
     <lastmod>2019-05-10T19:39:50+08:00</lastmod>
   </url><url>
-    <loc>/blog/tags/git/</loc>
+    <loc>/tags/git/</loc>
     <lastmod>2019-05-04T09:09:27+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/commits-msg-guide/</loc>
+    <loc>/notes/commits-msg-guide/</loc>
     <lastmod>2019-05-04T09:09:27+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/happy2019/</loc>
+    <loc>/notes/happy2019/</loc>
     <lastmod>2019-02-04T21:31:12+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/smtc/</loc>
+    <loc>/notes/smtc/</loc>
     <lastmod>2019-01-29T20:37:25+00:00</lastmod>
   </url><url>
-    <loc>/blog/notes/python-novel/</loc>
+    <loc>/notes/python-novel/</loc>
     <lastmod>2018-04-12T10:57:34+00:00</lastmod>
   </url><url>
-    <loc>/blog/friends/</loc>
+    <loc>/friends/</loc>
   </url><url>
-    <loc>/blog/search/</loc>
+    <loc>/search/</loc>
   </url><url>
-    <loc>/blog/series/</loc>
+    <loc>/series/</loc>
   </url><url>
-    <loc>/blog/archives/</loc>
+    <loc>/archives/</loc>
   </url>
 </urlset>

@@ -12,35 +12,46 @@
 A guide to understanding the importance of commit messages and how to write them well.
 It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.">
 <meta name="author" content="reprint">
-<link rel="canonical" href="/blog/notes/commits-msg-guide/" />
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2aaaa791ce70d6126b4ab0ef3803317a119450a70e1349a1648eb79ff2187457.css" integrity="sha256-Kqqnkc5w1hJrSrDvOAMxehGUUKcOE0mhZI63n/IYdFc=" rel="preload stylesheet" as="style">
-<link rel="icon" href="/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="/blog/safari-pinned-tab.svg">
+<link rel="canonical" href="/notes/commits-msg-guide/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3699c12b108feefc51f5f989ce707ab2dc92adda6afa4880cccbe997e6867d9f.css" integrity="sha256-NpnBKxCP7vxR9fmJznB6stySrdpq&#43;kiAzMvpl&#43;aGfZ8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GJ9J8B5K8J"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GJ9J8B5K8J', { 'anonymize_ip': false });
+}
+</script>
 <meta property="og:title" content="转载 - Commit messages guide" />
 <meta property="og:description" content="To be translated
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
 A guide to understanding the importance of commit messages and how to write them well.
 It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/notes/commits-msg-guide/" />
-<meta property="og:image" content="/blog/notes/commits-msg-guide/%3Cimage%20path/url%3E" /><meta property="article:section" content="notes" />
+<meta property="og:url" content="/notes/commits-msg-guide/" />
+<meta property="og:image" content="/notes/commits-msg-guide/%3Cimage%20path/url%3E" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2019-05-04T09:09:27&#43;00:00" />
 <meta property="article:modified_time" content="2019-05-04T09:09:27&#43;00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/blog/notes/commits-msg-guide/%3Cimage%20path/url%3E" />
+<meta name="twitter:image" content="/notes/commits-msg-guide/%3Cimage%20path/url%3E" />
 <meta name="twitter:title" content="转载 - Commit messages guide"/>
 <meta name="twitter:description" content="To be translated
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
@@ -52,18 +63,18 @@ It may help you to learn what a commit is, why it is important to write good mes
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Notes",
-      "item": "/blog/notes/"
-    }, 
+      "item": "/notes/"
+    }
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  1 ,
       "name": "转载 - Commit messages guide",
-      "item": "/blog/notes/commits-msg-guide/"
+      "item": "/notes/commits-msg-guide/"
     }
   ]
 }
@@ -81,7 +92,7 @@ It may help you to learn what a commit is, why it is important to write good mes
   "articleBody": "To be translated\n\r[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)\rA guide to understanding the importance of commit messages and how to write them well.\nIt may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.\nWhat is a “commit”? In simple terms, a commit is a snapshot of your local files, written in your local repository. Contrary to what some people think, git doesn’t store only the difference between the files, it stores a full version of all files. For files that didn’t change from one commit to another, git stores just a link to the previous identical file that is already stored.\nThe image below shows how git stores data over time, in which each “Version” is a commit:\nWhy are commit messages important?  To speed up and streamline code reviews To help in the understanding of a change To explain “the whys” that cannot be described only with code To help future maintainers figure out why and how changes were made, making troubleshooting and debugging easier  To maximize those outcomes, we can use some good practices and standards described in the next section.\nGood practices These are some practices collected from my experiences, internet articles, and other guides. If you have others (or disagree with some) feel free to open a Pull Request and contribute.\nUse imperative form # Good\rUse InventoryBackendPool to retrieve inventory backend\r# Bad\rUsed InventoryBackendPool to retrieve inventory backend\rBut why use the imperative form?\nA commit message describes what the referenced change actually does, its effects, not what was done.\nThis excellent article from Chris Beams gives us a simple sentence that can be used to help us write better commit messages in imperative form:\nIf applied, this commit will Examples:\n# Good\rIf applied, this commit will use InventoryBackendPool to retrieve inventory backend\r# Bad\rIf applied, this commit will used InventoryBackendPool to retrieve inventory backend\rCapitalize the first letter # Good\rAdd `use` method to Credit model\r# Bad\radd `use` method to Credit model\rThe reason that the first letter should be capitalized is to follow the grammar rule of using capital letters at the beginning of sentences.\nThe use of this practice may vary from person to person, team to team, or even from language to language. Capitalized or not, an important point is to stick to a single standard and follow it.\nTry to communicate what the change does without having to look at the source code # Good\rAdd `use` method to Credit model\r# Bad\rAdd `use` method\r# Good\rIncrease left padding between textbox and layout frame\r# Bad\rAdjust css\rIt is useful in many scenarios (e.g. multiple commits, several changes and refactors) to help reviewers understand what the committer was thinking.\nUse the message body to explain “why”, “for what”, “how” and additional details # Good\rFix method name of InventoryBackend child classes\rClasses derived from InventoryBackend were not\rrespecting the base class interface.\rIt worked because the cart was calling the backend implementation\rincorrectly.\r# Good\rSerialize and deserialize credits to json in Cart\rConvert the Credit instances to dict for two main reasons:\r- Pickle relies on file path for classes and we do not want to break up\reverything if a refactor is needed\r- Dict and built-in types are pickleable by default\r# Good\rAdd `use` method to Credit\rChange from namedtuple to class because we need to\rsetup a new attribute (in_use_amount) with a new value\rThe subject and the body of the messages are separated by a blank line. Additional blank lines are considered as a part of the message body.\nCharacters like -, * and ` are elements that improve readability.\nAvoid generic messages or messages without any context # Bad\rFix this\rFix stuff\rIt should work now\rChange stuff\rAdjust css\rLimit the number of characters It’s recommended to use a maximum of 50 characters for the subject and 72 for the body.\nKeep language consistency For project owners: Choose a language and write all commit messages using that language. Ideally, it should match the code comments, default translation locale (for localized projects), etc.\nFor contributors: Write your commit messages using the same language as the existing commit history.\n# Good\rababab Add `use` method to Credit model\refefef Use InventoryBackendPool to retrieve inventory backend\rbebebe Fix method name of InventoryBackend child classes\r# Good (Portuguese example)\rababab Adiciona o método `use` ao model Credit\refefef Usa o InventoryBackendPool para recuperar o backend de estoque\rbebebe Corrige nome de método na classe InventoryBackend\r# Bad (mixes English and Portuguese)\rababab Usa o InventoryBackendPool para recuperar o backend de estoque\refefef Add `use` method to Credit model\rcdcdcd Agora vai\rTemplate This is a template, written originally by Tim Pope, which appears in the Pro Git Book.\nSummarize changes in around 50 characters or less\rMore detailed explanatory text, if necessary. Wrap it to about 72\rcharacters or so. In some contexts, the first line is treated as the\rsubject of the commit and the rest of the text as the body. The\rblank line separating the summary from the body is critical (unless\ryou omit the body entirely); various tools like `log`, `shortlog`\rand `rebase` can get confused if you run the two together.\rExplain the problem that this commit is solving. Focus on why you\rare making this change as opposed to how (the code explains that).\rAre there side effects or other unintuitive consequences of this\rchange? Here's the place to explain them.\rFurther paragraphs come after blank lines.\r- Bullet points are okay, too\r- Typically a hyphen or asterisk is used for the bullet, preceded\rby a single space, with blank lines in between, but conventions\rvary here\rIf you use an issue tracker, put references to them at the bottom,\rlike this:\rResolves: #123\rSee also: #456, #789\rRebase vs. Merge This section is a TL;DR of Atlassian’s excellent tutorial, “Merging vs. Rebasing”.\nRebase TL;DR: Applies your branch commits, one by one, upon the base branch, generating a new tree.\nMerge TL;DR: Creates a new commit, called (appropriately) a merge commit, with the differences between the two branches.\nWhy do some people prefer to rebase over merge? I particularly prefer to rebase over merge. The reasons include:\n It generates a “clean” history, without unnecessary merge commits What you see is what you get, i.e., in a code review all changes come from a specific and entitled commit, avoiding changes hidden in merge commits More merges are resolved by the committer, and every merge change is in a commit with a proper message  It’s unusual to dig in and review merge commits, so avoiding them ensures all changes have a commit where they belong    When to squash “Squashing” is the process of taking a series of commits and condensing them into a single commit.\nIt’s useful in several situations, e.g.:\n Reducing commits with little or no context (typo corrections, formatting, forgotten stuff) Joining separate changes that make more sense when applied together Rewriting work in progress commits  When to avoid rebase or squash? Avoid rebase and squash in public commits or in shared branches where multiple people work on. Rebase and squash rewrite history and overwrite existing commits, doing it on commits that are on shared branches (i.e., commits pushed to a remote repository or that comes from others branches) can cause confusion and people may lose their changes (both locally and remotely) because of divergent trees and conflicts.\nUseful git commands rebase -i Use it to squash commits, edit messages, rewrite/delete/reorder commits, etc.\npick 002a7cc Improve description and update document title\rpick 897f66d Add contributing section\rpick e9549cf Add a section of Available languages\rpick ec003aa Add \"What is a commit\" section\"\rpick bbe5361 Add source referencing as a point of help wanted\rpick b71115e Add a section explaining the importance of commit messages\rpick 669bf2b Add \"Good practices\" section\rpick d8340d7 Add capitalization of first letter practice\rpick 925f42b Add a practice to encourage good descriptions\rpick be05171 Add a section showing good uses of message body\rpick d115bb8 Add generic messages and column limit sections\rpick 1693840 Add a section about language consistency\rpick 80c5f47 Add commit message template\rpick 8827962 Fix triple \"m\" typo\rpick 9b81c72 Add \"Rebase vs Merge\" section\r# Rebase 9e6dc75..9b81c72 onto 9e6dc75 (15 commands)\r#\r# Commands:\r# p, pick = use commit\r# r, reword = use commit, but edit the commit message\r# e, edit = use commit, but stop for amending\r# s, squash = use commit, but meld into the previous commit\r# f, fixup = like \"squash\", but discard this commit's log message\r# x, exec = run command (the rest of the line) using shell\r# d, drop = remove commit\r#\r# These lines can be re-ordered; they are executed from top to bottom.\r#\r# If you remove a line here THAT COMMIT WILL BE LOST.\r#\r# However, if you remove everything, the rebase will be aborted.\r#\r# Note that empty commits are commented out\rfixup Use it to clean up commits easily and without needing a more complex rebase. This article has very good examples of how and when to do it.\ncherry-pick It is very useful to apply that commit you made on the wrong branch, without the need to code it again.\nExample:\n$ git cherry-pick 790ab21\r[master 094d820] Fix English grammar in Contributing\rDate: Sun Feb 25 23:14:23 2018 -0300\r1 file changed, 1 insertion(+), 1 deletion(-)\radd/checkout/reset [–patch | -p] Let’s say we have the following diff:\ndiff --git a/README.md b/README.md index 7b45277..6b1993c 100644 --- a/README.md +++ b/README.md @@ -186,10 +186,13 @@ bebebe Corrige nome de método na classe InventoryBackend  `` # Bad (mixes English and Portuguese) ababab Usa o InventoryBackendPool para recuperar o backend de estoque -efefef Add `use` method to Credit model  cdcdcd Agora vai `` +### Template + +This is a template, [written originally by Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which appears in the [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project). +  ## Contributing Any kind of help would be appreciated. Example of topics that you can help me with: @@ -202,3 +205,4 @@ Any kind of help would be appreciated. Example of topics that you can help me wi  - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) - [Pro Git Book - Commit guidelines](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines) +- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) We can use git add -p to add only the patches we want to, without the need to change the code that is already written. It’s useful to split a big change into smaller commits or to reset/checkout specific changes.\nStage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]? s\rSplit into 2 hunks.\rhunk 1 @@ -186,7 +186,6 @@  `` # Bad (mixes English and Portuguese) ababab Usa o InventoryBackendPool para recuperar o backend de estoque -efefef Add `use` method to Credit model  cdcdcd Agora vai `` Stage this hunk [y,n,q,a,d,/,j,J,g,e,?]? hunk 2 @@ -190,6 +189,10 @@  `` cdcdcd Agora vai `` +### Template + +This is a template, [written originally by Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which appears in the [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project). +  ## Contributing Any kind of help would be appreciated. Example of topics that you can help me with: Stage this hunk [y,n,q,a,d,/,K,j,J,g,e,?]? hunk 3 @@ -202,3 +205,4 @@ Any kind of help would be appreciated. Example of topics that you can help me wi  - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) - [Pro Git Book - Commit guidelines](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines) +- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) Other interesting stuff  https://whatthecommit.com/ https://gitmoji.carloscuesta.me/  Like it? Say thanks!\nContributing Any kind of help would be appreciated. Example of topics that you can help me with:\n Grammar and spelling corrections Translation to other languages Improvement of source referencing Incorrect or incomplete information  Inspirations, sources and further reading  How to Write a Git Commit Message Pro Git Book - Commit guidelines A Note About Git Commit Messages Merging vs. Rebasing Pro Git Book - Rewriting History ",
   "wordCount" : "2009",
   "inLanguage": "en",
-  "image":"/blog/notes/commits-msg-guide/%3Cimage%20path/url%3E","datePublished": "2019-05-04T09:09:27Z",
+  "image":"/notes/commits-msg-guide/%3Cimage%20path/url%3E","datePublished": "2019-05-04T09:09:27Z",
   "dateModified": "2019-05-04T09:09:27Z",
   "author":[{
     "@type": "Person",
@@ -89,14 +100,14 @@ It may help you to learn what a commit is, why it is important to write good mes
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/blog/notes/commits-msg-guide/"
+    "@id": "/notes/commits-msg-guide/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "早柳",
     "logo": {
       "@type": "ImageObject",
-      "url": "/blog/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
@@ -155,7 +166,7 @@ It may help you to learn what a commit is, why it is important to write good mes
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="/blog" accesskey="h" title="早柳 (Alt + H)">早柳</a>
+            <a href="/" accesskey="h" title="早柳 (Alt + H)">早柳</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -181,37 +192,37 @@ It may help you to learn what a commit is, why it is important to write good mes
         </div>
         <ul id="menu" onscroll="menu_on_scroll()">
             <li>
-                <a href="/blog/posts" title="Posts">
+                <a href="/posts" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/notes" title="Notes">
+                <a href="/notes" title="Notes">
                     <span>Notes</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/categories/" title="Categories">
+                <a href="/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/tags/" title="Tags">
+                <a href="/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/archives" title="Timeline">
+                <a href="/archives" title="Timeline">
                     <span>Timeline</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/friends/" title="Friends">
+                <a href="/friends/" title="Friends">
                     <span>Friends</span>
                 </a>
             </li>
             <li>
-                <a href="/blog/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -222,7 +233,7 @@ It may help you to learn what a commit is, why it is important to write good mes
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/blog">Home</a>&nbsp;»&nbsp;<a href="/blog/notes/">Notes</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/notes/">Notes</a></div>
     <h1 class="post-title">
       转载 - Commit messages guide
     </h1>
@@ -612,46 +623,46 @@ Stage this hunk [y,n,q,a,d,/,K,j,J,g,e,?]?
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="/blog/tags/git/">Git</a></li>
+      <li><a href="/tags/git/">Git</a></li>
     </ul>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;url=%2fblog%2fnotes%2fcommits-msg-guide%2f&amp;hashtags=Git">
+        href="https://twitter.com/intent/tweet/?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;url=%2fnotes%2fcommits-msg-guide%2f&amp;hashtags=Git">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fblog%2fnotes%2fcommits-msg-guide%2f&amp;title=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;summary=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;source=%2fblog%2fnotes%2fcommits-msg-guide%2f">
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnotes%2fcommits-msg-guide%2f&amp;title=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;summary=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;source=%2fnotes%2fcommits-msg-guide%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on reddit"
-        href="https://reddit.com/submit?url=%2fblog%2fnotes%2fcommits-msg-guide%2f&title=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide">
+        href="https://reddit.com/submit?url=%2fnotes%2fcommits-msg-guide%2f&title=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fnotes%2fcommits-msg-guide%2f">
+        href="https://facebook.com/sharer/sharer.php?u=%2fnotes%2fcommits-msg-guide%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on whatsapp"
-        href="https://api.whatsapp.com/send?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide%20-%20%2fblog%2fnotes%2fcommits-msg-guide%2f">
+        href="https://api.whatsapp.com/send?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide%20-%20%2fnotes%2fcommits-msg-guide%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share 转载 - Commit messages guide on telegram"
-        href="https://telegram.me/share/url?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;url=%2fblog%2fnotes%2fcommits-msg-guide%2f">
+        href="https://telegram.me/share/url?text=%e8%bd%ac%e8%bd%bd%20-%20Commit%20messages%20guide&amp;url=%2fnotes%2fcommits-msg-guide%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -663,7 +674,7 @@ Stage this hunk [y,n,q,a,d,/,K,j,J,g,e,?]?
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="/blog">早柳</a></span>
+    <span>&copy; 2021 <a href="/">早柳</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

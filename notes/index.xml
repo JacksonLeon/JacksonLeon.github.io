@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on 早柳</title>
-    <link>/blog/notes/</link>
+    <link>/notes/</link>
     <description>Recent content in Notes on 早柳</description>
     <image>
-      <url>/blog</url>
-      <link>/blog</link>
+      <url>/</url>
+      <link>/</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/blog/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2019 11:08:40 +0000</lastBuildDate><atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>转载 - How to be a Postgraduate student(MIT)</title>
-      <link>/blog/notes/mit-postgrade/</link>
+      <link>/notes/mit-postgrade/</link>
       <pubDate>Sat, 18 May 2019 11:08:40 +0000</pubDate>
       
-      <guid>/blog/notes/mit-postgrade/</guid>
+      <guid>/notes/mit-postgrade/</guid>
       <description>&lt;h1 id=&#34;how-to-be-a-postgraduate-studentmit&#34;&gt;How to be a Postgraduate student(MIT)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Reproduce&lt;/p&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>转载 - Commit messages guide</title>
-      <link>/blog/notes/commits-msg-guide/</link>
+      <link>/notes/commits-msg-guide/</link>
       <pubDate>Sat, 04 May 2019 09:09:27 +0000</pubDate>
       
-      <guid>/blog/notes/commits-msg-guide/</guid>
+      <guid>/notes/commits-msg-guide/</guid>
       <description>&lt;div class=&#34;note warning&#34;&gt;&lt;p&gt;To be translated&lt;/p&gt;&lt;/div&gt;
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
 &lt;p&gt;A guide to understanding the importance of commit messages and how to write them well.&lt;/p&gt;
@@ -53,19 +53,19 @@
     
     <item>
       <title>2019猪年</title>
-      <link>/blog/notes/happy2019/</link>
+      <link>/notes/happy2019/</link>
       <pubDate>Mon, 04 Feb 2019 21:31:12 +0000</pubDate>
       
-      <guid>/blog/notes/happy2019/</guid>
+      <guid>/notes/happy2019/</guid>
       <description>&lt;h1 id=&#34;center2019大家年大吉center&#34;&gt;&lt;center&gt;&lt;strong&gt;2019㊗️大家🐷年大吉！&lt;/strong&gt;&lt;/center&gt;&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>Show Me The Code</title>
-      <link>/blog/notes/smtc/</link>
+      <link>/notes/smtc/</link>
       <pubDate>Tue, 29 Jan 2019 20:37:25 +0000</pubDate>
       
-      <guid>/blog/notes/smtc/</guid>
+      <guid>/notes/smtc/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Python 练习册，每天一个小程序&lt;/p&gt;
@@ -75,10 +75,10 @@
     
     <item>
       <title>使用爬虫爬取网络小说</title>
-      <link>/blog/notes/python-novel/</link>
+      <link>/notes/python-novel/</link>
       <pubDate>Thu, 12 Apr 2018 10:57:34 +0000</pubDate>
       
-      <guid>/blog/notes/python-novel/</guid>
+      <guid>/notes/python-novel/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;小说网址&lt;/li&gt;
 &lt;/ul&gt;
